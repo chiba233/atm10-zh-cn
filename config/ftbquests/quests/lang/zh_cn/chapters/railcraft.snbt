@@ -1,5 +1,5 @@
 {
-	quest.3E75AFE3482834C5.title: "&7&lRailCraft"
+	quest.3E75AFE3482834C5.title: "&7&l铁路工艺"
 	quest.6DB65926EE6D6C2E.title: "让&7矿车&r动起来的&c铁轨套件&r"
 	quest.6E7C4228CD2B6BB9.quest_desc: [
 		"这把&4撬棍&r有几种模式，每种都会改变&5机车&r的涂装。默认模式的效果在物品栏里悬停查看；"无"会变成&7灰色&r；&6万&5圣&6节&r模式让它变得阴森森；&c圣&2诞&c节&r模式则让它喜气洋洋！"
@@ -23,4 +23,5 @@
 	]
 	quest.7F4B734CFB0F0306.title: "新矿车"
 	task.025A45B704969EAE.title: "人字形铁轨"
+	chapter.2FB24A5A597459FC.title: "铁路工艺"
 }
