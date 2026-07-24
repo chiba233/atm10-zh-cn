@@ -81,6 +81,31 @@ else:
         if expect is not None and expect != zh:
             errors.append(f'蜂名漂移: {base} 脚本={zh!r} 资源包={expect!r}（真源是资源包，请重跑 gen_pb_hanhua.py）')
 
+# 2.8: 旧译名残留检查：废弃译名只允许出现在别名表/生成器（作为归一的键）
+LEGACY_NAMES = ('联调蜂', '神蜂特工队')
+LEGACY_WHITELIST = {
+    'kubejs/client_scripts/pb_hanhua_tooltip.js',
+    'kubejs/server_scripts/pb_hanhua_cage_migrate.js',
+    'scripts/gen_pb_hanhua.py',
+    'scripts/check.py',
+}
+for p2 in ROOT.rglob('*'):
+    if not p2.is_file() or '.git' in p2.parts or 'dist' in p2.parts:
+        continue
+    rel2 = p2.relative_to(ROOT).as_posix()
+    if rel2 in LEGACY_WHITELIST or p2.suffix in ('.jar', '.png', '.zip'):
+        continue
+    try:
+        txt = p2.read_text(encoding='utf-8')
+    except Exception:
+        continue
+    for ln in LEGACY_NAMES:
+        if ln in txt:
+            errors.append(f'{rel2}: 含废弃译名 "{ln}"（真源已更名，此处是漂移的旧拷贝）')
+# 遗留的 VaultPatcher 蜂名模块（已被 kubejs 显示层取代，全局替换有污染风险）禁止复活
+if (ROOT / 'vaultpatcher' / 'modules' / 'productivebees_gene_zh.json').exists():
+    errors.append('productivebees_gene_zh.json: 遗留蜂名全局替换模块，已废弃，禁止复活（显示层走 kubejs）')
+
 # 3: VaultPatcher 主配置
 cfg_path = ROOT / 'config' / 'vaultpatcher_asm' / 'config.json'
 cfg = json.loads(cfg_path.read_text(encoding='utf-8'))
