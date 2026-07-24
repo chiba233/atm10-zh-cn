@@ -131,21 +131,23 @@ jobs:
             --draft=false \
             $PRERELEASE_FLAG
 
-          # 等待 release 传播（避免时序导致的 404）
+          # 等待 release 传播
           sleep 5
 
           RELEASE_ID=$(gh release view "v$RELEASE_VERSION" --json id -q '.id')
           echo "release_id=$RELEASE_ID"
+
+          # 确认 release 不是 draft
+          echo "isDraft=$(gh release view "v$RELEASE_VERSION" --json isDraft -q '.isDraft')"
 
           for f in dist/*.zip; do
             name=$(basename "$f")
             encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${name}', safe=''))")
             echo "Uploading $name ..."
             gh api \
+              --hostname uploads.github.com \
               --method POST \
-              -H "Accept: application/vnd.github+json" \
               -H "Content-Type: application/octet-stream" \
               "/repos/${{ github.repository }}/releases/$RELEASE_ID/assets?name=$encoded" \
-              --input "$f" \
-              --verbose
+              --input "$f"
           done
