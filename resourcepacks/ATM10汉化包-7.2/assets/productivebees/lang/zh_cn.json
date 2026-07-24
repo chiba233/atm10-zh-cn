@@ -1160,5 +1160,7 @@
  "Big Book of Bees": "蜜蜂大书",
  "A shallow look into the world of apicology.$(br2)Here bee puns": "带你浅浅了解养蜂学的世界。$(br2)这里全是蜜蜂双关梗",
  "entity.productivebees.sky_slime_bee": "天空史莱姆蜜蜂",
- "entity.productivebees.scrapped_bee": "废料蜜蜂"
+ "entity.productivebees.scrapped_bee": "废料蜜蜂",
+ "entity.productivebees.uru_metal_bee": "乌鲁金属蜜蜂",
+ "entity.productivebees.allergy_bee": "过敏蜜蜂"
 }

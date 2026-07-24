@@ -60,6 +60,11 @@ def main() -> None:
             continue
         id2zh[base] = zh
 
+    # 非实体的基因类型（配方里会把物品 id 当基因类型显示），显示名取自物品键
+    for base, item_key in {'bee_bomb': 'item.productivebees.bee_bomb'}.items():
+        if item_key in pack:
+            id2zh[base] = pack[item_key]
+
     # 英文名精确表: en_us 真名 + Title Case 派生名（长名优先正则用）
     en2zh = {}
     for base, zh in id2zh.items():
