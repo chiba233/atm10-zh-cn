@@ -3895,5 +3895,9 @@
   "minecolonies.quests.general.wheresthebuilder.obj7.answer0": "我想我们每个人都有过想找个安静角落的时候。",
   "minecolonies.quests.general.wheresthebuilder.obj7.answer1": "但愿酒馆老板别发现那个地下室。",
   "minecolonies.quests.general.wheresthebuilder.obj7.answer1.reply": "哈！哦，他迟早会发现的。不过那是改天的事了。领你的奖励吧——这是你应得的。也谢谢你替我保密！",
-  "minecolonies.quests.general.wheresthebuilder.obj7.answer1.reply.answer0": "永远为你保密。谢啦！"
+  "minecolonies.quests.general.wheresthebuilder.obj7.answer1.reply.answer0": "永远为你保密。谢啦！",
+  "entity.minecolonies.citizen": "居民",
+  "entity.minecolonies.mercenary": "雇佣兵",
+  "entity.minecolonies.raiders": "袭击者",
+  "entity.minecolonies.visitor": "访客"
 }

@@ -481,5 +481,6 @@
   "rootsclassic.configuration.magic": "魔法",
   "rootsclassic.configuration.verdantSprigDropChance": "翠绿嫩枝掉落几率",
   "rootsclassic.jei.tooltip.crafting": "",
-  "rootsclassic.jei.tooltip.engraved_crafting": ""
+  "rootsclassic.jei.tooltip.engraved_crafting": "",
+  "entity.rootsclassic.phantom_skeleton": "幻影骷髅"
 }

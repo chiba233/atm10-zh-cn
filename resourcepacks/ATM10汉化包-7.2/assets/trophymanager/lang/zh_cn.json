@@ -1,5 +1,6 @@
 {
   "gui.apply": "应用",
   "block.trophymanager.trophy": "奖杯",
-  "trophymanager.tooltip.trophy.scale": "缩放：%s"
+  "trophymanager.tooltip.trophy.scale": "缩放：%s",
+  "entity.trophymanager.player": "玩家"
 }

@@ -2071,5 +2071,11 @@
   "entity.twilightforest.alpha_yeti_spawner": "雪怪首领",
   "entity.twilightforest.tower_boss_spawner": "暮初恶魂",
   "entity.twilightforest.antibuilder": "反建筑者",
-  "entity.twilightforest.beanstalk_grower": "豆茎催生者"
+  "entity.twilightforest.beanstalk_grower": "豆茎催生者",
+  "entity.twilightforest.bunny": "兔子",
+  "entity.twilightforest.death_tome_books": "死亡之书",
+  "entity.twilightforest.death_tome_hurt": "死亡之书",
+  "entity.twilightforest.knight_phantom_defeated": "幻影骑士",
+  "entity.twilightforest.questing_ram_reward_blocks": "谜题公羊",
+  "entity.twilightforest.questing_ram_rewards": "谜题公羊"
 }
