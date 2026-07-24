@@ -99,8 +99,8 @@ jobs:
           path: dist/*.zip
           if-no-files-found: error
 
-      # 幂等 + 自愈：release 已存在 → 覆盖上传 + 重新发布；不存在 → 新建。
-      # Release 说明取自 CHANGELOG.md 对应版本段落。
+      # 先删后建：避免已存在 release 的 draft/状态异常导致 upload 404。
+      # gh release delete 只删 GitHub Release，不删 git tag。
       - name: Publish GitHub release
         if: steps.release.outputs.publish == 'true'
         env:
@@ -123,13 +123,10 @@ jobs:
           PRERELEASE_FLAG=""
           [[ "$IS_BETA" == "true" ]] && PRERELEASE_FLAG="--prerelease"
 
-          if gh release view "v$RELEASE_VERSION" >/dev/null 2>&1; then
-            gh release upload "v$RELEASE_VERSION" dist/*.zip --clobber
-            gh release edit "v$RELEASE_VERSION" --draft=false --notes "$NOTES" $PRERELEASE_FLAG
-          else
-            gh release create "v$RELEASE_VERSION" \
-              dist/*.zip \
-              --title "绿油油版汉化 v$RELEASE_VERSION" \
-              --notes "$NOTES" \
-              $PRERELEASE_FLAG
-          fi
+          gh release delete "v$RELEASE_VERSION" --yes 2>/dev/null || true
+
+          gh release create "v$RELEASE_VERSION" \
+            dist/*.zip \
+            --title "绿油油版汉化 v$RELEASE_VERSION" \
+            --notes "$NOTES" \
+            $PRERELEASE_FLAG
