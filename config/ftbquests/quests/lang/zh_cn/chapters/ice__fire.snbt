@@ -1,0 +1,8 @@
+{
+	quest.445DB66B81146E91.title: "&3翼蚺双刃刀"
+	quest.661114AFCBBD5F28.title: "&a墓园"
+	quest.661114AFCBBD5F28.quest_desc: [
+		"&a墓园&r在&3异界&r中普遍生成。顺便说一下，它们看起来就像墓园。\\n\\n在这里我们可以找到自然生成的&a被诅咒的箱子&f和&a坟土&r。\\n\\n我们还可以找到&0凋零玫瑰&r和骷髅头颅，以及&a被诅咒的箱子&r中的战利品。"
+		"{image:atm:textures/questpics/iceandfire/iaf_struct_ghost.png width:200 height:100 align:center}"
+	]
+}

@@ -1,0 +1,11 @@
+{
+	quest.3F3F3174BD9D03BD.quest_desc: [
+		"&d数据&5中心&r是一个 7x7x7 多方块结构，以独特的方式把&d模拟室&r和&5战利品制造机&r的功能合二为一。\\n\\n它能同时处理 25 个&6自我意识&b数据模型&r，效果与&2&l推理&r模拟相同，区别在于：\\n\\n&d数据&5中心&r不产出生物预测，而是直接产出战利品，模式与&5战利品制造机&r一致。"
+		"{@pagebreak}"
+		"搭建该多方块结构时，地板（第一层）必须使用黑曜石（哪些黑曜石可用见「黑曜石」任务）。\\n\\n墙壁和天花板必须使用黑色染色玻璃。控制器可以替换一格底部墙壁方块，IO 端口可以替换黑色染色玻璃。"
+		"{image:atm:textures/questpics/hnn/datacenterintheend.png width:100 height:100 align:center}"
+	]
+	quest.3F3F3174BD9D03BD.quest_subtitle: "本任务的制作没有使用生成式 AI"
+	quest.3F3F3174BD9D03BD.title: "&d数据&5中心"
+	task.6B84DAA99028ACEA.title: "黑曜石"
+}

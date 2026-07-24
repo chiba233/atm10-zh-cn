@@ -1,0 +1,16 @@
+{
+	quest.332A3C7BA261DBFC.quest_desc: [
+		"用&e陨石罗盘&r找到&e陨石&r的大致方位后，&d新生魔艺&r的&e探源杖&r可以帮你确定它的精确位置。"
+	]
+	quest.332A3C7BA261DBFC.quest_subtitle: "为了更精准"
+	quest.51236544BFEF487B.quest_subtitle: "'漫画#42：寻找鲍比[菲舍尔]'"
+	quest.525F25F4ADE45B50.quest_subtitle: "出去！"
+	quest.7C40F1963FC5BF65.quest_desc: [
+		"除了官方 AE2 指南和游戏内指南之外，这里还有一些额外的 AE2 教程。"
+		"{\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://allthemods.github.io/alltheguides/mods/ae2/\"},\"color\":\"blue\",\"text\":\"AllTheGuides AE2 指南\",\"underlined\":true}"
+		"{\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://www.youtube.com/watch?v=3htUhkDYbJ8\"},\"color\":\"blue\",\"text\":\"BucketSt 的 AE2 视频教程\",\"underlined\":true}"
+		"{\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://www.youtube.com/playlist?list=PLz9AkOmMlH1lI4H3GeBQ3VzEKlcDDNO8_\"},\"color\":\"blue\",\"text\":\"The MindCrafters 的 AE2 教程合集\",\"underlined\":true}"
+		"{\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://www.youtube.com/watch?v=2_s1srWvq20\"},\"color\":\"blue\",\"text\":\"The MindCrafters 的 Advanced AE 教程\",\"underlined\":true}"
+	]
+	task.2923D1E2BEAF94B0.title: "更多指南"
+}

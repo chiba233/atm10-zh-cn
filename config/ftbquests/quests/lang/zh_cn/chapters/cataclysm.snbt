@@ -1,0 +1,67 @@
+{
+	quest.060CAF1582B83918.quest_desc: [
+		"&e被占领的村庄&r曾是一座沙漠村庄，如今已被怪物占据。\\n\\n这里有一只&e瓦吉特&r、许多&e骸龙&r，以及被困的村民和铁傀儡。\\n\\n和所有村庄一样，房屋里有箱子——只是现在里面的战利品更好了！"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_occupied_village.png width:200 height:100 align:center}"
+	]
+	quest.060CAF1582B83918.title: "&e被占领的村庄"
+	quest.0A43D38D27CF4304.quest_desc: [
+		"&3废弃尖塔&r看上去像一座要塞，和&3冰封监狱&r类似，只是更小！\\n\\n这里会刷出&3再行魂尸&r和&3冥行武弁&r。\\n\\n不同楼层和建筑里都能找到不少箱子。"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_abandoned_spire.png width:200 height:100 align:center}"
+	]
+	quest.0A43D38D27CF4304.title: "&3废弃尖塔"
+	quest.0E1BC2AE1BE0BDFA.quest_desc: [
+		"如果你在繁茂洞穴里看到疑似紫水晶簇的东西，务必小心——那可能是&2紫水晶巢穴&r！\\n\\n没错！&2紫水晶巨蟹&r终于找到了适合自己的家。"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_amethyst.png width:200 height:100 align:center}"
+	]
+	quest.0E1BC2AE1BE0BDFA.title: "&2紫水晶巢穴"
+	quest.1695917695648018.quest_desc: [
+		"&3废弃神殿&r也许就是它们让亡者不得安息的力量来源。\\n\\n这里只会刷出&3再行魂尸&r。\\n\\n在这座建筑顶部藏着一些箱子！"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_abandoned_temple.png width:200 height:100 align:center}"
+	]
+	quest.1695917695648018.title: "&3废弃神殿"
+	quest.1B7A15730657ED30.quest_desc: [
+		"想象一座&2&l原版&r沙漠神殿，把它放大，再让它烂尾。\\n\\n这里会刷出&e骸龙&r和一只&e瓦吉特&r。\\n\\n战利品是有的——只不过全都藏在陷阱后面！"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_desert_site.png width:200 height:100 align:center}"
+	]
+	quest.1B7A15730657ED30.title: "&e沙漠营地"
+	quest.2790EB2E347D28DE.quest_subtitle: "击败灾变的全部 Boss"
+	quest.2B50E9FC93812730.quest_desc: [
+		"（&4&l灾变&r的）&e沙漠神殿&r是又一座被沙漠吞噬的建筑。\\n\\n这里有被困的村民、四周的&e骸龙&r，以及里面的一只&e骸龙斗士&r。\\n\\n箱子在&e骸龙斗士&r身后和塔楼里。"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_desert_temple.png width:200 height:100 align:center}"
+	]
+	quest.2B50E9FC93812730.title: "&e沙漠神殿"
+	quest.2C0DF8D6ED259E5F.quest_desc: [
+		"又一件&c炼狱锻锤&r系武器。这次需要把&c炼狱锻锤&r和&9神怒长槊&r合二为一。\\n\\n&c掣雷&9巨锤&r依然是一把镐子，只是也是件强得多的武器！挖掘等级不变。\\n\\n手持&c掣雷&9巨锤&r按住右键再松开即可投掷！命中处会打击怪物并召唤落雷。\\n\\n这让我想起北欧神话里的某件武器……应该只是巧合吧。"
+	]
+	quest.2C0DF8D6ED259E5F.title: "&c掣雷&9巨锤"
+	quest.2C9C4BFF1D89EF82.quest_desc: [
+		"&3废弃村庄&r是&3再行魂尸&r睡觉、吃饭以及做亡灵会做的一切的地方！\\n\\n这座建筑里只会刷出&3再行魂尸&r。\\n\\n各个房间里散布着箱子。"
+		"{image:atm:textures/questpics/cataclysm/cataclysm_abandoned_village.png width:200 height:100 align:center}"
+	]
+	quest.2C9C4BFF1D89EF82.title: "&3废弃村庄"
+	quest.2D69B48F1EFCC9A5.quest_desc: [
+		"&3结实皮靴&r能让你在细雪上行走。\\n\\n就这些。"
+	]
+	quest.2D69B48F1EFCC9A5.title: "&3结实皮靴"
+	quest.680D49E2B3929322.quest_desc: [
+		"「自然的治愈」是什么，我可没法告诉你。"
+	]
+	quest.680D49E2B3929322.title: "&e活力安卡"
+	quest.69EA17CEB4203C96.quest_desc: [
+		"这是一笔有得有失的交易。\\n\\n佩戴这个&3护符&r时你造成的伤害提高 10%，但护甲值降低 25%。\\n\\n那要是根本不穿盔甲，会发生什么呢？"
+	]
+	quest.69EA17CEB4203C96.title: "&3战魂护符"
+	quest.69ECE13A6E5503CD.quest_desc: [
+		"随着更新，我们现在能找到&4&l灾变&r的一些更小（也稍微不那么危险）的建筑了。\\n\\n目前只有与&e诅咒金字塔&r和&3冰封监狱&r相关的几种。\\n\\n这些建筑里都有只在此处出现的新饰品。\\n\\n有些戴在常规饰品栏上，另一些则需要先佩戴这条腰带才能装备！"
+	]
+	quest.69ECE13A6E5503CD.title: "新饰品"
+	quest.6E12C5DDF81DE88F.quest_desc: [
+		"这件对付 Boss 非常有用。\\n\\n有些攻击会把你眩晕，眩晕时既不能移动也不能还手。\\n\\n这颗&e头颅&r能保护你免受眩晕——每次冷却期间一次。"
+	]
+	quest.6E12C5DDF81DE88F.title: "&e不破之颅"
+	quest.73A56DD4AC1B9590.quest_desc: [
+		"下落过程中命中怪物会造成暴击，伤害高得多。\\n\\n而佩戴这枚&3戒指&r时，伤害还会更上一层楼！"
+	]
+	quest.73A56DD4AC1B9590.title: "&3怨怒之戒"
+	task.01063DC98BCE5A91.title: "灾变行者"
+}

@@ -1,0 +1,11 @@
+{
+	quest.0EF9F10A2178451F.quest_desc: [
+		"&c&l熔铸炉&r的所有部件（排液孔、浇铸台和浇铸盆除外）都可以染成任意&z颜色&r。&z颜色&r在&c&l熔铸炉&r里还能混用，喜欢的话可以造一座五彩斑斓的&c&l熔铸炉&r。"
+	]
+	quest.0EF9F10A2178451F.title: "&z可染色的&c&l熔铸炉&r&z部件"
+	task.2AE89914A34BF3AD.title: "耐火砖块或熔铸炉视窗"
+	task.3B23E744D3B72AE8.title: "耐火砖块或熔铸炉视窗"
+	task.511ECEA2E9BD1F71.title: "任意熔铸炉排液孔"
+	task.51297F6E0D9BB58C.title: "任意熔铸炉储罐"
+	task.76E296A2AD3EFE92.title: "任意熔铸炉控制器"
+}

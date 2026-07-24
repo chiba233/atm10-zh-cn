@@ -1,0 +1,26 @@
+{
+	quest.3E75AFE3482834C5.title: "&7&lRailCraft"
+	quest.6DB65926EE6D6C2E.title: "让&7矿车&r动起来的&c铁轨套件&r"
+	quest.6E7C4228CD2B6BB9.quest_desc: [
+		"这把&4撬棍&r有几种模式，每种都会改变&5机车&r的涂装。默认模式的效果在物品栏里悬停查看；"无"会变成&7灰色&r；&6万&5圣&6节&r模式让它变得阴森森；&c圣&2诞&c节&r模式则让它喜气洋洋！"
+	]
+	quest.75DD345164EE5CD9.quest_desc: [
+		"&6高速铁轨&r类似&6强化铁轨&r，但显然更快。不过需要&c铁轨套件&r帮忙提速！过弯时也要小心。"
+		"{image:atm:textures/questpics/railcraft/rail_speed.png width:150 height:100 align:center}"
+	]
+	quest.78D8F40AA9568511.quest_desc: [
+		"电动碾压机是手动碾压机的强化版。\\n\\n你不用一直盯着机器看，它会自动完成全部合成。\\n\\n唯一的问题是：它需要电！"
+	]
+	quest.7D40B80DBBC4E160.quest_desc: [
+		"手动碾压机将是你合成各种铁路材料的小作坊！\\n\\n放入配方后，如果材料够做多份，它会在你盯着它看时自动连续合成。合成中途离开碾压机会中止合成并把产物放进你的背包。\\n\\n最后一份必须手动做完！"
+	]
+	quest.7F187E291C3D5BA7.quest_desc: [
+		"流体卸载器和流体装载器正好相反：不在&6铁轨&r上方而在下方；不给&3蒸汽机车&r加水，而是抽走它们的水。我不知道你为什么想这么干，但你确实可以！"
+	]
+	quest.7F187E291C3D5BA7.title: "流体卸载器"
+	quest.7F4B734CFB0F0306.quest_desc: [
+		"这些新&7矿车&r类似特殊的&2原版&r&7矿车&r。&7储罐矿车&r能装载并运输任意液体，&7能量单元矿车&r则装载并运输能量！"
+	]
+	quest.7F4B734CFB0F0306.title: "新矿车"
+	task.025A45B704969EAE.title: "人字形铁轨"
+}

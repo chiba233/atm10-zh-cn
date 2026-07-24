@@ -1,0 +1,60 @@
+{
+	quest.19862DBCE9305DE3.quest_desc: [
+		"&3渊邃长矛&r，&7渊居民&r的趁手武器……和木斧并列。\\n\\n合成它需要 2 根木棍和&3罗格多锭&r。\\n\\n它与&b钻石剑&r伤害相同，攻击距离还更远！\\n\\n还能像三叉戟一样投掷。"
+	]
+	quest.19862DBCE9305DE3.title: "&3渊邃长矛"
+	quest.1A23BBF444D17A63.quest_desc: [
+		"&2巨型居存者&r在 Y=0 以下刷新。你需要&a遗忆镐&r或&6ATM镐&r来挖开挡路的怖岩。\\n\\n&2巨型居存者&r与它们弱小的亲戚走上了不同的进化道路——深渊凶险，它们必须变得更大更强！\\n\\n它们体型更大，有 100 颗心，而且是中立生物而非被动生物。像僵尸猪灵一样，打一只，全都上。"
+		"{image:atm:textures/questpics/undergarden/undergarden_greater.png width:100 height:100 align:center}"
+	]
+	quest.1A23BBF444D17A63.title: "&2巨型居存者"
+	quest.1D2C70F1750E84D0.quest_desc: [
+		"新的&c腐化&r生物？\\n\\n&c喷腐者&r有 17.5 颗心和 4 点护甲。\\n\\n靠近时它会挥臂攻击你，离远一点它就朝你吐口水。\\n\\n口水这么脏，真该用点漱口水。"
+		"{image:atm:textures/questpics/undergarden/undergarden_rotbelcher.png width:100 height:200 align:center}"
+	]
+	quest.1D2C70F1750E84D0.title: "&c喷腐者"
+	quest.257893DD23BF5017.quest_desc: [
+		"要获得&3罗格多锭&r，我们得前往 Y=0 以下的深邃之境，这需要一把&a遗忆镐&r或&6ATM镐&r。\\n\\n开采&3罗格多矿石&r也需要同级镐子，它在深邃之境各处都有分布。\\n\\n你也可以用&a遗忆&r或&6ATM&r斧头采集&3罗格多古根&r——它们常见得多，但只给&3罗格多粒&r，不像&3矿石&r给完整的锭。"
+	]
+	quest.257893DD23BF5017.title: "&3罗格多锭"
+	quest.2A2041098C069772.quest_desc: [
+		"&7渊居民&r在 Y=0 以下的深邃之境刷新，你需要&a遗忆镐&r或同级镐子才能挖下去。\\n\\n&7渊居民&r长得诡异地像人，戴着神秘面具，手持长矛或木斧。\\n\\n它们有矮胖和瘦高两种体型，但都有 10 颗心。\\n\\n除了手里的武器，它们没有别的掉落。"
+		"{image:atm:textures/questpics/undergarden/undergarden_denizens.png width:100 height:200 align:center}"
+	]
+	quest.2A2041098C069772.title: "&7渊居民"
+	quest.30D6924003C6E273.quest_desc: [
+		"&7渊居民&r营地位于深邃之境。你需要挖穿 Y=0 以下的怖岩。\\n\\n怖岩需要&a遗忆镐&r开采，等级与&6ATM镐&r相同。\\n\\n这里会刷出成群的&7渊居民&r，还有神秘图腾和箱子！箱子里偶尔会出&7渊居民&r同款神秘面具。\\n\\n在&7渊居民&r面前戴神秘面具，就像在猪灵面前穿&e金甲&r：只要没人动手（或者惹恼它们），它们就保持中立。"
+	]
+	quest.30ED5FF9DF7B34CF.quest_desc: [
+		"洗劫渊居民营地或者自己合成，我们就能用上神秘图腾了！\\n\\n呃……怎么用来着？\\n\\n放下它，每隔几秒它就会给你 10 秒的&b纯净&r效果。\\n\\n&b纯净&r能净化你身上的&c腐化&r。"
+	]
+	quest.4985F82E0D300C6D.quest_desc: [
+		"如果你想回&2&l主世界&r却找不到原来的传送门，别慌，有办法！\\n\\n用 4 个怖磐岩、4 个&7扼塞锭&r和 1 个&a遗忆粒&r可以合成碎裂催化石。\\n\\n碎裂催化石激活传送门的用法和普通深园催化石一样。"
+	]
+	quest.57545837046F552B.quest_desc: [
+		"等等，那不是普通的陶罐！\\n\\n&2神秘陶罐&r是伪装成陶罐的活物。\\n\\n它们有 4 颗心，挨打会逃跑；觉得安全了就变回陶罐继续装。\\n\\n死亡时可能掉落&7扼塞粒&r、&b霜钢粒&r和&c御腐破片&r。"
+		"{image:atm:textures/questpics/undergarden/undergarden_pot.png width:100 height:120 align:center}"
+	]
+	quest.57545837046F552B.title: "&2神秘陶罐"
+	quest.5AF0E903DB670D65.quest_desc: [
+		"用一些怖磐岩、&3罗格多锭&r和一个&c御腐晶簇&r，我们就能做出凝注台！\\n\\n这个方块可以用来合成和凝注某些物品。目前配方还不多，但我打赌以后会更多！\\n\\n主要用途是合成&c御腐水晶&r，以及给盔甲凝注&3罗格多锭&r。\\n\\n凝注了&3罗格多锭&r的盔甲能保护你不感染&c腐化&r。"
+	]
+	quest.6E7C8537D8A28833.quest_desc: [
+		"Y=0 以下有两个生物群系，深邃之境是其一。\\n\\n想到 Y=0 以下，你需要挖穿怖岩；挖怖岩需要遗忆镐或 ATM镐。\\n\\n这里会刷出巨型居存者、渊居民和腐化怪物。"
+		"{image:atm:textures/questpics/undergarden/undergarden_depths.png width:200 height:100 align:center}"
+	]
+	quest.6E7C8537D8A28833.title: "深邃之境"
+	quest.6F483B77D64F4EE2.quest_desc: [
+		"Y=0 以下有两个生物群系，罗格多林地是其一。\\n\\n想到 Y=0 以下，你需要挖穿怖岩；挖怖岩需要遗忆镐或 ATM镐。\\n\\n比起深邃之境，这里宜人得多：怪物少了一大截，植物多了一大片！还有烟茎树和遍地的花。"
+		"{image:atm:textures/questpics/undergarden/undergarden_rogdorium.png width:200 height:100 align:center}"
+	]
+	quest.6F483B77D64F4EE2.title: "罗格多林地"
+	quest.75A66B81C1181F59.quest_desc: [
+		"遗忘残迹是&2&l深暗之园&r里由怖磐岩砖组成的小型废墟。\\n\\n这里有大量装满战利品的陶罐！\\n\\n砸就完了！"
+	]
+	quest.75A66B81C1181F59.title: "遗忘残迹"
+	quest.76CDC18D7A208512.quest_desc: [
+		"在&2&l深暗之园&r，&c腐化生物&r——&c小腐怪&f、&c行腐者&f、&c喷腐者&f和&c腐兽&r——会让你感染&c乌瑟里克&r。\\n\\n感染后饥饿条上方会出现红条：满 4 格时屏幕出现红纹；8 格时红条开始颤抖警告你恶化了；10 格时全部红条发光，此时你开始掉血。\\n\\n只要没满格，&c腐化&r会自行缓慢消退。你也可以靠神秘图腾的纯净效果，或吃&3罗格多锭&r来解除。\\n\\n这两样都产自 Y=0 以下的深邃之境，你需要&a遗忆镐&r或&6ATM&r等同级镐子才能到达。\\n\\n唯一的预防手段，是在凝注台给盔甲凝注&3罗格多锭&r。"
+	]
+	quest.76CDC18D7A208512.title: "警告"
+}
