@@ -131,23 +131,18 @@ jobs:
             --draft=false \
             $PRERELEASE_FLAG
 
-          # 等待 release 传播
-          sleep 5
-
-          RELEASE_ID=$(gh release view "v$RELEASE_VERSION" --json id -q '.id')
+          # gh release view --json id 返回的是 GraphQL 节点 ID（如 RE_kw...），
+          # uploads.github.com 需要数字 ID。用 gh api 从 REST API 拿数字 ID。
+          RELEASE_ID=$(gh api "repos/${{ github.repository }}/releases/tags/v$RELEASE_VERSION" --jq '.id')
           echo "release_id=$RELEASE_ID"
-
-          # 确认 release 不是 draft
-          echo "isDraft=$(gh release view "v$RELEASE_VERSION" --json isDraft -q '.isDraft')"
 
           for f in dist/*.zip; do
             name=$(basename "$f")
             encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${name}', safe=''))")
             echo "Uploading $name ..."
-            gh api \
-              --hostname uploads.github.com \
-              --method POST \
-              -H "Content-Type: application/octet-stream" \
-              "/repos/${{ github.repository }}/releases/$RELEASE_ID/assets?name=$encoded" \
-              --input "$f"
+            curl -fsSL -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Content-Type: application/zip" \
+              --data-binary "@$f" \
+              "https://uploads.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets?name=$encoded"
           done
