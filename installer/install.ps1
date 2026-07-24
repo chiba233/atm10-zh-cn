@@ -13,7 +13,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $ScriptDir
-$Target = Split-Path -Parent $ScriptDir
+$script:Target = Split-Path -Parent $ScriptDir
 $PackDirs = @('config', 'kubejs', 'mods', 'resourcepacks', 'vaultpatcher')
 $PackEntry = 'file/ATM10汉化包-7.2.zip'
 $PinyinDir = '可选mods-拼音搜索'
@@ -22,11 +22,19 @@ $script:BK = ''
 $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
 function Check-Target {
-    if (!(Test-Path (Join-Path $Target 'mods')) -or !(Test-Path (Join-Path $Target 'options.txt'))) {
-        Write-Host '❌ 上一级目录不是游戏实例根目录。'
-        Write-Host '   请把整个汉化文件夹放进 ATM10 实例根目录（含 mods\ 与 options.txt 的那一层，'
-        Write-Host '   通常是 .minecraft\versions\All the Mods 10\），再运行本脚本。'
-        exit 1
+    if ((Test-Path (Join-Path $script:Target 'mods')) -and (Test-Path (Join-Path $script:Target 'options.txt'))) {
+        return
+    }
+    Write-Host '⚠️ 上一级目录不是游戏实例根目录（含 mods\ 与 options.txt 的那一层）。'
+    while ($true) {
+        $inp = Read-Host '请输入 ATM10 实例根目录完整路径（q 退出）'
+        if ($inp -eq 'q' -or [string]::IsNullOrWhiteSpace($inp)) { exit 1 }
+        if ((Test-Path (Join-Path $inp 'mods')) -and (Test-Path (Join-Path $inp 'options.txt'))) {
+            $script:Target = $inp
+            Write-Host "✅ 目标实例: $script:Target"
+            return
+        }
+        Write-Host '❌ 该路径下未找到 mods\ 与 options.txt，请重试。'
     }
 }
 
@@ -47,7 +55,7 @@ function Do-Backup {
     $newFiles = @()
     $n = 0
     foreach ($f in Get-PayloadFiles) {
-        $dst = Join-Path $Target $f
+        $dst = Join-Path $script:Target $f
         if (Test-Path $dst) {
             $to = Join-Path $script:BK $f
             New-Item -ItemType Directory -Force -Path (Split-Path $to) | Out-Null
@@ -60,12 +68,12 @@ function Do-Backup {
     if ($newFiles.Count -gt 0) {
         [System.IO.File]::WriteAllLines((Join-Path $script:BK '新增文件清单.txt'), $newFiles, $Utf8NoBom)
     }
-    Copy-Item (Join-Path $Target 'options.txt') (Join-Path $script:BK 'options.txt')
+    Copy-Item (Join-Path $script:Target 'options.txt') (Join-Path $script:BK 'options.txt')
     Write-Host "✅ 已备份 $n 个将被覆盖的文件到 backups/$script:TS/"
 }
 
 function Patch-Options {
-    $opt = Join-Path $Target 'options.txt'
+    $opt = Join-Path $script:Target 'options.txt'
     $content = [System.IO.File]::ReadAllText($opt)
     if ($content -match [regex]::Escape($PackEntry)) {
         Write-Host 'options.txt 已启用汉化资源包，跳过'
@@ -86,7 +94,7 @@ function Patch-Options {
 function Do-Apply {
     Do-Backup
     foreach ($f in Get-PayloadFiles) {
-        $dst = Join-Path $Target $f
+        $dst = Join-Path $script:Target $f
         New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
         Copy-Item $f $dst -Force
     }
@@ -107,7 +115,7 @@ function Do-Pinyin {
     }
     $manifest = Join-Path $script:BK '新增文件清单.txt'
     foreach ($j in $jars) {
-        $dst = Join-Path $Target "mods/$($j.Name)"
+        $dst = Join-Path $script:Target "mods/$($j.Name)"
         if (Test-Path $dst) {
             New-Item -ItemType Directory -Force -Path (Join-Path $script:BK 'mods') | Out-Null
             Copy-Item $dst (Join-Path $script:BK "mods/$($j.Name)")
@@ -142,12 +150,12 @@ function Do-Restore([string]$name) {
     $manifest = Join-Path $bk '新增文件清单.txt'
     if (Test-Path $manifest) {
         foreach ($f in [System.IO.File]::ReadAllLines($manifest)) {
-            if ($f) { Remove-Item (Join-Path $Target $f) -Force -ErrorAction SilentlyContinue }
+            if ($f) { Remove-Item (Join-Path $script:Target $f) -Force -ErrorAction SilentlyContinue }
         }
     }
     Get-ChildItem $bk -Recurse -File | Where-Object { $_.Name -ne '新增文件清单.txt' } | ForEach-Object {
         $rel = $_.FullName.Substring($bk.Length + 1)
-        $dst = Join-Path $Target $rel
+        $dst = Join-Path $script:Target $rel
         New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
         Copy-Item $_.FullName $dst -Force
     }
@@ -163,7 +171,7 @@ switch ($Action) {
     default {
         Write-Host '══════════════════════════════════════════'
         Write-Host ' ATM10 7.2 汉化补丁 · 绿油油版 — 安装器'
-        Write-Host " 目标实例: $Target"
+        Write-Host " 目标实例: $script:Target"
         Write-Host '══════════════════════════════════════════'
         Write-Host ' [1] 应用汉化（自动先备份被覆盖文件）'
         Write-Host ' [2] 仅备份'

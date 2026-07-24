@@ -20,7 +20,8 @@ mkdir -p "$CSTAGE/resourcepacks"
 (cd "resourcepacks/${PACK_NAME}" && zip -X -q -r "../../${CSTAGE}/resourcepacks/${PACK_NAME}.zip" . -x '*.DS_Store')
 cp -R config kubejs mods vaultpatcher 可选mods-拼音搜索 "$CSTAGE/"
 cp installer/install.sh installer/install.ps1 "installer/双击安装-Windows.bat" "$CSTAGE/"
-cp README.md CHANGELOG.md "关于内置汉化Mod的说明(BBSMC).txt" "原版说明与致谢(BBSMC).txt" "$CSTAGE/"
+cp README.md CHANGELOG.md LICENSE "关于内置汉化Mod的说明(BBSMC).txt" "原版说明与致谢(BBSMC).txt" "$CSTAGE/"
+printf '[InternetShortcut]\r\nURL=https://github.com/chiba233/atm10-zh-cn\r\n' > "$CSTAGE/项目主页与反馈.url"
 chmod +x "$CSTAGE/install.sh"
 
 # ---------- 服务端包 ----------
@@ -43,6 +44,8 @@ done
 mkdir -p "$SSTAGE/config"
 cp -R config/ftbquests config/vaultpatcher_asm "$SSTAGE/config/"
 cp SERVER.md "$SSTAGE/README-服务端.md"
+cp LICENSE "$SSTAGE/"
+printf '[InternetShortcut]\r\nURL=https://github.com/chiba233/atm10-zh-cn\r\n' > "$SSTAGE/项目主页与反馈.url"
 
 # ---------- 压缩 ----------
 find dist -name '.DS_Store' -delete

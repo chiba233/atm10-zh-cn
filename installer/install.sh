@@ -19,12 +19,26 @@ BK=""
 say() { printf '%s\n' "$*"; }
 
 check_target() {
-  if [ ! -d "$TARGET/mods" ] || [ ! -f "$TARGET/options.txt" ]; then
-    say "❌ 上一级目录不是游戏实例根目录。"
-    say "   请把整个汉化文件夹放进 ATM10 实例根目录（含 mods/ 与 options.txt 的那一层，"
-    say "   通常是 .minecraft/versions/All the Mods 10/），再运行本脚本。"
-    exit 1
+  if [ -d "$TARGET/mods" ] && [ -f "$TARGET/options.txt" ]; then
+    return
   fi
+  say "⚠️ 上一级目录不是游戏实例根目录（含 mods/ 与 options.txt 的那一层）。"
+  if [ -t 0 ]; then
+    while :; do
+      printf '请输入 ATM10 实例根目录完整路径（q 退出）: '
+      read -r inp || exit 1
+      [ "$inp" = "q" ] && exit 1
+      case "$inp" in "~"*) inp="$HOME${inp#\~}" ;; esac
+      if [ -d "$inp/mods" ] && [ -f "$inp/options.txt" ]; then
+        TARGET="$inp"
+        say "✅ 目标实例: $TARGET"
+        return
+      fi
+      say "❌ 该路径下未找到 mods/ 与 options.txt，请重试。"
+    done
+  fi
+  say "   请把整个汉化文件夹放进实例根目录后再运行本脚本。"
+  exit 1
 }
 
 payload_files() {
