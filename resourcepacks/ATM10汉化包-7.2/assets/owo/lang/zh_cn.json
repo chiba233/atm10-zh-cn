@@ -1,111 +1,111 @@
 {
- "text.owo.itemGroup.tab_template": [
-  {
-   "index": 0
+  "text.owo.itemGroup.tab_template": [
+    {
+      "index": 0
+    },
+    {
+      "text": " > ",
+      "color": "gray"
+    },
+    {
+      "index": 1,
+      "color": "dark_gray"
+    }
+  ],
+  "text.owo.itemGroup.select_hint": {
+    "text": "Shift点击以选择多个",
+    "color": "gray"
   },
-  {
-   "text": " > ",
-   "color": "gray"
+  "text.owo.configure_hot_reload.title": "配置热重载",
+  "text.owo.configure_hot_reload.choose_file": "选择文件",
+  "text.owo.configure_hot_reload.save": "保存",
+  "text.owo.configure_hot_reload.model": [
+    {
+      "text": "模型：",
+      "color": "yellow"
+    },
+    {
+      "index": 0,
+      "color": "gray"
+    }
+  ],
+  "text.owo.configure_hot_reload.reload_from.unset": "未设置",
+  "text.owo.configure_hot_reload.reload_from": [
+    {
+      "text": "重新加载来源：",
+      "color": "yellow"
+    },
+    {
+      "index": 0,
+      "color": "gray"
+    }
+  ],
+  "text.owo.config.search": "搜索…",
+  "text.owo.config.search.matches": "%d of %d",
+  "text.owo.config.search.no_matches": "无匹配项",
+  "text.owo.config.must_restart": "你所做的部分更改需要重启后才能应用",
+  "text.owo.config.button.exit_minecraft": "退出 Minecraft",
+  "text.owo.config.button.ignore_restart": "稍后重启",
+  "text.owo.config.button.range.edit_as_text": "以文本编辑",
+  "text.owo.config.button.range.edit_with_slider": "使用滑动条编辑",
+  "text.owo.config.applies_after_restart": [
+    {
+      "text": "⏻ ",
+      "color": "#FAEA48"
+    },
+    {
+      "text": "此选项会在重启后生效",
+      "color": "gray"
+    }
+  ],
+  "text.owo.config.managed_by_server": [
+    {
+      "text": "⚑ ",
+      "color": "#EB1D36"
+    },
+    {
+      "text": "此选项由服务器管理\n   断开连接后即可编辑",
+      "color": "gray"
+    }
+  ],
+  "text.owo.config.button.reload": "重载",
+  "text.owo.config.button.done": "完成",
+  "text.owo.config.sections_tooltip": "分区",
+  "text.owo.config.sections": {
+    "text": "分区",
+    "underlined": true
   },
-  {
-   "index": 1,
-   "color": "dark_gray"
-  }
- ],
- "text.owo.itemGroup.select_hint": {
-  "text": "Shift点击以选择多个",
-  "color": "gray"
- },
- "text.owo.configure_hot_reload.title": "配置热重载",
- "text.owo.configure_hot_reload.choose_file": "选择文件",
- "text.owo.configure_hot_reload.save": "保存",
- "text.owo.configure_hot_reload.model": [
-  {
-   "text": "模型：",
-   "color": "yellow"
-  },
-  {
-   "index": 0,
-   "color": "gray"
-  }
- ],
- "text.owo.configure_hot_reload.reload_from.unset": "未设置",
- "text.owo.configure_hot_reload.reload_from": [
-  {
-   "text": "重新加载来源：",
-   "color": "yellow"
-  },
-  {
-   "index": 0,
-   "color": "gray"
-  }
- ],
- "text.owo.config.search": "Search...",
- "text.owo.config.search.matches": "%d of %d",
- "text.owo.config.search.no_matches": "无匹配项",
- "text.owo.config.must_restart": "你所做的部分更改需要重启后才能应用",
- "text.owo.config.button.exit_minecraft": "退出 Minecraft",
- "text.owo.config.button.ignore_restart": "稍后重启",
- "text.owo.config.button.range.edit_as_text": "以文本编辑",
- "text.owo.config.button.range.edit_with_slider": "使用滑动条编辑",
- "text.owo.config.applies_after_restart": [
-  {
-   "text": "⏻ ",
-   "color": "#FAEA48"
-  },
-  {
-   "text": "此选项会在重启后生效",
-   "color": "gray"
-  }
- ],
- "text.owo.config.managed_by_server": [
-  {
-   "text": "⚑ ",
-   "color": "#EB1D36"
-  },
-  {
-   "text": "此选项由服务器管理\n   断开连接后即可编辑",
-   "color": "gray"
-  }
- ],
- "text.owo.config.button.reload": "重载",
- "text.owo.config.button.done": "完成",
- "text.owo.config.sections_tooltip": "分区",
- "text.owo.config.sections": {
-  "text": "分区",
-  "underlined": true
- },
- "text.owo.config.list.add_entry": "添加条目",
- "text.owo.config.boolean_toggle.enabled": [
-  "",
-  {
-   "text": "[",
-   "color": "gray"
-  },
-  {
-   "text": "✔",
-   "color": "#28FFBF"
-  },
-  {
-   "text": "]",
-   "color": "gray"
-  },
-  "已启用"
- ],
- "text.owo.config.boolean_toggle.disabled": [
-  "",
-  {
-   "text": "[",
-   "color": "gray"
-  },
-  {
-   "text": "❌",
-   "color": "#EB1D36"
-  },
-  {
-   "text": "]",
-   "color": "gray"
-  },
-  "禁用"
- ]
+  "text.owo.config.list.add_entry": "添加条目",
+  "text.owo.config.boolean_toggle.enabled": [
+    "",
+    {
+      "text": "[",
+      "color": "gray"
+    },
+    {
+      "text": "✔",
+      "color": "#28FFBF"
+    },
+    {
+      "text": "]",
+      "color": "gray"
+    },
+    "已启用"
+  ],
+  "text.owo.config.boolean_toggle.disabled": [
+    "",
+    {
+      "text": "[",
+      "color": "gray"
+    },
+    {
+      "text": "❌",
+      "color": "#EB1D36"
+    },
+    {
+      "text": "]",
+      "color": "gray"
+    },
+    "禁用"
+  ]
 }
