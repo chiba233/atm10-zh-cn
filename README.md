@@ -65,7 +65,7 @@
 ```bash
 python3 scripts/check.py            # CI 同款校验（协议值/配置/lang/.gui/服务端模块清单）
 python3 scripts/test_installer.py   # 安装器端到端测试
-./scripts/build_dist.sh 7.2.0       # 打客户端+服务端两个分发包
+./scripts/build_dist.sh 7.2-release1  # 打客户端+服务端两个分发包
 ```
 
 - **ci.yml**：每个 PR / push 校验 + 试打包

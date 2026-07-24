@@ -3,11 +3,11 @@
 #   dist/ATM10-7.2-汉化补丁-绿油油版-星野夢華-客户端-v<版本>.zip
 #   dist/ATM10-7.2-汉化补丁-绿油油版-星野夢華-服务端-v<版本>.zip
 # 资源包 zip 与服务端 jar 均不入 git，由本脚本从源码目录现场压缩。
-# 用法: ./scripts/build_dist.sh 7.2.0
+# 用法: ./scripts/build_dist.sh 7.2-release1
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-VERSION="${1:?用法: build_dist.sh <版本号, 如 7.2.0>}"
+VERSION="${1:?用法: build_dist.sh <版本号, 如 7.2-release1>}"
 PACK_NAME="ATM10汉化包-7.2"
 BASE="ATM10-7.2-汉化补丁-绿油油版-星野夢華"
 
