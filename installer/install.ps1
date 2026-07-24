@@ -31,7 +31,13 @@ function Check-Target {
     Write-Host '⚠️ 上一级目录不是游戏实例根目录（含 mods\ 与 options.txt 的那一层）。'
     while ($true) {
         $inp = Read-Host '请输入 ATM10 实例根目录完整路径（q 退出）'
+        $inp = $inp.Trim()
         if ($inp -eq 'q' -or [string]::IsNullOrWhiteSpace($inp)) { exit 1 }
+        # 去掉整体包裹的成对引号（Windows 拖拽/粘贴带空格路径常加双引号）
+        if (($inp.StartsWith('"') -and $inp.EndsWith('"')) -or ($inp.StartsWith("'") -and $inp.EndsWith("'"))) {
+            $inp = $inp.Substring(1, $inp.Length - 2)
+        }
+        $inp = $inp.TrimEnd('\', '/')
         if ((Test-Path (Join-Path $inp 'mods')) -and (Test-Path (Join-Path $inp 'options.txt'))) {
             $script:Target = $inp
             Write-Host "✅ 目标实例: $script:Target"

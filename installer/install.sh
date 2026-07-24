@@ -31,6 +31,13 @@ check_target() {
       printf '请输入 ATM10 实例根目录完整路径（q 退出）: '
       read -r inp || exit 1
       [ "$inp" = "q" ] && exit 1
+      # 清洗输入：复制/粘贴/拖拽常带成对引号或反斜杠转义空格
+      case "$inp" in
+        \"*\") inp="${inp#\"}"; inp="${inp%\"}" ;;
+        \'*\') inp="${inp#\'}"; inp="${inp%\'}" ;;
+      esac
+      case "$inp" in *\\*) inp="$(printf '%s' "$inp" | sed 's/\\\(.\)/\1/g')" ;; esac
+      inp="${inp%/}"
       case "$inp" in "~"*) inp="$HOME${inp#\~}" ;; esac
       if [ -d "$inp/mods" ] && [ -f "$inp/options.txt" ]; then
         TARGET="$inp"
