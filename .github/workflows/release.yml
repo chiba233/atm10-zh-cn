@@ -125,14 +125,23 @@ jobs:
 
           gh release delete "v$RELEASE_VERSION" --yes 2>/dev/null || true
 
-          # 先建 release（不带资源），再逐个上传 zip
-          # gh release create 带中文文件名资源时内部 upload 会 404，拆开可避免
           gh release create "v$RELEASE_VERSION" \
             --title "绿油油版汉化 v$RELEASE_VERSION" \
             --notes "$NOTES" \
             --draft=false \
             $PRERELEASE_FLAG
 
+          # gh release upload 对中文文件名 URL 编码有 bug（会截断/乱码），
+          # 改用 curl 直调 GitHub API，Python 做正确的 URL 编码。
+          RELEASE_ID=$(gh release view "v$RELEASE_VERSION" --json id -q '.id')
+
           for f in dist/*.zip; do
-            gh release upload "v$RELEASE_VERSION" "$f" --clobber
+            name=$(basename "$f")
+            encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${name}', safe=''))")
+            echo "Uploading $name ..."
+            curl -fsSL -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Content-Type: application/zip" \
+              --data-binary "@$f" \
+              "https://uploads.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets?name=${encoded}"
           done
