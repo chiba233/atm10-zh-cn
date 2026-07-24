@@ -16,8 +16,20 @@ const PB_EN_RE = new RegExp('\\b(?:' + Object.keys(PB_EN2ZH)
     .join('|') + ')(?![A-Za-z])', 'g')
 
 const $ItemTooltipEvent = Java.loadClass('net.neoforged.neoforge.event.entity.player.ItemTooltipEvent')
+const $RenderNameTagEvent = Java.loadClass('net.neoforged.neoforge.client.event.RenderNameTagEvent')
 const $Component = Java.loadClass('net.minecraft.network.chat.Component')
 
+// 三种形态统一转换: 原始ID(productivebees:xxx) / 英文名(含旧版梗名) / 括号整名(Bee)
+function pbTranslate(s) {
+    let ns = s.replace(/productivebees:([a-z0-9_]+)/g, function (mm, base) {
+        let stripped = base.endsWith('_bee') ? base.substring(0, base.length - 4) : base
+        return PB_ID2ZH[stripped] || PB_ID2ZH[base] || mm
+    })
+    ns = ns.replace(PB_EN_RE, function (mm) { return PB_EN2ZH[mm] || mm })
+    return ns.replace(/\(Bee\)/g, '(蜜蜂)')
+}
+
+// 物品 tooltip: 蜂笼 / 基因样本 / 基因瓶
 NativeEvents.onEvent($ItemTooltipEvent, function (event) {
     try {
         let stack = event.getItemStack()
@@ -26,15 +38,7 @@ NativeEvents.onEvent($ItemTooltipEvent, function (event) {
         for (let i = 0; i < lines.size(); i++) {
             let line = lines.get(i)
             let s = String(line.getString())
-            // 形态1: 原始 ID (productivebees:cyanite) —— 数据驱动蜂/基因样本
-            let ns = s.replace(/productivebees:([a-z0-9_]+)/g, function (mm, base) {
-                let stripped = base.endsWith('_bee') ? base.substring(0, base.length - 4) : base
-                return PB_ID2ZH[stripped] || PB_ID2ZH[base] || mm
-            })
-            // 形态2: 服务端烙进 NBT 的英文名 (Cyanite Bee / ZomBee) —— 老蜂笼
-            ns = ns.replace(PB_EN_RE, function (mm) { return PB_EN2ZH[mm] || mm })
-            // 形态3: 原版蜜蜂的蜂笼整名 "(Bee)"（裸 Bee 不能进大正则，只在括号整名时替换）
-            ns = ns.replace(/\(Bee\)/g, '(蜜蜂)')
+            let ns = pbTranslate(s)
             if (ns !== s) {
                 lines.set(i, $Component.literal(ns).setStyle(line.getStyle()))
             }
@@ -42,4 +46,18 @@ NativeEvents.onEvent($ItemTooltipEvent, function (event) {
     } catch (err) {
     }
 })
-console.info('[pb_hanhua] ItemTooltipEvent 处理器已注册 (ID映射: ' + Object.keys(PB_ID2ZH).length + ', 英文名映射: ' + Object.keys(PB_EN2ZH).length + ')')
+
+// 实体头顶悬浮名: 放出来的老蜜蜂 CustomName 里烙着旧英文名, 渲染名牌时替换
+NativeEvents.onEvent($RenderNameTagEvent, function (event) {
+    try {
+        let ent = event.getEntity()
+        if (String(ent.getType().toString()).indexOf('productivebees') < 0) return
+        let c = event.getContent()
+        if (c === null) return
+        let s = String(c.getString())
+        let ns = pbTranslate(s)
+        if (ns !== s) event.setContent($Component.literal(ns))
+    } catch (err) {
+    }
+})
+console.info('[pb_hanhua] Tooltip + 名牌 处理器已注册 (ID映射: ' + Object.keys(PB_ID2ZH).length + ', 英文名映射: ' + Object.keys(PB_EN2ZH).length + ')')
