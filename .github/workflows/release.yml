@@ -131,17 +131,21 @@ jobs:
             --draft=false \
             $PRERELEASE_FLAG
 
-          # gh release upload 对中文文件名 URL 编码有 bug（会截断/乱码），
-          # 改用 curl 直调 GitHub API，Python 做正确的 URL 编码。
+          # 等待 release 传播（避免时序导致的 404）
+          sleep 5
+
           RELEASE_ID=$(gh release view "v$RELEASE_VERSION" --json id -q '.id')
+          echo "release_id=$RELEASE_ID"
 
           for f in dist/*.zip; do
             name=$(basename "$f")
             encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${name}', safe=''))")
             echo "Uploading $name ..."
-            curl -fsSL -X POST \
-              -H "Authorization: Bearer $GH_TOKEN" \
-              -H "Content-Type: application/zip" \
-              --data-binary "@$f" \
-              "https://uploads.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets?name=${encoded}"
+            gh api \
+              --method POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Content-Type: application/octet-stream" \
+              "/repos/${{ github.repository }}/releases/$RELEASE_ID/assets?name=$encoded" \
+              --input "$f" \
+              --verbose
           done
