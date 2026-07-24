@@ -6,10 +6,11 @@
 
 有两类文本是**服务端生成后直接发给客户端**的，客户端装什么都救不回来：
 
-1. **资源蜜蜂蜂笼**：抓蜂时服务端把蜂名解析成纯字符串烙进物品 NBT。
-   专用服务器语言表只有英文 → 蜂笼永远显示 `Cyanite Bee` 之类。
-   `mods/pb_hanhua_server-*.jar` 以语言注入方式让服务端解析出中文
-   （已包含 461 种蜂名）。**注意：只对新抓的蜂生效，旧蜂笼的名字已烙死。**
+1. **资源蜜蜂蜂笼/实体**：抓蜂时服务端把蜂名解析成纯字符串烙进物品 NBT。
+   `kubejs/server_scripts/pb_hanhua_cage_migrate.js` 会按 NBT 里的真实蜂种 ID
+   把蜂笼名与实体名改写为权威译名（与客户端资源包同源）。
+   **注意：服务端绝不安装语言注入 mod**——那会让服务端现算的文本变中文、
+   而 JEI/配方（客户端由英文数据现算）不变，两边名字对不上，玩家查不到配方。
 2. **RFTools 建造机/形状卡的聊天反馈**（"未选择建造机！"等）：由服务端逻辑
    发送。`mods/vaultpatcher.jar` + `vaultpatcher/modules/` 的 RFTools 定向
    模块让服务端发出的就是中文。
@@ -23,9 +24,9 @@
 把本包内以下内容覆盖到服务器数据目录（含 `mods/`、`server.properties` 的那层）：
 
 ```
-mods/pb_hanhua_server-*.jar
 mods/vaultpatcher.jar
 vaultpatcher/modules/*.json
+kubejs/server_scripts/pb_hanhua_cage_migrate.js
 config/
 ```
 

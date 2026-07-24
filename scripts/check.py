@@ -69,6 +69,18 @@ for name in server_list:
             if bad:
                 errors.append(f'{name}.json: 服务端模块含全局替换 {bad}（会污染服务端数据，禁止入服务端清单）')
 
+# 2.7: 资源蜜蜂译名单一真源：脚本表必须与资源包 zh_cn 一致（由 gen_pb_hanhua.py 生成）
+pb_pack = json.loads((PACK_DIR / 'assets/productivebees/lang/zh_cn.json').read_text(encoding='utf-8'))
+club = ROOT / 'kubejs' / 'client_scripts' / 'pb_hanhua_tooltip.js'
+mm = re.search(r'const PB_ID2ZH = (\{.*?\});', club.read_text(encoding='utf-8'), re.S)
+if not mm:
+    errors.append('pb_hanhua_tooltip.js: 缺 PB_ID2ZH（必须由 gen_pb_hanhua.py 生成）')
+else:
+    for base, zh in json.loads(mm.group(1)).items():
+        expect = pb_pack.get(f'entity.productivebees.{base}_bee', pb_pack.get(f'entity.productivebees.{base}'))
+        if expect is not None and expect != zh:
+            errors.append(f'蜂名漂移: {base} 脚本={zh!r} 资源包={expect!r}（真源是资源包，请重跑 gen_pb_hanhua.py）')
+
 # 3: VaultPatcher 主配置
 cfg_path = ROOT / 'config' / 'vaultpatcher_asm' / 'config.json'
 cfg = json.loads(cfg_path.read_text(encoding='utf-8'))

@@ -27,9 +27,11 @@ chmod +x "$CSTAGE/install.sh"
 SSTAGE="dist/${BASE}-服务端"
 rm -rf "$SSTAGE"
 mkdir -p "$SSTAGE/mods" "$SSTAGE/vaultpatcher/modules"
-# 蜂名语言注入 mod：源码目录 → jar
-(cd server-lang-mod && zip -X -q -r "../${SSTAGE}/mods/pb_hanhua_server-1.0.0.jar" META-INF assets -x '*.DS_Store')
 cp mods/vaultpatcher.jar "$SSTAGE/mods/"
+# 蜂名迁移脚本（KubeJS 服务端）：按 NBT ID 改写老蜂笼/老实体的显示名
+# （不再用语言注入 mod —— 服务端数据必须保持上游英文，否则与 JEI/配方分裂）
+mkdir -p "$SSTAGE/kubejs/server_scripts"
+cp kubejs/server_scripts/pb_hanhua_cage_migrate.js "$SSTAGE/kubejs/server_scripts/"
 # 服务端安全模块子集（清单与准入标准见 scripts/server_modules.txt，check.py 把关）
 grep -v '^#' scripts/server_modules.txt | while IFS= read -r m; do
   [ -n "$m" ] && cp "vaultpatcher/modules/$m.json" "$SSTAGE/vaultpatcher/modules/"
