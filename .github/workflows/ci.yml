@@ -19,6 +19,12 @@ jobs:
       - name: 汉化文件校验
         run: python3 scripts/check.py
 
+      # 蜂名真源→脚本 无漂移（快照离线重跑，任何手改生成文件都会失败）
+      - name: 蜂名生成器一致性
+        run: |
+          python3 scripts/gen_pb_hanhua.py scripts/pb_upstream_en_us.json
+          git diff --exit-code kubejs/client_scripts/pb_hanhua_tooltip.js kubejs/server_scripts/pb_hanhua_cage_migrate.js
+
       - name: 安装脚本语法检查
         run: bash -n installer/install.sh
 
