@@ -125,8 +125,14 @@ jobs:
 
           gh release delete "v$RELEASE_VERSION" --yes 2>/dev/null || true
 
+          # 先建 release（不带资源），再逐个上传 zip
+          # gh release create 带中文文件名资源时内部 upload 会 404，拆开可避免
           gh release create "v$RELEASE_VERSION" \
-            dist/*.zip \
             --title "绿油油版汉化 v$RELEASE_VERSION" \
             --notes "$NOTES" \
+            --draft=false \
             $PRERELEASE_FLAG
+
+          for f in dist/*.zip; do
+            gh release upload "v$RELEASE_VERSION" "$f" --clobber
+          done
