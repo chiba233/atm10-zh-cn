@@ -111,12 +111,21 @@ jobs:
         run: |
           set -euo pipefail
 
-          NOTES=$(awk -v ver="$RELEASE_VERSION" '
-            $0 ~ "^## " ver { found=1; next }
-            found && /^## / { exit }
-            found { buf = buf $0 "\n" }
-            END { sub(/^\n+/, "", buf); sub(/\n+$/, "", buf); print buf }
-          ' CHANGELOG.md)
+          # 取 CHANGELOG 版本段：精确版本(7.2-beta2) → 基版本(7.2) → 第一个 ## 段
+          extract() {
+            awk -v ver="$1" '
+              $0 ~ "^## " ver "([ \t]|$)" { found=1; next }
+              found && /^## / { exit }
+              found { buf = buf $0 "\n" }
+              END { sub(/^\n+/, "", buf); sub(/\n+$/, "", buf); print buf }
+            ' CHANGELOG.md
+          }
+          BASE_VERSION="${RELEASE_VERSION%%-*}"
+          NOTES=$(extract "$RELEASE_VERSION")
+          [ -z "$NOTES" ] && NOTES=$(extract "$BASE_VERSION")
+          if [ -z "$NOTES" ]; then
+            NOTES=$(awk '/^## /{if(f)exit; f=1; next} f{buf=buf $0 "\n"} END{sub(/^\n+/,"",buf);sub(/\n+$/,"",buf);print buf}' CHANGELOG.md)
+          fi
           if [ -z "$NOTES" ]; then
             NOTES="ATM10 7.2 汉化补丁 绿油油版 $RELEASE_VERSION"
           fi
