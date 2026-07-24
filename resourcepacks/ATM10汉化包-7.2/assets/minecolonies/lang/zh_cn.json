@@ -420,7 +420,7 @@
  "com.minecolonies.command.citizenlist.pagestyle": "§2 | ",
  "com.minecolonies.command.citizenlist.prev": " <- 上一页",
  "com.minecolonies.command.citizenlist.next": "下一页 -> ",
- "com.minecolonies.command.citizenmodify.success": "%2$s的%1$s现在是%s了。",
+ "com.minecolonies.command.citizenmodify.success": "%2$s的%1$s现在是%3$s了。",
  "com.minecolonies.command.citizenreload.success": "ID 为 %s 的公民实体已被更新。",
  "com.minecolonies.command.citizenspawn.success": "生成了新的公民 (%s)。",
  "com.minecolonies.command.colonyidnotfound": "无法在这个维度里找到 ID 为 %s 的殖民地！",

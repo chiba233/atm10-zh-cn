@@ -995,7 +995,7 @@
  "death.attack.twilightforest.thrownBlock.player": "%1$s在试图逃离%2$s时被掷出的方块压扁了",
  "death.attack.twilightforest.thrownPickaxe": "%1$s被掷出的镐砸碎了脑袋",
  "death.attack.twilightforest.thrownPickaxe.player": "%1$s在试图逃离%2$s时被掷出的镐砸碎了脑袋",
- "death.attack.twilightforest.yeeted": "%1$s人生中最后一次被%2$s抛起",
+ "death.attack.twilightforest.yeeted": "%1$s人生中最后一次被抛飞了。",
  "death.attack.twilightforest.yeeted.entity": "%1$s人生中最后一次被%2$s抛起",
  "death.attack.twilightforest.yeeted.item": "%1$s在手持%3$s时人生中最后一次被%2$s抛起",
  "dimension.twilightforest.twilight_forest": "暮色森林",

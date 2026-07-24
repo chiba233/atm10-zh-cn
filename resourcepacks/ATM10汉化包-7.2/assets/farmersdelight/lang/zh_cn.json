@@ -230,7 +230,7 @@
  "effect.farmersdelight.nourishment": "滋养",
  "effect.farmersdelight.nourishment.description": "你不会再消耗饥饿值，除非需要借以恢复生命值。",
  "effect.farmersdelight.comfort": "舒适",
- "effect.farmersdelight.comfort.description": "使你对饥饿、缓慢和虚弱效果免疫。",
+ "effect.farmersdelight.comfort.description": "无论饥饿值高低，都能持续自然回复生命。",
  "enchantment.farmersdelight.backstabbing": "背刺",
  "enchantment.farmersdelight.backstabbing.description": "增加从后攻击目标时的伤害。",
  "itemGroup.farmersdelight": "农夫乐事",

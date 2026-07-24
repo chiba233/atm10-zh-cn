@@ -1,6 +1,6 @@
 {
  "itemGroup.mcwfences": "麦考的栅栏与墙壁",
- "death.attack.wired_fence": "%1s 试图穿过带刺铁丝网以逃离 %2$s",
+ "death.attack.wired_fence": "%1$s试图穿过铁丝栅栏。",
  "mcwfences.stackable.desc": "可向上堆叠以增加高度",
  "block.mcwfences.spruce_picket_fence": "云杉尖桩栅栏",
  "block.mcwfences.spruce_stockade_fence": "云杉栅栏",
