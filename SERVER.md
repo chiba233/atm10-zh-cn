@@ -1,5 +1,9 @@
 # 服务端汉化包 · 安装说明
 
+[![GitHub](https://img.shields.io/badge/GitHub-chiba233%2FyumeDSL-181717?logo=github)](https://github.com/chiba233/atm10-zh-cn)
+[![Contributing](https://img.shields.io/badge/Contributing-guide-blue.svg)](./CONTRIBUTING.md)
+[![Security](https://img.shields.io/badge/Security-policy-red.svg)](./SECURITY.md)
+
 > 适用于 ATM10 7.2 **专用服务器**（dedicated server）。单机玩家不需要本包。
 
 ## 为什么服务端也要装
