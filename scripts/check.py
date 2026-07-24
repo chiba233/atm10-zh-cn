@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
+# Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
+# SPDX-License-Identifier: GPL-3.0-or-later
 """发版前校验：把踩过的雷全部变成硬检查。
 
 1. vaultpatcher/modules/*.json 必须是合法 JSON 且结构正确

@@ -1,4 +1,7 @@
-﻿# ATM10 7.2 汉化补丁「绿油油版」安装器 (Windows)
+﻿# atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
+# Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
+# SPDX-License-Identifier: GPL-3.0-or-later
+# ATM10 7.2 汉化补丁「绿油油版」安装器 (Windows)
 # 用法：把整个汉化文件夹放进 ATM10 实例根目录后，双击「双击安装-Windows.bat」，
 # 或在 PowerShell 中运行：
 #   .\install.ps1                    # 交互菜单

@@ -1,4 +1,5 @@
 // ATM10 汉化补丁 · 资源蜜蜂数据迁移 (服务端)
+// Copyright (C) 2026 星野夢華 (Hoshino Yumeka) · SPDX-License-Identifier: GPL-3.0-or-later
 // !! 本文件由 scripts/gen_pb_hanhua.py 生成，勿手改；译名真源是资源包 zh_cn !!
 // 只动纯显示字段（蜂笼 custom_data.name / 实体 CustomName），按 NBT 的
 // entity/type ID 查权威译名。玩家自定义名由 PB_SYS 安全闸保护。

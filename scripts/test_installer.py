@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
+# Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
+# SPDX-License-Identifier: GPL-3.0-or-later
 """安装脚本端到端测试（三平台 CI 共用）。
 
 流程：造一个假游戏实例 → 把「释放后的汉化文件夹」放进实例根目录 →
