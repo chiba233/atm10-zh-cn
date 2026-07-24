@@ -26,12 +26,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PACK_LANG = ROOT / 'resourcepacks/ATM10汉化包-7.2/assets/productivebees/lang/zh_cn.json'
 
-# 旧版 PB 的梗名（现版本已改名，只存在于早年存档 NBT 中）→ 对应的蜂 id
-LEGACY_EN = {
-    'Redastone Bee': 'redstone',
-    'The Ter-Bee-Nator': 'wither',  # 若 id 不存在则译名回退到下方 LEGACY_EN_FALLBACK
-}
-LEGACY_EN_FALLBACK = {'The Ter-Bee-Nator': '终结者蜜蜂'}
+# ⚠️ 玩家自定义名（命名牌/铁砧）神圣不可侵犯：迁移与显示层都只处理
+# "已知系统生成名"的封闭集合，集合外的名字一律原样保留。
+# 教训：曾把 "The Ter-Bee-Nator"（玩家改名的 BeeBee）臆断为旧版梗名并覆盖，毁了玩家数据。
 # 历史上用过、后被否掉的中文译名 → 归一到权威译名（联调蜂/神蜂特工队 均为 fbi 旧译）
 LEGACY_ZH = ['联调蜂', '神蜂特工队']
 LEGACY_ZH_TARGET_ID = 'fbi'
@@ -80,14 +77,28 @@ def main() -> None:
             continue
         if base in id2zh:
             en2zh[env] = id2zh[base]
-    for env, base in LEGACY_EN.items():
-        en2zh[env] = id2zh.get(base) or LEGACY_EN_FALLBACK[env]
 
     # 类型行专用表（无 Bee 后缀的 Title Case，如 "Kamikaz"/"Benitoite Crystal"）
     # 只在 "类型: X (N%)" 整段精确匹配中使用，绝不进通用正则
     type2zh = {title_case(base): zh for base, zh in id2zh.items() if base != 'bee'}
 
+    # 已知系统生成名集合（迁移安全闸）：只有名字在此集合内才允许改写。
+    # 含：en_us 真名 / TitleCase 派生（带与不带 Bee 后缀）/ 权威中文名 /
+    # 被否掉的旧中文译名 / 原始 ID 两种形态。玩家自定义名绝不在此集合内。
+    sys_names = set()
+    for base, zh in id2zh.items():
+        sys_names.add(zh)
+        sys_names.add(title_case(base) + ' Bee')
+        sys_names.add(title_case(base))
+        sys_names.add('productivebees:' + base)
+        sys_names.add('productivebees:' + base + '_bee')
+    sys_names.update(en2zh.keys())
+    sys_names.update(LEGACY_ZH)
+    sys_names.add('Bee')
+    sys_names.add('蜜蜂')
+
     zh_alias = {old: id2zh[LEGACY_ZH_TARGET_ID] for old in LEGACY_ZH}
+
 
     # 迁移表: NBT entity/type 的完整 id -> 中文名
     bid2zh = {}
@@ -177,6 +188,7 @@ console.info('[pb_hanhua] 显示层已注册 (ID:' + Object.keys(PB_ID2ZH).lengt
               '// entity/type ID 查权威译名 —— 不做任何字符串猜测替换。\n'
               '// entity 等协议字段绝不碰。\n'
               'const PB_BID2ZH = ' + j(bid2zh) + ';\n'
+              'const PB_SYS = ' + j({n: 1 for n in sorted(sys_names)}) + ';\n'
               '''
 const $DataComponents = Java.loadClass('net.minecraft.core.component.DataComponents')
 const $CustomData = Java.loadClass('net.minecraft.world.item.component.CustomData')
@@ -215,6 +227,8 @@ PlayerEvents.tick(function (event) {
                 let zh = cageZh(tag)
                 if (zh === null) continue
                 let name = String(tag.getString('name'))
+                // 安全闸: 只改写已知系统生成名, 玩家自定义名(命名牌)绝不碰
+                if (!(name in PB_SYS)) continue
                 if (zh !== name) {
                     tag.putString('name', zh)
                     stack.set($DataComponents.CUSTOM_DATA, $CustomData.of(tag))
@@ -248,6 +262,8 @@ EntityEvents.spawned(function (event) {
         }
         if (zh === null) return
         let nm = String(ent.getCustomName().getString())
+        // 安全闸: 只改写已知系统生成名, 玩家自定义名(命名牌)绝不碰
+        if (!(nm in PB_SYS)) return
         if (zh !== nm) {
             ent.setCustomName($Component.literal(zh))
             console.info('[pb_hanhua] 实体迁移: ' + nm + ' -> ' + zh)
