@@ -51,7 +51,7 @@
  "generatorgalore.screen.fluid_level": "%s：%s",
  "generatorgalore.screen.fuel_time": "剩余燃料时间：%s",
  "generatorgalore.screen.fuel_type": "燃料类型：%s",
- "generatorgalore.screen.generation_rate": "燃料类型：%sFE/t",
+ "generatorgalore.screen.generation_rate": "产能速率：%sFE/t",
  "generatorgalore.screen.max_energy": "最大能量：%sFE",
  "generatorgalore.screen.transfer_rate": "传输速率：%sFE/t",
  "item.generatorgalore.copper_to_iron_upgrade": "铜→铁升级",
