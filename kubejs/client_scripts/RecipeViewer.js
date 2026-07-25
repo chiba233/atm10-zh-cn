@@ -160,7 +160,7 @@ RecipeViewerEvents.addInformation('item', allthemods => {
         '§8将§c多态催化剂§8投入§1水§8中，可获得多态流体'
     ])
     allthemods.add('justdirethings:portal_fluid_catalyst', [
-        '§8将§d传送流体催化剂§8投入§8多态流体§d中，地点位于§8末地§5，即可获得不稳定的传送流体'
+        '§8将§d传送流体催化剂§8投入§d多态流体§8中，地点位于§5末地§8，即可获得§5不稳定的传送流体'
     ])
 })
 

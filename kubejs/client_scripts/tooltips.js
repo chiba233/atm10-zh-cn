@@ -7,7 +7,7 @@ ItemEvents.modifyTooltips(allthemods => {
 
     allthemods.add(['allthemodium:allthemodium_ore', 'allthemodium:allthemodium_slate_ore'],[
         Text.of('§7至少需要下界合金级才能挖掘'),
-        Text.of('§6生成于深暗生物群系，且始终以暴露于空气中的方式生成'),
+        Text.of('§6生成于深暗之域，且始终以暴露于空气中的方式生成'),
         Text.of('§6亦可在挖矿维度的深板岩层中发现')
     ])
     allthemods.add(['allthemodium:vibranium_ore', 'allthemodium:other_vibranium_ore'],[
@@ -48,10 +48,10 @@ ItemEvents.modifyTooltips(allthemods => {
         Text.of('§6在远古城市的可疑粘土中发现')
     ])
     allthemods.add('allthemodium:vibranium_upgrade_smithing_template',[
-        Text.of('§b可在堡垒中的可疑灵魂沙里找到')
+        Text.of('§b可在堡垒遗迹的可疑灵魂沙里找到')
     ])
     allthemods.add('allthemodium:unobtainium_upgrade_smithing_template',[
-        Text.of('§d掉落自异界地牢图书馆内的试炼刷怪笼')
+        Text.of('§d掉落自异界合金地牢图书馆内的试炼刷怪笼')
     ])
 
     //Forbidden Arcanus
