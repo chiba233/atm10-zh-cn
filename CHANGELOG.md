@@ -31,6 +31,19 @@
 - 任务书：补全 cataclysm / undergarden / railcraft / 神化 等章节缺口；
   章节标题 XyCraft→晶工艺、Oritech→奥日科技、RailCraft→铁路工艺，补章节副标题；
   「墓地」→「墓园」等译名与结构罗盘统一。
+- **任务书术语 / 品牌统一（跟物品名对齐，不再执着保留英文）**：以模组自译名 / 物品名 /
+  社区标准为单一真源——Allthemodium→ATM（与物品 ATM锭 / ATM镐 / ATM透视药水 统一，含基础
+  半吊子错译「所有modium」）、Just Dire Things→可怖之物（修正基础错译「极端事物」）、
+  EnderIO→末影接口、PneumaticCraft→气动工艺、EvilCraft→邪恶工艺、
+  Hostile Neural Networks→敌对神经网络、Ars Nouveau→新生魔艺、Pipez→管道、
+  Mob Grinding Utils→刷怪塔实用设备；维度名按社区认可：Mining Dimension→挖矿维度、
+  The Beyond→彼岸；「古代金字塔」与任务「远古金字塔」打架 → 统一为远古金字塔。
+  模组自身也保留英文的（MekaSuit / QIO / LaserIO / MEGA）不强译。
+- **修任务书 3 个会崩溃的非法颜色码**：`&难得素秘术师护甲`（漏了 &5）、`&l&开裂&r石头`
+  （漏了 &b）、`&高级磁盘外壳`（多余 &）——FTB 把 `&`+中文 当颜色码解析，报
+  「Invalid formatting! Unknown formatting symbol」。
+- **补 Silent Gear 章节副标题**：服务端缺 chapter_subtitle 键 → 显示英文
+  "And Productive Metalworks"，补基础译名「以及高效金属加工」（做成可复现 delta）。
 - 资源蜜蜂体系：译名单一真源 + 生成器派生双端脚本；服务端按 NBT ID 迁移旧蜂笼 / 实体显示名；
   玩家命名牌名字绝不触碰；JEI 类型行精确翻译。
 - 结构罗盘 / 自然罗盘结构名；传送石碑维度名；The Bumblezone 维度统一为「嗡嗡领域」；
