@@ -86,12 +86,28 @@
     和区块数对调、ftbquests 队伍名与奖励数对调、MI 超频把倍率当刻数）；
   - 修 **8 条非法 `§` 颜色码**（`§` 后面跟中文 → 那个字被渲染器吞掉）：气动工艺
     「向左/右§侧展开」「§喷溅型」、实体过滤帮助、mekanistic routers 模块标题等；
-  - 修 **50 条参数被译文吞掉**：精致存储双前缀 `%s%s`（38 条，染色/装饰前缀永远不显示）、
+  - 修 **十余条参数被译文吞掉**：
     DimStorage 储量/液体/亮度/温度**数值整个不显示**、JourneyMap 路径点 Id、
     刷怪塔锯片升级把上限写死成 10、artifacts 触发几率、工业先锋镭射透镜颜色前缀、
     MineColonies 用了**全角 `％s`** 导致界面直接显示「％s」、
     以及 `misc.refinedstorage.no_permission.open` 的译文竟然是「64k存储元件」这么个
     完全无关的物品名。
+- **精致存储木桶/箱子的木头名（1517 条）**：反编译 sophisticatedstorage 1.5.80 确认
+  `getWoodDisplayName()` 用 `translatableWithFallback("wood_name.sophisticatedstorage.<木头>", 美化后的注册名)`，
+  而 jar 里**只定义了 11 种原版木头**的键 → 模组木头全部回退成英文
+  （「限类Jackfruit木桶 I」）。译名不另起一套，直接从该木头的**木板名**推导
+  （橡木木板→橡木、竹板→竹、绯红菌板→绯红菌），单一真源。
+  模组注册 WoodType 有两种风格，键名跟着变，两种都发：
+  `new WoodType("productivetrees:red_banana")` → `….productivetrees.red_banana`、
+  `new WoodType("bloom")` → `….bloom`（deeperdarker 繁花木就是裸名那种）。
+  裸名撞车且译名不一致的 5 条丢弃（alder / ironwood / mangrove / red_bamboo / rowan），
+  宁显英文不张冠李戴。生成器 `scripts/gen_wood_names.py` + 快照 `scripts/wood_planks_names.json`。
+  ⚠️ 同时**撤回**上一版把 `%s木桶` 补成 `%s%s木桶` 的改动：第二个参数经字节码确认
+  只是**一个空格分隔符**，中文不需要，补上去只会变成「限类Pink Ipe 木桶 I」。
+- **把这次踩的坑变成硬检查**（`scripts/check.py` 第 6 节，打包时自动跑）：
+  译文的占位符集合必须 ⊆ 英文原文的（可以少，绝不可以多；「少」是译者的合法选择，
+  禁止擅自补回来）、同序号参数不许把 `%s` 降级成 `%d`/`%f`、禁止结尾裸 `%`、
+  禁止英文原文没有的非法 `§` 码。真源 `scripts/upstream_format_en_us.json`。
 - **品牌名被按词典义机翻（8 条）**：作者社交链接按钮 `Discord`→「不和」
   （SFM 工厂管理器与 Observable **两处**）、`Ko-fi`→「咖啡相伴/天堂之路」
   （mss/mes/mns/mvs 四个模组）、`Patreon`→「赞助」。这类是点进去要能对上的平台名，

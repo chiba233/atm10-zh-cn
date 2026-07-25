@@ -140,6 +140,81 @@ else:
                     errors.append(
                         f"{rel}: choice('{m.group(1)}') 是协议值，必须保持英文（翻译会崩溃）")
 
+# 6: 占位符 / 颜色码安全（2026-07-25 对抗与踩坑后固化）
+#    真源 scripts/upstream_format_en_us.json（gen_format_snapshot.py 生成）
+#    红线一：译文的占位符集合必须 ⊆ 英文原文的 —— 可以少，绝不可以多。
+#      多出参数 = 运行时参数不足 → TranslatableFormatException。
+#      「少」是译者的合法选择，**禁止擅自补回来**：精致存储 `%s%s木桶` 的第二个
+#      参数其实只是个空格，补上去反而变成「限类Pink Ipe 木桶 I」。
+#    红线二：同一序号的转换符不许从 %s 降级成 %d/%f（类型对不上，两条渲染路径都炸）。
+#    红线三：结尾裸 % —— MC 的 FORMAT_PATTERN 会匹配到字符串结尾并抛异常
+#      （原版自带的反例键就是 translation.test.invalid = "hi %"）。
+#    红线四：§ 后面跟非法字符 → 那个字符被渲染器静默吞掉。
+FMT_SNAPSHOT = ROOT / 'scripts' / 'upstream_format_en_us.json'
+if FMT_SNAPSHOT.exists():
+    up = json.loads(FMT_SNAPSHOT.read_text(encoding='utf-8'))
+    TOK = re.compile(r'%(?:(\d+)\$)?(\d+)?(?:\.(\d+))?([a-zA-Z%])')
+    TRAIL = re.compile(r'(?<!%)%$')
+    SECT_OK = set('0123456789abcdefklmnorABCDEFKLMNOR')
+
+    def _profile(s):
+        prof, seq = {}, 0
+        for m in TOK.finditer(s):
+            conv = m.group(4)
+            if conv == '%':
+                continue
+            if m.group(1):
+                idx = int(m.group(1))
+            else:
+                seq += 1
+                idx = seq
+            prof.setdefault(idx, conv)
+        return prof
+
+    def _bad_sect(s):
+        return {m.group(1) for m in re.finditer('§(.)', s) if m.group(1) not in SECT_OK}
+
+    # 豁免：上游 en_us 自己写坏了，我们的译文才是对的（每条都写清理由，防止豁免变成垃圾桶）
+    FMT_ALLOW = {
+        # 上游把 "%3$s" 打成了 "%3$"（缺转换符），模组实际传 3 个参数
+        'death.attack.freeze.item',
+        # 上游把 "%s" 打成了 "% s"（多一个空格），导致英文版根本不替换
+        'item.occultism.book_of_calling_djinni.tooltip.deposit',
+    }
+    lang_files = list(PACK_DIR.rglob('lang/zh_cn.json'))
+    lang_files += list((ROOT / 'kubejs' / 'assets').rglob('lang/zh_cn.json'))
+    for p in lang_files:
+        rel = p.relative_to(ROOT).as_posix()
+        try:
+            d = json.loads(p.read_text(encoding='utf-8'))
+        except Exception:
+            continue                       # 4 已经报过 JSON 错
+        for k, zh in d.items():
+            if not isinstance(zh, str):
+                continue
+            if k == '_comment' or k in FMT_ALLOW:
+                continue               # _comment 是注释键，永远不会被渲染
+            en = up.get(k)
+            if en is None:
+                continue
+            pe, pz = _profile(en), _profile(zh)
+            extra = sorted(set(pz) - set(pe))
+            if extra:
+                errors.append(f'{rel}: {k} 译文多出英文没有的占位符 {extra}'
+                              f'（运行时参数不足会抛 TranslatableFormatException）'
+                              f'\n      en={en!r}\n      zh={zh!r}')
+            downgrade = sorted(i for i in set(pe) & set(pz)
+                               if pe[i] == 's' and pz[i] != 's')
+            if downgrade:
+                errors.append(f'{rel}: {k} 第 {downgrade} 个参数把 %s 降级成了 %{pz[downgrade[0]]}'
+                              f'（类型对不上，必炸）\n      en={en!r}\n      zh={zh!r}')
+            if TRAIL.search(zh) and not TRAIL.search(en):
+                errors.append(f'{rel}: {k} 译文以裸 % 结尾（MC 会当非法格式抛异常）\n      zh={zh!r}')
+            new_sect = _bad_sect(zh) - _bad_sect(en)
+            if new_sect:
+                errors.append(f'{rel}: {k} 非法 § 颜色码 {sorted(new_sect)}'
+                              f'（§ 后面那个字会被渲染器吞掉）\n      zh={zh!r}')
+
 if errors:
     print(f'❌ 校验失败，共 {len(errors)} 处：')
     for e in errors:
