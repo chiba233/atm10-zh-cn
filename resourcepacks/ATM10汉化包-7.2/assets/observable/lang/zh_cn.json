@@ -16,7 +16,7 @@
  "text.observable.get_btn": "获取！",
  "text.observable.overlay": "覆盖层",
  "text.observable.docs": "Wiki",
- "text.observable.discord": "不和",
+ "text.observable.discord": "Discord",
  "text.observable.donate": "捐赠",
  "text.observable.profile_started": "正在运行可视性能侦测分析，持续 %d 秒...",
  "text.observable.profile_uploaded": "配置文件已上传到 %s",

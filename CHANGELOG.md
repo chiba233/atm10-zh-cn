@@ -65,6 +65,37 @@
 - 神秘农业作物名假翻译修复（纯客户端）；修复其配置误上服务器导致的进服刷屏报错。
 - RFTools：24 个 .gui + 硬编码界面文本；建造机服务端聊天反馈汉化
   （服务端包 VaultPatcher 类定向模块）；协议值按设计保留英文防崩溃。
+- **Jonn's Trophies 奖杯名汉化（推翻上一版「无法汉化」的结论）**：反编译
+  trophymanager 2.5.0 后确认 `TrophyItem.getName()` 是
+  `Component.translatable(NBT.TrophyData.Name)` —— 烘焙进 NBT 的那串
+  「<生物显示名> Trophy」是被当**翻译键**用的，资源包完全能翻。按四种烘焙形态
+  （创造栏 `idToName` 的 `Polar bear`／专用服务端 en_us 的 `Polar Bear`／服务端
+  查不到键时的原始键名／单人存档下的中文名）全量生成 **2.5 万条**映射，
+  并补上 `entity.<ns>.name = "Shiny %s"` 这类**模板拼名**实体
+  （实测烘焙成 `Shiny zombie_horse Trophy`，纯 en_us 扫描会整类漏掉）。
+  多个实体撞同一串烘焙名且译名不同的 33 条按老规矩丢弃——宁显英文不张冠李戴。
+  生成器 `scripts/gen_trophy_names.py` + 快照 `scripts/trophy_entity_names.json`，单一真源。
+- **格式串对抗（用 Minecraft 自己的 `FORMAT_PATTERN` 逐键比对英文原文）**：
+  - 修 **7 条结尾裸 `%`**：MC 的格式正则会匹配到字符串结尾并抛
+    `TranslatableFormatException`（原版自带的反例键就是 `translation.test.invalid = "hi %"`），
+    Create 随机填充、railcraft 轨道提示、reliquary 配置项等；
+  - 修 **20 条致命格式错**：译文多出英文没有的参数（silentgear 蓝图书、oritech 无人机、
+    integrateddynamics 签名/输入类型）、把 `%s` 降级成 `%d`/`%f` 导致类型对不上
+    （modular routers 投掷器/调整值、silentgear 修理包与采掘等级、EI 循环时间）、
+    以及**参数顺序搞反**（curios 加/删栏位把「数量」和「类型」对调、ftbchunks 把玩家名
+    和区块数对调、ftbquests 队伍名与奖励数对调、MI 超频把倍率当刻数）；
+  - 修 **8 条非法 `§` 颜色码**（`§` 后面跟中文 → 那个字被渲染器吞掉）：气动工艺
+    「向左/右§侧展开」「§喷溅型」、实体过滤帮助、mekanistic routers 模块标题等；
+  - 修 **50 条参数被译文吞掉**：精致存储双前缀 `%s%s`（38 条，染色/装饰前缀永远不显示）、
+    DimStorage 储量/液体/亮度/温度**数值整个不显示**、JourneyMap 路径点 Id、
+    刷怪塔锯片升级把上限写死成 10、artifacts 触发几率、工业先锋镭射透镜颜色前缀、
+    MineColonies 用了**全角 `％s`** 导致界面直接显示「％s」、
+    以及 `misc.refinedstorage.no_permission.open` 的译文竟然是「64k存储元件」这么个
+    完全无关的物品名。
+- **品牌名被按词典义机翻（8 条）**：作者社交链接按钮 `Discord`→「不和」
+  （SFM 工厂管理器与 Observable **两处**）、`Ko-fi`→「咖啡相伴/天堂之路」
+  （mss/mes/mns/mvs 四个模组）、`Patreon`→「赞助」。这类是点进去要能对上的平台名，
+  一律还原英文——跟「不执着保留英文品牌名」不矛盾：玩家认的是译名，平台认的是原名。
 - LICENSE / 各源文件加入作者署名（Copyright © 2026 星野夢華）。
 - 安装器：三平台、自动备份 / 恢复、options.txt 自动启用、可选拼音搜索、
   实例目录自动检测失败时支持手动输入路径（含清洗复制/拖拽带来的引号与转义空格，配套 CI 回归测试）。
@@ -75,5 +106,5 @@
 
 - **Sodium「粒子效果」里的原版粒子名无法汉化**：sodium-extra 0.9.3 自身问题
   （它内置的原版粒子中文也渲染不出来），资源包无法干预；模组自定义粒子不受影响。
-- **Jonn's Trophies 奖杯名**：奖杯名字是模组用实体注册 ID 生成后烤进物品 NBT 的死字符串
-  （不走翻译键），资源包无法翻译创造菜单里的预生成奖杯；打怪掉落的奖杯会按当前语言显示中文。
+- **玩家奖杯**（击杀玩家掉落）名字是玩家 ID，本就不该翻译。
+- 用命名牌改过名的生物，掉落奖杯会沿用你起的名字（`CustomName` 优先），不受本包影响。

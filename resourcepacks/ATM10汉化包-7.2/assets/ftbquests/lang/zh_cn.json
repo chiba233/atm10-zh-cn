@@ -464,7 +464,7 @@
   "ftbquests.rewards": "奖励",
   "ftbquests.reward.team_reward": "队伍奖励",
   "ftbquests.reward.team_reward.tooltip": "开启时，整个队伍共享此奖励（仅提交玩家获得）\n关闭时，所有在线玩家均会获得奖励",
-  "ftbquests.reward.blocked": "队伍 '%s' 的 %d 个奖励被封锁",
+  "ftbquests.reward.blocked": "队伍 '%2$s' 的 %1$s 个奖励被封锁",
   "ftbquests.reward.this_blocked": "队伍 '%s' 的奖励被封锁",
   "ftbquests.reward.emergency": "应急物品",
   "ftbquests.reward.autoclaim": "自动领取",

@@ -82,7 +82,7 @@
  "gui.sfm.logs.no_content": "你好，世界！\n使用顶部按钮调整日志等级。\n单次程序执行后，追踪（Trace）、调试（Debug）和信息（Info）日志级别将被关闭。\n日志记录可能拖慢执行速度。使用复制按钮以便在其他的编辑器中查看。",
  "gui.sfm.logs.title": "日志",
  "gui.sfm.manager.button.copy_to_clipboard": "复制到剪贴板",
- "gui.sfm.manager.button.discord": "不和",
+ "gui.sfm.manager.button.discord": "Discord",
  "gui.sfm.manager.button.paste_clipboard": "从剪贴板粘贴",
  "gui.sfm.manager.button.rebuild": "重建线缆网络",
  "gui.sfm.manager.button.reset": "重置",

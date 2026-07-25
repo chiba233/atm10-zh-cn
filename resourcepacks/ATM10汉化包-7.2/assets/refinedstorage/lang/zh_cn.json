@@ -439,7 +439,7 @@
  "misc.refinedstorage.press_shift_for_help": "按下 SHIFT 获取帮助",
  "misc.refinedstorage.autocrafting_task_completed": "任务完成",
  "misc.refinedstorage.no_permission": "无权限",
- "misc.refinedstorage.no_permission.open": "64k存储元件",
+ "misc.refinedstorage.no_permission.open": "你没有权限打开%s。",
  "misc.refinedstorage.no_permission.insert": "你没有存入物品的权限",
  "misc.refinedstorage.no_permission.extract": "你没有取出物品的权限",
  "misc.refinedstorage.no_permission.build.place": "你没有在这里放置 %s 的权限",

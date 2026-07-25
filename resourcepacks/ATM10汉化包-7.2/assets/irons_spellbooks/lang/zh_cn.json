@@ -309,7 +309,7 @@
   "block.irons_spellbooks.pocket_dimension_portal_frame": "口袋维度传送门方块",
   "block.irons_spellbooks.ice_spider_egg": "冰霜蜘蛛卵",
   "tooltip.irons_spellbooks.shift_tooltip": "[潜行+]",
-  "tooltip.irons_spellbooks.level": "等级%d",
+  "tooltip.irons_spellbooks.level": "等级%s",
   "tooltip.irons_spellbooks.level_plus": "%d（+%d）",
   "tooltip.irons_spellbooks.level_minus": "%d (%d)",
   "tooltip.irons_spellbooks.scroll_tooltip": "抄入法术书后：",

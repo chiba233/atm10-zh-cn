@@ -896,7 +896,7 @@
   "message.oritech.machine.missing_core": "机器还未组装完毕。请添加缺失的机器核心",
   "message.oritech.machine_frame.missing_frame": "框架缺失。请在机器后面使用机器框架方块添加中空的矩形框架",
   "message.oritech.enchanter.insert_item": "插入物品",
-  "message.oritech.drone.invalid_distance": "目标必须至少在50方块以外。\n（当前距离：%d）",
+  "message.oritech.drone.invalid_distance": "目标必须至少在50方块以外。",
   "message.oritech.drone.target_set": "目标港口已设置。\n无人机将会在物品栏不为空时始终运输。",
   "message.oritech.drone.target_invalid": "目标不是可用的无人机港。\n确保目标港口已被加载并激活。",
   "message.oritech.pump.starting": "正在启动",

@@ -34,7 +34,7 @@
  "tooltip.irons_lib.transmog_failure": "缺少幻化权限",
  "tooltip.irons_lib.transmog_option.remove": "移除幻化",
  "tooltip.irons_lib.transmog_option.title": "Patreon 幻化:",
- "tooltip.irons_lib.transmog_option.requirement": "需要具有 %s 赞助状态",
+ "tooltip.irons_lib.transmog_option.requirement": "需要 %s Patreon 赞助身份",
  "tooltip.irons_lib.transmog_option.supported_slots": "支持的插槽：%s",
  "tooltip.irons_lib.transmog_option.supported_slots.all": "所有",
  "tooltip.irons_lib.transmog_option.supported_slots.feet": "靴子",

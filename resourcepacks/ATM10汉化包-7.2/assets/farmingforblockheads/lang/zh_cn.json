@@ -20,7 +20,7 @@
  "gui.farmingforblockheads.market.tooltip_flowers": "鲜花",
  "gui.farmingforblockheads.market.tooltip_other": "其他",
  "gui.farmingforblockheads.market.tooltip_none": "没有新提示",
- "gui.farmingforblockheads.market.cost": "%dx %s",
+ "gui.farmingforblockheads.market.cost": "%s",
  "jei.farmingforblockheads.market": "贸易站",
  "tooltip.farmingforblockheads.chicken_nest": "收集鸡蛋",
  "tooltip.farmingforblockheads.feeding_trough": "自动喂养附近动物",

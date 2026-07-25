@@ -381,7 +381,7 @@
   "item.industrialforegoing.dryrubber": "干橡胶",
   "item.industrialforegoing.plastic": "塑料片",
   "item.industrialforegoing.fertilizer": "肥料",
-  "item.industrialforegoing.laser_lens": "镭射聚焦透镜",
+  "item.industrialforegoing.laser_lens": "%s镭射聚焦透镜",
   "item.industrialforegoing.laser_lens_inverted": "镭射聚焦透镜（反向）",
   "item.industrialforegoing.range_addon": "范围升级插件",
   "item.industrialforegoing.adult_filter": "成年生物过滤插件",

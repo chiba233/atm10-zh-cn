@@ -1237,7 +1237,7 @@
   "tooltip.eternal_starlight.butterfly_wings_amulet.armor_erosion": "使用以太腐蚀攻击者或被攻击生物的盔甲",
   "tooltip.eternal_starlight.fungus_amulet.consume_fungus": "允许穿戴者食用真菌",
   "tooltip.eternal_starlight.pearl_necklace.instant_air_recovery": "当穿戴者离开水时瞬间恢复氧气",
-  "tooltip.eternal_starlight.crescent_pendant.damage_cap": "使穿戴者单次所受伤害不超过其最大生命值的75%",
+  "tooltip.eternal_starlight.crescent_pendant.damage_cap": "使穿戴者单次所受伤害不超过其最大生命值的 75%。",
   "tooltip.eternal_starlight.crescent_pendant.repair": "缓慢修复源自月藤巨物的武器",
   "tooltip.eternal_starlight.unwearable": "不可佩戴",
   "tooltip.eternal_starlight.crest_spell_elements": "法术元素：",

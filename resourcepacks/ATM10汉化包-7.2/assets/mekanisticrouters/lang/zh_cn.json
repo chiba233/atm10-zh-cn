@@ -11,5 +11,5 @@
  "mekanisticrouters.itemText.usage.item.chemical_module_mk1": "从正对路由器朝向的相邻方块中提取化学品或向其中输入化学品。\n• 路由器的缓存区中必须装有化学品容器。",
  "mekanisticrouters.itemText.usage.item.chemical_module_mk2": "从任意周围方块中提取化学品或向其中输入化学品。\n• 路由器的缓存区中必须装有化学品容器。\n• 可将化学品输出至储罐中或从中提取化学品。",
  "mekanisticrouters.itemText.usage.item.chemical_refill_module": "远程补充玩家物品栏中的化学品容器（如喷气背包）。",
- "mekanisticrouters.guiText.popup.chemical_refill.control": "§a§化学品补货模块§r\n\n可在此处设定：\n- 应该与玩家物品栏的哪一个部分进行交互\n\n过滤器用于控制哪些物品可接收来自此模块的化学品。"
+ "mekanisticrouters.guiText.popup.chemical_refill.control": "§a化学品补货模块§r\n\n可在此处设定：\n- 应该与玩家物品栏的哪一个部分进行交互\n\n过滤器用于控制哪些物品可接收来自此模块的化学品。"
 }

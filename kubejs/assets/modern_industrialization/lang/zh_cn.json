@@ -1710,7 +1710,7 @@
  "text.modern_industrialization.OreGenerationTooltipVeinSize": "每矿脉%d种矿石",
  "text.modern_industrialization.OreGenerationTooltipY": "Y轴高度 %d 至 %d",
  "text.modern_industrialization.OreNotGenerated": "不会自然生成，但可通过采石场获得",
- "text.modern_industrialization.OverclockMachine": "使用%s可在%d刻内将此机器速度提升%f倍",
+ "text.modern_industrialization.OverclockMachine": "使用%s将该机器的速度提升%f倍，持续%d刻",
  "text.modern_industrialization.OverdriveModuleDescription1": "防止电动机器效率下降，但需消耗电力。",
  "text.modern_industrialization.OverdriveModuleDescription2": "该配方将在模块移除或机器断电前保持锁定状态。",
  "text.modern_industrialization.PipeConnectionHelp": "点击/按住Shift键点击切换",
