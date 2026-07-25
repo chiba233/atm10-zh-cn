@@ -1474,6 +1474,24 @@
   "key": "entity.cataclysm.abyss_portal",
   "zh": "深渊传送门"
  },
+ "cataclysm:all.command_0": {
+  "en": "%s is wandering",
+  "key": "entity.cataclysm.all.command_0",
+  "sub": true,
+  "zh": "%s在游荡"
+ },
+ "cataclysm:all.command_1": {
+  "en": "%s is following",
+  "key": "entity.cataclysm.all.command_1",
+  "sub": true,
+  "zh": "%s在跟随"
+ },
+ "cataclysm:all.command_2": {
+  "en": "%s is staying",
+  "key": "entity.cataclysm.all.command_2",
+  "sub": true,
+  "zh": "%s在停留"
+ },
  "cataclysm:amethyst_cluster_projectile": {
   "en": "Amethyst Cluster",
   "key": "entity.cataclysm.amethyst_cluster_projectile",
@@ -1658,6 +1676,12 @@
   "en": "Ignis",
   "key": "entity.cataclysm.ignis",
   "zh": "焰魔"
+ },
+ "cataclysm:ignis.defeat_message": {
+  "en": "Within Nether Fortresses, Ignited Beserkers have awakend...",
+  "key": "entity.cataclysm.ignis.defeat_message",
+  "sub": true,
+  "zh": "下界要塞中的炎狱亡灵蓄势待发..."
  },
  "cataclysm:ignis_abyss_fireball": {
   "en": "Ignis' Abyss Fireball",
@@ -1848,6 +1872,12 @@
   "en": "The Leviathan",
   "key": "entity.cataclysm.the_leviathan",
   "zh": "利维坦"
+ },
+ "cataclysm:the_leviathan.defeat_message": {
+  "en": "The Abyss gazes into you, Coral Golems will now appear in the ocean...",
+  "key": "entity.cataclysm.the_leviathan.defeat_message",
+  "sub": true,
+  "zh": "深渊凝视着你..."
  },
  "cataclysm:the_leviathan_immune": {
   "en": "The Leviathan is invincible outside of water!",
@@ -3644,6 +3674,102 @@
   "key": "entity.endervillages.ender_villager",
   "zh": "末影村民"
  },
+ "endervillages:ender_villager.armorer": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.armorer",
+  "sub": true,
+  "zh": "盔甲匠"
+ },
+ "endervillages:ender_villager.butcher": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.butcher",
+  "sub": true,
+  "zh": "屠夫"
+ },
+ "endervillages:ender_villager.cartographer": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.cartographer",
+  "sub": true,
+  "zh": "制图师"
+ },
+ "endervillages:ender_villager.cleric": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.cleric",
+  "sub": true,
+  "zh": "牧师"
+ },
+ "endervillages:ender_villager.ender_cat": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.ender_cat",
+  "sub": true,
+  "zh": "末影猫"
+ },
+ "endervillages:ender_villager.endervillages.enchanter": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.endervillages.enchanter",
+  "sub": true,
+  "zh": "附魔师"
+ },
+ "endervillages:ender_villager.endervillages.ender_farmer": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.endervillages.ender_farmer",
+  "sub": true,
+  "zh": "末影农民"
+ },
+ "endervillages:ender_villager.farmer": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.farmer",
+  "sub": true,
+  "zh": "农民"
+ },
+ "endervillages:ender_villager.fisherman": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.fisherman",
+  "sub": true,
+  "zh": "渔民"
+ },
+ "endervillages:ender_villager.fletcher": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.fletcher",
+  "sub": true,
+  "zh": "制箭师"
+ },
+ "endervillages:ender_villager.leatherworker": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.leatherworker",
+  "sub": true,
+  "zh": "皮匠"
+ },
+ "endervillages:ender_villager.librarian": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.librarian",
+  "sub": true,
+  "zh": "图书管理员"
+ },
+ "endervillages:ender_villager.mason": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.mason",
+  "sub": true,
+  "zh": "石匠"
+ },
+ "endervillages:ender_villager.shepherd": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.shepherd",
+  "sub": true,
+  "zh": "牧羊人"
+ },
+ "endervillages:ender_villager.toolsmith": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.toolsmith",
+  "sub": true,
+  "zh": "工具匠"
+ },
+ "endervillages:ender_villager.weaponsmith": {
+  "en": "",
+  "key": "entity.endervillages.ender_villager.weaponsmith",
+  "sub": true,
+  "zh": "武器匠"
+ },
  "eternal_starlight:aethersent_arrow": {
   "en": "Aethersent Arrow",
   "key": "entity.eternal_starlight.aethersent_arrow",
@@ -4794,6 +4920,66 @@
   "key": "entity.iceandfire.hippogryph",
   "zh": "骏鹰"
  },
+ "iceandfire:hippogryph.alex": {
+  "en": "Firey Hippogryph",
+  "key": "entity.iceandfire.hippogryph.alex",
+  "sub": true,
+  "zh": "火红骏鹰"
+ },
+ "iceandfire:hippogryph.black": {
+  "en": "Black Hippogryph",
+  "key": "entity.iceandfire.hippogryph.black",
+  "sub": true,
+  "zh": "黑色骏鹰"
+ },
+ "iceandfire:hippogryph.brown": {
+  "en": "Brown Hippogryph",
+  "key": "entity.iceandfire.hippogryph.brown",
+  "sub": true,
+  "zh": "褐色骏鹰骏鹰"
+ },
+ "iceandfire:hippogryph.chestnut": {
+  "en": "Chestnut Hippogryph",
+  "key": "entity.iceandfire.hippogryph.chestnut",
+  "sub": true,
+  "zh": "深枣红色骏鹰"
+ },
+ "iceandfire:hippogryph.creamy": {
+  "en": "Cream Hippogryph",
+  "key": "entity.iceandfire.hippogryph.creamy",
+  "sub": true,
+  "zh": "淡栗色骏鹰"
+ },
+ "iceandfire:hippogryph.dark_brown": {
+  "en": "Dark Brown Hippogryph",
+  "key": "entity.iceandfire.hippogryph.dark_brown",
+  "sub": true,
+  "zh": "深褐色骏鹰"
+ },
+ "iceandfire:hippogryph.dodo": {
+  "en": "Dodo Hippogryph",
+  "key": "entity.iceandfire.hippogryph.dodo",
+  "sub": true,
+  "zh": "渡渡骏鹰"
+ },
+ "iceandfire:hippogryph.gray": {
+  "en": "Gray Hippogryph",
+  "key": "entity.iceandfire.hippogryph.gray",
+  "sub": true,
+  "zh": "灰色骏鹰"
+ },
+ "iceandfire:hippogryph.raptor": {
+  "en": "Frosty Hippogryph",
+  "key": "entity.iceandfire.hippogryph.raptor",
+  "sub": true,
+  "zh": "冰蓝骏鹰"
+ },
+ "iceandfire:hippogryph.white": {
+  "en": "White Hippogryph",
+  "key": "entity.iceandfire.hippogryph.white",
+  "sub": true,
+  "zh": "白色骏鹰"
+ },
  "iceandfire:hippogryph_egg": {
   "en": "Hippogryph Egg",
   "key": "entity.iceandfire.hippogryph_egg",
@@ -4853,6 +5039,36 @@
   "en": "Pixie",
   "key": "entity.iceandfire.pixie",
   "zh": "小精灵"
+ },
+ "iceandfire:pixie.type_0": {
+  "en": "Pink Pixie",
+  "key": "entity.iceandfire.pixie.type_0",
+  "sub": true,
+  "zh": "红粉小精灵"
+ },
+ "iceandfire:pixie.type_1": {
+  "en": "Purple Pixie",
+  "key": "entity.iceandfire.pixie.type_1",
+  "sub": true,
+  "zh": "灵紫小精灵"
+ },
+ "iceandfire:pixie.type_2": {
+  "en": "Blue Pixie",
+  "key": "entity.iceandfire.pixie.type_2",
+  "sub": true,
+  "zh": "天蓝小精灵"
+ },
+ "iceandfire:pixie.type_3": {
+  "en": "Green Pixie",
+  "key": "entity.iceandfire.pixie.type_3",
+  "sub": true,
+  "zh": "鲜绿小精灵"
+ },
+ "iceandfire:pixie.type_4": {
+  "en": "Yellow Pixie",
+  "key": "entity.iceandfire.pixie.type_4",
+  "sub": true,
+  "zh": "明黄小精灵"
  },
  "iceandfire:pixie_charge": {
   "en": "Pixie Wand Beam",
@@ -6554,6 +6770,12 @@
   "key": "entity.minecraft.mannequin",
   "zh": "玩家模型"
  },
+ "minecraft:mannequin.label": {
+  "en": "",
+  "key": "entity.minecraft.mannequin.label",
+  "sub": true,
+  "zh": "NPC"
+ },
  "minecraft:marker": {
   "en": "Marker",
   "key": "entity.minecraft.marker",
@@ -6799,6 +7021,12 @@
   "key": "entity.minecraft.sulfur_cube",
   "zh": "硫方怪"
  },
+ "minecraft:sulfur_cube.content": {
+  "en": "",
+  "key": "entity.minecraft.sulfur_cube.content",
+  "sub": true,
+  "zh": "包含：%s"
+ },
  "minecraft:tadpole": {
   "en": "Tadpole",
   "key": "entity.minecraft.tadpole",
@@ -6834,6 +7062,210 @@
   "key": "entity.minecraft.tropical_fish",
   "zh": "热带鱼"
  },
+ "minecraft:tropical_fish.predefined.0": {
+  "en": "Anemone",
+  "key": "entity.minecraft.tropical_fish.predefined.0",
+  "sub": true,
+  "zh": "海葵鱼"
+ },
+ "minecraft:tropical_fish.predefined.1": {
+  "en": "Black Tang",
+  "key": "entity.minecraft.tropical_fish.predefined.1",
+  "sub": true,
+  "zh": "黑刺尾鲷"
+ },
+ "minecraft:tropical_fish.predefined.10": {
+  "en": "Moorish Idol",
+  "key": "entity.minecraft.tropical_fish.predefined.10",
+  "sub": true,
+  "zh": "镰鱼"
+ },
+ "minecraft:tropical_fish.predefined.11": {
+  "en": "Ornate Butterflyfish",
+  "key": "entity.minecraft.tropical_fish.predefined.11",
+  "sub": true,
+  "zh": "华丽蝴蝶鱼"
+ },
+ "minecraft:tropical_fish.predefined.12": {
+  "en": "Parrotfish",
+  "key": "entity.minecraft.tropical_fish.predefined.12",
+  "sub": true,
+  "zh": "鹦嘴鱼"
+ },
+ "minecraft:tropical_fish.predefined.13": {
+  "en": "Queen Angelfish",
+  "key": "entity.minecraft.tropical_fish.predefined.13",
+  "sub": true,
+  "zh": "额斑刺蝶鱼"
+ },
+ "minecraft:tropical_fish.predefined.14": {
+  "en": "Red Cichlid",
+  "key": "entity.minecraft.tropical_fish.predefined.14",
+  "sub": true,
+  "zh": "红丽鱼"
+ },
+ "minecraft:tropical_fish.predefined.15": {
+  "en": "Red Lipped Blenny",
+  "key": "entity.minecraft.tropical_fish.predefined.15",
+  "sub": true,
+  "zh": "红唇真蛇鳚"
+ },
+ "minecraft:tropical_fish.predefined.16": {
+  "en": "Red Snapper",
+  "key": "entity.minecraft.tropical_fish.predefined.16",
+  "sub": true,
+  "zh": "红边笛鲷"
+ },
+ "minecraft:tropical_fish.predefined.17": {
+  "en": "Threadfin",
+  "key": "entity.minecraft.tropical_fish.predefined.17",
+  "sub": true,
+  "zh": "马鲅"
+ },
+ "minecraft:tropical_fish.predefined.18": {
+  "en": "Tomato Clownfish",
+  "key": "entity.minecraft.tropical_fish.predefined.18",
+  "sub": true,
+  "zh": "白条双锯鱼"
+ },
+ "minecraft:tropical_fish.predefined.19": {
+  "en": "Triggerfish",
+  "key": "entity.minecraft.tropical_fish.predefined.19",
+  "sub": true,
+  "zh": "鳞鲀"
+ },
+ "minecraft:tropical_fish.predefined.2": {
+  "en": "Blue Tang",
+  "key": "entity.minecraft.tropical_fish.predefined.2",
+  "sub": true,
+  "zh": "蓝刺尾鲷"
+ },
+ "minecraft:tropical_fish.predefined.20": {
+  "en": "Yellowtail Parrotfish",
+  "key": "entity.minecraft.tropical_fish.predefined.20",
+  "sub": true,
+  "zh": "高鳍鹦嘴鱼"
+ },
+ "minecraft:tropical_fish.predefined.21": {
+  "en": "Yellow Tang",
+  "key": "entity.minecraft.tropical_fish.predefined.21",
+  "sub": true,
+  "zh": "黄刺尾鲷"
+ },
+ "minecraft:tropical_fish.predefined.3": {
+  "en": "Butterflyfish",
+  "key": "entity.minecraft.tropical_fish.predefined.3",
+  "sub": true,
+  "zh": "蝴蝶鱼"
+ },
+ "minecraft:tropical_fish.predefined.4": {
+  "en": "Cichlid",
+  "key": "entity.minecraft.tropical_fish.predefined.4",
+  "sub": true,
+  "zh": "丽鱼"
+ },
+ "minecraft:tropical_fish.predefined.5": {
+  "en": "Clownfish",
+  "key": "entity.minecraft.tropical_fish.predefined.5",
+  "sub": true,
+  "zh": "小丑鱼"
+ },
+ "minecraft:tropical_fish.predefined.6": {
+  "en": "Cotton Candy Betta",
+  "key": "entity.minecraft.tropical_fish.predefined.6",
+  "sub": true,
+  "zh": "五彩搏鱼"
+ },
+ "minecraft:tropical_fish.predefined.7": {
+  "en": "Dottyback",
+  "key": "entity.minecraft.tropical_fish.predefined.7",
+  "sub": true,
+  "zh": "绣雀鲷"
+ },
+ "minecraft:tropical_fish.predefined.8": {
+  "en": "Emperor Red Snapper",
+  "key": "entity.minecraft.tropical_fish.predefined.8",
+  "sub": true,
+  "zh": "川纹笛鲷"
+ },
+ "minecraft:tropical_fish.predefined.9": {
+  "en": "Goatfish",
+  "key": "entity.minecraft.tropical_fish.predefined.9",
+  "sub": true,
+  "zh": "拟羊鱼"
+ },
+ "minecraft:tropical_fish.type.betty": {
+  "en": "Betty",
+  "key": "entity.minecraft.tropical_fish.type.betty",
+  "sub": true,
+  "zh": "背蒂类"
+ },
+ "minecraft:tropical_fish.type.blockfish": {
+  "en": "Blockfish",
+  "key": "entity.minecraft.tropical_fish.type.blockfish",
+  "sub": true,
+  "zh": "方身类"
+ },
+ "minecraft:tropical_fish.type.brinely": {
+  "en": "Brinely",
+  "key": "entity.minecraft.tropical_fish.type.brinely",
+  "sub": true,
+  "zh": "咸水类"
+ },
+ "minecraft:tropical_fish.type.clayfish": {
+  "en": "Clayfish",
+  "key": "entity.minecraft.tropical_fish.type.clayfish",
+  "sub": true,
+  "zh": "陶鱼类"
+ },
+ "minecraft:tropical_fish.type.dasher": {
+  "en": "Dasher",
+  "key": "entity.minecraft.tropical_fish.type.dasher",
+  "sub": true,
+  "zh": "速跃类"
+ },
+ "minecraft:tropical_fish.type.flopper": {
+  "en": "Flopper",
+  "key": "entity.minecraft.tropical_fish.type.flopper",
+  "sub": true,
+  "zh": "飞翼类"
+ },
+ "minecraft:tropical_fish.type.glitter": {
+  "en": "Glitter",
+  "key": "entity.minecraft.tropical_fish.type.glitter",
+  "sub": true,
+  "zh": "闪鳞类"
+ },
+ "minecraft:tropical_fish.type.kob": {
+  "en": "Kob",
+  "key": "entity.minecraft.tropical_fish.type.kob",
+  "sub": true,
+  "zh": "石首类"
+ },
+ "minecraft:tropical_fish.type.snooper": {
+  "en": "Snooper",
+  "key": "entity.minecraft.tropical_fish.type.snooper",
+  "sub": true,
+  "zh": "窥伺类"
+ },
+ "minecraft:tropical_fish.type.spotty": {
+  "en": "Spotty",
+  "key": "entity.minecraft.tropical_fish.type.spotty",
+  "sub": true,
+  "zh": "多斑类"
+ },
+ "minecraft:tropical_fish.type.stripey": {
+  "en": "Stripey",
+  "key": "entity.minecraft.tropical_fish.type.stripey",
+  "sub": true,
+  "zh": "条纹类"
+ },
+ "minecraft:tropical_fish.type.sunstreak": {
+  "en": "Sunstreak",
+  "key": "entity.minecraft.tropical_fish.type.sunstreak",
+  "sub": true,
+  "zh": "日纹类"
+ },
  "minecraft:turtle": {
   "en": "Turtle",
   "key": "entity.minecraft.turtle",
@@ -6848,6 +7280,336 @@
   "en": "Villager",
   "key": "entity.minecraft.villager",
   "zh": "村民"
+ },
+ "minecraft:villager.actuallyadditions.engineer": {
+  "en": "Engineer",
+  "key": "entity.minecraft.villager.actuallyadditions.engineer",
+  "sub": true,
+  "zh": "工程师"
+ },
+ "minecraft:villager.advancedperipherals.computer_scientist": {
+  "en": "Computer Scientist",
+  "key": "entity.minecraft.villager.advancedperipherals.computer_scientist",
+  "sub": true,
+  "zh": "计算机科学"
+ },
+ "minecraft:villager.ae2.fluix_researcher": {
+  "en": "Fluix Researcher",
+  "key": "entity.minecraft.villager.ae2.fluix_researcher",
+  "sub": true,
+  "zh": "福鲁伊克斯研究员"
+ },
+ "minecraft:villager.armorer": {
+  "en": "Armorer",
+  "key": "entity.minecraft.villager.armorer",
+  "sub": true,
+  "zh": "盔甲匠"
+ },
+ "minecraft:villager.armorplus.soul_exchanger": {
+  "en": "",
+  "key": "entity.minecraft.villager.armorplus.soul_exchanger",
+  "sub": true,
+  "zh": "灵魂交换器"
+ },
+ "minecraft:villager.ars_nouveau.shady_wizard": {
+  "en": "Shady Wizard",
+  "key": "entity.minecraft.villager.ars_nouveau.shady_wizard",
+  "sub": true,
+  "zh": "可疑的巫师"
+ },
+ "minecraft:villager.beautify.botanist": {
+  "en": "",
+  "key": "entity.minecraft.villager.beautify.botanist",
+  "sub": true,
+  "zh": "植物学家"
+ },
+ "minecraft:villager.biomeswevegone.forager": {
+  "en": "Forager",
+  "key": "entity.minecraft.villager.biomeswevegone.forager",
+  "sub": true,
+  "zh": "采集者"
+ },
+ "minecraft:villager.butcher": {
+  "en": "Butcher",
+  "key": "entity.minecraft.villager.butcher",
+  "sub": true,
+  "zh": "屠夫"
+ },
+ "minecraft:villager.carpenter": {
+  "en": "Carpenter",
+  "key": "entity.minecraft.villager.carpenter",
+  "sub": true,
+  "zh": "木匠"
+ },
+ "minecraft:villager.cartographer": {
+  "en": "Cartographer",
+  "key": "entity.minecraft.villager.cartographer",
+  "sub": true,
+  "zh": "制图师"
+ },
+ "minecraft:villager.chicken_roost.chicken_dealer": {
+  "en": "",
+  "key": "entity.minecraft.villager.chicken_roost.chicken_dealer",
+  "sub": true,
+  "zh": "鸡贩"
+ },
+ "minecraft:villager.cleric": {
+  "en": "Cleric",
+  "key": "entity.minecraft.villager.cleric",
+  "sub": true,
+  "zh": "牧师"
+ },
+ "minecraft:villager.compactmachines.tinkerer": {
+  "en": "Spatial Tinkerer",
+  "key": "entity.minecraft.villager.compactmachines.tinkerer",
+  "sub": true,
+  "zh": "空间修理师"
+ },
+ "minecraft:villager.eastersdelight.egg_bunny": {
+  "en": "",
+  "key": "entity.minecraft.villager.eastersdelight.egg_bunny",
+  "sub": true,
+  "zh": "复活节兔子"
+ },
+ "minecraft:villager.electrician": {
+  "en": "Electrician",
+  "key": "entity.minecraft.villager.electrician",
+  "sub": true,
+  "zh": "电工"
+ },
+ "minecraft:villager.endervillages.enchanter": {
+  "en": "",
+  "key": "entity.minecraft.villager.endervillages.enchanter",
+  "sub": true,
+  "zh": "附魔师"
+ },
+ "minecraft:villager.endervillages.ender_farmer": {
+  "en": "",
+  "key": "entity.minecraft.villager.endervillages.ender_farmer",
+  "sub": true,
+  "zh": "末影农民"
+ },
+ "minecraft:villager.engineer": {
+  "en": "Structural Engineer",
+  "key": "entity.minecraft.villager.engineer",
+  "sub": true,
+  "zh": "结构工程师"
+ },
+ "minecraft:villager.evilcraft.werewolf": {
+  "en": "Werewolvian",
+  "key": "entity.minecraft.villager.evilcraft.werewolf",
+  "sub": true,
+  "zh": "狼人村民"
+ },
+ "minecraft:villager.farmer": {
+  "en": "Farmer",
+  "key": "entity.minecraft.villager.farmer",
+  "sub": true,
+  "zh": "农民"
+ },
+ "minecraft:villager.fisherman": {
+  "en": "Fisherman",
+  "key": "entity.minecraft.villager.fisherman",
+  "sub": true,
+  "zh": "渔夫"
+ },
+ "minecraft:villager.fletcher": {
+  "en": "Fletcher",
+  "key": "entity.minecraft.villager.fletcher",
+  "sub": true,
+  "zh": "制箭师"
+ },
+ "minecraft:villager.forager": {
+  "en": "Forager",
+  "key": "entity.minecraft.villager.forager",
+  "sub": true,
+  "zh": "采集者"
+ },
+ "minecraft:villager.gunsmith": {
+  "en": "Gunsmith",
+  "key": "entity.minecraft.villager.gunsmith",
+  "sub": true,
+  "zh": "军火商"
+ },
+ "minecraft:villager.iceandfire.scribe": {
+  "en": "Scribe",
+  "key": "entity.minecraft.villager.iceandfire.scribe",
+  "sub": true,
+  "zh": "抄书吏"
+ },
+ "minecraft:villager.immersiveengineering.electrician": {
+  "en": "Electrician",
+  "key": "entity.minecraft.villager.immersiveengineering.electrician",
+  "sub": true,
+  "zh": "电工"
+ },
+ "minecraft:villager.immersiveengineering.engineer": {
+  "en": "Structural Engineer",
+  "key": "entity.minecraft.villager.immersiveengineering.engineer",
+  "sub": true,
+  "zh": "结构工程师"
+ },
+ "minecraft:villager.immersiveengineering.gunsmith": {
+  "en": "Gunsmith",
+  "key": "entity.minecraft.villager.immersiveengineering.gunsmith",
+  "sub": true,
+  "zh": "军火商"
+ },
+ "minecraft:villager.immersiveengineering.machinist": {
+  "en": "Machinist",
+  "key": "entity.minecraft.villager.immersiveengineering.machinist",
+  "sub": true,
+  "zh": "机械师"
+ },
+ "minecraft:villager.immersiveengineering.outfitter": {
+  "en": "Outfitter",
+  "key": "entity.minecraft.villager.immersiveengineering.outfitter",
+  "sub": true,
+  "zh": "皮肤商"
+ },
+ "minecraft:villager.irons_jewelry.jeweler": {
+  "en": "Jeweler",
+  "key": "entity.minecraft.villager.irons_jewelry.jeweler",
+  "sub": true,
+  "zh": "珠宝商"
+ },
+ "minecraft:villager.leatherworker": {
+  "en": "Leatherworker",
+  "key": "entity.minecraft.villager.leatherworker",
+  "sub": true,
+  "zh": "皮匠"
+ },
+ "minecraft:villager.librarian": {
+  "en": "Librarian",
+  "key": "entity.minecraft.villager.librarian",
+  "sub": true,
+  "zh": "图书管理员"
+ },
+ "minecraft:villager.machinist": {
+  "en": "Machinist",
+  "key": "entity.minecraft.villager.machinist",
+  "sub": true,
+  "zh": "机械师"
+ },
+ "minecraft:villager.mason": {
+  "en": "Mason",
+  "key": "entity.minecraft.villager.mason",
+  "sub": true,
+  "zh": "石匠"
+ },
+ "minecraft:villager.modern_industrialization.industrialist": {
+  "en": "Industrialist",
+  "key": "entity.minecraft.villager.modern_industrialization.industrialist",
+  "sub": true,
+  "zh": "工人"
+ },
+ "minecraft:villager.nitwit": {
+  "en": "Nitwit",
+  "key": "entity.minecraft.villager.nitwit",
+  "sub": true,
+  "zh": "傻子"
+ },
+ "minecraft:villager.none": {
+  "en": "Unemployed",
+  "key": "entity.minecraft.villager.none",
+  "sub": true,
+  "zh": "无业"
+ },
+ "minecraft:villager.outfitter": {
+  "en": "Outfitter",
+  "key": "entity.minecraft.villager.outfitter",
+  "sub": true,
+  "zh": "皮肤商"
+ },
+ "minecraft:villager.pneumaticcraft.mechanic": {
+  "en": "Pressure Mechanic",
+  "key": "entity.minecraft.villager.pneumaticcraft.mechanic",
+  "sub": true,
+  "zh": "压力技工"
+ },
+ "minecraft:villager.productivebees.beekeeper": {
+  "en": "Beekeeper",
+  "key": "entity.minecraft.villager.productivebees.beekeeper",
+  "sub": true,
+  "zh": "养蜂人"
+ },
+ "minecraft:villager.railcraft.cartman": {
+  "en": "Cartman",
+  "key": "entity.minecraft.villager.railcraft.cartman",
+  "sub": true,
+  "zh": "车辆员"
+ },
+ "minecraft:villager.railcraft.trackman": {
+  "en": "Trackman",
+  "key": "entity.minecraft.villager.railcraft.trackman",
+  "sub": true,
+  "zh": "铁道工"
+ },
+ "minecraft:villager.sawmill.carpenter": {
+  "en": "Carpenter",
+  "key": "entity.minecraft.villager.sawmill.carpenter",
+  "sub": true,
+  "zh": "木匠"
+ },
+ "minecraft:villager.scribe": {
+  "en": "Scribe",
+  "key": "entity.minecraft.villager.scribe",
+  "sub": true,
+  "zh": "抄书吏"
+ },
+ "minecraft:villager.shady_wizard": {
+  "en": "Shady Wizard",
+  "key": "entity.minecraft.villager.shady_wizard",
+  "sub": true,
+  "zh": "可疑的巫师"
+ },
+ "minecraft:villager.shepherd": {
+  "en": "Shepherd",
+  "key": "entity.minecraft.villager.shepherd",
+  "sub": true,
+  "zh": "牧羊人"
+ },
+ "minecraft:villager.silentgear.gear_smith": {
+  "en": "Gear Smith",
+  "key": "entity.minecraft.villager.silentgear.gear_smith",
+  "sub": true,
+  "zh": "装备工匠"
+ },
+ "minecraft:villager.stylist": {
+  "en": "",
+  "key": "entity.minecraft.villager.stylist",
+  "sub": true,
+  "zh": "造型师"
+ },
+ "minecraft:villager.toolsmith": {
+  "en": "Toolsmith",
+  "key": "entity.minecraft.villager.toolsmith",
+  "sub": true,
+  "zh": "工具匠"
+ },
+ "minecraft:villager.vanity.stylist": {
+  "en": "",
+  "key": "entity.minecraft.villager.vanity.stylist",
+  "sub": true,
+  "zh": "造型师"
+ },
+ "minecraft:villager.vital_herbs.herbologist": {
+  "en": "",
+  "key": "entity.minecraft.villager.vital_herbs.herbologist",
+  "sub": true,
+  "zh": "草药师"
+ },
+ "minecraft:villager.weaponsmith": {
+  "en": "Weaponsmith",
+  "key": "entity.minecraft.villager.weaponsmith",
+  "sub": true,
+  "zh": "武器匠"
+ },
+ "minecraft:villager.witchery.fortune_teller": {
+  "en": "",
+  "key": "entity.minecraft.villager.witchery.fortune_teller",
+  "sub": true,
+  "zh": "算命师"
  },
  "minecraft:vindicator": {
   "en": "Vindicator",
@@ -6949,6 +7711,24 @@
   "key": "entity.mysticsbiomes.boat",
   "zh": "船"
  },
+ "mysticsbiomes:butterfly.luna_moth": {
+  "en": "",
+  "key": "entity.mysticsbiomes.butterfly.luna_moth",
+  "sub": true,
+  "zh": "月形天蚕蛾"
+ },
+ "mysticsbiomes:butterfly.monarch": {
+  "en": "",
+  "key": "entity.mysticsbiomes.butterfly.monarch",
+  "sub": true,
+  "zh": "帝王蝶"
+ },
+ "mysticsbiomes:butterfly.morpho": {
+  "en": "",
+  "key": "entity.mysticsbiomes.butterfly.morpho",
+  "sub": true,
+  "zh": "大蓝闪蝶"
+ },
  "mysticsbiomes:caterpillar": {
   "en": "",
   "key": "entity.mysticsbiomes.caterpillar",
@@ -6963,6 +7743,42 @@
   "en": "",
   "key": "entity.mysticsbiomes.chocolate_cow",
   "zh": "巧克力牛"
+ },
+ "mysticsbiomes:rainbow_chicken.cyan": {
+  "en": "",
+  "key": "entity.mysticsbiomes.rainbow_chicken.cyan",
+  "sub": true,
+  "zh": "青色鸡"
+ },
+ "mysticsbiomes:rainbow_chicken.lime": {
+  "en": "",
+  "key": "entity.mysticsbiomes.rainbow_chicken.lime",
+  "sub": true,
+  "zh": "黄绿色鸡"
+ },
+ "mysticsbiomes:rainbow_chicken.orange": {
+  "en": "",
+  "key": "entity.mysticsbiomes.rainbow_chicken.orange",
+  "sub": true,
+  "zh": "橙色鸡"
+ },
+ "mysticsbiomes:rainbow_chicken.pink": {
+  "en": "",
+  "key": "entity.mysticsbiomes.rainbow_chicken.pink",
+  "sub": true,
+  "zh": "粉红色鸡"
+ },
+ "mysticsbiomes:rainbow_chicken.purple": {
+  "en": "",
+  "key": "entity.mysticsbiomes.rainbow_chicken.purple",
+  "sub": true,
+  "zh": "紫色鸡"
+ },
+ "mysticsbiomes:rainbow_chicken.yellow": {
+  "en": "",
+  "key": "entity.mysticsbiomes.rainbow_chicken.yellow",
+  "sub": true,
+  "zh": "黄色鸡"
  },
  "mysticsbiomes:rainbow_egg": {
   "en": "",
@@ -10128,6 +10944,36 @@
   "en": "Tile Accelerator",
   "key": "entity.rootsclassic.tile_accelerator",
   "zh": "机械加速"
+ },
+ "rubinated_nether:bronze.corroded": {
+  "en": "",
+  "key": "entity.rubinated_nether.bronze.corroded",
+  "sub": true,
+  "zh": "腐蚀的青铜人"
+ },
+ "rubinated_nether:bronze.crystallized": {
+  "en": "",
+  "key": "entity.rubinated_nether.bronze.crystallized",
+  "sub": true,
+  "zh": "晶化的青铜人"
+ },
+ "rubinated_nether:bronze.discolored": {
+  "en": "",
+  "key": "entity.rubinated_nether.bronze.discolored",
+  "sub": true,
+  "zh": "脱色的青铜人"
+ },
+ "rubinated_nether:bronze.tarnished": {
+  "en": "",
+  "key": "entity.rubinated_nether.bronze.tarnished",
+  "sub": true,
+  "zh": "褪色的青铜人"
+ },
+ "rubinated_nether:bronze.unaffected": {
+  "en": "",
+  "key": "entity.rubinated_nether.bronze.unaffected",
+  "sub": true,
+  "zh": "青铜人"
  },
  "rubinated_nether:bronze_shot": {
   "en": "",
@@ -27981,6 +28827,346 @@
   },
   "zh": "闪光热带鱼"
  },
+ "shiny:shiny_tropical_fish.predefined.0": {
+  "en": "Shiny Anemone",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.0",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光海葵"
+ },
+ "shiny:shiny_tropical_fish.predefined.1": {
+  "en": "Shiny Black Tang",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.1",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光黑刺尾鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.10": {
+  "en": "Shiny Moorish Idol",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.10",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光镰鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.11": {
+  "en": "Shiny Ornate Butterflyfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.11",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光华丽蝴蝶鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.12": {
+  "en": "Shiny Parrotfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.12",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光鹦嘴鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.13": {
+  "en": "Shiny Queen Angelfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.13",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光皇后神仙鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.14": {
+  "en": "Shiny Red Cichlid",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.14",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光红慈鲷"
+ },
+ "shiny:shiny_tropical_fish.predefined.15": {
+  "en": "Shiny Red Lipped Blenny",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.15",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光红唇鳚"
+ },
+ "shiny:shiny_tropical_fish.predefined.16": {
+  "en": "Shiny Red Snapper",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.16",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光红鲷鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.17": {
+  "en": "Shiny Threadfin",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.17",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光马鲅"
+ },
+ "shiny:shiny_tropical_fish.predefined.18": {
+  "en": "Shiny Tomato Clownfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.18",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光番茄小丑鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.19": {
+  "en": "Shiny Triggerfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.19",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光炮弹鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.2": {
+  "en": "Shiny Blue Tang",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.2",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光蓝刺尾鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.20": {
+  "en": "Shiny Yellowtail Parrotfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.20",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光黄尾鹦嘴鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.21": {
+  "en": "Shiny Yellow Tang",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.21",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光黄刺尾鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.3": {
+  "en": "Shiny Butterflyfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.3",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光蝴蝶鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.4": {
+  "en": "Shiny Cichlid",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.4",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光慈鲷"
+ },
+ "shiny:shiny_tropical_fish.predefined.5": {
+  "en": "Shiny Clownfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.5",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光小丑鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.6": {
+  "en": "Shiny Cotton Candy Betta",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.6",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光棉花糖搏鱼"
+ },
+ "shiny:shiny_tropical_fish.predefined.7": {
+  "en": "Shiny Dottyback",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.7",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光拟雀鲷"
+ },
+ "shiny:shiny_tropical_fish.predefined.8": {
+  "en": "Shiny Emperor Red Snapper",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.8",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光帝王红鲷"
+ },
+ "shiny:shiny_tropical_fish.predefined.9": {
+  "en": "Shiny Goatfish",
+  "key": "entity.shiny.shiny_tropical_fish.predefined.9",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光鲱鲤"
+ },
+ "shiny:shiny_tropical_fish.type.betty": {
+  "en": "Shiny Betty",
+  "key": "entity.shiny.shiny_tropical_fish.type.betty",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光贝蒂鱼"
+ },
+ "shiny:shiny_tropical_fish.type.blockfish": {
+  "en": "Shiny Blockfish",
+  "key": "entity.shiny.shiny_tropical_fish.type.blockfish",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光方块鱼"
+ },
+ "shiny:shiny_tropical_fish.type.brinely": {
+  "en": "Shiny Brinely",
+  "key": "entity.shiny.shiny_tropical_fish.type.brinely",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光咸味鱼"
+ },
+ "shiny:shiny_tropical_fish.type.clayfish": {
+  "en": "Shiny Clayfish",
+  "key": "entity.shiny.shiny_tropical_fish.type.clayfish",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光黏土鱼"
+ },
+ "shiny:shiny_tropical_fish.type.dasher": {
+  "en": "Shiny Dasher",
+  "key": "entity.shiny.shiny_tropical_fish.type.dasher",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光冲刺鱼"
+ },
+ "shiny:shiny_tropical_fish.type.flopper": {
+  "en": "Shiny Flopper",
+  "key": "entity.shiny.shiny_tropical_fish.type.flopper",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光扑扑鱼"
+ },
+ "shiny:shiny_tropical_fish.type.glitter": {
+  "en": "Shiny Glitter",
+  "key": "entity.shiny.shiny_tropical_fish.type.glitter",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光闪光鱼"
+ },
+ "shiny:shiny_tropical_fish.type.kob": {
+  "en": "Shiny Kob",
+  "key": "entity.shiny.shiny_tropical_fish.type.kob",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光高体鱼"
+ },
+ "shiny:shiny_tropical_fish.type.snooper": {
+  "en": "Shiny Snooper",
+  "key": "entity.shiny.shiny_tropical_fish.type.snooper",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光窥探鱼"
+ },
+ "shiny:shiny_tropical_fish.type.spotty": {
+  "en": "Shiny Spotty",
+  "key": "entity.shiny.shiny_tropical_fish.type.spotty",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光斑点鱼"
+ },
+ "shiny:shiny_tropical_fish.type.stripey": {
+  "en": "Shiny Stripey",
+  "key": "entity.shiny.shiny_tropical_fish.type.stripey",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光条纹鱼"
+ },
+ "shiny:shiny_tropical_fish.type.sunstreak": {
+  "en": "Shiny Sunstreak",
+  "key": "entity.shiny.shiny_tropical_fish.type.sunstreak",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光阳纹鱼"
+ },
  "shiny:shiny_tumbling_block": {
   "en": "",
   "key": "entity.shiny.shiny_tumbling_block",
@@ -28394,6 +29580,156 @@
    "zh": "闪光%s"
   },
   "zh": "闪光村民"
+ },
+ "shiny:shiny_villager.armorer": {
+  "en": "Shiny Armorer",
+  "key": "entity.shiny.shiny_villager.armorer",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光盔甲匠"
+ },
+ "shiny:shiny_villager.butcher": {
+  "en": "Shiny Butcher",
+  "key": "entity.shiny.shiny_villager.butcher",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光屠夫"
+ },
+ "shiny:shiny_villager.cartographer": {
+  "en": "Shiny Cartographer",
+  "key": "entity.shiny.shiny_villager.cartographer",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光制图师"
+ },
+ "shiny:shiny_villager.cleric": {
+  "en": "Shiny Cleric",
+  "key": "entity.shiny.shiny_villager.cleric",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光牧师"
+ },
+ "shiny:shiny_villager.farmer": {
+  "en": "Shiny Farmer",
+  "key": "entity.shiny.shiny_villager.farmer",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光农民"
+ },
+ "shiny:shiny_villager.fisherman": {
+  "en": "Shiny Fisherman",
+  "key": "entity.shiny.shiny_villager.fisherman",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光渔夫"
+ },
+ "shiny:shiny_villager.fletcher": {
+  "en": "Shiny Fletcher",
+  "key": "entity.shiny.shiny_villager.fletcher",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光制箭师"
+ },
+ "shiny:shiny_villager.leatherworker": {
+  "en": "Shiny Leatherworker",
+  "key": "entity.shiny.shiny_villager.leatherworker",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光皮匠"
+ },
+ "shiny:shiny_villager.librarian": {
+  "en": "Shiny Librarian",
+  "key": "entity.shiny.shiny_villager.librarian",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光图书管理员"
+ },
+ "shiny:shiny_villager.mason": {
+  "en": "Shiny Mason",
+  "key": "entity.shiny.shiny_villager.mason",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光石匠"
+ },
+ "shiny:shiny_villager.nitwit": {
+  "en": "Shiny Nitwit",
+  "key": "entity.shiny.shiny_villager.nitwit",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光傻子"
+ },
+ "shiny:shiny_villager.none": {
+  "en": "Shiny Villager",
+  "key": "entity.shiny.shiny_villager.none",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光村民"
+ },
+ "shiny:shiny_villager.shepherd": {
+  "en": "Shiny Shepherd",
+  "key": "entity.shiny.shiny_villager.shepherd",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光牧羊人"
+ },
+ "shiny:shiny_villager.toolsmith": {
+  "en": "Shiny Toolsmith",
+  "key": "entity.shiny.shiny_villager.toolsmith",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光工具匠"
+ },
+ "shiny:shiny_villager.weaponsmith": {
+  "en": "Shiny Weaponsmith",
+  "key": "entity.shiny.shiny_villager.weaponsmith",
+  "sub": true,
+  "tmpl": {
+   "en": "Shiny %s",
+   "zh": "闪光%s"
+  },
+  "zh": "闪光武器匠"
  },
  "shiny:shiny_villager_bee": {
   "en": "",
@@ -29937,500 +31273,1118 @@
   "key": "entity.takumicraft.acidcreeper",
   "zh": "酸液苦力怕"
  },
+ "takumicraft:acidcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.acidcreeper.desc",
+  "sub": true,
+  "zh": "沉浸吧，沉浸吧，沉浸在腐蚀之中吧。"
+ },
  "takumicraft:allaycreeper": {
   "en": "",
   "key": "entity.takumicraft.allaycreeper",
   "zh": "悦灵苦力怕"
+ },
+ "takumicraft:allaycreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.allaycreeper.desc",
+  "sub": true,
+  "zh": "既无法成为妖精，也无法成为朋友的悲伤之灵。"
  },
  "takumicraft:amethystcreeper": {
   "en": "",
   "key": "entity.takumicraft.amethystcreeper",
   "zh": "紫水晶苦力怕"
  },
+ "takumicraft:amethystcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.amethystcreeper.desc",
+  "sub": true,
+  "zh": "钻石之心，坚硬，且强韧。"
+ },
  "takumicraft:arrowcreeper": {
   "en": "",
   "key": "entity.takumicraft.arrowcreeper",
   "zh": "箭苦力怕"
+ },
+ "takumicraft:arrowcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.arrowcreeper.desc",
+  "sub": true,
+  "zh": "万箭齐发，无所遁形。"
  },
  "takumicraft:artcreeper": {
   "en": "",
   "key": "entity.takumicraft.artcreeper",
   "zh": "艺术苦力怕"
  },
+ "takumicraft:artcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.artcreeper.desc",
+  "sub": true,
+  "zh": "在周围随机放置方块。可真是有艺术性啊。"
+ },
  "takumicraft:bamboocreeper": {
   "en": "",
   "key": "entity.takumicraft.bamboocreeper",
   "zh": "竹子苦力怕"
+ },
+ "takumicraft:bamboocreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.bamboocreeper.desc",
+  "sub": true,
+  "zh": "再现了竹子破土而出的壮观景象。"
  },
  "takumicraft:bangcreeper": {
   "en": "",
   "key": "entity.takumicraft.bangcreeper",
   "zh": "爆炸苦力怕"
  },
+ "takumicraft:bangcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.bangcreeper.desc",
+  "sub": true,
+  "zh": "强力的爆炸甚至连黑曜石都能摧毁。已经没有能从这场高密度的破坏中护身的办法了。"
+ },
  "takumicraft:batcreeper": {
   "en": "",
   "key": "entity.takumicraft.batcreeper",
   "zh": "蝙蝠苦力怕"
+ },
+ "takumicraft:batcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.batcreeper.desc",
+  "sub": true,
+  "zh": "在洞穴中潜伏的绿色的蝙蝠。不要问它会不会爆炸。"
  },
  "takumicraft:bedcreeper": {
   "en": "",
   "key": "entity.takumicraft.bedcreeper",
   "zh": "床苦力怕"
  },
+ "takumicraft:bedcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.bedcreeper.desc",
+  "sub": true,
+  "zh": "床也是易燃易爆物吧？就跟下界一样嘛！"
+ },
+ "takumicraft:bedcreeper.message": {
+  "en": "",
+  "key": "entity.takumicraft.bedcreeper.message",
+  "sub": true,
+  "zh": "%s的重生点被床苦力怕炸毁了！"
+ },
  "takumicraft:beecreeper": {
   "en": "",
   "key": "entity.takumicraft.beecreeper",
   "zh": "蜜蜂苦力怕"
+ },
+ "takumicraft:beecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.beecreeper.desc",
+  "sub": true,
+  "zh": "小心点，这只蜜蜂带有爆伤和毒伤的二段伤害。"
  },
  "takumicraft:bigbatcreeper": {
   "en": "",
   "key": "entity.takumicraft.bigbatcreeper",
   "zh": "大蝙蝠苦力怕"
  },
+ "takumicraft:bigbatcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.bigbatcreeper.desc",
+  "sub": true,
+  "zh": "被血所染红的大蝙蝠，身上燃起的黑烟到底是什么呢。"
+ },
  "takumicraft:birdcreeper": {
   "en": "",
   "key": "entity.takumicraft.birdcreeper",
   "zh": "小鸟苦力怕"
+ },
+ "takumicraft:birdcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.birdcreeper.desc",
+  "sub": true,
+  "zh": "呈小鸟模样的苦力怕，飞来又落下。愤怒的时候可能会下个“弹”。"
  },
  "takumicraft:blazecreeper": {
   "en": "",
   "key": "entity.takumicraft.blazecreeper",
   "zh": "烈焰人苦力怕"
  },
+ "takumicraft:blazecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.blazecreeper.desc",
+  "sub": true,
+  "zh": "接近了就会爆炸，离远了就会放火。在下界飘浮的苦力怕，从地狱中向史蒂夫招手。"
+ },
  "takumicraft:boltcreeper": {
   "en": "",
   "key": "entity.takumicraft.boltcreeper",
   "zh": "雷电苦力怕"
+ },
+ "takumicraft:boltcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.boltcreeper.desc",
+  "sub": true,
+  "zh": "雷声轰鸣，横空出世。在被烧尽之前抵抗它吧。"
  },
  "takumicraft:breezecreeper": {
   "en": "",
   "key": "entity.takumicraft.breezecreeper",
   "zh": "旋风人苦力怕"
  },
+ "takumicraft:breezecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.breezecreeper.desc",
+  "sub": true,
+  "zh": "接近了就会爆炸，离远了就会吹风。在狂风中飘浮的苦力怕，从风暴里向史蒂夫招手。"
+ },
  "takumicraft:callcreeper": {
   "en": "",
   "key": "entity.takumicraft.callcreeper",
   "zh": "传唤苦力怕"
+ },
+ "takumicraft:callcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.callcreeper.desc",
+  "sub": true,
+  "zh": "这个苦力怕的爆炸之声，只是一呼百应的开始那下。"
  },
  "takumicraft:catcreeper": {
   "en": "",
   "key": "entity.takumicraft.catcreeper",
   "zh": "猫苦力怕"
  },
+ "takumicraft:catcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.catcreeper.desc",
+  "sub": true,
+  "zh": "斯国一！你是擅长收集苦力怕的friends呢！"
+ },
  "takumicraft:chasecreeper": {
   "en": "",
   "key": "entity.takumicraft.chasecreeper",
   "zh": "追逐苦力怕"
+ },
+ "takumicraft:chasecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.chasecreeper.desc",
+  "sub": true,
+  "zh": "那苦力怕，乃最骏之物。"
  },
  "takumicraft:cherrycreeper": {
   "en": "",
   "key": "entity.takumicraft.cherrycreeper",
   "zh": "樱花苦力怕"
  },
+ "takumicraft:cherrycreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.cherrycreeper.desc",
+  "sub": true,
+  "zh": "来一场别样的樱花飘散美景。"
+ },
  "takumicraft:childcreeper": {
   "en": "",
   "key": "entity.takumicraft.childcreeper",
   "zh": "亲子苦力怕"
+ },
+ "takumicraft:childcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.childcreeper.desc",
+  "sub": true,
+  "zh": "怀揣着对孩子的爱，甚至不惜舍身保护。"
  },
  "takumicraft:colorcreeper": {
   "en": "",
   "key": "entity.takumicraft.colorcreeper",
   "zh": "颜色苦力怕"
  },
+ "takumicraft:colorcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.colorcreeper.desc",
+  "sub": true,
+  "zh": "改变方块颜色与形状的活麻烦。我好不容易做好的像素画啊⋯⋯"
+ },
  "takumicraft:coppercreeper": {
   "en": "",
   "key": "entity.takumicraft.coppercreeper",
   "zh": "铜苦力怕"
+ },
+ "takumicraft:coppercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.coppercreeper.desc",
+  "sub": true,
+  "zh": "闪耀的身躯与不锈的技艺，历久弥坚的铜苦力怕。"
  },
  "takumicraft:cowcreeper": {
   "en": "",
   "key": "entity.takumicraft.cowcreeper",
   "zh": "牛苦力怕"
  },
+ "takumicraft:cowcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.cowcreeper.desc",
+  "sub": true,
+  "zh": "呈牛模样的苦力怕。想尝尝它的牛奶吗？爆炸味的。"
+ },
  "takumicraft:dashcreeper": {
   "en": "",
   "key": "entity.takumicraft.dashcreeper",
   "zh": "冲刺苦力怕"
+ },
+ "takumicraft:dashcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.dashcreeper.desc",
+  "sub": true,
+  "zh": "那苦力怕，乃最速之物。"
  },
  "takumicraft:diamondcreeper": {
   "en": "",
   "key": "entity.takumicraft.diamondcreeper",
   "zh": "钻石苦力怕"
  },
+ "takumicraft:diamondcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.diamondcreeper.desc",
+  "sub": true,
+  "zh": "强韧的肉体与坚硬的精神，永不磨灭的钻石苦力怕。"
+ },
  "takumicraft:dirtcreeper": {
   "en": "",
   "key": "entity.takumicraft.dirtcreeper",
   "zh": "泥土苦力怕"
+ },
+ "takumicraft:dirtcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.dirtcreeper.desc",
+  "sub": true,
+  "zh": "爆炸时对泥土特攻。使大地在爆炸的地震中轰然沉没。"
  },
  "takumicraft:dripstonecreeper": {
   "en": "",
   "key": "entity.takumicraft.dripstonecreeper",
   "zh": "滴水石苦力怕"
  },
+ "takumicraft:dripstonecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.dripstonecreeper.desc",
+  "sub": true,
+  "zh": "小心来自头顶上的贯穿伤害！"
+ },
  "takumicraft:drownedcreeper": {
   "en": "",
   "key": "entity.takumicraft.drownedcreeper",
   "zh": "溺尸苦力怕"
+ },
+ "takumicraft:drownedcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.drownedcreeper.desc",
+  "sub": true,
+  "zh": "来自深海的苦力怕，手持三叉戟迈向大地。"
  },
  "takumicraft:emeraldcreeper": {
   "en": "",
   "key": "entity.takumicraft.emeraldcreeper",
   "zh": "绿宝石苦力怕"
  },
+ "takumicraft:emeraldcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.emeraldcreeper.desc",
+  "sub": true,
+  "zh": "巨大的躯体与强力的耐久，无法打倒的绿宝石苦力怕。"
+ },
  "takumicraft:endercreeper": {
   "en": "",
   "key": "entity.takumicraft.endercreeper",
   "zh": "末影苦力怕"
+ },
+ "takumicraft:endercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.endercreeper.desc",
+  "sub": true,
+  "zh": "被它炸到的话⋯⋯好好享受你的旅程吧。"
  },
  "takumicraft:evokercreeper": {
   "en": "",
   "key": "entity.takumicraft.evokercreeper",
   "zh": "唤魔者苦力怕"
  },
+ "takumicraft:evokercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.evokercreeper.desc",
+  "sub": true,
+  "zh": "魔导士苏醒于府邸，蠢蠢欲动。暗夜疾风，呼唤暗影。"
+ },
  "takumicraft:fallcreeper": {
   "en": "",
   "key": "entity.takumicraft.fallcreeper",
   "zh": "落沙苦力怕"
+ },
+ "takumicraft:fallcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.fallcreeper.desc",
+  "sub": true,
+  "zh": "万物均如沙砾般坠落。大地，生物，乃至这个游戏世界。"
  },
  "takumicraft:fallingbombcreeper": {
   "en": "",
   "key": "entity.takumicraft.fallingbombcreeper",
   "zh": "阿阇梨苦力怕"
  },
+ "takumicraft:fallingbombcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.fallingbombcreeper.desc",
+  "sub": true,
+  "zh": "阿阇梨之道乃降下的灾厄，掩埋大地，尽数崩解。"
+ },
  "takumicraft:fallingslimecreeper": {
   "en": "",
   "key": "entity.takumicraft.fallingslimecreeper",
   "zh": "阿修罗苦力怕"
+ },
+ "takumicraft:fallingslimecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.fallingslimecreeper.desc",
+  "sub": true,
+  "zh": "阿修罗之道乃降下的威胁，掩埋虚空，尽数毁灭。"
  },
  "takumicraft:firecreeper": {
   "en": "",
   "key": "entity.takumicraft.firecreeper",
   "zh": "火焰苦力怕"
  },
+ "takumicraft:firecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.firecreeper.desc",
+  "sub": true,
+  "zh": "它爆炸的时候已经完了，放火烧山牢底坐穿。"
+ },
  "takumicraft:fireworkscreeper": {
   "en": "",
   "key": "entity.takumicraft.fireworkscreeper",
   "zh": "烟花苦力怕"
+ },
+ "takumicraft:fireworkscreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.fireworkscreeper.desc",
+  "sub": true,
+  "zh": "偶尔看看夜空吧。在这充满苦难的世界，烟火或许能给你一些慰藉。"
  },
  "takumicraft:glasscreeper": {
   "en": "",
   "key": "entity.takumicraft.glasscreeper",
   "zh": "玻璃苦力怕"
  },
+ "takumicraft:glasscreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.glasscreeper.desc",
+  "sub": true,
+  "zh": "有着怀旧的透明感，但会给你提供最新款的防爆玻璃。"
+ },
  "takumicraft:glowingsquidcreeper": {
   "en": "",
   "key": "entity.takumicraft.glowingsquidcreeper",
   "zh": "发光鱿鱼苦力怕"
+ },
+ "takumicraft:glowingsquidcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.glowingsquidcreeper.desc",
+  "sub": true,
+  "zh": "发光的鱿鱼，当然也充满爆炸性。别被洞穴中的荧光迷惑了。"
  },
  "takumicraft:glowstonecreeper": {
   "en": "",
   "key": "entity.takumicraft.glowstonecreeper",
   "zh": "荧石苦力怕"
  },
+ "takumicraft:glowstonecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.glowstonecreeper.desc",
+  "sub": true,
+  "zh": "照亮下界，爆炸带来了光明。"
+ },
  "takumicraft:goatcreeper": {
   "en": "",
   "key": "entity.takumicraft.goatcreeper",
   "zh": "山羊苦力怕"
+ },
+ "takumicraft:goatcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.goatcreeper.desc",
+  "sub": true,
+  "zh": "史上最伟大的，拥有会爆炸的角的山羊之主。"
  },
  "takumicraft:gunorecreeper": {
   "en": "",
   "key": "entity.takumicraft.gunorecreeper",
   "zh": "火药矿石苦力怕"
  },
+ "takumicraft:gunorecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.gunorecreeper.desc",
+  "sub": true,
+  "zh": "火药矿石化成的苦力怕。只要用手一挖，就会现出真身。"
+ },
  "takumicraft:happinesscreeper": {
   "en": "",
   "key": "entity.takumicraft.happinesscreeper",
   "zh": "幸福苦力怕"
+ },
+ "takumicraft:happinesscreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.happinesscreeper.desc",
+  "sub": true,
+  "zh": "写作爆爆，读作抱抱。"
  },
  "takumicraft:horsecreeper": {
   "en": "",
   "key": "entity.takumicraft.horsecreeper",
   "zh": "马苦力怕"
  },
+ "takumicraft:horsecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.horsecreeper.desc",
+  "sub": true,
+  "zh": "呈马模样的苦力怕。一流的速度，一流的爆炸。"
+ },
  "takumicraft:hotspringcreeper": {
   "en": "",
   "key": "entity.takumicraft.hotspringcreeper",
   "zh": "温泉苦力怕"
+ },
+ "takumicraft:hotspringcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.hotspringcreeper.desc",
+  "sub": true,
+  "zh": "将温泉一涌而出的苦力怕。治疗伤口、横扫饥饿。感谢招待。"
  },
  "takumicraft:huskcreeper": {
   "en": "",
   "key": "entity.takumicraft.huskcreeper",
   "zh": "尸壳苦力怕"
  },
+ "takumicraft:huskcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.huskcreeper.desc",
+  "sub": true,
+  "zh": "来自沙漠的僵尸苦力怕。吃到爆炸的话难免会饿吧？"
+ },
  "takumicraft:hydrothermalcreeper": {
   "en": "",
   "key": "entity.takumicraft.hydrothermalcreeper",
   "zh": "岩浆块苦力怕"
+ },
+ "takumicraft:hydrothermalcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.hydrothermalcreeper.desc",
+  "sub": true,
+  "zh": "由岩浆块所化成的苦力怕。只要用水一浇，就会现出真身。"
  },
  "takumicraft:icecreeper": {
   "en": "",
   "key": "entity.takumicraft.icecreeper",
   "zh": "冰苦力怕"
  },
+ "takumicraft:icecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.icecreeper.desc",
+  "sub": true,
+  "zh": "冰冰凉的苦力怕，相比怕火更怕风。"
+ },
  "takumicraft:ironcreeper": {
   "en": "",
   "key": "entity.takumicraft.ironcreeper",
   "zh": "铁苦力怕"
+ },
+ "takumicraft:ironcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.ironcreeper.desc",
+  "sub": true,
+  "zh": "小巧的躯体与迅捷的动作，难以命中的铁苦力怕。"
  },
  "takumicraft:kingcreeper": {
   "en": "",
   "key": "entity.takumicraft.kingcreeper",
   "zh": "帝王苦力怕"
  },
+ "takumicraft:kingcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.kingcreeper.desc",
+  "sub": true,
+  "zh": "跪下，以祈求活命吧。帝王凯旋之日，乃苦力怕胜利之时。"
+ },
  "takumicraft:lavacreeper": {
   "en": "",
   "key": "entity.takumicraft.lavacreeper",
   "zh": "熔岩苦力怕"
+ },
+ "takumicraft:lavacreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.lavacreeper.desc",
+  "sub": true,
+  "zh": "熔岩如海啸般涌来，小心溺“水”。"
  },
  "takumicraft:lightcreeper": {
   "en": "",
   "key": "entity.takumicraft.lightcreeper",
   "zh": "荧光苦力怕"
  },
+ "takumicraft:lightcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.lightcreeper.desc",
+  "sub": true,
+  "zh": "愿圣光与你同在。"
+ },
  "takumicraft:llamacreeper": {
   "en": "",
   "key": "entity.takumicraft.llamacreeper",
   "zh": "羊驼苦力怕"
+ },
+ "takumicraft:llamacreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.llamacreeper.desc",
+  "sub": true,
+  "zh": "羊驼型的苦力怕。嘿⸺tui！"
  },
  "takumicraft:lostcreeper": {
   "en": "",
   "key": "entity.takumicraft.lostcreeper",
   "zh": "遗失苦力怕"
  },
+ "takumicraft:lostcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.lostcreeper.desc",
+  "sub": true,
+  "zh": "<数据已遗失>"
+ },
  "takumicraft:macecreeper": {
   "en": "",
   "key": "entity.takumicraft.macecreeper",
   "zh": "重锤苦力怕"
+ },
+ "takumicraft:macecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.macecreeper.desc",
+  "sub": true,
+  "zh": "血染的祭司碎裂大地的一击，会将灵魂也都爆裂殆尽。"
  },
  "takumicraft:minispidercreeper": {
   "en": "",
   "key": "entity.takumicraft.minispidercreeper",
   "zh": "幼年蜘蛛苦力怕"
  },
+ "takumicraft:minispidercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.minispidercreeper.desc",
+  "sub": true,
+  "zh": "由蜘蛛苦力怕产下的这些孩子们，哪怕隔着再小的缝隙也会当你的跟屁虫。"
+ },
  "takumicraft:musclecreeper": {
   "en": "",
   "key": "entity.takumicraft.musclecreeper",
   "zh": "肌肉苦力怕"
+ },
+ "takumicraft:musclecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.musclecreeper.desc",
+  "sub": true,
+  "zh": "Happy，Happy，用肌肉填满空隙。"
  },
  "takumicraft:musiccreeper": {
   "en": "",
   "key": "entity.takumicraft.musiccreeper",
   "zh": "音乐苦力怕"
  },
+ "takumicraft:musiccreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.musiccreeper.desc",
+  "sub": true,
+  "zh": "向玩家们退击自己最喜欢的曲子。SAN值大危机，这破绽吃枣药丸。"
+ },
  "takumicraft:myceliumcreeper": {
   "en": "",
   "key": "entity.takumicraft.myceliumcreeper",
   "zh": "菌丝苦力怕"
+ },
+ "takumicraft:myceliumcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.myceliumcreeper.desc",
+  "sub": true,
+  "zh": "带有爬行的菌丝与蘑菇的苦力怕。"
  },
  "takumicraft:naturalcreeper": {
   "en": "",
   "key": "entity.takumicraft.naturalcreeper",
   "zh": "自然苦力怕"
  },
+ "takumicraft:naturalcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.naturalcreeper.desc",
+  "sub": true,
+  "zh": "炸弹树上炸弹果，炸弹树下你和我。炸弹树干挖呀挖，爆炸多又多。"
+ },
  "takumicraft:netheritecreeper": {
   "en": "",
   "key": "entity.takumicraft.netheritecreeper",
   "zh": "下界合金苦力怕"
+ },
+ "takumicraft:netheritecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.netheritecreeper.desc",
+  "sub": true,
+  "zh": "太古的力量与牢固的铠甲，永不破灭的下界合金苦力怕。"
  },
  "takumicraft:objetcreeper": {
   "en": "",
   "key": "entity.takumicraft.objetcreeper",
   "zh": "杰作苦力怕"
  },
+ "takumicraft:objetcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.objetcreeper.desc",
+  "sub": true,
+  "zh": "为你献上杰作，爆炸性的防爆艺术品。"
+ },
  "takumicraft:ofalencreeper": {
   "en": "",
   "key": "entity.takumicraft.ofalencreeper",
   "zh": "至尊苦力怕"
+ },
+ "takumicraft:ofalencreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.ofalencreeper.desc",
+  "sub": true,
+  "zh": "它，现身了，聚集着异世界的矿石之力，战斗吧，以武力战胜魔法！"
  },
  "takumicraft:parrotcreeper": {
   "en": "",
   "key": "entity.takumicraft.parrotcreeper",
   "zh": "鹦鹉苦力怕"
  },
+ "takumicraft:parrotcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.parrotcreeper.desc",
+  "sub": true,
+  "zh": "和绿鹦鹉看起来很相似。完全就是会落在肩上的炸弹。"
+ },
  "takumicraft:patinacreeper": {
   "en": "",
   "key": "entity.takumicraft.patinacreeper",
   "zh": "青铜苦力怕"
+ },
+ "takumicraft:patinacreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.patinacreeper.desc",
+  "sub": true,
+  "zh": "斑驳的身躯与扎实的技艺，经久不衰的青铜苦力怕。"
  },
  "takumicraft:phantomcreeper": {
   "en": "",
   "key": "entity.takumicraft.phantomcreeper",
   "zh": "幻翼苦力怕"
  },
+ "takumicraft:phantomcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.phantomcreeper.desc",
+  "sub": true,
+  "zh": "从幻影中诞生的新型空中打击。"
+ },
  "takumicraft:piercecreeper": {
   "en": "",
   "key": "entity.takumicraft.piercecreeper",
   "zh": "贯穿苦力怕"
+ },
+ "takumicraft:piercecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.piercecreeper.desc",
+  "sub": true,
+  "zh": "一穿穿至大地的最底层。那么，目标是基岩！"
  },
  "takumicraft:pigcreeper": {
   "en": "",
   "key": "entity.takumicraft.pigcreeper",
   "zh": "猪苦力怕"
  },
+ "takumicraft:pigcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.pigcreeper.desc",
+  "sub": true,
+  "zh": "呈猪模样的苦力怕。想当年苦力怕的样子是来自一只失败的猪模型。"
+ },
  "takumicraft:potatocreeper": {
   "en": "",
   "key": "entity.takumicraft.potatocreeper",
   "zh": "马铃薯苦力怕"
+ },
+ "takumicraft:potatocreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.potatocreeper.desc",
+  "sub": true,
+  "zh": "所有人都变身土豆吧。"
  },
  "takumicraft:powdersnowcreeper": {
   "en": "",
   "key": "entity.takumicraft.powdersnowcreeper",
   "zh": "细雪苦力怕"
  },
+ "takumicraft:powdersnowcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.powdersnowcreeper.desc",
+  "sub": true,
+  "zh": "雪eeee↑花r→飘嗷嗷↓飘↑"
+ },
  "takumicraft:rabbitcreeper": {
   "en": "",
   "key": "entity.takumicraft.rabbitcreeper",
   "zh": "兔子苦力怕"
+ },
+ "takumicraft:rabbitcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.rabbitcreeper.desc",
+  "sub": true,
+  "zh": "呈兔子模样的苦力怕。杀手兔，它来了。"
  },
  "takumicraft:ravagercreeper": {
   "en": "",
   "key": "entity.takumicraft.ravagercreeper",
   "zh": "劫掠兽苦力怕"
  },
+ "takumicraft:ravagercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.ravagercreeper.desc",
+  "sub": true,
+  "zh": "释放着愤怒、野性与破坏的魔兽在横行肆虐。"
+ },
  "takumicraft:redstonecreeper": {
   "en": "",
   "key": "entity.takumicraft.redstonecreeper",
   "zh": "红石苦力怕"
+ },
+ "takumicraft:redstonecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.redstonecreeper.desc",
+  "sub": true,
+  "zh": "敏捷的行动与快速的爆炸，不可阻挡的红石苦力怕。"
  },
  "takumicraft:restcreeper": {
   "en": "",
   "key": "entity.takumicraft.restcreeper",
   "zh": "休息苦力怕"
  },
+ "takumicraft:restcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.restcreeper.desc",
+  "sub": true,
+  "zh": "愿您能安息。"
+ },
  "takumicraft:returncreeper": {
   "en": "",
   "key": "entity.takumicraft.returncreeper",
   "zh": "回程苦力怕"
+ },
+ "takumicraft:returncreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.returncreeper.desc",
+  "sub": true,
+  "zh": "恶毒的苦力怕。如果带着床走到哪睡到哪的话估计就不会见到地狱般的光景了吧。总之很麻烦。"
+ },
+ "takumicraft:returncreeper.message": {
+  "en": "",
+  "key": "entity.takumicraft.returncreeper.message",
+  "sub": true,
+  "zh": "%s被回程苦力怕炸飞到了重生点！"
  },
  "takumicraft:rewritecreeper": {
   "en": "",
   "key": "entity.takumicraft.rewritecreeper",
   "zh": "重写苦力怕"
  },
+ "takumicraft:rewritecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.rewritecreeper.desc",
+  "sub": true,
+  "zh": "能将周围的方块炸成另一种随机方块。塞翁炸马，焉知非福。"
+ },
  "takumicraft:rushcreeper": {
   "en": "",
   "key": "entity.takumicraft.rushcreeper",
   "zh": "突袭苦力怕"
+ },
+ "takumicraft:rushcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.rushcreeper.desc",
+  "sub": true,
+  "zh": "那苦力怕，乃最强之物。"
  },
  "takumicraft:sandcreeper": {
   "en": "",
   "key": "entity.takumicraft.sandcreeper",
   "zh": "沙子苦力怕"
  },
+ "takumicraft:sandcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.sandcreeper.desc",
+  "sub": true,
+  "zh": "被沙子埋住了的话就无路可逃了。带上火把吧！"
+ },
  "takumicraft:sculkcreeper": {
   "en": "",
   "key": "entity.takumicraft.sculkcreeper",
   "zh": "幽匿苦力怕"
+ },
+ "takumicraft:sculkcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.sculkcreeper.desc",
+  "sub": true,
+  "zh": "太古的力量与侵蚀的黑暗，永不破灭的幽匿苦力怕。"
  },
  "takumicraft:sheepcreeper": {
   "en": "",
   "key": "entity.takumicraft.sheepcreeper",
   "zh": "羊苦力怕"
  },
+ "takumicraft:sheepcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.sheepcreeper.desc",
+  "sub": true,
+  "zh": "呈羊模样的苦力怕。共16种颜色，还有隐藏款式！"
+ },
  "takumicraft:silentcreeper": {
   "en": "",
   "key": "entity.takumicraft.silentcreeper",
   "zh": "静默苦力怕"
+ },
+ "takumicraft:silentcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.silentcreeper.desc",
+  "sub": true,
+  "zh": "它来了，它悄悄地来了。不带来一丝声响，却带走你的性命。"
  },
  "takumicraft:skeletoncreeper": {
   "en": "",
   "key": "entity.takumicraft.skeletoncreeper",
   "zh": "骷髅苦力怕"
  },
+ "takumicraft:skeletoncreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.skeletoncreeper.desc",
+  "sub": true,
+  "zh": "射出的是会爆炸的箭矢。它将世界化为充满爆炸的战场。"
+ },
  "takumicraft:sleepercreeper": {
   "en": "",
   "key": "entity.takumicraft.sleepercreeper",
   "zh": "安眠苦力怕"
+ },
+ "takumicraft:sleepercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.sleepercreeper.desc",
+  "sub": true,
+  "zh": "你的床看起来很安全呢⋯⋯？"
+ },
+ "takumicraft:sleepercreeper.message": {
+  "en": "",
+  "key": "entity.takumicraft.sleepercreeper.message",
+  "sub": true,
+  "zh": "%s的重生点被安眠苦力怕骚扰了！"
  },
  "takumicraft:slimecreeper": {
   "en": "",
   "key": "entity.takumicraft.slimecreeper",
   "zh": "史莱姆苦力怕"
  },
+ "takumicraft:slimecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.slimecreeper.desc",
+  "sub": true,
+  "zh": "死后爆炸，爆炸后分裂。我愿称之为：“苦力怕集束炸弹”。"
+ },
  "takumicraft:spidercreeper": {
   "en": "",
   "key": "entity.takumicraft.spidercreeper",
   "zh": "蜘蛛苦力怕"
+ },
+ "takumicraft:spidercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.spidercreeper.desc",
+  "sub": true,
+  "zh": "习得忍术的这类苦力怕寄居在天花板和墙缝里，可谓是能重装房屋的一大害虫。"
  },
  "takumicraft:squidcreeper": {
   "en": "",
   "key": "entity.takumicraft.squidcreeper",
   "zh": "鱿鱼苦力怕"
  },
+ "takumicraft:squidcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.squidcreeper.desc",
+  "sub": true,
+  "zh": "绿色的鱿鱼，充满爆炸性。像水雷一样麻烦。"
+ },
  "takumicraft:stonecreeper": {
   "en": "",
   "key": "entity.takumicraft.stonecreeper",
   "zh": "石头苦力怕"
+ },
+ "takumicraft:stonecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.stonecreeper.desc",
+  "sub": true,
+  "zh": "爆炸时对石头特攻。使洞窟在爆炸的风暴中轰然倒塌。"
  },
  "takumicraft:straycreeper": {
   "en": "",
   "key": "entity.takumicraft.straycreeper",
   "zh": "流浪者苦力怕"
  },
+ "takumicraft:straycreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.straycreeper.desc",
+  "sub": true,
+  "zh": "用药水和弓箭将玩家粉碎。"
+ },
  "takumicraft:vexcreeper": {
   "en": "",
   "key": "entity.takumicraft.vexcreeper",
   "zh": "恼鬼苦力怕"
+ },
+ "takumicraft:vexcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.vexcreeper.desc",
+  "sub": true,
+  "zh": "仆从苏醒于府邸，羽翼腾空。暗夜风雷，轰鸣之音。"
  },
  "takumicraft:vindicatorcreeper": {
   "en": "",
   "key": "entity.takumicraft.vindicatorcreeper",
   "zh": "卫道士苦力怕"
  },
+ "takumicraft:vindicatorcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.vindicatorcreeper.desc",
+  "sub": true,
+  "zh": "斗士苏醒于福地，踏步迈出。暗夜一闪，贯穿死亡。"
+ },
  "takumicraft:voidcreeper": {
   "en": "",
   "key": "entity.takumicraft.voidcreeper",
   "zh": "虚空苦力怕"
+ },
+ "takumicraft:voidcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.voidcreeper.desc",
+  "sub": true,
+  "zh": "破除上方，带来平面。削平大地，引领新世界。"
  },
  "takumicraft:watercreeper": {
   "en": "",
   "key": "entity.takumicraft.watercreeper",
   "zh": "水苦力怕"
  },
+ "takumicraft:watercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.watercreeper.desc",
+  "sub": true,
+  "zh": "被水淹没了的话就无处可逃了。带上水桶吧！"
+ },
  "takumicraft:weathercreeper": {
   "en": "",
   "key": "entity.takumicraft.weathercreeper",
   "zh": "天气苦力怕"
+ },
+ "takumicraft:weathercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.weathercreeper.desc",
+  "sub": true,
+  "zh": "司管天气，唤雷呼雨的苦力怕。如果你够聪明的话就懂了。"
  },
  "takumicraft:witchcreeper": {
   "en": "",
   "key": "entity.takumicraft.witchcreeper",
   "zh": "女巫苦力怕"
  },
+ "takumicraft:witchcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.witchcreeper.desc",
+  "sub": true,
+  "zh": "魔法、药水和爆炸，把玩家迷得团团转！"
+ },
  "takumicraft:witherskeletoncreeper": {
   "en": "",
   "key": "entity.takumicraft.witherskeletoncreeper",
   "zh": "凋灵骷髅苦力怕"
+ },
+ "takumicraft:witherskeletoncreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.witherskeletoncreeper.desc",
+  "sub": true,
+  "zh": "爆炸时还会附加凋零状态。将下界彻底陷入阿鼻地狱的噩梦中。"
  },
  "takumicraft:wolfcreeper": {
   "en": "",
   "key": "entity.takumicraft.wolfcreeper",
   "zh": "狼苦力怕"
  },
+ "takumicraft:wolfcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.wolfcreeper.desc",
+  "sub": true,
+  "zh": "呈狼模样的苦力怕。骨头对它可能不太好用。"
+ },
  "takumicraft:woodcreeper": {
   "en": "",
   "key": "entity.takumicraft.woodcreeper",
   "zh": "木头苦力怕"
+ },
+ "takumicraft:woodcreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.woodcreeper.desc",
+  "sub": true,
+  "zh": "爆炸时对木头特攻。使森林在爆炸的火焰中轰燃殆尽。"
  },
  "takumicraft:yukaricreeper": {
   "en": "",
   "key": "entity.takumicraft.yukaricreeper",
   "zh": "结月缘苦力怕"
  },
+ "takumicraft:yukaricreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.yukaricreeper.desc",
+  "sub": true,
+  "zh": "她现身于将一切变成“超平坦”的爆炸之中。缔结吧，明月与无垠的大地！"
+ },
  "takumicraft:zombiecreeper": {
   "en": "",
   "key": "entity.takumicraft.zombiecreeper",
   "zh": "僵尸苦力怕"
+ },
+ "takumicraft:zombiecreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.zombiecreeper.desc",
+  "sub": true,
+  "zh": "将村民变为同族的苦力怕。传说它袭击过的村子全都变成了废墟。"
  },
  "takumicraft:zombievillagercreeper": {
   "en": "",
   "key": "entity.takumicraft.zombievillagercreeper",
   "zh": "村民僵尸苦力怕"
  },
+ "takumicraft:zombievillagercreeper.desc": {
+  "en": "",
+  "key": "entity.takumicraft.zombievillagercreeper.desc",
+  "sub": true,
+  "zh": "被苦力怕感染的村民。就算施以治愈魔法也会很快被爆炸吞噬。"
+ },
  "tempad:timedoor": {
   "en": "Timedoor",
   "key": "entity.tempad.timedoor",
   "zh": "时空门"
+ },
+ "tempad:timedoor.success": {
+  "en": "Timedoor opened",
+  "key": "entity.tempad.timedoor.success",
+  "sub": true,
+  "zh": "时门已打开"
  },
  "testt:ghastling": {
   "en": "",
@@ -30446,6 +32400,96 @@
   "en": "Bee Queen",
   "key": "entity.the_bumblezone.bee_queen",
   "zh": "蜂后"
+ },
+ "the_bumblezone:bee_queen.advancements_warning": {
+  "en": "To reset Queen's Desire advancements, right click again with empty hand",
+  "key": "entity.the_bumblezone.bee_queen.advancements_warning",
+  "sub": true,
+  "zh": "要重置女王的愿望进度，请再次用空手右击"
+ },
+ "the_bumblezone:bee_queen.christmas_trade_performed": {
+  "en": "Merry Christmas!",
+  "key": "entity.the_bumblezone.bee_queen.christmas_trade_performed",
+  "sub": true,
+  "zh": "圣诞快乐!"
+ },
+ "the_bumblezone:bee_queen.easter_trade_performed": {
+  "en": "Happy Easter!",
+  "key": "entity.the_bumblezone.bee_queen.easter_trade_performed",
+  "sub": true,
+  "zh": "复活节快乐!"
+ },
+ "the_bumblezone:bee_queen.forth_of_july_trade_performed": {
+  "en": "Happy 4th of July!",
+  "key": "entity.the_bumblezone.bee_queen.forth_of_july_trade_performed",
+  "sub": true,
+  "zh": "今天是什么特别的节日吗？BZZZ？"
+ },
+ "the_bumblezone:bee_queen.halloween_trade_performed": {
+  "en": "Trick or Treat!",
+  "key": "entity.the_bumblezone.bee_queen.halloween_trade_performed",
+  "sub": true,
+  "zh": "不给糖就捣蛋！"
+ },
+ "the_bumblezone:bee_queen.mention_bonus_trade": {
+  "en": "BZZZ! (Queen wants %s for next %s minutes)",
+  "key": "entity.the_bumblezone.bee_queen.mention_bonus_trade",
+  "sub": true,
+  "zh": "BZZZ！（女王想要%s，持续%s分钟）"
+ },
+ "the_bumblezone:bee_queen.mention_bonus_trade_inventory": {
+  "en": "Bzz! BZZZ! (Queen wants %s from your inventory!)",
+  "key": "entity.the_bumblezone.bee_queen.mention_bonus_trade_inventory",
+  "sub": true,
+  "zh": "BZ！BZZZ！（女王想要你物品栏中的%s！）"
+ },
+ "the_bumblezone:bee_queen.mention_bonus_trade_performed": {
+  "en": "Trade Bonus! %sx the rewards!",
+  "key": "entity.the_bumblezone.bee_queen.mention_bonus_trade_performed",
+  "sub": true,
+  "zh": "交易奖励！%sx 的奖励！"
+ },
+ "the_bumblezone:bee_queen.mention_bonus_trade_satisfied": {
+  "en": "Bzzz..! (The Queen is satisfied now)",
+  "key": "entity.the_bumblezone.bee_queen.mention_bonus_trade_satisfied",
+  "sub": true,
+  "zh": "BZZZ..！（女王现在满意了）"
+ },
+ "the_bumblezone:bee_queen.mention_regular_trade_held": {
+  "en": "Bzz? (Queen is interested in your held item)",
+  "key": "entity.the_bumblezone.bee_queen.mention_regular_trade_held",
+  "sub": true,
+  "zh": "BZZZ？（女王对你手中的物品感兴趣）"
+ },
+ "the_bumblezone:bee_queen.mention_reset": {
+  "en": "Congrats on your accomplishments! To redo the Queen's Desire quest-line, right click Bee Queen with empty hand to reset those advancements",
+  "key": "entity.the_bumblezone.bee_queen.mention_reset",
+  "sub": true,
+  "zh": "恭喜你的成就！要重新开始女王的愿望任务，请用空手右击蜂后以重置这些进度"
+ },
+ "the_bumblezone:bee_queen.mention_special_day_trade": {
+  "en": "BZZZ! (Queen wants %s!)",
+  "key": "entity.the_bumblezone.bee_queen.mention_special_day_trade",
+  "sub": true,
+  "zh": "BZZZ! (女王想要%s!)"
+ },
+ "the_bumblezone:bee_queen.new_year_trade_performed": {
+  "en": "Happy New Year!",
+  "key": "entity.the_bumblezone.bee_queen.new_year_trade_performed",
+  "sub": true,
+  "zh": "新年好啊!"
+ },
+ "the_bumblezone:bee_queen.reset_advancements": {
+  "en": "Queen's Desire advancements have been reset!",
+  "key": "entity.the_bumblezone.bee_queen.reset_advancements",
+  "sub": true,
+  "zh": "女王的愿望进度已重置！"
+ },
+ "the_bumblezone:bee_queen.thanksgiving_trade_performed": {
+  "en": "Happy Thanksgiving!",
+  "key": "entity.the_bumblezone.bee_queen.thanksgiving_trade_performed",
+  "sub": true,
+  "zh": "感恩节快乐！"
  },
  "the_bumblezone:bee_stinger": {
   "en": "Bee Stinger",
@@ -30750,6 +32794,12 @@
  "twilightforest:knight_phantom": {
   "en": "Knight Phantom",
   "key": "entity.twilightforest.knight_phantom",
+  "zh": "幻影骑士"
+ },
+ "twilightforest:knight_phantom.plural": {
+  "en": "Knight Phantoms",
+  "key": "entity.twilightforest.knight_phantom.plural",
+  "sub": true,
   "zh": "幻影骑士"
  },
  "twilightforest:knight_phantom_defeated": {
@@ -31496,5 +33546,11 @@
   "en": "Please make space in my chests/racks. I am not able to dump my inventory.",
   "key": "entity.worker.inventoryfullchestfull",
   "zh": "请为我的箱子或者架子腾出空间。我没法存放东西了。"
+ },
+ "yoyo:throw.subtitle": {
+  "en": "",
+  "key": "entity.yoyo.throw.subtitle",
+  "sub": true,
+  "zh": "悠悠球：飞出"
  }
 }

@@ -62,9 +62,12 @@ SNAPSHOT = ROOT / 'scripts' / 'trophy_entity_names.json'
 OUT = (ROOT / 'resourcepacks' / 'ATM10汉化包-7.2' / 'assets'
        / 'hanhua_trophies' / 'lang' / 'zh_cn.json')
 
-# entity.<ns>.<path>；命名空间与注册名里都不可能有点，用它排除
-# villager.farmer / tropical_fish.predefined.0 这类子键
+# entity.<ns>.<path>：命名空间与注册名里都不可能有点
 KEY_RE = re.compile(r'^entity\.([a-z0-9_-]+)\.([a-z0-9_/-]+)$')
+# entity.<ns>.<a>.<b>…：村民职业 / 热带鱼变种这类**子键**。它们不是注册名，
+# 但确实会被拿来当实体显示名（实测服务器上真有 "Nitwit Trophy"），
+# 所以只拿它们的中英文名字成键，不参与 idToName 推导。
+SUBKEY_RE = re.compile(r'^entity\.([a-z0-9_-]+)\.([a-z0-9_/.-]+)$')
 
 # 不是"生物"，做成奖杯没有意义/名字会串味的实体
 SKIP_IDS = {
@@ -88,7 +91,7 @@ def scan(instance):
 
     def take(data, sink):
         for k, v in data.items():
-            if isinstance(v, str) and KEY_RE.match(k):
+            if isinstance(v, str) and SUBKEY_RE.match(k):
                 sink.setdefault(k, v)
 
     def load(raw):
@@ -140,6 +143,9 @@ def scan(instance):
     snap = {}
     for key in sorted(set(jar_en) | set(jar_zh) | set(pack_zh)):
         m = KEY_RE.match(key)
+        sub = m is None
+        if sub:
+            m = SUBKEY_RE.match(key)
         if not m or key.endswith('.name'):
             continue
         eid = '%s:%s' % (m.group(1), m.group(2))
@@ -150,6 +156,8 @@ def scan(instance):
         if not zh or zh == en:
             continue                      # 没中文 / 中文就是英文 → 没得翻
         rec = {'key': key, 'en': en or '', 'zh': zh}
+        if sub:
+            rec['sub'] = True
         if m.group(1) in tmpl:
             rec['tmpl'] = tmpl[m.group(1)]
         snap[eid] = rec
@@ -172,6 +180,12 @@ def build(snap):
         if '%' in val:                    # translatable 无参，含 % 会炸格式化
             continue
         ns, path = eid.split(':', 1)
+        if rec.get('sub'):
+            # 子键不是注册名，idToName 推不出有意义的东西（曾产出 "0 Trophy"）
+            for form in (en, key, zh):
+                if form:
+                    cand.setdefault(form + ' Trophy', {}).setdefault(val, set()).add(eid)
+            continue
         forms = [id_to_name(eid), en, key, zh]
         t = rec.get('tmpl')
         if t:

@@ -31,16 +31,16 @@ ItemEvents.modifyTooltips(allthemods => {
     ])
 
     allthemods.add('allthemodium:allthemodium_ingot',[
-        Text.of("§7§o这些不是你要找的锭"),
-        Text.of("§6寻找[寂静Allthemodium板]")
+        Text.of("§7§o（挥了挥手）这不是你要找的锭"),
+        Text.of("§6去找那块[寂静ATM板]")
     ])
     allthemods.add('allthemodium:vibranium_ingot',[
-        Text.of("§7§o这些不是你要找的锭"),
-        Text.of("§6寻找[寂静振金板]")
+        Text.of("§7§o（挥了挥手）这不是你要找的锭"),
+        Text.of("§6去找那块[寂静振金板]")
     ])
     allthemods.add('allthemodium:unobtainium_ingot',[
-        Text.of("§7§o这些不是你要找的锭"),
-        Text.of("§6寻找[寂静难得素板]")
+        Text.of("§7§o（挥了挥手）这不是你要找的锭"),
+        Text.of("§6去找那块[寂静难得素板]")
     ])
 
 
@@ -145,7 +145,7 @@ ItemEvents.modifyTooltips(allthemods => {
 
     //Mystical Agriculture
     allthemods.add(/mysticalagriculture:.*watering_can/,[
-        Text.of("§c对 Fake Player 已禁用"),
+        Text.of("§c对假玩家无效"),
         Text.of("§c（如模块化路由器、点击器等方块）")
     ])
 
@@ -169,7 +169,7 @@ ItemEvents.modifyTooltips(allthemods => {
     //Eternal Starlight
     if (Platform.isLoaded("eternal_starlight")) {
         allthemods.add('eternal_starlight:loot_bag[eternal_starlight:loot_table="eternal_starlight:bosses/lunar_monstrosity"]', [
-            Text.of('这个战利品袋来自“Lunar Monstrosity”。')
+            Text.of('这个战利品袋来自“月藤巨物”。')
         ])
     }
 
