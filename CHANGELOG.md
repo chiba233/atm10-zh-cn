@@ -44,8 +44,10 @@
   「Invalid formatting! Unknown formatting symbol」。
 - **补 Silent Gear 章节副标题**：服务端缺 chapter_subtitle 键 → 显示英文
   "And Productive Metalworks"，补基础译名「以及高效金属加工」（做成可复现 delta）。
-- 修错译：Hyper-Condensed Matter「超冷凝物质」→「超聚合物质」（condensed 指高度聚合，
-  非热学冷凝）；结构罗盘补 `trial_chambers`→试炼密室（原版新结构，此前唯一漏网）。
+- 修错译（AE2 物质聚合器一系，对齐机器真名 `block.ae2.condenser`＝物质聚合器）：
+  物质冷凝器→物质聚合器、冷凝物质/超冷凝物质→聚合物质/超聚合物质、「冷凝更多」→「聚合更多」
+  （condensed 指高度聚合，非热学冷凝）；仅改 AE2 语境，保留别模组的「魔源冷凝器/饱和冷凝器」。
+  结构罗盘补 `trial_chambers`→试炼密室（原版新结构，此前唯一漏网）。
 - 资源蜜蜂体系：译名单一真源 + 生成器派生双端脚本；服务端按 NBT ID 迁移旧蜂笼 / 实体显示名；
   玩家命名牌名字绝不触碰；JEI 类型行精确翻译。
 - 结构罗盘 / 自然罗盘结构名；传送石碑维度名；The Bumblezone 维度统一为「嗡嗡领域」；
