@@ -1254,5 +1254,19 @@
   "tag.item.oritech.recyclable.small_gold_dust": "可回收为细金粉",
   "tag.item.oritech.recyclable.small_iron_dust": "可回收为细铁粉",
   "tag.item.oritech.recyclable.string": "可回收为线",
-  "label.oritech.reactor.warning_threshold": "警告"
+  "label.oritech.reactor.warning_threshold": "警告",
+  "block.oritech.black_hole_inner": "黑洞内层",
+  "block.oritech.black_hole_middle": "黑洞中层",
+  "block.oritech.black_hole_outer": "黑洞外层",
+  "block.oritech.creative_tank_item_model": "创造储罐物品模型",
+  "block.oritech.quarry_beam_ring": "采石光束环",
+  "block.oritech.reactor_cold_indicator_block": "反应堆低温指示方块",
+  "block.oritech.reactor_explosion_large": "反应堆爆炸大",
+  "block.oritech.reactor_explosion_medium": "反应堆爆炸中温",
+  "block.oritech.reactor_explosion_small": "反应堆爆炸小",
+  "block.oritech.reactor_hot_indicator_block": "反应堆高温指示方块",
+  "block.oritech.reactor_medium_indicator_block": "反应堆中温指示方块",
+  "block.oritech.superconductor_connection": "超导体连接",
+  "block.oritech.tank_item_model": "储罐物品模型",
+  "block.oritech.transparent_item_pipe_connection": "透明物品管道连接"
 }

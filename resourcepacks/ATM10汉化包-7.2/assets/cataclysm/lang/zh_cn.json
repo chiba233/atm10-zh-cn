@@ -738,5 +738,11 @@
   "notice.no.more.text": "通知已禁用。请注意，您可以在配置文件中重新启用它。",
   "entity.cataclysm.endermaptera_has_jaws": "末影螳螂",
   "entity.cataclysm.octohost": "章鱼宿主",
-  "entity.cataclysm.player_ceraunus": "刻拉诺斯"
+  "entity.cataclysm.player_ceraunus": "刻拉诺斯",
+  "block.cataclysm.aptrgangr_wall_head": "尸鬼墙头颅",
+  "block.cataclysm.draugr_wall_head": "德劳格墙头颅",
+  "block.cataclysm.kobolediator_wall_skull": "狗头角斗士墙头颅",
+  "block.cataclysm.melting_netherrack": "熔融下界岩",
+  "block.cataclysm.sandstone_spear_trap": "砂岩长矛陷阱",
+  "block.cataclysm.spear_block": "长矛方块"
 }

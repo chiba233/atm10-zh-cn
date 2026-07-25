@@ -1788,5 +1788,6 @@
   "tag.entity_type.the_bumblezone.queens_desire.terror_fangs_cave_spider": "洞穴蜘蛛",
   "tag.entity_type.the_bumblezone.queens_desire.too_many_legs_spiders": "各种非洞穴蜘蛛",
   "entity.the_bumblezone.bee_stinger_drops": "蜂刺",
-  "entity.the_bumblezone.cosmic_crystal": "宇宙水晶"
+  "entity.the_bumblezone.cosmic_crystal": "宇宙水晶",
+  "fluid_type.the_bumblezone.honey_fluid": "蜂蜜"
 }

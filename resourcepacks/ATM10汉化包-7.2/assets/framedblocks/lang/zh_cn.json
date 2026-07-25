@@ -436,5 +436,8 @@
   "tooltip.framedblocks.one_way_window.face_abbr.west": "西",
   "tooltip.framedblocks.powered_saw.energy": "%s / %s FE",
   "tooltip.framedblocks.reinforce_state.true": "已强化",
-  "tooltip.framedblocks.y_slope.horizontal": "水平"
+  "tooltip.framedblocks.y_slope.horizontal": "水平",
+  "block.framedblocks.framed_redstone_wall_torch": "框架红石墙上火把",
+  "block.framedblocks.framed_soul_wall_torch": "框架灵魂墙上火把",
+  "block.framedblocks.framed_wall_torch": "框架墙上火把"
 }

@@ -2272,5 +2272,11 @@
   "pneumaticcraft.gui.tooltip.jackhammer.speedcapped.false": "防止瞬间破坏：关",
   "programmingPuzzle.pneumaticcraft.condition_dimension.name": "条件：维度",
   "entity.pneumaticcraft.ring": "环",
-  "entity.pneumaticcraft.vortex": "旋涡"
+  "entity.pneumaticcraft.vortex": "旋涡",
+  "block.pneumaticcraft.drone_redstone_emitter": "无人机红石发射器",
+  "block.pneumaticcraft.ethanol": "乙醇",
+  "block.pneumaticcraft.fake_ice": "隐形冰",
+  "block.pneumaticcraft.gasoline": "汽油",
+  "block.pneumaticcraft.kerosene_lamp_light": "煤油灯光源",
+  "block.pneumaticcraft.memory_essence": "记忆精华"
 }

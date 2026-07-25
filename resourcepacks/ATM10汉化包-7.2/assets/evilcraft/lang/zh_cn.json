@@ -627,5 +627,7 @@
   "info_book.evilcraft.second_age.after_death.garmonbozia.text3": "那些庸碌之辈竟敢妄言我在此道走得太远，何其愚昧。",
   "block.evilcraft.eternal_water.auto_output.enabled": "自动输出已启用",
   "block.evilcraft.eternal_water.auto_output.disabled": "自动输出已禁用",
-  "entity.evilcraft.blood_pearl": "血之珍珠"
+  "entity.evilcraft.blood_pearl": "血之珍珠",
+  "block.evilcraft.gem_stone_torch_wall": "宝石石火把墙上",
+  "block.evilcraft.invisible_redstone": "隐形红石"
 }

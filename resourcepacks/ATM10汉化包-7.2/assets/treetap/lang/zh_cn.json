@@ -1,10 +1,11 @@
 {
- "block.treetap.tap": "水龙头",
- "block.treetap.sap_collector": "树液收集器",
- "block.treetap.wooden_sap_collector": "树液收集器",
- "item.treetap.tap.modifier": "速度修正：%s",
- "jei.treetap.tap_extract": "树脂采集",
- "jei.treetap.life_cycle.months": "%s",
- "jei.treetap.life_cycle.all_year": "全年",
- "config.jade.plugin_treetap.tap": "水龙头"
+  "block.treetap.tap": "水龙头",
+  "block.treetap.sap_collector": "树液收集器",
+  "block.treetap.wooden_sap_collector": "树液收集器",
+  "item.treetap.tap.modifier": "速度修正：%s",
+  "jei.treetap.tap_extract": "树脂采集",
+  "jei.treetap.life_cycle.months": "%s",
+  "jei.treetap.life_cycle.all_year": "全年",
+  "config.jade.plugin_treetap.tap": "水龙头",
+  "block.treetap.ceramic_sap_collector": "陶瓷树液收集器"
 }

@@ -682,5 +682,7 @@
   "emi.category.industrialforegoing.latex_processing_unit": "胶乳加工机",
   "emi.category.industrialforegoing.sewage_composter": "污水堆肥机",
   "emi.category.industrialforegoing.sludge_refiner": "污泥精炼机",
-  "emi.category.industrialforegoing.spores_recreator": "蘑菇孢子繁殖器"
+  "emi.category.industrialforegoing.spores_recreator": "蘑菇孢子繁殖器",
+  "block.industrialforegoing.infinity_backpack_block": "无尽背包方块",
+  "block.industrialforegoing.transporter": "传送器"
 }

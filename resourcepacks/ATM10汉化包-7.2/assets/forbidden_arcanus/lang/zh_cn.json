@@ -2,8 +2,8 @@
   "_comment": "物品组",
   "itemGroup.forbidden_arcanus": "禁忌与奥秘",
   "__comment": "效果",
-  "effect.forbidden_arcanus.spectral_vision": "幽灵视觉",
-  "effect.forbidden_arcanus.darkened": "漆黑",
+  "effect.forbidden_arcanus.spectral_vision": "灵视",
+  "effect.forbidden_arcanus.darkened": "黯化",
   "category_blocks": "方块",
   "block.forbidden_arcanus.darkstone": "暗黑石",
   "block.forbidden_arcanus.arcane_chiseled_darkstone": "神秘錾制暗黑石",
@@ -472,5 +472,6 @@
   "item.forbidden_arcanus.edelwood_chest_boat": "埃德木运输船",
   "item.forbidden_arcanus.reinforced_deorum_blacksmith_gavel": "强化圣金锻工锤",
   "entity.forbidden_arcanus.boom_arrow": "爆裂之箭",
-  "entity.forbidden_arcanus.draco_arcanus_arrow": "龙秘之箭"
+  "entity.forbidden_arcanus.draco_arcanus_arrow": "龙秘之箭",
+  "effect.forbidden_arcanus.frozen": "冰封"
 }

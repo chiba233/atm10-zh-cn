@@ -652,5 +652,7 @@
   "jei_category.refurbished_furniture.oven_baking": "烘焙",
   "jei_category.refurbished_furniture.sink_fluid_transmuting": "流体转化",
   "backpack.refurbished_furniture.cabinet": "储物柜",
-  "backpack.refurbished_furniture.cabinet.unlock": "打开MrCrayfish的家具模组中的任意储物柜即可解锁此背包"
+  "backpack.refurbished_furniture.cabinet.unlock": "打开MrCrayfish的家具模组中的任意储物柜即可解锁此背包",
+  "block.refurbished_furniture.dark_freezer": "深色冰柜",
+  "block.refurbished_furniture.light_freezer": "光源冰柜"
 }

@@ -1340,5 +1340,17 @@
   "entity.irons_spellbooks.fire_boss_per_player": "烈焰领主",
   "entity.irons_spellbooks.fire_boss_per_player_ominous": "不祥·烈焰领主",
   "entity.irons_spellbooks.keeper": "守护者",
-  "entity.irons_spellbooks.scapegoat": "替罪羊"
+  "entity.irons_spellbooks.scapegoat": "替罪羊",
+  "block.irons_spellbooks.blood_cauldron": "血之炼药锅",
+  "block.irons_spellbooks.grimy_tiles": "污秽瓷砖",
+  "block.irons_spellbooks.inscription_table_placeholder": "刻录台占位",
+  "block.irons_spellbooks.wisewood_planks": "睿智木木板",
+  "effect.irons_spellbooks.volt_strike": "电光打击",
+  "effect.irons_spellbooks.polar_bear_timer": "北极熊召唤",
+  "effect.irons_spellbooks.summon_swords_timer": "剑刃召唤",
+  "effect.irons_spellbooks.vex_timer": "恼鬼召唤",
+  "effect.irons_spellbooks.summon_horse_timer": "战马召唤",
+  "effect.irons_spellbooks.summon_ravens_timer": "渡鸦召唤",
+  "effect.irons_spellbooks.raise_dead_timer": "亡者复生",
+  "effect.irons_spellbooks.summon_vex_timer": "恼鬼召唤"
 }

@@ -3899,5 +3899,14 @@
   "entity.minecolonies.citizen": "居民",
   "entity.minecolonies.mercenary": "雇佣兵",
   "entity.minecolonies.raiders": "袭击者",
-  "entity.minecolonies.visitor": "访客"
+  "entity.minecolonies.visitor": "访客",
+  "block.minecolonies.caliper": "卡尺",
+  "block.minecolonies.colony_wall_banner": "殖民地墙上旗帜",
+  "block.minecolonies.compost": "堆肥",
+  "block.minecolonies.cotton": "棉花",
+  "block.minecolonies.sceptergold": "黄金权杖",
+  "block.minecolonies.scepterpermission": "权限权杖",
+  "block.minecolonies.sceptersteel": "钢铁权杖",
+  "block.minecolonies.supplycamp": "补给营地",
+  "block.minecolonies.supplychest": "补给箱"
 }

@@ -1751,5 +1751,8 @@
   "entity.iceandfire.deathworm_white_giant": "巨型死亡蠕虫",
   "entity.iceandfire.troll_forest": "森林巨魔",
   "entity.iceandfire.troll_frost": "霜冻巨魔",
-  "entity.iceandfire.troll_mountain": "山地巨魔"
+  "entity.iceandfire.troll_mountain": "山地巨魔",
+  "block.iceandfire.dread_stone_slab_double": "恐惧石台阶双",
+  "block.iceandfire.pixie_jar_5": "妖精罐5",
+  "block.iceandfire.tinkers_fluid": "匠魂流体"
 }

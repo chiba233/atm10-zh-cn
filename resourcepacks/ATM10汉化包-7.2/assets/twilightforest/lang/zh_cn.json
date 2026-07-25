@@ -2077,5 +2077,16 @@
   "entity.twilightforest.death_tome_hurt": "死亡之书",
   "entity.twilightforest.knight_phantom_defeated": "幻影骑士",
   "entity.twilightforest.questing_ram_reward_blocks": "谜题公羊",
-  "entity.twilightforest.questing_ram_rewards": "谜题公羊"
+  "entity.twilightforest.questing_ram_rewards": "谜题公羊",
+  "block.twilightforest.alpha_yeti_wall_trophy": "首领雪怪墙上奖杯",
+  "block.twilightforest.beanstalk_grower": "豆茎催生者",
+  "block.twilightforest.hydra_wall_trophy": "九头蛇墙上奖杯",
+  "block.twilightforest.knight_phantom_wall_trophy": "骑士幻影墙上奖杯",
+  "block.twilightforest.lich_wall_trophy": "巫妖墙上奖杯",
+  "block.twilightforest.minoshroom_wall_trophy": "米诺菇墙上奖杯",
+  "block.twilightforest.naga_wall_trophy": "娜迦墙上奖杯",
+  "block.twilightforest.quest_ram_wall_trophy": "谜题公羊墙上奖杯",
+  "block.twilightforest.snow_queen_wall_trophy": "冰雪女王墙上奖杯",
+  "block.twilightforest.twilight_wall_sign": "暮色墙上告示牌",
+  "block.twilightforest.ur_ghast_wall_trophy": "暮初恶魂墙上奖杯"
 }

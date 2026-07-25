@@ -482,5 +482,6 @@
   "rootsclassic.configuration.verdantSprigDropChance": "翠绿嫩枝掉落几率",
   "rootsclassic.jei.tooltip.crafting": "",
   "rootsclassic.jei.tooltip.engraved_crafting": "",
-  "entity.rootsclassic.phantom_skeleton": "幻影骷髅"
+  "entity.rootsclassic.phantom_skeleton": "幻影骷髅",
+  "block.rootsclassic.druid_chalice": "德鲁伊圣杯"
 }

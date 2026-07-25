@@ -2365,5 +2365,19 @@
   "block.ars_nouveau.starbuncle_plush": "星兔玩偶",
   "Elemental Notes": "元素笔记",
   "Lost notes from the worn notebook": "破旧的笔记本中的遗失笔记",
-  "entity.ars_nouveau.wall": "魔法墙"
+  "entity.ars_nouveau.wall": "魔法墙",
+  "block.ars_nouveau.crystallizer": "结晶器",
+  "block.ars_nouveau.potted_blue_archwood_sapling": "盆栽·蓝色法术木树苗",
+  "block.ars_nouveau.potted_green_archwood_sapling": "盆栽·绿色法术木树苗",
+  "block.ars_nouveau.potted_magebloom_crop": "盆栽·法术绽放作物",
+  "block.ars_nouveau.potted_purple_archwood_sapling": "盆栽·紫色法术木树苗",
+  "block.ars_nouveau.potted_red_archwood_sapling": "盆栽·红色法术木树苗",
+  "block.ars_nouveau.ritual": "仪式",
+  "block.ars_nouveau.source_gem": "源质宝石",
+  "block.ars_nouveau.stripped_archwood_log": "去皮法术木原木",
+  "block.ars_nouveau.stripped_archwood_wood": "去皮法术木木",
+  "block.ars_nouveau.temporary_block": "临时方块",
+  "effect.ars_nouveau.familiar_sickness": "魔宠虚弱",
+  "effect.ars_nouveau.shield": "法术护盾",
+  "block.ars_nouveau.planarium_projector": "星象投影仪"
 }

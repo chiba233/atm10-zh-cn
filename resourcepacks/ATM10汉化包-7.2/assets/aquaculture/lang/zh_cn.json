@@ -290,5 +290,11 @@
   "tag.item.c.nuggets.neptunium": "海王粒",
   "tag.item.c.storage_blocks.neptunium": "海王块",
   "tag.item.c.tools.knife": "刀刃",
-  "entity.aquaculture.spectral_water_arrow": "光灵水箭"
+  "entity.aquaculture.spectral_water_arrow": "光灵水箭",
+  "block.aquaculture.acacia_fish_mount": "金合欢鱼类挂板",
+  "block.aquaculture.birch_fish_mount": "白桦鱼类挂板",
+  "block.aquaculture.dark_oak_fish_mount": "深色橡木鱼类挂板",
+  "block.aquaculture.jungle_fish_mount": "丛林木鱼类挂板",
+  "block.aquaculture.oak_fish_mount": "橡木鱼类挂板",
+  "block.aquaculture.spruce_fish_mount": "云杉鱼类挂板"
 }

@@ -1788,5 +1788,8 @@
   "gui.eternal_starlight.jei.category.alloy_furnace_cooling": "合金炉冷却",
   "gui.eternal_starlight.jei.category.alloy_furnace_cooling.efficiency": "%s倍过热时长",
   "entity.eternal_starlight.aetherstrike_rocket": "以太打击火箭",
-  "entity.eternal_starlight.solar_creeper": "日耀苦力怕"
+  "entity.eternal_starlight.solar_creeper": "日耀苦力怕",
+  "block.eternal_starlight.tangled_wall_skull": "缠结墙头颅",
+  "block.eternal_starlight.wall_doomed_redstone_torch": "墙上厄命红色石火把",
+  "block.eternal_starlight.wall_doomed_torch": "墙上厄命火把"
 }

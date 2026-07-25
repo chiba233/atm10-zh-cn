@@ -1292,5 +1292,6 @@
   "command.silentgear.parts.describe.id": "ID: ",
   "command.silentgear.traits.describe.id": "ID: ",
   "item.silentgear.paint.color": "颜色：%s",
-  "entity.silentgear.thrown_trident": "投掷的三叉戟"
+  "entity.silentgear.thrown_trident": "投掷的三叉戟",
+  "block.silentgear.wall_stone_torch": "墙上石火把"
 }

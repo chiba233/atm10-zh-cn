@@ -1,4 +1,9 @@
 {
- "Gadgets for Derps": "笨蛋专用小工具",
- "Building made easier!": "让建造更简单！"
+  "Gadgets for Derps": "笨蛋专用小工具",
+  "Building made easier!": "让建造更简单！",
+  "block.buildinggadgets2.blank_const_block": "空白建造方块",
+  "block.buildinggadgets2.construction_block": "建造方块",
+  "block.buildinggadgets2.construction_block_dense": "建造方块致密",
+  "block.buildinggadgets2.construction_block_powder": "建造方块粉末",
+  "block.buildinggadgets2.constructionblock_dense": "建造方块致密"
 }

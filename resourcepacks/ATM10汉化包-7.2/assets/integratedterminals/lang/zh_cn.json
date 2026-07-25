@@ -174,5 +174,7 @@
   "info_book.integratedterminals.tutorials.storage_terminal_filtering": "存储终端过滤",
   "info_book.integratedterminals.tutorials.storage_terminal_filtering.text1": "&l存储终端&r的众多实用功能之一，是能够对材料进行&o过滤&r。在本教程中，我们将介绍两种不同的过滤方法：基于文本的过滤和基于变量的过滤（只有第二种会给你一个进度）。本教程将使用由集成管道的物品接口提供的基于物品的存储。",
   "info_book.integratedterminals.tutorials.storage_terminal_filtering.text2": "在本教程的第一部分中，我们将通过在搜索框中输入特定字符串来筛选物品。请注意，你可以使用热键更快地选中这个搜索框。如果你安装了 JEI，还可以将其内容与 JEI 搜索框同步。默认情况下，你会在材料名称中进行搜索。若在字符串前加上 &o'@'&r，则可以按模组搜索。使用 &o'#'&r 时，则可以搜索提示文本。最后，&o'$'&r 可用于查询物品标签。为了完成本教程的第一部分，请在搜索框中输入 &o'$plank @minecraft'&r，以显示 Minecraft 添加的所有木板。",
-  "info_book.integratedterminals.tutorials.storage_terminal_filtering.text3": "本教程的第二部分将使用 &l存储终端&r GUI 右下角的 &l变量&r 槽位，进行基于变量的筛选。你可以插入 &l变量&r，其中包含一个在 &lIntegrated Dynamics 逻辑编程器&r 中配置的特定 &l战利品表谓词&r：它接收材料类型作为输入，并输出一个 &9布尔值&0，用于指示给定材料是否应被显示。在本教程中，我们来尝试筛选所有 &o可附魔的物品&r。为此，打开一个 &l逻辑编程器&r，进入 &l战利品表谓词&r 类型，搜索 &o“物品可附魔”&r 谓词，并将其写入一个 &l变量&r。之后，在选择物品标签页的情况下，将你的 &l变量&r 插入 &l存储终端&r 内的其中一个 &l变量&r 槽位。"
+  "info_book.integratedterminals.tutorials.storage_terminal_filtering.text3": "本教程的第二部分将使用 &l存储终端&r GUI 右下角的 &l变量&r 槽位，进行基于变量的筛选。你可以插入 &l变量&r，其中包含一个在 &lIntegrated Dynamics 逻辑编程器&r 中配置的特定 &l战利品表谓词&r：它接收材料类型作为输入，并输出一个 &9布尔值&0，用于指示给定材料是否应被显示。在本教程中，我们来尝试筛选所有 &o可附魔的物品&r。为此，打开一个 &l逻辑编程器&r，进入 &l战利品表谓词&r 类型，搜索 &o“物品可附魔”&r 谓词，并将其写入一个 &l变量&r。之后，在选择物品标签页的情况下，将你的 &l变量&r 插入 &l存储终端&r 内的其中一个 &l变量&r 槽位。",
+  "block.integratedterminals.part_terminal_crafting_job": "部件终端合成任务",
+  "block.integratedterminals.part_terminal_storage": "部件终端储物"
 }
