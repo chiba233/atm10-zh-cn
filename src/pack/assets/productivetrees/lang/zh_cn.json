@@ -3888,7 +3888,7 @@
   "productivetrees.devices.sawmill": "锯木机",
   "productivetrees.devices.stripper": "剥离器",
   "productivetrees.information.pollen": "对树叶使用以手动为其授粉。",
-  "productivetrees.information.upgrade.upgrade_pollen_sieve.advanced_hive": "在蜂箱中安装此升级后，蜜蜂收集到的部分花粉会被筛分并存入蜂箱中。",
+  "productivetrees.information.upgrade.upgrade_pollen_sieve.advanced_beehive": "在蜂箱中安装此升级后，蜜蜂收集到的部分花粉会被筛分并存入蜂箱中。",
   "productivetrees.information.upgrade.upgrade_time.pollen_sifter": "可安装在机器中以加快处理速度。\n   可安装多个升级以进一步减少所需时间。",
   "productivetrees.information.upgrade.upgrade_time.sawmill": "可安装在机器中以加快处理速度。\n   可安装多个升级以进一步减少所需时间。",
   "productivetrees.information.upgrade.upgrade_time.stripper": "每个升级都会使每次操作处理的物品数量增加 4。\n   可安装多个升级以进一步减少所需时间。",
