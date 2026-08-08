@@ -4,13 +4,15 @@
   "kind": "forbidden_text",
   "scope": "repo",
   "terms": ["联调蜂", "神蜂特工队"],
-  "why": "这些是 fbi 蜂用过又被否掉的旧译名。真源改名之后，任何地方还出现它们就说明那里是一份没跟上的旧拷贝。这类词只会越积越多，所以放数据里而不是脚本里。**只收从未出货过的候选译名**：已经发过版又改名的旧名（幽灵蜜蜂蛋、陨星蜜蜂…）必须写进 CHANGELOG 的「之前」列让玩家认得出，收进来会把更新日志本身判红。",
+  "why": "这些是 fbi 蜂用过又被否掉的旧译名。真源改名之后，任何地方还出现它们就说明那里是一份没跟上的旧拷贝。这类词只会越积越多，所以放数据里而不是脚本里。\n\n**面向玩家的文档不在扫描范围内**（README / CHANGELOG）。更新日志的「之前」列天生就要写旧译名——不写玩家认不出改的是哪一条。2026-08-08 之前这条闸把文档也扫了，于是「废弃译名表」被迫只能收从未出货过的候选名，等于让文档规矩去迁就闸；用户原话「一个 ci 扫描 readme 和 changelog 已经够蠢了」。放开之后，已经发过版又改名的旧名（七咒之戒、幽灵蜜蜂蛋…）也可以正常收进来。",
   "message": "含废弃译名 \"{term}\"（真源已更名，此处是漂移的旧拷贝）",
   "allow_paths": [
    "kubejs/client_scripts/pb_hanhua_tooltip.js",
    "kubejs/server_scripts/pb_hanhua_cage_migrate.js",
    "scripts/gen_pb_hanhua.py",
-   "src/rules/terms.json"
+   "src/rules/terms.json",
+   "README.md",
+   "CHANGELOG.md"
   ],
   "skip_dirs": [".git", "dist", "packsrc", "pack", "node_modules", "build"],
   "skip_suffixes": [".jar", ".png", ".zip", ".otf", ".ttf"]

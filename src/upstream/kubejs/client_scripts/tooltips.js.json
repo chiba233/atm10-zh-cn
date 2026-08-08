@@ -128,7 +128,7 @@
     "        Text.of(\"§6█§7 = Chiseled Arcane Polished Darkstone\"),\n"
    ],
    "replace": [
-    "        Text.of(\"§c§l搭建完成后按住蹲下键使用洁净粉末右击锻造台\"),\n",
+    "        Text.of(\"§c§l搭建完成后按住潜行键使用洁净粉末右击锻造台\"),\n",
     "        Text.of(\"§c█ = 镀金錾制磨制暗黑石（上方放置锻造台）\"),\n",
     "        Text.of(\"§7█ = 磨制暗黑石\"),\n",
     "        Text.of(\"§5█§7 = 镀金錾制磨制暗黑石\"),\n",
