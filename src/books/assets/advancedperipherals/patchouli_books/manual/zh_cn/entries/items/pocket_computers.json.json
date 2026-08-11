@@ -16,7 +16,7 @@
     "text"
    ],
    "We provide Pocket Computer upgrades for the following peripherals:$(li)$(9)$(l:peripherals/environment_detector)Environment Detector$(/l)$()$(li)$(9)$(l:peripherals/player_detector)Player Detector$(/l)$()$(li)$(9)$(l:peripherals/chat_box)Chat Box$(/l)$()$(p)For the full documentation please see the $(9)$(l:https://docs.advanced-peripherals.de/items/pocket_computer/)official wiki page$(/l)$()!",
-   "我们为以下外设提供手提计算机升级支持：$(li)$(9)$(l:peripherals/environment_detector)环境监测仪$(/l)$()$(li)$(9)$(l:peripherals/player_detector)玩家侦测器$(/l)$()$(li)$(9)$(l:peripherals/chat_box)聊天方块$(/l)$()$(p)完整说明请参阅$(9)$(l:https://docs.advanced-peripherals.de/items/pocket_computer/)官方维基页面$(/l)$()！"
+   "我们为以下外设提供便携式计算机升级支持：$(li)$(9)$(l:peripherals/environment_detector)环境监测仪$(/l)$()$(li)$(9)$(l:peripherals/player_detector)玩家侦测器$(/l)$()$(li)$(9)$(l:peripherals/chat_box)聊天方块$(/l)$()$(p)完整说明请参阅$(9)$(l:https://docs.advanced-peripherals.de/items/pocket_computer/)官方维基页面$(/l)$()！"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Simply combine these with a pocket computer to add the peripheral to it. Note that you can't use the associated events.",
-   "只需将其与手提计算机合成，即可为手提计算机添加该外设。请注意，你无法使用相关的事件。"
+   "只需将其与便携式计算机合成，即可为便携式计算机添加该外设。请注意，你无法使用相关的事件。"
   ]
  ]
 }
