@@ -28,6 +28,7 @@
   "curseforge_overrides": "versions/<版本>/overrides.sha256（整棵树的指纹）",
   "curseforge_jars": "versions/db/<版本>/jars.json（每个 jar 的 sha256 + 不可变的 fileID）",
   "modrinth_jars": "src/mods.lock.json（sha256）",
+  "vaultpatcher_patch": "src/mods/vaultpatcher/manifest.json（上游 ref + 每个源文件 sha256 + 编译依赖 sha256）——随包的 VaultPatcher 要现打性能补丁再编回去，所以 javac 也进了依赖图；容器里由 build.yml 装 default-jdk-headless",
   "mojang_client": "版本清单自带 sha1，scripts/vanilla.py 逐个核对"
  }
 }

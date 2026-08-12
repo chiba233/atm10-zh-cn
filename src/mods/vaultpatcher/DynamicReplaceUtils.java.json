@@ -1,0 +1,30 @@
+{
+ "_说明": "栈遍历改惰性求值。stackTraces 只在「某条 pair 已经命中之后」才会被读到，而绝大多数\n调用都不命中，所以原来在方法开头无条件 Thread.getStackTrace() 是纯浪费。\n这个方法被 ASM 注入进 Font.renderText / Component.literal / FormattedText.of，\n每帧要走几百到几千次；玩家机器的 spark 采样里它能占到 Render thread 的 9%。",
+ "src": "src/main/java/me/fengming/vaultpatcher_asm/core/utils/DynamicReplaceUtils.java",
+ "edits": [
+  {
+   "find": [
+    "        // There will be no need to get the stack traces if classname is not needed\n",
+    "        StackTraceElement[] stackTraces = Utils.needStacktrace ? Thread.currentThread().getStackTrace() : new StackTraceElement[0];\n"
+   ],
+   "replace": [
+    "        // [hanhua patch] stackTraces 只在「某条 pair 已经命中之后」才会被读到，\n",
+    "        // 而绝大多数调用都不命中，所以原来在方法开头无条件取栈是纯浪费（每次约 9us，\n",
+    "        // 且 Font.renderText / Component.literal 每帧要走几百次）。改为命中后再取。\n",
+    "        StackTraceElement[] stackTraces = null;\n"
+   ]
+  },
+  {
+   "find": [
+    "\n",
+    "            String methodName = info.getTargetClassInfo().getMethod();\n"
+   ],
+   "replace": [
+    "            if (stackTraces == null)\n",
+    "                stackTraces = Utils.needStacktrace ? Thread.currentThread().getStackTrace() : new StackTraceElement[0];\n",
+    "\n",
+    "            String methodName = info.getTargetClassInfo().getMethod();\n"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "_说明": [
+  "给随包分发的 VaultPatcher 打两处性能补丁，产物不入库——构建时现拉源、现打、现编、现塞。",
+  "",
+  "为什么要打：VaultPatcher 只要存在任意一个 dynamic 模块，就会把",
+  "DynamicReplaceUtils.__mappingString 注入进 Font.renderText、",
+  "PlainTextContents$LiteralContents.<init> 和 FormattedText.of——也就是游戏每帧画的",
+  "每一个字符串都要走一次。而那个方法在方法开头无条件 Thread.getStackTrace()，",
+  "又对整张替换表做线性 String.equals。实测每次调用 18.3us，玩家机器上的 spark 采样里",
+  "它占到 Render thread 的 3.45%~9.09%（随玩家装的 HUD 模组增长），",
+  "其中 StackTraceElement.initStackTraceElements 一度是自身耗时第一名。",
+  "",
+  "为什么不改配置绕开：VaultPatcher 没有关闭 dynamic 的开关；而 dynamic 表里 828 对是",
+  "建筑风格名、111 对是模组列表名，都来自运行时构造的字符串，改不成静态 LDC。",
+  "去掉全部 dynamic 模块确实能让注入彻底消失，但要丢掉 1085 条译文。",
+  "",
+  "为什么不等上游：1.5.3 的 DynamicReplaceUtils.java 与 1.5.2 blob sha 完全相同，未修。",
+  "",
+  "GPL-3.0：VaultPatcher 是 GPL-3.0，本仓库同许可。分发改过的版本需要保留许可、",
+  "注明已修改、并提供对应源码——本目录的 *.json 加上 upstream 里钉死的 ref/sha256",
+  "就是完整的对应源码，patch_vaultpatcher.py 会往 jar 里写一份 MODIFIED.txt 说明改了什么。"
+ ],
+
+ "jar": {
+  "_说明": "src/mods.lock.json 里那个 jar，必须与此哈希逐字节相同；对不上就退出，不猜。",
+  "path": "mods/vaultpatcher.jar",
+  "sha256": "034b53b79aecabf7635f16937a3216e16a01eb97700919330189a5a35524d67f"
+ },
+
+ "upstream": {
+  "_说明": "补丁按这个 tag 的源码写的。取下来必须逐个核 sha256——上游改了同名 tag 也会当场发现。",
+  "repo": "3093FengMing/VaultPatcher",
+  "ref": "1.5.2-all",
+  "raw": "https://raw.githubusercontent.com/3093FengMing/VaultPatcher/1.5.2-all/",
+  "sources": {
+   "DynamicReplaceUtils.java": "8f3b2e6dbdb93acf1291e57e4ca93234da6c7e5775f48821f5a59477a76649a4",
+   "Pairs.java": "534dcc9596f8c96a9cceed335cf10c141a512f499db318bdce305f5896fbcffd"
+  }
+ },
+
+ "deps": {
+  "_说明": "编译这两个文件需要的第三方类。只用于 javac 的 -cp，不进出货物。",
+  "gson-2.10.1.jar": {
+   "url": "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar",
+   "sha256": "4241c14a7727c34feea6507ec801318a3d4a90f070e4525681079fb94ee4c593"
+  },
+  "fastutil-core-8.5.12.jar": {
+   "url": "https://repo1.maven.org/maven2/it/unimi/dsi/fastutil-core/8.5.12/fastutil-core-8.5.12.jar",
+   "sha256": "f31c20f5b06312f3d5e06e6160a32e274d819aa6cebf27528b26b6b5c0c1df19"
+  }
+ },
+
+ "verify": {
+  "_说明": [
+   "等价闸：拿本包真实的 dynamic 表，把 1085 个 key 的「命中路径 + 未命中路径 + 边界值」",
+   "分别喂给官方 jar 和补丁 jar，两边输出摘要必须逐字节相同。",
+   "命中路径要从一个类名与 target_class 完全一致的调用方发起，所以 verify/ 下有一个",
+   "包名伪装成 com.ldtteam.structurize.client.gui.WindowExtendedBuildTool 的空壳——",
+   "它只在这道闸里用，不进任何产物。",
+   "",
+   "不钉死摘要值：摘要随本包的替换表内容变，钉了每次改译文都要跟着改。",
+   "真正的不变量是「两个 jar 输出一样」，与表的内容无关。",
+   "",
+   "Utils 的字段签名引用 ASM 类型，加载它需要 asm/asm-tree 在 classpath 上。"
+  ],
+  "deps": {
+   "asm-9.7.1.jar": {
+    "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar",
+    "sha256": "8cadd43ac5eb6d09de05faecca38b917a040bb9139c7edeb4cc81c740b713281"
+   },
+   "asm-tree-9.7.1.jar": {
+    "url": "https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.7.1/asm-tree-9.7.1.jar",
+    "sha256": "9929881f59eb6b840e86d54570c77b59ce721d104e6dfd7a40978991c2d3b41f"
+   }
+  }
+ },
+
+ "replace_entries": {
+  "_说明": [
+   "编译后只允许这三个条目变。多一个少一个都算失败——补丁改坏了结构必须当场炸，",
+   "不能等玩家发现。DynamicReplaceUtils$1 是 MatchMode 的 switch 映射类，随主类一起重编。"
+  ],
+  "entries": [
+   "me/fengming/vaultpatcher_asm/config/Pairs.class",
+   "me/fengming/vaultpatcher_asm/core/utils/DynamicReplaceUtils.class",
+   "me/fengming/vaultpatcher_asm/core/utils/DynamicReplaceUtils$1.class"
+  ],
+  "total_entries": 106
+ },
+
+ "release": {
+  "_说明": [
+   "javac 的 --release：VaultPatcher 面向 Java 21 运行（整合包用 GraalVM 21），",
+   "编出来的 class 版本必须不高于 jar 里原有的，否则老 JVM 加载不了。"
+  ],
+  "target": 21
+ }
+}

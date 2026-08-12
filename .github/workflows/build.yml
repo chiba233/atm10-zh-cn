@@ -77,7 +77,10 @@ jobs:
         run: |
           python -m pip install --quiet --require-hashes -r requirements.lock
           apt-get update -qq && apt-get install -y -qq --no-install-recommends \
-            curl unzip zip ca-certificates >/dev/null
+            curl unzip zip ca-certificates default-jdk-headless >/dev/null
+          # javac 是给 scripts/patch_vaultpatcher.py 用的：随包分发的 VaultPatcher
+          # 要现打两处性能补丁再编回去（见该脚本 docstring）。缺 javac 那一步会**直接失败**，
+          # 不会静默跳过——跳过等于发一个每帧多花几毫秒的 jar，而没人会发现。
 
       - name: 核对工具链
         run: python3 scripts/toolchain.py --strict

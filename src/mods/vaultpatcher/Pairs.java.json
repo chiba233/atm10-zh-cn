@@ -1,0 +1,63 @@
+{
+ "_说明": "dyn 模式下 getValue 原本对 pairsSet 做线性 equals，本包 1085 对时每次未命中约 10us。\n这里复用类里本来就有、dyn 模式下闲置的 pairsMap 做精确查表；pairsSet 原样保留给\nnonFullMatch 的子串路径用，行为不变（已核实全部 dyn 表 0 个重复 key）。",
+ "src": "src/main/java/me/fengming/vaultpatcher_asm/config/Pairs.java",
+ "edits": [
+  {
+   "find": [
+    "\n",
+    "    public Pairs() { // not use dynamic mode\n"
+   ],
+   "replace": [
+    "    // [hanhua patch] dyn 模式原本对 pairsSet 线性 equals，1085 对时每次未命中约 10us。\n",
+    "    // pairsSet 保留给 nonFullMatch 的子串路径，这里只为精确匹配加一张等价的哈希表。\n",
+    "    private HashMap<String, String> dynExact = null;\n",
+    "\n",
+    "    public Pairs() { // not use dynamic mode\n"
+   ]
+  },
+  {
+   "find": [
+    "        } else {\n",
+    "            this.pairsMap = new HashMap<>();\n"
+   ],
+   "replace": [
+    "            this.dynExact = new HashMap<>();\n",
+    "        } else {\n",
+    "            this.pairsMap = new HashMap<>();\n"
+   ]
+  },
+  {
+   "find": [
+    "        } else {\n",
+    "            pairsMap.put(key, lastValue);\n"
+   ],
+   "replace": [
+    "            dynExact.putIfAbsent(key, lastValue);\n",
+    "        } else {\n",
+    "            pairsMap.put(key, lastValue);\n"
+   ]
+  },
+  {
+   "find": [
+    "        } else {\n",
+    "            pairsMap.put(lastKey, value);\n"
+   ],
+   "replace": [
+    "            dynExact.putIfAbsent(lastKey, value);\n",
+    "        } else {\n",
+    "            pairsMap.put(lastKey, value);\n"
+   ]
+  },
+  {
+   "find": [
+    "            for (Pair<String, String> pair : pairsSet) {\n",
+    "                if (pair.first.equals(key)) return pair.second;\n",
+    "            }\n",
+    "            return null;\n"
+   ],
+   "replace": [
+    "            return dynExact.get(key);\n"
+   ]
+  }
+ ]
+}

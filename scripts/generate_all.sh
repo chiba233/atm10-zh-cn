@@ -43,6 +43,9 @@ HAVE_JARS=0
 echo "▶ 从 src/ 摊出货树（含 VaultPatcher 模块与跟随原版的文件）"
 python3 scripts/assemble.py
 
+echo "▶ 给 VaultPatcher 打性能补丁（现拉源现编，全程核哈希，行为等价必须对拍通过）"
+python3 scripts/patch_vaultpatcher.py "$(python3 -c "import sys;sys.path.insert(0,'scripts');from paths import COMMON;print(COMMON)")"
+
 echo "▶ 任务书横幅艺术字（200 张）"
 python3 scripts/gen_quest_banners.py
 echo "▶ 主菜单按钮（14 张）"
