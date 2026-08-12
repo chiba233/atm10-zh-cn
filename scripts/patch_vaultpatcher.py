@@ -241,6 +241,18 @@ def main(tree):
             sys.exit('❌ 编译产物与 manifest 对不上\n   少了: %s\n   多了: %s'
                      % (sorted(missing), sorted(extra)))
 
+        # class 版本必须与被替换的那一个一致。编高了同一个 jar 里版本参差，老 JVM 直接
+        # 加载不了；而 --release 写错在只有低版本 JDK 的构建容器上才会暴露（CI 上炸过一次）。
+        src_zip0 = zipfile.ZipFile(jar)
+        with src_zip0:
+            for name, data in built.items():
+                a = int.from_bytes(src_zip0.read(name)[6:8], 'big')
+                b = int.from_bytes(data[6:8], 'big')
+                if a != b:
+                    sys.exit('❌ %s 编出来是 class 版本 %d，jar 里原本是 %d\n'
+                             '   manifest 的 release.target 要对齐**jar 里原有的 class 版本**，'
+                             '不是对齐运行时。' % (name, b, a))
+
         note = ('本 jar 由 atm10-zh-cn 修改过（GPL-3.0 第 5 条）。\n\n'
                 '基线：VaultPatcher %s（sha256 %s）\n'
                 '改动：%s\n\n'

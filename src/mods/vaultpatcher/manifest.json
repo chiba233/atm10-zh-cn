@@ -90,9 +90,12 @@
 
  "release": {
   "_说明": [
-   "javac 的 --release：VaultPatcher 面向 Java 21 运行（整合包用 GraalVM 21），",
-   "编出来的 class 版本必须不高于 jar 里原有的，否则老 JVM 加载不了。"
+   "javac 的 --release：**对齐 jar 里原有 class 的版本**，不是对齐运行时。",
+   "vaultpatcher-all-1.5.2.jar 里 72 个 class 全是 major 52（Java 8），",
+   "所以这里也编 8——编高了既和同一个 jar 里其余 class 不一致，",
+   "也会在只有 JDK 17 的构建容器上直接编不过（2026-08-13 CI 上就是这么炸的：",
+   "release version 21 not supported）。补丁本身没用到 8 以上的 API。"
   ],
-  "target": 21
+  "target": 8
  }
 }
