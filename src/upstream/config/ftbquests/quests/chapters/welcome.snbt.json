@@ -1,5 +1,14 @@
 {
- "_说明": "FTB Quests 加载章节时会把 images 块里的 hover 字段整个丢掉，再落盘的章节文件里一条 hover 都不剩，译好的悬浮提示从来没有在游戏里显示过。判据是字节：装了本包的 7.3 实例里，同一份章节文件中我们改的 custom_name 是中文、hover 行一条也不存在。ATM10 8.0 的官方 overrides 本身也已经不带 hover 了，按新版官方文件重做映射的结果就是「无需改动」。文件留着，记录这个章节已经看过、结论是不改。",
  "src": "config/ftbquests/quests/chapters/welcome.snbt",
- "edits": []
+ "edits": [
+  {
+   "find": [
+    "\t\t\thover: [\"Join the Discord!\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"加入 Discord！\"]\n"
+   ],
+   "all": true
+  }
+ ]
 }

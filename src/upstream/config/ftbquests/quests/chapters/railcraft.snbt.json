@@ -1,5 +1,194 @@
 {
- "_说明": "FTB Quests 加载章节时会把 images 块里的 hover 字段整个丢掉，再落盘的章节文件里一条 hover 都不剩，译好的悬浮提示从来没有在游戏里显示过。判据是字节：装了本包的 7.3 实例里，同一份章节文件中我们改的 custom_name 是中文、hover 行一条也不存在。ATM10 8.0 的官方 overrides 本身也已经不带 hover 了，按新版官方文件重做映射的结果就是「无需改动」。文件留着，记录这个章节已经看过、结论是不改。",
  "src": "config/ftbquests/quests/chapters/railcraft.snbt",
- "edits": []
+ "edits": [
+  {
+   "find": [
+    "\t\t\thover: [\"Electric Locomotive\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"电力机车\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Steam Locomotive\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"蒸汽机车\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Blast Furnace\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"高炉\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Coke Oven\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"焦炉\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Water Boiler\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"蒸汽锅炉\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Steam Turbine\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"蒸汽涡轮机\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Steam Oven\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"蒸汽炉\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Water Tank\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"储水液罐\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Crusher\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"磨粉机\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Abandoned Tracks\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"废弃轨道\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Reinforced Tracks\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"强化轨道\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Electric Tracks\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"电力轨道\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Strap Iron Tracks\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"镀铁轨道\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Minecart with Tank\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"储水罐矿车\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Minecart with Energy Cell\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"能源矿车\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Track: Remover, Relayer, and Placer\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"轨道：拆除、重铺与铺设\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Item Loading\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"物品装载\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Item Unloading\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"物品卸载\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Cart Dispenser\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"矿车发射器\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Train Dispenser\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"列车发射器\"]\n"
+   ],
+   "all": true
+  },
+  {
+   "find": [
+    "\t\t\thover: [\"Fluid Loading\"]\n"
+   ],
+   "replace": [
+    "\t\t\thover: [\"流体装载\"]\n"
+   ],
+   "all": true
+  }
+ ]
 }
