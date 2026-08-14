@@ -1,3 +1,23 @@
 {
+	image.011E4B6218D76D3A.title: "远古骑士"
+	image.0603F832DA138A7B.title: "卷轴撰写台"
+	image.0C7130648130C896.title: "死者之王"
+	image.1738DE4800011D8B.title: "蜘蛛巢穴"
+	image.1EE2339CB09FDF9B.title: "炽焰术士之塔"
+	image.29FABA9C983D1601.title: "红树林小屋"
+	image.30F797309050ABCB.title: "奥术铁砧"
+	image.3347BF8400EC3592.title: "城堡"
+	image.38F99DB68682AB5E.title: "山岳之塔"
+	image.451CDFE56E407A48.title: "炼金锅"
+	image.4BF4AB0B829E9AC5.title: "炽焰术士"
+	image.4CC18CD4CE3866C8.title: "亡灵术士"
+	image.5B166D12B729120B.title: "冰霜术士"
+	image.60B89CFF74362ACD.title: "泰罗斯之回响"
+	image.759143506B8CE5E2.title: "唤魔者堡垒"
+	image.7C697E0FFFB970F2.title: "法术抄写台"
+	quest.3181D07337DEFD14.quest_desc: ["若你在带有不祥之兆或试炼之兆效果时唤醒&4&l死者之王&r，这位&4&l王&r会变得更强。\\n\\n此时他有1000点&c生命值&r，伤害更高，移动与飞行更快，召唤物额外造成伤害，护甲也更厚。他还能召唤&4亡灵裂隙&r来唤出&4亡灵&r为他作战，并且会使用&a尖牙螺旋&r法术。\\n\\n击败他的掉落也更好。除了平常那些之外，他还可能掉落邪骨指环、&a尖牙螺旋&r卷轴、遗忘药剂、&7空白符文&r，以及更多&b奥术源质&r。\\n{image:atm:textures/questpics/iron_spells/spells_king_ominous.png width:100 height:200 align:center}"]
+	quest.3181D07337DEFD14.quest_subtitle: "又是他？"
+	quest.3181D07337DEFD14.title: "&l不祥的死者之王"
+	quest.5DE863C3FB6492BE.quest_desc: ["加入我们！\\n{image:atm:textures/questpics/iron_spells/spells_outfit_cultist.png width:60 height:100 align:center}"]
 	quest.00D80AA4CDD8335C.quest_desc: ["觉得&6&l牧师&r不够&6神圣&r？那就做一件&6光明使者胸甲&r！\\n\\n首先你需要&6牧师法袍&r，它可以合成。\\n\\n然后需要 3 个&b秘银织物&r，由&b秘银锭&r和锁链合成。\\n\\n最后拿到&d神圣灵魂碎片&r，就能做出&6胸甲&r了。\\n\\n它的护甲值与&6牧师法袍&r相同，但其余属性大幅提升：护甲韧性、击退抗性，当然还有更高的&3法术强度&r和法力值。"]
 }
