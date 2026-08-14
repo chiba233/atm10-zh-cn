@@ -1,0 +1,7 @@
+# 随第三方 jar 分发的许可证正文必须是**原文本身**，一个字节都不能变——
+# src/mods.lock.json 里钉了它的 sha256，assemble.py 按那个哈希核。
+# Windows runner 的 checkout 默认开 core.autocrlf，会把 LF 换成 CRLF，
+# 于是同一份文件在 Linux 上过闸、在 Windows 上必红（Installer test 就是这么红的）。
+# 标成非文本，git 在任何平台都原样落盘。
+LICENSE      -text
+LICENSE-GPL-3.0 -text
