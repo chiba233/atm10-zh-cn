@@ -73,7 +73,7 @@ if [ ! -d "$UPROOT/kubejs" ]; then
   echo "  取 ATM10 ${MC} 的官方文件（只要 overrides，不下 jar）"
   python3 scripts/fetch_pack.py "$MC" "$UPROOT" --no-jars
 fi
-python3 scripts/gen_upstream_patches.py "$UPROOT" "$TREE"
+python3 scripts/gen_upstream_patches.py "$UPROOT" "$TREE" "$MC"
 # 任务书语言：把本包的覆盖打进上游那份章节文件，按原文件名出货（含该版专属覆盖）。
 # splitter 的合并顺序在 Linux 上是随机的，同一个键必须只由一份文件持有——
 # 详见 gen_quest_lang_patches.py 顶部。

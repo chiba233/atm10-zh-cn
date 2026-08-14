@@ -60,6 +60,7 @@ requirements.lock               Pillow 的全平台 wheel 哈希（装的时候�
 versions/<版本>/                手写的版本专属层（任务书覆盖、默认资源包顺序）
 versions/<版本>/overrides.sha256 该版官方 overrides 的整棵树指纹（CI 缓存键 + 门控）
 versions/<版本>/unobtainable.json 该版 manifest 里已从 CurseForge 消失的 jar（必须逐个登记）
+versions/<版本>/unpatchable.json 该版官方文件里已经不存在的上游改动（必须逐条登记 + 写理由）
 versions/db/<版本>/             该版的核验数据库与英文底本
 versions/db/<版本>/jars.json    该版每个 jar 的 sha256 + 不可变的 CurseForge fileID
 versions/db/<版本>/keybinds.json 该版全部按键分类与注册名（含拼名字用的字符串原子）
@@ -164,7 +165,7 @@ ATM_PACK_ROOT=<整合包目录> ./scripts/generate_all.sh    # 摊 + 跑全部�
 ### 改上游自带的文件
 
 ```bash
-python3 scripts/gen_upstream_patches.py build/packsrc/7.2 build/v/7.2  # 摊出官方文件+现有改动
+python3 scripts/gen_upstream_patches.py build/packsrc/7.2 build/v/7.2 7.2  # 摊出官方文件+现有改动
 $EDITOR build/v/7.2/kubejs/startup_scripts/CustomAdditions.js          # 在出货树里改
 python3 scripts/extract_upstream_patch.py \
     build/packsrc/7.2/kubejs/startup_scripts/CustomAdditions.js \
@@ -172,6 +173,11 @@ python3 scripts/extract_upstream_patch.py \
     kubejs/startup_scripts/CustomAdditions.js \
     > src/upstream/kubejs/startup_scripts/CustomAdditions.js.json      # 反解回映射
 ```
+
+映射对**每个**出货版本都要能套上。上游只在某一版改了那段原文时，别去动映射
+（改了老版本就一起丢），在 `versions/<那一版>/unpatchable.json` 里**逐条登记**并写明
+上游改成了什么样。登记两头都会红：登记了但原文其实还在 → 红（该撤登记）；
+没登记又找不到原文 → 红。反例见 `test_gates.py` 的第九组。
 
 ### 改导览书译文
 
@@ -265,7 +271,7 @@ python3 scripts/test_installer.py                       # 安装器端到端测�
 | `check.py` | 规则解释器；规则在 `src/rules/*.json`。加同类规则只改 JSON，不动脚本 |
 | `toolchain.py` | 这次构建是不是标准工具链——不是就明说产物哈希不作数，绝不假装能比 |
 | `scan_keybinds.py` | 扫出全部按键分类与注册名，喂给 `vp-keybind-registration-names` 规则 |
-| `gen_upstream_patches.py` | 整合包自带文件被改动过没有——原文找不到就构建失败 |
+| `gen_upstream_patches.py` | 整合包自带文件被改动过没有——原文找不到就构建失败；只有 `versions/<版本>/unpatchable.json` 里逐条登记过的能过，而登记过期（原文又回来了）同样构建失败 |
 | `gen_books.py` | 导览书译文能否落到上游那份 JSON 上——命中率跌破 90% 就构建失败 |
 | `gen_vaultpatcher.py` | 模块头部写的 jar 名是否是**该版**真实存在的那个 |
 | `gen_vanilla_assets.py` | 原版字体 provider 列表与 `pack_format` 跟不跟得上原版 |

@@ -111,7 +111,7 @@ jobs:
               python3 scripts/fetch_pack.py --verify "$v" "build/packsrc/$v"
             fi
             rm -rf "build/v/$v"; mkdir -p build/v; cp -R build/common "build/v/$v"
-            python3 scripts/gen_upstream_patches.py "build/packsrc/$v" "build/v/$v"
+            python3 scripts/gen_upstream_patches.py "build/packsrc/$v" "build/v/$v" "$v"
             python3 scripts/gen_vaultpatcher.py "$v" "build/v/$v"
           done
 
