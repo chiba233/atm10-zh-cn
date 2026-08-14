@@ -1,0 +1,22 @@
+{
+ "_why": "src/upstream/ 的映射对**每个**出货版本的官方文件都要能套上，套不上就退出——这条是那套结构的支点，不能松。但 ATM 在 8.0 里改了下面这几段原文，而 7.0–7.3 里它们原样还在：删掉映射的话老版本会一起丢，改锚点又不可能同时命中两边（同一行在 8.0 多了个分号）。所以按版本逐条登记，只放行这几条，别的一个都不放。\n\n登记两头都是 fail-closed：登记了但原文其实还在 → 红（说明上游又改回来了，该撤掉登记）；没登记又找不到原文 → 红（原来的行为）。",
+ "_recorded": "2026-08-15",
+ "edits": {
+  "config/ftbquests/quests/chapters/elmystical_agriculturerr.snbt": {
+   "which": "all",
+   "why": "ATM 在 8.0 重做了这一章：69 个 image 块里一个 hover 字段都没有了，英文提示跟着一起消失，没有原文可改。7.0–7.3 的官方文件里这 11 条照常命中、照常出货。"
+  },
+  "config/ftbquests/quests/chapters/iron_spells_and_spellbooks.snbt": {
+   "which": "all",
+   "why": "同上，8.0 的这一章 25 个 image 块、0 个 hover。7.0–7.3 的 16 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/relics.snbt": {
+   "which": "all",
+   "why": "同上，8.0 的这一章 21 个 image 块、0 个 hover。7.0–7.3 的 10 条不受影响。"
+  },
+  "kubejs/server_scripts/announcements/announcements.js": {
+   "which": [1],
+   "why": "8.0 重写了公告清单这一段：删掉了 4.0 / 4.1 / 4.2 三行，每行末尾加了分号，5.3 那条从「Eternal Starlight and Hyperbox」缩成「Hyperbox」。带分号的行与 7.0–7.3 的无分号版本不可能用同一个 find 命中，逐行拆也不行。第 2/3/4 处（三条命令回执）两版一字未改，照常生效。"
+  }
+ }
+}
