@@ -525,7 +525,7 @@ BANNERS = {
     'bumblezone/bumble_title.png':                          '蜜蜂领域',
     'cataclysm/cataclysm_title.png':                        '灾变',
     'create/create_title.png':                              '机械动力',
-    'deepndark/dnd_title.png':                              '更深更暗',
+    'deepndark/dnd_title.png':                              '幽邃黑暗',
     'draconic/draconic_title.png':                          '龙之进化',
     'eternal/starlight_armor.png':                          '护甲',
     'eternal/starlight_bosses.png':                         '首领',
