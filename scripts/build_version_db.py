@@ -36,9 +36,20 @@ VaultPatcher 靠字符串精确匹配替换硬编码文本，而且失配是**�
 每个 jar 的 **sha256**，能拿到 `mods.provenance.json` 时还会一并记下 CurseForge 的
 `fileID`（不可变，重传会换新 ID）。目录里出现 manifest 之外的 jar 就直接拒绝建库。
 
+## 加了新模块之后怎么补老版本
+
+`gen_vaultpatcher.py` 要求**每个模块在每一版都有记录**——没有记录就等于没对着那一版的
+jar 核过，此时把模块发下去是闭着眼睛发。所以新增一个带 target_class 的模块，五个版本
+的库全都过期了。
+
+但老版本的 `jars.json` 是**冻结的字节基线**，不该因为加了个模块就整份重写。
+`--only-missing` 就是为此：只算库里还没有的那几个模块，并入现有库；`jars.json`
+一个字不改，改为拿它**核对**下载回来的这批 jar（`verify`，对不上当场红）。
+
 用法:
     python3 scripts/build_version_db.py 7.1 <该版本的mods目录>
-    python3 scripts/build_version_db.py 7.1 <mods目录> --verify   # 只核字节
+    python3 scripts/build_version_db.py 7.1 <mods目录> --verify        # 只核字节
+    python3 scripts/build_version_db.py 7.1 <mods目录> --only-missing  # 只补缺的模块
 """
 import hashlib
 import json
@@ -229,13 +240,32 @@ def verify(ver, mods_dir):
     print('✅ %d 个 jar 逐字节与 versions/db/%s/jars.json 一致' % (len(have), ver))
 
 
-def main(ver, mods_dir):
-    write_jars(ver, mods_dir)
+def main(ver, mods_dir, only_missing=False):
+    out = ROOT / 'versions' / 'db' / ver
+    db = {}
+    todo = sorted(MODULES.glob('*.json'))
+    if only_missing:
+        f = out / 'vaultpatcher.json'
+        if not f.is_file():
+            sys.exit('❌ versions/db/%s/vaultpatcher.json 不存在，没有可增补的库。\n'
+                     '   去掉 --only-missing 整份重建。' % ver)
+        db = json.loads(f.read_text(encoding='utf-8'))
+        # 这一版的字节基线是冻结的：增补不重写 jars.json，改为拿它核对这批 jar。
+        # 少下 / 下坏 / 拿错版本都会当场红，而不是悄悄写出一份「这一版没有这个 key」。
+        verify(ver, mods_dir)
+        todo = [p for p in todo if p.name not in db]
+        if not todo:
+            print('%s: 库里已有全部 %d 个模块，无需增补' % (ver, len(db)))
+            return
+        print('%s: 增补 %d 个模块 —— %s'
+              % (ver, len(todo), '、'.join(p.name for p in todo)))
+    else:
+        write_jars(ver, mods_dir)
     by_path, by_simple = build_index(mods_dir)
     cache = {}
     print('%s: 索引 %d 个 class' % (ver, len(by_path)))
-    db, stat = {}, defaultdict(int)
-    for f in sorted(MODULES.glob('*.json')):
+    stat = defaultdict(int)
+    for f in todo:
         try:
             blocks = json.loads(f.read_text(encoding='utf-8'))
         except Exception as e:
@@ -276,11 +306,13 @@ def main(ver, mods_dir):
             rec['blocks'].append({'i': bi, 'classes': classes, 'jars': jars, 'keys': kv})
         if rec['blocks']:
             db[f.name] = rec
-    out = ROOT / 'versions' / 'db' / ver
     out.mkdir(parents=True, exist_ok=True)
     (out / 'vaultpatcher.json').write_text(
         json.dumps(db, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')
     tot = stat['key_exact'] + stat['key_substring'] + stat['key_missing']
+    if only_missing:
+        # 说清楚这几个数只覆盖这次增补的那几个模块，别被当成全库覆盖率读。
+        print('  （以下只统计本次增补的 %d 个模块）' % len(todo))
     print('  target_class: 原位 %d / 搬家已找回 %d / 找不到 %d'
           % (stat['class_declared'], stat['class_moved'], stat['class_not_found']))
     print('  key: 命中 %d + 子串 %d = %d，缺 %d  → 覆盖率 %.1f%%'
@@ -293,8 +325,8 @@ def main(ver, mods_dir):
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         sys.exit(__doc__)
+    a = [x for x in sys.argv[1:] if not x.startswith('--')]
     if '--verify' in sys.argv:
-        a = [x for x in sys.argv[1:] if x != '--verify']
         verify(a[0], a[1])
     else:
-        main(sys.argv[1], sys.argv[2])
+        main(a[0], a[1], only_missing='--only-missing' in sys.argv)

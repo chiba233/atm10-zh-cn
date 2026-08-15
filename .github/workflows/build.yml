@@ -236,6 +236,55 @@ jobs:
           echo "   versions/db/<版本>/productive_trees.json，再重跑本流水线。"
           exit 1
 
+      # VaultPatcher 的模块要一版一份地核：target_class 在这一版实际在哪个 jar、
+      # 每条 key 在不在它的常量池里。所以**加一个带 target_class 的模块，五个版本的库
+      # 同时过期**，而 gen_vaultpatcher 的闸一次只报一版（构建到哪版报哪版）。
+      #
+      # 这里一次性把缺的都补上，规矩与上面两块基线完全一致：只在缺的时候跑、只为缺的
+      # 那些版本取 jar、**不自动信任**——补完上传 artifact 并红着等人提交。
+      # 用 --only-missing：老版本的 jars.json 是冻结的字节基线，不因为加了个模块就重写，
+      # 改为拿它核对这次下回来的这批 jar（少下 / 下坏 / 拿错版本当场红）。
+      - name: VaultPatcher 库缺模块记录的版本：补一遍（不自动信任，红着等人提交）
+        run: |
+          set -euo pipefail
+          stale=$(python3 scripts/stale_version_dbs.py)
+          if [ -z "$stale" ]; then
+            echo "全部在册版本的 VaultPatcher 库都已收录现有模块"; exit 0
+          fi
+          python3 scripts/stale_version_dbs.py --why
+          for v in $stale; do
+            echo "───── ATM10 $v 补库 ─────"
+            if [ "$v" = "$NEWEST" ]; then
+              # 最新版的整包上面已经下过、也已逐字节核过，直接用，不重下
+              python3 scripts/build_version_db.py "$v" pack/mods --only-missing
+            else
+              # 故意不下到 build/packsrc/：那个目录进 actions/cache，
+              # 四个版本的 jar 一共 2.8 GiB，塞进缓存会把缓存额度吃光。
+              python3 scripts/fetch_pack.py "$v" "build/dbfix/$v"
+              python3 scripts/build_version_db.py "$v" "build/dbfix/$v/mods" --only-missing
+            fi
+          done
+          echo "VPDB_STALE=1" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v7
+        if: env.VPDB_STALE == '1'
+        with:
+          name: vaultpatcher-db
+          path: versions/db/*/vaultpatcher.json
+          retention-days: 30
+
+      - name: VaultPatcher 库没入库就到此为止
+        if: env.VPDB_STALE == '1'
+        run: |
+          echo "❌ 有整合包版本的 VaultPatcher 库还缺模块记录。本次 CI 已对着该版真实的"
+          echo "   jar 把它们补出来了，但尚未提交进仓库。"
+          echo "   下载 artifact「vaultpatcher-db」，核对后提交"
+          echo "   versions/db/<版本>/vaultpatcher.json，再重跑本流水线。"
+          echo "   要核的是新模块那几条：target_class 记成 declared 还是 not_found。"
+          echo "   记成 not_found 的版本，打包时该模块的 mods 字段会留空——"
+          echo "   那是「这一版没有这个 mod」的正常结果，不是漏。"
+          exit 1
+
       - name: 生成全部汉化产物
         run: ./scripts/generate_all.sh
 
