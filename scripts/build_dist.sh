@@ -183,6 +183,14 @@ cp "$TREE/mods/vaultpatcher.jar" "$SSTAGE/mods/"
 # （不再用语言注入 mod —— 服务端数据必须保持上游英文，否则与 JEI/配方分裂）
 mkdir -p "$SSTAGE/kubejs/server_scripts"
 cp "$TREE/kubejs/server_scripts/pb_hanhua_cage_migrate.js" "$SSTAGE/kubejs/server_scripts/"
+# 进服公告：整合包自带 kubejs/server_scripts/announcements/announcements.js，我们译了它。
+# 它跑在**服务端**，联机时刷给玩家的是服务器上那一份——客户端包里带了也不顶用。
+# 这一层此前从来不在挑选范围内（这里只点名了上面那一个文件），于是 r19 起
+# 服务器玩家看到的公告一路都是英文，而单机是中文。
+# 与上面那条「服务端数据保持上游英文」不冲突：这是聊天栏文本，不是物品名，
+# 不参与配方匹配，也不进 JEI 搜索，和下面 kubejs/data 是同一类。
+[ -d "$TREE/kubejs/server_scripts/announcements" ] \
+  && cp -R "$TREE/kubejs/server_scripts/announcements" "$SSTAGE/kubejs/server_scripts/"
 # 数据包覆盖（法术书风味文本等）：联机时配方由服务端下发，客户端那份会被忽略，
 # 不带上服务器玩家就看英文。这些只改显示用的数据组件，不参与配方匹配、不进 JEI
 # 搜索，与上面那条「服务端数据保持上游英文」针对的物品名不是一回事。
