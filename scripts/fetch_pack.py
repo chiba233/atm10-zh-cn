@@ -34,6 +34,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parent.parent
 PROJECT = 925200          # CurseForge 上的 All the Mods 10
 API = 'https://www.curseforge.com/api/v1/mods/%d' % PROJECT
 UA = ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
@@ -314,13 +315,27 @@ def main(ver, out, jars=True, record=False):
     # 一个都不许缺。以前的阈值是 98%：482 项里少 9 个照样继续，而少掉的那几个 jar
     # 里的 en_us / 注册表就这么静默地没参与生成——产物少几百条译文，退出码还是 0。
     # 「大部分下到了」不是可复现构建，缺就是缺。（issue #9 P1-5）
-    if len(got) < len(todo):
+    # 唯一的例外：这一版的 manifest 里确有文件被 CurseForge 永久删除（404，重试无用）。
+    # 那不是「下漏了」，是这一版的官方集合**已经拿不全了**，而且必须一个个登记在
+    # versions/<版本>/unobtainable.json 里才算数——登记过的照常放行，没登记的照旧红。
+    # 缺口的边界因此始终摆在明面上，而不是藏在一次静默的下载失败里。
+    # （build_version_db.py 建库时读的是同一份登记，两边的判据是同一个。）
+    known = {}
+    kf = ROOT / 'versions' / ver / 'unobtainable.json'
+    if kf.is_file():
+        known = json.loads(kf.read_text(encoding='utf-8')).get('files') or {}
+    undeclared = [i for i in missing if str(i) not in known]
+    if undeclared:
         for e in errors[:8]:
             print('   %s' % e)
-        sys.exit('❌ jar 没下齐（%d/%d），生成器会漏内容，中止\n'
-                 '   上面是前几条真实错误。403/429 是限速，稍后重跑；'
-                 '404 说明接口变了，得改 fetch_pack.py。'
-                 % (len(got), len(todo)))
+        sys.exit('❌ jar 没下齐（%d/%d），其中以下 fileID 没有登记原因：%s\n'
+                 '   生成器会漏内容，中止。上面是前几条真实错误。\n'
+                 '   403/429 是限速，稍后重跑；404 若是这一版真的被删了，'
+                 '写进 versions/%s/unobtainable.json 说明情况。'
+                 % (len(got), len(todo), undeclared[:8], ver))
+    if missing:
+        print('  ⚠️ 这一版有 %d 个 jar 已在 CurseForge 上取不到（已登记）：%s'
+              % (len(missing), missing))
 
 
 if __name__ == '__main__':
