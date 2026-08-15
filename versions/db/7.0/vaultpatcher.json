@@ -10563,6 +10563,32 @@
    }
   ]
  },
+ "neovitae_athanor_jei.json": {
+  "blocks": [
+   {
+    "classes": {
+     "com.breakinblocks.neovitae.compat.jei.athanor.AthanorRecipeCategory": {
+      "actual": null,
+      "how": "not_found",
+      "jar": null
+     }
+    },
+    "i": 1,
+    "jars": [],
+    "keys": {
+     "+1 of the first output when Raw Spiritus saturates the chunk.": "dynamic",
+     "+1 output, scales 33%-100% (chunk 5-100 Raw)": "dynamic",
+     "Chance: 33% at 5 Raw, scaling linearly to 100% at 100 Raw.": "dynamic",
+     "Each bonus has a 2.5% chance to consume 1 Raw Spiritus.": "dynamic",
+     "Multiplied by the tool's bonus-chance modifier. Any whole multiples": "dynamic",
+     "Raw Spiritus Bonus": "dynamic",
+     "Spiritus Boost": "dynamic",
+     "Tool": "dynamic",
+     "guarantee one extra output each, with the remainder rolled separately.": "dynamic"
+    }
+   }
+  ]
+ },
  "observable.json": {
   "blocks": [
    {
