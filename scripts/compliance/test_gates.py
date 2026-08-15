@@ -1032,7 +1032,7 @@ def _m40(tmp, tree):
 # 否则这个文件就成了「往里加一行就能让任何构建变绿」的开关。
 #
 # 夹具是现造的最小仓库：一个脚本副本 + 一份映射 + 一份官方文件，跟真仓库无关。
-def _up_fixture(tmp, official, edits, reg=None, name='9.9'):
+def _up_fixture(tmp, official, edits, reg=None, name='9.9', vedits=None, vsrc='demo.txt'):
     r = tmp / 'uprepo'
     (r / 'scripts').mkdir(parents=True, exist_ok=True)
     shutil.copy(ROOT / 'scripts' / 'gen_upstream_patches.py', r / 'scripts')
@@ -1048,6 +1048,12 @@ def _up_fixture(tmp, official, edits, reg=None, name='9.9'):
         v.mkdir(parents=True, exist_ok=True)
         (v / 'unpatchable.json').write_text(json.dumps(reg, ensure_ascii=False),
                                             encoding='utf-8')
+    if vedits is not None:
+        vd = r / 'versions' / name / 'upstream'
+        vd.mkdir(parents=True, exist_ok=True)
+        (vd / 'demo.json').write_text(
+            json.dumps({'src': vsrc, 'edits': vedits}, ensure_ascii=False),
+            encoding='utf-8')
     return r
 
 
@@ -1109,6 +1115,34 @@ def _m46(tmp, tree):
 def _m47(tmp, tree):
     rc, out = _up_run(_up_fixture(tmp, '别的行\n', _UP_EDIT, _UP_WHY), version=None)
     return rc != 0 and 'unpatchable' in out
+
+
+# 该版专属映射：登记只能「这一版不改」，改成了另一副样子还想译，就得单给一份。
+# 它跟通用映射叠加在**同一份文本**上，所以三件事都要撞：叠加真的发生了、
+# 找不到原文照样红、改一个没人管的文件也红（那种映射永远轮不到执行）。
+@missing_case('该版专属映射与通用映射叠加 → 两处都要落在同一份产物里')
+def _m48(tmp, tree):
+    r = _up_fixture(tmp, '原文\n该版专属\n', _UP_EDIT, None,
+                    vedits=[{'find': ['该版专属\n'], 'replace': ['该版译文\n']}])
+    rc, out = _up_run(r)
+    return (rc == 0 and '该版专属改动 1 处' in out
+            and (r / 'out' / 'demo.txt').read_text(encoding='utf-8') == '译文\n该版译文\n')
+
+
+@missing_case('该版专属映射找不到原文 → 必须红（不因为「是该版专属」就放松）')
+def _m49(tmp, tree):
+    r = _up_fixture(tmp, '原文\n', _UP_EDIT, None,
+                    vedits=[{'find': ['没有这一行\n'], 'replace': ['x\n']}])
+    rc, out = _up_run(r)
+    return rc != 0 and '在官方文件里找不到' in out
+
+
+@missing_case('该版专属映射改的文件没有通用映射 → 必须红（它永远不会被套用）')
+def _m50(tmp, tree):
+    r = _up_fixture(tmp, '原文\n', _UP_EDIT, None,
+                    vedits=[{'find': ['原文\n'], 'replace': ['x\n']}], vsrc='别的.txt')
+    rc, out = _up_run(r)
+    return rc != 0 and '永远不会被套用' in out
 
 
 def run_missing(name, fn):

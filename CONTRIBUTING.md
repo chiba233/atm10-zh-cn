@@ -61,6 +61,7 @@ versions/<版本>/                手写的版本专属层（任务书覆盖、�
 versions/<版本>/overrides.sha256 该版官方 overrides 的整棵树指纹（CI 缓存键 + 门控）
 versions/<版本>/unobtainable.json 该版 manifest 里已从 CurseForge 消失的 jar（必须逐个登记）
 versions/<版本>/unpatchable.json 该版官方文件里已经不存在的上游改动（必须逐条登记 + 写理由）
+versions/<版本>/upstream/       该版专属的上游映射（上游只在这一版把那段改成了别的样子）
 versions/db/<版本>/             该版的核验数据库与英文底本
 versions/db/<版本>/jars.json    该版每个 jar 的 sha256 + 不可变的 CurseForge fileID
 versions/db/<版本>/keybinds.json 该版全部按键分类与注册名（含拼名字用的字符串原子）
@@ -177,7 +178,12 @@ python3 scripts/extract_upstream_patch.py \
 映射对**每个**出货版本都要能套上。上游只在某一版改了那段原文时，别去动映射
 （改了老版本就一起丢），在 `versions/<那一版>/unpatchable.json` 里**逐条登记**并写明
 上游改成了什么样。登记两头都会红：登记了但原文其实还在 → 红（该撤登记）；
-没登记又找不到原文 → 红。反例见 `test_gates.py` 的第九组。
+没登记又找不到原文 → 红。
+
+登记只表示「这一版不改」。那段原文被上游**改成了另一副样子、我们仍然要译**的，
+再在 `versions/<那一版>/upstream/` 下放一份同格式的该版专属映射：构建时先套通用的
+（可带登记跳过），再在同一份文本上套该版的。它同样找不到原文就退出；
+改的文件在 `src/upstream/` 下没有对应映射也退出。反例见 `test_gates.py` 的第九组。
 
 ### 改导览书译文
 

@@ -22,6 +22,12 @@
 
 也就是说这个口子只能让「已经查清楚、写明了理由」的那几条过，越不过任何别的东西。
 
+登记只解决「这一版不改」。上游只在某一版把那段**改成了另一副样子**、我们仍然想译的
+（8.0 给公告清单每行补了分号），就在 `versions/<版本>/upstream/` 下按同样的格式
+再放一份该版专属映射：先套通用的（可带登记跳过），再在同一份文本上套该版的。
+它同样 fail-closed——找不到原文退出；改的文件在 `src/upstream/` 下没有对应映射也退出
+（那种映射永远轮不到执行，而写的人以为它生效了）。
+
 用法:
     python3 scripts/gen_upstream_patches.py <整合包根目录> <输出目录> <整合包版本>
     # 整合包根目录 = 解出来的 overrides/，或装好的实例目录
@@ -114,7 +120,19 @@ def main(pack_root, out_dir, version):
         sys.exit('❌ %s 下一个映射都没有' % SRC)
     docs = [json.loads(mp.read_text(encoding='utf-8')) for mp in maps]
     skips = load_unpatchable(version, {d['src']: len(d['edits']) for d in docs})
-    total = skipped = 0
+    # 该版专属的映射：上游只在这一版把某段改成了另一副样子（8.0 给公告清单每行
+    # 补了分号），通用映射不可能同时命中两版，就在这里按版本单给一份。
+    # 格式与 src/upstream/ 完全一样，规矩也一样——找不到原文照样退出。
+    vdir = ROOT / 'versions' / version / 'upstream'
+    vmaps = sorted(vdir.rglob('*.json')) if vdir.is_dir() else []
+    vdocs = {}
+    for vp in vmaps:
+        d = json.loads(vp.read_text(encoding='utf-8'))
+        if d['src'] in vdocs:
+            sys.exit('❌ %s 与 %s 都改 %s，同一个文件只能有一份该版映射。'
+                     % (vp.relative_to(ROOT), vdocs[d['src']][0], d['src']))
+        vdocs[d['src']] = (vp.relative_to(ROOT), d)
+    total = skipped = vtotal = 0
     for mp, doc in zip(maps, docs):
         rel = doc['src']
         official = pack_root / rel
@@ -124,12 +142,26 @@ def main(pack_root, out_dir, version):
                      '   上游删掉了它的话，把 %s 一起删掉。' % (rel, pack_root, mp.relative_to(ROOT)))
         skip = skips.get(rel, frozenset())
         text = apply_one(official.read_text(encoding='utf-8'), doc['edits'], rel, skip)
+        if rel in vdocs:
+            # 接着在同一份文本上套该版专属的那几处，不是另写一遍文件——
+            # 覆盖写会把上面通用映射改好的部分整个丢掉。
+            vp, vd = vdocs.pop(rel)
+            text = apply_one(text, vd['edits'], rel)
+            vtotal += len(vd['edits'])
         t = out_dir / rel
         t.parent.mkdir(parents=True, exist_ok=True)
         t.write_text(text, encoding='utf-8', newline='')
         total += len(doc['edits']) - len(skip)
         skipped += len(skip)
+    if vdocs:
+        # 该版映射改的文件在 src/upstream 里没有对应映射：那它就永远轮不到执行，
+        # 而当事人以为它生效了。宁可红。
+        sys.exit('❌ 这些该版映射改的文件，src/upstream 下没有任何映射，永远不会被套用：\n   %s'
+                 % '\n   '.join('%s（%s）' % (r, v[0]) for r, v in sorted(vdocs.items())))
     print('上游文件汉化：%d 个文件、%d 处改动 → %s' % (len(maps), total, out_dir))
+    if vtotal:
+        print('  另按 versions/%s/upstream/ 套用该版专属改动 %d 处（%d 个文件）'
+              % (version, vtotal, len(vmaps)))
     if skipped:
         # 出货侧少了几处一定要说出来。不说的话，「这一版比别版少 37 条」就成了
         # 只有翻日志才看得见的事，跟静默跳过没区别。
