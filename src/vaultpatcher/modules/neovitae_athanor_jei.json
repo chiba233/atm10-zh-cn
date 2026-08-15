@@ -1,0 +1,53 @@
+[
+ {
+  "name": "neovitae_athanor_jei_zh_cn",
+  "authors": "Hoshino Yumeka",
+  "dynamic": true,
+  "i18n": false,
+  "_说明": "炼金炉的 JEI 配方页。这几行硬编码在 AthanorRecipeCategory 的常量池里（逐项解析常量池确认，不是正则扫的），没有任何翻译键，资源包够不着——这是必须走 VaultPatcher 的一类。\n\n全部精确匹配，零个 @：这几句在界面上就是整串出现，不是长句里的片段，加 @ 只会把它拖进「非完整匹配」那条昂贵路径而毫无收益。\n\ntarget_class 限到这一个类，是因为 'Tool' 这个词在该 mod 的 110 个 class 里都出现过（包里有过 'Sound' 那次教训：单词同时是枚举值，无差别替换会被反查/写回配置）。限定之后它只在这张配方页的绘制路径上生效。\n\n没做的一条：'Requires %.1f %s spiritus from the chunk' 是 format 模板，String.format 在渲染前就把它填掉了，字面量永远到不了替换点，写进来也不会命中——所以不写。",
+  "_不做": "Requires %.1f %s spiritus from the chunk"
+ },
+ {
+  "target_class": [
+   "com.breakinblocks.neovitae.compat.jei.athanor.AthanorRecipeCategory"
+  ],
+  "pairs": [
+   {
+    "key": "Tool",
+    "value": "工具"
+   },
+   {
+    "key": "Raw Spiritus Bonus",
+    "value": "原生灵质加成"
+   },
+   {
+    "key": "+1 output, scales 33%-100% (chunk 5-100 Raw)",
+    "value": "产物+1，几率随区块原生灵质由33%升至100%（5～100点）"
+   },
+   {
+    "key": "Spiritus Boost",
+    "value": "灵质增益"
+   },
+   {
+    "key": "+1 of the first output when Raw Spiritus saturates the chunk.",
+    "value": "当原生灵质使该区块饱和时，第一项产物+1。"
+   },
+   {
+    "key": "Chance: 33% at 5 Raw, scaling linearly to 100% at 100 Raw.",
+    "value": "几率：5点原生灵质时为33%，线性增长至100点时的100%。"
+   },
+   {
+    "key": "Multiplied by the tool's bonus-chance modifier. Any whole multiples",
+    "value": "再乘以工具的加成几率修正。其中的整数倍部分"
+   },
+   {
+    "key": "guarantee one extra output each, with the remainder rolled separately.",
+    "value": "每一倍必定多产一份，余下的小数部分单独判定。"
+   },
+   {
+    "key": "Each bonus has a 2.5% chance to consume 1 Raw Spiritus.",
+    "value": "每次加成有2.5%的几率消耗1点原生灵质。"
+   }
+  ]
+ }
+]
