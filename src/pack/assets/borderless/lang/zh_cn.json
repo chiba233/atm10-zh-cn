@@ -1,0 +1,23 @@
+{
+  "borderless.config.video_settings_button": "无边框窗口……",
+  "borderless.config.video_settings_button.tooltip": "无边框窗口的相关设置，提供更细的全屏选项",
+  "borderless.config.title": "无边框窗口设置",
+  "borderless.config.apply": "应用",
+  "borderless.config.enabled": "已启用",
+  "borderless.config.enabled.tooltip": "启用/禁用无边框窗口",
+  "borderless.config.disabled.description": "无边框窗口已禁用，将使用 Minecraft 原本的全屏。",
+  "borderless.config.fullscreen_mode": "全屏显示模式",
+  "borderless.config.fullscreen_mode.best": "最佳",
+  "borderless.config.fullscreen_mode.borderless": "无边框",
+  "borderless.config.fullscreen_mode.native": "原生",
+  "borderless.config.focus_loss": "失去焦点时",
+  "borderless.config.focus_loss.do_nothing": "保持显示",
+  "borderless.config.focus_loss.minimize": "最小化",
+  "borderless.config.focus_loss.switch_to_windowed": "切换为窗口模式",
+  "borderless.config.changed": "如果全屏模式没有正确生效，请尝试重启 Minecraft。若仍然无效，可能是你的操作系统兼容性不完全。",
+  "borderless.best": "自动为当前操作系统选择最合适的全屏模式。推荐使用这一项。",
+  "borderless.borderless": "无边框全屏：把窗口的宽高设为显示器当前的视频模式，并去掉窗口边框来模拟全屏。\n\nWindows 上首选这一模式。",
+  "borderless.native.do_nothing": "Minecraft 原本的全屏，但窗口在失去焦点后仍会保持显示。视操作系统而定，窗口可能会一直置顶。\n\n支持 X11 的多数 Linux 发行版上首选这一模式。",
+  "borderless.native.minimize": "Minecraft 原本的全屏，窗口在失去焦点时最小化。\n\n未知操作系统上首选这一模式。",
+  "borderless.native.switch_to_windowed": "Minecraft 原本的全屏，但窗口一旦失去焦点就切换为窗口模式。"
+}
