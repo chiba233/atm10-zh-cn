@@ -48,6 +48,8 @@ python3 scripts/patch_vaultpatcher.py "$(python3 -c "import sys;sys.path.insert(
 
 echo "▶ 任务书横幅艺术字（200 张）"
 python3 scripts/gen_quest_banners.py
+echo "▶ 章节配图：补上上游引用了却没发的那几张（顺带核一遍别的都拿得到）"
+python3 scripts/gen_missing_questpics.py
 echo "▶ 主菜单按钮（14 张）"
 python3 scripts/gen_menu_buttons.py
 echo "▶ 根源经典教程书：按行宽预切并插空格（它的折行只认 ASCII 空格，中文切不开）"
