@@ -62,6 +62,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
 from check_vaultpatcher_strings import utf8_pool          # noqa: E402
+from fetch_pack import unregistered_missing               # noqa: E402
 
 from paths import SRC
 
@@ -175,12 +176,8 @@ def write_jars(ver, mods_dir):
     # 少下的 jar 必须**逐个被显式登记**才放行。放宽门控是不行的：残缺的集合会让
     # vaultpatcher.json 里的 "missing" 变成假判定——不是这一版没有这个 key，
     # 只是我们没看到那个 jar。登记之后这条边界摆在明面上。
-    known = {}
-    kf = ROOT / 'versions' / ver / 'unobtainable.json'
-    if kf.is_file():
-        known = json.loads(kf.read_text(encoding='utf-8')).get('files') or {}
-    undeclared = [i for i in (meta.get('missing_file_ids') or [])
-                  if str(i) not in known]
+    # 判据与 fetch_pack 共用同一个函数：两处各写一遍迟早会漂。
+    undeclared = unregistered_missing(ver, meta.get('missing_file_ids') or [])
     if undeclared:
         sys.exit('❌ 这份 %s 的 jar 没下全（%s/%s），且以下 fileID 没有登记原因：%s\n'
                  '   限速就重跑 fetch_pack.py 补齐；真的 404 了就写进 '

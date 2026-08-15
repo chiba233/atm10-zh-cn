@@ -1145,6 +1145,49 @@ def _m50(tmp, tree):
     return rc != 0 and '永远不会被套用' in out
 
 
+# ── 10. CurseForge 上取不到的 jar，必须逐个登记才放行 ─────────────────────
+#
+# 撞的是同一种假象的另一个面：**「下不来」被当成「这一版没有」**。
+# 拿残缺的 jar 集合建版本库，vaultpatcher.json 里那些 "missing" 就成了假判定——
+# 不是这一版没有这个 key，只是我们没看到那个 jar，而两者在产物里长得一模一样。
+# 所以放行的唯一路径是 versions/<版本>/unobtainable.json 里**逐个** fileID 登记。
+#
+# 三条反例分别撞：登记齐了要放行、少登记一个要红、登记文件整份不在时**默认必须红**
+# （最后这条最要命：文件名写错、目录搬家都会让机制静默失效，默认放行就等于没有闸）。
+
+def _unob(tmp, ver, files):
+    """在临时树里摆 versions/<ver>/unobtainable.json，files 为 None 表示整份不放。"""
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import fetch_pack
+    d = tmp / 'versions' / ver
+    d.mkdir(parents=True, exist_ok=True)
+    if files is not None:
+        (d / 'unobtainable.json').write_text(
+            json.dumps({'files': {str(i): {'http': 404} for i in files}}),
+            encoding='utf-8')
+    old = fetch_pack.ROOT
+    fetch_pack.ROOT = tmp
+    try:
+        return fetch_pack.unregistered_missing(ver, [7948263, 8005487])
+    finally:
+        fetch_pack.ROOT = old
+
+
+@missing_case('取不到的 jar 全部登记在案 → 放行（这一版的缺口是既有事实）')
+def _m51(tmp, tree):
+    return _unob(tmp, '9.9', [7948263, 8005487]) == []
+
+
+@missing_case('取不到的 jar 少登记了一个 → 必须红，且点名是哪个')
+def _m52(tmp, tree):
+    return _unob(tmp, '9.9', [7948263]) == [8005487]
+
+
+@missing_case('unobtainable.json 整份不存在 → 必须红，不许默认放行')
+def _m53(tmp, tree):
+    return _unob(tmp, '9.9', None) == [7948263, 8005487]
+
+
 def run_missing(name, fn):
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)

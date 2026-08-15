@@ -42,6 +42,25 @@ UA = ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
 TRIES = 6
 
 
+def unregistered_missing(ver, missing):
+    """这几个下不来的 fileID 里，哪些没在 versions/<版本>/unobtainable.json 登记。
+
+    CurseForge 删过文件，某些版本的官方 jar 集合是**永久**拿不全的。那不是「下漏了」，
+    但也不能因此放宽门控——残缺的集合会让版本库里的 "missing" 变成假判定（不是这一版
+    没有这个 key，只是我们没看到那个 jar）。所以要求一个个显式登记：登记过的放行，
+    其余照旧红，缺口的边界始终摆在明面上。
+
+    **登记文件不存在 = 一条都没登记**，不是「全都放行」：这道闸的默认必须是红的，
+    否则一次文件名写错就能让整个机制静默失效。fetch_pack 与 build_version_db 都用
+    这一个函数，判据只有一份。
+    """
+    known = {}
+    kf = ROOT / 'versions' / ver / 'unobtainable.json'
+    if kf.is_file():
+        known = json.loads(kf.read_text(encoding='utf-8')).get('files') or {}
+    return [i for i in missing if str(i) not in known]
+
+
 def fetch(url, timeout=180, required=True):
     """取一个 URL，返回 (内容, 最终URL)。限速/抽风就退避重试。
 
@@ -320,11 +339,7 @@ def main(ver, out, jars=True, record=False):
     # versions/<版本>/unobtainable.json 里才算数——登记过的照常放行，没登记的照旧红。
     # 缺口的边界因此始终摆在明面上，而不是藏在一次静默的下载失败里。
     # （build_version_db.py 建库时读的是同一份登记，两边的判据是同一个。）
-    known = {}
-    kf = ROOT / 'versions' / ver / 'unobtainable.json'
-    if kf.is_file():
-        known = json.loads(kf.read_text(encoding='utf-8')).get('files') or {}
-    undeclared = [i for i in missing if str(i) not in known]
+    undeclared = unregistered_missing(ver, missing)
     if undeclared:
         for e in errors[:8]:
             print('   %s' % e)
