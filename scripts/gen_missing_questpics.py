@@ -74,30 +74,55 @@ MISSING = {
 
 
 def referenced():
-    """该版本的章节文件里引用到的全部 questpic 相对路径。"""
+    """该版本的章节文件里每个 questpic 引用了几次（路径 → 次数）。"""
     if not CHAPTERS.is_dir():
         sys.exit('❌ 找不到章节目录 %s（本脚本要对着整合包实例跑）' % CHAPTERS)
-    out = set()
+    out = {}
     for p in sorted(CHAPTERS.glob('*.snbt')):
-        out |= set(re.findall(r'questpics/([a-z0-9_/-]+\.png)',
-                              p.read_text(encoding='utf-8')))
+        for m in re.findall(r'questpics/([a-z0-9_/-]+\.png)',
+                            p.read_text(encoding='utf-8')):
+            out[m] = out.get(m, 0) + 1
     return out
+
+
+def on_disk():
+    """上游实际有的图，按**小写**路径索引。
+
+    章节里的引用一律小写（资源路径必须小写），而上游的目录名不一定：ATM 把
+    现代工业化那三张放在 `ModernIndustrialization/` 下，章节却写
+    `modernindustrialization/`。Windows / macOS 的文件系统不区分大小写，
+    这三张照样显示；Linux 上找不到。这是上游 7.0 就有的老毛病，不是我们引入的，
+    也不该让构建红——闸要判的是「这个引用有没有对应的图」，有，只是大小写没对齐。
+    """
+    got = {}
+    if SRC.is_dir():
+        for p in SRC.rglob('*.png'):
+            got[str(p.relative_to(SRC)).replace(os.sep, '/').lower()] = p
+    return got
 
 
 def main():
     used = referenced()
+    got = on_disk()
     for rel, fn in sorted(MISSING.items()):
-        if (SRC / rel).is_file():
+        if rel in got:
             # 上游把图补回来了。继续画就成了「拿我们的图盖掉上游的」——那是另一回事，
             # 必须有人重新裁决，不许静默发生。
-            sys.exit('❌ %s 上游已经有了，去掉 MISSING 里的这一条。' % rel)
+            sys.exit('❌ %s 上游已经有了（%s），去掉 MISSING 里的这一条。'
+                     % (rel, got[rel].name))
         t = OUT / rel
         t.parent.mkdir(parents=True, exist_ok=True)
         fn().save(t)
-        print('  现画 %s（本版章节引用 %d 处）'
-              % (rel, sum(1 for u in used if u == rel)))
-    lost = sorted(u for u in used
-                  if not (SRC / u).is_file() and u not in MISSING)
+        print('  现画 %s（本版章节引用 %d 处）' % (rel, used.get(rel, 0)))
+    # 大小写没对齐的：上游有这张图，只是目录名大小写与引用不一致。说出来但不红。
+    odd = sorted(u for u in used
+                 if u in got
+                 and str(got[u].relative_to(SRC)).replace(os.sep, '/') != u)
+    for u in odd:
+        print('  ⚠️ %s 上游实际叫 %s，只有大小写不同（Linux 上找不到，'
+              '这是上游的老毛病，我们不改）'
+              % (u, str(got[u].relative_to(SRC)).replace(os.sep, '/')))
+    lost = sorted(u for u in used if u not in got and u not in MISSING)
     if lost:
         sys.exit('❌ 章节引用了这些配图，整合包里没有、本脚本也没画：\n   %s\n'
                  '   上游又丢图了。补进 MISSING，或者去问上游，别让它这样发出去。'
