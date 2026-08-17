@@ -18,8 +18,6 @@ item_ids:
 
 
 
-<Recipe id="modern_industrialization:materials/bronze_dust" />
-
 <Recipe id="modern_industrialization:materials/bronze_tiny_dust" />
 
 熔炼青铜粉会获得青铜锭。
