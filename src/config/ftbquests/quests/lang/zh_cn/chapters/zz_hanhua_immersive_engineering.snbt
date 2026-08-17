@@ -1,2 +1,134 @@
 {
+	quest.066B8A75B299AED8.quest_desc: [
+		"&9&l工业挤压机&r是一台简单的机器，通过挤压&e物品&r来制造其他&e物品&r或&b流体&r。\\n\\n我们可以使用背面的2个端口来&9输入&e物品&r。然后需要使用桶右侧的端口来将&e物品&r&6输出&r。其下方的端口将&6输出&b流体&r。\\n\\n这主要用于从小麦种子或大麻种子等作物种子中榨取植物油！\\n\\n有些种子出油率更高，查看&6指南&r了解每种种子的产出。\\n\\n我们还需要使用&9&l工业挤压机&r从8个&0焦炭粉&r中获取&0高定向热解石墨粉&r。"
+		"{@pagebreak}"
+		"字面意义上和&2&l工业发酵机&r的开头一模一样。"
+		"{image:atm:textures/questpics/immersive/immersive_squeezer1.png width:100 height:100 align:center}"
+		"也和&2&l工业发酵机&r一样，只是用桶代替了炼药锅！"
+		"{image:atm:textures/questpics/immersive/immersive_squeezer2.png width:100 height:100 align:center}"
+		"在&e轻型工程块&r和&4红石工程块&r之间的桶上方放置一个活塞。在其他3个桶上方放置&8钢栅栏&r！"
+		"{image:atm:textures/questpics/immersive/immersive_squeezer3.png width:100 height:100 align:center}"
+		"用&6工程师锤&r右键点击活塞下方的那个桶。注意要点&e轻型工程块&r与&4红石工程块&r之间的那一面，点别的面建不起来。"
+		"{image:atm:textures/questpics/immersive/immersive_squeezer.png width:100 height:100 align:center}"
+	]
+	quest.066B8A75B299AED8.title: "&9&l工业挤压机"
+	quest.0F14270F0A718C01.quest_desc: ["&c岩浆块&r- 1300 K\\n&c熔岩&r- 1300 K\\n&a铀块&r- 2000 K"]
+	quest.0F14270F0A718C01.title: "&c高温物品"
+	quest.28E99A6E17E86709.quest_desc: ["移动&b流体&r是&8&l沉浸工程&r的重要组成部分，想想杂酚油和植物油！\\n\\n&b流体管道&r是我们移动&b流体&r的基本方式，如果你想要更快的速度，请查看&b流体泵&r。\\n\\n&b流体管道&r，像能量连接器一样，根据它们连接的对象决定&9输入&r和&6输出&r的方向。有些机器需要&4红石信号&r才能向&b流体管道&r&6输出&r，比如&b&l流体储罐&r！\\n\\n我们可以使用&6工程师锤&r来更改&b管道&r的连接对象，此外我们可以在它们上面使用&8钢脚手架&r来覆盖它们，或者用染料给它们染色！"]
+	quest.36EB83BB41A9E621.quest_desc: [
+		"&b&l流体储罐&r就像&l&e储物筒仓&r，但是用于&b流体&r！\\n\\n它只能容纳1种类型的&b流体&r，但可以容纳512桶该&b流体&r。\\n\\n你可以从顶部或底部侧面&9输入&r&b流体&r，但只能从底部&6输出&r。"
+		"{@pagebreak}"
+		"&b&l流体储罐&r的建造方式类似于&e&l储物筒仓&r，从我们的防腐木栅栏和单个&7铁板金属&r开始。"
+		"{image:atm:textures/questpics/immersive/immersive_tank1.png width:125 height:100 align:center}"
+		"现在我们在栅栏上方建造我们的&7铁板金属&r空心方块，这次是3格高。"
+		"{image:atm:textures/questpics/immersive/immersive_tank2.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_tank3.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_tank4.png width:100 height:100 align:center}"
+		"然后，用填满的&7铁板金属&r方块封顶！"
+		"{image:atm:textures/questpics/immersive/immersive_tank5.png width:100 height:100 align:center}"
+		"右键点击与&e&l储物筒仓&r中相同的方块来创建我们的&b&l流体储罐&r。"
+		"{image:atm:textures/questpics/immersive/immersive_tank.png width:100 height:120 align:center}"
+	]
+	quest.36EB83BB41A9E621.title: "&b&l流体储罐"
+	quest.3DE14F16F3109229.quest_desc: ["通过将任意8个木板与一&7桶杂酚油&r结合，我们将得到防腐木板！\\n\\n防腐木板几乎用于&8&l沉浸工程&r提供给我们的每一个物品，以及大多数简单的机器。\\n\\n最重要的是&6工程师装配台&r！这些将为我们提供大量新配方。"]
+	quest.3DE14F16F3109229.title: "防腐木板"
+	quest.3EE95747CA6DFB1A.quest_desc: [
+		"&7&l金属冲压机&r是我们处理所有&7金属&r合成配方的最佳伙伴！\\n\\n它非常简单，我们将模具放在冲压机上，从顶部接入一些&c能量&r，然后将我们的&e物品&r扔到&e传送带&r上。\\n\\n我们的&e物品&r会经过冲压机，被&7&l冲压&r，然后变成一个新的&e物品&r，继续在&e传送带&r上移动！\\n\\n它们可以用来制作&c导线&r、&7板&r、&8棒&r，还有……&2西瓜片&r？"
+		"{@pagebreak}"
+		"第一层非常简单，只需&8钢脚手架&r和&4红石工程块&r的两侧。"
+		"{image:atm:textures/questpics/immersive/immersive_press1.png width:150 height:75 align:center}"
+		"接下来，在&4红石工程块&r上方放置一个活塞，使其面朝下，并在其旁边添加两个传送带。"
+		"{image:atm:textures/questpics/immersive/immersive_press2.png width:125 height:100 align:center}"
+		"然后，在我们的活塞上方放置一个&7重型工程块&r！"
+		"{image:atm:textures/questpics/immersive/immersive_press3.png width:100 height:100 align:center}"
+		"最后，用工程师锤右键点击活塞！"
+	]
+	quest.3EE95747CA6DFB1A.title: "&l&7金属冲压机"
+	quest.4104C5D003D4705A.quest_desc: [
+		"又一个使用&e传送带&r的多方块结构，我发现规律了。首先，我们需要设置一个&9蓝图&r。右键点击&6&l自动化工程师装配台&r打开其GUI，并将&9蓝图&r放在最右侧的槽位中。\\n\\n然后，我们可以让&e物品&r通过&e传送带&r，以便在可能的情况下用于配方。\\n\\n之后，合成好的&e物品&r（以及意外放到&e传送带&r上的&e物品&r）会从&e传送带&r输出。\\n\\n这对于自动化生产子弹、&0高定向热解石墨&r和&7机械零件&r非常有用。"
+		"{@pagebreak}"
+		"我们很多结构都以&8钢脚手架&r为基础形状开始，这次是一条对角线。在较小的角落我们将放置一个&7重型工程块&r。在较大的角落我们将放置2个&e轻型工程块&r和一个&4红石工程块&r。"
+		"{image:atm:textures/questpics/immersive/immersive_automated1.png width:100 height:100 align:center}"
+		"接下来，我们将在它们原来的位置上方放置更多的&e轻型工程块&r和&7重型工程块&r。在&4红石工程块&r及其左侧的&8钢脚手架&r上方，我们将放置防腐木台阶。在剩余的空间里，我们将按所示顺序放置&e传送带&r。"
+		"{image:atm:textures/questpics/immersive/immersive_automated2.png width:100 height:100 align:center}"
+		"要获得我们的&6&l自动化工程师装配台&r，用&6工程师锤&r敲击左侧的防腐木台阶！"
+		"{image:atm:textures/questpics/immersive/immersive_automated.png width:100 height:100 align:center}"
+	]
+	quest.4104C5D003D4705A.title: "&l&6自动化工程师装配台"
+	quest.481735FE3164C8D5.quest_desc: ["&b蓝冰&r- 200 K \\n&b浮冰&r- 240 K \\n&b冰&r- 260 K \\n雪- 273 K \\n&9水&r- 300 K"]
+	quest.481735FE3164C8D5.title: "&b低温物品"
+	quest.5218DAE147AC9F44.quest_desc: ["锯片盒子允许你在&2&l伐木机械锯&r上持有更多&8锯片&r或&8类似锯片的物品&r。\\n\\n要在&8锯片&r（或&8类似锯片的物品&r）之间切换，请按住Shift并滚动鼠标滚轮。\\n\\n这对于更换损坏的&8锯片&r甚至切换到&8研磨盘&r非常有用！"]
+	quest.573C2242EAB85B49.quest_desc: [
+		"&0&l焦炉&r是我们制作&0焦炭&r的方式，猜猜它是用什么做的！\\n\\n我们可以使用&0&l焦炉&r将原木烧制成&0木炭&r，或者将&0煤炭&r和&0煤炭块&r烧制成&0焦炭&r！\\n\\n这两种方式都会产生杂酚油，以及正常的配方产物。"
+		"{@pagebreak}"
+		"&0&l焦炉&r是一个非常简单的多方块结构，由3x3x3的&0焦炉砖&r构成。"
+		"{image:atm:textures/questpics/immersive/immersive_coke1.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_coke2.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_coke3.png width:100 height:100 align:center}"
+		"只需用&6工程师锤&r右键点击正面中间的那个方块即可创建它。"
+		"{image:atm:textures/questpics/immersive/immersive_coke.png width:100 height:100 align:center}"
+	]
+	quest.573C2242EAB85B49.title: "&l&8焦炉"
+	quest.5A2A718C569F3C19.quest_desc: ["通过在&l焦炉&r中烧炼&0煤炭&r，我们可以得到&0焦炭&r！或者我就叫它&0焦炭&r！\\n\\n它基本上就是&0煤炭&r，但在&8&l沉浸工程&r中有更多用途。\\n\\n你可以将其与铁结合得到&7钢&r，粉碎它得到&0焦炭粉&r（这是制作&0石墨&r所需的），或者用作高炉的燃料。"]
+	quest.5DE3F2A96715BA2E.quest_desc: [
+		"&e&l储物筒仓&r是一个多方块结构，用于存储大量单一类型的&e物品&r，就像一个抽屉一样。\\n\\n你可以从顶部或底部&9存入&r该&e物品&r及其同类物品，但要&6提取&r，你需要使用底部！\\n\\n它可以容纳41,472个&e物品&r，但只能是同一种类型。"
+		"{@pagebreak}"
+		"首先我们用防腐木栅栏围成一个正方形，中间放一个&7铁板金属&r。"
+		"{image:atm:textures/questpics/immersive/immersive_silo1.png width:125 height:100 align:center}"
+		"接下来，在我们的栅栏上方制作一个完整的&7铁板金属&r正方形，同时让中心空着。重复此操作5次！"
+		"{image:atm:textures/questpics/immersive/immersive_silo2.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_silo3.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_silo4.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_silo5.png width:100 height:100 align:center}"
+		"{image:atm:textures/questpics/immersive/immersive_silo6.png width:100 height:100 align:center}"
+		"然后，最后一层是一个完整的&7铁板金属&r正方形，包括我们填满中心的那一格。"
+		"{image:atm:textures/questpics/immersive/immersive_silo7.png width:100 height:100 align:center}"
+		"之后，用我们的&6锤子&r右键点击第二层的中间&7铁板金属&r来创建我们的&e&l储物筒仓&r！"
+		"{image:atm:textures/questpics/immersive/immersive_silo.png width:100 height:125 align:center}"
+	]
+	quest.5DE3F2A96715BA2E.title: "&l&e储物筒仓"
+	quest.5EE1DF1C8F0C1FF9.quest_desc: [
+		"建造好&l&5避雷针&r后，闪电可以击中&8钢栅栏&r，然后这些能量会储存在其自身的&c能量&r储存器中。\\n\\n&8钢栅栏&r越多，被闪电击中的几率越高！\\n\\n我在想我们能不能用其他模组来召唤闪电？"
+		"{@pagebreak}"
+		"为了利用大自然最具破坏力的力量，我们需要从一个&5高压线圈方块&r开始。然后，将&5高压蓄电池&r与&5高压线圈方块&r相邻放置。在角落放置&8钢脚手架&r。"
+		"{image:atm:textures/questpics/immersive/immersive_lightning1.png width:100 height:100 align:center}"
+		"对于下一层，在之前的&5高压线圈方块&r上方放置另一个&5高压线圈方块&r。与其相邻的位置，将是&e轻型工程块&r。角落将是简单的防腐木栅栏！"
+		"{image:atm:textures/questpics/immersive/immersive_lightning2.png width:100 height:100 align:center}"
+		"现在，我们需要在其他的&5高压线圈方块&r上方放置第三个&5高压线圈方块&r，并围绕它放置8个&6铜线圈方块&r。"
+		"{image:atm:textures/questpics/immersive/immersive_lightning3.png width:100 height:100 align:center}"
+		"然后，用&6锤子&r右键点击正面的&e轻型工程块&r，将其转换为&5&l避雷针&r！"
+		"{image:atm:textures/questpics/immersive/immersive_lightning.png width:100 height:100 align:center}"
+		"我没有为这一步制作图片，但你需要在&5&l避雷针&r顶部放置&8钢栅栏&r才能让闪电击中它！"
+	]
+	quest.5EE1DF1C8F0C1FF9.title: "&5&l避雷针"
+	quest.5F4F7637044BD4F1.quest_desc: [
+		"&2&l工业发酵机&r会存放你的食物&e物品&r，过一段时间后会将其转化为乙醇。\\n\\n有一个物品列表，你可以在&6工程师手册&r中找到，列出了可以通过背部和左侧端口放入&2&l工业发酵机&r的&e物品&r。\\n\\n如果你使用&6蜂蜜瓶&r，你可以从右侧的端口&6提取&r空瓶。\\n\\n&2&l工业发酵机&r需要&c能量&r，这些能量将从&2&l工业发酵机&r顶部的端口输入！"
+		"{@pagebreak}"
+		"开始很简单，用&8钢脚手架&r制作一个反向的n形，并在其中放置&b流体管道&r，在角落放置一个&e轻型工程块&r。"
+		"{image:atm:textures/questpics/immersive/immersive_fermenter1.png width:100 height:100 align:center}"
+		"在&e轻型工程块&r上方放置另一个。在它的右侧，隔开一格，然后放置一个&4红石工程块&r。在&e轻型工程块&r的左侧，我们将放置一个2x2的炼药锅阵列。"
+		"{image:atm:textures/questpics/immersive/immersive_fermenter2.png width:100 height:100 align:center}"
+		"另一个简单的步骤，只需在所有炼药锅上方放置&7铁板金属&r！"
+		"{image:atm:textures/questpics/immersive/immersive_fermenter3.png width:100 height:100 align:center}"
+		"用&6锤子&r右键点击位于&e轻型工程块&r和&4红石工程块&r之间的炼药锅。"
+		"{image:atm:textures/questpics/immersive/immersive_fermenter.png width:100 height:100 align:center}"
+	]
+	quest.5F4F7637044BD4F1.title: "&l&2工业发酵机"
+	quest.607D9B53C632DEDE.quest_desc: ["&b管道阀&r有助于分类和停止&b流体&r流动！\\n\\n当与&b流体管道&r一起使用时，它们会使&b流体&r仅沿着&b管道阀&r上箭头指示的方向流动。\\n\\n你还可以向其发送&4红石信号&r，它将完全停止&b流体&r流动！"]
+	quest.607D9B53C632DEDE.title: "&b管道阀"
+	quest.63F5314A1072FA05.quest_desc: [
+		"&e&l锯木机&r的工作原理类似于&7&l金属冲压机&r，使用&e传送带&r并需要额外物品。\\n\\n它分两个阶段工作，首先是剥离原木。如果内部没有锯片，它将只剥离原木。第二阶段是将原木切割成木板，这需要锯片。\\n\\n锯片是用大量&8钢&r合成的。它们有耐久度，要插入它们，请右键点击锯木机后部附近的槽位。如果你想取出它们，请用&4红石&r关闭锯木机，然后按住Shift右键点击你插入它们的位置。\\n\\n你需要从背部的顶部为其提供&c能量&r，并且可以通过&e传送带&r&9输入&e物品&r。&e物品&r会通过相同的&e传送带&r&6输出&r，但锯屑会从&e&l机器&r前面的端口排出。"
+		"{@pagebreak}"
+		"用&8钢脚手架&r（别忘了&7重型工程块&r）制作一个I形，并用&e轻型工程块&r填充一部分，另一部分用&7铁板金属&r填充。"
+		"{image:atm:textures/questpics/immersive/immersive_saw1.png width:150 height:100 align:center}"
+		"在它们下方的同类方块上再放置3个&e轻型工程块&r。在最左侧的&7铁板金属&r上方添加1个&7铁板金属&r，并在其旁边放置一个&4红石工程块&r。在顶部的&7铁板金属&r旁边，我们需要另一个&7重型工程块&r。别忘了添加传送带，这些是建造它所需要的！"
+		"{image:atm:textures/questpics/immersive/immersive_saw2.png width:100 height:100 align:center}"
+		"用我们的锤子右键点击中间的&7铁板金属&r！"
+		"{image:atm:textures/questpics/immersive/immersive_saw.png width:100 height:100 align:center}"
+	]
+	quest.63F5314A1072FA05.title: "&e&l锯木机"
+	quest.6BD348735C27BB44.title: "&b&l灌装机"
+	quest.7B447E986493AD6B.quest_desc: ["&7杂酚油&r是&l焦炉&r的副产品。\\n\\n它的主要用途是制造防腐木板，这是&8&l沉浸工程&r的基本建筑材料。\\n\\n你之后也会需要它来制造另一种流体，我们到时候再操心。"]
+	task.43FDC45CF464047E.title: "高温物品"
+	task.5CEB2D56A9EA74D0.title: "低温物品"
 }
