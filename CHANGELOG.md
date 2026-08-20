@@ -42,6 +42,8 @@
 [#47](https://github.com/chiba233/atm10-zh-cn/issues/47)、
 [#49](https://github.com/chiba233/atm10-zh-cn/issues/49)。
 
+感谢 **siesta** 的反馈。
+
 ## R23
 
 ### 支持 All the Mods 10 **8.0**
