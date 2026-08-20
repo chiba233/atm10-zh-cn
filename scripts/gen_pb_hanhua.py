@@ -34,6 +34,7 @@ from pathlib import Path
 from paths import COMMON, PACK, snapshot
 ROOT = Path(__file__).resolve().parent.parent
 PACK_LANG = PACK / 'assets/productivebees/lang/zh_cn.json'
+SHINY_LANG = PACK / 'assets/shiny/lang/zh_cn.json'
 SNAPSHOT = snapshot('pb_upstream_en_us.json')
 
 # 历史上用过、后被否掉的中文译名 → 归一到权威译名（均为 fbi 蜂旧译）
@@ -104,6 +105,27 @@ def main() -> None:
             en2zh[env] = next(iter(zhs))
         else:
             ambiguous.append((env, sorted(zhs)))
+
+    # ── 例外：shiny 的闪光蜜蜂 ────────────────────────────────────────────
+    # 它不是资源蜜蜂——蜂笼 NBT 里写着 isProductiveBee: 0b、entity: "shiny:shiny_bee"
+    # ——但会被抓进资源蜜蜂的蜂笼，而蜂笼名走 NBT 里写死的英文（name: "Shiny Bee"），
+    # 语言文件够不着，只能在显示层换。实体本身走 lang，早就是中文。
+    #
+    # 只点名这一只，不把 shiny 整个命名空间纳进真源：shiny 是原版生物的闪光变体包，
+    # jar 的 en_us 共 132 个实体键，其中 *_bee **仅此一条**，其余全是牛羊村民热带鱼；
+    # 它的 class 里 0 个文件提到 productivebees，与资源蜜蜂没有任何集成。
+    #
+    # 译名照旧从资源包取，不在这里手写第二份。
+    shiny_zh = json.loads(SHINY_LANG.read_text(encoding='utf-8')).get('entity.shiny.shiny_bee')
+    if not shiny_zh:
+        sys.exit('❌ %s 里没有 entity.shiny.shiny_bee——闪光蜜蜂的蜂笼名会退回英文'
+                 % SHINY_LANG.relative_to(ROOT))
+    # 资源蜜蜂将来真加一只 Shiny Bee 的话，这里会静默盖掉它的真名——那是看不见的
+    # 内容损坏，宁可当场红。（现状：468 个 base 派生不出这个英文名）
+    if en2zh.get('Shiny Bee', shiny_zh) != shiny_zh:
+        sys.exit('❌ 资源蜜蜂自己已经有 Shiny Bee（%s），这条例外会盖掉它'
+                 % en2zh['Shiny Bee'])
+    en2zh['Shiny Bee'] = shiny_zh
 
     # 类型行专用表（无 Bee 后缀 TitleCase，仅"类型: X (N%)"整段匹配用，不进通用正则）
     type2zh = {title_case(base): zh for base, zh in id2zh.items() if base != 'bee'}
