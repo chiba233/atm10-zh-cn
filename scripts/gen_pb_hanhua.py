@@ -135,6 +135,16 @@ def main() -> None:
                  % SHINY_LANG.relative_to(ROOT))
     bid2zh['shiny:shiny_bee'] = shiny_zh
 
+    # 同一只蜂在**基因样本 / 蜂蜜零食**里还有一处露头：那一行是
+    # productivebees.information.attribute.type（Type: %s），%s 填的是基因的 value。
+    # value 是**功能数据**——它决定这份基因属于哪种蜂，育种与基因索引机靠它工作——
+    # 按红线「数据迁移只动纯显示字段」绝不能改写，所以这一处只能在客户端换显示。
+    # 与蜂笼那条不冲突：蜂笼改的是 custom_data.name（纯显示），两个字段各管各的。
+    #
+    # 走**点名整串替换**而不是放宽形态3 的正则：形态3 的字符类不含 ':' 与 '_'，
+    # 放宽它会让 467 条既有条目一起进入新的匹配面，为一只蜂承担全局风险。
+    extra_id2zh = {'shiny:shiny_bee': shiny_zh}
+
     # 安全闸集合：只收"系统会生成的完整名字"。裸 TitleCase 单词绝不入闸。
     sys_names = set()
     for base, zh in id2zh.items():
@@ -181,6 +191,13 @@ function pbTranslate(s) {
     for (let old in PB_ZH_ALIAS) {
         if (pbOwn(PB_ZH_ALIAS, old) && ns.indexOf(old) >= 0) ns = ns.split(old).join(PB_ZH_ALIAS[old])
     }
+    // 形态6: 点名的外来实体 ID（基因样本/蜂蜜零食的「类型」行）。
+    // 整串精确替换，不进任何正则——这些 ID 带命名空间，只可能指那一只。
+    for (let eid in PB_EXTRA_ID2ZH) {
+        if (pbOwn(PB_EXTRA_ID2ZH, eid) && ns.indexOf(eid) >= 0) {
+            ns = ns.split(eid).join(PB_EXTRA_ID2ZH[eid])
+        }
+    }
     // 形态5: 原版蜜蜂括号整名
     return ns.replace(/\\(Bee\\)/g, '(蜜蜂)')
 }
@@ -193,6 +210,7 @@ function pbTranslate(s) {
               'const PB_EN2ZH = ' + j(en2zh) + ';\n'
               'const PB_TYPE2ZH = ' + j(type2zh) + ';\n'
               'const PB_ZH_ALIAS = ' + j(zh_alias) + ';\n'
+              'const PB_EXTRA_ID2ZH = ' + j(extra_id2zh) + ';\n'
               'const PB_SYS = ' + j(sys_obj) + ';\n'
               + shared + '''
 const $ItemTooltipEvent = Java.loadClass('net.neoforged.neoforge.event.entity.player.ItemTooltipEvent')
