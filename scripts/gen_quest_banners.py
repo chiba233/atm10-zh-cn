@@ -184,6 +184,7 @@ FACE_BY_PREFIX = [
     ('apothic/gear_',            'serif'), ('chap3/creative_items',  'serif'),
     ('chap3/creative_star',      'serif'), ('iceandfire/',           'serif'),
     ('mahou/',                   'serif'), ('eternal/',              'serif'),
+    ('neovitae/',                'serif'),
     # ---- 细体
     ('ars/',                     'thin'),  ('router/',               'thin'),
     # ---- 其余默认粗黑
@@ -444,10 +445,105 @@ def check_boxes():
                                  '——边界会把装饰啃掉半个，改 BOXES' % (rel, ins, out))
                     print('  ⚠ %s 擦除框边界擦掉了 %d 像素（在容差内）' % (rel, loss))
 
+# ── 文字压在美术上的图：按描边抠字，美术原样留着 ──────────────────────────
+#
+# BOXES 那条路是「框内整块擦掉、框外保留」，前提是装饰在文字**两侧**。
+# neovitae 不是：文字压在凤凰与圣杯上，两侧的 DNA 装饰又和文字同处一条带。
+# 按框擦会把凤凰拦腰挖空，装饰也一起没。
+#
+# 可用的特征是**浅色描边只出现在文字上**——凤凰、圣杯、装饰都是纯深红，没有白边。
+# 于是：取浅色遮罩 → 膨胀成闭合轮廓 → 从画布外围洪水填充 → 灌不到的就是字腹，
+# 描边 ∪ 字腹 = 英文字。这张图抠出 10.5 万像素（占不透明区 56%），
+# 凤凰、圣杯、血滴、两侧装饰、底部标尺全部完整。
+#
+#   light  判定「这是描边」的 RGB 下限
+#   dense  判定「这一列/行属于字」的像素数下限，按图高取比例。装饰线很细，
+#          用它把两端装饰排除在字的外接框之外——既不擦它们，也不让它们把
+#          绘制框撑到满宽（撑宽了中文会被拉扁）
+#   scale  中文相对英文外接框的高度比。CJK 字身撑满字面框，而英文有升降部，
+#          取 1.0 会让中文比原文高出一截，把底部那条标尺压掉
+WORDMARK = {
+    'neovitae/neovitae.png': dict(light=(195, 185, 185), dense=0.04, scale=0.86),
+}
+
+
+def wordmark_split(im, rel, cfg):
+    """按描边把压在美术上的英文字抠出来。
+
+    → (只含英文字的子图, 该子图在原图里的位置, 已清掉英文字与投影的底图)
+
+    每一步都 fail-closed：抠不出字就退出。静默返回空遮罩的话，产出的是一张
+    只剩中文、美术全丢的图——而这种图不会有任何闸报错，只有玩家会看到。
+    """
+    from PIL import ImageChops, ImageDraw, ImageFilter
+    W, H = im.size
+    r, g, bl, a = im.split()
+    lo = cfg['light']
+    solid = a.point(lambda v: 255 if v >= 40 else 0)
+    light = ImageChops.multiply(
+        ImageChops.multiply(r.point(lambda v: 255 if v > lo[0] else 0),
+                            g.point(lambda v: 255 if v > lo[1] else 0)),
+        ImageChops.multiply(bl.point(lambda v: 255 if v > lo[2] else 0), solid))
+    n_light = sum(light.point(lambda v: 1 if v else 0).getdata())
+    if n_light < W * H * 0.004:
+        sys.exit('❌ %s 的浅色描边只有 %d 像素，抠不出英文字——WORDMARK 的 light 阈值不对'
+                 % (rel, n_light))
+
+    # 膨胀成闭合轮廓，再从画布外围灌水：灌不到的封闭区域就是字腹。
+    # 先加一圈透明边，保证 (0,0) 一定在字外——原图四角万一有墨，灌水会从内部起步。
+    edge = light.filter(ImageFilter.MaxFilter(5))
+    pad = Image.new('L', (W + 2, H + 2), 0)
+    pad.paste(edge, (1, 1))
+    ImageDraw.floodfill(pad, (0, 0), 128)
+    outside = pad.crop((1, 1, W + 1, H + 1))
+    word = ImageChops.lighter(edge, outside.point(lambda v: 255 if v == 0 else 0))
+    if not word.getbbox():
+        sys.exit('❌ %s 抠出来的英文字是空的' % rel)
+
+    # 字的外接框只取「密集」的行列：装饰线很细，这样把它们排除在框外，
+    # 既不会被擦掉，也不会把绘制框撑宽
+    wp = word.load()
+    thr = max(6, round(H * cfg['dense']))
+    cols = [x for x in range(W) if sum(1 for y in range(H) if wp[x, y]) >= thr]
+    rows = [y for y in range(H) if sum(1 for x in range(W) if wp[x, y]) >= thr]
+    if not cols or not rows:
+        sys.exit('❌ %s 抠出来的英文字不成片（dense 阈值 %d 太高）' % (rel, thr))
+    bx0, by0, bx1, by1 = cols[0], rows[0], cols[-1] + 1, rows[-1] + 1
+
+    # 清底：框内擦掉字；字外一圈的低饱和像素是原字的投影与描边余烬，一并清掉。
+    # 美术是饱和的深红，按饱和度就能分开；清理只在框内做，框外一个像素不碰。
+    near = word.filter(ImageFilter.MaxFilter(41))
+    far = word.filter(ImageFilter.MaxFilter(81))
+    base = im.copy()
+    bp, np_, fp = base.load(), near.load(), far.load()
+    for y in range(by0, by1):
+        for x in range(bx0, bx1):
+            if wp[x, y]:
+                bp[x, y] = (0, 0, 0, 0)
+                continue
+            pr, pg, pb, pa = bp[x, y]
+            if not pa:
+                continue
+            sat = max(pr, pg, pb) - min(pr, pg, pb)
+            if (np_[x, y] and sat < 46) or (fp[x, y] and (sat < 26 or min(pr, pg, pb) > 170)):
+                bp[x, y] = (0, 0, 0, 0)
+
+    # 采样用的子图：框内只留字像素。按 scale 缩一档，让渲染尺寸跟着一起收
+    sub = Image.new('RGBA', (bx1 - bx0, by1 - by0), (0, 0, 0, 0))
+    sub.paste(im.crop((bx0, by0, bx1, by1)), (0, 0), word.crop((bx0, by0, bx1, by1)))
+    k = cfg.get('scale', 1.0)
+    if k != 1.0:
+        sub = sub.resize((sub.width, max(1, round(sub.height * k))), Image.LANCZOS)
+    at = (bx0, by0 + ((by1 - by0) - sub.height) // 2)
+    return sub, at, base
+
+
 # 少数图自动采样会采到底纹/装饰而不是字本身，颜色发灰看不清，这里直接给定
 # （描边色, 填充色）。数值取自原图英文字的实际颜色。
 STYLE = {
     'twilight_forest_title.png':  ((16, 40, 28), (86, 240, 190)),   # 字压在石砖上，采样会采到砖
+    # 深红字面 + 奶白描边，而腐蚀量（图高 5%）比描边厚，外圈中位色被字面带偏成深红
+    'neovitae/neovitae.png':      ((239, 226, 228), (150, 30, 47)),
     'ars/ars_nouveau_title.png':  ((58, 12, 78), (196, 96, 234)),   # 原字是发光紫，中位色偏暗
     'router/router_title.png':    ((54, 36, 18), (242, 222, 172)),  # 原字是米色，底纹拉灰了
     'occultism/occultism_title.png': ((28, 6, 34), (150, 40, 168)),
@@ -551,6 +647,7 @@ BANNERS = {
     'mek/mek_title.png':                                    '通用机械',
     'mystical_agriculture/title.png':                       '神秘农业',
     'natures_aura/natures_aura_title.png':                  '自然灵气',
+    'neovitae/neovitae.png':                                '新血魔法',
     'occultism/occultism_title.png':                        '神秘学',
     'oritech/ori-addons.png':                               '附属',
     'oritech/ori-energy.png':                               '能源',
@@ -702,6 +799,12 @@ BANNERS = {
 
 def crop_box(im, rel):
     """→ (取样/绘制用的子图, 粘回原图的左上角坐标, 该图是否要保留框外内容)"""
+    wm = WORDMARK.get(rel)
+    if wm:
+        sub, at, base = wordmark_split(im, rel, wm)
+        # 这里返回的是**新** dict，不是 WORDMARK 里那个——往全局配置上挂
+        # 每张图现算的底图，跑第二张时就会拿到上一张的底
+        return sub, at, dict(wm, canvas=base)
     cfg = BOXES.get(rel)
     if cfg:
         x0, y0, x1, y1 = cfg['box']
@@ -1077,7 +1180,11 @@ def main(check_only=False):
         if cfg:
             # 保留框外的装饰：在原图上抠掉文字框，再把中文贴回去
             canvas = im.copy()
-            if 'patch_from' in cfg:      # 框内有底纹，取干净的几行平铺补上
+            if cfg.get('canvas') is not None:
+                # 按描边抠字那条路：底图已经把英文字和投影清干净了，
+                # 再按框整块擦会把压在字底下的美术一起挖掉
+                canvas = cfg['canvas'].copy()
+            elif 'patch_from' in cfg:    # 框内有底纹，取干净的几行平铺补上
                 a, b = cfg['patch_from']
                 ya, yb = round(im.height * a / 100), round(im.height * b / 100)
                 strip = im.crop((at[0], ya, at[0] + sub.width, yb))
