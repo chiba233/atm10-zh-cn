@@ -26,5 +26,6 @@
   "item.productivelib.upgrade_stability": "升级：稳定",
   "item.productivelib.upgrade_pollen_sieve": "升级：花粉筛",
   "productivelib.information.upgrade.extend": "按住SHIFT查看更多信息",
-  "productivelib.information.upgrade.valid_blocks.list_item_content": "   %s"
+  "productivelib.information.upgrade.valid_blocks.list_item_content": "   %s",
+  "Valid upgrades:": "适用升级："
 }
