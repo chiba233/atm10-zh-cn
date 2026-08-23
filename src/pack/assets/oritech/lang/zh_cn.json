@@ -530,7 +530,7 @@
   "tooltip.oritech.uranium_pellet": "作为反应堆燃料使用。",
   "tooltip.oritech.small_plutonium_pellet": "作为反应堆燃料使用。",
   "tooltip.oritech.plutonium_pellet": "作为反应堆燃料使用。",
-  "tooltip.oritech.machine_core_block": "更好的机器核心只是允许连接更多扩展坞类方块。",
+  "tooltip.oritech.machine_core_block": "更好的机器核心只能让你连接更多扩展坞类方块，别的性能不会提升。",
   "tooltip.oritech.creative_tank": "使用任意流体桶右键以设置液体，空桶右键以清空。",
   "tooltip.oritech.fuel_generator_block.extra": "仅在可视连接端口输出能量。",
   "block.oritech.banana_block": "香蕉块",
