@@ -10260,6 +10260,29 @@
    }
   ]
  },
+ "neovitae_meteor_jei.json": {
+  "blocks": [
+   {
+    "classes": {
+     "com.breakinblocks.neovitae.compat.jei.meteor.MeteorRecipeCategory": {
+      "actual": null,
+      "how": "not_found",
+      "jar": null
+     }
+    },
+    "i": 1,
+    "jars": [],
+    "keys": {
+     " Blocks": "missing",
+     "Catalyst:": "missing",
+     "Cost: ": "missing",
+     "Explosion: ": "missing",
+     "Outputs:": "missing",
+     "Size: ": "missing"
+    }
+   }
+  ]
+ },
  "observable.json": {
   "blocks": [
    {

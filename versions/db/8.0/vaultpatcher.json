@@ -10317,6 +10317,31 @@
    }
   ]
  },
+ "neovitae_meteor_jei.json": {
+  "blocks": [
+   {
+    "classes": {
+     "com.breakinblocks.neovitae.compat.jei.meteor.MeteorRecipeCategory": {
+      "actual": "com.breakinblocks.neovitae.compat.jei.meteor.MeteorRecipeCategory",
+      "how": "declared",
+      "jar": "neovitae-1.21.1-1.1.9.jar"
+     }
+    },
+    "i": 1,
+    "jars": [
+     "neovitae-1.21.1-1.1.9.jar"
+    ],
+    "keys": {
+     " Blocks": "substring",
+     "Catalyst:": "exact",
+     "Cost: ": "substring",
+     "Explosion: ": "substring",
+     "Outputs:": "exact",
+     "Size: ": "substring"
+    }
+   }
+  ]
+ },
  "observable.json": {
   "blocks": [
    {
