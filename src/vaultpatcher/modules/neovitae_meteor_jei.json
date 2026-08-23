@@ -1,0 +1,40 @@
+[
+  {
+    "name": "neovitae_meteor_jei_zh_cn",
+    "authors": "Hoshino Yumeka",
+    "dynamic": false,
+    "i18n": false,
+    "_说明": "陨星仪式的 JEI 配方页。五句硬编码在 MeteorRecipeCategory 的常量池里（逐项解析常量池确认），没有任何翻译键，资源包够不着——和炼金炉那页同一类问题。\n\n走静态（dynamic: false），不像炼金炉那份走 dynamic，有两个原因：\n\n一是其中三句是 makeConcatWithConstants 的拼接配方（'Cost: \\u0001 EV'、'Explosion: \\u0001'、'Size: \\u0001 Blocks'），运行时才拼出整串，dynamic 的精确匹配够不着，只能靠 @ 子串——那是全局开销，MAX_FRAGMENT_PAIRS 管的就是它。而静态的 InvokeDynamicNodeHandler 本来就按 \\u0001 把配方切开逐段查表（Pairs.getValue 非 dyn 模式是 pairsMap.getOrDefault(key, key)，查不到原样返回，不会写出 null），加载期改一次字节码，运行期零开销。ironfurnaces 的 'Direction: ' 和 ars_nouveau 的 'Direction set to ' 就是这么做的。\n\n二是静态才有闸。build_version_db.py 对 dynamic 模块的 key 一律记 'dynamic'、不去常量池核；静态模块的 key 才判 exact/substring/missing。模组哪天改了措辞，这份会红，dynamic 那份会静默失效。\n\n静态安全的前提是这几个常量不能有第二个消费者——五条各出现且只出现一次，且都在 12 个字节码偏移内被 GuiGraphics.drawString(Font, String, …) 吃掉，纯绘制。炼金炉那份不能这么办，是因为它的键里有 'Tool' 这种裸词。\n\n译名跟着模组自带的 zh_cn 走：触媒（简单触媒/灵质触媒）、消耗（触发消耗：/刷新消耗：%d EV）、尺寸与个方块（尺寸：%s x %s x %s / 预期：%s个方块）。产物与已出货的炼金炉模块（产物+1）一致。\n\n'Explosion: ' 译作「爆炸：」而不是「爆炸半径：」：配方 JSON 里 explosion 与 layers[].radius 是两个字段，Size 那行显示的 37 正是 2×18+1，把 explosion 叫半径会跟正上方那行打架。英文标签本身也只写了 Explosion。\n\n' EV' 不译：模组自带 zh_cn 的 jei.neovitae.recipe.lp 就是 'EV'。"
+  },
+  {
+    "target_class": [
+      "com.breakinblocks.neovitae.compat.jei.meteor.MeteorRecipeCategory"
+    ],
+    "pairs": [
+      {
+        "key": "Catalyst:",
+        "value": "触媒："
+      },
+      {
+        "key": "Outputs:",
+        "value": "产物："
+      },
+      {
+        "key": "Cost: ",
+        "value": "消耗："
+      },
+      {
+        "key": "Explosion: ",
+        "value": "爆炸："
+      },
+      {
+        "key": "Size: ",
+        "value": "尺寸："
+      },
+      {
+        "key": " Blocks",
+        "value": "个方块"
+      }
+    ]
+  }
+]
