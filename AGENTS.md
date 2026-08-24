@@ -46,12 +46,18 @@ ATM_PACK_ROOT=<整合包目录> ./scripts/generate_all.sh    # 摊 + 跑全部�
 4. 学名 / 维基 —— 只用来判断是不是认错物种，不作译名。
 
 真源是**按物品一件一件查的**。同一个 mod 里两件不同物品在真源上用了不同构词
-不是矛盾——它们本来就是两个东西。现成的例子：`witherproof_block` 与
-`witherproof_glass` 在 mcmod 上一个用「凋零」一个用「凋灵」；六个 `*_ingot_block`
-都是「⋯锭块」，唯独 `awakened_supremium_ingot_block` 是「⋯锭方块」。
+不是矛盾——它们本来就是两个东西。现成的例子：神秘农业的 `witherproof_block`
+与 `witherproof_glass` 在 mcmod 上都用「防凋灵」，而 `witherproof_bricks`
+在 mcmod 上根本没有条目，所以它仍是「防凋零砖块」——同一系三件，两种写法。
 
 真源查不到的（如 `witherproof_bricks`、`soulium_ingot_block`）保持现状，
 不要用同族的前缀去推。
+
+**真源会变，条目页才是真源，搜索列表页不是。** mcmod 的搜索索引落后于条目页：
+`witherproof_block` 与 `awakened_supremium_ingot_block` 都在 2026-08 改过译名
+（分别改成「防凋灵方块」「觉醒精华锭块」），而搜索页当时仍显示旧名。查一件东西
+一定要点进 `/item/<id>.html`。译名改了就跟——但要先把这个名字的全部表面
+（物品名、导览书、任务书标题与描述）一起找齐。
 
 ---
 
