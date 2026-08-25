@@ -61,7 +61,7 @@
     "text"
    ],
    "$(li)You can select between $(thing)Smart/$ and $(thing)Dumb/$ mode: in $(thing)Smart/$ mode, missiles will lock on to targets as described above, while in $(thing)Dumb/$ mode, missiles will simply fly in a straight line until they hit something, but with good speed and damage capability.$(li)You can filter which entities to attack by entering an $(l:base_concepts/entity_filter)entity filter/$ in the $(bold)Entity Filter/$ field.",
-   "$(li)你可以在 $(thing)智能/$ 模式和 $(thing)非制导/$ 模式之间进行选择：在 $(thing)智能/$ 模式下，导弹会如上所述锁定目标；而在 $(thing)非制导/$ 模式下，导弹只会沿直线飞行，直到击中某个东西，但具有不错的速度和伤害能力。$(li)你可以在 $(bold)Entity Filter/$ 字段中输入 $(l:base_concepts/entity_filter)实体过滤器/$，以筛选要攻击的实体。"
+   "$(li)你可以在 $(thing)智能/$ 模式和 $(thing)非制导/$ 模式之间进行选择：在 $(thing)智能/$ 模式下，导弹会如上所述锁定目标；而在 $(thing)非制导/$ 模式下，导弹只会沿直线飞行，直到击中某个东西，但具有不错的速度和伤害能力。$(li)你可以在 $(bold)实体过滤器/$ 字段中输入 $(l:base_concepts/entity_filter)实体过滤器/$，以筛选要攻击的实体。"
   ],
   [
    [

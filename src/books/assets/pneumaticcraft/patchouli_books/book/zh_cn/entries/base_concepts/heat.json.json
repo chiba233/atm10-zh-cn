@@ -25,7 +25,7 @@
     "text"
    ],
    "$(li)The bigger the temperature difference, the faster the heat dispersal.$(li)Different objects have a different $(thing)thermal resistance/$. $(item)Torches/$ and $(item)Air/$ have a high resistance, while $(l:base_concepts/basic_materials#compressed_iron_block)Compressed Iron Blocks/$ have a very low resistance. $(thing)Thermal resistance/$ determines how fast heat can spread from one object to another.",
-   "$(li)温差越大，热量消散得就越快。$(li)不同物体具有不同的$(thing)隔热性/$。$(item)火把/$和$(item)空气/$的阻隔性较高，而$(l:base_concepts/basic_materials#compressed_iron_block)一重压缩铁块/$的阻隔性则非常低。$(thing)隔热性/$决定了热量从一个物体传播到另一个物体的速度。"
+   "$(li)温差越大，热量消散得就越快。$(li)不同物体具有不同的$(thing)隔热性/$。$(item)火把/$和$(item)空气/$的阻隔性较高，而$(l:base_concepts/basic_materials#compressed_iron_block)压缩铁块/$的阻隔性则非常低。$(thing)隔热性/$决定了热量从一个物体传播到另一个物体的速度。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Machines will lose heat to the air if left exposed; this is particularly noticeable with the $(l:manufacturing/refinery)Refinery/$, which has many exposed faces, but is also true of any heat-conducting block, including $(l:base_concepts/basic_materials#compressed_iron_block)Compressed Iron Blocks/$.$(p)To avoid this heat loss, ensure that no faces are exposed to air blocks; any non-conducting block will do. It doesn't have to be a full block, either - $(item)Trapdoors/$ and $(item)slabs/$ will work fine.",
-   "机器如果暴露在空气中，就会向空气散热；这一点在 $(l:manufacturing/refinery)精炼厂/$ 上尤为明显，因为它有很多暴露的表面，但这同样适用于任何导热方块，包括 $(l:base_concepts/basic_materials#compressed_iron_block)一重压缩铁块/$。$(p)要避免这种热量损失，请确保没有任何表面暴露在空气方块中；任何不导热的方块都可以。而且也不一定非得是完整方块——$(item)活板门/$ 和 $(item)台阶/$ 也完全可行。"
+   "机器如果暴露在空气中，就会向空气散热；这一点在 $(l:manufacturing/refinery)精炼厂/$ 上尤为明显，因为它有很多暴露的表面，但这同样适用于任何导热方块，包括 $(l:base_concepts/basic_materials#compressed_iron_block)压缩铁块/$。$(p)要避免这种热量损失，请确保没有任何表面暴露在空气方块中；任何不导热的方块都可以。而且也不一定非得是完整方块——$(item)活板门/$ 和 $(item)台阶/$ 也完全可行。"
   ],
   [
    [

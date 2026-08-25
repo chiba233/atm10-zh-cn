@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Heat Pipe/$ is an insulated core of compressed iron which can transmit heat between blocks, without any thermal connection to adjacent air or fluid blocks. It's a more compact (and cheaper) alternative to using $(thing)Compressed Iron Blocks/$ to transmit heat.$(p)You can conceal Heat Pipes with the $(l:tools/camo_applicator)Camouflage Applicator/$.",
-   "$(item)热管/$是由压缩铁制成的绝缘核心，可以在方块之间传递热量，而不会与相邻的空气或流体方块产生任何热连接。它比使用 $(thing)一重压缩铁块/$ 传热更紧凑（也更便宜）。$(p)你还可以使用 $(l:tools/camo_applicator)伪装涂覆器/$ 来隐藏热管。"
+   "$(item)热管/$是由压缩铁制成的绝缘核心，可以在方块之间传递热量，而不会与相邻的空气或流体方块产生任何热连接。它比使用 $(thing)压缩铁块/$ 传热更紧凑（也更便宜）。$(p)你还可以使用 $(l:tools/camo_applicator)伪装涂覆器/$ 来隐藏热管。"
   ],
   [
    [

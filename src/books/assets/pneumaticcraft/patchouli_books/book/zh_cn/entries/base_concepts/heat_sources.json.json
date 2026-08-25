@@ -106,7 +106,7 @@
     "text"
    ],
    "A $(l:machines/heat_pipe)Heat Pipe/$ is an insulated core of compressed iron which can transmit heat between blocks, without any thermal connection to adjacent air or fluid blocks. It's a more compact (and cheaper) alternative to using $(item)Compressed Iron Blocks/$ to transmit heat. You can also attach $(item)Heat Sinks/$ directly to a Heat Pipe.",
-   "$(l:machines/heat_pipe)热管/$是由绝缘压缩铁核心制成的部件，可以在方块之间传递热量，且不会与相邻的空气方块或流体方块产生任何热连接。与使用 $(item)一重压缩铁块/$ 来传递热量相比，它更加紧凑（也更便宜）。你还可以将 $(item)散热片/$ 直接连接到热管上。"
+   "$(l:machines/heat_pipe)热管/$是由绝缘压缩铁核心制成的部件，可以在方块之间传递热量，且不会与相邻的空气方块或流体方块产生任何热连接。与使用 $(item)压缩铁块/$ 来传递热量相比，它更加紧凑（也更便宜）。你还可以将 $(item)散热片/$ 直接连接到热管上。"
   ],
   [
    [
