@@ -1085,5 +1085,16 @@
   "tooltip.enderio.photovoltaic_cell/advanced": "在白天产能",
   "tooltip.enderio.photovoltaic_cell/advanced2": "正上方不能有遮挡",
   "tooltip.enderio.photovoltaic_cell/advanced3": "最大产出：",
-  "tooltip.enderio.photovoltaic_cell/main": "太阳能！"
+  "tooltip.enderio.photovoltaic_cell/main": "太阳能！",
+  "The machine is active": "机器正在运行",
+  "The machine is blocked by redstone": "机器已被红石信号关闭",
+  "The Drain needs a source block under it to work": "蓄水槽必须放在源头方块上工作",
+  "The tank is empty": "储罐为空",
+  "The energy storage is full": "能量已存满",
+  "The tank is full": "储罐已满",
+  "The machine is idle": "机器已就绪",
+  "There is no item in the input": "未输入物品",
+  "Install a capacitor to be able to use this machine": "安装电容才能使用机器",
+  "There is not enough power to use the machine": "能量不足，机器无法工作",
+  "There is not enough room for the output": "输出槽空间不足"
 }

@@ -11,4 +11,3 @@ rftoolsutility
 rftools_all_modules_zh
 rftools_gui_labels_zh
 rftoolsbuilder_hardcode_zh
-enderio_machine_status
