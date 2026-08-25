@@ -34,7 +34,7 @@
     "text"
    ],
    "You can turn the $(item)Charging Station/$ into a $(thing)Charge Pad/$ by inserting a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$. This will (de)pressurize:$(li)items lying on the ground on top of the Charging Station$(li)items carried by players standing on the Charging Station$(li)all types of $(l:tools/drone)Drone/$ which are directly above the Charging Station",
-   "你可以插入一个$(l:base_concepts/upgrades#dispenser)发射器升级/$，将$(item)充气站/$变成$(thing)充电座/$。这会对以下对象进行（减）加压：$(li)位于充气站上方地面上的物品$(li)站在充气站上的玩家所携带的物品$(li)所有直接位于充气站上方的$(l:tools/drone)雄蜂/$"
+   "你可以插入一个$(l:base_concepts/upgrades#dispenser)发射器升级/$，将$(item)充气站/$变成$(thing)充电座/$。这会对以下对象进行（减）加压：$(li)位于充气站上方地面上的物品$(li)站在充气站上的玩家所携带的物品$(li)所有直接位于充气站上方的$(l:tools/drone)无人机/$"
   ],
   [
    [

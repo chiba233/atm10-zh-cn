@@ -16,7 +16,7 @@
     "text"
    ],
    "With this widget you can make a $(l:tools/drone)Drone/$ emit a $(#f00)redstone signal/$. You can specify the sides it emits from by $(thing)right-clicking/$ the widget and configuring in the setup GUI. The redstone signal level to emit is specified by attaching a $(l:programming/text)Text/$ widget with a number in it (from 0 - 15).",
-   "使用此组件，你可以让一个$(l:tools/drone)雄蜂/$发出$(#f00)红石信号/$。你可以通过$(thing)右击/$该组件并在设置 GUI 中进行配置，来指定信号从哪些面发出。要发出的红石信号强度则需要附加一个带有数字（0 - 15）的$(l:programming/text)文本/$组件来指定。"
+   "使用此组件，你可以让一个$(l:tools/drone)无人机/$发出$(#f00)红石信号/$。你可以通过$(thing)右击/$该组件并在设置 GUI 中进行配置，来指定信号从哪些面发出。要发出的红石信号强度则需要附加一个带有数字（0 - 15）的$(l:programming/text)文本/$组件来指定。"
   ],
   [
    [

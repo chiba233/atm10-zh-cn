@@ -205,7 +205,7 @@
     "text"
    ],
    "$(li)Keep your $(thing)Security Station/$ well-concealed and well-protected.$(li)You can protect an area with multiple $(thing)Security Stations/$; all of them must be hacked.$(li)Consider active defences, such as $(l:tools/drone)Drones/$ with combat programs, or $(l:machines/sentry_turret)Sentry Turrets/$$(li)A hacked $(thing)Security Station/$ can be made to emit a $(#f00)redstone signal/$, which could trigger additional measures (TNT under the station, perhaps?)",
-   "$(li)请务必将你的$(thing)安全站/$隐藏好并严加防护。$(li)你可以用多个$(thing)安全站/$来保护一个区域；必须将它们全部破解。$(li)可以考虑主动防御措施，例如装载战斗程序的$(l:tools/drone)雄蜂/$，或$(l:machines/sentry_turret)机枪塔/$$(li)被破解的$(thing)安全站/$可以设置为发出$(#f00)红石信号/$，从而触发额外的防御措施（比如在安全站下方放置 TNT？）"
+   "$(li)请务必将你的$(thing)安全站/$隐藏好并严加防护。$(li)你可以用多个$(thing)安全站/$来保护一个区域；必须将它们全部破解。$(li)可以考虑主动防御措施，例如装载战斗程序的$(l:tools/drone)无人机/$，或$(l:machines/sentry_turret)机枪塔/$$(li)被破解的$(thing)安全站/$可以设置为发出$(#f00)红石信号/$，从而触发额外的防御措施（比如在安全站下方放置 TNT？）"
   ],
   [
    [

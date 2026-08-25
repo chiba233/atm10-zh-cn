@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will $(thing)right-click/$ the item in its first inventory slot, for every entity in the specified $(l:programming/area)Area/$, once. This could be used to shear sheep, milk cows, breed animals, and much more!$(p)Keep in mind that any $(l:programming/area)Area/$ widgets connected to this widget must have an area type of $(thing)Box/$; this is the only supported shape. It's possible to create different shapes, though, by using whitelisting/blacklisting of areas.",
-   "$(l:tools/drone)雄蜂/$会对指定$(l:programming/area)区域/$内的每个实体，将其第一格容器中的物品执行一次$(thing)右击/$操作。这可以用来给羊剪毛、给奶牛挤奶、让动物繁殖，还有更多用途！$(p)请注意，所有连接到此组件的$(l:programming/area)区域/$组件，其区域类型都必须是$(thing)盒子/$；这是唯一受支持的形状。不过，你仍然可以通过对区域使用白名单/黑名单来创建不同的形状。"
+   "$(l:tools/drone)无人机/$会对指定$(l:programming/area)区域/$内的每个实体，将其第一格容器中的物品执行一次$(thing)右击/$操作。这可以用来给羊剪毛、给奶牛挤奶、让动物繁殖，还有更多用途！$(p)请注意，所有连接到此组件的$(l:programming/area)区域/$组件，其区域类型都必须是$(thing)盒子/$；这是唯一受支持的形状。不过，你仍然可以通过对区域使用白名单/黑名单来创建不同的形状。"
   ],
   [
    [

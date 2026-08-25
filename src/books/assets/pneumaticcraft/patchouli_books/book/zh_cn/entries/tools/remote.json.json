@@ -16,7 +16,7 @@
     "text"
    ],
    "With a Remote you can create your own GUI to remotely control $(l:tools/drone)Drones/$ or $(l:machines/universal_sensor)Universal Sensors/$ via $(l:programming/variables#global)global variable/$ manipulation. Note that with $(item)Universal Sensors/$, you can use the $(item)Remote/$ to create wireless redstone!$(p)To start creating your own GUI, $(thing)sneak+right-click/$ the $(item)Remote/$ to open up the editor window.",
-   "使用红石远程终端，你可以创建自己的 GUI，通过操作$(l:programming/variables#global)全局变量/$来远程控制$(l:tools/drone)雄蜂/$或$(l:machines/universal_sensor)万能传感器/$。请注意，对于$(item)万能传感器/$，你可以使用$(item)红石远程终端/$来实现无线红石！$(p)要开始创建你自己的 GUI，请$(thing)潜行+右键/$$(item)红石远程终端/$以打开编辑器窗口。"
+   "使用红石远程终端，你可以创建自己的 GUI，通过操作$(l:programming/variables#global)全局变量/$来远程控制$(l:tools/drone)无人机/$或$(l:machines/universal_sensor)万能传感器/$。请注意，对于$(item)万能传感器/$，你可以使用$(item)红石远程终端/$来实现无线红石！$(p)要开始创建你自己的 GUI，请$(thing)潜行+右键/$$(item)红石远程终端/$以打开编辑器窗口。"
   ],
   [
    [

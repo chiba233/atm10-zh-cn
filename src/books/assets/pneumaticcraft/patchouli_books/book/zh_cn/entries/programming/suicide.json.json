@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will immediately turn into its item form, dropping as an item entity on the ground. Program execution is, of course, instantly terminated.",
-   "$(l:tools/drone)雄蜂/$会立即变回其物品形态，并作为物品实体掉落在地面上。当然，程序执行也会立刻终止。"
+   "$(l:tools/drone)无人机/$会立即变回其物品形态，并作为物品实体掉落在地面上。当然，程序执行也会立刻终止。"
   ],
   [
    [

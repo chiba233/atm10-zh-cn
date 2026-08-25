@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Programmer/$ is a machine used to program $(l:tools/drone)Drones/$, using a visual programming system where $(l:programming/puzzle_pieces)Puzzle Pieces/$ are assembled in a programming GUI. The $(thing)Programmer/$ does not require $(l:base_concepts/pressure)pressure/$ to operate.The rest of the $(thing)Programming/$ category has much more information about how to write Drone programs.",
-   "$(item)编程器/$是一台用于给$(l:tools/drone)雄蜂/$编程的机器，使用可视化编程系统，在编程 GUI 中将$(l:programming/puzzle_pieces)编程拼图/$组装起来即可。$(thing)编程器/$运行时不需要$(l:base_concepts/pressure)气压/$。$(thing)程序/$分类的其余内容中，还有更多关于如何编写雄蜂程序的信息。"
+   "$(item)编程器/$是一台用于给$(l:tools/drone)无人机/$编程的机器，使用可视化编程系统，在编程 GUI 中将$(l:programming/puzzle_pieces)编程拼图/$组装起来即可。$(thing)编程器/$运行时不需要$(l:base_concepts/pressure)气压/$。$(thing)程序/$分类的其余内容中，还有更多关于如何编写无人机程序的信息。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "$(bold)3. Drone Slot/$$(p)Place the $(l:tools/drone)Drone/$ (or $(l:components/network_components)Network Storage/API/$) to be programmed here. When ready to program the Drone, press the $(thing)⟶/$ button to write the program. You can use the textfield to the left to name the Drone, if you wish. You will hear audible feedback if successful.$(p)You can also use the $(thing)⟵/$ button to import a program from a Drone (or Network Storage/API).",
-   "$(bold)3. 雄蜂槽位/$$(p)将要编程的$(l:tools/drone)雄蜂/$（或$(l:components/network_components)网络存储/API/$）放在这里。准备好为雄蜂编程后，按下$(thing)⟶/$按钮即可写入程序。如果你愿意，也可以使用左侧的文本框为雄蜂命名。若操作成功，你会听到声音反馈。$(p)你也可以使用$(thing)⟵/$按钮从雄蜂（或网络存储/API）中导入程序。"
+   "$(bold)3. 无人机槽位/$$(p)将要编程的$(l:tools/drone)无人机/$（或$(l:components/network_components)网络存储/API/$）放在这里。准备好为无人机编程后，按下$(thing)⟶/$按钮即可写入程序。如果你愿意，也可以使用左侧的文本框为无人机命名。若操作成功，你会听到声音反馈。$(p)你也可以使用$(thing)⟵/$按钮从无人机（或网络存储/API）中导入程序。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "If you want to share your programs with other players, you have a couple of options:$(li)You can use the $(thing)Pastebin/$ button to export your program to $(l:https://pastebin.com)pastebin.com/$$(li)The $(thing)Pastebin/$ GUI also allows writing the program to the clipboard for copying & pasting$(li)You can save your program to a $(l:tools/drone)Drone/$ or $(l:components/network_components)Network Storage/Network API/$ and give the item to another player on your server.",
-   "如果你想与其他玩家分享你的程序，你有几种选择：$(li)你可以使用$(thing)Pastebin/$按钮将程序导出到$(l:https://pastebin.com)pastebin.com/$$(li)$(thing)Pastebin/$ GUI 也支持将程序写入剪贴板，以便复制和粘贴$(li)你也可以将程序保存到$(l:tools/drone)雄蜂/$或$(l:components/network_components)网络存储/网络API/$中，并将该物品交给你服务器上的另一位玩家。"
+   "如果你想与其他玩家分享你的程序，你有几种选择：$(li)你可以使用$(thing)Pastebin/$按钮将程序导出到$(l:https://pastebin.com)pastebin.com/$$(li)$(thing)Pastebin/$ GUI 也支持将程序写入剪贴板，以便复制和粘贴$(li)你也可以将程序保存到$(l:tools/drone)无人机/$或$(l:components/network_components)网络存储/网络API/$中，并将该物品交给你服务器上的另一位玩家。"
   ],
   [
    [

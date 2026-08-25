@@ -16,7 +16,7 @@
     "text"
    ],
    "The Drone will $(thing)right-click/$ with the item in its first inventory slot, for every block position in its connected $(l:programming/area)Area/$ widget. This could be used to hoe the ground, place seeds, apply bonemeal, throw a potion, deploy a drone, rotate blocks with a wrench... the possibilities are endless.",
-   "雄蜂会使用其容器第一个槽位中的物品，对其连接的$(l:programming/area)区域/$组件内的每个方块位置执行$(thing)右击/$。这可以用来锄地、播种、施用骨粉、投掷药水、部署雄蜂、用扳手旋转方块……可能性无穷无尽。"
+   "无人机会使用其容器第一个槽位中的物品，对其连接的$(l:programming/area)区域/$组件内的每个方块位置执行$(thing)右击/$。这可以用来锄地、播种、施用骨粉、投掷药水、部署无人机、用扳手旋转方块……可能性无穷无尽。"
   ],
   [
    [

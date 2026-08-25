@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Teleport/$ is the more expensive (in terms of $(l:base_concepts/pressure)air/$ used) version of the $(l:programming/goto)Goto/$ widget, but just as straightforward: the $(l:tools/drone)Drone/$ will teleport to the nearest reachable location within the specified $(l:programming/area)Area/$.$(p)The $(item)Drone/$ uses 10000mL air to teleport, which is most of an un-upgraded $(item)Drone's/$ capacity, so $(l:base_concepts/upgrades#volume)Volume Upgrades/$ are recommended.",
-   "$(thing)传送/$是$(l:programming/goto)前往/$组件的更昂贵版本（以消耗的$(l:base_concepts/pressure)空气/$而言），但同样简单直接：$(l:tools/drone)雄蜂/$会传送到指定$(l:programming/area)区域/$内最近的可到达位置。$(p)$(item)雄蜂/$每次传送会消耗 10000mL 空气，这几乎就是未升级的$(item)雄蜂/$的大部分容量，因此推荐安装$(l:base_concepts/upgrades#volume)容量升级/$。"
+   "$(thing)传送/$是$(l:programming/goto)前往/$组件的更昂贵版本（以消耗的$(l:base_concepts/pressure)空气/$而言），但同样简单直接：$(l:tools/drone)无人机/$会传送到指定$(l:programming/area)区域/$内最近的可到达位置。$(p)$(item)无人机/$每次传送会消耗 10000mL 空气，这几乎就是未升级的$(item)无人机/$的大部分容量，因此推荐安装$(l:base_concepts/upgrades#volume)容量升级/$。"
   ],
   [
    [

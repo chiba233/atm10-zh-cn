@@ -16,7 +16,7 @@
     "text"
    ],
    "When this widget is executed, the $(l:tools/drone)Drone/$ will turn off its propellers, and fall from the sky. This widget can be used to save $(l:base_concepts/pressure)air/$, as the Drone doesn't use any air in standby mode.$(p)The $(thing)Drone/$ will continue executing other widgets, though; as soon as it executes any widget which makes it do some actual work, the $(thing)Drone/$ will turn on its propellers again.",
-   "当执行这个组件时，$(l:tools/drone)雄蜂/$会关闭其螺旋桨并从空中坠落。这个组件可用于节省$(l:base_concepts/pressure)空气/$，因为雄蜂在待机模式下不会消耗任何空气。$(p)不过，$(thing)雄蜂/$仍会继续执行其他组件；一旦它执行了任何需要实际工作的组件，$(thing)雄蜂/$就会再次开启螺旋桨。"
+   "当执行这个组件时，$(l:tools/drone)无人机/$会关闭其螺旋桨并从空中坠落。这个组件可用于节省$(l:base_concepts/pressure)空气/$，因为无人机在待机模式下不会消耗任何空气。$(p)不过，$(thing)无人机/$仍会继续执行其他组件；一旦它执行了任何需要实际工作的组件，$(thing)无人机/$就会再次开启螺旋桨。"
   ],
   [
    [

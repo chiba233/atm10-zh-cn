@@ -34,7 +34,7 @@
     "text"
    ],
    "$(italic)A Redstone Condition widget which kills the drone if the signal >= 10/$",
-   "$(italic)一个红石条件控件，当信号 >= 10 时会销毁雄蜂/$"
+   "$(italic)一个红石条件控件，当信号 >= 10 时会销毁无人机/$"
   ],
   [
    [

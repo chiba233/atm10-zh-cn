@@ -106,7 +106,7 @@
     "text"
    ],
    "A $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$, when installed together with the $(l:base_concepts/upgrades#entity_tracker)Entity Tracker Upgrade/$, allows you to monitor/debug $(l:tools/drone)Drones/$. Simply press $(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$ while looking at a $(item)Drone/$. The tracking animation will now have a red border. Now open up the helmet's option window by pressing $(thing)$(k:pneumaticcraft.armor.options)/$ and navigate to the $(bold)Drone Debugging/$ panel.",
-   "一个$(l:base_concepts/upgrades#dispenser)发射器升级/$与$(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$一同安装后，你就可以监视/调试$(l:tools/drone)雄蜂/$。只需在看着一个$(item)雄蜂/$时按下$(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$。此时，追踪动画将会出现红色边框。现在按下$(thing)$(k:pneumaticcraft.armor.options)/$打开头盔的选项窗口，并切换到$(bold)无人机调试/$面板。"
+   "一个$(l:base_concepts/upgrades#dispenser)发射器升级/$与$(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$一同安装后，你就可以监视/调试$(l:tools/drone)无人机/$。只需在看着一个$(item)无人机/$时按下$(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$。此时，追踪动画将会出现红色边框。现在按下$(thing)$(k:pneumaticcraft.armor.options)/$打开头盔的选项窗口，并切换到$(bold)无人机调试/$面板。"
   ],
   [
    [

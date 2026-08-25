@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will place blocks from its inventory in the world. It will place blocks in the $(l:programming/area)area/$ specified, starting with locations that are closest to it.$(p)You can control the order in which blocks are placed: $(thing)Right-click/$ the widget to specify if the $(item)Drone/$ should place blocks layer by layer, and if so from top to bottom or vice versa.",
-   "$(l:tools/drone)雄蜂/$会将其容器中的方块放置到世界中。它会在指定的$(l:programming/area)区域/$内放置方块，并从离它最近的位置开始。$(p)你可以控制方块的放置顺序：$(thing)右击/$该组件，以指定$(item)雄蜂/$是否应按层放置方块，以及若按层放置时是从上到下还是反过来。"
+   "$(l:tools/drone)无人机/$会将其容器中的方块放置到世界中。它会在指定的$(l:programming/area)区域/$内放置方块，并从离它最近的位置开始。$(p)你可以控制方块的放置顺序：$(thing)右击/$该组件，以指定$(item)无人机/$是否应按层放置方块，以及若按层放置时是从上到下还是反过来。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The number of place actions can be limited to a specified amount by $(thing)right-clicking/$ the widget. If set to 1 for example, the $(item)Drone/$ will only place one block, and the widget is considered done after placing that one block.$(p)If no limit is set, the widget is only considered done when unable to place any more blocks.",
-   "可通过$(thing)右击/$该组件，将放置操作的次数限制为指定数量。比如设为 1 时，$(item)雄蜂/$只会放置一个方块，并且在放下这一个方块后，该组件就会被视为已完成。$(p)如果未设置限制，则只有在无法继续放置更多方块时，该组件才会被视为已完成。"
+   "可通过$(thing)右击/$该组件，将放置操作的次数限制为指定数量。比如设为 1 时，$(item)无人机/$只会放置一个方块，并且在放下这一个方块后，该组件就会被视为已完成。$(p)如果未设置限制，则只有在无法继续放置更多方块时，该组件才会被视为已完成。"
   ],
   [
    [

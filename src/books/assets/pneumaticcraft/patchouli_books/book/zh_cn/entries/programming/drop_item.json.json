@@ -16,7 +16,7 @@
     "text"
    ],
    "This will make the $(l:tools/drone)Drone/$ drop items from its inventory in the connected $(l:programming/area)Area/$. By $(thing)right-clicking/$ the $(thing)Drop Item/$ widget you can specify how many items per position in the area may be dropped. You can also toggle between $(thing)Random/$ and $(thing)Straight/$ modes, which mean it will drop the item with a small random offset (like a vanilla $(item)Dropper)/$, or drop the item straight down, respectively.",
-   "这会使$(l:tools/drone)雄蜂/$在所连接的$(l:programming/area)区域/$内丢弃其容器中的物品。通过$(thing)右击/$$(thing)丢弃物品/$组件，你可以指定该区域内每个位置可丢弃多少物品。你还可以在$(thing)随机/$和$(thing)直线/$模式之间切换，前者会让它以一个较小的随机偏移丢出物品（类似原版的$(item)投掷器/$），后者则会将物品垂直向下丢出。"
+   "这会使$(l:tools/drone)无人机/$在所连接的$(l:programming/area)区域/$内丢弃其容器中的物品。通过$(thing)右击/$$(thing)丢弃物品/$组件，你可以指定该区域内每个位置可丢弃多少物品。你还可以在$(thing)随机/$和$(thing)直线/$模式之间切换，前者会让它以一个较小的随机偏移丢出物品（类似原版的$(item)投掷器/$），后者则会将物品垂直向下丢出。"
   ],
   [
    [

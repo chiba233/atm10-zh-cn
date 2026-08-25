@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will craft items using items it has in its inventory. To specify a crafting recipe, place $(l:programming/item_filter)Item Filters/$ on the right side of the Crafting widget, in the pattern of the crafting recipe.$(p)You don't need to use exactly 9 $(thing)Item Filters/$: as long as you can create the recipe pattern, it will work.",
-   "$(l:tools/drone)雄蜂/$会使用其容器中的物品来合成物品。要指定合成配方，请将$(l:programming/item_filter)物品过滤器/$按照合成配方的图案放置在合成组件右侧。$(p)你不必正好使用 9 个$(thing)物品过滤器/$：只要能摆出配方图案，就可以生效。"
+   "$(l:tools/drone)无人机/$会使用其容器中的物品来合成物品。要指定合成配方，请将$(l:programming/item_filter)物品过滤器/$按照合成配方的图案放置在合成组件右侧。$(p)你不必正好使用 9 个$(thing)物品过滤器/$：只要能摆出配方图案，就可以生效。"
   ],
   [
    [

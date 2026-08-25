@@ -25,7 +25,7 @@
     "text"
    ],
    "As with all types of Drone, these drones require $(l:base_concepts/pressure)pressure/$ to operate, and will automatically seek out $(l:tools/drone#charging)a Charging Station with a Dispenser Upgrade/$ if low on air.",
-   "与所有类型的雄蜂一样，这些雄蜂需要$(l:base_concepts/pressure)压力/$才能运作，并且在气压不足时会自动寻找$(l:tools/drone#charging)装有发射器升级的充气站/$。"
+   "与所有类型的无人机一样，这些无人机需要$(l:base_concepts/pressure)压力/$才能运作，并且在气压不足时会自动寻找$(l:tools/drone#charging)装有发射器升级的充气站/$。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "These components are used primarily to set up a $(l:programming/security_station)Security Station/$, but some are also used as crafting components, and the $(l:components/network_components#network_storage)Network Storage/$ and $(l:components/network_components#network_api)Network API/$ can be used to store $(l:tools/drone)Drone/$ programs.",
-   "这些组件主要用于搭建$(l:machines/security_station)安全站/$，但其中一些也可用作合成材料，而$(l:components/network_components#network_storage)网络存储/$和$(l:components/network_components#network_api)网络API/$还可用于存储$(l:tools/drone)雄蜂/$程序。"
+   "这些组件主要用于搭建$(l:machines/security_station)安全站/$，但其中一些也可用作合成材料，而$(l:components/network_components#network_storage)网络存储/$和$(l:components/network_components#network_api)网络API/$还可用于存储$(l:tools/drone)无人机/$程序。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "The $(item)Network API/$ can be used to store $(l:tools/drone)Drone/$ programs. It requires $(l:programming/puzzle_pieces)Puzzle Pieces/$ to program, and can be used to run programs in the $(l:programming/programmable_controller)Programmable Controller/$ or by the $(l:programming/external_program)External Program/$ widget.",
-   "$(item)网络API/$可用于存储$(l:tools/drone)雄蜂/$程序。它需要使用$(l:programming/puzzle_pieces)拼图/$进行编程，并可用于在$(l:programming/programmable_controller)可编程控制器/$中运行程序，或通过$(l:programming/external_program)外部程序/$组件运行程序。"
+   "$(item)网络API/$可用于存储$(l:tools/drone)无人机/$程序。它需要使用$(l:programming/puzzle_pieces)拼图/$进行编程，并可用于在$(l:programming/programmable_controller)可编程控制器/$中运行程序，或通过$(l:programming/external_program)外部程序/$组件运行程序。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "The $(item)Network Data Storage/$ can be used to store $(l:tools/drone)Drone/$ programs. It does $(italic)not/$ require $(l:programming/puzzle_pieces)Puzzle Pieces/$ to program, so cannot be used to run programs; however it is useful if you wish to store a library of programs, or to trade programs with other players.",
-   "$(item)网络数据存储器/$可用于存储$(l:tools/drone)雄蜂/$程序。它$(italic)不/$需要$(l:programming/puzzle_pieces)编程拼图/$来进行编程，因此不能用于运行程序；不过，如果你想保存一个程序库，或与其他玩家交易程序，它就会很有用。"
+   "$(item)网络数据存储器/$可用于存储$(l:tools/drone)无人机/$程序。它$(italic)不/$需要$(l:programming/puzzle_pieces)编程拼图/$来进行编程，因此不能用于运行程序；不过，如果你想保存一个程序库，或与其他玩家交易程序，它就会很有用。"
   ]
  ]
 }

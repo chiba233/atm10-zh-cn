@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will wait the specified amount of time, doing nothing. The time is specified by attaching a $(l:programming/text)Text/$ widget, and entering a duration.$(p)The following duration formats are accepted:$(li)$(thing)20/$: wait 1 second (20 ticks)$(li)$(thing)10s/$: wait 10 seconds$(li)$(thing)5m/$: wait 5 minutes",
-   "$(l:tools/drone)雄蜂/$会按指定的时间等待，期间什么都不做。时间通过附加一个$(l:programming/text)文本/$组件并输入持续时间来指定。$(p)可接受以下持续时间格式：$(li)$(thing)20/$：等待 1 秒（20 游戏刻）$(li)$(thing)10s/$：等待 10 秒$(li)$(thing)5m/$：等待 5 分钟"
+   "$(l:tools/drone)无人机/$会按指定的时间等待，期间什么都不做。时间通过附加一个$(l:programming/text)文本/$组件并输入持续时间来指定。$(p)可接受以下持续时间格式：$(li)$(thing)20/$：等待 1 秒（20 游戏刻）$(li)$(thing)10s/$：等待 10 秒$(li)$(thing)5m/$：等待 5 分钟"
   ],
   [
    [

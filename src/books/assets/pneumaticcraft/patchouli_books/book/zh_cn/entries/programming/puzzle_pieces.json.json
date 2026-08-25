@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Programming Puzzles/$, or $(thing)Puzzle Pieces/$, are the physical items used to program a $(l:tools/drone)Drone/$ with a $(l:programming/programmer)Programmer/$. They're used up when a Drone is programmed, but can be retrieved by overwriting the $(item)Drone/$ with a smaller (or empty) program.$(p)The virtual representations of $(thing)Puzzle Pieces/$ in the $(item)Programmer/$ GUI are referred to as $(thing)Programming Widgets/$.",
-   "$(thing)编程拼图/$，或称$(thing)拼图片/$，是用来通过$(l:programming/programmer)编程器/$为$(l:tools/drone)雄蜂/$编程的实体物品。雄蜂被编程时，它们会被消耗掉，但可以通过用更小的程序（或空程序）覆盖$(item)雄蜂/$来取回。$(p)$(thing)拼图片/$在$(item)编程器/$ GUI 中的虚拟表示被称为$(thing)编程组件/$。"
+   "$(thing)编程拼图/$，或称$(thing)拼图片/$，是用来通过$(l:programming/programmer)编程器/$为$(l:tools/drone)无人机/$编程的实体物品。无人机被编程时，它们会被消耗掉，但可以通过用更小的程序（或空程序）覆盖$(item)无人机/$来取回。$(p)$(thing)拼图片/$在$(item)编程器/$ GUI 中的虚拟表示被称为$(thing)编程组件/$。"
   ],
   [
    [

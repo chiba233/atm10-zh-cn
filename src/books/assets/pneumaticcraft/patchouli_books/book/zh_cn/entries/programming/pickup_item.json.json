@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will pick up item entities in the world and put them into its inventory. Keep in mind that any $(l:programming/area)Area/$ widgets connected to this widget must have an area type of $(thing)Box/$; this is only supported shape. It's possible to create more complex shapes, though, by using whitelisting/blacklisting of multiple areas.",
-   "$(l:tools/drone)雄蜂/$会拾取世界中的物品实体，并将其放入自身容器。请记住，连接到此部件的任何$(l:programming/area)区域/$部件都必须将区域类型设为$(thing)盒子/$；这是唯一受支持的形状。不过，你也可以通过对白名单/黑名单中的多个区域进行组合，来创建更复杂的形状。"
+   "$(l:tools/drone)无人机/$会拾取世界中的物品实体，并将其放入自身容器。请记住，连接到此部件的任何$(l:programming/area)区域/$部件都必须将区域类型设为$(thing)盒子/$；这是唯一受支持的形状。不过，你也可以通过对白名单/黑名单中的多个区域进行组合，来创建更复杂的形状。"
   ],
   [
    [

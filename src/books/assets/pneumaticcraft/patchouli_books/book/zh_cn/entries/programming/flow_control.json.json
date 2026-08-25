@@ -16,7 +16,7 @@
     "text"
    ],
    "When a $(l:tools/drone)Drone/$ is deployed, it immediately starts to execute its stored program. Execution flow occurs as follows:$(li)The program $(italic)always/$ begins at the $(l:programming/start)Start/$ widget, of which there can be only one.$(li)Flow normally proceeds $(italic)downward/$; to the widget connected to the bottom of the current widget.",
-   "当部署一个$(l:tools/drone)雄蜂/$时，它会立即开始执行其存储的程序。执行流程如下：$(li)程序$(italic)总是/$从$(l:programming/start)开始/$组件处开始，并且这样的组件只能有一个。$(li)流程通常会$(italic)向下/$进行到与当前组件底部相连的组件。"
+   "当部署一个$(l:tools/drone)无人机/$时，它会立即开始执行其存储的程序。执行流程如下：$(li)程序$(italic)总是/$从$(l:programming/start)开始/$组件处开始，并且这样的组件只能有一个。$(li)流程通常会$(italic)向下/$进行到与当前组件底部相连的组件。"
   ],
   [
    [

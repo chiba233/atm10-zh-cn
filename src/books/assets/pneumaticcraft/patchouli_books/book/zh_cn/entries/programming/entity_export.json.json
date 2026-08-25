@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will go to the specified $(l:programming/area)Area/$, and drop the entity it is carrying, provided that it is allowed by an (optional) $(l:base_concepts/entity_filter)Entity Filter/$ specified in a connected $(l:programming/text)Text/$ widget.$(p)See also the $(l:programming/entity_import)Entity Import/$ widget.",
-   "$(l:tools/drone)雄蜂/$会前往指定的$(l:programming/area)区域/$，并将其携带的实体放下，前提是该实体符合连接的$(l:programming/text)文本/$组件中指定的（可选）$(l:base_concepts/entity_filter)实体过滤器/$。$(p)另请参见$(l:programming/entity_import)搭载实体/$组件。"
+   "$(l:tools/drone)无人机/$会前往指定的$(l:programming/area)区域/$，并将其携带的实体放下，前提是该实体符合连接的$(l:programming/text)文本/$组件中指定的（可选）$(l:base_concepts/entity_filter)实体过滤器/$。$(p)另请参见$(l:programming/entity_import)搭载实体/$组件。"
   ],
   [
    [

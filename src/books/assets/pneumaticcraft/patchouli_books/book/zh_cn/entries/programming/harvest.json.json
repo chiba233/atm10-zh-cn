@@ -16,7 +16,7 @@
     "text"
    ],
    "The Drone will harvest any fully grown crop or tree within the specified $(l:programming/area)area/$. Items that are dropped from the crop blocks are $(italic)not/$ picked up; either add a separate $(l:programming/pickup_item)Pick Up Item/$ widget, or use some alternate means of collecting the items, such as a separate $(item)Drone/$.$(p)You can connect an optional $(l:programming/item_filter)Item Filter/$ to limit which crops will be harvested (use the crop's seed to filter).",
-   "雄蜂会在指定的$(l:programming/area)区域/$内收获任何完全成熟的作物或树木。作物方块掉落的物品$(italic)不会/$被拾取；你可以额外添加一个$(l:programming/pickup_item)拾取物品/$组件，或者使用其他方式来收集这些物品，例如另一只$(item)雄蜂/$。$(p)你还可以连接一个可选的$(l:programming/item_filter)物品过滤器/$，以限制会被收获的作物种类（使用该作物的种子进行过滤）。"
+   "无人机会在指定的$(l:programming/area)区域/$内收获任何完全成熟的作物或树木。作物方块掉落的物品$(italic)不会/$被拾取；你可以额外添加一个$(l:programming/pickup_item)拾取物品/$组件，或者使用其他方式来收集这些物品，例如另一架$(item)无人机/$。$(p)你还可以连接一个可选的$(l:programming/item_filter)物品过滤器/$，以限制会被收获的作物种类（使用该作物的种子进行过滤）。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can make the $(item)Drone/$  $(l:programming/inventory_import)import/$ a $(item)Hoe/$. When equipped with a Hoe, crops will automatically be replanted (this uses durability from the Hoe).$(p)You can force the $(item)Drone/$ to $(italic)only/$ harvest when carrying a Hoe by checking the $(item)Requires Hoe/$ checkbox in the widget setup GUI; then, if/when the Hoe breaks, the drone can get another one before continuing to harvest.",
-   "你可以让$(item)雄蜂/$$(l:programming/inventory_import)导入/$一把$(item)锄/$。装备锄后，作物在收获后会自动重新种植（这会消耗锄的耐久）。$(p)你可以在组件设置 GUI 中勾选$(item)需要锄/$复选框，强制$(item)雄蜂/$$(italic)仅/$在携带锄时进行收获；这样一来，如果锄损坏了，雄蜂就能先拿到另一把，再继续收获。"
+   "你可以让$(item)无人机/$$(l:programming/inventory_import)导入/$一把$(item)锄/$。装备锄后，作物在收获后会自动重新种植（这会消耗锄的耐久）。$(p)你可以在组件设置 GUI 中勾选$(item)需要锄/$复选框，强制$(item)无人机/$$(italic)仅/$在携带锄时进行收获；这样一来，如果锄损坏了，无人机就能先拿到另一把，再继续收获。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The amount of harvest actions can be limited to a specified amount by $(thing)right-clicking/$ the $(thing)Harvest/$ widget.$(p)If set to 1 for example, the $(item)Drone/$ will only harvest one block each time the widget is executed, and move on to the next widget after harvesting that one block.",
-   "通过$(thing)右击/$$(thing)收割/$组件，便可将收割动作的次数限制为指定数量。$(p)例如将其设为 1 时，$(item)雄蜂/$每次执行该组件时只会收割一个方块，并在收割完这一个方块后继续执行下一个组件。"
+   "通过$(thing)右击/$$(thing)收割/$组件，便可将收割动作的次数限制为指定数量。$(p)例如将其设为 1 时，$(item)无人机/$每次执行该组件时只会收割一个方块，并在收割完这一个方块后继续执行下一个组件。"
   ],
   [
    [

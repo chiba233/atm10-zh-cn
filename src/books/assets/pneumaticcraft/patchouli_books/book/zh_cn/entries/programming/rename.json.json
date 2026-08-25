@@ -16,7 +16,7 @@
     "text"
    ],
    "This widget renames the $(l:tools/drone)Drone/$, as if you had $(thing)right-clicked/$ it with a $(item)Name Tag/$. The name is entered in the attached $(l:programming/text)Text/$ widget.",
-   "这个组件会为$(l:tools/drone)雄蜂/$重命名，就像你用$(item)命名牌/$$(thing)右击/$它一样。名称需在附加的$(l:programming/text)文本/$组件中输入。"
+   "这个组件会为$(l:tools/drone)无人机/$重命名，就像你用$(item)命名牌/$$(thing)右击/$它一样。名称需在附加的$(l:programming/text)文本/$组件中输入。"
   ],
   [
    [

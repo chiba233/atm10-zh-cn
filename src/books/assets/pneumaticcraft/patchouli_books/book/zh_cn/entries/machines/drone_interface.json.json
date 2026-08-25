@@ -16,7 +16,7 @@
     "text"
    ],
    "The Drone Interface is a $(thing)ComputerCraft/OpenComputers peripheral/$ that's used to communicate with $(l:tools/drone)Drones/$. To do so, program a $(item)Drone/$ with a $(l:programming/computer_control)Computer Control puzzle piece/$.$(p)When the Drone executes the Computer Control piece, it'll try to connect to an $(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)available/$ $(item)Drone Interface/$ located within the puzzle piece's area.",
-   "无人机接口是一种$(thing)ComputerCraft/OpenComputers 外设/$，用于与$(l:tools/drone)雄蜂/$通信。为此，需要给$(item)雄蜂/$编入一个$(l:programming/computer_control)计算机控制拼图块/$。$(p)当雄蜂执行这个计算机控制拼图块时，它会尝试连接到位于该拼图块作用范围内、$(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)可用/$的$(item)无人机接口/$。"
+   "无人机接口是一种$(thing)ComputerCraft/OpenComputers 外设/$，用于与$(l:tools/drone)无人机/$通信。为此，需要给$(item)无人机/$编入一个$(l:programming/computer_control)计算机控制拼图块/$。$(p)当无人机执行这个计算机控制拼图块时，它会尝试连接到位于该拼图块作用范围内、$(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)可用/$的$(item)无人机接口/$。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Once connected, the Drone will be controlled entirely by the interface; specifically, by Lua methods called on the interface by the controlling computer.$(p)The Drone Interface exposes a long list of Lua methods, all of which are described in the following pages.",
-   "连接后，雄蜂将完全由该接口控制；更具体地说，是由控制计算机在该接口上调用的 Lua 方法来控制。$(p)无人机接口提供了大量 Lua 方法，后续页面将对其进行详细说明。"
+   "连接后，无人机将完全由该接口控制；更具体地说，是由控制计算机在该接口上调用的 Lua 方法来控制。$(p)无人机接口提供了大量 Lua 方法，后续页面将对其进行详细说明。"
   ],
   [
    [
@@ -223,7 +223,7 @@
     "text"
    ],
    "$(#800)forgetTarget()/$$(p)When the Drone is targeting any entity (from using the \"entity_attack\" action), this will stop attacking that target.",
-   "$(#800)forgetTarget()/$$(p)当雄蜂正在以任意实体为目标（通过使用“entity_attack”动作）时，这将停止攻击该目标。"
+   "$(#800)forgetTarget()/$$(p)当无人机正在以任意实体为目标（通过使用“entity_attack”动作）时，这将停止攻击该目标。"
   ],
   [
    [
@@ -286,7 +286,7 @@
     "text"
    ],
    "$(#800)getVariable(<variable name>)/$$(p)Returns the value of the variable from this Drone (x, y and z). It is possible to get $(l:programming/variables#global)global/$ (# prefix) and $(l:programming/variables#special)special/$ variables ($ prefix) too.",
-   "$(#800)getVariable(<变量名>)/$$(p)返回该雄蜂中的变量值（x、y 和 z）。也可以获取$(l:programming/variables#global)全局/$（# 前缀）和$(l:programming/variables#special)特殊/$（$ 前缀）变量。"
+   "$(#800)getVariable(<变量名>)/$$(p)返回该无人机中的变量值（x、y 和 z）。也可以获取$(l:programming/variables#global)全局/$（# 前缀）和$(l:programming/variables#special)特殊/$（$ 前缀）变量。"
   ],
   [
    [
@@ -313,7 +313,7 @@
     "text"
    ],
    "$(#800)isConnectedToDrone()/$$(p)Returns true if a Drone has connected with this Drone Interface (when the Drone's program has arrived at the ComputerCraft piece and made a connection).",
-   "$(#800)isConnectedToDrone()/$$(p)如果有一只雄蜂已连接到此无人机接口，则返回 true（即当雄蜂的程序到达 ComputerCraft 部件并建立连接时）。"
+   "$(#800)isConnectedToDrone()/$$(p)如果有一架无人机已连接到此无人机接口，则返回 true（即当无人机的程序到达 ComputerCraft 部件并建立连接时）。"
   ],
   [
    [
@@ -340,7 +340,7 @@
     "text"
    ],
    "$(#800)setBlockOrder(<\"closest\"/\"highToLow\"/\"lowToHigh\">)/$$(p)Sets the place/dig order of the Drone.",
-   "$(#800)setBlockOrder(<\"closest\"/\"highToLow\"/\"lowToHigh\">)/$$(p)设置雄蜂放置/挖掘方块的顺序。"
+   "$(#800)setBlockOrder(<\"closest\"/\"highToLow\"/\"lowToHigh\">)/$$(p)设置无人机放置/挖掘方块的顺序。"
   ],
   [
    [
@@ -430,7 +430,7 @@
     "text"
    ],
    "$(#800)setPlaceFluidBlocks(<true/false>)/$$(p)Only used in the \"liquid_export\" action; when set to true the Drone will be allowed to place down fluid blocks in the world. Default of 'false' only allows fluids to be exported to fluid tanks.",
-   "$(#800)setPlaceFluidBlocks(<true/false>)/$$(p)仅用于“liquid_export”动作；设为 true 时，雄蜂将被允许在世界中放置流体对应方块。默认值“false”只允许将流体导出到流体储罐中。"
+   "$(#800)setPlaceFluidBlocks(<true/false>)/$$(p)仅用于“liquid_export”动作；设为 true 时，无人机将被允许在世界中放置流体对应方块。默认值“false”只允许将流体导出到流体储罐中。"
   ],
   [
    [
@@ -439,7 +439,7 @@
     "text"
    ],
    "$(#800)setRenameString(<name>)/$$(p)Sets the name the Drone will be named to when the \"rename\" action is used.",
-   "$(#800)setRenameString(<name>)/$$(p)设置在使用“重命名”操作时要赋予雄蜂的名称。"
+   "$(#800)setRenameString(<name>)/$$(p)设置在使用“重命名”操作时要赋予无人机的名称。"
   ],
   [
    [
@@ -448,7 +448,7 @@
     "text"
    ],
    "$(#800)setRequiresTool(<true/false>)/$$(p)This configures whether or not the Drone requires a tool when executing the \"dig\" and \"harvest\" actions. With no tool, the Drone will not attempt to carry out these actions.",
-   "$(#800)setRequiresTool(<true/false>)/$$(p)此项用于配置雄蜂在执行“dig”和“harvest”动作时是否需要工具。没有工具时，雄蜂将不会尝试执行这些动作。"
+   "$(#800)setRequiresTool(<true/false>)/$$(p)此项用于配置无人机在执行“dig”和“harvest”动作时是否需要工具。没有工具时，无人机将不会尝试执行这些动作。"
   ],
   [
    [
@@ -502,7 +502,7 @@
     "text"
    ],
    "$(#800)setUseCount(<true/false>)/$$(p)Sets whether or not the Drone has a maximum number of imported /exported / dropped items. If true, be sure to also call $(#800)setCount()/$.",
-   "$(#800)setUseCount(<true/false>)/$$(p)设置雄蜂是否对导入/导出/丢弃的物品设定最大数量限制。若为 true，请务必同时调用$(#800)setCount()/$。"
+   "$(#800)setUseCount(<true/false>)/$$(p)设置无人机是否对导入/导出/丢弃的物品设定最大数量限制。若为 true，请务必同时调用$(#800)setCount()/$。"
   ],
   [
    [
@@ -511,7 +511,7 @@
     "text"
    ],
    "$(#800)setUseMaxActions(<true/false>)/$$(p)Sets whether or not the Drone has a maximum number of actions performed on one block at a time before the command is considered 'done'. Applies to the \"place\", \"dig\" and \"block_right_click\" actions. If true, be sure to also call $(#800)setMaxActions()/$.",
-   "$(#800)setUseMaxActions(<true/false>)/$$(p)设置雄蜂在同一时间对单个方块执行操作时，是否在执行达到最大次数后才将该命令视为“完成”。适用于“place”“dig”和“block_right_click”操作。如果为 true，请务必同时调用$(#800)setMaxActions()/$。"
+   "$(#800)setUseMaxActions(<true/false>)/$$(p)设置无人机在同一时间对单个方块执行操作时，是否在执行达到最大次数后才将该命令视为“完成”。适用于“place”“dig”和“block_right_click”操作。如果为 true，请务必同时调用$(#800)setMaxActions()/$。"
   ],
   [
    [

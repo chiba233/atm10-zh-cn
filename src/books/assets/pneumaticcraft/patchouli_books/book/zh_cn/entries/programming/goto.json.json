@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Go to Location/$ is pretty straightforward: the $(l:tools/drone)Drone/$ will go to the nearest reachable location within the specified $(l:programming/area)Area/$.$(p)This widget is done $(ttcolor)$(t:You can configure the widget to be 'done' immediately; right-click for the setup GUI)when the Drone has reached the area/$, or when this area isn't reachable.",
-   "$(thing)去往位置/$非常直观：$(l:tools/drone)雄蜂/$会前往指定$(l:programming/area)区域/$内最近且可到达的位置。$(p)当$(ttcolor)$(t:You can configure the widget to be 'done' immediately; right-click for the setup GUI)雄蜂已到达该区域时/$，或者该区域无法到达时，这个组件就会结束。"
+   "$(thing)去往位置/$非常直观：$(l:tools/drone)无人机/$会前往指定$(l:programming/area)区域/$内最近且可到达的位置。$(p)当$(ttcolor)$(t:You can configure the widget to be 'done' immediately; right-click for the setup GUI)无人机已到达该区域时/$，或者该区域无法到达时，这个组件就会结束。"
   ],
   [
    [

@@ -61,7 +61,7 @@
     "text"
    ],
    "There are three types of variable:$(li)$(thing)Local variables/$: these are stored per-drone and are referenced simply as 'varname'.$(li)$(thing)Global variables/$: these are global to all drones and can be used for sharing data. They are referenced as '#varname' or '%varname' (see following pages).$(li)$(thing)Special Variables/$ can be used to retrieve some metadata about the drone and are referenced as '$varname'.",
-   "变量共有三种类型：$(li)$(thing)局部变量/$：这些变量按每个雄蜂分别存储，直接以“varname”的形式引用。$(li)$(thing)全局变量/$：这些变量对所有雄蜂全局共享，可用于共享数据。它们以“#varname”或“%varname”来引用（见后续页面）。$(li)$(thing)特殊变量/$可用于获取有关雄蜂的一些元数据，以“$varname”的形式引用。"
+   "变量共有三种类型：$(li)$(thing)局部变量/$：这些变量按每个无人机分别存储，直接以“varname”的形式引用。$(li)$(thing)全局变量/$：这些变量对所有无人机全局共享，可用于共享数据。它们以“#varname”或“%varname”来引用（见后续页面）。$(li)$(thing)特殊变量/$可用于获取有关无人机的一些元数据，以“$varname”的形式引用。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "Normal variables are unique per $(l:tools/drone)Drone/$; they can't be shared. $(thing)Global variables/$, however, $(italic)can/$ be shared. This allows Drones to communicate with each other.$(p)Additionally, $(l:tools/gps_tool)GPS Tools/$ can link to and modify them, the $(l:machines/universal_sensor)Universal Sensor/$ can emit a $(#f00)redstone signal/$ based on them, and the $(l:tools/remote)Remote/$ can display and modify them.",
-   "普通变量对每个$(l:tools/drone)雄蜂/$都是独立的，无法共享。不过，$(thing)全局变量/$则$(italic)可以/$共享。这样一来，雄蜂之间就能彼此通信。$(p)此外，$(l:tools/gps_tool)GPS 工具/$也可以链接并修改它们，$(l:machines/universal_sensor)通用传感器/$可以根据它们发出$(#f00)红石信号/$，而$(l:tools/remote)远程终端/$则可以显示并修改它们。"
+   "普通变量对每个$(l:tools/drone)无人机/$都是独立的，无法共享。不过，$(thing)全局变量/$则$(italic)可以/$共享。这样一来，无人机之间就能彼此通信。$(p)此外，$(l:tools/gps_tool)GPS 工具/$也可以链接并修改它们，$(l:machines/universal_sensor)通用传感器/$可以根据它们发出$(#f00)红石信号/$，而$(l:tools/remote)远程终端/$则可以显示并修改它们。"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)There are two types of global variable/$: $(thing)player-global/$ and $(thing)server-global/$.$(li)Player-global variables are prefixed with '#'. These are shared among a player's drones, but private to each player.$(li)Server-global variables are prefixed with '%'. These variables are shared among $(italic)all/$ players on the server.$(p)Note: in earlier versions of the mod only server-global existed, with a prefix of '#'.",
-   "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)全局变量分为两种/$：$(thing)玩家全局/$和$(thing)服务器全局/$。$(li)玩家全局变量以前缀“#”表示。这类变量在同一玩家的雄蜂之间共享，但对每位玩家而言是私有的。$(li)服务器全局变量以前缀“%”表示。这类变量会在服务器上$(italic)所有/$玩家之间共享。$(p)注意：在本模组的较早版本中，只有服务器全局变量存在，其前缀为“#”。"
+   "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)全局变量分为两种/$：$(thing)玩家全局/$和$(thing)服务器全局/$。$(li)玩家全局变量以前缀“#”表示。这类变量在同一玩家的无人机之间共享，但对每位玩家而言是私有的。$(li)服务器全局变量以前缀“%”表示。这类变量会在服务器上$(italic)所有/$玩家之间共享。$(p)注意：在本模组的较早版本中，只有服务器全局变量存在，其前缀为“#”。"
   ],
   [
    [
@@ -205,7 +205,7 @@
     "text"
    ],
    "To interpolate a variable into text displayed by one of the above methods, use the syntax $(thing)${varname}/$.$(p)Note that the special & global variable prefixes still apply here, so to interpolate a drone's position, you would use $(thing)${$drone_pos}/$, and to interpolate a global variable, you would use $(thing)${#globalvarname}/$ or $(thing)${%globalvarname}/$.",
-   "要将变量插入到以上任一方式显示的文本中，请使用语法$(thing)${varname}/$。$(p)注意，这里仍然适用特殊变量和全局变量的前缀，因此如果要插入某个雄蜂的位置，你需要使用$(thing)${$drone_pos}/$；如果要插入一个全局变量，则需要使用$(thing)${#globalvarname}/$或$(thing)${%globalvarname}/$。"
+   "要将变量插入到以上任一方式显示的文本中，请使用语法$(thing)${varname}/$。$(p)注意，这里仍然适用特殊变量和全局变量的前缀，因此如果要插入某个无人机的位置，你需要使用$(thing)${$drone_pos}/$；如果要插入一个全局变量，则需要使用$(thing)${#globalvarname}/$或$(thing)${%globalvarname}/$。"
   ],
   [
    [

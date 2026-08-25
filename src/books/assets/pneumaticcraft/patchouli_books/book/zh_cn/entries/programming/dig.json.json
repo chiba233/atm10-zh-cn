@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will dig/mine the blocks within the specified $(l:programming/area)Area/$. Items that are dropped from the blocks will not be picked up by the $(item)Drone/$. The order in which the blocks will be dug is similar to the $(l:programming/place)Place/$ widget. Also in common with the $(thing)Place/$ widget, you can control if the area should be dug layer by layer (top to bottom or bottom to top).",
-   "$(l:tools/drone)雄蜂/$会挖掘/开采指定$(l:programming/area)区域/$内的方块。方块掉落的物品不会被$(item)雄蜂/$拾取。方块的挖掘顺序与$(l:programming/place)放置/$组件类似。与$(thing)放置/$组件一样，你也可以控制该区域是否要按层挖掘（从上到下或从下到上）。"
+   "$(l:tools/drone)无人机/$会挖掘/开采指定$(l:programming/area)区域/$内的方块。方块掉落的物品不会被$(item)无人机/$拾取。方块的挖掘顺序与$(l:programming/place)放置/$组件类似。与$(thing)放置/$组件一样，你也可以控制该区域是否要按层挖掘（从上到下或从下到上）。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can make the $(item)Drone/$ $(l:programming/inventory_import)import/$ a pickaxe/shovel/etc. to make it use that tool. When the $(item)Drone/$ carries around multiple tools, the most suitable tool is automatically used for the block being dug.$(p)You can prevent the Drone from trying to dig without a tool (which is really slow) by checking the $(thing)Requires digging tool/$ checkbox.",
-   "你可以让$(item)雄蜂/$$(l:programming/inventory_import)导入/$镐子、铲子等工具，以便它使用相应的工具。当$(item)雄蜂/$随身携带多种工具时，它会自动为正在挖掘的方块选择最合适的工具。$(p)你还可以勾选$(thing)需要挖掘工具/$复选框，防止雄蜂在没有工具的情况下尝试挖掘（那样会非常慢）。"
+   "你可以让$(item)无人机/$$(l:programming/inventory_import)导入/$镐子、铲子等工具，以便它使用相应的工具。当$(item)无人机/$随身携带多种工具时，它会自动为正在挖掘的方块选择最合适的工具。$(p)你还可以勾选$(thing)需要挖掘工具/$复选框，防止无人机在没有工具的情况下尝试挖掘（那样会非常慢）。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The amount of dig actions can be limited to a specified number by checking the $(thing)Limit block interactions/$ checkbox in the GUI, and setting a limit. E.g. if set to 1, the $(item)Drone/$ will only dig one block (regardless of how many blocks are in the area), before moving to the next widget in the program. This can be used to only dig a few blocks and then check the durability of a tool, to repair it before it breaks.",
-   "勾选 GUI 中的$(thing)限制方块交互/$复选框并设置一个上限，即可将挖掘动作的次数限制在指定数量内。例如，若设置为 1，$(item)雄蜂/$在移动到程序中的下一个组件前，只会挖掘一个方块（无论区域内有多少方块）。这可以用于先挖少量方块，然后检查工具的耐久度，以便在它损坏前进行修理。"
+   "勾选 GUI 中的$(thing)限制方块交互/$复选框并设置一个上限，即可将挖掘动作的次数限制在指定数量内。例如，若设置为 1，$(item)无人机/$在移动到程序中的下一个组件前，只会挖掘一个方块（无论区域内有多少方块）。这可以用于先挖少量方块，然后检查工具的耐久度，以便在它损坏前进行修理。"
   ],
   [
    [

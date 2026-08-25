@@ -16,7 +16,7 @@
     "text"
    ],
    "In this tutorial, we'll set up a simple program to make a $(l:tools/drone)Drone/$ dig out an area. Before you start, you'll need:",
-   "在本教程中，我们将设置一个简单的程序，让$(l:tools/drone)雄蜂/$挖掘出一片区域。开始之前，你需要："
+   "在本教程中，我们将设置一个简单的程序，让$(l:tools/drone)无人机/$挖掘出一片区域。开始之前，你需要："
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "Finally, take a $(l:tools/drone)Drone/$, and ensure it's been pressurized in a $(l:machines/charging_station)Charging Station/$. Put the Drone item in the slot in the top right of the Programmer GUI and click the $(thing)⟶ (export)/$ button (you can name the Drone if you want, in the textfield to the left).$(p)You'll get some audible feedback, and your Drone is programmed!",
-   "最后，拿一个$(l:tools/drone)雄蜂/$，并确保它已经在$(l:machines/charging_station)充气站/$中完成加压。将雄蜂物品放入编程器界面右上角的槽位中，然后点击$(thing)⟶（导出）/$按钮（如果你愿意，也可以在左侧的文本框中为雄蜂命名）。$(p)你会听到提示音，这样你的雄蜂就编程完成了！"
+   "最后，拿一个$(l:tools/drone)无人机/$，并确保它已经在$(l:machines/charging_station)充气站/$中完成加压。将无人机物品放入编程器界面右上角的槽位中，然后点击$(thing)⟶（导出）/$按钮（如果你愿意，也可以在左侧的文本框中为无人机命名）。$(p)你会听到提示音，这样你的无人机就编程完成了！"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "All that remains now is to deploy your Drone: $(thing)right-click/$ in the world somewhere near your chest, and watch it go to work!",
-   "现在剩下的就是部署你的雄蜂了：在箱子附近的某处对着世界$(thing)右击/$，然后看着它开始工作吧！"
+   "现在剩下的就是部署你的无人机了：在箱子附近的某处对着世界$(thing)右击/$，然后看着它开始工作吧！"
   ]
  ]
 }
