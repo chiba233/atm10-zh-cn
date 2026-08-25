@@ -3448,6 +3448,12 @@
   ],
   "released": [
     {
+      "path": "src/vaultpatcher/modules/enderio_machine_status.json",
+      "approved": "用户",
+      "date": "2026-08-25",
+      "why": "本轮内新增又撤回，从未随任何版本发布。建它是为了修末影接口机器状态提示在服务器上显示英文，当时判定只能在服务端用 VaultPatcher 改；后来读 MachineStatesSyncSlot 的 unpackPayload 发现客户端是 Component.translatable(收到的英文串)，也就是拿英文当翻译键，补 11 条同名 lang 键即可，与 productivelib 的 Valid upgrades: 同一形态。lang 那条路对任何服务器都生效、不占 dynamic 预算，模块整个失去存在意义"
+    },
+    {
       "path": "src/vaultpatcher/modules/towntalk.json",
       "approved": "用户",
       "date": "2026-08-06",
