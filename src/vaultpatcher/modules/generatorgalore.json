@@ -1,0 +1,33 @@
+[
+  {
+    "name": "generatorgalore_zh_cn",
+    "authors": "Hoshino Yumeka",
+    "dynamic": false,
+    "i18n": false,
+    "_说明": "发电机大全的两张 JEI 燃料页（固体燃料 / 流体燃料）。分类标题本身是翻译键（generatorgalore.recipe.solid_fuel），已经是中文；页面里的四个标签却硬编码在两个 RecipeCategory 的 makeConcatWithConstants 配方里，没有任何翻译键，资源包够不着。\n\n原文逐项解常量池取得：SolidFuelRecipeCategory 有 'Rate: \\u0001FE/t'、'Burntime: \\u0001'、'Total: \\u0001FE'；FluidFuelRecipeCategory 有 'Rate: \\u0001FE/t'、'Burn rate: \\u0001mB/t'、'Total: \\u0001FE/B'。两张页共用同一批标签，所以放在同一个块里。\n\n走静态：InvokeDynamicNodeHandler 会把配方按 \\u0001 切开逐段查表（Pairs.getValue 非 dyn 模式是 pairsMap.getOrDefault(key, key)，查不到原样返回），加载期改一次字节码，运行期零开销；dynamic 的精确匹配够不着运行时才拼出来的整串。同一形态的先例见 neovitae_meteor_jei 与 ironfurnaces 的 'Direction: '。\n\n安全前提：六条常量各自只被消费一次，且都在 12 个字节码偏移内被 GuiGraphics.drawString 吃掉，纯绘制。\n\n单位不译：FE/t、FE、mB/t、FE/B 原样穿过去（未列进 pairs 的段会原样返回）。「产能速率」跟本包已有的 generatorgalore.screen.generation_rate（产能速率：%sFE/t）一致。"
+  },
+  {
+    "target_class": [
+      "cy.jdkdigital.generatorgalore.integrations.SolidFuelRecipeCategory",
+      "cy.jdkdigital.generatorgalore.integrations.FluidFuelRecipeCategory"
+    ],
+    "pairs": [
+      {
+        "key": "Rate: ",
+        "value": "产能速率："
+      },
+      {
+        "key": "Burntime: ",
+        "value": "燃烧时间："
+      },
+      {
+        "key": "Burn rate: ",
+        "value": "燃烧速率："
+      },
+      {
+        "key": "Total: ",
+        "value": "总计："
+      }
+    ]
+  }
+]
