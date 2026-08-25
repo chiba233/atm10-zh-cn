@@ -16,7 +16,7 @@
     "text"
    ],
    "Most machines in $(pncr) have a GUI with several $(thing)side tabs/$. Some tabs are common to most or all machines, while some are unique to certain machines. Here is a list of some common tabs:",
-   "$(pncr) 中的大多数机器都有一个带有多个$(thing)侧边标签/$的 GUI。有些标签是大多数甚至所有机器通用的，而有些则是特定机器独有的。以下是一些常见标签的列表："
+   "$(#228)气动工艺$()中的大多数机器都有一个带有多个$(thing)侧边标签/$的 GUI。有些标签是大多数甚至所有机器通用的，而有些则是特定机器独有的。以下是一些常见标签的列表："
   ],
   [
    [

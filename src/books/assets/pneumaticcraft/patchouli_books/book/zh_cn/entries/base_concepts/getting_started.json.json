@@ -25,7 +25,7 @@
     "text"
    ],
    "From here on, more sections of this manual will unlock, based on $(thing)Advancements/$ you receive for progressing through $(pncr). Check back on the Advancements page for the mod for guidance on what you should be making next (you'll also get a bit of $(thing)Experience/$ for unlocking some Advancements, so that's nice).",
-   "从这里开始，本手册会根据你在 $(pncr) 的推进过程中获得的$(thing)进度/$，逐步解锁更多章节。记得查看该模组的进度页面，了解你接下来应该制作什么（而且解锁某些进度时，你还会获得一点$(thing)经验值/$，这也挺不错的）。"
+   "从这里开始，本手册会根据你在$(#228)气动工艺$()的推进过程中获得的$(thing)进度/$，逐步解锁更多章节。记得查看该模组的进度页面，了解你接下来应该制作什么（而且解锁某些进度时，你还会获得一点$(thing)经验值/$，这也挺不错的）。"
   ]
  ]
 }

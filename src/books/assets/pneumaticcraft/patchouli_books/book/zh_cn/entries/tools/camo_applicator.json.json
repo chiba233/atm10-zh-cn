@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Camouflage Applicator/$ can be used to camouflage certain $(pncr) blocks:$(li)$(l:tubes/pressure_tubes)Pressure Tubes/$$(li)$(l:machines/pneumatic_door)Pneumatic Door Base/$$(li)$(l:machines/elevators)Elevator Base & Caller/$$(li)$(l:machines/charging_station)Charging Station/$$(li)$(l:machines/heat_pipe)Heat Pipe/$$(p)$(thing)Right-click/$ any solid block to copy its appearance to the Applicator tool, or $(thing)sneak+right-click/$ to clear the copied block. ",
-   "$(item)伪装涂覆器/$可用于伪装某些$(pncr)方块：$(li)$(l:tubes/pressure_tubes)压力管道/$$(li)$(l:machines/pneumatic_door)气动门基座/$$(li)$(l:machines/elevators)电梯基座和呼叫器/$$(li)$(l:machines/charging_station)充气站/$$(li)$(l:machines/heat_pipe)热管/$$(p)$(thing)右击/$任意实心方块，即可将其外观复制到涂覆器中，或$(thing)潜行右击/$以清除已复制的方块。"
+   "$(item)伪装涂覆器/$可用于伪装某些$(#228)气动工艺$()方块：$(li)$(l:tubes/pressure_tubes)压力管道/$$(li)$(l:machines/pneumatic_door)气动门基座/$$(li)$(l:machines/elevators)电梯基座和呼叫器/$$(li)$(l:machines/charging_station)充气站/$$(li)$(l:machines/heat_pipe)热管/$$(p)$(thing)右击/$任意实心方块，即可将其外观复制到涂覆器中，或$(thing)潜行右击/$以清除已复制的方块。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "$(pncr) adds a collection of $(thing)Reinforced Stone/$ block types, which are made with some $(item)Stone/$ and a little $(item)Compressed Iron/$. Many crafting recipes require some form of Reinforced Stone.$(p)Reinforced Stone blocks are also very suitable for building with, and all types have a high blast resistance.",
-   "$(pncr)会新增一系列$(thing)强化石头/$方块类型，它们由一些$(item)石头/$和少量$(item)压缩铁/$制成。许多合成配方都需要某种形式的强化石头。$(p)强化石头方块也非常适合用于建筑，而且所有类型都具有很高的抗爆炸能力。"
+   "$(#228)气动工艺$()会新增一系列$(thing)强化石头/$方块类型，它们由一些$(item)石头/$和少量$(item)压缩铁/$制成。许多合成配方都需要某种形式的强化石头。$(p)强化石头方块也非常适合用于建筑，而且所有类型都具有很高的抗爆炸能力。"
   ],
   [
    [

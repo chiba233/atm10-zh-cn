@@ -16,7 +16,7 @@
     "text"
    ],
    "$(item)Memory Essence/$ is a fluid which represents a player's memories and experiences in liquid form. It can be extracted and stored for later use, either for vanilla enchanting, or for certain $(pncr) crafting processes.$(p)There are two ways to obtain $(item)Memory Essence/$:$(li)1. With a $(l:tools/memory_stick)Memory Stick/$$(li)2. With an $(l:machines/aerial_interface)Aerial Interface/$.",
-   "$(item)记忆源质/$是一种液体，代表着玩家以液态形式存在的记忆与经历。它可以被提取并储存起来以供日后使用，无论是用于原版附魔，还是用于某些 $(pncr) 合成流程。$(p)获取 $(item)记忆源质/$ 有两种方式：$(li)1. 使用 $(l:tools/memory_stick)记忆棒/$$(li)2. 使用 $(l:machines/aerial_interface)空气接口/$。"
+   "$(item)记忆源质/$是一种液体，代表着玩家以液态形式存在的记忆与经历。它可以被提取并储存起来以供日后使用，无论是用于原版附魔，还是用于某些$(#228)气动工艺$()合成流程。$(p)获取 $(item)记忆源质/$ 有两种方式：$(li)1. 使用 $(l:tools/memory_stick)记忆棒/$$(li)2. 使用 $(l:machines/aerial_interface)空气接口/$。"
   ],
   [
    [

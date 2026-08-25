@@ -7,7 +7,7 @@
     "description"
    ],
    "Pressure Tubes are how you move compressed air around in $(pncr).",
-   "压力管道是在 $(pncr) 中输送压缩空气的方式。"
+   "压力管道是在$(#228)气动工艺$()中输送压缩空气的方式。"
   ],
   [
    [

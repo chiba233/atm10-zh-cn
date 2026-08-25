@@ -16,7 +16,7 @@
     "text"
    ],
    "As you're probably aware, $(pncr) machines which use $(l:base_concepts/heat)Heat/$ will lose heat to the air, if left exposed. While you can cover these machines with pretty much any non-air, non-heat-conducting block, $(thing)Thermal Lagging/$ is particularly suitable for insulating machines.",
-   "你可能已经知道，如果使用 $(l:base_concepts/heat)热量/$ 的 $(pncr) 机器暴露在空气中，就会向外散热。虽然你几乎可以用任何非空气且不导热的方块来覆盖这些机器，$(thing)隔热板/$ 仍然特别适合用于为机器保温。"
+   "你可能已经知道，如果使用 $(l:base_concepts/heat)热量/$ 的$(#228)气动工艺$()机器暴露在空气中，就会向外散热。虽然你几乎可以用任何非空气且不导热的方块来覆盖这些机器，$(thing)隔热板/$ 仍然特别适合用于为机器保温。"
   ],
   [
    [

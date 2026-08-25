@@ -16,7 +16,7 @@
     "text"
    ],
    "$(pncr) does not generate any extra ores in the ground. To get started, you just need $(item)Iron Ingots/$, which you will convert into $(item)Compressed Iron Ingots$(), used in many recipes throughout the mod.$(p)To do this, throw your $(item)Iron Ingots/$ on the ground, and cause a nearby explosion. $(item)TNT/$ will do the trick, but any other explosion works too.",
-   "$(pncr)不会在地下生成任何额外的矿石。要开始游玩，你只需要$(item)铁锭/$，并将其制成$(item)压缩铁锭$()，这会用于本模组中的许多配方。$(p)要做到这一点，把你的$(item)铁锭/$扔在地上，然后在附近引发一次爆炸。$(item)TNT/$就能做到，不过任何其他爆炸也同样有效。"
+   "$(#228)气动工艺$()不会在地下生成任何额外的矿石。要开始游玩，你只需要$(item)铁锭/$，并将其制成$(item)压缩铁锭$()，这会用于本模组中的许多配方。$(p)要做到这一点，把你的$(item)铁锭/$扔在地上，然后在附近引发一次爆炸。$(item)TNT/$就能做到，不过任何其他爆炸也同样有效。"
   ],
   [
    [

@@ -25,7 +25,7 @@
     "text"
    ],
    "This has important ramifications for designing reliable modded builds; if you want processing to happen when you're not at your base, you need to $(thing)chunkload/$ the relevant machines. The information following is primary intended as hints to achieve reliable $(pncr) builds, but much of it applies to other mods too.",
-   "这对设计可靠的模组装置有着重要影响；如果你希望在自己不在基地时仍然进行处理，就需要对相关机器进行 $(thing)区块加载/$。接下来的内容主要是为实现可靠的 $(pncr) 装置提供一些提示，但其中很多内容也同样适用于其他模组。"
+   "这对设计可靠的模组装置有着重要影响；如果你希望在自己不在基地时仍然进行处理，就需要对相关机器进行 $(thing)区块加载/$。接下来的内容主要是为实现可靠的$(#228)气动工艺$()装置提供一些提示，但其中很多内容也同样适用于其他模组。"
   ],
   [
    [

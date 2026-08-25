@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)GPS Tool/$ is an item that when $(thing)right-clicked/$ on a block, saves the block's coordinate. This data is used in several places in $(pncr); see overleaf.$(p)$(thing)Right-clicking/$ the $(item)GPS Tool/$ in the air opens a GUI allowing coordinates to be adjusted directly.$(p)Sneaking and scrolling the mouse wheel allows quick adjustment of the coordinate along the player's facing axis.",
-   "$(item)定位工具/$是一种物品，对方块$(thing)右击/$时，会保存该方块的坐标。这些数据会在 $(pncr) 的多个地方用到；请见下页。$(p)$(thing)在空中对着$(item)定位工具/$/$右击，会打开一个 GUI，可直接调整坐标。$(p)潜行并滚动鼠标滚轮，可以沿玩家面朝的轴快速调整坐标。"
+   "$(item)定位工具/$是一种物品，对方块$(thing)右击/$时，会保存该方块的坐标。这些数据会在$(#228)气动工艺$()的多个地方用到；请见下页。$(p)$(thing)在空中对着$(item)定位工具/$/$右击，会打开一个 GUI，可直接调整坐标。$(p)潜行并滚动鼠标滚轮，可以沿玩家面朝的轴快速调整坐标。"
   ],
   [
    [

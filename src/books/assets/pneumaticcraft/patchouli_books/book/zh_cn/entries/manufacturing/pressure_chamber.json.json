@@ -115,7 +115,7 @@
     "text"
    ],
    "$(bold)Tips/$$(li)When compressing $(item)Iron/$, compress $(item)Block of Iron/$, since it will use only 1/9th of the air to move items in & out of the chamber.$(li)If you need to pressurize a large chamber quickly, extra valves can be helpful (assuming you have sufficient compressors to produce the necessary air).",
-   "$(bold)提示/$$(li)压缩 $(item)铁/$ 时，请压缩 $(item)铁块/$，因为这样在物品进出压力室时只会消耗原来 1/9 的空气。$(li)如果你需要快速给一个大型压力室加压，额外添加阀门会很有帮助（前提是你有足够的压缩机来提供所需空气）。"
+   "$(bold)提示/$$(li)与其压缩 $(item)铁锭/$，不如直接压缩 $(item)铁块/$，因为这样在物品进出压力室时只需消耗 1/9 的空气。$(li)如果你需要快速给一个大型压力室加压，额外添加阀门会很有帮助（前提是你有足够的压缩机来提供所需空气）。"
   ],
   [
    [
@@ -151,7 +151,7 @@
     "text"
    ],
    "The $(item)Reinforced Pressure Chamber Valve/$ is an advanced block which can be used to upgrade the maximum air pressure in the Pressure Chamber from the default 5 bar to 20 bar, allowing the Pressure Chamber to store 4 times the air, and possibly unlocking $(ttcolor)$(t:By default all Pressure Chamber recipes require a max of 5 bar, but modpacks may change this)new recipes/$.",
-   "$(item)强化压力室气阀/$是一种高级方块，可用于将压力室的最大气压从默认的 5 bar 提升到 20 bar，使压力室可储存 4 倍的空气，并且还可能解锁 $(ttcolor)$(t:By default all Pressure Chamber recipes require a max of 5 bar, but modpacks may change this)新合成配方/$。"
+   "$(item)强化压力室气阀/$是一种高级方块，可用于将压力室的最大气压从默认的 5 bar 提升到 20 bar，使压力室可储存 4 倍的空气，并且还可能解锁 $(ttcolor)$(t:默认情况下，所有压力室配方最高只需要 5 bar，但整合包可能会改动这一点)新合成配方/$。"
   ],
   [
    [

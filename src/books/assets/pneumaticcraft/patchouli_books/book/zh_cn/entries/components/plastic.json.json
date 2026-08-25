@@ -16,7 +16,7 @@
     "text"
    ],
    "$(item)Plastic/$ is an important crafting component in $(pncr).$(p)$(item)Molten Plastic/$ is made from $(l:manufacturing/refinery)LPG/$ and $(item)Coal/$, or $(l:renewables/biodiesel)Biodiesel/$ and $(item)Charcoal/$ in the $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$.",
-   "$(item)塑料/$是 $(pncr) 中重要的合成材料。$(p)$(item)熔融塑料/$可在 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$ 中由 $(l:manufacturing/refinery)液化石油气/$ 和 $(item)煤炭/$，或 $(l:renewables/biodiesel)生物柴油/$ 和 $(item)木炭/$ 制成。"
+   "$(item)塑料/$是$(#228)气动工艺$()中重要的合成材料。$(p)$(item)熔融塑料/$可在 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$ 中由 $(l:manufacturing/refinery)液化石油气/$ 和 $(item)煤炭/$，或 $(l:renewables/biodiesel)生物柴油/$ 和 $(item)木炭/$ 制成。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "Although $(pncr) Fluid Tanks have inventory slots, and allow $(thing)Heat Frames/$ to be placed on them, simply attaching a Heat Frame to a tank full of Molten Plastic won't work; the fluid tank must be in item form in an inventory (chest, etc.) with a Heat Frame attached.",
-   "虽然$(pncr)流体储罐有容器槽位，并且允许在其上放置$(thing)热量框架/$，但仅仅把热量框架装在装满熔融塑料的储罐上并不起作用；流体储罐必须以物品形式存在于某个容器中（如箱子等），并且已附加热量框架。"
+   "虽然$(#228)气动工艺$()流体储罐有容器槽位，并且允许在其上放置$(thing)热量框架/$，但仅仅把热量框架装在装满熔融塑料的储罐上并不起作用；流体储罐必须以物品形式存在于某个容器中（如箱子等），并且已附加热量框架。"
   ],
   [
    [

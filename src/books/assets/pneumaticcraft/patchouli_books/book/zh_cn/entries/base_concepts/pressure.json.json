@@ -16,7 +16,7 @@
     "text"
    ],
    "Compressed air is the $(pncr) $(thing)power system/$, based on real-world pressure mechanics.$(li)Compressed air is $(italic)produced/$ by a class of machines called $(thing)Compressors/$, of which there are several types.$(li)All pressurizable machines and tools have a $(thing)volume/$ (measured in mL), which is the amount of air they can store at standard atmospheric pressure, or $(ttcolor)$(t:This mod uses 0 bar to represent standard atmospheric pressure, also known as Gauge Pressure)0 bar/$.",
-   "压缩空气是这种$(pncr)$(thing)动力系统/$，其运作基于现实世界中的压力机制。$(li)压缩空气由一类名为 $(thing)压缩机/$ 的机器$(italic)产生/$，其中又分为好几种类型。$(li)所有可加压的机器和工具都有一个$(thing)容积/$（以 mL 为单位），表示它们在标准大气压下，也就是 $(ttcolor)$(t:This mod uses 0 bar to represent standard atmospheric pressure, also known as Gauge Pressure)0 bar/$ 时能够储存的空气量。"
+   "压缩空气是这种$(#228)气动工艺$()$(thing)动力系统/$，其运作基于现实世界中的压力机制。$(li)压缩空气由一类名为 $(thing)压缩机/$ 的机器$(italic)产生/$，其中又分为好几种类型。$(li)所有可加压的机器和工具都有一个$(thing)容积/$（以 mL 为单位），表示它们在标准大气压下，也就是 $(ttcolor)$(t:本模组用 0 bar 表示标准大气压，也就是表压)0 bar/$ 时能够储存的空气量。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "$(li)Air moves from higher pressure blocks to lower pressure blocks. Leaving $(l:tubes/pressure_tubes)tubes/$ or machines unconnected will cause a giant $(thing)air leak/$, which means pressure loss! Air leaks are audible as a hissing sound, and visible as a stream of particles leaving the block.$(li)Pressure tries to balance. Connecting a small machine to a big air capacity (like a $(l:manufacturing/pressure_chamber)Pressure Chamber/$) will result in a pressure build-up in the machine.",
-   "$(li)空气会从高压方块流向低压方块。若让$(l:tubes/pressure_tubes)气压管/$或机器未连接，就会造成巨大的$(thing)漏气/$，从而导致压力损失！漏气时会发出嘶嘶声，并且能看到粒子流从方块中逸出。$(li)压力会尝试趋于平衡。将小型机器连接到大容量储气设备（例如$(l:manufacturing/pressure_chamber)压力室/$）时，会导致机器内的压力逐渐升高。"
+   "$(li)空气会从高压机器流向低压机器。如果$(l:tubes/pressure_tubes)压力管道/$或机器未正确连接，就会造成严重的$(thing)漏气/$，导致压力流失！漏气时会发出嘶嘶声，并且能看到粒子流从方块中逸出。$(li)压力会尝试趋于平衡。将小型机器连接到大容量储气设备（例如$(l:manufacturing/pressure_chamber)压力室/$）时，会让机器内的压力逐渐升高。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "$(li)Pressure applies force on the inner walls of a machine or $(l:tubes/pressure_tubes)pressure tube/$. Applying too much pressure results in an $(thing)Uncontrolled Rapid Air Release Event/$, also known as an $(thing)explosion/$. The pressure at which machines can explode is shown as the red area in the pressure gauge in any machine's GUI, but the exact point at which a machine will explode isn't predictable.",
-   "$(li)压力会作用于机器或$(l:tubes/pressure_tubes)压力管道/$的内壁上。施加过高的压力会导致$(thing)失控快速空气释放事件/$，也就是所谓的$(thing)爆炸/$。机器会在何种压力下发生爆炸，会在任意机器 GUI 的压力表中以红色区域显示，但机器究竟会在何时爆炸，无法准确预测。"
+   "$(li)压力会作用于机器或$(l:tubes/pressure_tubes)压力管道/$的内壁上。施加过高的压力会导致$(thing)空气失控泄漏/$，也就是所谓的$(thing)爆炸/$。任意机器 GUI 里压力表中的红色区域，就是会发生爆炸的压力范围，但机器究竟会在何时爆炸无法准确预测。"
   ],
   [
    [

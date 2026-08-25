@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Entity Filters/$ are used in several places in $(pncr), where there is a need to specify which $(thing)Entities/$ a machine or tool should affect in some way.$(p)In most places where a filter can be entered, pop-up help can be shown by pressing & holding the $(thing)F1/$ key.",
-   "$(thing)实体过滤器/$可用于 $(pncr) 中的多个地方，用于指定机器或工具应以某种方式影响哪些$(thing)实体/$。$(p)在大多数可以输入过滤器的地方，按住 $(thing)F1/$ 键即可显示弹出帮助。"
+   "$(thing)实体过滤器/$可用于$(#228)气动工艺$()中的多个地方，用于指定机器或工具应以某种方式影响哪些$(thing)实体/$。$(p)在大多数可以输入过滤器的地方，按住 $(thing)F1/$ 键即可显示弹出帮助。"
   ],
   [
    [

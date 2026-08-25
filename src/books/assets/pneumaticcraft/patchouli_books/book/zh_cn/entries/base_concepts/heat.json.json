@@ -16,7 +16,7 @@
     "text"
    ],
    "$(pncr) adds a $(thing)heat/$ system. It spreads from block to block similarly to how heat spreads in real-life. It has some similarities with how $(l:base_concepts/pressure)pressure disperses/$ too:$(li)Heat disperses from hotter objects to colder objects.$(li)Blocks will only spread heat to adjacent blocks that support the concept of heat (see $(l:base_concepts/heat_sources)Heat Sources/$).",
-   "$(pncr)加入了一个$(thing)热量/$系统。它会像现实中的热传导一样，在方块之间扩散。它与$(l:base_concepts/pressure)分压元件/$的工作方式也有一些相似之处：$(li)热量会从较热的物体扩散到较冷的物体。$(li)方块只会向支持热量概念的相邻方块传递热量（见 $(l:base_concepts/heat_sources)热源/$）。"
+   "$(#228)气动工艺$()加入了一个$(thing)热量/$系统。它会像现实中的热传导一样，在方块之间扩散。它与$(l:base_concepts/pressure)分压元件/$的工作方式也有一些相似之处：$(li)热量会从较热的物体扩散到较冷的物体。$(li)方块只会向支持热量概念的相邻方块传递热量（见 $(l:base_concepts/heat_sources)热源/$）。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Some machines in $(pncr) produce Heat that needs to be dissipated, and some require Heat to run.$(p)Therefore, you will need to $(l:base_concepts/heat_sources)find ways/$ to manipulate the temperature of these machines...",
-   "在 $(pncr) 中，有些机器会产生需要散去的热量，而有些则需要热量才能运行。$(p)因此，你需要$(l:base_concepts/heat_sources)想办法/$来调节这些机器的温度……"
+   "在$(#228)气动工艺$()中，有些机器会产生需要散去的热量，而有些则需要热量才能运行。$(p)因此，你需要$(l:base_concepts/heat_sources)想办法/$来调节这些机器的温度……"
   ],
   [
    [

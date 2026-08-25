@@ -16,7 +16,7 @@
     "text"
    ],
    "Pressure Tubes are the primary device in $(pncr) for transporting compressed air between compressors and machines.$(p)Unconnected tubes will leak air! However, the sides of a tube can be toggled open or shut by right-clicking with a $(l:tools/pneumatic_wrench)Pneumatic Wrench/$. Wrenches from other mods may also work.",
-   "压力管道是 $(pncr) 中用于在压缩机与机器之间传输压缩空气的主要装置。$(p)未连接的管道会漏气！不过，使用 $(l:tools/pneumatic_wrench)气动扳手/$ 右键单击即可切换管道各侧的开启或关闭状态。其他模组的扳手也可能有效。"
+   "压力管道是$(#228)气动工艺$()中用于在压缩机与机器之间传输压缩空气的主要装置。$(p)未连接的管道会漏气！不过，使用 $(l:tools/pneumatic_wrench)气动扳手/$ 右键单击即可切换管道各侧的开启或关闭状态。其他模组的扳手也可能有效。"
   ],
   [
    [

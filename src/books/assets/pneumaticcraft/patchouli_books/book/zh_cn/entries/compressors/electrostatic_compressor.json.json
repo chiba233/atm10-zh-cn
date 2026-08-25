@@ -70,7 +70,7 @@
     "text"
    ],
    "$(bold)Note:/$ unlike in earlier versions of $(pncr), natural lightning bolts do $(italic)not/$ add air to the compressor (this was highly abusable using other mods to create lightning). Instead the compressor has a small chance to create a \"fake\" bolt. This chance is $(italic)very/$ small in clear weather, but improves when $(thing)raining/$, and improves dramatically in a $(thing)thunderstorm/$.",
-   "$(bold)注意：/$与 $(pncr) 的早期版本不同，自然闪电 $(italic)不会/$ 给压缩机增加空气（因为这可以与其他模组制造闪电的方式配合而被严重滥用）。取而代之的是，压缩机有很小的概率生成一道“假”闪电。在晴天时，这个概率 $(italic)非常/$ 低；下$(thing)雨/$时会提高，而在 $(thing)雷暴/$ 中天会大幅提高。"
+   "$(bold)注意：/$与$(#228)气动工艺$()的早期版本不同，自然闪电 $(italic)不会/$ 给压缩机增加空气（因为这可以与其他模组制造闪电的方式配合而被严重滥用）。取而代之的是，压缩机有很小的概率生成一道“假”闪电。在晴天时，这个概率 $(italic)非常/$ 低；下$(thing)雨/$时会提高，而在 $(thing)雷暴/$ 中天会大幅提高。"
   ],
   [
    [

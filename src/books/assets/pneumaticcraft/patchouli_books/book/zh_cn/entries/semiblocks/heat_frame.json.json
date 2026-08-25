@@ -16,7 +16,7 @@
     "text"
    ],
    "This item can be placed on any $(thing)inventory/$. When heated by an adjacent $(l:base_concepts/heat)Heat source/$ it will try to smelt any item in the inventory (or freeze it when cooled). It will only succeed if there is room in the inventory for the resulting item. The more heat applied, the faster the smelting process will be, up to a maximum of 1 item per second. Similarly, the more it's cooled, the faster it will freeze objects.",
-   "该物品可以放置在任何$(thing)容器/$上。当它被相邻的$(l:base_concepts/heat)热源/$加热时，会尝试冶炼容器中的任意物品（或在冷却时将其冰冻）。只有当容器中有足够空间容纳产出物时，它才会成功。施加的热量越多，冶炼速度就越快，最快可达到每秒 1 个物品。同样地，冷却得越强，它冰冻物体的速度也就越快。"
+   "该物品可以放置在任何$(thing)物品容器/$上。当装有导热框架的容器被相邻的$(l:base_concepts/heat)热源/$加热时，它会尝试冶炼容器中的物品；被相邻的冷源冷却时，则会将物品冰冻。只有当容器中有足够空间容纳产出物时，它才会成功处理物品。施加的热量越多，冶炼速度就越快，最快可达到每秒 1 个物品。同样地，冷量越多，冰冻物品的速度也就越快。"
   ],
   [
    [

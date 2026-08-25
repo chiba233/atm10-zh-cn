@@ -7,7 +7,7 @@
     "description"
    ],
    "The machines and systems used to produce components to build other $(pncr) machines and tools.",
-   "用于生产各种组件的机器与系统，而这些组件可用来制造其他 $(pncr) 机器和工具。"
+   "用于生产各种组件的机器与系统，而这些组件可用来制造其他$(#228)气动工艺$()机器和工具。"
   ],
   [
    [

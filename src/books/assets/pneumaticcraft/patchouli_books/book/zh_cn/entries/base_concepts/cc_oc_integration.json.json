@@ -16,7 +16,7 @@
     "text"
    ],
    "When $(thing)ComputerCraft/$ or $(thing)Open Computers/$ is installed, you'll be able to interact with almost every $(pncr) machine, and $(l:machines/drone_interface)Drones/$.$(p)Any of the machines listed here can be interacted with as CC/OC peripherals.",
-   "当安装了 $(thing)ComputerCraft/$ 或 $(thing)Open Computers/$ 后，你将能够与几乎所有 $(pncr) 机器以及 $(l:machines/drone_interface)无人机/$ 进行交互。$(p)此处列出的任何机器都可以作为 CC/OC 外设进行交互。"
+   "当安装了 $(thing)ComputerCraft/$ 或 $(thing)Open Computers/$ 后，你将能够与几乎所有$(#228)气动工艺$()机器以及 $(l:machines/drone_interface)无人机/$ 进行交互。$(p)此处列出的任何机器都可以作为 CC/OC 外设进行交互。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "The following methods are common to $(italic)all/$ $(pncr) machines:$(li)$(#800)getPressure(), getPressure(<side>)/$: gets the machine's pressure. <side> is optional, only useful for the $(l:machines/vacuum_pump)Vacuum Pump/$, which has side-specific pressures.$(li)$(#800)getDangerPressure()/$: get the pressure at which the machine is at risk of explosion$(li)$(#800)getCriticalPressure()/$: get the hard maximum pressure at which the machine will certainly explode",
-   "以下方法适用于$(italic)所有/$$(pncr)机器：$(li)$(#800)getPressure(), getPressure(<side>)/$：获取机器的压力。<side>为可选参数，仅对$(l:machines/vacuum_pump)真空泵/$有用，因为它的压力会因侧面而异。$(li)$(#800)getDangerPressure()/$：获取机器存在爆炸风险时的压力$(li)$(#800)getCriticalPressure()/$：获取机器必定会爆炸的压力硬上限"
+   "以下方法适用于$(italic)所有/$$(#228)气动工艺$()机器：$(li)$(#800)getPressure(), getPressure(<side>)/$：获取机器的压力。<side>为可选参数，仅对$(l:machines/vacuum_pump)真空泵/$有用，因为它的压力会因侧面而异。$(li)$(#800)getDangerPressure()/$：获取机器存在爆炸风险时的压力$(li)$(#800)getCriticalPressure()/$：获取机器必定会爆炸的压力硬上限"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "The following methods are common to $(italic)all/$ $(pncr) machines which support the concept of $(l:base_concepts/heat)Heat/$:$(li)$(#800)getTemperature(), getTemperature(<side>)/$: gets the machine's temperature. <side> is optional, only useful for the $(l:machines/vortex_tube)Vortex Tube/$, which has different temperatures depending on the side.",
-   "以下方法是$(italic)所有/$支持$(l:base_concepts/heat)热量/$概念的$(pncr)机器都通用的：$(li)$(#800)getTemperature(), getTemperature(<side>)/$：获取机器的温度。<side>为可选参数，仅对$(l:machines/vortex_tube)涡流管/$有用，因为它在不同侧面的温度不同。"
+   "以下方法是$(italic)所有/$支持$(l:base_concepts/heat)热量/$概念的$(#228)气动工艺$()机器都通用的：$(li)$(#800)getTemperature(), getTemperature(<side>)/$：获取机器的温度。<side>为可选参数，仅对$(l:machines/vortex_tube)涡流管/$有用，因为它在不同侧面的温度不同。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "$(pncr)'s $(thing)Logistics System/$ offers an interesting way to transport items & fluids, and to keep inventories & tanks stocked.$(p)Inventories & tanks can be marked with $(l:logistics/frames)Logistic Frames/$, attachable gadgets which control how items & fluids should be moved into and out of those blocks.",
-   "$(pncr)的$(thing)物流系统/$提供了一种有趣的方式来运输物品和流体，并让容器与储罐始终保持存货充足。$(p)你可以用$(l:logistics/frames)物流框架/$来标记容器和储罐，这是一种可附加的小装置，用于控制物品和流体如何进出这些方块。"
+   "$(#228)气动工艺$()的$(thing)物流系统/$提供了一种有趣的方式来运输物品和流体，并让容器与储罐始终保持存货充足。$(p)你可以用$(l:logistics/frames)物流框架/$来标记容器和储罐，这是一种可附加的小装置，用于控制物品和流体如何进出这些方块。"
   ],
   [
    [

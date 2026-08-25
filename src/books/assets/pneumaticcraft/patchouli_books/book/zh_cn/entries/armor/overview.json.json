@@ -16,7 +16,7 @@
     "text"
    ],
    "What if you mix $(pncr) with the HUD from $(thing)Iron Man/$? You get $(thing)Pneumatic Armor/$!$(p)Although this armor was inspired by Tony Stark's toy, it doesn't mean it's invincible in any way: by default, the armor has only slightly better protection and durability than the equivalent $(thing)Iron Armor/$ piece. ",
-   "如果把 $(pncr) 与 $(thing)钢铁侠/$ 的 HUD 混合在一起，会得到什么？答案是 $(thing)气动护甲/$！$(p)虽然这套护甲的灵感来自托尼·斯塔克的玩具，但这并不意味着它在任何方面都是无敌的：默认情况下，这套护甲的防护能力和耐久度都只比对应的 $(thing)铁护甲/$ 部件略好一点。"
+   "如果把$(#228)气动工艺$()与 $(thing)钢铁侠/$ 的 HUD 混合在一起，会得到什么？答案是 $(thing)气动护甲/$！$(p)虽然这套护甲的灵感来自托尼·斯塔克的玩具，但这并不意味着它在任何方面都是无敌的：默认情况下，这套护甲的防护能力和耐久度都只比对应的 $(thing)铁护甲/$ 部件略好一点。"
   ],
   [
    [
