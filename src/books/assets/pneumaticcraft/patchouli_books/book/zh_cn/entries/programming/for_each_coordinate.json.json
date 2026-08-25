@@ -16,7 +16,7 @@
     "text"
    ],
    "This advanced widget will loop through every single coordinate in the specified $(l:programming/area)Area/$. For each coordinate, it will set the $(ttcolor)$(t:Right-click the widget to configure the variable)specified variable/$ to that coordinate, and jump to the $(l:programming/label)Label/$ which matches the connected $(l:programming/text)Text/$ widget. When that routine is done executing (when it reaches the end of a program where it would usually jump back to $(l:programming/start)Start/$), it will return to this widget and repeat for the next coordinate.",
-   "这个高级控件会遍历指定$(l:programming/area)区域/$中的每一个坐标。对于每个坐标，它都会将$(ttcolor)$(t:Right-click the widget to configure the variable)指定变量/$设为该坐标，并跳转到与所连接的$(l:programming/text)文本/$控件匹配的$(l:programming/label)标签/$。当该流程执行完毕时（即到达程序末尾，原本通常会跳回$(l:programming/start)开始/$的地方），它将返回到此控件，并对下一个坐标重复此过程。"
+   "这个高级控件会遍历指定$(l:programming/area)区域/$中的每一个坐标。对于每个坐标，它都会将$(ttcolor)$(t:右击该组件即可配置变量)指定变量/$设为该坐标，并跳转到与所连接的$(l:programming/text)文本/$控件匹配的$(l:programming/label)标签/$。当该流程执行完毕时（即到达程序末尾，原本通常会跳回$(l:programming/start)开始/$的地方），它将返回到此控件，并对下一个坐标重复此过程。"
   ],
   [
    [

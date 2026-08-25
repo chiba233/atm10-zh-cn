@@ -25,7 +25,7 @@
     "text"
    ],
    "You can specify to which side(s) of the tank the Drone should output its items in the widget GUI; you can also specify a maximum amount of exported fluid (in mB).$(p)You can $(ttcolor)$(t:Connect on the right to whitelist, on the left to blacklist)connect/$ a $(l:programming/liquid_filter)Fluid Filter/$ to limit what may be exported by the Drone.$(p)This widget is done when the $(item)Drone's/$ tank is empty (of applicable fluids), or when there's no tank within the area which will accepts the fluid.",
-   "你可以在该小部件的 GUI 中指定无人机应将物品输出到储罐的哪一侧；你也可以指定导出流体的最大数量（单位：mB）。$(p)你还可以$(ttcolor)$(t:Connect on the right to whitelist, on the left to blacklist)连接/$一个$(l:programming/liquid_filter)流体过滤器/$，以限制无人机可导出的内容。$(p)当$(item)无人机的/$储罐为空（没有适用的流体），或作用范围内没有可接受该流体的储罐时，此小部件即完成。"
+   "你可以在该小部件的 GUI 中指定无人机应将物品输出到储罐的哪一侧；你也可以指定导出流体的最大数量（单位：mB）。$(p)你还可以$(ttcolor)$(t:接在右边是白名单，接在左边是黑名单)连接/$一个$(l:programming/liquid_filter)流体过滤器/$，以限制无人机可导出的内容。$(p)当$(item)无人机的/$储罐为空（没有适用的流体），或作用范围内没有可接受该流体的储罐时，此小部件即完成。"
   ],
   [
    [

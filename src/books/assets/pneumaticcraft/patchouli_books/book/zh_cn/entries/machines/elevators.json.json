@@ -25,7 +25,7 @@
     "text"
    ],
    "Both the number of $(item)Elevator Bases/$ and the number of $(item)Elevator Frames/$ determine how high the $(thing)Elevator/$ can extend. The maximum height of an $(thing)Elevator/$ is the lower of:$(li)1 x the number of vertically-stacked $(item)Elevator Frames/$, or$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')6 x/$ the number of vertically-stacked $(item)Elevator Bases/$",
-   "$(thing)升降机/$可延伸的高度由$(item)电梯基座/$的数量和$(item)电梯框架/$的数量共同决定。$(thing)升降机/$的最大高度取以下两者中的较小值：$(li)垂直堆叠的$(item)电梯框架/$数量的 1 倍，或$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')垂直堆叠的$(item)电梯基座/$数量的 6 倍/$"
+   "$(thing)升降机/$可延伸的高度由$(item)电梯基座/$的数量和$(item)电梯框架/$的数量共同决定。$(thing)升降机/$的最大高度取以下两者中的较小值：$(li)垂直堆叠的$(item)电梯框架/$数量的 1 倍，或$(li)$(ttcolor)$(t:可在模组配置里改这个倍率——见 'I:elevatorBaseBlocksPerBase')垂直堆叠的$(item)电梯基座/$数量的 6 倍/$"
   ],
   [
    [

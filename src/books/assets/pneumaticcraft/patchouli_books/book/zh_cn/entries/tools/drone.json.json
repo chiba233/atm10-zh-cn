@@ -25,7 +25,7 @@
     "text"
    ],
    "Drones are smart: when they're low on air, they'll stop their main program and search for a $(l:machines/charging_station)Charging Station/$ that has a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ and at least 1 bar of pressure, closer than $(ttcolor)$(t:See 'max_drone_charging_station_search_range' in mod config)80 blocks/$ away.$(p)When found, the $(item)Drone/$ will go to this $(item)Charging Station/$ and will sit charging until the station can't supply any more air. After that, the $(item)Drone/$ will resume its main program.",
-   "无人机很聪明：当它们气压不足时，会停止主程序，并搜索一个带有$(l:base_concepts/upgrades#dispenser)发射器升级/$、至少有 1 格气压，且距离不超过$(ttcolor)$(t:See 'max_drone_charging_station_search_range' in mod config)80 格/$的$(l:machines/charging_station)充气站/$。$(p)找到后，$(item)无人机/$会前往该$(item)充气站/$，并停在那里充气，直到充气站无法再提供更多空气。之后，$(item)无人机/$会继续执行它的主程序。"
+   "无人机很聪明：当它们气压不足时，会停止主程序，并搜索一个带有$(l:base_concepts/upgrades#dispenser)发射器升级/$、至少有 1 格气压，且距离不超过$(ttcolor)$(t:见模组配置里的 'max_drone_charging_station_search_range')80 格/$的$(l:machines/charging_station)充气站/$。$(p)找到后，$(item)无人机/$会前往该$(item)充气站/$，并停在那里充气，直到充气站无法再提供更多空气。之后，$(item)无人机/$会继续执行它的主程序。"
   ],
   [
    [

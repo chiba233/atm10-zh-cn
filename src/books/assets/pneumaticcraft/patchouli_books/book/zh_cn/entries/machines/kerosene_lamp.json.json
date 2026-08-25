@@ -25,7 +25,7 @@
     "text"
    ],
    "The $(item)Kerosene Lamp/$ has a default range of 10 blocks. However, this can be adjusted in the GUI up to a maximum of 30 blocks. Note that the higher the range, the more fuel the lamp will use, in a squared fashion. So when you double the range, the fuel usage is multiplied by 4!$(p)However, the lamp only uses a small amount of fuel. With 1000mB of Kerosene and the default range of 10 blocks, the Lamp can run for about $(ttcolor)$(t:The Lamp's efficiency can be altered in mod config: see 'D:keroseneLampFuelEfficiency')40 real minutes/$.",
-   "$(item)煤油灯/$的默认照明范围为 10 格方块。不过，你可以在 GUI 中进行调整，最大可提升到 30 格方块。注意，范围越大，煤油灯消耗的燃料就越多，而且是按平方增长的。所以当你将范围加倍时，燃料消耗会变成 4 倍！$(p)不过，煤油灯本身消耗的燃料其实很少。使用 1000mB 的煤油，在默认 10 格方块范围下，煤油灯大约可以持续运行$(ttcolor)$(t:The Lamp's efficiency can be altered in mod config: see 'D:keroseneLampFuelEfficiency')40 分钟现实时间/$。"
+   "$(item)煤油灯/$的默认照明范围为 10 格方块。不过，你可以在 GUI 中进行调整，最大可提升到 30 格方块。注意，范围越大，煤油灯消耗的燃料就越多，而且是按平方增长的。所以当你将范围加倍时，燃料消耗会变成 4 倍！$(p)不过，煤油灯本身消耗的燃料其实很少。使用 1000mB 的煤油，在默认 10 格方块范围下，煤油灯大约可以持续运行$(ttcolor)$(t:煤油灯的效率可在模组配置里调整：见 'D:keroseneLampFuelEfficiency')40 分钟现实时间/$。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "The Drone Interface is a $(thing)ComputerCraft/OpenComputers peripheral/$ that's used to communicate with $(l:tools/drone)Drones/$. To do so, program a $(item)Drone/$ with a $(l:programming/computer_control)Computer Control puzzle piece/$.$(p)When the Drone executes the Computer Control piece, it'll try to connect to an $(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)available/$ $(item)Drone Interface/$ located within the puzzle piece's area.",
-   "无人机接口是一种$(thing)ComputerCraft/OpenComputers 外设/$，用于与$(l:tools/drone)无人机/$通信。为此，需要给$(item)无人机/$编入一个$(l:programming/computer_control)计算机控制拼图块/$。$(p)当无人机执行这个计算机控制拼图块时，它会尝试连接到位于该拼图块作用范围内、$(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)可用/$的$(item)无人机接口/$。"
+   "无人机接口是一种$(thing)ComputerCraft/OpenComputers 外设/$，用于与$(l:tools/drone)无人机/$通信。为此，需要给$(item)无人机/$编入一个$(l:programming/computer_control)计算机控制拼图块/$。$(p)当无人机执行这个计算机控制拼图块时，它会尝试连接到位于该拼图块作用范围内、$(ttcolor)$(t:一个无人机接口同一时间只能连接一架无人机)可用/$的$(item)无人机接口/$。"
   ],
   [
    [

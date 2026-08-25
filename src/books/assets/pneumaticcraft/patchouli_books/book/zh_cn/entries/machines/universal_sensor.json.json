@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Universal Sensor/$ is, like the name suggests, a sensor that can be used in many applications; it measures in-world conditions and outputs a $(#f00)redstone signal/$ based on those conditions.$(p)Being universal isn't free: the sensor requires $(l:base_concepts/pressure)air/$ to run (1 mL/tick) in $(ttcolor)$(t:The Constant Redstone Emitter is free to use)almost all/$ cases, and Sensors need certain $(l:base_concepts/upgrades)Upgrades/$ to run.",
-   "$(thing)万能传感器/$顾名思义，是一种可用于多种场景的传感器；它会测量世界中的各种状态，并根据这些状态输出$(#f00)红石信号/$。$(p)通用性并非没有代价：在$(ttcolor)$(t:The Constant Redstone Emitter is free to use)几乎所有/$情况下，该传感器运行都需要消耗$(l:base_concepts/pressure)空气/$（1 mL/tick），而且传感器还需要安装特定的$(l:base_concepts/upgrades)升级卡/$才能工作。"
+   "$(thing)万能传感器/$顾名思义，是一种可用于多种场景的传感器；它会测量世界中的各种状态，并根据这些状态输出$(#f00)红石信号/$。$(p)通用性并非没有代价：在$(ttcolor)$(t:恒定红石发射器不耗费任何资源)几乎所有/$情况下，该传感器运行都需要消耗$(l:base_concepts/pressure)空气/$（1 mL/tick），而且传感器还需要安装特定的$(l:base_concepts/upgrades)升级卡/$才能工作。"
   ],
   [
    [

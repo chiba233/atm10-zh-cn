@@ -25,7 +25,7 @@
     "text"
    ],
    "To increase the chance of this happening, you can connect your compressors to a $(ttcolor)$(t:Grid blocks can be customized via the 'pneumaticraft:electrostatic_grid' block tag)grid/$ of $(item)Iron Bars/$ or $(item)Lightning Rods/$ to this machine, which act as a conductor for the lightning bolt.$(p)Larger grids are better: grid blocks can be up 5 space away horizontally (circular radius), and up to 5 blocks above or below, but they must all be connected to the $(item)Electrostatic Compressor/$ via each other.",
-   "为了提高这种情况发生的几率，你可以将压缩机连接到这个机器上的一片由$(item)铁栏杆/$或$(item)避雷针/$组成的$(ttcolor)$(t:Grid blocks can be customized via the 'pneumaticraft:electrostatic_grid' block tag)网格/$，它们会充当闪电的导体。$(p)网格越大越好：网格方块在水平方向上最远可离开 5 格（圆形半径），上下方向最远也可离开 5 格，但它们都必须通过彼此连接，最终连到$(item)静电压缩机/$。"
+   "为了提高这种情况发生的几率，你可以将压缩机连接到这个机器上的一片由$(item)铁栏杆/$或$(item)避雷针/$组成的$(ttcolor)$(t:可通过 'pneumaticraft:electrostatic_grid' 方块标签自定义作为网格的方块)网格/$，它们会充当闪电的导体。$(p)网格越大越好：网格方块在水平方向上最远可离开 5 格（圆形半径），上下方向最远也可离开 5 格，但它们都必须通过彼此连接，最终连到$(item)静电压缩机/$。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "This dissipation only happens when the danger pressure of the compressor has been reached, not sooner. Each $(item)Iron Bar/$ $(italic)directly/$ below the compressor (on the same Y axis) will dissipate up to 10,000mL of excess air. $(p)Thus, with 10 compressors on a shared $(thing)grid/$, $(ttcolor)$(t:200000 / 10 = 20000 air produced per compressor; 10000 x 2 = 20000 air dissipated)only 2 grid blocks/$ are needed below each compressor. (You could also add $(l:base_concepts/upgrades#security)Security Upgrades/$ to the compressor, but that's more expensive and less effective)",
-   "这种泄压只会在压缩机达到危险压力时发生，不会更早。每个位于压缩机正下方（同一 Y 轴）的$(item)铁栏杆/$都能$(italic)直接/$耗散最多 10,000mL 的多余空气。$(p)因此，如果 10 台压缩机共用同一片$(thing)网格/$，那么每台压缩机下方只需要$(ttcolor)$(t:200000 / 10 = 20000 air produced per compressor; 10000 x 2 = 20000 air dissipated)2 个网格方块/$。 （你当然也可以给压缩机加装$(l:base_concepts/upgrades#security)安全升级/$，但那样更贵而且效果更差）"
+   "这种泄压只会在压缩机达到危险压力时发生，不会更早。每个位于压缩机正下方（同一 Y 轴）的$(item)铁栏杆/$都能$(italic)直接/$耗散最多 10,000mL 的多余空气。$(p)因此，如果 10 台压缩机共用同一片$(thing)网格/$，那么每台压缩机下方只需要$(ttcolor)$(t:200000 / 10 = 每台压缩机产出 20000 空气；10000 x 2 = 耗散 20000 空气)2 个网格方块/$。 （你当然也可以给压缩机加装$(l:base_concepts/upgrades#security)安全升级/$，但那样更贵而且效果更差）"
   ],
   [
    [

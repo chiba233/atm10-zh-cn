@@ -25,7 +25,7 @@
     "text"
    ],
    "The tablet GUI is smart enough to figure out what you can buy by looking at the bound inventory and/or tank. When you order $(ttcolor)$(t:Resources can be either items or fluids)resources/$, a $(thing)Drone/$ will spawn to collect the resources you're paying with. Once collection is complete, a second $(thing)Drone/$ will arrive to deliver the purchased items.$(p)This is a way to get items you can't get otherwise, like the $(l:components/pcb_blueprint)PCB Blueprint/$ and $(l:manufacturing/assembly_programs)Assembly Programs/$. It also adds some random $(thing)Villager Trades/$; these trades are re-shuffled daily.",
-   "平板界面会通过查看已绑定的容器和/或储罐，智能判断你能够购买什么。当你订购$(ttcolor)$(t:Resources can be either items or fluids)资源/$时，会生成一架$(thing)无人机/$来收集你用于支付的资源。收集完成后，第二架$(thing)无人机/$会到来并送达你购买的物品。$(p)这是一种获取原本无法获得物品的方法，例如$(l:components/pcb_blueprint)印刷电路板蓝图/$和$(l:manufacturing/assembly_programs)装配程序/$。它还会添加一些随机的$(thing)村民交易/$；这些交易每天都会重新刷新。"
+   "平板界面会通过查看已绑定的容器和/或储罐，智能判断你能够购买什么。当你订购$(ttcolor)$(t:资源可以是物品，也可以是流体)资源/$时，会生成一架$(thing)无人机/$来收集你用于支付的资源。收集完成后，第二架$(thing)无人机/$会到来并送达你购买的物品。$(p)这是一种获取原本无法获得物品的方法，例如$(l:components/pcb_blueprint)印刷电路板蓝图/$和$(l:manufacturing/assembly_programs)装配程序/$。它还会添加一些随机的$(thing)村民交易/$；这些交易每天都会重新刷新。"
   ],
   [
    [

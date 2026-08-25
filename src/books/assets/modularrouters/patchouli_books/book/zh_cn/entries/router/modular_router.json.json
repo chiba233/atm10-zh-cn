@@ -106,7 +106,7 @@
     "text"
    ],
    "In the spirit of being environmentally-friendly, the router has an option to automatically slow down if it's been idle for a while.$(p)When Eco Mode is enabled, if the router has done no work in the last $(ttcolor)$(t:Adjustable in mod config - 'ecoTimeout')5 seconds/$ then it will slow down and only tick once every $(ttcolor)$(t:Adjustable in mod config - 'lowPowerTickRate')5 seconds/$ (regardless of $(l:upgrades/speed)Speed Upgrades/$). However, as soon as it does any work, it will return to normal tick speed.",
-   "本着环保精神，如果路由器闲置一段时间，它可以自动降速。$(p)启用生态模式后，如果路由器在最近$(ttcolor)$(t:Adjustable in mod config - 'ecoTimeout')5 秒/$内没有执行任何工作，它就会降速为每$(ttcolor)$(t:Adjustable in mod config - 'lowPowerTickRate')5 秒/$只进行一次 tick（无论是否安装了$(l:upgrades/speed)速度升级/$）。不过，一旦它开始工作，就会立刻恢复正常 tick 速度。"
+   "本着环保精神，如果路由器闲置一段时间，它可以自动降速。$(p)启用生态模式后，如果路由器在最近$(ttcolor)$(t:可在模组配置里调整——'ecoTimeout')5 秒/$内没有执行任何工作，它就会降速为每$(ttcolor)$(t:可在模组配置里调整——'lowPowerTickRate')5 秒/$只进行一次 tick（无论是否安装了$(l:upgrades/speed)速度升级/$）。不过，一旦它开始工作，就会立刻恢复正常 tick 速度。"
   ],
   [
    [

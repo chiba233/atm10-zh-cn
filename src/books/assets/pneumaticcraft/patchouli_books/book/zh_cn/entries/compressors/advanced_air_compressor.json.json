@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Advanced Air Compressor/$ is the $(l:base_concepts/pressure_tiers)tier 2/$ version of the $(l:compressors/air_compressor)Air Compressor/$, with a maximum safe pressure of 20 bar. It generates a $(ttcolor)$(t:This can be increased by installing Speed Upgrades)base/$ 50mL air/tick, and can be upgraded with $(l:base_concepts/upgrades#speed)Speed Upgrades/$.$(p)However, this generator must be $(l:base_concepts/heat)cooled/$, as its efficiency will drop as the temperature rises, up to the point where no air is generated at all.",
-   "$(item)高级空气压缩机/$是$(l:compressors/air_compressor)空气压缩机/$的$(l:base_concepts/pressure_tiers)阶段2/$版本，其最大安全气压为 20 bar。它每刻可产生$(ttcolor)$(t:This can be increased by installing Speed Upgrades)基础/$ 50mL 的空气，并且可以安装$(l:base_concepts/upgrades#speed)速度升级/$。$(p)不过，这台机器必须进行$(l:base_concepts/heat)冷却/$，因为随着温度升高，它的效率会下降，严重时甚至将完全无法产生空气。"
+   "$(item)高级空气压缩机/$是$(l:compressors/air_compressor)空气压缩机/$的$(l:base_concepts/pressure_tiers)阶段2/$版本，其最大安全气压为 20 bar。它每刻可产生$(ttcolor)$(t:安装速度升级可以提高这个数值)基础/$ 50mL 的空气，并且可以安装$(l:base_concepts/upgrades#speed)速度升级/$。$(p)不过，这台机器必须进行$(l:base_concepts/heat)冷却/$，因为随着温度升高，它的效率会下降，严重时甚至将完全无法产生空气。"
   ],
   [
    [

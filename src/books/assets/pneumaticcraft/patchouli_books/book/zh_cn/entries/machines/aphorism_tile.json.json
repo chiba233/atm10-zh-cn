@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Aphorism Tiles/$ are like $(item)Signs/$, but they can display arbitrary amounts of text. Any text is automatically scaled so that the full text fits on the tile.$(p)When you place down an Aphorism Tile it $(ttcolor)$(t:This can be disabled in client config - see 'B:dramaSplash')defaults/$ to a random splash text from the $(l:http://mc-drama.herokuapp.com/)Drama Generator/$.",
-   "$(thing)格言瓷砖/$类似于$(item)告示牌/$，但它们可以显示任意长度的文本。所有文本都会自动缩放，以便完整内容能适配瓷砖。$(p)当你放置一块格言瓷砖时，它$(ttcolor)$(t:This can be disabled in client config - see 'B:dramaSplash')默认/$会显示来自$(l:http://mc-drama.herokuapp.com/)戏剧生成器/$的一条随机标语。"
+   "$(thing)格言瓷砖/$类似于$(item)告示牌/$，但它们可以显示任意长度的文本。所有文本都会自动缩放，以便完整内容能适配瓷砖。$(p)当你放置一块格言瓷砖时，它$(ttcolor)$(t:可在客户端配置里关闭——见 'B:dramaSplash')默认/$会显示来自$(l:http://mc-drama.herokuapp.com/)戏剧生成器/$的一条随机标语。"
   ],
   [
    [

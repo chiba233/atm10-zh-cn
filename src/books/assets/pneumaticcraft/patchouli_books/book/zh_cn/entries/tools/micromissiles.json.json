@@ -43,7 +43,7 @@
     "text"
    ],
    "If a $(item)Micromissile/$ hits any entity or block, it will immediately explode. The explosion will not damage terrain $(ttcolor)$(t:See 'B:damageTerrain' in mod config)by default/$.$(p)$(item)Micromissiles/$ have a limited lifetime, which is 300 ticks (15 seconds) $(ttcolor)$(t:See 'I:missileLifetime' in mod config)by default/$. After that the missile will run out of fuel and drop from the sky, but it will still explode when it hits the ground.",
-   "如果$(item)微型导弹/$击中任何实体或方块，它就会立即爆炸。默认情况下，爆炸$(ttcolor)$(t:See 'B:damageTerrain' in mod config)不会破坏地形/$。$(p)$(item)微型导弹/$的存在时间有限，默认是 300 刻（15 秒）$(ttcolor)$(t:See 'I:missileLifetime' in mod config)/$。在那之后，导弹会耗尽燃料并从空中坠落，但在撞击地面时仍然会爆炸。"
+   "如果$(item)微型导弹/$击中任何实体或方块，它就会立即爆炸。默认情况下，爆炸$(ttcolor)$(t:见模组配置里的 'B:damageTerrain')不会破坏地形/$。$(p)$(item)微型导弹/$的存在时间有限，默认是 300 刻（15 秒）$(ttcolor)$(t:见模组配置里的 'I:missileLifetime')/$。在那之后，导弹会耗尽燃料并从空中坠落，但在撞击地面时仍然会爆炸。"
   ],
   [
    [

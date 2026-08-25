@@ -25,7 +25,7 @@
     "text"
    ],
    "$(thing)Right-click/$ the widget to open the setup GUI, where you can specify from which side(s) the Drone should extract the fluids from, and the maximum amount of imported fluid per operation (in mB).$(p)You can $(ttcolor)$(t:Connect on the right to whitelist, on the left to blacklist)connect/$ a $(l:programming/liquid_filter)Fluid Filter/$ to limit what may be imported by the Drone.$(p)This widget is done when the $(item)Drone's/$ tank is full or when no more (applicable) liquids can be found in the tanks.",
-   "$(thing)右击/$该组件以打开设置GUI，你可以在其中指定无人机应从哪些侧面抽取流体，以及每次操作导入的最大流体量（单位：mB）。$(p)你还可以$(ttcolor)$(t:Connect on the right to whitelist, on the left to blacklist)连接/$一个$(l:programming/liquid_filter)流体过滤器/$，以限制无人机可导入的内容。$(p)当$(item)无人机的/$储罐已满，或在储罐中找不到更多（适用的）液体时，该组件即完成工作。"
+   "$(thing)右击/$该组件以打开设置GUI，你可以在其中指定无人机应从哪些侧面抽取流体，以及每次操作导入的最大流体量（单位：mB）。$(p)你还可以$(ttcolor)$(t:接在右边是白名单，接在左边是黑名单)连接/$一个$(l:programming/liquid_filter)流体过滤器/$，以限制无人机可导入的内容。$(p)当$(item)无人机的/$储罐已满，或在储罐中找不到更多（适用的）液体时，该组件即完成工作。"
   ],
   [
    [

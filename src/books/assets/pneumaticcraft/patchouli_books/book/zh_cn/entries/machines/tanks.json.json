@@ -25,7 +25,7 @@
     "text"
    ],
    "All four types of tank can be $(thing)stacked/$ vertically with each other, and formed into a sort-of-multiblock. To do this, right-click the tank with a $(l:tools/pneumatic_wrench)Wrench/$; wrenching the top half will attempt to join the tank to the tank above, and vice versa for the tank below.$(p)Once tanks are stacked, any fluid in $(ttcolor)$(t:If the fluid has a density of < 0, it will move up rather than down)higher tanks/$ will automatically flow down to lower tanks, assuming there is space.",
-   "四种储罐都可以彼此垂直$(thing)堆叠/$，组成一种类似多方块结构的装置。要实现这一点，请手持$(l:tools/pneumatic_wrench)扳手/$右键储罐；对上半部分使用扳手会尝试将该储罐与上方的储罐连接，反之，对下半部分使用扳手则会尝试与下方的储罐连接。$(p)储罐堆叠后，$(ttcolor)$(t:If the fluid has a density of < 0, it will move up rather than down)上方储罐/$中的任何流体都会在下方有空间时自动向下流动。"
+   "四种储罐都可以彼此垂直$(thing)堆叠/$，组成一种类似多方块结构的装置。要实现这一点，请手持$(l:tools/pneumatic_wrench)扳手/$右键储罐；对上半部分使用扳手会尝试将该储罐与上方的储罐连接，反之，对下半部分使用扳手则会尝试与下方的储罐连接。$(p)储罐堆叠后，$(ttcolor)$(t:密度小于 0 的流体会向上流而不是向下)上方储罐/$中的任何流体都会在下方有空间时自动向下流动。"
   ],
   [
    [

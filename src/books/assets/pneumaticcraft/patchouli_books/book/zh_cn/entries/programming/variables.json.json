@@ -97,7 +97,7 @@
     "text"
    ],
    "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)There are two types of global variable/$: $(thing)player-global/$ and $(thing)server-global/$.$(li)Player-global variables are prefixed with '#'. These are shared among a player's drones, but private to each player.$(li)Server-global variables are prefixed with '%'. These variables are shared among $(italic)all/$ players on the server.$(p)Note: in earlier versions of the mod only server-global existed, with a prefix of '#'.",
-   "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)全局变量分为两种/$：$(thing)玩家全局/$和$(thing)服务器全局/$。$(li)玩家全局变量以前缀“#”表示。这类变量在同一玩家的无人机之间共享，但对每位玩家而言是私有的。$(li)服务器全局变量以前缀“%”表示。这类变量会在服务器上$(italic)所有/$玩家之间共享。$(p)注意：在本模组的较早版本中，只有服务器全局变量存在，其前缀为“#”。"
+   "$(ttcolor)$(t:玩家全局变量自 PNC:R 3.0.0（MC 1.18.1）起加入)全局变量分为两种/$：$(thing)玩家全局/$和$(thing)服务器全局/$。$(li)玩家全局变量以前缀“#”表示。这类变量在同一玩家的无人机之间共享，但对每位玩家而言是私有的。$(li)服务器全局变量以前缀“%”表示。这类变量会在服务器上$(italic)所有/$玩家之间共享。$(p)注意：在本模组的较早版本中，只有服务器全局变量存在，其前缀为“#”。"
   ],
   [
    [

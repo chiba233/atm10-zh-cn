@@ -34,7 +34,7 @@
     "text"
    ],
    "Open the $(l:programming/programmer)Programmer/$ GUI. On the right, you'll see a $(thing)tray/$ of $(ttcolor)$(t:The virtual representations of Puzzle Pieces in the GUI are referred to as Programming Widgets)Programming Widgets/$. There are multiple pages of these; you can either cycle through with the arrow buttons below the tray, or expand the tray by pressing $(thing)Space/$ or $(thing)Tab/$.$(p)When expanded, a textfield appears above the tray where you can enter a $(thing)filter/$ to search for widgets. Type 'start' there now: you'll see only one widget not $(7)grayed/$ out.",
-   "打开$(l:programming/programmer)程序编写器/$的界面。右侧会显示一个$(thing)托盘/$，其中有$(ttcolor)$(t:The virtual representations of Puzzle Pieces in the GUI are referred to as Programming Widgets)编程元件/$。这些元件有多个页面；你可以使用托盘下方的箭头按钮来切换，也可以按下$(thing)Space/$或$(thing)Tab/$来展开托盘。$(p)展开后，托盘上方会出现一个文本框，你可以在其中输入$(thing)过滤器/$来搜索元件。现在在里面输入“start”：你会看到只有一个元件没有被$(7)灰显/$。"
+   "打开$(l:programming/programmer)程序编写器/$的界面。右侧会显示一个$(thing)托盘/$，其中有$(ttcolor)$(t:拼图块在界面里的虚拟形态称作编程组件)编程元件/$。这些元件有多个页面；你可以使用托盘下方的箭头按钮来切换，也可以按下$(thing)Space/$或$(thing)Tab/$来展开托盘。$(p)展开后，托盘上方会出现一个文本框，你可以在其中输入$(thing)过滤器/$来搜索元件。现在在里面输入“start”：你会看到只有一个元件没有被$(7)灰显/$。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "If you place it close enough, it will 'snap' to the bottom of the $(thing)Start/$ widget. Notice how the connectors fit, like a jigsaw puzzle; hence the name $(thing)Puzzle Piece/$.$(p)Next, drag an $(l:programming/area)Area/$ widget and connect it to the right ($(ttcolor)$(t:Widgets on the right of other widgets act as a whitelist; widgets on the left act as a blacklist)not left/$) of the $(thing)Import/$ widget, and an $(l:programming/item_filter)Item Filter/$ widget, also to the right of the $(thing)Import/$ widget. Again, make sure they 'snap' together.",
-   "如果你把它放得足够近，它就会“吸附”到$(thing)开始/$组件的底部。注意连接器是如何像拼图一样严丝合缝地接在一起的；因此它得名为$(thing)拼图块/$。$(p)接下来，拖出一个$(l:programming/area)区域/$组件，并将它连接到$(thing)导入/$组件的右侧（$(ttcolor)$(t:Widgets on the right of other widgets act as a whitelist; widgets on the left act as a blacklist)不是左侧/$）；再拖出一个$(l:programming/item_filter)物品过滤器/$组件，同样连接到$(thing)导入/$组件的右侧。再次提醒，确保它们会“吸附”在一起。"
+   "如果你把它放得足够近，它就会“吸附”到$(thing)开始/$组件的底部。注意连接器是如何像拼图一样严丝合缝地接在一起的；因此它得名为$(thing)拼图块/$。$(p)接下来，拖出一个$(l:programming/area)区域/$组件，并将它连接到$(thing)导入/$组件的右侧（$(ttcolor)$(t:接在其他组件右边的组件是白名单，接在左边的是黑名单)不是左侧/$）；再拖出一个$(l:programming/item_filter)物品过滤器/$组件，同样连接到$(thing)导入/$组件的右侧。再次提醒，确保它们会“吸附”在一起。"
   ],
   [
    [

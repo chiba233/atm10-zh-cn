@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Air Compressor/$ is a simple generator which can produce $(l:base_concepts/pressure)compressed air/$. It will burn any solid fuel that a vanilla $(item)Furnace/$ will accept, to produce a $(ttcolor)$(t:This can be increased by installing Speed Upgrades)base/$ 10mL air/tick.$(p)It will $(italic)not/$ accept $(item)Lava Buckets/$ or indeed any bucket containing liquid fuels; use a $(l:compressors/liquid_compressor)Liquid Compressor/$ for that.",
-   "$(item)空气压缩机/$是一种能够产生$(l:base_concepts/pressure)压缩空气/$的简单装置。它可以燃烧任何原版$(item)熔炉/$能够接受的固体燃料，以产生$(ttcolor)$(t:This can be increased by installing Speed Upgrades)基础/$ 10mL/刻的空气。$(p)它$(italic)不/$接受$(item)熔岩桶/$，以及任何装有液体燃料的桶；这种情况请使用$(l:compressors/liquid_compressor)液体压缩机/$。"
+   "$(item)空气压缩机/$是一种能够产生$(l:base_concepts/pressure)压缩空气/$的简单装置。它可以燃烧任何原版$(item)熔炉/$能够接受的固体燃料，以产生$(ttcolor)$(t:安装速度升级可以提高这个数值)基础/$ 10mL/刻的空气。$(p)它$(italic)不/$接受$(item)熔岩桶/$，以及任何装有液体燃料的桶；这种情况请使用$(l:compressors/liquid_compressor)液体压缩机/$。"
   ],
   [
    [
