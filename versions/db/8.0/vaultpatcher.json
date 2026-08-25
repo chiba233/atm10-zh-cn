@@ -7604,6 +7604,34 @@
    }
   ]
  },
+ "generatorgalore.json": {
+  "blocks": [
+   {
+    "classes": {
+     "cy.jdkdigital.generatorgalore.integrations.FluidFuelRecipeCategory": {
+      "actual": "cy.jdkdigital.generatorgalore.integrations.FluidFuelRecipeCategory",
+      "how": "declared",
+      "jar": "generatorgalore-1.21.1-1.6.3.jar"
+     },
+     "cy.jdkdigital.generatorgalore.integrations.SolidFuelRecipeCategory": {
+      "actual": "cy.jdkdigital.generatorgalore.integrations.SolidFuelRecipeCategory",
+      "how": "declared",
+      "jar": "generatorgalore-1.21.1-1.6.3.jar"
+     }
+    },
+    "i": 1,
+    "jars": [
+     "generatorgalore-1.21.1-1.6.3.jar"
+    ],
+    "keys": {
+     "Burn rate: ": "substring",
+     "Burntime: ": "substring",
+     "Rate: ": "substring",
+     "Total: ": "substring"
+    }
+   }
+  ]
+ },
  "glassential_dynamic.json": {
   "blocks": [
    {
