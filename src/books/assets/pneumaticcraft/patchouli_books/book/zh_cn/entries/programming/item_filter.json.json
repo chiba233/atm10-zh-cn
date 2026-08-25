@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Item Filter/$ is a widget solely used as a $(thing)parameter/$ for other widgets. You can use it to specify which blocks & items may be picked up / placed / mined / etc.$(p)Start by $(thing)right-clicking/$ the widget. Then you can either search for an item in the game by clicking $(thing)Search Item.../$ or you can select an item from your inventory by clicking $(thing)Search Inventory.../$",
-   "$(thing)物品过滤器/$是一种仅作为其他组件的$(thing)参数/$使用的小部件。你可以用它来指定哪些方块和物品可以被拾取、放置、挖掘等。$(p)先$(thing)右击/$这个小部件。然后，你可以点击 $(thing)查找物品……/$ 在游戏中搜索物品，或者点击 $(thing)搜索物品栏……/$ 从你的物品栏中选择一个物品"
+   "$(thing)物品过滤器/$是一种仅作为其他组件的$(thing)参数/$使用的小部件。你可以用它来指定哪些方块和物品可以被拾取、放置、挖掘等。$(p)先$(thing)右击/$这个小部件。然后，你可以点击$(thing)查找物品……/$在游戏中搜索物品，或者点击$(thing)搜索物品栏……/$从你的物品栏中选择一个物品"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Then you can apply some extra filter options to control how the match is done; how these options work is displayed in the tooltips of the checkboxes in the GUI.$(p)As usual, placing this widget to the $(italic)right/$ of its parent acts as a whitelist, and placing it to the $(italic)left/$ acts as a blacklist.",
-   "然后，你还可以应用一些额外的筛选选项，以控制匹配的执行方式；这些选项的工作方式会显示在 GUI 中各个复选框的工具提示里。$(p)和往常一样，将这个组件放在其父组件的 $(italic)右侧/$ 时，它会作为白名单；而放在 $(italic)左侧/$ 时，则会作为黑名单。"
+   "然后，你还可以应用一些额外的筛选选项，以控制匹配的执行方式；这些选项的工作方式会显示在 GUI 中各个复选框的工具提示里。$(p)和往常一样，将这个组件放在其父组件的$(italic)右侧/$时，它会作为白名单；而放在$(italic)左侧/$时，则会作为黑名单。"
   ],
   [
    [

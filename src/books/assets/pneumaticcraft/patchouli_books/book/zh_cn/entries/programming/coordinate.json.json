@@ -25,7 +25,7 @@
     "text"
    ],
    "$(bold)Constant/$$(br)A constant coordinate is, well... constant. You can select one by selecting a $(l:tools/gps_tool)GPS Tool/$, or just type X/Y/Z values into the textfields directly.$(p)$(bold)Variable/$$(br)By selecting Variable you can return the value stored in the $(l:programming/variables)variable/$ as the coordinate. Keep in mind that with this you can only supply a coordinate, not modify the variable!",
-   "$(bold)固定/$$(br)固定坐标，顾名思义……就是固定不变的。你可以通过选择一个 $(l:tools/gps_tool)定位工具/$ 来选定坐标，或者直接在文本框中输入 X/Y/Z 的值。$(p)$(bold)变量/$$(br)选择“变量”后，你可以将存储在 $(l:programming/variables)变量/$ 中的值作为坐标返回。请记住，这样你只能提供一个坐标，不能修改该变量！"
+   "$(bold)固定/$$(br)固定坐标，顾名思义……就是固定不变的。你可以通过选择一个$(l:tools/gps_tool)定位工具/$来选定坐标，或者直接在文本框中输入 X/Y/Z 的值。$(p)$(bold)变量/$$(br)选择“变量”后，你可以将存储在$(l:programming/variables)变量/$中的值作为坐标返回。请记住，这样你只能提供一个坐标，不能修改该变量！"
   ],
   [
    [

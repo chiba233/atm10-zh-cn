@@ -16,7 +16,7 @@
     "text"
    ],
    "If you want to protect an area from hostile players, you can use the $(thing)Security Station/$.$(p)This device prevents all player interaction by untrusted players on any blocks within its range. This means that no inventories or GUIs can be opened, and no blocks can be placed or broken.",
-   "如果你想保护一片区域不受敌对玩家侵扰，可以使用 $(thing)安全站/$。$(p)该设备会阻止所有不受信任的玩家与其作用范围内的任何方块进行交互。这意味着他们无法打开任何容器或 GUI，也无法放置或破坏方块。"
+   "如果你想保护一片区域不受敌对玩家侵扰，可以使用$(thing)安全站/$。$(p)该设备会阻止所有不受信任的玩家与其作用范围内的任何方块进行交互。这意味着他们无法打开任何容器或 GUI，也无法放置或破坏方块。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "This sounds great, but to set up a $(thing)Security Station/$ you need to do some things to ensure its security. Because the thing is, $(thing)Security Stations/$ can be $(l:machines/security_station#hacking)hacked/$. The hacking system of the Security Station is heavily inspired by $(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)Deus Ex: Revolution's hacking system/$.",
-   "这听起来很棒，但要搭建一台 $(thing)安全站/$，你还需要做一些事来确保它的安全。因为问题在于，$(thing)安全站/$是可以被$(l:machines/security_station#hacking)侵入/$的。安全站的入侵系统很大程度上借鉴了 $(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)《Deus Ex: Revolution》的黑客系统/$。"
+   "这听起来很棒，但要搭建一台$(thing)安全站/$，你还需要做一些事来确保它的安全。因为问题在于，$(thing)安全站/$是可以被$(l:machines/security_station#hacking)侵入/$的。安全站的入侵系统很大程度上借鉴了$(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)《Deus Ex: Revolution》的黑客系统/$。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "To set up a $(thing)Security Station/$, you must place $(l:components/network_components)Network Components/$ in the network grid to form a $(thing)network/$. In every network there must be one $(l:components/network_components#diagnostic)Diagnostic Subroutine/$, one $(l:components/network_components#io_port)Network IO Port/$, and one $(l:components/network_components#registry)Network Registry/$.$(p)These three special nodes must all be connected with each other, which is done with $(l:components/network_components#node)Network Nodes/$.",
-   "要设置 $(thing)安全站/$，你必须在网络网格中放置 $(l:components/network_components)网络元件/$ 来构成一个 $(thing)网络/$。每个网络中都必须有一个 $(l:components/network_components#diagnostic)诊断子程序/$、一个 $(l:components/network_components#io_port)网络交互端口/$ 和一个 $(l:components/network_components#registry)网络注册表/$。$(p)这三个特殊节点都必须彼此连接，而这需要通过 $(l:components/network_components#node)网络节点/$ 来实现。"
+   "要设置$(thing)安全站/$，你必须在网络网格中放置$(l:components/network_components)网络元件/$来构成一个$(thing)网络/$。每个网络中都必须有一个$(l:components/network_components#diagnostic)诊断子程序/$、一个$(l:components/network_components#io_port)网络交互端口/$和一个$(l:components/network_components#registry)网络注册表/$。$(p)这三个特殊节点都必须彼此连接，而这需要通过$(l:components/network_components#node)网络节点/$来实现。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "Security Station hacking has been disabled by config on this server. While this means that no player can hack your Security Station once set up, it is still necessary to set it up with the correct components, as described on the previous page. However most of the following pages (other than $(thing)Allowing Friends/$) do not apply here.",
-   "此服务器已通过配置禁用了安全站破解功能。这意味着一旦你的安全站设置完成，就没有玩家能再破解它；但你仍然需要像上一页所述那样，用正确的组件进行设置。不过，接下来的大多数页面内容（除了 $(thing)允许好友/$ 之外）在这里都不适用。"
+   "此服务器已通过配置禁用了安全站破解功能。这意味着一旦你的安全站设置完成，就没有玩家能再破解它；但你仍然需要像上一页所述那样，用正确的组件进行设置。不过，接下来的大多数页面内容（除了$(thing)允许好友/$之外）在这里都不适用。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "The $(l:machines/security_station#hacking)hacker/$ starts at the $(thing)Network IO Port/$, and has the goal of capturing either the $(thing)Diagnostic Subroutine/$ or the $(thing)Network Registry/$.$(p)The $(thing)Diagnostic Subroutine/$ has the goal of tracing back to the hacker's entry point at the $(thing)Network IO Port/$.",
-   "$(l:machines/security_station#hacking)骇客/$从 $(thing)网络交互端口/$ 开始，其目标是夺取 $(thing)诊断子程序/$ 或 $(thing)网络注册表/$。$(p)$(thing)诊断子程序/$ 的目标则是追踪回骇客在 $(thing)网络交互端口/$ 的入口点。"
+   "$(l:machines/security_station#hacking)骇客/$从$(thing)网络交互端口/$开始，其目标是夺取$(thing)诊断子程序/$或$(thing)网络注册表/$。$(p)$(thing)诊断子程序/$的目标则是追踪回骇客在$(thing)网络交互端口/$的入口点。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "Placing $(thing)Network Node/$ components in larger stacks increases the $(italic)node rating/$, meaning it takes longer for both the $(thing)hacker/$ and the $(thing)Diagnostic/$ to capture them. But note that since the $(thing)Diagnostic/$ can trace faster than the $(thing)hacker/$ can, this is more of a disadvantage to the hacker than it is to the Diagnostic.",
-   "将 $(thing)网络节点/$ 组件堆叠得越多，$(italic)节点评级/$ 就越高，这意味着无论是 $(thing)骇客/$ 还是 $(thing)诊断器/$，都需要更长时间才能占领它们。但要注意，由于 $(thing)诊断器/$ 的追踪速度比 $(thing)骇客/$ 更快，所以这对骇客来说比对诊断器更不利。"
+   "将$(thing)网络节点/$组件堆叠得越多，$(italic)节点评级/$就越高，这意味着无论是$(thing)骇客/$还是$(thing)诊断器/$，都需要更长时间才能占领它们。但要注意，由于$(thing)诊断器/$的追踪速度比$(thing)骇客/$更快，所以这对骇客来说比对诊断器更不利。"
   ],
   [
    [
@@ -151,7 +151,7 @@
     "text"
    ],
    "You can add friendly players to your $(thing)Security Station/$ to allow them to interact within the protected area; use the $(bold)Shared Users/$ side tab to enter player names.$(p)You can remove no-longer-trusted players here too; just click the player's name to remove it.",
-   "你可以将友好的玩家添加到你的 $(thing)安全站/$ 中，以允许他们在受保护区域内进行交互；使用 $(bold)分享用户/$ 侧边标签页输入玩家名称。$(p)你也可以在这里移除不再信任的玩家；只需点击玩家名字即可将其移除。"
+   "你可以将友好的玩家添加到你的$(thing)安全站/$中，以允许他们在受保护区域内进行交互；使用$(bold)分享用户/$侧边标签页输入玩家名称。$(p)你也可以在这里移除不再信任的玩家；只需点击玩家名字即可将其移除。"
   ],
   [
    [
@@ -169,7 +169,7 @@
     "text"
    ],
    "When someone hacks your $(thing)Security Station/$, you can see that in the $(bold)Problems/$ and $(bold)Status/$ tabs, where it also shows $(italic)who/$ has hacked your system. These players (and only these players) can now interact with blocks within the area. To restore security, you'll have to $(italic)reboot/$ the $(thing)Security Station/$ via the $(bold)Reboot/$ button in the GUI. The reboot process takes 60 seconds, during which time the area isn't secured at all.",
-   "当有人入侵了你的 $(thing)安全站/$ 时，你可以在 $(bold)问题/$ 和 $(bold)状态/$ 选项卡中看到这一点，其中还会显示 $(italic)是谁/$ 入侵了你的系统。这些玩家（且仅限这些玩家）现在可以与该区域内的方块交互。要恢复安全状态，你必须通过 GUI 中的 $(bold)重启/$ 按钮 $(italic)重启/$ $(thing)安全站/$。重启过程需要 60 秒，在此期间该区域完全不受保护。"
+   "当有人入侵了你的$(thing)安全站/$时，你可以在$(bold)问题/$和$(bold)状态/$选项卡中看到这一点，其中还会显示$(italic)是谁/$入侵了你的系统。这些玩家（且仅限这些玩家）现在可以与该区域内的方块交互。要恢复安全状态，你必须通过 GUI 中的$(bold)重启/$按钮$(italic)重启/$$(thing)安全站/$。重启过程需要 60 秒，在此期间该区域完全不受保护。"
   ],
   [
    [
@@ -187,7 +187,7 @@
     "text"
    ],
    "To hack a $(thing)Security Station/$ that isn't yours, you need a $(l:armor/pneumatic_helmet)Pneumatic Helmet/$ with at least one (and probably many) $(l:base_concepts/upgrades#security)Security Upgrades/$ installed. When you do this, a GUI similar to the one opposite appears. Watch $(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)this video (very old but still relevant)/$ for a guide on how to hack.$(p)To capture a node, $(thing)left-click/$ it. To fortify a captured node, $(thing)right-click/$ it; fortified nodes take slightly longer for the Diagnostic to capture.",
-   "要入侵一个不属于你的 $(thing)安全站/$，你需要一顶安装了至少一个（而且很可能需要很多个）$(l:base_concepts/upgrades#security)安全升级/$的 $(l:armor/pneumatic_helmet)气动头盔/$。这样做时，会出现一个与对页类似的 GUI。关于如何入侵，请观看 $(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)这个视频（虽然很老，但仍然适用）/$。$(p)要占领一个节点，对其执行 $(thing)左击/$。要强化一个已占领的节点，对其执行 $(thing)右击/$；被强化的节点会让诊断器占领时多花一点时间。"
+   "要入侵一个不属于你的$(thing)安全站/$，你需要一顶安装了至少一个（而且很可能需要很多个）$(l:base_concepts/upgrades#security)安全升级/$的$(l:armor/pneumatic_helmet)气动头盔/$。这样做时，会出现一个与对页类似的 GUI。关于如何入侵，请观看$(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)这个视频（虽然很老，但仍然适用）/$。$(p)要占领一个节点，对其执行$(thing)左击/$。要强化一个已占领的节点，对其执行$(thing)右击/$；被强化的节点会让诊断器占领时多花一点时间。"
   ],
   [
    [
@@ -205,7 +205,7 @@
     "text"
    ],
    "$(li)Keep your $(thing)Security Station/$ well-concealed and well-protected.$(li)You can protect an area with multiple $(thing)Security Stations/$; all of them must be hacked.$(li)Consider active defences, such as $(l:tools/drone)Drones/$ with combat programs, or $(l:machines/sentry_turret)Sentry Turrets/$$(li)A hacked $(thing)Security Station/$ can be made to emit a $(#f00)redstone signal/$, which could trigger additional measures (TNT under the station, perhaps?)",
-   "$(li)请务必将你的 $(thing)安全站/$ 隐藏好并严加防护。$(li)你可以用多个 $(thing)安全站/$ 来保护一个区域；必须将它们全部破解。$(li)可以考虑主动防御措施，例如装载战斗程序的 $(l:tools/drone)雄蜂/$，或 $(l:machines/sentry_turret)机枪塔/$$(li)被破解的 $(thing)安全站/$ 可以设置为发出 $(#f00)红石信号/$，从而触发额外的防御措施（比如在安全站下方放置 TNT？）"
+   "$(li)请务必将你的$(thing)安全站/$隐藏好并严加防护。$(li)你可以用多个$(thing)安全站/$来保护一个区域；必须将它们全部破解。$(li)可以考虑主动防御措施，例如装载战斗程序的$(l:tools/drone)雄蜂/$，或$(l:machines/sentry_turret)机枪塔/$$(li)被破解的$(thing)安全站/$可以设置为发出$(#f00)红石信号/$，从而触发额外的防御措施（比如在安全站下方放置 TNT？）"
   ],
   [
    [

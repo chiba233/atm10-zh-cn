@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Sourdough/$ can be crafted with $(l:renewables/yeast_culture)Yeast Culture/$ and $(thing)Wheat Flour/$. It can be cooked into $(item)Sourdough Bread/$, which is superior in nutritional quality (and taste!) to boring old vanilla $(item)Bread/$, or used to make $(item)Salmon Tempura/$.",
-   "$(thing)酸面团/$可以用 $(l:renewables/yeast_culture)酵母菌/$ 和 $(thing)小麦粉/$合成。它可以烹饪成 $(item)酵母面包/$，其营养价值（还有味道！）都比乏味的原版 $(item)面包/$更胜一筹，也可以用来制作 $(item)鲑鱼天妇罗/$。"
+   "$(thing)酸面团/$可以用$(l:renewables/yeast_culture)酵母菌/$和$(thing)小麦粉/$合成。它可以烹饪成$(item)酵母面包/$，其营养价值（还有味道！）都比乏味的原版$(item)面包/$更胜一筹，也可以用来制作$(item)鲑鱼天妇罗/$。"
   ],
   [
    [

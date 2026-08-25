@@ -16,7 +16,7 @@
     "text"
    ],
    "A $(item)Gas Lift/$ is a pump, basically. It uses $(l:base_concepts/pressure)pressure/$ to decrease the density of a fluid to force it upwards.$(p)When pressurized, it extrudes $(l:components/drill_pipe)Drill Pipes/$ (which you must provide) downwards until it hits any fluid block, at which point it will pump it. This makes it perfect for $(l:base_concepts/oil)Oil/$ extraction, as Oil might be deep underground.",
-   "$(item)气举/$ 本质上就是一种泵。它利用 $(l:base_concepts/pressure)压力/$ 降低流体密度，从而将其向上抽送。$(p)加压后，它会向下伸出 $(l:components/drill_pipe)气举钻管/$（需要你自行提供），直到碰到任意流体方块，此时就会开始抽取。这让它非常适合开采 $(l:base_concepts/oil)石油/$，因为石油可能深埋于地下。"
+   "$(item)气举/$本质上就是一种泵。它利用$(l:base_concepts/pressure)压力/$降低流体密度，从而将其向上抽送。$(p)加压后，它会向下伸出$(l:components/drill_pipe)气举钻管/$（需要你自行提供），直到碰到任意流体方块，此时就会开始抽取。这让它非常适合开采$(l:base_concepts/oil)石油/$，因为石油可能深埋于地下。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Any solid block in the way will be broken, without yield. Breaking blocks uses up air; this is a very small amount for soft blocks like dirt or sand, but much more for hard blocks such as obsidian.$(p)The minimum pressure required to pump fluids scales linearly with the depth it is pumping at, i.e. the number of $(item)Drill Pipes/$ currently extruded, up to a maximum of 4.9 bar.",
-   "路径上的任何固体方块都会被直接破坏，且不会掉落物。破坏方块会消耗空气；对于泥土或沙子这类软方块，消耗很少，但对于黑曜石这类硬方块则会高得多。$(p)抽取流体所需的最低压力会随着抽取深度线性增长，也就是随当前伸出的 $(item)气举钻管/$ 数量增长，最高为 4.9 bar。"
+   "路径上的任何固体方块都会被直接破坏，且不会掉落物。破坏方块会消耗空气；对于泥土或沙子这类软方块，消耗很少，但对于黑曜石这类硬方块则会高得多。$(p)抽取流体所需的最低压力会随着抽取深度线性增长，也就是随当前伸出的$(item)气举钻管/$数量增长，最高为 4.9 bar。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "The Gas Lift can be switched to one of 3 modes:$(li)$(#00f)Pump and allow empty tank/$ extrudes Drill Pipes, pumping fluids when it encounters them.$(li)$(#00f)Pump and leave fluid in filter/$ does the same as above, but will always keep 1000mB of fluid in the tank. This is useful when pumping for a certain fluid, to make sure no other fluid will be pumped.",
-   "气举可以切换为以下 3 种模式之一：$(li)$(#00f)抽取并允许储罐为空/$ 会伸出气举钻管，并在遇到流体时进行抽取。$(li)$(#00f)抽取并在过滤器中保留流体/$ 的行为与上面相同，但会始终在储罐中保留 1000mB 的流体。当你想抽取某种特定流体时，这很有用，因为可以确保不会抽到其他流体。"
+   "气举可以切换为以下 3 种模式之一：$(li)$(#00f)抽取并允许储罐为空/$会伸出气举钻管，并在遇到流体时进行抽取。$(li)$(#00f)抽取并在过滤器中保留流体/$的行为与上面相同，但会始终在储罐中保留 1000mB 的流体。当你想抽取某种特定流体时，这很有用，因为可以确保不会抽到其他流体。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "$(li)$(#00f)Retract Drill Pipes/$ will make the $(thing)Gas Lift/$ stop pumping and retract any Drill Pipes it extruded back into its inventory.",
-   "$(li)$(#00f)收回钻管/$会使 $(thing)气举/$停止抽送，并将其挤出的所有气举钻管收回到其容器中。"
+   "$(li)$(#00f)收回钻管/$会使$(thing)气举/$停止抽送，并将其挤出的所有气举钻管收回到其容器中。"
   ],
   [
    [

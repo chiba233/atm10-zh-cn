@@ -16,7 +16,7 @@
     "text"
    ],
    "This widget is purely focused on $(l:programming/flow_control)program flow/$. When the program hits a $(thing)Jump/$ widget, it will look at the connected $(l:programming/text)Text/$ widget, and try to jump to a $(l:programming/label)Label/$ widget with a matching name. If it fails for any reason, execution will return to the $(l:programming/start)Start/$ widget. (This fallback behaviour should never occur normally).",
-   "这个组件完全专注于$(l:programming/flow_control)程序流程/$。当程序运行到 $(thing)跳跃/$组件时，它会查看所连接的 $(l:programming/text)文本/$组件，并尝试跳转到名称匹配的 $(l:programming/label)标签/$组件。如果因任何原因失败，执行将返回到 $(l:programming/start)开始/$组件。（这种回退行为正常情况下永远不应发生。）"
+   "这个组件完全专注于$(l:programming/flow_control)程序流程/$。当程序运行到$(thing)跳跃/$组件时，它会查看所连接的$(l:programming/text)文本/$组件，并尝试跳转到名称匹配的$(l:programming/label)标签/$组件。如果因任何原因失败，执行将返回到$(l:programming/start)开始/$组件。（这种回退行为正常情况下永远不应发生。）"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "A $(thing)Jump/$ widget can be used to merge multiple $(italic)branches/$ in the program flow (by using two or more jumps that all jump to the same $(l:programming/label)Label/$, or simply to organize your program by separating sections into their own 'subroutines'. A useful tip is to check $(bold)Show Flow/$ checkbox at the bottom left of the $(l:programming/programmer)Programmer/$ GUI;  it will show lines linking $(thing)Jump/Condition/Label/$ widgets of the same name.",
-   "$(thing)跳跃/$控件可用于在程序流中合并多个$(italic)分支/$（方法是使用两个或更多跳跃，让它们都跳转到同一个$(l:programming/label)标签/$），也可以单纯用来整理程序，将不同部分拆分成各自的“子程序”。一个实用技巧是勾选$(l:programming/programmer)编程器/$界面左下角的$(bold)显示程序流/$复选框；这样会显示同名的 $(thing)跳跃/条件/标签/$ 控件之间的连线。"
+   "$(thing)跳跃/$控件可用于在程序流中合并多个$(italic)分支/$（方法是使用两个或更多跳跃，让它们都跳转到同一个$(l:programming/label)标签/$），也可以单纯用来整理程序，将不同部分拆分成各自的“子程序”。一个实用技巧是勾选$(l:programming/programmer)编程器/$界面左下角的$(bold)显示程序流/$复选框；这样会显示同名的$(thing)跳跃/条件/标签/$控件之间的连线。"
   ],
   [
    [

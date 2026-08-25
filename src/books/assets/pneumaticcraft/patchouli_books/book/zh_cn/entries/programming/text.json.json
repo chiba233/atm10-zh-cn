@@ -25,7 +25,7 @@
     "text"
    ],
    "You can place the $(thing)Text/$ widget on the $(italic)left/$ of these widgets to create a blacklist filter.",
-   "你可以将 $(thing)文本/$ 控件放在这些控件的$(italic)左侧/$，以创建一个黑名单过滤器。"
+   "你可以将$(thing)文本/$控件放在这些控件的$(italic)左侧/$，以创建一个黑名单过滤器。"
   ],
   [
    [

@@ -25,7 +25,7 @@
     "text"
    ],
    "After the full 10 minutes, you'll have a 100% chance that the $(item)PCB/$ will be successfully etched in $(l:manufacturing/etching_acid)Etching Acid/$. You can however expose the PCB for a shorter time, which will result in a lower chance of the PCB successfully being etched.$(p)Note that exposure progress is faster when the total progress is lower, and slower toward the end.",
-   "整整 10 分钟后，$(item)电路板/$在 $(l:manufacturing/etching_acid)蚀刻酸/$中将有 100% 的几率被成功蚀刻。不过，你也可以让电路板曝光更短的时间，这会导致电路板成功蚀刻的几率更低。$(p)注意，当总进度较低时，曝光进度会更快；而越接近完成时，速度就会越慢。"
+   "整整 10 分钟后，$(item)电路板/$在$(l:manufacturing/etching_acid)蚀刻酸/$中将有 100% 的几率被成功蚀刻。不过，你也可以让电路板曝光更短的时间，这会导致电路板成功蚀刻的几率更低。$(p)注意，当总进度较低时，曝光进度会更快；而越接近完成时，速度就会越慢。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "You can manually adjust the completion threshold via the GUI slider, but it's also possible to set this via a redstone signal; set the redstone mode to $(thing)Interpolate Threshold/$. In this mode, the threshold is fixed to 25% + 5% per signal level (although a signal of 0 disables the machine, so 30%-100% in effect).$(p)This may be handy if you want to set the threshold of many lightboxes at once.",
-   "你可以通过 GUI 滑块手动调整完成阈值，但也可以通过红石信号来设置；将红石模式设为 $(thing)内插阈值/$。在此模式下，阈值固定为 25% + 每级信号 5%（不过 0 级信号会禁用机器，因此实际生效范围是 30% - 100%）。$(p)如果你想一次性设置许多灯箱的阈值，这会很方便。"
+   "你可以通过 GUI 滑块手动调整完成阈值，但也可以通过红石信号来设置；将红石模式设为$(thing)内插阈值/$。在此模式下，阈值固定为 25% + 每级信号 5%（不过 0 级信号会禁用机器，因此实际生效范围是 30% - 100%）。$(p)如果你想一次性设置许多灯箱的阈值，这会很方便。"
   ],
   [
    [

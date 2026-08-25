@@ -25,7 +25,7 @@
     "text"
    ],
    "You can make the $(item)Drone/$ $(l:programming/inventory_import)import/$ a pickaxe/shovel/etc. to make it use that tool. When the $(item)Drone/$ carries around multiple tools, the most suitable tool is automatically used for the block being dug.$(p)You can prevent the Drone from trying to dig without a tool (which is really slow) by checking the $(thing)Requires digging tool/$ checkbox.",
-   "你可以让 $(item)雄蜂/$ $(l:programming/inventory_import)导入/$ 镐子、铲子等工具，以便它使用相应的工具。当 $(item)雄蜂/$ 随身携带多种工具时，它会自动为正在挖掘的方块选择最合适的工具。$(p)你还可以勾选 $(thing)需要挖掘工具/$ 复选框，防止雄蜂在没有工具的情况下尝试挖掘（那样会非常慢）。"
+   "你可以让$(item)雄蜂/$$(l:programming/inventory_import)导入/$镐子、铲子等工具，以便它使用相应的工具。当$(item)雄蜂/$随身携带多种工具时，它会自动为正在挖掘的方块选择最合适的工具。$(p)你还可以勾选$(thing)需要挖掘工具/$复选框，防止雄蜂在没有工具的情况下尝试挖掘（那样会非常慢）。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The amount of dig actions can be limited to a specified number by checking the $(thing)Limit block interactions/$ checkbox in the GUI, and setting a limit. E.g. if set to 1, the $(item)Drone/$ will only dig one block (regardless of how many blocks are in the area), before moving to the next widget in the program. This can be used to only dig a few blocks and then check the durability of a tool, to repair it before it breaks.",
-   "勾选 GUI 中的 $(thing)限制方块交互/$ 复选框并设置一个上限，即可将挖掘动作的次数限制在指定数量内。例如，若设置为 1，$(item)雄蜂/$ 在移动到程序中的下一个组件前，只会挖掘一个方块（无论区域内有多少方块）。这可以用于先挖少量方块，然后检查工具的耐久度，以便在它损坏前进行修理。"
+   "勾选 GUI 中的$(thing)限制方块交互/$复选框并设置一个上限，即可将挖掘动作的次数限制在指定数量内。例如，若设置为 1，$(item)雄蜂/$在移动到程序中的下一个组件前，只会挖掘一个方块（无论区域内有多少方块）。这可以用于先挖少量方块，然后检查工具的耐久度，以便在它损坏前进行修理。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Lastly you can specify which blocks may be mined by using an $(l:programming/item_filter)Item Filter/$.$(p)When used with blocks like crops, filter by the item that you would get when you break the crop (so $(item)Seeds/$ for a $(item)Wheat/$ crop). The exception would be blocks that $(italic)never/$ drop an item (even with Silk Touch), for which there is specific $(thing)Match by block/$ option in the filter setup GUI.",
-   "最后，你还可以使用 $(l:programming/item_filter)物品过滤器/$ 来指定哪些方块可以被挖掘。$(p)如果是用于作物这类方块，请按你破坏该作物时会获得的物品进行过滤（例如 $(item)小麦/$ 作物就用 $(item)Seeds/$）。例外情况是那些 $(italic)永远不会/$ 掉落物品的方块（即使使用精准采集也是如此），对于这类方块，可以在过滤器设置 GUI 中使用专门的 $(thing)匹配方块/$ 选项。"
+   "最后，你还可以使用$(l:programming/item_filter)物品过滤器/$来指定哪些方块可以被挖掘。$(p)如果是用于作物这类方块，请按你破坏该作物时会获得的物品进行过滤（例如$(item)小麦/$作物就用$(item)Seeds/$）。例外情况是那些$(italic)永远不会/$掉落物品的方块（即使使用精准采集也是如此），对于这类方块，可以在过滤器设置 GUI 中使用专门的$(thing)匹配方块/$选项。"
   ],
   [
    [

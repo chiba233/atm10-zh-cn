@@ -16,7 +16,7 @@
     "text"
    ],
    "This widget allows addition of $(thing)comments/$ to your program, and has no functional effect. It does not cost any $(l:programming/puzzle_pieces)Puzzle Pieces/$ to use.",
-   "这个组件可以在你的程序中添加 $(thing)注释/$，且没有任何功能性效果。使用它也不消耗任何 $(l:programming/puzzle_pieces)拼图/$。"
+   "这个组件可以在你的程序中添加$(thing)注释/$，且没有任何功能性效果。使用它也不消耗任何$(l:programming/puzzle_pieces)拼图/$。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "The Drone will harvest any fully grown crop or tree within the specified $(l:programming/area)area/$. Items that are dropped from the crop blocks are $(italic)not/$ picked up; either add a separate $(l:programming/pickup_item)Pick Up Item/$ widget, or use some alternate means of collecting the items, such as a separate $(item)Drone/$.$(p)You can connect an optional $(l:programming/item_filter)Item Filter/$ to limit which crops will be harvested (use the crop's seed to filter).",
-   "雄蜂会在指定的 $(l:programming/area)区域/$ 内收获任何完全成熟的作物或树木。作物方块掉落的物品$(italic)不会/$被拾取；你可以额外添加一个 $(l:programming/pickup_item)拾取物品/$ 组件，或者使用其他方式来收集这些物品，例如另一只 $(item)雄蜂/$。$(p)你还可以连接一个可选的 $(l:programming/item_filter)物品过滤器/$，以限制会被收获的作物种类（使用该作物的种子进行过滤）。"
+   "雄蜂会在指定的$(l:programming/area)区域/$内收获任何完全成熟的作物或树木。作物方块掉落的物品$(italic)不会/$被拾取；你可以额外添加一个$(l:programming/pickup_item)拾取物品/$组件，或者使用其他方式来收集这些物品，例如另一只$(item)雄蜂/$。$(p)你还可以连接一个可选的$(l:programming/item_filter)物品过滤器/$，以限制会被收获的作物种类（使用该作物的种子进行过滤）。"
   ],
   [
    [

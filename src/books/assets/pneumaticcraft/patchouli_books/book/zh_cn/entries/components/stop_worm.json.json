@@ -16,7 +16,7 @@
     "text"
    ],
    "This is a special component, only used when trying to hack $(l:machines/security_station)Security Stations/$. It is not craftable and can only be found in dungeon loot, or (rarely) as a villager trade.",
-   "这是一种特殊组件，仅在尝试破解 $(l:machines/security_station)安全站/$ 时使用。它无法合成，只能在地牢战利品中找到，或（较少见地）通过村民交易获得。"
+   "这是一种特殊组件，仅在尝试破解$(l:machines/security_station)安全站/$时使用。它无法合成，只能在地牢战利品中找到，或（较少见地）通过村民交易获得。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Applying a $(thing)STOP! Worm/$ while hacking will temporarily freeze the station's $(l:components/network_components#diagnostic)Diagnostic Subroutine/$ from tracing you.",
-   "在黑入时使用一个 $(thing)STOP! 虫子/$，可暂时冻结站点的$(l:components/network_components#diagnostic)诊断子程序/$，使其无法追踪你。"
+   "在黑入时使用一个$(thing)STOP! 虫子/$，可暂时冻结站点的$(l:components/network_components#diagnostic)诊断子程序/$，使其无法追踪你。"
   ]
  ]
 }

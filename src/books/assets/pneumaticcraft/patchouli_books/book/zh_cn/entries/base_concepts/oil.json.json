@@ -16,7 +16,7 @@
     "text"
    ],
    "In $(pncr), the only world generation is $(thing)Crude Oil/$. It's generated similarly to water lakes; the difference is that Oil lakes are far more likely to spawn deep underground than on the surface. Because of this, assistance from tools like a $(l:tools/seismic_sensor)Seismic Sensor/$ is highly recommended.",
-   "在$(#228)气动工艺$()中，唯一会生成的世界资源是 $(thing)原油/$。它的生成方式与水湖类似；不同的是，油湖比起地表，更有可能生成在地下深处。因此，强烈建议借助诸如 $(l:tools/seismic_sensor)地震传感器/$ 之类的工具来辅助寻找。"
+   "在$(#228)气动工艺$()中，唯一会生成的世界资源是$(thing)原油/$。它的生成方式与水湖类似；不同的是，油湖比起地表，更有可能生成在地下深处。因此，强烈建议借助诸如$(l:tools/seismic_sensor)地震传感器/$之类的工具来辅助寻找。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Once you've found some Crude Oil, you'll need to extract and transport it. The recommended $(pncr) way to extract oil is with a $(l:machines/gas_lift)Gas Lift/$, although fluid pumps from other mods can also be used. If you're pumping far from your base, one early game solution for transport is a simple $(l:machines/tanks)Small Tank/$, which can hold up to 32,000mB of fluid and keeps its contents when broken. (Even the Gas Lift can be used for this purpose since it also keeps its fluid contents).",
-   "找到一些原油后，你就需要将其抽取并运输。推荐使用$(#228)气动工艺$()$(l:machines/gas_lift)气举/$ 来抽取原油，不过也可以使用其他模组中的流体泵。如果抽油地点离你的基地很远，前期一种运输方案是简单的 $(l:machines/tanks)小型油箱/$，它最多可容纳 32,000mB 流体，并且在被破坏后仍会保留其中的内容物。（实际上，气举也可以用于这个用途，因为它同样会保留内部的流体。）"
+   "找到一些原油后，你就需要将其抽取并运输。推荐使用$(#228)气动工艺$()$(l:machines/gas_lift)气举/$来抽取原油，不过也可以使用其他模组中的流体泵。如果抽油地点离你的基地很远，前期一种运输方案是简单的$(l:machines/tanks)小型油箱/$，它最多可容纳 32,000mB 流体，并且在被破坏后仍会保留其中的内容物。（实际上，气举也可以用于这个用途，因为它同样会保留内部的流体。）"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "$(pncr) is of course not the only mod to add $(thing)Oil/$; several other mods do too (including $(thing)BuildCraft/$ and $(thing)Immersive Petroleum/$).$(p)Depending on your worldgen settings, $(pncr) Oil might not be available; however, the $(l:manufacturing/refinery)Refinery/$ is capable of handling the \"oil\" fluid from other mods.",
-   "$(#228)气动工艺$()当然不是唯一一个添加了 $(thing)石油/$ 的模组；还有其他几个模组也会添加（包括 $(thing)建筑/$ 和 $(thing)沉浸原油/$）。$(p)根据你的世界生成设置，$(#228)气动工艺$()石油可能不会生成；不过，$(l:manufacturing/refinery)精炼厂/$ 能够处理其他模组中的“oil”流体。"
+   "$(#228)气动工艺$()当然不是唯一一个添加了$(thing)石油/$的模组；还有其他几个模组也会添加（包括$(thing)建筑/$和$(thing)沉浸原油/$）。$(p)根据你的世界生成设置，$(#228)气动工艺$()石油可能不会生成；不过，$(l:manufacturing/refinery)精炼厂/$能够处理其他模组中的“oil”流体。"
   ],
   [
    [

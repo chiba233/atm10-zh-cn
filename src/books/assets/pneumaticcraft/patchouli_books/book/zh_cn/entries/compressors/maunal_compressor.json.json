@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Manual Compressor/$ is an early game compressor which produces $(l:base_concepts/pressure)compressed air/$ from manual labor and hunger. Hold right click on the compressor to pump in air and compress it. The higher the pressure of the compressor, the longer each pump takes, until it becomes impossible to pump in more air.",
-   "$(item)人力压缩机/$ 是一种游戏前期的压缩机，通过人力和饥饿值来产生 $(l:base_concepts/pressure)压缩空气/$。按住右键操作压缩机即可向内泵入空气并进行压缩。压缩机压力越高，每次泵气所需时间就越长，直到最终再也无法继续泵入空气。"
+   "$(item)人力压缩机/$是一种游戏前期的压缩机，通过人力和饥饿值来产生$(l:base_concepts/pressure)压缩空气/$。按住右键操作压缩机即可向内泵入空气并进行压缩。压缩机压力越高，每次泵气所需时间就越长，直到最终再也无法继续泵入空气。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Crafting a $(item)Manual Compressor/$",
-   "合成一个 $(item)人力压缩机/$"
+   "合成一个$(item)人力压缩机/$"
   ]
  ]
 }

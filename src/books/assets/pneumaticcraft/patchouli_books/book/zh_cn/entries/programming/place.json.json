@@ -25,7 +25,7 @@
     "text"
    ],
    "Normally, the $(item)Drone/$ will place blocks from its inventory in order, starting from the first slot (bear in mind that drone inventories only have a single slot by default, but $(l:base_concepts/upgrades#inventory)Inventory Upgrades/$ can be used to increase that).$(p)By checking the $(thing)Place Random Blocks/$ option, the $(item)Drone/$ will select blocks at random from its inventory to place.",
-   "通常情况下，$(item)无人机/$ 会按顺序放置其物品栏中的方块，从第一个槽位开始（请记住，无人机默认只有一个槽位，但可以使用 $(l:base_concepts/upgrades#inventory)物品栏升级/$ 来增加槽位）。$(p)勾选 $(thing)放置随机方块/$ 选项后，$(item)无人机/$ 就会从物品栏中随机选择方块来放置。"
+   "通常情况下，$(item)无人机/$会按顺序放置其物品栏中的方块，从第一个槽位开始（请记住，无人机默认只有一个槽位，但可以使用$(l:base_concepts/upgrades#inventory)物品栏升级/$来增加槽位）。$(p)勾选$(thing)放置随机方块/$选项后，$(item)无人机/$就会从物品栏中随机选择方块来放置。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The number of place actions can be limited to a specified amount by $(thing)right-clicking/$ the widget. If set to 1 for example, the $(item)Drone/$ will only place one block, and the widget is considered done after placing that one block.$(p)If no limit is set, the widget is only considered done when unable to place any more blocks.",
-   "可通过 $(thing)右击/$该组件，将放置操作的次数限制为指定数量。比如设为 1 时，$(item)雄蜂/$只会放置一个方块，并且在放下这一个方块后，该组件就会被视为已完成。$(p)如果未设置限制，则只有在无法继续放置更多方块时，该组件才会被视为已完成。"
+   "可通过$(thing)右击/$该组件，将放置操作的次数限制为指定数量。比如设为 1 时，$(item)雄蜂/$只会放置一个方块，并且在放下这一个方块后，该组件就会被视为已完成。$(p)如果未设置限制，则只有在无法继续放置更多方块时，该组件才会被视为已完成。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Finally, you can specify which blocks from the $(item)Drone's/$ inventory may be placed by connecting an $(l:programming/item_filter)Item Filter/$ widget. Connect on the $(italic)right/$ to whitelist items, and on the $(italic)left/$ to blacklist items.",
-   "最后，你可以通过连接一个 $(l:programming/item_filter)物品过滤器/$组件，来指定 $(item)无人机的/$容器中哪些方块可以被放置。连接在 $(italic)右侧/$ 可将物品加入白名单，连接在 $(italic)左侧/$ 则会将物品加入黑名单。"
+   "最后，你可以通过连接一个$(l:programming/item_filter)物品过滤器/$组件，来指定$(item)无人机的/$容器中哪些方块可以被放置。连接在$(italic)右侧/$可将物品加入白名单，连接在$(italic)左侧/$则会将物品加入黑名单。"
   ],
   [
    [

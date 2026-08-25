@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Variables/$ allow drone programs to store and manipulate block positions (aka coordinates) to provide some advanced drone functionality.$(p)To create or manipulate variables from within a drone program, use the $(l:programming/coordinate_operator)Coordinate Operator/$ and $(l:programming/coordinate)Coordinate/$ widgets, and to run tests on variables, use the $(l:programming/condition_coordinate)Condition: Coordinate/$ widget.",
-   "$(thing)变量/$可让无人机程序存储并操作方块位置（即坐标），从而为无人机提供一些更高级的功能。$(p)要在无人机程序中创建或操作变量，请使用 $(l:programming/coordinate_operator)坐标运算符/$ 和 $(l:programming/coordinate)坐标/$ 组件；要对变量进行测试，请使用 $(l:programming/condition_coordinate)条件：坐标/$ 组件。"
+   "$(thing)变量/$可让无人机程序存储并操作方块位置（即坐标），从而为无人机提供一些更高级的功能。$(p)要在无人机程序中创建或操作变量，请使用$(l:programming/coordinate_operator)坐标运算符/$和$(l:programming/coordinate)坐标/$组件；要对变量进行测试，请使用$(l:programming/condition_coordinate)条件：坐标/$组件。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "In the $(l:programming/area)Area/$ widget you can, instead of using a GPS coordinate, use a $(thing)variable/$ name.$(p)These $(thing)variables/$ persist across world reloads, so could be used to create an endless mining program, for example, where the Drone's dig position is tracked by a $(thing)variable/$.$(p)For an old but still relevant tutorial, see $(l:https://www.youtube.com/watch?v=FIjEdD_Yj9Y)this YouTube video by MineMaarten/$.",
-   "在 $(l:programming/area)区域/$ 控件中，你可以不使用 GPS 坐标，而是使用一个 $(thing)变量/$ 名称。$(p)这些 $(thing)变量/$ 会在世界重载后保留，因此可用于创建例如无限采矿程序，让无人机的挖掘位置由一个 $(thing)变量/$ 来追踪。$(p)如果想看一个较老但仍然适用的教程，请参阅 $(l:https://www.youtube.com/watch?v=FIjEdD_Yj9Y)MineMaarten 的这个 YouTube 视频/$。"
+   "在$(l:programming/area)区域/$控件中，你可以不使用 GPS 坐标，而是使用一个$(thing)变量/$名称。$(p)这些$(thing)变量/$会在世界重载后保留，因此可用于创建例如无限采矿程序，让无人机的挖掘位置由一个$(thing)变量/$来追踪。$(p)如果想看一个较老但仍然适用的教程，请参阅$(l:https://www.youtube.com/watch?v=FIjEdD_Yj9Y)MineMaarten 的这个 YouTube 视频/$。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "While $(thing)variables/$ only store coordinates (an X/Y/Z triple), if you think about it you will realise that you can work with $(thing)integers/$ and $(thing)booleans/$ too. Just use only one axis for integers, and for booleans, define something like '0' = false, and everything else = true. Have fun!",
-   "虽然 $(thing)变量/$ 只存储坐标（即一组 X/Y/Z 三元组），但如果你仔细想想，就会意识到你也可以用它来处理 $(thing)整数/$ 和 $(thing)布尔值/$。对于整数，只使用一个坐标轴即可；对于布尔值，可以定义类似“0”= false，其他任何值 = true。玩得开心！"
+   "虽然$(thing)变量/$只存储坐标（即一组 X/Y/Z 三元组），但如果你仔细想想，就会意识到你也可以用它来处理$(thing)整数/$和$(thing)布尔值/$。对于整数，只使用一个坐标轴即可；对于布尔值，可以定义类似“0”= false，其他任何值 = true。玩得开心！"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "On the previous page, we mentioned that variables can only store coordinates. Well, that was a small lie: there is also such a thing as $(thing)item variables/$, which store (you guessed it) an item value. These are created with the $(l:programming/item_assign)Item Assign/$ and $(l:programming/for_each_item)For Each Item/$ widgets, and used by the $(l:programming/item_filter)Item Filter/$ widget.",
-   "在上一页中，我们提到过变量只能存储坐标。其实，那只是个小小的谎言：还有一种东西叫做 $(thing)物品变量/$，它存储的是（你猜得没错）物品值。它们可以通过 $(l:programming/item_assign)物品赋值/$ 和 $(l:programming/for_each_item)对于每个物品/$ 控件创建，并由 $(l:programming/item_filter)物品过滤器/$ 控件使用。"
+   "在上一页中，我们提到过变量只能存储坐标。其实，那只是个小小的谎言：还有一种东西叫做$(thing)物品变量/$，它存储的是（你猜得没错）物品值。它们可以通过$(l:programming/item_assign)物品赋值/$和$(l:programming/for_each_item)对于每个物品/$控件创建，并由$(l:programming/item_filter)物品过滤器/$控件使用。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "Normal variables are unique per $(l:tools/drone)Drone/$; they can't be shared. $(thing)Global variables/$, however, $(italic)can/$ be shared. This allows Drones to communicate with each other.$(p)Additionally, $(l:tools/gps_tool)GPS Tools/$ can link to and modify them, the $(l:machines/universal_sensor)Universal Sensor/$ can emit a $(#f00)redstone signal/$ based on them, and the $(l:tools/remote)Remote/$ can display and modify them.",
-   "普通变量对每个 $(l:tools/drone)雄蜂/$ 都是独立的，无法共享。不过，$(thing)全局变量/$ 则 $(italic)可以/$ 共享。这样一来，雄蜂之间就能彼此通信。$(p)此外，$(l:tools/gps_tool)GPS 工具/$ 也可以链接并修改它们，$(l:machines/universal_sensor)通用传感器/$ 可以根据它们发出 $(#f00)红石信号/$，而 $(l:tools/remote)远程终端/$ 则可以显示并修改它们。"
+   "普通变量对每个$(l:tools/drone)雄蜂/$都是独立的，无法共享。不过，$(thing)全局变量/$则$(italic)可以/$共享。这样一来，雄蜂之间就能彼此通信。$(p)此外，$(l:tools/gps_tool)GPS 工具/$也可以链接并修改它们，$(l:machines/universal_sensor)通用传感器/$可以根据它们发出$(#f00)红石信号/$，而$(l:tools/remote)远程终端/$则可以显示并修改它们。"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)There are two types of global variable/$: $(thing)player-global/$ and $(thing)server-global/$.$(li)Player-global variables are prefixed with '#'. These are shared among a player's drones, but private to each player.$(li)Server-global variables are prefixed with '%'. These variables are shared among $(italic)all/$ players on the server.$(p)Note: in earlier versions of the mod only server-global existed, with a prefix of '#'.",
-   "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)全局变量分为两种/$：$(thing)玩家全局/$ 和 $(thing)服务器全局/$。$(li)玩家全局变量以前缀“#”表示。这类变量在同一玩家的雄蜂之间共享，但对每位玩家而言是私有的。$(li)服务器全局变量以前缀“%”表示。这类变量会在服务器上$(italic)所有/$玩家之间共享。$(p)注意：在本模组的较早版本中，只有服务器全局变量存在，其前缀为“#”。"
+   "$(ttcolor)$(t:Player-global variables were added in PNC:R 3.0.0, MC 1.18.1)全局变量分为两种/$：$(thing)玩家全局/$和$(thing)服务器全局/$。$(li)玩家全局变量以前缀“#”表示。这类变量在同一玩家的雄蜂之间共享，但对每位玩家而言是私有的。$(li)服务器全局变量以前缀“%”表示。这类变量会在服务器上$(italic)所有/$玩家之间共享。$(p)注意：在本模组的较早版本中，只有服务器全局变量存在，其前缀为“#”。"
   ],
   [
    [
@@ -169,7 +169,7 @@
     "text"
    ],
    "Several older variables also exist which remain usable for compatibility reasons (but it's recommended to use the variables on the previous page):$(li)$(thing)$owner/$: an alias for $(thing)$owner_pos/$.$(li)$(thing)$drone/$: gets the blockpos $(italic)above/$ the drone, for historical reasons.$(li)$(thing)$player=<name>/$: an alias for $(thing)$player_pos/$.",
-   "出于兼容性原因，还存在几个较旧的变量，仍然可以使用（但建议使用上一页中的变量）：$(li)$(thing)$owner/$：$(thing)$owner_pos/$ 的别名。$(li)$(thing)$drone/$：出于历史原因，获取无人机$(italic)上方/$的方块位置。$(li)$(thing)$player=<name>/$：$(thing)$player_pos/$ 的别名。"
+   "出于兼容性原因，还存在几个较旧的变量，仍然可以使用（但建议使用上一页中的变量）：$(li)$(thing)$owner/$：$(thing)$owner_pos/$的别名。$(li)$(thing)$drone/$：出于历史原因，获取无人机$(italic)上方/$的方块位置。$(li)$(thing)$player=<name>/$：$(thing)$player_pos/$的别名。"
   ],
   [
    [
@@ -187,7 +187,7 @@
     "text"
    ],
    "Sometimes it's useful to display the value of a variable for debugging purposes. You can display a variable's value in a few ways:$(li)Using the $(l:programming/rename)Rename/$ widget to show the variable as a drone's nameplate$(li)Writing text with the $(l:programming/edit_sign)Edit Sign/$ widget$(li)Using a $(l:tools/remote#label)label/$ in a $(l:tools/remote)Remote/$.",
-   "有时，为了调试，显示变量的值会很有用。你可以通过以下几种方式显示变量的值：$(li)使用 $(l:programming/rename)重命名/$ 元件，将变量显示为无人机的名牌$(li)使用 $(l:programming/edit_sign)编辑告示牌/$ 元件来书写文本$(li)在 $(l:tools/remote)远程控制器/$ 中使用 $(l:tools/remote#label)标签/$。"
+   "有时，为了调试，显示变量的值会很有用。你可以通过以下几种方式显示变量的值：$(li)使用$(l:programming/rename)重命名/$元件，将变量显示为无人机的名牌$(li)使用$(l:programming/edit_sign)编辑告示牌/$元件来书写文本$(li)在$(l:tools/remote)远程控制器/$中使用$(l:tools/remote#label)标签/$。"
   ],
   [
    [
@@ -205,7 +205,7 @@
     "text"
    ],
    "To interpolate a variable into text displayed by one of the above methods, use the syntax $(thing)${varname}/$.$(p)Note that the special & global variable prefixes still apply here, so to interpolate a drone's position, you would use $(thing)${$drone_pos}/$, and to interpolate a global variable, you would use $(thing)${#globalvarname}/$ or $(thing)${%globalvarname}/$.",
-   "要将变量插入到以上任一方式显示的文本中，请使用语法 $(thing)${varname}/$。$(p)注意，这里仍然适用特殊变量和全局变量的前缀，因此如果要插入某个雄蜂的位置，你需要使用 $(thing)${$drone_pos}/$；如果要插入一个全局变量，则需要使用 $(thing)${#globalvarname}/$ 或 $(thing)${%globalvarname}/$。"
+   "要将变量插入到以上任一方式显示的文本中，请使用语法$(thing)${varname}/$。$(p)注意，这里仍然适用特殊变量和全局变量的前缀，因此如果要插入某个雄蜂的位置，你需要使用$(thing)${$drone_pos}/$；如果要插入一个全局变量，则需要使用$(thing)${#globalvarname}/$或$(thing)${%globalvarname}/$。"
   ],
   [
    [
@@ -223,7 +223,7 @@
     "text"
    ],
    "You can also display only the X, Y or Z component of the coordinate by suffixing the variable name with $(thing).x/$, $(thing).y/$ or $(thing).z/$ respectively. E.g. to show the drone owner's Y coordinate, use $(thing)${$owner_pos.y}/$.$(p)If the variable is an $(thing)item variable/$, a $(thing).id/$ suffix will get the item's registry ID instead of its display name (which is the default). This is particularly useful for displaying an item on an $(l:machines/aphorism_tile#items)Aphorism Tile/$.",
-   "你还可以通过在变量名后加上 $(thing).x/$、$(thing).y/$ 或 $(thing).z/$，来只显示坐标的 X、Y 或 Z 分量。例如，要显示无人机所有者的 Y 坐标，使用 $(thing)${$owner_pos.y}/$.$(p)如果该变量是一个 $(thing)物品变量/$，那么加上 $(thing).id/$ 后缀将得到该物品的注册表 ID，而不是它的显示名称（默认情况下显示的是名称）。这在格言瓷砖 $(l:machines/aphorism_tile#items)Aphorism Tile/$ 上显示物品时尤其有用。"
+   "你还可以通过在变量名后加上$(thing).x/$、$(thing).y/$或$(thing).z/$，来只显示坐标的 X、Y 或 Z 分量。例如，要显示无人机所有者的 Y 坐标，使用$(thing)${$owner_pos.y}/$.$(p)如果该变量是一个$(thing)物品变量/$，那么加上$(thing).id/$后缀将得到该物品的注册表 ID，而不是它的显示名称（默认情况下显示的是名称）。这在格言瓷砖$(l:machines/aphorism_tile#items)Aphorism Tile/$上显示物品时尤其有用。"
   ],
   [
    [

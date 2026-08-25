@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Conditions/$ are a collection of widgets that allow you to check something, and jump to another part of your program if the check succeeds.$(p)Every $(thing)Condition/$ widget takes a $(l:programming/text)Text/$ widget parameter (which is always the bottom-most parameter) configured with a $(thing)label name/$.",
-   "$(thing)条件/$是一组控件，可让你检查某些内容，并在检查成功时跳转到程序的另一部分。$(p)每个 $(thing)条件/$ 控件都需要一个 $(l:programming/text)文本/$ 控件参数（始终是最底部的参数），并将其配置为 $(thing)标签名称/$。"
+   "$(thing)条件/$是一组控件，可让你检查某些内容，并在检查成功时跳转到程序的另一部分。$(p)每个$(thing)条件/$控件都需要一个$(l:programming/text)文本/$控件参数（始终是最底部的参数），并将其配置为$(thing)标签名称/$。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "When a condition evaluates $(thing)true/$, $(l:programming/flow_control)program execution/$ will jump to a $(l:programming/label)Label/$ widget with the same name as that $(thing)Text/$ parameter on its $(italic)right-hand/$ side. When the condition is $(thing)false/$, it will jump to a $(thing)Label/$ with the same name as the $(thing)Text/$ parameter on its $(italic)left-hand side/$.$(p)When the $(thing)Condition/$ widget can't find a valid $(thing)Text/$ parameter, it will just proceed to the next widget (connected $(italic)below/$).",
-   "当一个条件计算结果为 $(thing)true/$ 时，$(l:programming/flow_control)程序执行/$将跳转到一个 $(l:programming/label)标签/$ 组件，该组件的名称与其 $(italic)右侧/$ 的那个 $(thing)文本/$ 参数相同。若条件为 $(thing)false/$，则会跳转到一个 $(thing)标签/$ 组件，其名称与 $(italic)左侧/$ 的 $(thing)文本/$ 参数相同。$(p)当 $(thing)条件/$ 组件找不到有效的 $(thing)文本/$ 参数时，它将直接继续执行下一个组件（连接在 $(italic)下方/$ 的那个）。"
+   "当一个条件计算结果为$(thing)true/$时，$(l:programming/flow_control)程序执行/$将跳转到一个$(l:programming/label)标签/$组件，该组件的名称与其$(italic)右侧/$的那个$(thing)文本/$参数相同。若条件为$(thing)false/$，则会跳转到一个$(thing)标签/$组件，其名称与$(italic)左侧/$的$(thing)文本/$参数相同。$(p)当$(thing)条件/$组件找不到有效的$(thing)文本/$参数时，它将直接继续执行下一个组件（连接在$(italic)下方/$的那个）。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Most $(thing)Condition/$ widgets can be $(thing)right-clicked/$ to open a configuration GUI. The GUI will usually contain '='/'>=' options, and a textfield where you can enter a number.$(p)With this you can set up conditions (like item counts in a chest) to be e.g. exactly 10 ('=' mode and textfield 10), more than 20 ('>=' mode and textfield '21'), or less than 12 ('>=' mode and textfield '12', but checking for the condition to be $(thing)false/$).",
-   "大多数 $(thing)条件/$ 组件都可以通过 $(thing)右击/$ 来打开配置 GUI。该 GUI 通常会包含“=”/“>=”选项，以及一个可供输入数字的文本框。$(p)借此，你可以设置各种条件（例如箱子中的物品数量），比如恰好为 10（“=”模式，文本框填 10）、大于 20（“>=”模式，文本框填“21”），或小于 12（“>=”模式，文本框填“12”，但要检查该条件是否为 $(thing)false/$）。"
+   "大多数$(thing)条件/$组件都可以通过$(thing)右击/$来打开配置 GUI。该 GUI 通常会包含“=”/“>=”选项，以及一个可供输入数字的文本框。$(p)借此，你可以设置各种条件（例如箱子中的物品数量），比如恰好为 10（“=”模式，文本框填 10）、大于 20（“>=”模式，文本框填“21”），或小于 12（“>=”模式，文本框填“12”，但要检查该条件是否为$(thing)false/$）。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "All $(thing)Condition/$ widget GUI's (except $(l:programming/condition_item)Condition: Item Filter/$) have a $(thing)Measure/$ textfield, where you can enter the name of a $(l:programming/variables)variable/$. If a variable name is supplied here, any measurement made by the drone will be stored in the X field of the variable.$(p)This can then be later used like any other variable, e.g. you could measure the level of a fluid tank, and write it on a sign.",
-   "所有 $(thing)条件/$ 组件的 GUI（$(l:programming/condition_item)条件：物品过滤器/$ 除外）都有一个 $(thing)测量/$ 文本框，你可以在其中输入一个 $(l:programming/variables)变量/$ 名称。如果这里填写了变量名，那么无人机进行的任何测量结果都会存入该变量的 X 字段。$(p)之后它就可以像其他变量一样使用，例如你可以测量一个流体储罐的液位，并把结果写在告示牌上。"
+   "所有$(thing)条件/$组件的 GUI（$(l:programming/condition_item)条件：物品过滤器/$除外）都有一个$(thing)测量/$文本框，你可以在其中输入一个$(l:programming/variables)变量/$名称。如果这里填写了变量名，那么无人机进行的任何测量结果都会存入该变量的 X 字段。$(p)之后它就可以像其他变量一样使用，例如你可以测量一个流体储罐的液位，并把结果写在告示牌上。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "Conditions can be divided into two categories: $(thing)World Conditions/$ and $(thing)Drone Conditions/$.$(p)World Conditions are used to check for things in the world, e.g. does a $(item)Chest/$ have a certain number of items, or does a block exist somewhere?$(p)$(thing)Drone Conditions/$ specifically target the $(l:tools/drone)Drone/$, e.g. does the Drone have a certain item, or have a certain pressure?",
-   "条件可以分为两类：$(thing)世界条件/$ 和 $(thing)无人机条件/$。$(p)世界条件用于检查世界中的事物，例如 $(item)箱子/$ 里是否有一定数量的物品，或某处是否存在某个方块。$(p)$(thing)无人机条件/$ 则专门针对 $(l:tools/drone)无人机/$ 本身，例如无人机是否携带某个物品，或是否具有某个压力值。"
+   "条件可以分为两类：$(thing)世界条件/$和$(thing)无人机条件/$。$(p)世界条件用于检查世界中的事物，例如$(item)箱子/$里是否有一定数量的物品，或某处是否存在某个方块。$(p)$(thing)无人机条件/$则专门针对$(l:tools/drone)无人机/$本身，例如无人机是否携带某个物品，或是否具有某个压力值。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "All block-based $(thing)World Conditions/$ have an $(thing)Any/All/$ block option. This is used when you're checking multiple blocks at a time.$(li)In $(thing)Any/$ mode, only $(italic)one/$ of the blocks in the selected $(l:programming/area)area/$ needs to match for the condition to be $(thing)true/$.$(li)In $(thing)All/$ mode, $(italic)all/$ blocks must match for the condition to be $(thing)true/$.",
-   "所有基于方块的 $(thing)世界条件/$ 都有一个 $(thing)任意/全部/$ 方块选项。当你一次检查多个方块时，就会用到它。$(li)在 $(thing)任意/$ 模式下，所选 $(l:programming/area)区域/$ 内的方块只需要有 $(italic)一个/$ 匹配，条件就会为 $(thing)真/$。$(li)在 $(thing)全部/$ 模式下，必须 $(italic)全部/$ 方块都匹配，条件才会为 $(thing)真/$。"
+   "所有基于方块的$(thing)世界条件/$都有一个$(thing)任意/全部/$方块选项。当你一次检查多个方块时，就会用到它。$(li)在$(thing)任意/$模式下，所选$(l:programming/area)区域/$内的方块只需要有$(italic)一个/$匹配，条件就会为$(thing)真/$。$(li)在$(thing)全部/$模式下，必须$(italic)全部/$方块都匹配，条件才会为$(thing)真/$。"
   ],
   [
    [

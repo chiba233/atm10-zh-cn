@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Assembly Programs/$ must be inserted into the $(l:manufacturing/assembly_system)Assembly Controller/$ to tell it what kind of operation needs to be carried out. They cannot be crafted, but must instead be traded for; either from $(thing)Mechanic Villagers/$, or via the $(l:tools/amadron_tablet)Amadron Tablet/$.",
-   "必须将 $(thing)装配程序/$ 插入 $(l:manufacturing/assembly_system)装配台/$ 中，以告知它需要执行哪种操作。它们无法合成，只能通过交易获得；可以向 $(thing)机械师村民/$ 交易，或通过 $(l:tools/amadron_tablet)亚马龙平板电脑/$ 获取。"
+   "必须将$(thing)装配程序/$插入$(l:manufacturing/assembly_system)装配台/$中，以告知它需要执行哪种操作。它们无法合成，只能通过交易获得；可以向$(thing)机械师村民/$交易，或通过$(l:tools/amadron_tablet)亚马龙平板电脑/$获取。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "The $(item)Assembly Program: Drill & Laser/$ is a little special. It doesn't handle both drill and laser recipes; instead, it provides a single-program method for two-step recipes which involve drilling $(italic)and/$ lasering steps, e.g. $(l:tubes/pressure_tubes#advanced)Advanced Pressure Tubes/$.",
-   "$(item)装配程序：钻孔与镭射/$有点特殊。它并不能同时处理钻孔和镭射配方；相反，它为包含钻孔$(italic)和/$镭射两个步骤的两步配方提供了单程序处理方式，例如 $(l:tubes/pressure_tubes#advanced)高级压力管道/$。"
+   "$(item)装配程序：钻孔与镭射/$有点特殊。它并不能同时处理钻孔和镭射配方；相反，它为包含钻孔$(italic)和/$镭射两个步骤的两步配方提供了单程序处理方式，例如$(l:tubes/pressure_tubes#advanced)高级压力管道/$。"
   ],
   [
    [

@@ -25,7 +25,7 @@
     "text"
    ],
    "When the narrow side of the regulator reaches this pressure, no more air will be allowed through the tube. This principal can be used as a $(thing)transformer/$: on the input (wide) side is high-pressure air, but the Regulator Tube limits the pressure on the output to the threshold pressure.$(p)This allows a lower tier tube network to be safely supplied by a higher-tier network.",
-   "当调节管较窄一侧达到这个压力时，空气就不再能通过管道。这个原理可以用作 $(thing)变压器/$：输入（较宽）的一侧是高压空气，而调节管会将输出压力限制在阈值压力。$(p)这样就能让低等级的管道网络安全地由更高等级的网络供气。"
+   "当调节管较窄一侧达到这个压力时，空气就不再能通过管道。这个原理可以用作$(thing)变压器/$：输入（较宽）的一侧是高压空气，而调节管会将输出压力限制在阈值压力。$(p)这样就能让低等级的管道网络安全地由更高等级的网络供气。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Applying a $(l:tubes/module_expansion_card)Module Expansion Card/$ to the Regulator Module unlocks a GUI providing far more control over the threshold level. You can set a precise threshold in the GUI, or (with the $(bold)Advanced Config/$ checkbox) configure interpolated threshold levels based on the redstone signal. This works exactly like the $(l:tubes/safety_module)Safety Module/$.",
-   "将 $(l:tubes/module_expansion_card)模块拓展卡/$ 安装到调节器模块上后，会解锁一个 GUI，让你能对阈值进行更精细的控制。你可以在 GUI 中设置精确阈值，或者勾选 $(bold)高级配置/$，根据红石信号来配置插值阈值。这与 $(l:tubes/safety_module)安全模块/$ 的工作方式完全相同。"
+   "将$(l:tubes/module_expansion_card)模块拓展卡/$安装到调节器模块上后，会解锁一个 GUI，让你能对阈值进行更精细的控制。你可以在 GUI 中设置精确阈值，或者勾选$(bold)高级配置/$，根据红石信号来配置插值阈值。这与$(l:tubes/safety_module)安全模块/$的工作方式完全相同。"
   ],
   [
    [

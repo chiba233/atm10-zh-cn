@@ -25,7 +25,7 @@
     "text"
    ],
    "Then, provide the Spawner Extractor with $(thing)-0.5 bar/$ of vacuum or lower, and prepare for a fight. It turns out that Spawners $(italic)really/$ don't like being extracted, and spawn mobs at a greatly increased rate to defend themselves. Some useful tips:$(li)The base extraction time is about 60 seconds.$(li)However, any nearby defending mobs will slow the extraction down, and too many will stall extraction.",
-   "然后，为刷怪笼抽取器提供 $(thing)-0.5 bar/$ 或更低的真空，并准备战斗。事实证明，刷怪笼 $(italic)真的/$ 很不喜欢被抽取，会以大幅提高的速率生成生物来保卫自己。一些有用的提示：$(li)基础抽取时间约为 60 秒。$(li)不过，附近任何前来防守的生物都会减慢抽取速度，而如果数量过多，抽取就会停滞。"
+   "然后，为刷怪笼抽取器提供$(thing)-0.5 bar/$或更低的真空，并准备战斗。事实证明，刷怪笼$(italic)真的/$很不喜欢被抽取，会以大幅提高的速率生成生物来保卫自己。一些有用的提示：$(li)基础抽取时间约为 60 秒。$(li)不过，附近任何前来防守的生物都会减慢抽取速度，而如果数量过多，抽取就会停滞。"
   ],
   [
    [

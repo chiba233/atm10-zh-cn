@@ -16,7 +16,7 @@
     "text"
    ],
    "$(pncr) adds a $(thing)heat/$ system. It spreads from block to block similarly to how heat spreads in real-life. It has some similarities with how $(l:base_concepts/pressure)pressure disperses/$ too:$(li)Heat disperses from hotter objects to colder objects.$(li)Blocks will only spread heat to adjacent blocks that support the concept of heat (see $(l:base_concepts/heat_sources)Heat Sources/$).",
-   "$(#228)气动工艺$()加入了一个$(thing)热量/$系统。它会像现实中的热传导一样，在方块之间扩散。它与$(l:base_concepts/pressure)分压元件/$的工作方式也有一些相似之处：$(li)热量会从较热的物体扩散到较冷的物体。$(li)方块只会向支持热量概念的相邻方块传递热量（见 $(l:base_concepts/heat_sources)热源/$）。"
+   "$(#228)气动工艺$()加入了一个$(thing)热量/$系统。它会像现实中的热传导一样，在方块之间扩散。它与$(l:base_concepts/pressure)分压元件/$的工作方式也有一些相似之处：$(li)热量会从较热的物体扩散到较冷的物体。$(li)方块只会向支持热量概念的相邻方块传递热量（见$(l:base_concepts/heat_sources)热源/$）。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "$(li)Different objects have a different $(thing)thermal capacity/$. The higher the capacity, the slower the temperature will rise for the given heat gain. Similarly, the slower the temperature will drop for the given heat loss. In other words, it takes more $(thing)heat/$ to raise the $(thing)temperature/$ of a higher-capacity block, but its temperature will also drop more slowly when it loses heat.",
-   "$(li)不同物体具有不同的 $(thing)热容量/$。热容量越高，在获得相同热量时温度上升得就越慢。同样，在损失相同热量时，温度下降得也越慢。换句话说，要提高高热容量方块的 $(thing)温度/$，需要更多的 $(thing)热量/$，但当它失去热量时，温度下降得也会更慢。"
+   "$(li)不同物体具有不同的$(thing)热容量/$。热容量越高，在获得相同热量时温度上升得就越慢。同样，在损失相同热量时，温度下降得也越慢。换句话说，要提高高热容量方块的$(thing)温度/$，需要更多的$(thing)热量/$，但当它失去热量时，温度下降得也会更慢。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Machines will lose heat to the air if left exposed; this is particularly noticeable with the $(l:manufacturing/refinery)Refinery/$, which has many exposed faces, but is also true of any heat-conducting block, including $(l:base_concepts/basic_materials#compressed_iron_block)Compressed Iron Blocks/$.$(p)To avoid this heat loss, ensure that no faces are exposed to air blocks; any non-conducting block will do. It doesn't have to be a full block, either - $(item)Trapdoors/$ and $(item)slabs/$ will work fine.",
-   "机器如果暴露在空气中，就会向空气散热；这一点在 $(l:manufacturing/refinery)精炼厂/$ 上尤为明显，因为它有很多暴露的表面，但这同样适用于任何导热方块，包括 $(l:base_concepts/basic_materials#compressed_iron_block)压缩铁块/$。$(p)要避免这种热量损失，请确保没有任何表面暴露在空气方块中；任何不导热的方块都可以。而且也不一定非得是完整方块——$(item)活板门/$ 和 $(item)台阶/$ 也完全可行。"
+   "机器如果暴露在空气中，就会向空气散热；这一点在$(l:manufacturing/refinery)精炼厂/$上尤为明显，因为它有很多暴露的表面，但这同样适用于任何导热方块，包括$(l:base_concepts/basic_materials#compressed_iron_block)压缩铁块/$。$(p)要避免这种热量损失，请确保没有任何表面暴露在空气方块中；任何不导热的方块都可以。而且也不一定非得是完整方块——$(item)活板门/$和$(item)台阶/$也完全可行。"
   ],
   [
    [

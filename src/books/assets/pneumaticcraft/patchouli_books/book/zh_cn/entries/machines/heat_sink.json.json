@@ -34,7 +34,7 @@
     "text"
    ],
    "You can increase the effectiveness of a $(item)Heat Sink/$ by placing it in range of an $(l:tubes/air_grate_module#active_cooling)Air Grate Module/$. The module's range is displayed when you attach it to a $(l:tubes/pressure_tubes)Pressure Tube/$. The cooling effectiveness can be stacked by using multiple Air Grate Modules.",
-   "你可以将 $(item)散热片/$ 放置在 $(l:tubes/air_grate_module#active_cooling)空气栅管道模块/$ 的作用范围内，以提高其效果。将该模块安装到 $(l:tubes/pressure_tubes)压力管道/$ 上时，会显示模块的作用范围。使用多个空气栅管道模块还可以叠加冷却效果。"
+   "你可以将$(item)散热片/$放置在$(l:tubes/air_grate_module#active_cooling)空气栅管道模块/$的作用范围内，以提高其效果。将该模块安装到$(l:tubes/pressure_tubes)压力管道/$上时，会显示模块的作用范围。使用多个空气栅管道模块还可以叠加冷却效果。"
   ],
   [
    [

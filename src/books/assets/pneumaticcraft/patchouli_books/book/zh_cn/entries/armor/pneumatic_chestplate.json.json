@@ -34,7 +34,7 @@
     "text"
    ],
    "With a $(l:base_concepts/upgrades#security)Security Upgrade/$ installed, the chestplate grants you protection from fire and lava, at a significant air cost: air is rapidly dumped from the chestplate to extinguish nearby flames and keep you cool.  It will even slowly solidify nearby lava.",
-   "安装了 $(l:base_concepts/upgrades#security)安全升级/$ 后，胸甲会为你提供火焰和熔岩防护，但会显著消耗空气：胸甲会快速排出空气，以扑灭附近的火焰并让你保持凉爽。它甚至还会缓慢凝固附近的熔岩。"
+   "安装了$(l:base_concepts/upgrades#security)安全升级/$后，胸甲会为你提供火焰和熔岩防护，但会显著消耗空气：胸甲会快速排出空气，以扑灭附近的火焰并让你保持凉爽。它甚至还会缓慢凝固附近的熔岩。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "The $(item)Security Upgrade/$ will also provide protection from uninsulated $(l:https://minecraft.curseforge.com/projects/immersive-engineering)Immersive Engineering/$ wiring; you will not be injured by electric shocks from such wires, but this does cost air from the chestplate, proportional to the damage negated. This doesn't prevent any knockbacks.",
-   "$(item)安全升级/$还可提供对未绝缘的 $(l:https://minecraft.curseforge.com/projects/immersive-engineering)沉浸工程/$ 线路的防护；你不会因这类导线造成的电击而受伤，但这会消耗胸甲中的空气，消耗量与被抵消的伤害成正比。此效果无法防止任何击退。"
+   "$(item)安全升级/$还可提供对未绝缘的$(l:https://minecraft.curseforge.com/projects/immersive-engineering)沉浸工程/$线路的防护；你不会因这类导线造成的电击而受伤，但这会消耗胸甲中的空气，消耗量与被抵消的伤害成正比。此效果无法防止任何击退。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "With one or more $(l:base_concepts/upgrades#magnet)Magnet Upgrades/$ installed, nearby items and XP orbs will be attracted to you for a very small air cost.  The base range is 5 blocks, but this can be increased up to 10 blocks by adding extra upgrades.",
-   "安装一个或多个 $(l:base_concepts/upgrades#magnet)磁铁升级/$ 后，附近的物品和经验球会以极低的空气消耗被吸引到你身边。基础范围为 5 格方块，但通过添加额外升级，最远可提升到 10 格方块。"
+   "安装一个或多个$(l:base_concepts/upgrades#magnet)磁铁升级/$后，附近的物品和经验球会以极低的空气消耗被吸引到你身边。基础范围为 5 格方块，但通过添加额外升级，最远可提升到 10 格方块。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "The Magnet Upgrade respects Botania's $(item)Solegnolia/$ flower, and will also not attempt to pull items from Immersive Engineering $(item)conveyor belts/$.",
-   "磁铁升级会遵循 Botania 的 $(item)弱磁兰/$ 花朵效果，也不会尝试从 Immersive Engineering 的 $(item)传送带/$ 上吸取物品。"
+   "磁铁升级会遵循 Botania 的$(item)弱磁兰/$花朵效果，也不会尝试从 Immersive Engineering 的$(item)传送带/$上吸取物品。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "With one or more $(l:base_concepts/upgrades#charging)Charging Upgrades/$ installed, the chestplate gains the ability to pressurize any other pneumatic item in your inventory, both worn and carried.  The chestplate will only charge items up to its own pressure level.  Adding extra Charging Upgrades (up to 6) increases the charging rate.",
-   "安装一个或多个 $(l:base_concepts/upgrades#charging)充气升级/$ 后，胸甲将获得为你物品栏中其他气动物品充气的能力，无论是已穿戴的还是随身携带的。胸甲只会为物品充气到与自身相同的压力等级。添加更多充气升级（最多 6 个）可提高充气速度。"
+   "安装一个或多个$(l:base_concepts/upgrades#charging)充气升级/$后，胸甲将获得为你物品栏中其他气动物品充气的能力，无论是已穿戴的还是随身携带的。胸甲只会为物品充气到与自身相同的压力等级。添加更多充气升级（最多 6 个）可提高充气速度。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "A $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ allows items/blocks to be launched from your offhand slot by pressing & releasing $(thing)$(k:pneumaticcraft.chestplate.launcher)/$, similar to an $(l:machines/air_cannon)Air Cannon/$. It takes 15 ticks (0.75 seconds) to fully charge the launcher; releasing the key sooner will launch at reduced velocity.",
-   "$(l:base_concepts/upgrades#dispenser)发射器升级/$允许你在按下并松开 $(thing)$(k:pneumaticcraft.chestplate.launcher)/$ 时，将副手槽中的物品/方块发射出去，效果类似于 $(l:machines/air_cannon)空气炮/$。发射器完全蓄力需要 15 游戏刻（0.75 秒）；如果提前松开按键，发射速度就会降低。"
+   "$(l:base_concepts/upgrades#dispenser)发射器升级/$允许你在按下并松开$(thing)$(k:pneumaticcraft.chestplate.launcher)/$时，将副手槽中的物品/方块发射出去，效果类似于$(l:machines/air_cannon)空气炮/$。发射器完全蓄力需要 15 游戏刻（0.75 秒）；如果提前松开按键，发射速度就会降低。"
   ],
   [
    [
@@ -124,7 +124,7 @@
     "text"
    ],
    "$(li)Some blocks have special $(item)Dispenser/$-like behaviour, such as $(item)TNT/$, or $(item)Arrows/$...$(li)Other blocks (like $(item)Torches/$) will be fired as 'tumbling' blocks which reform as blocks when they hit something.$(li)Other items will simply be fired as item entities.",
-   "$(li)有些方块具有类似 $(item)发射器/$ 的特殊行为，例如 $(item)TNT/$ 或 $(item)箭矢/$……$(li)其他方块（如 $(item)火把/$）会以“翻滚”方块的形式被发射出去，并在撞到东西时重新变回方块。$(li)其他物品则只会作为物品实体被发射出去。"
+   "$(li)有些方块具有类似$(item)发射器/$的特殊行为，例如$(item)TNT/$或$(item)箭矢/$……$(li)其他方块（如$(item)火把/$）会以“翻滚”方块的形式被发射出去，并在撞到东西时重新变回方块。$(li)其他物品则只会作为物品实体被发射出去。"
   ],
   [
    [
@@ -142,7 +142,7 @@
     "text"
    ],
    "A $(l:base_concepts/upgrades#range)Range Upgrade/$ installed in your chestplate increases your reach distance for block interactions (not melee attacks) by 3.5 blocks while it's active. This does come with a small ongoing air cost, however.",
-   "安装在胸甲上的 $(l:base_concepts/upgrades#range)范围升级/$ 在激活时可将你的方块交互距离（不包括近身攻击）提高 3.5 格。不过，这会持续消耗少量空气。"
+   "安装在胸甲上的$(l:base_concepts/upgrades#range)范围升级/$在激活时可将你的方块交互距离（不包括近身攻击）提高 3.5 格。不过，这会持续消耗少量空气。"
   ],
   [
    [
@@ -151,7 +151,7 @@
     "text"
    ],
    "With up to four $(l:base_concepts/upgrades#air_conditioning)Air Conditioning Upgrades/$ installed, you will gain some protection from environmental temperature extremes added by the $(l:https://minecraft.curseforge.com/projects/tough-as-nails)Tough As Nails/$ mod. Air Conditioning will automatically engage if it detects that your body temperature is higher or lower than normal, and disengage when equilibrium has been restored.",
-   "安装最多四个 $(l:base_concepts/upgrades#air_conditioning)空调升级/$ 后，你将获得一些对 $(l:https://minecraft.curseforge.com/projects/tough-as-nails)意志坚定/$ 模组所添加的极端环境温度的防护。空调会在检测到你的体温高于或低于正常值时自动启动，并在体温恢复平衡后自动关闭。"
+   "安装最多四个$(l:base_concepts/upgrades#air_conditioning)空调升级/$后，你将获得一些对$(l:https://minecraft.curseforge.com/projects/tough-as-nails)意志坚定/$模组所添加的极端环境温度的防护。空调会在检测到你的体温高于或低于正常值时自动启动，并在体温恢复平衡后自动关闭。"
   ],
   [
    [

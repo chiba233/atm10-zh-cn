@@ -16,7 +16,7 @@
     "text"
    ],
    "This special door will open automatically if there is a player nearby, provided that it has sufficient $(l:base_concepts/pressure)air pressure/$. It has a base detection range of 2 blocks but this can be increased by inserting $(l:base_concepts/upgrades#range)Range Upgrades/$.$(p)To construct a $(thing)Pneumatic Door/$, you must place a $(thing)Pneumatic Door Base/$ so that it's level with the $(italic)top half/$ of the door itself.",
-   "这种特殊的门会在玩家靠近时自动打开，前提是它拥有充足的 $(l:base_concepts/pressure)空气压力/$。它的基础侦测范围为 2 格，但可以通过插入 $(l:base_concepts/upgrades#range)范围升级/$ 来扩大。$(p)要建造 $(thing)气动门/$，你必须放置一个 $(thing)气动门基座/$，并使其与门本体的 $(italic)上半部分/$ 齐平。"
+   "这种特殊的门会在玩家靠近时自动打开，前提是它拥有充足的$(l:base_concepts/pressure)空气压力/$。它的基础侦测范围为 2 格，但可以通过插入$(l:base_concepts/upgrades#range)范围升级/$来扩大。$(p)要建造$(thing)气动门/$，你必须放置一个$(thing)气动门基座/$，并使其与门本体的$(italic)上半部分/$齐平。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "When the $(item)Pneumatic Door Base/$ is within the range of an operating $(l:machines/security_station)Security Station/$, it will only open the door to players trusted by the $(thing)Security Station/$.",
-   "当 $(item)气动门基座/$ 处于正在运行的 $(l:machines/security_station)安全站/$ 的范围内时，它只会为受到 $(thing)安全站/$ 信任的玩家开门。"
+   "当$(item)气动门基座/$处于正在运行的$(l:machines/security_station)安全站/$的范围内时，它只会为受到$(thing)安全站/$信任的玩家开门。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The $(thing)Pneumatic Door/$ operates in one of three modes, selectable via the door base GUI:$(li)$(thing)Player Nearby/$: the door will open when a player is in range.$(li)$(thing)Nearby and Looking/$: the door will open when a player is nearby $(italic)and/$ looking at the door$(li)$(thing)Wooden Door/$: the door behaves like a vanilla $(item)Wooden Door/$.",
-   "$(thing)气动门/$有三种运行模式，可通过门底座的 GUI 进行选择：$(li)$(thing)玩家临近/$：当玩家进入范围内时，门会打开。$(li)$(thing)玩家附近并且看向它/$：当玩家在附近$(italic)并且/$看着这扇门时，门会打开。$(li)$(thing)木门/$：这扇门的行为与原版的 $(item)木门/$ 相同。"
+   "$(thing)气动门/$有三种运行模式，可通过门底座的 GUI 进行选择：$(li)$(thing)玩家临近/$：当玩家进入范围内时，门会打开。$(li)$(thing)玩家附近并且看向它/$：当玩家在附近$(italic)并且/$看着这扇门时，门会打开。$(li)$(thing)木门/$：这扇门的行为与原版的$(item)木门/$相同。"
   ],
   [
    [

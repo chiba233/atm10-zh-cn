@@ -16,7 +16,7 @@
     "text"
    ],
    "$(pncr) currently has three $(thing)tiers/$ for pneumatic machines:$(li)$(thing)Tier one/$ machines are capable of nominally resisting 5 bar of pressure.$(li)$(thing)Tier one-point-five/$ machines can resist up to 10 bar.$(li)$(thing)Tier two/$ machines can resist up to 20 bar.",
-   "$(#228)气动工艺$()目前有三个用于气动机器的 $(thing)等级/$：$(li)$(thing)1级/$ 机器正常情况下可承受 5 bar 压力。$(li)$(thing)1.5级/$ 机器可承受最高 10 bar。$(li)$(thing)2级/$ 机器可承受最高 20 bar。"
+   "$(#228)气动工艺$()目前有三个用于气动机器的$(thing)等级/$：$(li)$(thing)1级/$机器正常情况下可承受 5 bar 压力。$(li)$(thing)1.5级/$机器可承受最高 10 bar。$(li)$(thing)2级/$机器可承受最高 20 bar。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Tier 1.5 is a new \"tier\" added in the MC 1.18 release of $(pncr). It's an optional tier, mainly intended to access some functionality which was previously tier 2 only:$(li)Charging tools to 10 bar$(li)Obtaining a $(item)Diamond Drill Bit/$ (which allows 3x3 block breaking; this used to require a $(item)Netherite Drill Bit/$)",
-   "1.5级是$(#228)气动工艺$()在 MC 1.18 版本中新加入的一个“等级”。这是一个可选等级，主要用于获得一些以前只有 2 级才能使用的功能：$(li)将工具充气到 10 bar$(li)获得一个 $(item)钻石钻头/$（可实现 3x3 范围挖掘；以前这需要 $(item)下界合金钻头/$）"
+   "1.5级是$(#228)气动工艺$()在 MC 1.18 版本中新加入的一个“等级”。这是一个可选等级，主要用于获得一些以前只有 2 级才能使用的功能：$(li)将工具充气到 10 bar$(li)获得一个$(item)钻石钻头/$（可实现 3x3 范围挖掘；以前这需要$(item)下界合金钻头/$）"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Note that $(thing)bar/$ as used by $(pncr) represents the pressure $(bold)above/$ normal atmospheric pressure, so 0 bar is unpressurized air, and -1 bar is a vacuum. This is also known as $(thing)Gauge Pressure/$.",
-   "请注意，$(#228)气动工艺$()所使用的 $(thing)bar/$ 表示的是高于正常大气压的 $(bold)压力/$，因此 0 bar 表示未加压空气，-1 bar 表示真空。这也称为 $(thing)表压/$。"
+   "请注意，$(#228)气动工艺$()所使用的$(thing)bar/$表示的是高于正常大气压的$(bold)压力/$，因此 0 bar 表示未加压空气，-1 bar 表示真空。这也称为$(thing)表压/$。"
   ],
   [
    [

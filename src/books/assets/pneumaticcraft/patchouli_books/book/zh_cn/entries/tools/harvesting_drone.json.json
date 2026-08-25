@@ -25,7 +25,7 @@
     "text"
    ],
    "As with all types of Drone, these drones require $(l:base_concepts/pressure)pressure/$ to operate, and will automatically seek out $(l:tools/drone#charging)a Charging Station with a Dispenser Upgrade/$ if low on air.",
-   "与所有类型的雄蜂一样，这些雄蜂需要 $(l:base_concepts/pressure)压力/$ 才能运作，并且在气压不足时会自动寻找 $(l:tools/drone#charging)装有发射器升级的充气站/$。"
+   "与所有类型的雄蜂一样，这些雄蜂需要$(l:base_concepts/pressure)压力/$才能运作，并且在气压不足时会自动寻找$(l:tools/drone#charging)装有发射器升级的充气站/$。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "If you deploy the $(item)Harvesting Drone/$ by $(thing)sneak+right-clicking/$ it against an inventory containing (only) a $(item)Hoe/$ of any type, the drone will use that hoe to automatically replant crops, and will not attempt to do any work without a hoe equipped. If you don't care about replanting, just deploy the drone against any other block.",
-   "如果你将 $(item)收割无人机/$ 通过 $(thing)潜行右击/$ 的方式部署到一个容器上，且该容器中（仅）包含任意类型的 $(item)锄/$，那么无人机会使用那把锄头自动重新种植作物；如果没有装备锄头，它将不会尝试进行任何工作。如果你不在意重新种植，只需将无人机部署到其他任意方块上即可。"
+   "如果你将$(item)收割无人机/$通过$(thing)潜行右击/$的方式部署到一个容器上，且该容器中（仅）包含任意类型的$(item)锄/$，那么无人机会使用那把锄头自动重新种植作物；如果没有装备锄头，它将不会尝试进行任何工作。如果你不在意重新种植，只需将无人机部署到其他任意方块上即可。"
   ],
   [
    [

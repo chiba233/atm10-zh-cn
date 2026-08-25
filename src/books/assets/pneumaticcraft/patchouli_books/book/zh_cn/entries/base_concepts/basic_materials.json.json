@@ -34,7 +34,7 @@
     "text"
    ],
    "Warning: as a side effect of the explosion you will lose around 20% of your ingots. To avoid this, you can also craft $(item)Compressed Iron Ingots/$ in a $(l:manufacturing/pressure_chamber)Pressure Chamber/$. However, to be able to craft the $(thing)Pressure Chamber/$ itself you'll need some $(item)Compressed Iron Ingots/$, so a little initial loss is unavoidable.",
-   "警告：爆炸的副作用是你会损失大约 20% 的锭。为了避免这一点，你也可以在$(l:manufacturing/pressure_chamber)压力室/$中制作 $(item)压缩铁锭/$。不过，要制作$(thing)压力室/$本身，你需要先准备一些 $(item)压缩铁锭/$，所以一开始有少量损失是不可避免的。"
+   "警告：爆炸的副作用是你会损失大约 20% 的锭。为了避免这一点，你也可以在$(l:manufacturing/pressure_chamber)压力室/$中制作$(item)压缩铁锭/$。不过，要制作$(thing)压力室/$本身，你需要先准备一些$(item)压缩铁锭/$，所以一开始有少量损失是不可避免的。"
   ],
   [
    [

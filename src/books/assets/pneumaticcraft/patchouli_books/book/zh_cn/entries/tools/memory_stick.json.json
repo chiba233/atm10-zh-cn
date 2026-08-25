@@ -25,7 +25,7 @@
     "text"
    ],
    "Experience stored in the Memory Stick can also be extracted as $(l:base_concepts/memory_essence)Memory Essence/$ fluid. To do this, simply $(thing)right-click/$ any $(l:machines/tanks)Fluid Tank/$ to transfer XP to or from the tank (other mods' fluid tanks should also work fine here). Right-clicking an empty tank will attempt to transfer Memory Essence from the stick to the tank; right-clicking a tank with any Memory Essence will attempt to transfer from the tank to the stick.",
-   "存储在记忆棒中的经验也可以提取为 $(l:base_concepts/memory_essence)记忆源质/$流体。要做到这一点，只需 $(thing)右击/$任意一个 $(l:machines/tanks)流体储罐/$，即可在储罐与经验之间进行转移（其他模组的流体储罐在这里通常也能正常使用）。右击一个空的储罐时，会尝试将记忆棒中的记忆源质转移到储罐中；右击一个含有任意记忆源质的储罐时，则会尝试将储罐中的记忆源质转移到记忆棒中。"
+   "存储在记忆棒中的经验也可以提取为$(l:base_concepts/memory_essence)记忆源质/$流体。要做到这一点，只需$(thing)右击/$任意一个$(l:machines/tanks)流体储罐/$，即可在储罐与经验之间进行转移（其他模组的流体储罐在这里通常也能正常使用）。右击一个空的储罐时，会尝试将记忆棒中的记忆源质转移到储罐中；右击一个含有任意记忆源质的储罐时，则会尝试将储罐中的记忆源质转移到记忆棒中。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "With the $(thing)Curios/$ mod installed, you can store the Memory Stick in any Curios slot, to save on inventory space. This is particularly useful with XP auto-absorption switched on.",
-   "安装了 $(thing)饰品/$ 模组后，你可以将 记忆棒 存放在任意饰品栏槽位中，以节省容器空间。开启 XP 自动吸收后，这会特别有用。"
+   "安装了$(thing)饰品/$模组后，你可以将 记忆棒 存放在任意饰品栏槽位中，以节省容器空间。开启 XP 自动吸收后，这会特别有用。"
   ],
   [
    [

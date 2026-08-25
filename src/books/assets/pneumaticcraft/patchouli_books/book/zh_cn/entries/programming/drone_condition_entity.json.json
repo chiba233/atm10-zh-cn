@@ -16,7 +16,7 @@
     "text"
    ],
    "This is a $(l:programming/conditions)Condition/$ widget.$(p)The $(thing)Drone Condition: Entity/$ widget allows you to check the entity this $(l:tools/drone)Drone/$ is currently carrying. You can add an optional $(l:programming/text)Text/$ widget with an $(l:base_concepts/entity_filter)Entity Filter/$, to filter the entity to check for. With no $(thing)Text/$ widget, the condition will be true if $(italic)any/$ entity is carried.",
-   "这是一个 $(l:programming/conditions)条件/$ 组件。$(p)$(thing)无人机条件：实体/$ 组件可让你检查这个 $(l:tools/drone)无人机/$ 当前正在携带的实体。你还可以添加一个可选的 $(l:programming/text)文本/$ 组件，并为其设置 $(l:base_concepts/entity_filter)实体过滤器/$，以筛选要检查的实体。若没有 $(thing)文本/$ 组件，只要携带的是 $(italic)任意/$ 实体，该条件就会成立。"
+   "这是一个$(l:programming/conditions)条件/$组件。$(p)$(thing)无人机条件：实体/$组件可让你检查这个$(l:tools/drone)无人机/$当前正在携带的实体。你还可以添加一个可选的$(l:programming/text)文本/$组件，并为其设置$(l:base_concepts/entity_filter)实体过滤器/$，以筛选要检查的实体。若没有$(thing)文本/$组件，只要携带的是$(italic)任意/$实体，该条件就会成立。"
   ],
   [
    [

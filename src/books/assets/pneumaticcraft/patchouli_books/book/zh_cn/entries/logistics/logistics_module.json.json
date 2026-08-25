@@ -16,7 +16,7 @@
     "text"
    ],
    "See $(l:tubes/logistics_module)the Logistics Module entry/$ in the $(thing)Pressure Tubes/$ section of the manual for full details.",
-   "完整详情请参阅手册中 $(thing)压力管道/$ 章节的 $(l:tubes/logistics_module)物流管道模块词条/$。"
+   "完整详情请参阅手册中$(thing)压力管道/$章节的$(l:tubes/logistics_module)物流管道模块词条/$。"
   ],
   [
    [

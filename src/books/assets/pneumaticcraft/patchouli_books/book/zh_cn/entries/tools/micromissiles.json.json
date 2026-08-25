@@ -16,7 +16,7 @@
     "text"
    ],
    "$(item)Micromissiles/$ are small hand-launched missiles with an explosive payload and smart mob targeting. To fire a $(item)Micromissile/$, simply $(thing)right-click/$ the missile pod. Each pod has 100 missiles by default.$(p)Micromissiles seek targets within a 24-block spherical radius, centered on the missile. Once a suitable target is found, the missile will turn toward that target.",
-   "$(item)微型导弹/$是可手持发射的小型导弹，带有爆炸载荷和智能生物锁定功能。要发射一枚 $(item)微型导弹/$，只需 $(thing)右击/$导弹仓即可。每个导弹仓默认有 100 枚导弹。$(p)微型导弹会搜索以导弹为中心、半径 24 格球形范围内的目标。一旦找到合适的目标，导弹就会转向该目标。"
+   "$(item)微型导弹/$是可手持发射的小型导弹，带有爆炸载荷和智能生物锁定功能。要发射一枚$(item)微型导弹/$，只需$(thing)右击/$导弹仓即可。每个导弹仓默认有 100 枚导弹。$(p)微型导弹会搜索以导弹为中心、半径 24 格球形范围内的目标。一旦找到合适的目标，导弹就会转向该目标。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "If a $(item)Micromissile/$ hits any entity or block, it will immediately explode. The explosion will not damage terrain $(ttcolor)$(t:See 'B:damageTerrain' in mod config)by default/$.$(p)$(item)Micromissiles/$ have a limited lifetime, which is 300 ticks (15 seconds) $(ttcolor)$(t:See 'I:missileLifetime' in mod config)by default/$. After that the missile will run out of fuel and drop from the sky, but it will still explode when it hits the ground.",
-   "如果 $(item)微型导弹/$击中任何实体或方块，它就会立即爆炸。默认情况下，爆炸$(ttcolor)$(t:See 'B:damageTerrain' in mod config)不会破坏地形/$。$(p)$(item)微型导弹/$的存在时间有限，默认是 300 刻（15 秒）$(ttcolor)$(t:See 'I:missileLifetime' in mod config)/$。在那之后，导弹会耗尽燃料并从空中坠落，但在撞击地面时仍然会爆炸。"
+   "如果$(item)微型导弹/$击中任何实体或方块，它就会立即爆炸。默认情况下，爆炸$(ttcolor)$(t:See 'B:damageTerrain' in mod config)不会破坏地形/$。$(p)$(item)微型导弹/$的存在时间有限，默认是 300 刻（15 秒）$(ttcolor)$(t:See 'I:missileLifetime' in mod config)/$。在那之后，导弹会耗尽燃料并从空中坠落，但在撞击地面时仍然会爆炸。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "If you aim directly at a suitable entity when firing, the fired $(item)Micromissile/$ will immediately lock on to that entity, regardless of what else is nearer.$(p)If you $(thing)sneak+right-click/$ the missile pod, a GUI will open allowing configuration of several missile properties:$(li)The selection triangle allows you to balance between top speed, turn rate and explosion power.",
-   "如果你在发射时直接瞄准一个合适的实体，发射出的 $(item)微型导弹/$ 会立即锁定该实体，无论附近还有什么更近的目标。$(p)如果你对导弹仓执行 $(thing)潜行右击/$，就会打开一个 GUI，让你配置导弹的若干属性：$(li)选择三角形可让你在最高速度、转向速率和爆炸威力之间进行权衡。"
+   "如果你在发射时直接瞄准一个合适的实体，发射出的$(item)微型导弹/$会立即锁定该实体，无论附近还有什么更近的目标。$(p)如果你对导弹仓执行$(thing)潜行右击/$，就会打开一个 GUI，让你配置导弹的若干属性：$(li)选择三角形可让你在最高速度、转向速率和爆炸威力之间进行权衡。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "$(li)You can select between $(thing)Smart/$ and $(thing)Dumb/$ mode: in $(thing)Smart/$ mode, missiles will lock on to targets as described above, while in $(thing)Dumb/$ mode, missiles will simply fly in a straight line until they hit something, but with good speed and damage capability.$(li)You can filter which entities to attack by entering an $(l:base_concepts/entity_filter)entity filter/$ in the $(bold)Entity Filter/$ field.",
-   "$(li)你可以在 $(thing)智能/$ 模式和 $(thing)非制导/$ 模式之间进行选择：在 $(thing)智能/$ 模式下，导弹会如上所述锁定目标；而在 $(thing)非制导/$ 模式下，导弹只会沿直线飞行，直到击中某个东西，但具有不错的速度和伤害能力。$(li)你可以在 $(bold)实体过滤器/$ 字段中输入 $(l:base_concepts/entity_filter)实体过滤器/$，以筛选要攻击的实体。"
+   "$(li)你可以在$(thing)智能/$模式和$(thing)非制导/$模式之间进行选择：在$(thing)智能/$模式下，导弹会如上所述锁定目标；而在$(thing)非制导/$模式下，导弹只会沿直线飞行，直到击中某个东西，但具有不错的速度和伤害能力。$(li)你可以在$(bold)实体过滤器/$字段中输入$(l:base_concepts/entity_filter)实体过滤器/$，以筛选要攻击的实体。"
   ],
   [
    [

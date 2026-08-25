@@ -16,7 +16,7 @@
     "text"
    ],
    "$(item)Drill Pipes/$ are required by the $(l:machines/gas_lift)Gas Lift/$ to drill down to fluids.$(p)They are also suitable for use in general building, if you like.",
-   "$(item)气举钻管/$是 $(l:machines/gas_lift)气举/$ 向下钻取流体所必需的。$(p)当然，如果你愿意，它们也适合用于一般建筑。"
+   "$(item)气举钻管/$是$(l:machines/gas_lift)气举/$向下钻取流体所必需的。$(p)当然，如果你愿意，它们也适合用于一般建筑。"
   ],
   [
    [

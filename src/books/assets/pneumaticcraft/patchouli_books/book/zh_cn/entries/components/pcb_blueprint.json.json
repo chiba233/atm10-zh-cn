@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)PCB Blueprint/$ is a special component, required in the crafting of the $(l:manufacturing/uv_light_box)UV Light Box/$.$(p)It cannot be crafted normally, but must be traded for, usually via the $(l:tools/amadron_tablet)Amadron Tablet/$, but possibly also via $(l:base_concepts/villagers)Mechanic Villagers/$.",
-   "$(item)印刷电路板蓝图/$是一种特殊组件，是合成 $(l:manufacturing/uv_light_box)紫外线灯箱/$ 所必需的。$(p)它无法通过常规方式合成，而必须通过交易获得，通常是使用 $(l:tools/amadron_tablet)亚马龙平板电脑/$，但也可能通过 $(l:base_concepts/villagers)机械师村民/$ 获得。"
+   "$(item)印刷电路板蓝图/$是一种特殊组件，是合成$(l:manufacturing/uv_light_box)紫外线灯箱/$所必需的。$(p)它无法通过常规方式合成，而必须通过交易获得，通常是使用$(l:tools/amadron_tablet)亚马龙平板电脑/$，但也可能通过$(l:base_concepts/villagers)机械师村民/$获得。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Trading for the $(item)PCB Blueprint/$.",
-   "交易获得 $(item)印刷电路板蓝图/$。"
+   "交易获得$(item)印刷电路板蓝图/$。"
   ]
  ]
 }

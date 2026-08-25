@@ -16,7 +16,7 @@
     "text"
    ],
    "When $(thing)ComputerCraft/$ or $(thing)Open Computers/$ is installed, you'll be able to interact with almost every $(pncr) machine, and $(l:machines/drone_interface)Drones/$.$(p)Any of the machines listed here can be interacted with as CC/OC peripherals.",
-   "当安装了 $(thing)ComputerCraft/$ 或 $(thing)Open Computers/$ 后，你将能够与几乎所有$(#228)气动工艺$()机器以及 $(l:machines/drone_interface)无人机/$ 进行交互。$(p)此处列出的任何机器都可以作为 CC/OC 外设进行交互。"
+   "当安装了$(thing)ComputerCraft/$或$(thing)Open Computers/$后，你将能够与几乎所有$(#228)气动工艺$()机器以及$(l:machines/drone_interface)无人机/$进行交互。$(p)此处列出的任何机器都可以作为 CC/OC 外设进行交互。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "In Lua, you can run $(thing)m = peripheral.wrap(<side>)/$, where $(thing)<side>/$ is the side of the computer the peripheral is connected to (top, bottom, left, right, back, front). Then you can use any of the following functions with $(thing)m.<functionName>/$.$(p)Anywhere in the following functions where a '<side>' appears as one of the arguments, 'up', 'down', 'north', 'south', 'east', 'west' are valid.",
-   "在 Lua 中，你可以运行 $(thing)m = peripheral.wrap(<side>)/$，其中 $(thing)<side>/$ 表示该 peripheral 连接在计算机的哪一侧（上、下、左、右、后、前）。然后，你就可以通过 $(thing)m.<functionName>/$ 使用以下任意函数。$(p)在下列函数中，凡是某个参数位置出现 '<side>' 的地方，都可以使用 'up'、'down'、'north'、'south'、'east'、'west'。"
+   "在 Lua 中，你可以运行$(thing)m = peripheral.wrap(<side>)/$，其中$(thing)<side>/$表示该 peripheral 连接在计算机的哪一侧（上、下、左、右、后、前）。然后，你就可以通过$(thing)m.<functionName>/$使用以下任意函数。$(p)在下列函数中，凡是某个参数位置出现 '<side>' 的地方，都可以使用 'up'、'down'、'north'、'south'、'east'、'west'。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "You will need to use an $(item)Adapter/$ to connect your computer to $(pnc) machines; they will then appear as OC components, which show up if you run $(thing)=components.list()/$ in an OC Lua environment. Then any of the following functions can be used, e.g. $(thing)p = components.air_compressor.getPressure()/$ will retrieve the current pressure of an attached $(item)Air Compressor/$.",
-   "你需要使用一个 $(item)适配器/$，将你的计算机连接到 $(pnc)机器；这样它们就会显示为 OC 组件，并且在 OC Lua 环境中运行 $(thing)=components.list()/$ 时可以看到它们。随后即可使用以下任意函数，例如 $(thing)p = components.air_compressor.getPressure()/$ 会获取已连接的 $(item)空气压缩机/$ 的当前气压。"
+   "你需要使用一个$(item)适配器/$，将你的计算机连接到$(pnc)机器；这样它们就会显示为 OC 组件，并且在 OC Lua 环境中运行$(thing)=components.list()/$时可以看到它们。随后即可使用以下任意函数，例如$(thing)p = components.air_compressor.getPressure()/$会获取已连接的$(item)空气压缩机/$的当前气压。"
   ],
   [
    [
@@ -142,7 +142,7 @@
     "text"
    ],
    "$(li)$(#800)setExternalControl(<true/false>)/$: When true, set the Elevator's $(#f00)redstone mode/$ to 'Elevator Caller' mode, which is also applicable for computer control. You don't have to set it prior to calling $(#800)setTargetHeight()/$; that method will change the Elevator to external control automatically.",
-   "$(li)$(#800)setExternalControl(<true/false>)/$：当设为 true 时，会将电梯的 $(#f00)红石模式/$ 设为“电梯呼叫器”模式，这同样适用于计算机控制。你不必在调用 $(#800)setTargetHeight()/$ 之前先进行设置；该方法会自动将电梯切换为外部控制。"
+   "$(li)$(#800)setExternalControl(<true/false>)/$：当设为 true 时，会将电梯的$(#f00)红石模式/$设为“电梯呼叫器”模式，这同样适用于计算机控制。你不必在调用$(#800)setTargetHeight()/$之前先进行设置；该方法会自动将电梯切换为外部控制。"
   ],
   [
    [
@@ -205,7 +205,7 @@
     "text"
    ],
    "$(li)$(#800)setSensor(<sensorName>), setSensor(<index>), setSensor()/$: Sets the current selected sensor. <sensorName> is one of the names returned by $(#800)getSensorNames()/$. <index> is an index on the returned table from $(#800)getSensorNames()/$. When using the no-arg $(#800)setSensor()/$, no sensor will be selected (the machine goes idle and uses no air). Returns true if the sensor is possible with the currently inserted upgrades. ",
-   "$(li)$(#800)setSensor(<sensorName>)、setSensor(<index>)、setSensor()/$：设置当前选中的传感器。<sensorName> 是 $(#800)getSensorNames()/$ 返回的名称之一。<index> 是 $(#800)getSensorNames()/$ 返回表中的一个索引。使用无参数的 $(#800)setSensor()/$ 时，将不会选中任何传感器（机器会进入空闲状态，且不消耗空气）。如果当前插入的升级支持该传感器，则返回 true。"
+   "$(li)$(#800)setSensor(<sensorName>)、setSensor(<index>)、setSensor()/$：设置当前选中的传感器。<sensorName> 是$(#800)getSensorNames()/$返回的名称之一。<index> 是$(#800)getSensorNames()/$返回表中的一个索引。使用无参数的$(#800)setSensor()/$时，将不会选中任何传感器（机器会进入空闲状态，且不消耗空气）。如果当前插入的升级支持该传感器，则返回 true。"
   ],
   [
    [
@@ -295,7 +295,7 @@
     "text"
    ],
    "For event based sensors (e.g. the player right click sensor), getting the sensor value is event-based. You get the event by doing a $(#800)<arguments> = os.pullEvent(\"universalSensor\")/$. Usually the arguments consist of <eventName, redstoneStrength>. The player right click sensor is an exception, as <eventName, redstoneStrength, interactedX, interactedY, interactedZ> is returned. This allows for some interesting uses...",
-   "对于基于事件的传感器（例如玩家右键点击传感器），获取传感器值是以事件驱动的方式进行的。你可以通过执行 $(#800)<arguments> = os.pullEvent(\"universalSensor\")/$ 来获取该事件。通常，返回的参数为 <事件名称, 红石信号强度>。玩家右键点击传感器是个例外，它会返回 <事件名称, 红石信号强度, 交互X, 交互Y, 交互Z>。这就带来了一些有趣的用法……"
+   "对于基于事件的传感器（例如玩家右键点击传感器），获取传感器值是以事件驱动的方式进行的。你可以通过执行$(#800)<arguments> = os.pullEvent(\"universalSensor\")/$来获取该事件。通常，返回的参数为 <事件名称, 红石信号强度>。玩家右键点击传感器是个例外，它会返回 <事件名称, 红石信号强度, 交互X, 交互Y, 交互Z>。这就带来了一些有趣的用法……"
   ],
   [
    [

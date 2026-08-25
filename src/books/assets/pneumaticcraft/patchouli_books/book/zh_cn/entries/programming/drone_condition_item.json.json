@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Drone Condition: Item/$ widget allows you to check the inventory of this $(l:tools/drone)Drone/$ for a certain amount of items. It will count up all matching items (specified by a connected $(l:programming/item_filter)Item Filter/$, or no filter to count every item).",
-   "$(thing)无人机条件：物品/$组件可让你检查这台 $(l:tools/drone)无人机/$ 容器中的某种物品数量。它会统计所有匹配的物品总数（由已连接的 $(l:programming/item_filter)物品过滤器/$ 指定，若没有过滤器则统计所有物品）。"
+   "$(thing)无人机条件：物品/$组件可让你检查这台$(l:tools/drone)无人机/$容器中的某种物品数量。它会统计所有匹配的物品总数（由已连接的$(l:programming/item_filter)物品过滤器/$指定，若没有过滤器则统计所有物品）。"
   ],
   [
    [

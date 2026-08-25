@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Elevator/$ is a machine that can be used to vertically transport any entities, whether it be an item, mob, animal or player.$(p)You need to place an $(item)Elevator Base/$ at the bottom. You can stack multiple bases on top of each other.$(p)On top of this, place $(item)Elevator Frames/$, which act as a support for the elevator.",
-   "$(thing)升降机/$是一种可用于垂直运输任何实体的机器，无论是物品、生物、动物还是玩家。$(p)你需要在底部放置一个 $(item)电梯基座/$。你可以将多个基座向上堆叠放置。$(p)在其上方放置 $(item)电梯框架/$，它们可作为升降机的支撑结构。"
+   "$(thing)升降机/$是一种可用于垂直运输任何实体的机器，无论是物品、生物、动物还是玩家。$(p)你需要在底部放置一个$(item)电梯基座/$。你可以将多个基座向上堆叠放置。$(p)在其上方放置$(item)电梯框架/$，它们可作为升降机的支撑结构。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Both the number of $(item)Elevator Bases/$ and the number of $(item)Elevator Frames/$ determine how high the $(thing)Elevator/$ can extend. The maximum height of an $(thing)Elevator/$ is the lower of:$(li)1 x the number of vertically-stacked $(item)Elevator Frames/$, or$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')6 x/$ the number of vertically-stacked $(item)Elevator Bases/$",
-   "$(thing)升降机/$可延伸的高度由 $(item)电梯基座/$ 的数量和 $(item)电梯框架/$ 的数量共同决定。$(thing)升降机/$的最大高度取以下两者中的较小值：$(li)垂直堆叠的 $(item)电梯框架/$ 数量的 1 倍，或$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')垂直堆叠的 $(item)电梯基座/$ 数量的 6 倍/$"
+   "$(thing)升降机/$可延伸的高度由$(item)电梯基座/$的数量和$(item)电梯框架/$的数量共同决定。$(thing)升降机/$的最大高度取以下两者中的较小值：$(li)垂直堆叠的$(item)电梯框架/$数量的 1 倍，或$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')垂直堆叠的$(item)电梯基座/$数量的 6 倍/$"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "$(item)Elevator Callers/$ placed next to $(item)Elevator Frames/$ are used to control the height of the $(thing)Elevator/$. When you place down an $(item)Elevator Frame/$, it'll calculate how many $(thing)floors/$ there are, defined by other $(item)Elevator Callers/$.$(p)$(thing)Floors/$ can be named in the $(item)Elevator Base/$ GUI; floor names will be displayed as buttons on each $(item)Elevator Caller/$. They can be clicked to call the $(thing)Elevator/$ to that floor.",
-   "放置在 $(item)电梯框架/$ 旁边的 $(item)电梯呼叫器/$ 用于控制 $(thing)电梯/$ 的高度。放下一个 $(item)电梯框架/$ 时，它会根据其他 $(item)电梯呼叫器/$ 来计算共有多少个 $(thing)楼层/$。$(p)$(thing)楼层/$ 可以在 $(item)电梯基座/$ 的 GUI 中命名；楼层名称会显示为每个 $(item)电梯呼叫器/$ 上的按钮。点击这些按钮即可将 $(thing)电梯/$ 呼叫到对应楼层。"
+   "放置在$(item)电梯框架/$旁边的$(item)电梯呼叫器/$用于控制$(thing)电梯/$的高度。放下一个$(item)电梯框架/$时，它会根据其他$(item)电梯呼叫器/$来计算共有多少个$(thing)楼层/$。$(p)$(thing)楼层/$可以在$(item)电梯基座/$的 GUI 中命名；楼层名称会显示为每个$(item)电梯呼叫器/$上的按钮。点击这些按钮即可将$(thing)电梯/$呼叫到对应楼层。"
   ],
   [
    [

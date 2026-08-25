@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Yeast Culture/$ is required for the production of $(l:renewables/ethanol)Ethanol/$ as well as $(l:renewables/sourdough)Sourdough/$ and can be produced in a couple of ways:",
-   "生产 $(l:renewables/ethanol)乙醇/$ 和 $(l:renewables/sourdough)酸面团/$ 都需要用到 $(thing)酵母菌/$，而它可以通过几种方式获得："
+   "生产$(l:renewables/ethanol)乙醇/$和$(l:renewables/sourdough)酸面团/$都需要用到$(thing)酵母菌/$，而它可以通过几种方式获得："
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "This will be the only method available to you initially. Fill a $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$ with $(thing)Water/$, and add some mushrooms. This method is a little slow (and will require a good supply of mushrooms), but will easily produce an initial stock of Yeast Culture.",
-   "这将是你一开始唯一可用的方法。向一台 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$ 中注入 $(thing)水/$，再加入一些蘑菇。这个方法会稍微慢一些（而且需要充足的蘑菇供应），但可以轻松产出最初的一批酵母菌。"
+   "这将是你一开始唯一可用的方法。向一台$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中注入$(thing)水/$，再加入一些蘑菇。这个方法会稍微慢一些（而且需要充足的蘑菇供应），但可以轻松产出最初的一批酵母菌。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "$(thing)Yeast Culture/$, being a living organism, is capable of replicating itself. To do this, pour a bucket of the culture into a pool in-world, and throw some $(thing)Sugar/$ into the pool.$(p)Now, pour a bucket of $(thing)Water/$ into a block space adjacent to the culture; you will see the water be converted into more culture after a second or two.",
-   "$(thing)酵母菌/$作为一种活体生物，能够自我繁殖。要做到这一点，将一桶这种菌种倒入世界中的一个池子里，并向池中丢入一些 $(thing)砂糖/$。$(p)然后，将一桶 $(thing)水/$倒在与菌种相邻的方块空间中；一两秒后，你会看到这些水转化为更多的菌种。"
+   "$(thing)酵母菌/$作为一种活体生物，能够自我繁殖。要做到这一点，将一桶这种菌种倒入世界中的一个池子里，并向池中丢入一些$(thing)砂糖/$。$(p)然后，将一桶$(thing)水/$倒在与菌种相邻的方块空间中；一两秒后，你会看到这些水转化为更多的菌种。"
   ],
   [
    [

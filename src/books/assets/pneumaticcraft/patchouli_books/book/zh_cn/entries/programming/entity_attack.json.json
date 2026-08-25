@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will attack any living entity within the area.$(p)Keep in mind that any $(l:programming/area)Area/$ widgets connected to this widget must have an area type of $(thing)Box/$; this is the only supported shape. It's possible to create different shapes though, by using multiple Area widgets on either whitelist (right) or blacklist (left) side.",
-   "$(l:tools/drone)无人机/$ 会攻击区域内的任何活体实体。$(p)请记住，所有连接到此组件的 $(l:programming/area)区域/$ 组件，其区域类型都必须是 $(thing)盒子/$；这是唯一受支持的形状。不过，你仍可以通过在白名单（右侧）或黑名单（左侧）连接多个区域组件来组合出不同的形状。"
+   "$(l:tools/drone)无人机/$会攻击区域内的任何活体实体。$(p)请记住，所有连接到此组件的$(l:programming/area)区域/$组件，其区域类型都必须是$(thing)盒子/$；这是唯一受支持的形状。不过，你仍可以通过在白名单（右侧）或黑名单（左侧）连接多个区域组件来组合出不同的形状。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can specify which creatures may be attacked by using $(l:programming/text)Text/$ widgets as an $(l:base_concepts/entity_filter)Entity Filter/$. E.g. if you want the $(thing)Drone/$ to attack all players, connect a $(thing)Text/$ widget to the $(italic)right/$ of the $(thing)Entity Attack/$ widget containing $(#600)@player/$.$(p)If you don't want to be attacked yourself, connect up a $(thing)Text/$ widget on the $(italic)left/$ containing your player name.",
-   "你可以使用 $(l:programming/text)文本/$ 组件作为 $(l:base_concepts/entity_filter)实体过滤器/$，来指定可以攻击哪些生物。比如，如果你想让 $(thing)无人机/$ 攻击所有玩家，就把一个内容为 $(#600)@player/$ 的 $(thing)文本/$ 组件连接到 $(thing)攻击实体/$ 组件的 $(italic)右/$ 侧。$(p)如果你不想让它攻击你自己，就在 $(italic)左/$ 侧连接一个写有你玩家名的 $(thing)文本/$ 组件。"
+   "你可以使用$(l:programming/text)文本/$组件作为$(l:base_concepts/entity_filter)实体过滤器/$，来指定可以攻击哪些生物。比如，如果你想让$(thing)无人机/$攻击所有玩家，就把一个内容为$(#600)@player/$的$(thing)文本/$组件连接到$(thing)攻击实体/$组件的$(italic)右/$侧。$(p)如果你不想让它攻击你自己，就在$(italic)左/$侧连接一个写有你玩家名的$(thing)文本/$组件。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "$(l:tools/drone)Drones/$ will equip and use any melee weapon in their inventory to attack. If a $(thing)Drone/$ has multiple weapons in its inventory, it will equip the most damaging one. $(p)You can use an $(l:programming/inventory_import)Inventory Import/$ widget to provide the Drone with a weapon, which is strongly recommended - its unarmed melee attack is weak.",
-   "$(l:tools/drone)无人机/$ 会装备并使用其物品栏中的任意近战武器进行攻击。如果一台 $(thing)无人机/$ 的物品栏里有多把武器，它会装备伤害最高的那一把。$(p)你可以使用 $(l:programming/inventory_import)物品导入/$ 组件给无人机提供武器，强烈建议这样做——它空手近战时的攻击力很弱。"
+   "$(l:tools/drone)无人机/$会装备并使用其物品栏中的任意近战武器进行攻击。如果一台$(thing)无人机/$的物品栏里有多把武器，它会装备伤害最高的那一把。$(p)你可以使用$(l:programming/inventory_import)物品导入/$组件给无人机提供武器，强烈建议这样做——它空手近战时的攻击力很弱。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Insert a $(l:base_concepts/upgrades#minigun)Minigun Upgrade/$ into the $(l:tools/drone)Drone/$ to give it a $(l:tools/minigun)Minigun/$. When provided with $(l:tools/minigun_ammo)Gun Ammo/$ (using an $(l:programming/inventory_import)Inventory Import/$ widget), the $(thing)Drone/$ will use this Minigun for ranged attacks.$(p)The default range is 16 blocks, which can be upgraded by inserting up to 16 $(l:base_concepts/upgrades#range_upgrade)Range Upgrades/$, for a maximum range of 32 blocks.",
-   "将一个 $(l:base_concepts/upgrades#minigun)机枪升级/$ 插入 $(l:tools/drone)无人机/$，就能赋予它一把 $(l:tools/minigun)转管机枪/$。当提供 $(l:tools/minigun_ammo)枪械弹药/$（使用 $(l:programming/inventory_import)物品导入/$ 组件）后，$(thing)无人机/$ 就会用这把机枪进行远程攻击。$(p)默认射程为 16 格，你最多还可以插入 16 个 $(l:base_concepts/upgrades#range_upgrade)范围升级/$，将最大射程提升到 32 格。"
+   "将一个$(l:base_concepts/upgrades#minigun)机枪升级/$插入$(l:tools/drone)无人机/$，就能赋予它一把$(l:tools/minigun)转管机枪/$。当提供$(l:tools/minigun_ammo)枪械弹药/$（使用$(l:programming/inventory_import)物品导入/$组件）后，$(thing)无人机/$就会用这把机枪进行远程攻击。$(p)默认射程为 16 格，你最多还可以插入 16 个$(l:base_concepts/upgrades#range_upgrade)范围升级/$，将最大射程提升到 32 格。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "Drones also know how to fire $(l:tools/micromissiles)Micromissiles/$: if the $(thing)Drone/$ is holding a $(item)Micromissile/$ when this widget executes, it will fire a missile at its current target. Any connected $(l:base_concepts/entity_filter)entity filter/$ is copied into the Micromissile's own entity filter by the drone.",
-   "无人机还知道如何发射 $(l:tools/micromissiles)微型导弹/$：如果 $(thing)无人机/$ 在此组件执行时手持一个 $(item)微型导弹/$，它就会向当前目标发射导弹。所有已连接的 $(l:base_concepts/entity_filter)实体过滤器/$ 都会被无人机复制到微型导弹自己的实体过滤器中。"
+   "无人机还知道如何发射$(l:tools/micromissiles)微型导弹/$：如果$(thing)无人机/$在此组件执行时手持一个$(item)微型导弹/$，它就会向当前目标发射导弹。所有已连接的$(l:base_concepts/entity_filter)实体过滤器/$都会被无人机复制到微型导弹自己的实体过滤器中。"
   ],
   [
    [

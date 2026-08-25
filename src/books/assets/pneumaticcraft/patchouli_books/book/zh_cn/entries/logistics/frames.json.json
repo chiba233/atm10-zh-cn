@@ -34,7 +34,7 @@
     "text"
    ],
    "$(li)For $(l:logistics/frames#requester)Requester Frames/$, the $(thing)Minimum Order Size/$ tab allows you to configure the minimum amount of items or fluid that will be moved at a time; useful to prevent drones making constant trips with tiny payloads.$(li)Finally, all frames can be configured to be $(thing)invisible/$ to players unless they are holding a Logistics item (frame or configurator). Note: invisible frames pass any player left-clicks on to the block beneath.",
-   "$(li)对于 $(l:logistics/frames#requester)请求框架/$，$(thing)最小请求量/$ 选项卡可让你配置每次移动的物品或流体的最小数量；这对于防止无人机带着极少量货物频繁往返很有用。$(li)最后，所有框架都可以配置为对玩家 $(thing)隐形/$，除非他们手持一个物流物品（框架或配置器）。注意：隐形框架会将玩家的任何左键点击传递给下方的方块。"
+   "$(li)对于$(l:logistics/frames#requester)请求框架/$，$(thing)最小请求量/$选项卡可让你配置每次移动的物品或流体的最小数量；这对于防止无人机带着极少量货物频繁往返很有用。$(li)最后，所有框架都可以配置为对玩家$(thing)隐形/$，除非他们手持一个物流物品（框架或配置器）。注意：隐形框架会将玩家的任何左键点击传递给下方的方块。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "The $(item)Passive Provider Frame/$ provides items/fluids to $(l:logistics/frames#requester)Requester Frames/$ only.",
-   "$(item)被动供应框架/$只会向 $(l:logistics/frames#requester)请求者框架/$ 提供物品/流体。"
+   "$(item)被动供应框架/$只会向$(l:logistics/frames#requester)请求者框架/$提供物品/流体。"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "$(item)Default Storage Frames/$ can receive items/fluids from $(l:logistics/frames#active_provider)Active Provider Frames/$ and supply resources to $(l:logistics/frames#requester)Requester Frames/$ and $(l:logistics/frames#storage)Storage Frames/$. They have a lower priority than Storage Frames, which will be always be used first if possible.",
-   "$(item)默认存储器外壳/$可从 $(l:logistics/frames#active_provider)主动供应框架/$ 接收物品/流体，并向 $(l:logistics/frames#requester)请求框架/$ 和 $(l:logistics/frames#storage)存储器外壳/$ 提供资源。它们的优先级低于存储器外壳，因此只要可能，系统总会优先使用后者。"
+   "$(item)默认存储器外壳/$可从$(l:logistics/frames#active_provider)主动供应框架/$接收物品/流体，并向$(l:logistics/frames#requester)请求框架/$和$(l:logistics/frames#storage)存储器外壳/$提供资源。它们的优先级低于存储器外壳，因此只要可能，系统总会优先使用后者。"
   ],
   [
    [

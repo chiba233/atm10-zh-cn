@@ -16,7 +16,7 @@
     "text"
    ],
    "Gun Ammo is used by the $(l:tools/minigun)Minigun/$.$(p)One ammo cartridge holds up to 2000 minigun rounds, depending on the ammo type. Ammo is steadily consumed while the $(item)Minigun/$ is firing, and ammo levels can be seen in the ammo item's tooltip, its durability bar, and (when the minigun is equipped) on the HUD, next to the minigun sight in the centre of the screen.",
-   "枪械弹药可用于 $(l:tools/minigun)机枪/$。$(p)根据弹药类型不同，一盒弹药最多可容纳 2000 发机枪子弹。$(item)机枪/$ 开火时会持续消耗弹药，弹药余量可以在弹药物品的提示框、其耐久条，以及（装备机枪时）屏幕中央准星旁边的 HUD 上看到。"
+   "枪械弹药可用于$(l:tools/minigun)机枪/$。$(p)根据弹药类型不同，一盒弹药最多可容纳 2000 发机枪子弹。$(item)机枪/$开火时会持续消耗弹药，弹药余量可以在弹药物品的提示框、其耐久条，以及（装备机枪时）屏幕中央准星旁边的 HUD 上看到。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Plain $(item)Gun Ammo/$ has no special capabilities on its own, but has a large cartridge of 2000 rounds.$(p)In addition, it is the only ammo type which can be crafted with $(l:tools/minigun_ammo#potions)Potions/$ to gain their effect.",
-   "普通 $(item)枪械弹药/$ 本身没有任何特殊能力，但拥有 2000 发的大容量弹盒。$(p)此外，它也是唯一一种可以与 $(l:tools/minigun_ammo#potions)药水/$ 合成以获得其效果的弹药类型。"
+   "普通$(item)枪械弹药/$本身没有任何特殊能力，但拥有 2000 发的大容量弹盒。$(p)此外，它也是唯一一种可以与$(l:tools/minigun_ammo#potions)药水/$合成以获得其效果的弹药类型。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "$(item)Incendiary Minigun Ammo/$ has a cartridge size of 1000, and will set fire to entities it hits.$(p)It also has a chance to set fire to blocks, so caution is advised!",
-   "$(item)燃烧机枪弹药/$ 的弹盒容量为 1000 发，并会让它击中的实体着火。$(p)它还有概率点燃方块，因此使用时请务必小心！"
+   "$(item)燃烧机枪弹药/$的弹盒容量为 1000 发，并会让它击中的实体着火。$(p)它还有概率点燃方块，因此使用时请务必小心！"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "$(item)Armor-piercing Minigun Ammo/$ has a cartridge size of 500, and is somewhat expensive to craft, but does slightly more damage than regular ammo, and can bypass the armor of targets.",
-   "$(item)穿甲机枪弹药/$ 的弹盒容量为 500 发，合成成本略高，但伤害比普通弹药稍高一些，并且可以无视目标的护甲。"
+   "$(item)穿甲机枪弹药/$的弹盒容量为 500 发，合成成本略高，但伤害比普通弹药稍高一些，并且可以无视目标的护甲。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "$(item)Explosive Minigun Ammo/$ has a cartridge size of 250. It has a chance to create a small but highly effective explosion when it hits; beware, this explosion can also injure you. Explosions will not damage terrain $(ttcolor)$(t:See 'B:explosiveAmmoTerrainDamage' in config)by default/$.",
-   "$(item)爆炸机枪弹药/$ 的弹盒容量为 250 发。它在命中时有概率造成一次小型但非常有效的爆炸；不过要小心，这种爆炸也会伤到你。默认情况下，爆炸$(ttcolor)$(t:See 'B:explosiveAmmoTerrainDamage' in config)不会/$破坏地形。"
+   "$(item)爆炸机枪弹药/$的弹盒容量为 250 发。它在命中时有概率造成一次小型但非常有效的爆炸；不过要小心，这种爆炸也会伤到你。默认情况下，爆炸$(ttcolor)$(t:See 'B:explosiveAmmoTerrainDamage' in config)不会/$破坏地形。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "$(item)Freezing Minigun Ammo/$ has a cartridge size of 1000. It slows targets that it hits, and has a chance to encase them in a damaging freezing cloud; beware, this cloud can also injure you.$(p)It does extra damage against fire-resistant targets, so is an excellent choice for fighting in the $(#800)Nether/$.",
-   "$(item)冰冻机枪弹药/$ 的弹盒容量为 1000 发。它会减缓命中目标的速度，并有概率将其困在一团会造成伤害的冰冻云雾中；但要注意，这团云雾同样也会伤到你。$(p)它对抗火焰抗性目标时会造成额外伤害，因此在 $(#800)下界/$ 中战斗时是极佳的选择。"
+   "$(item)冰冻机枪弹药/$的弹盒容量为 1000 发。它会减缓命中目标的速度，并有概率将其困在一团会造成伤害的冰冻云雾中；但要注意，这团云雾同样也会伤到你。$(p)它对抗火焰抗性目标时会造成额外伤害，因此在$(#800)下界/$中战斗时是极佳的选择。"
   ],
   [
    [

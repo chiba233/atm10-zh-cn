@@ -25,7 +25,7 @@
     "text"
    ],
    "Drones are smart: when they're low on air, they'll stop their main program and search for a $(l:machines/charging_station)Charging Station/$ that has a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ and at least 1 bar of pressure, closer than $(ttcolor)$(t:See 'max_drone_charging_station_search_range' in mod config)80 blocks/$ away.$(p)When found, the $(item)Drone/$ will go to this $(item)Charging Station/$ and will sit charging until the station can't supply any more air. After that, the $(item)Drone/$ will resume its main program.",
-   "雄蜂很聪明：当它们气压不足时，会停止主程序，并搜索一个带有 $(l:base_concepts/upgrades#dispenser)发射器升级/$、至少有 1 格气压，且距离不超过 $(ttcolor)$(t:See 'max_drone_charging_station_search_range' in mod config)80 格/$ 的 $(l:machines/charging_station)充气站/$。$(p)找到后，$(item)雄蜂/$会前往该 $(item)充气站/$，并停在那里充气，直到充气站无法再提供更多空气。之后，$(item)雄蜂/$会继续执行它的主程序。"
+   "雄蜂很聪明：当它们气压不足时，会停止主程序，并搜索一个带有$(l:base_concepts/upgrades#dispenser)发射器升级/$、至少有 1 格气压，且距离不超过$(ttcolor)$(t:See 'max_drone_charging_station_search_range' in mod config)80 格/$的$(l:machines/charging_station)充气站/$。$(p)找到后，$(item)雄蜂/$会前往该$(item)充气站/$，并停在那里充气，直到充气站无法再提供更多空气。之后，$(item)雄蜂/$会继续执行它的主程序。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "On a multiplayer server you might want to only allow your Drones to charge on your Charging Station(s). You can make your $(item)Charging Station/$ private by covering it by a $(l:machines/security_station)Security Station/$.$(p)Now only the $(item)Drones/$ placed by players who are whitelisted in your $(item)Security Station/$ will be allowed to charge.",
-   "在多人服务器上，你可能只想允许你的雄蜂在你的充气站上充能。你可以用 $(l:machines/security_station)安全站/$ 覆盖 $(item)充气站/$，将其设为私有。$(p)这样一来，只有由在你的 $(item)安全站/$ 白名单中的玩家放置的 $(item)雄蜂/$ 才能进行充能。"
+   "在多人服务器上，你可能只想允许你的雄蜂在你的充气站上充能。你可以用$(l:machines/security_station)安全站/$覆盖$(item)充气站/$，将其设为私有。$(p)这样一来，只有由在你的$(item)安全站/$白名单中的玩家放置的$(item)雄蜂/$才能进行充能。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "When the $(item)Drone/$'s air runs out, its propellers will stop and it will fall straight to the ground. Beware: drones can take fall damage! A destroyed $(item)Drone/$ will drop itself in item form.$(p)You can dye a $(item)Drone/$ by crafting it with a piece of $(item)dye/$. You can also dye a $(item)Drone/$ in-world, by $(thing)right-clicking/$ it with a piece of $(item)dye/$. This coloring is just cosmetic but can help to distinguish drones at a glance.",
-   "当 $(item)雄蜂/$ 的空气耗尽时，它的螺旋桨会停止转动，并直接坠落到地面上。请注意：雄蜂会受到跌落伤害！被摧毁的 $(item)雄蜂/$ 会以物品形式掉落自身。$(p)你可以将 $(item)雄蜂/$ 与一份 $(item)染料/$ 一起合成来给它染色。你也可以在世界中使用一份 $(item)染料/$ $(thing)右击/$ $(item)雄蜂/$ 来给它染色。这种着色仅用于外观，但能帮助你一眼区分不同的雄蜂。"
+   "当$(item)雄蜂/$的空气耗尽时，它的螺旋桨会停止转动，并直接坠落到地面上。请注意：雄蜂会受到跌落伤害！被摧毁的$(item)雄蜂/$会以物品形式掉落自身。$(p)你可以将$(item)雄蜂/$与一份$(item)染料/$一起合成来给它染色。你也可以在世界中使用一份$(item)染料/$$(thing)右击/$$(item)雄蜂/$来给它染色。这种着色仅用于外观，但能帮助你一眼区分不同的雄蜂。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "Hmm, why does that $(item)Drone/$ act like it does? Why doesn't it do anything at all? You can debug your program by using a $(l:armor/pneumatic_helmet)Pneumatic Helmet/$, with $(l:base_concepts/upgrades#dispenser)Dispenser/$ and $(l:base_concepts/upgrades#entity_tracker)Entity Tracker/$ Upgrades installed. With the $(item)Drone/$ targeted and the $(thing)Entity Tracker/$ active, press the $(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$ key. Then, opening the $(thing)Drone Debugger/$ page in the Pneumatic Armor GUI will show that drone's program, including the current widget and any errors.",
-   "嗯，为什么那个 $(item)雄蜂/$ 会那样行动？为什么它什么都不做？你可以使用安装了 $(l:base_concepts/upgrades#dispenser)发射器/$ 和 $(l:base_concepts/upgrades#entity_tracker)实体追踪器/$ 升级的 $(l:armor/pneumatic_helmet)气动头盔/$ 来调试你的程序。将目标对准该 $(item)雄蜂/$，并启用 $(thing)实体追踪器/$ 后，按下 $(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$ 键。然后打开气动护甲 GUI 中的 $(thing)雄蜂调试器/$ 页面，就能看到该雄蜂的程序，包括当前组件以及所有错误。"
+   "嗯，为什么那个$(item)雄蜂/$会那样行动？为什么它什么都不做？你可以使用安装了$(l:base_concepts/upgrades#dispenser)发射器/$和$(l:base_concepts/upgrades#entity_tracker)实体追踪器/$升级的$(l:armor/pneumatic_helmet)气动头盔/$来调试你的程序。将目标对准该$(item)雄蜂/$，并启用$(thing)实体追踪器/$后，按下$(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$键。然后打开气动护甲 GUI 中的$(thing)雄蜂调试器/$页面，就能看到该雄蜂的程序，包括当前组件以及所有错误。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "There are a couple of other little tricks to be aware of:$(li)Right-clicking a Drone with a $(l:tools/gps_tool)GPS Tool/$ makes it go to the GPS Tool's stored blockpos; may be useful to test Drone pathing.$(li)Hacking a Drone (using the $(l:base_concepts/upgrades#security)Security Upgrade/$ in the Pneumatic Helmet) makes it suspend its program and come to you; useful if its program has left it in a hard-to-reach spot. Hacking it again will resume the program.",
-   "还有几个需要注意的小技巧：$(li)手持 $(l:tools/gps_tool)GPS 工具/$ 右键点击雄蜂，会让它前往该 GPS 工具所保存的方块坐标；这对测试雄蜂的寻路可能很有用。$(li)入侵一只雄蜂（使用气动头盔中的 $(l:base_concepts/upgrades#security)安全升级/$）会使它暂停当前程序并来到你身边；如果它的程序让它停在难以到达的位置，这会很有帮助。再次入侵它则会恢复程序运行。"
+   "还有几个需要注意的小技巧：$(li)手持$(l:tools/gps_tool)GPS 工具/$右键点击雄蜂，会让它前往该 GPS 工具所保存的方块坐标；这对测试雄蜂的寻路可能很有用。$(li)入侵一只雄蜂（使用气动头盔中的$(l:base_concepts/upgrades#security)安全升级/$）会使它暂停当前程序并来到你身边；如果它的程序让它停在难以到达的位置，这会很有帮助。再次入侵它则会恢复程序运行。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "By default, drones cannot change dimension, e.g. by going through a Nether portal. This is because drone programs use block coordinates which would not normally make sense in a different dimension. However, by including a $(l:programming/condition_dimension)Condition: Dimension/$ widget in your program, drones gain the ability to switch dimension.$(p)It's important to note that you still need to write your program to support multiple dimensions, i.e. sections of your program which branch off the dimension widget must be using different coordinate spaces.",
-   "默认情况下，雄蜂无法切换维度，比如穿过下界传送门。这是因为雄蜂程序用的是方块坐标，换个维度通常就没意义了。不过，只要在程序里放一个 $(l:programming/condition_dimension)条件：维度/$ 部件，雄蜂就能跨维度了。$(p)要注意：程序本身仍然得你自己写成支持多维度的，也就是说，从维度部件分出去的各个分支必须各用各的坐标系。"
+   "默认情况下，雄蜂无法切换维度，比如穿过下界传送门。这是因为雄蜂程序用的是方块坐标，换个维度通常就没意义了。不过，只要在程序里放一个$(l:programming/condition_dimension)条件：维度/$部件，雄蜂就能跨维度了。$(p)要注意：程序本身仍然得你自己写成支持多维度的，也就是说，从维度部件分出去的各个分支必须各用各的坐标系。"
   ],
   [
    [

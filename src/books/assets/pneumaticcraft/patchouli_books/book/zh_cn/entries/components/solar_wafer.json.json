@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Solar Wafer/$ is an intermediate crafting component of the $(l:components/solar_cell)Solar Cell/$.",
-   "$(item)太阳能组片/$是 $(l:components/solar_cell)太阳能元件/$ 的中间合成材料。"
+   "$(item)太阳能组片/$是$(l:components/solar_cell)太阳能元件/$的中间合成材料。"
   ]
  ]
 }

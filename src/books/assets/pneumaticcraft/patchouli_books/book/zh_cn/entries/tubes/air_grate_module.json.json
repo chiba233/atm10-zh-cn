@@ -16,7 +16,7 @@
     "text"
    ],
    "This module is used to attract/repel entities to/from the module. With positive $(l:base_concepts/pressure)pressure/$, the tube will blow entities away and with $(thing)negative/$ pressure it will suck entities towards it. Negative pressure is achieved with a $(l:machines/vacuum_pump)Vacuum Pump/$. When item entities are close enough, they will automatically be inserted into any adjacent inventory, respecting sided inventories (like Furnaces).",
-   "该模块用于将实体吸引到模块附近，或将其从模块附近排斥开。在正$(l:base_concepts/pressure)压/$下，管道会将实体吹开；而在 $(thing)负/$压下，则会将实体吸向自身。负压可通过 $(l:machines/vacuum_pump)真空泵/$ 产生。当实体物品足够接近时，它们会自动被插入任意相邻容器中，并遵守容器的面向规则（例如熔炉）。"
+   "该模块用于将实体吸引到模块附近，或将其从模块附近排斥开。在正$(l:base_concepts/pressure)压/$下，管道会将实体吹开；而在$(thing)负/$压下，则会将实体吸向自身。负压可通过$(l:machines/vacuum_pump)真空泵/$产生。当实体物品足够接近时，它们会自动被插入任意相邻容器中，并遵守容器的面向规则（例如熔炉）。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "When you apply an $(l:tubes/module_expansion_card)Module Expansion Card/$, you gain control over which entities are affected by the module.$(p)You could set it up, for example, so that only a certain player gets affected, or only Creepers, or only items. This can be done by right clicking the upgraded module to open a GUI allowing an $(l:base_concepts/entity_filter)entity filter/$ to be defined.",
-   "当你安装 $(l:tubes/module_expansion_card)模块拓展卡/$ 后，你就可以控制哪些实体会受到该模块的影响。$(p)例如，你可以设置成只影响某位特定玩家，或者只影响苦力怕，或者只影响物品。要做到这一点，只需右键点击已升级的模块，打开 GUI，并在其中定义一个 $(l:base_concepts/entity_filter)实体过滤器/$。"
+   "当你安装$(l:tubes/module_expansion_card)模块拓展卡/$后，你就可以控制哪些实体会受到该模块的影响。$(p)例如，你可以设置成只影响某位特定玩家，或者只影响苦力怕，或者只影响物品。要做到这一点，只需右键点击已升级的模块，打开 GUI，并在其中定义一个$(l:base_concepts/entity_filter)实体过滤器/$。"
   ],
   [
    [

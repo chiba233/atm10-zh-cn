@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Sentry Turret/$ is an autonomous defensive weapon. It uses an integrated $(l:tools/minigun)Minigun/$ and $(l:tools/minigun_ammo)Gun Ammo/$ (which you must supply) to shoot entities within range. Its range is 16 blocks by default, but can be upgraded with $(l:base_concepts/upgrades#range)Range Upgrades/$ to a max of 32 blocks.$(p)You do not need to provide $(l:base_concepts/pressure)pressure/$ for Sentry Turret to function, but you do need to provide $(l:tools/minigun_ammo)ammo/$.",
-   "$(thing)哨戒炮/$是一种自主防御武器。它使用内置的 $(l:tools/minigun)转轮机枪/$ 和 $(l:tools/minigun_ammo)子弹/$（需要由你提供）来射击范围内的实体。其默认射程为 16 格，但可以通过安装 $(l:base_concepts/upgrades#range)范围升级/$ 提升至最高 32 格。$(p)你不需要为哨戒炮提供 $(l:base_concepts/pressure)气压/$ 即可使其运作，但你确实需要提供 $(l:tools/minigun_ammo)子弹/$。"
+   "$(thing)哨戒炮/$是一种自主防御武器。它使用内置的$(l:tools/minigun)转轮机枪/$和$(l:tools/minigun_ammo)子弹/$（需要由你提供）来射击范围内的实体。其默认射程为 16 格，但可以通过安装$(l:base_concepts/upgrades#range)范围升级/$提升至最高 32 格。$(p)你不需要为哨戒炮提供$(l:base_concepts/pressure)气压/$即可使其运作，但你确实需要提供$(l:tools/minigun_ammo)子弹/$。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Potential targets for the $(thing)Sentry Turret/$ can be filtered by entering an $(l:base_concepts/entity_filter)Entity Filter/$ in the Turret's GUI; you can press & hold $(thing)F1/$ for a popup filter help page.$(p)Newly-placed turrets have a default filter of $(thing)@mob/$, but a turret with no filter will not attack the player who placed it.",
-   "$(thing)机枪塔/$ 的潜在目标，可以通过在炮塔 GUI 中输入一个 $(l:base_concepts/entity_filter)实体过滤器/$ 来筛选；你可以按住 $(thing)F1/$ 弹出过滤器帮助页面。$(p)新放置的炮塔默认过滤器为 $(thing)@mob/$，但如果炮塔没有任何过滤器，它将不会攻击放置它的玩家。"
+   "$(thing)机枪塔/$的潜在目标，可以通过在炮塔 GUI 中输入一个$(l:base_concepts/entity_filter)实体过滤器/$来筛选；你可以按住$(thing)F1/$弹出过滤器帮助页面。$(p)新放置的炮塔默认过滤器为$(thing)@mob/$，但如果炮塔没有任何过滤器，它将不会攻击放置它的玩家。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "When the $(thing)Sentry Turret/$ is covered by one or more $(l:machines/security_station)Security Stations/$, it will never target any players who are on the trusted list of $(italic)all/$ Security Stations, regardless of how the entity filter is set up.",
-   "当 $(thing)机枪塔/$ 受到一个或多个 $(l:machines/security_station)安全站/$ 覆盖时，无论实体过滤器如何设置，它都绝不会将被 $(italic)所有/$ 安全站列入信任名单的玩家作为目标。"
+   "当$(thing)机枪塔/$受到一个或多个$(l:machines/security_station)安全站/$覆盖时，无论实体过滤器如何设置，它都绝不会将被$(italic)所有/$安全站列入信任名单的玩家作为目标。"
   ],
   [
    [

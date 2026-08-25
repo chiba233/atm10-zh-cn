@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Transfer Gadget/$ is a rather basic item/fluid transfer item. It can be placed $(italic)between/$ two inventories or tanks to transfer between them. The best way to place it is to first place down one inventory, then right click the side of that block with a $(item)Transfer Gadget/$, then place the second inventory.",
-   "$(item)传输装置/$是一种相当基础的物品/流体传输物品。它可以放置在两个容器或储罐$(italic)之间/$，以在它们之间进行传输。放置它的最佳方式是先放下一个容器，然后手持 $(item)传输装置/$ 右键点击该方块的侧面，再放置第二个容器。"
+   "$(item)传输装置/$是一种相当基础的物品/流体传输物品。它可以放置在两个容器或储罐$(italic)之间/$，以在它们之间进行传输。放置它的最佳方式是先放下一个容器，然后手持$(item)传输装置/$右键点击该方块的侧面，再放置第二个容器。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "The Transfer Gadget will have one of two colors:$(li)$(6)Orange/$ - output mode$(li)$(9)Blue/$ - input mode.$(p)An $(6)output mode/$ gadget extracts from the inventory/tank it's placed on, inserting to the neighbouring block, and an $(9)input mode/$ gadget does the opposite. Resources are transferred at a rate of 1 item or 100mB fluid every 2 seconds.",
-   "传输装置会有两种颜色之一：$(li)$(6)橙色/$ - 输出模式$(li)$(9)蓝色/$ - 输入模式。$(p)处于 $(6)输出模式/$ 的传输装置会从它所放置的容器/储罐中抽取资源，并插入到相邻方块中；而处于 $(9)输入模式/$ 的传输装置则正好相反。资源传输速度为每 2 秒 1 个物品或 100mB 流体。"
+   "传输装置会有两种颜色之一：$(li)$(6)橙色/$ - 输出模式$(li)$(9)蓝色/$ - 输入模式。$(p)处于$(6)输出模式/$的传输装置会从它所放置的容器/储罐中抽取资源，并插入到相邻方块中；而处于$(9)输入模式/$的传输装置则正好相反。资源传输速度为每 2 秒 1 个物品或 100mB 流体。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "A Seismic Sensor is an early game item used to track down $(l:base_concepts/oil)Oil/$. Unlike most tools, the sensor does not require $(l:base_concepts/pressure)pressure/$ to operate. When $(thing)right-clicked/$, it will show whether or not Oil was found somewhere directly below the block the sensor was clicked on.",
-   "地震传感器是一种可在游戏前期用于追踪 $(l:base_concepts/oil)石油/$ 的物品。与大多数工具不同，该探测器运行时不需要 $(l:base_concepts/pressure)压力/$。当你 $(thing)右击/$ 时，它会显示在所点击方块的正下方某处是否发现了石油。"
+   "地震传感器是一种可在游戏前期用于追踪$(l:base_concepts/oil)石油/$的物品。与大多数工具不同，该探测器运行时不需要$(l:base_concepts/pressure)压力/$。当你$(thing)右击/$时，它会显示在所点击方块的正下方某处是否发现了石油。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "A Seismic Sensor can have two results:$(p)$(#008)  No Oil found./$$(p)No Oil is found right under this block. Keep looking.$(p)$(#008)  Found Oil <distance>m below. It contains about <amount> buckets of Oil./$$(p)Oil is found! The clicked block would be a suitable place to put a $(l:machines/gas_lift)Gas Lift/$ to pump the Oil out.",
-   "地震传感器可能会有两种结果：$(p)$(#008)  未发现石油。/$$(p)在这个方块正下方没有发现石油。继续寻找吧。$(p)$(#008)  在下方 <distance> 米处发现了石油。其储量约为 <amount> 桶石油。/$$(p)发现石油了！你点击的方块所在位置适合放置一个 $(l:machines/gas_lift)气举/$ 来将石油抽取出来。"
+   "地震传感器可能会有两种结果：$(p)$(#008)  未发现石油。/$$(p)在这个方块正下方没有发现石油。继续寻找吧。$(p)$(#008)  在下方 <distance> 米处发现了石油。其储量约为 <amount> 桶石油。/$$(p)发现石油了！你点击的方块所在位置适合放置一个$(l:machines/gas_lift)气举/$来将石油抽取出来。"
   ],
   [
    [

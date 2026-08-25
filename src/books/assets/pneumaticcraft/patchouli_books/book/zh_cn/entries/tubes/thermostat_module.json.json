@@ -16,7 +16,7 @@
     "text"
    ],
    "This tube module measures the temperature of the block it's facing and provides a redstone signal on the configured channel (use a $(l:tubes/redstone_module)Redstone Module/$ in output mode to emit the signal) if the temperature is higher than the set threshold.",
-   "这个管道模块会测量它所朝向方块的温度，并在温度高于设定阈值时，于已配置的频道上提供红石信号（使用处于输出模式的 $(l:tubes/redstone_module)红石管道模块/$ 来发出该信号）。"
+   "这个管道模块会测量它所朝向方块的温度，并在温度高于设定阈值时，于已配置的频道上提供红石信号（使用处于输出模式的$(l:tubes/redstone_module)红石管道模块/$来发出该信号）。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Applying a $(l:tubes/module_expansion_card)Module Expansion Card/$ to the Thermostat Module unlocks the advanced GUI to provide much more control over $(#f00)redstone signal/$ emission. By default, you can provide a threshold level: the signal will be off below that level and fully on above it (or vice versa). If you select the $(bold)Advanced Config/$ toggle in the GUI, you gain even more control (see over).",
-   "将 $(l:tubes/module_expansion_card)模块拓展卡/$ 安装到测温管道模块上后，会解锁高级 GUI，让你能对 $(#f00)红石信号/$ 的发射进行更精细的控制。默认情况下，你可以设置一个阈值：低于该值时信号关闭，高于该值时信号全开（反之亦可）。如果你在 GUI 中启用 $(bold)高级配置/$ 开关，就能获得更多控制选项（见后页）。"
+   "将$(l:tubes/module_expansion_card)模块拓展卡/$安装到测温管道模块上后，会解锁高级 GUI，让你能对$(#f00)红石信号/$的发射进行更精细的控制。默认情况下，你可以设置一个阈值：低于该值时信号关闭，高于该值时信号全开（反之亦可）。如果你在 GUI 中启用$(bold)高级配置/$开关，就能获得更多控制选项（见后页）。"
   ],
   [
    [

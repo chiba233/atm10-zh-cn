@@ -16,7 +16,7 @@
     "text"
    ],
    "This will edit all $(item)Signs/$ and/or $(l:machines/aphorism_tile)Aphorism Tiles/$ in the connected $(l:programming/area)Area/$ to the text specified by the connected $(l:programming/text)Text/$ widget(s).$(p)Each connected $(thing)Text/$ widget represents one line; by connecting multiple $(thing)Text/$ widgets, you can set a multi-line message.",
-   "这会将已连接的 $(l:programming/area)区域/$ 内所有 $(item)告示牌/$ 和/或 $(l:machines/aphorism_tile)格言瓷砖/$ 编辑为由已连接的 $(l:programming/text)文本/$ 组件指定的文本。$(p)每个已连接的 $(thing)文本/$ 组件代表一行；连接多个 $(thing)文本/$ 组件即可设置多行消息。"
+   "这会将已连接的$(l:programming/area)区域/$内所有$(item)告示牌/$和/或$(l:machines/aphorism_tile)格言瓷砖/$编辑为由已连接的$(l:programming/text)文本/$组件指定的文本。$(p)每个已连接的$(thing)文本/$组件代表一行；连接多个$(thing)文本/$组件即可设置多行消息。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can also insert the value of a $(l:programming/variables)variable/$, by including $(thing)${<var_name>}/$ in the text, e.g.$(p)  $(formula)Counter: ${counter}/$$(p)would expand to $(thing)Counter: 1, 2, 3/$ if the $(thing)counter/$ variable was set to $(thing)x=1,y=2,z=3/$. $(l:programming/variables#special)Special/$ and $(l:programming/variables#global)Global variables/$ can also be used here.",
-   "你也可以插入$(l:programming/variables)变量/$的值，只需在文本中包含 $(thing)${<var_name>}/$，例如：$(p)  $(formula)计数器：${counter}/$$(p)会展开为 $(thing)计数器：1、2、3/$，前提是 $(thing)counter/$ 变量被设置为 $(thing)x=1,y=2,z=3/$。这里也可以使用 $(l:programming/variables#special)特殊/$ 和 $(l:programming/variables#global)全局变量/$。"
+   "你也可以插入$(l:programming/variables)变量/$的值，只需在文本中包含$(thing)${<var_name>}/$，例如：$(p)  $(formula)计数器：${counter}/$$(p)会展开为$(thing)计数器：1、2、3/$，前提是$(thing)counter/$变量被设置为$(thing)x=1,y=2,z=3/$。这里也可以使用$(l:programming/variables#special)特殊/$和$(l:programming/variables#global)全局变量/$。"
   ],
   [
    [

@@ -25,7 +25,7 @@
     "text"
    ],
    "When you place the Hopper, its $(9)input/$ will face toward you, and its $(6)output/$ will face toward the block it was placed against.$(p)$(thing)Right-click/$ the Hopper with a $(l:tools/pneumatic_wrench)Pneumatic Wrench/$ (other wrenches may also work) to re-orient its input. $(thing)Sneak+right-click/$ the Hopper to re-orient its output.",
-   "当你放置漏斗时，它的 $(9)输入端/$ 会朝向你，而它的 $(6)输出端/$ 会朝向它所贴附的方块。$(p)$(thing)右击/$ 漏斗并使用 $(l:tools/pneumatic_wrench)气动扳手/$（其他扳手也可能有效）可以重新调整其输入端朝向。$(thing)潜行+右击/$ 漏斗可以重新调整其输出端朝向。"
+   "当你放置漏斗时，它的$(9)输入端/$会朝向你，而它的$(6)输出端/$会朝向它所贴附的方块。$(p)$(thing)右击/$漏斗并使用$(l:tools/pneumatic_wrench)气动扳手/$（其他扳手也可能有效）可以重新调整其输入端朝向。$(thing)潜行+右击/$漏斗可以重新调整其输出端朝向。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "If a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ is installed, the hopper will automatically eject items into the world at the $(6)output/$ side (if there's no inventory there).$(p)This can be used as a greatly improved $(item)Dropper/$: faster, more accurate, and better $(#f00)redstone control/$.",
-   "如果安装了 $(l:base_concepts/upgrades#dispenser)发射器升级/$，漏斗会自动从 $(6)输出/$ 侧将物品弹射到世界中（如果那里没有容器的话）。$(p)这可以把它当作一个大幅强化版的 $(item)投掷器/$：更快、更精准，而且有更好的 $(#f00)红石控制/$。"
+   "如果安装了$(l:base_concepts/upgrades#dispenser)发射器升级/$，漏斗会自动从$(6)输出/$侧将物品弹射到世界中（如果那里没有容器的话）。$(p)这可以把它当作一个大幅强化版的$(item)投掷器/$：更快、更精准，而且有更好的$(#f00)红石控制/$。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "If an $(l:base_concepts/upgrades#entity_tracker)Entity Tracker Upgrade/$ is installed, the hopper will be able to extract items from entities in front of its $(9)input/$ side. Entities can be blacklisted from such extraction by adding them to the $(thing)pneumaticcraft:omnihopper_blacklisted/$ entity type tag; Villagers are blacklisted by default since they can become an infinite source of items.",
-   "如果安装了 $(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$，漏斗就能从其 $(9)输入/$ 侧前方的实体身上提取物品。你可以把实体加入实体类型标签 $(thing)pneumaticcraft:omnihopper_blacklisted/$，将其列入此类提取的黑名单；村民默认就在黑名单中，因为他们可能成为无限物品来源。"
+   "如果安装了$(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$，漏斗就能从其$(9)输入/$侧前方的实体身上提取物品。你可以把实体加入实体类型标签$(thing)pneumaticcraft:omnihopper_blacklisted/$，将其列入此类提取的黑名单；村民默认就在黑名单中，因为他们可能成为无限物品来源。"
   ],
   [
    [

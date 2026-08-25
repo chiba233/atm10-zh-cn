@@ -16,7 +16,7 @@
     "text"
    ],
    "The Pneumatic Generator can generate $(thing)IndustrialCraft 2 EU/$ from $(l:base_concepts/pressure)compressed air/$. This is a tier two machine, indicated by its minimal working pressure of 15 bar. By default it has an efficiency of 40%, but this can be $(ttcolor)$(t:See 'I:pneumaticGeneratorEfficiency')changed in the config/$.$(p)Without any $(l:base_concepts/upgrades#speed)Speed Upgrades/$, it outputs at a rate of 32 EU/tick; with one upgrade inserted: 128 EU/tick and with two: 512 EU/tick.",
-   "气动发电机可以将 $(l:base_concepts/pressure)压缩空气/$ 转换为 $(thing)工业时代2 EU/$。这是一台二阶机器，其最低工作压力为 15 bar，这一点表明了它的等级。默认效率为 40%，但也可以 $(ttcolor)$(t:See 'I:pneumaticGeneratorEfficiency')在配置中更改/$。$(p)在不安装任何 $(l:base_concepts/upgrades#speed)速度升级/$ 时，它的输出速率为 32 EU/刻；插入一个升级后为 128 EU/刻，插入两个升级后为 512 EU/刻。"
+   "气动发电机可以将$(l:base_concepts/pressure)压缩空气/$转换为$(thing)工业时代2 EU/$。这是一台二阶机器，其最低工作压力为 15 bar，这一点表明了它的等级。默认效率为 40%，但也可以$(ttcolor)$(t:See 'I:pneumaticGeneratorEfficiency')在配置中更改/$。$(p)在不安装任何$(l:base_concepts/upgrades#speed)速度升级/$时，它的输出速率为 32 EU/刻；插入一个升级后为 128 EU/刻，插入两个升级后为 512 EU/刻。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "The air usage (mL/tick) is:$(p)$(formula)  output rate / E * 400/$$(p)where $(formula)E/$ is efficiency as a percentage. E.g. for default efficiency of 40%, and an output rate of 32EU/tick, air usage = $(formula)32 / 40 * 400 = 320mL/tick/$.",
-   "空气消耗量（mL/tick）为：$(p)$(formula)  输出速率 / E * 400/$$(p)其中 $(formula)E/$ 为效率百分比。例如，在默认效率为 40% 且输出速率为 32EU/tick 时，空气消耗量 = $(formula)32 / 40 * 400 = 320mL/tick/$。"
+   "空气消耗量（mL/tick）为：$(p)$(formula)  输出速率 / E * 400/$$(p)其中$(formula)E/$为效率百分比。例如，在默认效率为 40% 且输出速率为 32EU/tick 时，空气消耗量 = $(formula)32 / 40 * 400 = 320mL/tick/$。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "An important factor that influences efficiency is the Generator's $(l:base_concepts/heat)temperature/$. The Generator needs to be $(thing)cooled/$, or its efficiency will drop as the temperature rises, up to the point where no air is generated at all.",
-   "影响效率的一个重要因素是发电机的 $(l:base_concepts/heat)温度/$。发电机需要进行 $(thing)冷却/$，否则随着温度升高，其效率会下降，甚至最终完全无法产生空气。"
+   "影响效率的一个重要因素是发电机的$(l:base_concepts/heat)温度/$。发电机需要进行$(thing)冷却/$，否则随着温度升高，其效率会下降，甚至最终完全无法产生空气。"
   ],
   [
    [

@@ -25,7 +25,7 @@
     "text"
    ],
    "$(li)$(item)Aphorism Tiles/$ can be edited in-place by $(thing)right-clicking/$ with an empty hand.$(li)Markup can be added by using $(thing)Alt + 0-9/a-f/l/m/n/o/r/$ ($(l:https://minecraft.gamepedia.com/Formatting_codes)standard Minecraft codes/$).$(li)Holding $(thing)F1/$ will show some popup help for the editor keybindings.$(li)$(item)Aphorism Tiles/$ can be recolored by $(thing)right-clicking/$ with any dye item. The tile border and background can be colored independently by clicking a corresponding area of the tile.",
-   "$(li)$(item)格言瓷砖/$可以空手$(thing)右击/$直接编辑。$(li)使用 $(thing)Alt + 0-9/a-f/l/m/n/o/r/$ 可添加格式代码（$(l:https://minecraft.gamepedia.com/Formatting_codes)Minecraft标准代码/$）。$(li)按住 $(thing)F1/$ 会显示一些关于编辑器按键绑定的弹出帮助。$(li)$(item)格言瓷砖/$也可以通过用任意染料物品$(thing)右击/$来重新上色。点击瓷砖的对应区域，即可分别为边框和背景着色。"
+   "$(li)$(item)格言瓷砖/$可以空手$(thing)右击/$直接编辑。$(li)使用$(thing)Alt + 0-9/a-f/l/m/n/o/r/$可添加格式代码（$(l:https://minecraft.gamepedia.com/Formatting_codes)Minecraft标准代码/$）。$(li)按住$(thing)F1/$会显示一些关于编辑器按键绑定的弹出帮助。$(li)$(item)格言瓷砖/$也可以通过用任意染料物品$(thing)右击/$来重新上色。点击瓷砖的对应区域，即可分别为边框和背景着色。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "$(li)$(item)Aphorism Tiles/$ can also display $(thing)items/$, instead of or along with text. You can specify an item to display by putting (on its own line) text in the format $(thing){item:<modid>:<itemid>}/$, e.g. $(thing){item:minecraft:diamond}/$.$(li)Alternatively, click the $(thing)Insert Item.../$ button on the left-hand GUI panel, and choose an item from the search popup. This will replace all the text on the current line. You can display multiple items on one tile.",
-   "$(li)$(item)格言瓷砖/$也可以显示$(thing)物品/$，以替代文字或与文字一同显示。你可以通过输入格式为 $(thing){item:<modid>:<itemid>}/$ 的文本来指定要显示的物品（单独占一行），例如 $(thing){item:minecraft:diamond}/$。$(li)或者，点击左侧 GUI 面板上的 $(thing)插入物品.../$ 按钮，并从弹出的搜索界面中选择一个物品。这会替换当前行上的所有文本。你也可以在一块瓷砖上显示多个物品。"
+   "$(li)$(item)格言瓷砖/$也可以显示$(thing)物品/$，以替代文字或与文字一同显示。你可以通过输入格式为$(thing){item:<modid>:<itemid>}/$的文本来指定要显示的物品（单独占一行），例如$(thing){item:minecraft:diamond}/$。$(li)或者，点击左侧 GUI 面板上的$(thing)插入物品.../$按钮，并从弹出的搜索界面中选择一个物品。这会替换当前行上的所有文本。你也可以在一块瓷砖上显示多个物品。"
   ],
   [
    [

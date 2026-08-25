@@ -16,7 +16,7 @@
     "text"
    ],
    "It is a fundamental mechanic of Minecraft that only parts of the world are loaded into memory at a time. This is essential for performance; no affordable computer could keep an entire world (especially a modded one) loaded and ticking all at once. The world is thus divided into 16x16 (in the horizontal axes) $(thing)chunks/$, only of few of which are loaded at once.",
-   "Minecraft 的一个基本机制是：世界中的内容一次只会有一部分被加载到内存中。这对性能至关重要；没有任何价格合理的电脑能让整个世界（尤其是模组整合后的世界）同时保持加载并持续运行。因此，世界会被划分为 16x16（在水平轴上）的 $(thing)区块/$，而同一时间只会加载其中很少的一部分。"
+   "Minecraft 的一个基本机制是：世界中的内容一次只会有一部分被加载到内存中。这对性能至关重要；没有任何价格合理的电脑能让整个世界（尤其是模组整合后的世界）同时保持加载并持续运行。因此，世界会被划分为 16x16（在水平轴上）的$(thing)区块/$，而同一时间只会加载其中很少的一部分。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "This has important ramifications for designing reliable modded builds; if you want processing to happen when you're not at your base, you need to $(thing)chunkload/$ the relevant machines. The information following is primary intended as hints to achieve reliable $(pncr) builds, but much of it applies to other mods too.",
-   "这对设计可靠的模组装置有着重要影响；如果你希望在自己不在基地时仍然进行处理，就需要对相关机器进行 $(thing)区块加载/$。接下来的内容主要是为实现可靠的$(#228)气动工艺$()装置提供一些提示，但其中很多内容也同样适用于其他模组。"
+   "这对设计可靠的模组装置有着重要影响；如果你希望在自己不在基地时仍然进行处理，就需要对相关机器进行$(thing)区块加载/$。接下来的内容主要是为实现可靠的$(#228)气动工艺$()装置提供一些提示，但其中很多内容也同样适用于其他模组。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "$(li)Vanilla has a $(thing)/forceload/$ command to force one or more chunks to remain always loaded, but this does require op privileges to use$(li)Many mods offer player-usable chunkloading solutions, e.g. $(thing)FTB Chunks/$, $(thing)Chicken Chunks/$, $(thing)Weirding Gadgets/$ and more.$(li)The $(l:programming/programmable_controller)Programmable Controller/$ from this mod offers some limited chunkloading functionality too.",
-   "$(li)原版提供了一个 $(thing)/forceload/$ 命令，可强制让一个或多个区块始终保持加载状态，但使用它需要 op 权限。$(li)许多模组都提供了玩家可用的区块加载方案，例如 $(thing)FTB区块/$、$(thing)区块载入器 (ChickenChunks)/$、$(thing)古怪装置/$ 等等。$(li)本模组中的 $(l:programming/programmable_controller)可编程控制器/$ 也提供了一些有限的区块加载功能。"
+   "$(li)原版提供了一个$(thing)/forceload/$命令，可强制让一个或多个区块始终保持加载状态，但使用它需要 op 权限。$(li)许多模组都提供了玩家可用的区块加载方案，例如$(thing)FTB区块/$、$(thing)区块载入器 (ChickenChunks)/$、$(thing)古怪装置/$等等。$(li)本模组中的$(l:programming/programmable_controller)可编程控制器/$也提供了一些有限的区块加载功能。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "$(li)$(thing)Keep multiblocks within a single chunk if possible./$ Even when all relevant chunks are chunkloaded, it's not ideal to have multiblocks like the $(l:manufacturing/pressure_chamber)Pressure Chamber/$ span two or more chunks.",
-   "$(li)$(thing)如果可以，尽量让多方块结构保持在同一个区块内。/$即使所有相关区块都已被区块加载，像 $(l:manufacturing/pressure_chamber)压力室/$ 这样的多方块结构跨越两个或更多区块也并不理想。"
+   "$(li)$(thing)如果可以，尽量让多方块结构保持在同一个区块内。/$即使所有相关区块都已被区块加载，像$(l:manufacturing/pressure_chamber)压力室/$这样的多方块结构跨越两个或更多区块也并不理想。"
   ],
   [
    [

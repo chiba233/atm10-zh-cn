@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Minigun/$ is a handheld weapon, which runs on $(l:base_concepts/pressure)compressed air/$ and $(l:tools/minigun_ammo)Gun Ammo/$. Ammo needs to be inserted into the $(l:tools/minigun_ammo#magazine)Minigun's magazine/$ - it will not be consumed from the player's inventory.$(p)To fire the minigun, simply hold $(thing)right-click/$. The barrel will start to spin and will fire as soon as it is up to speed.",
-   "$(item)转管机枪/$是一种手持武器，以 $(l:base_concepts/pressure)压缩空气/$ 和 $(l:tools/minigun_ammo)机枪弹药/$ 运作。弹药需要装入 $(l:tools/minigun_ammo#magazine)转管机枪的弹链/$中——不会直接消耗玩家物品栏中的弹药。$(p)要发射转管机枪，只需按住$(thing)右击/$。枪管会开始旋转，并在转速达到后立刻开火。"
+   "$(item)转管机枪/$是一种手持武器，以$(l:base_concepts/pressure)压缩空气/$和$(l:tools/minigun_ammo)机枪弹药/$运作。弹药需要装入$(l:tools/minigun_ammo#magazine)转管机枪的弹链/$中——不会直接消耗玩家物品栏中的弹药。$(p)要发射转管机枪，只需按住$(thing)右击/$。枪管会开始旋转，并在转速达到后立刻开火。"
   ],
   [
    [

@@ -34,7 +34,7 @@
     "text"
    ],
    "The $(thing)Heat Frame/$ has $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ support for cooling (smelting just uses regular $(item)Furnace/$ recipes): recipes can be added and removed. Follow the link below for more information.",
-   "$(thing)导热框架/$支持通过 $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ 添加冷却相关内容（烧炼则直接使用普通的 $(item)熔炉/$ 配方）：配方可以添加或移除。更多信息请查看下方链接。"
+   "$(thing)导热框架/$支持通过$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$添加冷却相关内容（烧炼则直接使用普通的$(item)熔炉/$配方）：配方可以添加或移除。更多信息请查看下方链接。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Computer Control/$ widget allows $(l:tools/drone)Drones/$ to be controlled via $(thing)ComputerCraft/$ or $(thing)OpenComputers/$ computers. See the $(l:machines/drone_interface)Drone Interface/$ for more information on how to do this.",
-   "$(thing)电脑控制/$组件可让你通过 $(thing)ComputerCraft/$ 或 $(thing)开放式电脑/$ 计算机来控制 $(l:tools/drone)无人机/$。有关具体做法的更多信息，请参阅 $(l:machines/drone_interface)无人机接口/$。"
+   "$(thing)电脑控制/$组件可让你通过$(thing)ComputerCraft/$或$(thing)开放式电脑/$计算机来控制$(l:tools/drone)无人机/$。有关具体做法的更多信息，请参阅$(l:machines/drone_interface)无人机接口/$。"
   ],
   [
    [

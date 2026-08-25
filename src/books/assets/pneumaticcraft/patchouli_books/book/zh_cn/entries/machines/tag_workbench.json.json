@@ -43,7 +43,7 @@
     "text"
    ],
    "$(li)Click the Book & Quill button to write the selected tags. A piece of paper will be used, and a $(item)Tag Filter/$ will be produced in the right-hand slot.$(p)The paper slot will also accept a previously-written Tag Filter; this can be useful if you want to edit the tags on an existing Tag Filter.",
-   "$(li)点击“书与笔”按钮以写入所选标签。会消耗一张纸，并在右侧槽位中生成一个 $(item)标签过滤器/$。$(p)纸张槽位也可以接受一个先前写好的标签过滤器；如果你想编辑现有标签过滤器上的标签，这会很有用。"
+   "$(li)点击“书与笔”按钮以写入所选标签。会消耗一张纸，并在右侧槽位中生成一个$(item)标签过滤器/$。$(p)纸张槽位也可以接受一个先前写好的标签过滤器；如果你想编辑现有标签过滤器上的标签，这会很有用。"
   ],
   [
    [

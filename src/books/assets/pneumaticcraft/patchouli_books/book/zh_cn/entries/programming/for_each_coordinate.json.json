@@ -16,7 +16,7 @@
     "text"
    ],
    "This advanced widget will loop through every single coordinate in the specified $(l:programming/area)Area/$. For each coordinate, it will set the $(ttcolor)$(t:Right-click the widget to configure the variable)specified variable/$ to that coordinate, and jump to the $(l:programming/label)Label/$ which matches the connected $(l:programming/text)Text/$ widget. When that routine is done executing (when it reaches the end of a program where it would usually jump back to $(l:programming/start)Start/$), it will return to this widget and repeat for the next coordinate.",
-   "这个高级控件会遍历指定 $(l:programming/area)区域/$ 中的每一个坐标。对于每个坐标，它都会将 $(ttcolor)$(t:Right-click the widget to configure the variable)指定变量/$ 设为该坐标，并跳转到与所连接的 $(l:programming/text)文本/$ 控件匹配的 $(l:programming/label)标签/$。当该流程执行完毕时（即到达程序末尾，原本通常会跳回 $(l:programming/start)开始/$ 的地方），它将返回到此控件，并对下一个坐标重复此过程。"
+   "这个高级控件会遍历指定$(l:programming/area)区域/$中的每一个坐标。对于每个坐标，它都会将$(ttcolor)$(t:Right-click the widget to configure the variable)指定变量/$设为该坐标，并跳转到与所连接的$(l:programming/text)文本/$控件匹配的$(l:programming/label)标签/$。当该流程执行完毕时（即到达程序末尾，原本通常会跳回$(l:programming/start)开始/$的地方），它将返回到此控件，并对下一个坐标重复此过程。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can break out of the loop by setting the coordinate variable used by the $(thing)For Each Coordinate/$ to any blockpos outside the current world's build height. Next time, when the program jumps back to the $(thing)For Each Coordinate/$, it will notice this and cancel further traversal of coordinates.$(p)$(italic)This behaviour has changed in MC 1.18+ due to new world height functionality; (0,0,0) used to be considered invalid, which was always dubious (void worlds), but even more so now./$",
-   "你可以通过把 $(thing)对于每个坐标/$ 所使用的坐标变量设为当前世界建造高度之外的任意 blockpos，来跳出循环。下次程序跳回 $(thing)对于每个坐标/$ 时，它会注意到这一点，并取消后续的坐标遍历。$(p)$(italic)由于新的世界高度机制，这一行为在 MC 1.18+ 中发生了变化；过去 (0,0,0) 曾被视为无效坐标，这本来就很值得商榷（比如虚空世界），而现在就更是如此了。/$"
+   "你可以通过把$(thing)对于每个坐标/$所使用的坐标变量设为当前世界建造高度之外的任意 blockpos，来跳出循环。下次程序跳回$(thing)对于每个坐标/$时，它会注意到这一点，并取消后续的坐标遍历。$(p)$(italic)由于新的世界高度机制，这一行为在 MC 1.18+ 中发生了变化；过去 (0,0,0) 曾被视为无效坐标，这本来就很值得商榷（比如虚空世界），而现在就更是如此了。/$"
   ],
   [
    [

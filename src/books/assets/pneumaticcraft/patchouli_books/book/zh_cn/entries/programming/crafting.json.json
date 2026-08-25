@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(l:tools/drone)Drone/$ will craft items using items it has in its inventory. To specify a crafting recipe, place $(l:programming/item_filter)Item Filters/$ on the right side of the Crafting widget, in the pattern of the crafting recipe.$(p)You don't need to use exactly 9 $(thing)Item Filters/$: as long as you can create the recipe pattern, it will work.",
-   "$(l:tools/drone)雄蜂/$会使用其容器中的物品来合成物品。要指定合成配方，请将 $(l:programming/item_filter)物品过滤器/$ 按照合成配方的图案放置在合成组件右侧。$(p)你不必正好使用 9 个 $(thing)物品过滤器/$：只要能摆出配方图案，就可以生效。"
+   "$(l:tools/drone)雄蜂/$会使用其容器中的物品来合成物品。要指定合成配方，请将$(l:programming/item_filter)物品过滤器/$按照合成配方的图案放置在合成组件右侧。$(p)你不必正好使用 9 个$(thing)物品过滤器/$：只要能摆出配方图案，就可以生效。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "By default the Crafting widget will try to craft as many items as possible; you can limit this in the widget GUI with the $(thing)Use Count/$ setting.$(p)You will probably want to install some $(l:base_concepts/upgrades#dispenser)Inventory Upgrades/$ in the $(item)Drone/$ to give it a larger inventory.",
-   "默认情况下，合成组件会尽可能合成更多物品；你可以在组件 GUI 中通过 $(thing)使用计数/$ 设置来限制这一点。$(p)你大概会想给 $(item)无人机/$ 安装一些 $(l:base_concepts/upgrades#dispenser)物品栏升级/$，以便让它拥有更大的物品栏。"
+   "默认情况下，合成组件会尽可能合成更多物品；你可以在组件 GUI 中通过$(thing)使用计数/$设置来限制这一点。$(p)你大概会想给$(item)无人机/$安装一些$(l:base_concepts/upgrades#dispenser)物品栏升级/$，以便让它拥有更大的物品栏。"
   ],
   [
    [

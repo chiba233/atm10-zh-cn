@@ -25,7 +25,7 @@
     "text"
    ],
    "There are two ways to obtain a Spawner Core:$(li)Forcibly extract one from a Spawner with a $(l:spawning/spawner_extractor)Spawner Extractor/$ (be ready for a fight!) Such cores are 100% filled with essence of that Spawner's mob.$(li)Craft your own Spawner Core and use a $(l:spawning/vacuum_trap)Vacuum Trap/$ to capture mob essence to fill it.",
-   "有两种方式可以获得刷怪笼核心：$(li)使用 $(l:spawning/spawner_extractor)刷怪笼抽取器/$ 强行从刷怪笼中抽取一个（准备好迎接战斗吧！）这样获得的核心会 100% 充满该刷怪笼对应生物的精华。$(li)你也可以自己合成刷怪笼核心，并使用 $(l:spawning/vacuum_trap)真空陷阱/$ 捕获生物精华来将其填满。"
+   "有两种方式可以获得刷怪笼核心：$(li)使用$(l:spawning/spawner_extractor)刷怪笼抽取器/$强行从刷怪笼中抽取一个（准备好迎接战斗吧！）这样获得的核心会 100% 充满该刷怪笼对应生物的精华。$(li)你也可以自己合成刷怪笼核心，并使用$(l:spawning/vacuum_trap)真空陷阱/$捕获生物精华来将其填满。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Note that it's possible for a Spawner Core filled by a $(item)Vacuum Trap/$ to contain the essence of several different mobs, which may or may not be desirable.$(p)You can release a random mob from the core by $(thing)right-clicking/$ it, but this can be a bit of a hit and miss affair. Producing a core with 100% purity via $(thing)Vacuum Trap/$ isn't trivial, and takes some care.",
-   "请注意，由 $(item)真空陷阱/$ 填充的刷怪笼核心有可能包含多种不同生物的精华，这可能是你想要的，也可能不是。$(p)你可以通过 $(thing)右击/$ 刷怪笼核心来随机释放一种生物，但这种方式多少有点碰运气。想要通过 $(thing)真空陷阱/$ 制作出纯度 100% 的核心并不容易，需要格外小心。"
+   "请注意，由$(item)真空陷阱/$填充的刷怪笼核心有可能包含多种不同生物的精华，这可能是你想要的，也可能不是。$(p)你可以通过$(thing)右击/$刷怪笼核心来随机释放一种生物，但这种方式多少有点碰运气。想要通过$(thing)真空陷阱/$制作出纯度 100% 的核心并不容易，需要格外小心。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Crafting a Spawner Core Shell. Used in crafting an actual $(item)Spawner Core/$.",
-   "合成一个刷怪笼核心外壳。可用于合成真正的 $(item)刷怪笼核心/$。"
+   "合成一个刷怪笼核心外壳。可用于合成真正的$(item)刷怪笼核心/$。"
   ]
  ]
 }

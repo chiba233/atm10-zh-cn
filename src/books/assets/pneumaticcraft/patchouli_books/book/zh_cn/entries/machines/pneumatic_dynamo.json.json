@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Pneumatic Dynamo/$ converts $(l:base_concepts/pressure)compressed air/$ into $(thing)Forge Energy/$, which is compatible with $(thing)Redstone Flux/$ and other mods' energy systems. It produces 40 FE/tick by default, but can be upgraded with $(l:base_concepts/upgrades#speed)Speed Upgrades/$. The FE output rate of the $(item)Flux Compressor/$ is twice the amount of the current FE production; 80 FE/tick by default, but can be increased via Speed Upgrades.",
-   "$(item)气动能源炉/$可将 $(l:base_concepts/pressure)压缩空气/$转化为 $(thing)Forge能量/$，并与 $(thing)红石通量/$及其他模组的能源系统兼容。默认产出为 40 FE/tick，但可通过 $(l:base_concepts/upgrades#speed)速度升级/$进行提升。$(item)通量压缩机/$的 FE 输出速率为当前 FE 产量的两倍；默认是 80 FE/tick，但也可以通过速度升级进一步提高。"
+   "$(item)气动能源炉/$可将$(l:base_concepts/pressure)压缩空气/$转化为$(thing)Forge能量/$，并与$(thing)红石通量/$及其他模组的能源系统兼容。默认产出为 40 FE/tick，但可通过$(l:base_concepts/upgrades#speed)速度升级/$进行提升。$(item)通量压缩机/$的 FE 输出速率为当前 FE 产量的两倍；默认是 80 FE/tick，但也可以通过速度升级进一步提高。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "An important factor that influences efficiency is the Dynamo's $(l:base_concepts/heat)temperature/$. The Dynamo needs to be $(thing)cooled/$, or its efficiency will drop as the temperature rises, up to the point where no air is generated at all.",
-   "影响效率的一个重要因素是发电机的 $(l:base_concepts/heat)温度/$。发电机需要被$(thing)冷却/$，否则随着温度升高，其效率会下降，甚至最终完全无法产生空气。"
+   "影响效率的一个重要因素是发电机的$(l:base_concepts/heat)温度/$。发电机需要被$(thing)冷却/$，否则随着温度升高，其效率会下降，甚至最终完全无法产生空气。"
   ],
   [
    [

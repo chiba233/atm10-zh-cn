@@ -25,7 +25,7 @@
     "text"
    ],
    "Note that $(thing)flow/$ is a different physical quantity to $(l:base_concepts/pressure)pressure/$. Flow is the amount of air traveling through a tube per tick. So if you have (say) an $(l:machines/elevators)Elevator/$ which isn't running, the flow will be 0, but when it runs it will be consuming air, so the flow will be non-zero. So this module can be used to detect if a machine is using air.$(p)The Flow Detector Module does not accept an $(l:tubes/module_expansion_card)Module Expansion Card/$.",
-   "请注意，$(thing)流量/$ 与 $(l:base_concepts/pressure)压力/$ 是不同的物理量。流量指的是每刻通过管道的空气量。因此，如果你有一台例如 $(l:machines/elevators)电梯/$ 这样的机器，在它未运行时，流量会是 0；但当它运行时就会消耗空气，因此流量将不为 0。所以这个模块可以用来检测机器是否正在用气。$(p)流量检测模块不能安装 $(l:tubes/module_expansion_card)模块拓展卡/$。"
+   "请注意，$(thing)流量/$与$(l:base_concepts/pressure)压力/$是不同的物理量。流量指的是每刻通过管道的空气量。因此，如果你有一台例如$(l:machines/elevators)电梯/$这样的机器，在它未运行时，流量会是 0；但当它运行时就会消耗空气，因此流量将不为 0。所以这个模块可以用来检测机器是否正在用气。$(p)流量检测模块不能安装$(l:tubes/module_expansion_card)模块拓展卡/$。"
   ],
   [
    [

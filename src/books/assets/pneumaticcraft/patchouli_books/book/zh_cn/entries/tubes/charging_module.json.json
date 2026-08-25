@@ -16,7 +16,7 @@
     "text"
    ],
    "This tube module allow you to charge (or discharge) pressurizable items in the inventory that it faces, e.g. a chest with your pneumatic tools, or $(l:components/air_canister)Air Canisters/$ for long-distance air transfer (perhaps through some kind of Ender inventory system).$(p)You can also point this module at an $(l:machines/aerial_interface)Aerial Interface/$ to charge items in your own player inventory.",
-   "该管道模块可以为其所朝向容器中的可充压物品充气（或放气），例如装有你的气动工具的箱子，或用于远距离传输空气的 $(l:components/air_canister)空气罐/$（也许可以通过某种末影物品栏系统）。$(p)你也可以将该模块对准一个 $(l:machines/aerial_interface)空气接口/$，为你自己的玩家物品栏中的物品充气。"
+   "该管道模块可以为其所朝向容器中的可充压物品充气（或放气），例如装有你的气动工具的箱子，或用于远距离传输空气的$(l:components/air_canister)空气罐/$（也许可以通过某种末影物品栏系统）。$(p)你也可以将该模块对准一个$(l:machines/aerial_interface)空气接口/$，为你自己的玩家物品栏中的物品充气。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Applying a $(l:tubes/module_expansion_card)Module Expansion Card/$ to the Charging Module increases the module's charging rate from 10mL/tick (per item) to 100mL/tick (per item)",
-   "将 $(l:tubes/module_expansion_card)模块拓展卡/$ 安装到充能模块上后，模块的充能速度会从 10mL/刻（每件物品）提升到 100mL/刻（每件物品）"
+   "将$(l:tubes/module_expansion_card)模块拓展卡/$安装到充能模块上后，模块的充能速度会从 10mL/刻（每件物品）提升到 100mL/刻（每件物品）"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "A $(thing)Tube Junction/$ is a very simple device which allows two $(l:tubes/pressure_tubes)Pressure Tubes/$ (of any $(l:base_concepts/pressure_tiers)pressure tier/$) to cross each other without connecting.",
-   "$(thing)管道跨接点/$ 是一种非常简单的装置，可以让两根 $(l:tubes/pressure_tubes)压力管道/$（任意 $(l:base_concepts/pressure_tiers)压力等级/$）彼此交叉而不会连接在一起。"
+   "$(thing)管道跨接点/$是一种非常简单的装置，可以让两根$(l:tubes/pressure_tubes)压力管道/$（任意$(l:base_concepts/pressure_tiers)压力等级/$）彼此交叉而不会连接在一起。"
   ],
   [
    [

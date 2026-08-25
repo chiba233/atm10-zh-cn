@@ -25,7 +25,7 @@
     "text"
    ],
    "Crafting a $(item)Liquid Compressor/$",
-   "合成一个 $(item)液体压缩机/$"
+   "合成一个$(item)液体压缩机/$"
   ]
  ]
 }

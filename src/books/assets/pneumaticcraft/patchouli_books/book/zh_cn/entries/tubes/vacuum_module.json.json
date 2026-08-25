@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Vacuum Module/$ does the same job as the $(l:machines/vacuum_pump)Vacuum Pump/$ - provide negative pressure - but in a slightly more compact way. It can be placed on a vertical tube, unlike the full-size pump, which can be only be oriented horizontally.$(p)The advantage is compactness; the disadvantage is more limited upgradeability in terms of speed and volume.",
-   "$(thing)虚空模块/$ 的作用与 $(l:machines/vacuum_pump)真空泵/$ 相同——提供负压——但方式更紧凑一些。与只能水平放置的完整尺寸泵不同，它可以安装在竖直管道上。$(p)它的优点是紧凑，缺点则是在速度和容量方面可进行的升级更有限。"
+   "$(thing)虚空模块/$的作用与$(l:machines/vacuum_pump)真空泵/$相同——提供负压——但方式更紧凑一些。与只能水平放置的完整尺寸泵不同，它可以安装在竖直管道上。$(p)它的优点是紧凑，缺点则是在速度和容量方面可进行的升级更有限。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "The Vacuum Module is an $(thing)inline/$ module. Place it on the end of the tube which should be the vacuum side. Providing a minimum of 2 bar pressure to the wide/green end of the tube will cause the module to spin, removing air from any tubes past the narrow/red end.$(p)Applying a $(#f00)redstone signal/$ prevents the module running.",
-   "虚空模块是一种$(thing)内联式/$模块。请将它放在应作为真空侧的那一端管道上。向管道较宽的绿色一端提供至少 2 bar 的压力后，模块就会开始旋转，并从较窄的红色一端之后的所有管道中抽走空气。$(p)施加 $(#f00)红石信号/$ 会阻止该模块运行。"
+   "虚空模块是一种$(thing)内联式/$模块。请将它放在应作为真空侧的那一端管道上。向管道较宽的绿色一端提供至少 2 bar 的压力后，模块就会开始旋转，并从较窄的红色一端之后的所有管道中抽走空气。$(p)施加$(#f00)红石信号/$会阻止该模块运行。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "A $(l:tubes/module_expansion_card)Module Expansion Card/$ boosts the module's speed, roughly equivalent to adding 4 $(l:base_concepts/upgrades#speed)Speed Upgrades/$ to a Vacuum Pump. Similar to adding Speed Upgrades, this comes with a reduction in efficiency in terms of air usage at the positive side.",
-   "$(l:tubes/module_expansion_card)模块拓展卡/$ 可以提升该模块的速度，大致相当于给真空泵额外安装了 4 个 $(l:base_concepts/upgrades#speed)速度升级/$。与安装速度升级类似，这也会降低其效率，表现为正压侧的空气消耗增加。"
+   "$(l:tubes/module_expansion_card)模块拓展卡/$可以提升该模块的速度，大致相当于给真空泵额外安装了 4 个$(l:base_concepts/upgrades#speed)速度升级/$。与安装速度升级类似，这也会降低其效率，表现为正压侧的空气消耗增加。"
   ],
   [
    [

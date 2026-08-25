@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Electric Compressor/$ can generate compressed air from $(thing)IndustrialCraft 2's EU/$. By default it has an efficiency of 40%, but this can be $(ttcolor)$(t:See 'I:electricCompressorEfficiency')changed in the config/$.$(p)It behaves like a IC2 tier 1 machine, so it will explode if it receives >32 EU/t. However, you can add IC2 $(item)Transformer Upgrades/$ to allow higher voltages, as in normal IC2 machines.",
-   "$(item)电力压缩机/$可以利用$(thing)工业时代2的 EU/$生成压缩空气。默认效率为 40%，但这可以在$(ttcolor)$(t:See 'I:electricCompressorEfficiency')配置文件中更改/$。$(p)它的行为与 IC2 1 级机器相同，因此如果接收到超过 32 EU/t 的电压就会爆炸。不过，你可以像普通 IC2 机器那样，为其添加 IC2 的 $(item)高压升级/$，以承受更高电压。"
+   "$(item)电力压缩机/$可以利用$(thing)工业时代2的 EU/$生成压缩空气。默认效率为 40%，但这可以在$(ttcolor)$(t:See 'I:electricCompressorEfficiency')配置文件中更改/$。$(p)它的行为与 IC2 1 级机器相同，因此如果接收到超过 32 EU/t 的电压就会爆炸。不过，你可以像普通 IC2 机器那样，为其添加 IC2 的$(item)高压升级/$，以承受更高电压。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "The energy output in mL/tick is:$(p)  $(formula)input rate / E * 400/$$(p)where $(formula)E/$ is the efficiency.$(p)For instance, with the default efficiency of 40% and an input of 32EU/tick, the compressed air production equals $(formula)32 / 40 * 400 = 320mL/tick./$",
-   "以 mL/tick 计的输出量为：$(p)  $(formula)输入速率 / E * 400/$$(p)其中 $(formula)E/$ 为效率。$(p)例如，在默认效率为 40%、输入为 32EU/tick 时，压缩空气产量为 $(formula)32 / 40 * 400 = 320mL/tick。/$"
+   "以 mL/tick 计的输出量为：$(p)  $(formula)输入速率 / E * 400/$$(p)其中$(formula)E/$为效率。$(p)例如，在默认效率为 40%、输入为 32EU/tick 时，压缩空气产量为$(formula)32 / 40 * 400 = 320mL/tick。/$"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Another factor that influences the efficiency is the machine's $(l:base_concepts/heat)heat/$. The machine needs to be cooled, as the efficiency will drop as the temperature rises, up to the point where no air is generated at all.",
-   "另一个会影响效率的因素是机器的 $(l:base_concepts/heat)热量/$。机器需要冷却，因为随着温度升高，效率会下降，甚至会降到完全无法产生空气的程度。"
+   "另一个会影响效率的因素是机器的$(l:base_concepts/heat)热量/$。机器需要冷却，因为随着温度升高，效率会下降，甚至会降到完全无法产生空气的程度。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Crafting an $(item)Electric Compressor/$",
-   "合成一个 $(item)电力压缩机/$"
+   "合成一个$(item)电力压缩机/$"
   ]
  ]
 }

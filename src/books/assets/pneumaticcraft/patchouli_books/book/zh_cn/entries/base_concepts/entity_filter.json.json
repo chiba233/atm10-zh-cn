@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Entity Filters/$ are used in several places in $(pncr), where there is a need to specify which $(thing)Entities/$ a machine or tool should affect in some way.$(p)In most places where a filter can be entered, pop-up help can be shown by pressing & holding the $(thing)F1/$ key.",
-   "$(thing)实体过滤器/$可用于$(#228)气动工艺$()中的多个地方，用于指定机器或工具应以某种方式影响哪些$(thing)实体/$。$(p)在大多数可以输入过滤器的地方，按住 $(thing)F1/$ 键即可显示弹出帮助。"
+   "$(thing)实体过滤器/$可用于$(#228)气动工艺$()中的多个地方，用于指定机器或工具应以某种方式影响哪些$(thing)实体/$。$(p)在大多数可以输入过滤器的地方，按住$(thing)F1/$键即可显示弹出帮助。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "To match entities by their entity type, just specify the type name (e.g. $(#800)creeper/$ matches $(thing)minecraft:creeper/$. To match an entity with a custom name (including players), quote the entity name, e.g. $(#800)'Minemaarten'/$ or $(#800)'desht'/$.$(p)When you want to specify a certain entity $(italic)type/$ (e.g., animals, aggressive mobs, players in general), put a '@' in front. A full list of examples, including accepted $(thing)@ Specifiers/$, follows.",
-   "如果要按实体类型匹配实体，只需填写类型名称即可（例如 $(#800)creeper/$ 可匹配 $(thing)minecraft:creeper/$）。如果要匹配带有自定义名称的实体（包括玩家），请给实体名称加上引号，例如 $(#800)'Minemaarten'/$ 或 $(#800)'desht'/$。$(p)如果你想指定某一类实体 $(italic)类型/$（例如动物、敌对生物、玩家总体），请在前面加上“@”。下面会给出完整示例列表，包括可接受的 $(thing)@ Specifiers/$。"
+   "如果要按实体类型匹配实体，只需填写类型名称即可（例如$(#800)creeper/$可匹配$(thing)minecraft:creeper/$）。如果要匹配带有自定义名称的实体（包括玩家），请给实体名称加上引号，例如$(#800)'Minemaarten'/$或$(#800)'desht'/$。$(p)如果你想指定某一类实体$(italic)类型/$（例如动物、敌对生物、玩家总体），请在前面加上“@”。下面会给出完整示例列表，包括可接受的$(thing)@ Specifiers/$。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "$(li)$(#800)@player/$ matches all players$(li)$(#800)@mob/$ matches all aggressive creatures$(li)$(#800)@animal/$ matches all passive creatures (animals)$(li)$(#800)@animal(age=adult)/$ matches all adult animals$(li)$(#800)@animal(age=baby)/$ matches all baby animals$(li)$(#800)@animal(breedable=yes)/$ matches all animals that can breed right now$(li)$(#800)sheep(shearable=yes)/$ matches all sheep which can be sheared",
-   "$(li)$(#800)@player/$ 匹配所有玩家$(li)$(#800)@mob/$ 匹配所有敌对生物$(li)$(#800)@animal/$ 匹配所有被动生物（动物）$(li)$(#800)@animal(age=adult)/$ 匹配所有成年动物$(li)$(#800)@animal(age=baby)/$ 匹配所有幼年动物$(li)$(#800)@animal(breedable=yes)/$ 匹配所有当前可以繁殖的动物$(li)$(#800)sheep(shearable=yes)/$ 匹配所有可以剪毛的羊"
+   "$(li)$(#800)@player/$匹配所有玩家$(li)$(#800)@mob/$匹配所有敌对生物$(li)$(#800)@animal/$匹配所有被动生物（动物）$(li)$(#800)@animal(age=adult)/$匹配所有成年动物$(li)$(#800)@animal(age=baby)/$匹配所有幼年动物$(li)$(#800)@animal(breedable=yes)/$匹配所有当前可以繁殖的动物$(li)$(#800)sheep(shearable=yes)/$匹配所有可以剪毛的羊"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "$(li)$(#800)sheep(shearable=yes,color=black)/$ matches all black sheep which can be sheared$(li)$(#800)wolf(color=blue)/$ matches all wolves/dogs with a blue collar. $(li)$(#800)cat(color=white)/$ matches all cats with a white collar.$(li)$(#800)@minecart/$ matches Minecarts$(li)$(#800)@boat/$ matches Boats$(li)$(#800)@living/$ matches all living entities$(li)$(#800)@item/$ matches item entities$(li)$(#800)@orb/$ matches experience orbs",
-   "$(li)$(#800)sheep(shearable=yes,color=black)/$ 匹配所有可以剪毛的黑羊$(li)$(#800)wolf(color=blue)/$ 匹配所有蓝色项圈的狼/狗。$(li)$(#800)cat(color=white)/$ 匹配所有白色项圈的猫。$(li)$(#800)@minecart/$ 匹配矿车$(li)$(#800)@boat/$ 匹配船$(li)$(#800)@living/$ 匹配所有活体实体$(li)$(#800)@item/$ 匹配物品实体$(li)$(#800)@orb/$ 匹配经验球"
+   "$(li)$(#800)sheep(shearable=yes,color=black)/$匹配所有可以剪毛的黑羊$(li)$(#800)wolf(color=blue)/$匹配所有蓝色项圈的狼/狗。$(li)$(#800)cat(color=white)/$匹配所有白色项圈的猫。$(li)$(#800)@minecart/$匹配矿车$(li)$(#800)@boat/$匹配船$(li)$(#800)@living/$匹配所有活体实体$(li)$(#800)@item/$匹配物品实体$(li)$(#800)@orb/$匹配经验球"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "$(li)$(#800)@drone/$ matches $(l:tools/drone)Drones/$$(li)$(#800)@mob(mod=minecraft)/$ matches mobs, but only from the $(thing)minecraft/$ namespace$(li)$(#800)Creeper/$ matches creepers$(li)$(#800)'MineMaarten'/$ (or $(#800)\"Minemaarten\"/$) matches an entity named 'MineMaarten'$(li)$(#800)c*/$ matches any entity starting with the letter 'c' (like Creepers, or Cows). $(li)$(#800)*pig*/$ matches any entity that includes 'pig' in the name (like a Pig or Zombie Pigman).",
-   "$(li)$(#800)@drone/$ 匹配 $(l:tools/drone)无人机/$$(li)$(#800)@mob(mod=minecraft)/$ 匹配生物，但仅限于 $(thing)minecraft/$ 命名空间中的生物$(li)$(#800)Creeper/$ 匹配苦力怕$(li)$(#800)'MineMaarten'/$（或 $(#800)\"Minemaarten\"/$）匹配名为“MineMaarten”的实体$(li)$(#800)c*/$ 匹配所有名称以字母“c”开头的实体（如苦力怕或牛）。$(li)$(#800)*pig*/$ 匹配所有名称中包含“pig”的实体（如猪或僵尸猪灵）。"
+   "$(li)$(#800)@drone/$匹配$(l:tools/drone)无人机/$$(li)$(#800)@mob(mod=minecraft)/$匹配生物，但仅限于$(thing)minecraft/$命名空间中的生物$(li)$(#800)Creeper/$匹配苦力怕$(li)$(#800)'MineMaarten'/$（或$(#800)\"Minemaarten\"/$）匹配名为“MineMaarten”的实体$(li)$(#800)c*/$匹配所有名称以字母“c”开头的实体（如苦力怕或牛）。$(li)$(#800)*pig*/$匹配所有名称中包含“pig”的实体（如猪或僵尸猪灵）。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "$(li)$(#800)@player(team=team1)/$ matches players on vanilla scoreboard team \"team1\"$(li)$(#800)@player(holding=stick)/$ matches players who are holding a stick right now$(li)$(#800)@player(holding=#minecraft:planks)/$ matches players holding any item in the $(thing)minecraft:planks/$ item tag",
-   "$(li)$(#800)@player(team=team1)/$ 匹配原版计分板队伍“team1”中的所有玩家$(li)$(#800)@player(holding=stick)/$ 匹配当前手持木棍的玩家$(li)$(#800)@player(holding=#minecraft:planks)/$ 匹配手持任意属于物品标签 $(thing)minecraft:planks/$ 的物品的玩家"
+   "$(li)$(#800)@player(team=team1)/$匹配原版计分板队伍“team1”中的所有玩家$(li)$(#800)@player(holding=stick)/$匹配当前手持木棍的玩家$(li)$(#800)@player(holding=#minecraft:planks)/$匹配手持任意属于物品标签$(thing)minecraft:planks/$的物品的玩家"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "$(li)$(#800)@player(ftbteam=<uuid>|<shortname>)/$ matches players who are members of an $(l:https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge)FTB Teams/$ team with either the given UUID or short name.$(p)You can also use the player modifiers $(#800)ftbteam_officer/$, $(#800)ftbteam_owner/$ & $(#800)ftbteam_ally/$ to match players who are (at least) officers, owner or allies of the team, and $(#800)ftbteam_enemy/$ to match players who are specifically marked as enemies of the team.",
-   "$(li)$(#800)@player(ftbteam=<uuid>|<shortname>)/$ 匹配属于某个 $(l:https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge)FTB队伍/$ 队伍的玩家，该队伍可通过给定的 UUID 或简称指定。$(p)你还可以使用玩家修饰符 $(#800)ftbteam_officer/$、$(#800)ftbteam_owner/$ 和 $(#800)ftbteam_ally/$ 来匹配至少为该队伍官员、所有者或盟友的玩家，也可以用 $(#800)ftbteam_enemy/$ 来匹配被明确标记为该队伍敌人的玩家。"
+   "$(li)$(#800)@player(ftbteam=<uuid>|<shortname>)/$匹配属于某个$(l:https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge)FTB队伍/$队伍的玩家，该队伍可通过给定的 UUID 或简称指定。$(p)你还可以使用玩家修饰符$(#800)ftbteam_officer/$、$(#800)ftbteam_owner/$和$(#800)ftbteam_ally/$来匹配至少为该队伍官员、所有者或盟友的玩家，也可以用$(#800)ftbteam_enemy/$来匹配被明确标记为该队伍敌人的玩家。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "All matches are case-insensitive, e.g. both $(#800)zombie/$ and $(#800)Zombie/$ will match zombies.$(p)You can specify a $(thing)sequence/$ of filters with the ';' (semicolon) separator - this is a $(italic)match any/$ function:$(li)$(#800)creeper;zombie/$ matches both Creepers $(italic)and/$ Zombies.",
-   "所有匹配都不区分大小写，例如 $(#800)zombie/$ 和 $(#800)Zombie/$ 都会匹配僵尸。$(p)你可以使用 ';'（分号）分隔符来指定一组 $(thing)序列/$ 过滤器——这是一种 $(italic)匹配任意一个/$ 的功能：$(li)$(#800)creeper;zombie/$ 会同时匹配苦力怕 $(italic)和/$ 僵尸。"
+   "所有匹配都不区分大小写，例如$(#800)zombie/$和$(#800)Zombie/$都会匹配僵尸。$(p)你可以使用 ';'（分号）分隔符来指定一组$(thing)序列/$过滤器——这是一种$(italic)匹配任意一个/$的功能：$(li)$(#800)creeper;zombie/$会同时匹配苦力怕$(italic)和/$僵尸。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "You can prefix a filter with '!' to negate the filter:$(li)$(#800)!@player/$ matches anything that is $(italic)not/$ a player$(li)$(#800)!Creeper;Zombie/$ matches anything that is neither a Creeper $(italic)nor/$ a Zombie$(li)$(#800)Creeper;!Zombie/$ is $(#f00)invalid/$: '!' can only go right at the start of a filter/$$(p)$(bold)Note:/$ for $(l:tools/drone)Drone/$ entity filters using the $(l:programming/text)Text/$ programming widget, '!' is not supported; connect the Text widget on the left, as normal.",
-   "你可以在过滤器前加上“!”来取反：$(li)$(#800)!@player/$ 匹配任何$(italic)不是/$玩家的对象$(li)$(#800)!Creeper;Zombie/$ 匹配既不是苦力怕$(italic)也不是/$僵尸的对象$(li)$(#800)Creeper;!Zombie/$ 是$(#f00)无效/$的：'!' 只能放在过滤器最开头/$$(p)$(bold)注意：/$对于使用 $(l:programming/text)文本/$ 编程组件的 $(l:tools/drone)无人机/$ 实体过滤器，不支持“!”；请像平常一样把文本组件接在左侧。"
+   "你可以在过滤器前加上“!”来取反：$(li)$(#800)!@player/$匹配任何$(italic)不是/$玩家的对象$(li)$(#800)!Creeper;Zombie/$匹配既不是苦力怕$(italic)也不是/$僵尸的对象$(li)$(#800)Creeper;!Zombie/$是$(#f00)无效/$的：'!' 只能放在过滤器最开头/$$(p)$(bold)注意：/$对于使用$(l:programming/text)文本/$编程组件的$(l:tools/drone)无人机/$实体过滤器，不支持“!”；请像平常一样把文本组件接在左侧。"
   ],
   [
    [

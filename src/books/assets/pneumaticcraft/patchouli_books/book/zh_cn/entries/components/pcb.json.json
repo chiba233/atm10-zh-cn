@@ -16,7 +16,7 @@
     "text"
    ],
    "$(item)Printed Circuit Boards/$ (PCB's) are important components used in many higher tier machines and tools. Making a $(item)PCB/$ requires a few steps.$(p)First of all, make an $(item)Empty PCB/$ in the $(l:manufacturing/pressure_chamber)Pressure Chamber/$ as shown opposite. There are then two methods to proceed (see overleaf).",
-   "$(item)印刷电路板/$（PCB）是许多更高阶机器和工具所使用的重要组件。制作一块 $(item)电路板/$ 需要经过几个步骤。$(p)首先，按对页所示，在 $(l:manufacturing/pressure_chamber)压力室/$ 中制作一块 $(item)空白电路板/$。之后有两种方法可以继续进行（见下页）。"
+   "$(item)印刷电路板/$（PCB）是许多更高阶机器和工具所使用的重要组件。制作一块$(item)电路板/$需要经过几个步骤。$(p)首先，按对页所示，在$(l:manufacturing/pressure_chamber)压力室/$中制作一块$(item)空白电路板/$。之后有两种方法可以继续进行（见下页）。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "This method is the only one available initially, and is somewhat slow without extra automation and heating infrastructure: you can develop a $(item)PCB/$ chemically by putting it in a $(l:manufacturing/uv_light_box)UV Light Box/$ and then putting the exposed $(item)Empty PCB/$ in an $(l:manufacturing/etching_tank)Etching Tank/$ to turn it into an $(item)Unassembled PCB/$.",
-   "这种方法是初期唯一可用的方法，而且如果没有额外的自动化和加热基础设施，速度会比较慢：你可以先将 $(item)PCB/$ 放入 $(l:manufacturing/uv_light_box)紫外线灯箱/$ 中进行化学显影，然后再把曝光后的 $(item)空PCB/$ 放入 $(l:manufacturing/etching_tank)蚀刻器/$ 中，将其转变为 $(item)未组装的印刷电路板/$。"
+   "这种方法是初期唯一可用的方法，而且如果没有额外的自动化和加热基础设施，速度会比较慢：你可以先将$(item)PCB/$放入$(l:manufacturing/uv_light_box)紫外线灯箱/$中进行化学显影，然后再把曝光后的$(item)空PCB/$放入$(l:manufacturing/etching_tank)蚀刻器/$中，将其转变为$(item)未组装的印刷电路板/$。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The etching process has a chance of failure if the $(item)Empty PCB/$ was not 100% exposed in the $(l:manufacturing/uv_light_box)UV Light Box/$; you can recycle $(item)Failed PCB's/$ in a $(item)Blast Furnace/$.",
-   "如果 $(item)空白 PCB/$ 在 $(l:manufacturing/uv_light_box)紫外线灯箱/$ 中没有达到 100% 曝光，蚀刻过程就有失败的几率；你可以在 $(item)高炉/$ 中回收 $(item)失效的印刷电路板/$。"
+   "如果$(item)空白 PCB/$在$(l:manufacturing/uv_light_box)紫外线灯箱/$中没有达到 100% 曝光，蚀刻过程就有失败的几率；你可以在$(item)高炉/$中回收$(item)失效的印刷电路板/$。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Once you can make an $(l:manufacturing/assembly_system)Assembly System/$, you can use that to turn $(item)Empty PCB's/$ directly into $(item)Unassembled PCB's/$ with an $(item)Assembly Program: Laser/$. There's no need to expose it in a $(item)UV Light Box/$ or use an $(item)Etching Tank/$ in this case.",
-   "一旦你能制作出 $(l:manufacturing/assembly_system)装配系统/$，就可以用它配合 $(item)装配程序：激光/$，直接将 $(item)空印刷电路板/$变成 $(item)未组装的印刷电路板/$。这样一来，就不需要再把它放进 $(item)紫外线灯箱/$中曝光，也不用使用 $(item)蚀刻器/$。"
+   "一旦你能制作出$(l:manufacturing/assembly_system)装配系统/$，就可以用它配合$(item)装配程序：激光/$，直接将$(item)空印刷电路板/$变成$(item)未组装的印刷电路板/$。这样一来，就不需要再把它放进$(item)紫外线灯箱/$中曝光，也不用使用$(item)蚀刻器/$。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "$(p)The Assembly System is a very convenient and reasonably quick option for producing $(item)Unassembled PCB's/$; however with sufficient automation and heating infrastructure, the $(thing)UV Light Box/Etching Tank/$ combo can be much quicker, especially if you need to mass-produce PCB's.",
-   "$(p)装配系统是生产 $(item)未组装的印刷电路板/$ 的一种非常方便且速度相当不错的选择；不过如果拥有足够的自动化与加热基础设施，$(thing)紫外线灯箱/蚀刻槽/$ 的组合会快得多，尤其是在你需要批量生产印刷电路板时。"
+   "$(p)装配系统是生产$(item)未组装的印刷电路板/$的一种非常方便且速度相当不错的选择；不过如果拥有足够的自动化与加热基础设施，$(thing)紫外线灯箱/蚀刻槽/$的组合会快得多，尤其是在你需要批量生产印刷电路板时。"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "Finally, you can add some $(l:components/capacitor)Capacitors/$ and $(l:components/transistor)Transistors/$ to assemble the finished $(item)Printed Circuit Board/$!",
-   "最后，你还可以加入一些 $(l:components/capacitor)电容/$ 和 $(l:components/transistor)晶体管/$，组装成完整的 $(item)印刷电路板/$！"
+   "最后，你还可以加入一些$(l:components/capacitor)电容/$和$(l:components/transistor)晶体管/$，组装成完整的$(item)印刷电路板/$！"
   ]
  ]
 }

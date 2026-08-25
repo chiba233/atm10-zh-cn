@@ -34,7 +34,7 @@
     "text"
    ],
    "If you've ever wanted to soar through the air without a care in the world (except how much pressure you have left), the $(l:base_concepts/upgrades#jet_boots_1)Jet Boots Upgrade/$ is for you.  There are 5 tiers of Jet Boots Upgrade for progressively faster flight, and greater air usage.",
-   "如果你曾想过无忧无虑地翱翔天际（除了还得担心自己剩下多少气压），那么 $(l:base_concepts/upgrades#jet_boots_1)喷气靴升级/$ 就是为你准备的。喷气靴升级共有 5 个等级，飞行速度会逐级提升，但耗气量也会更高。"
+   "如果你曾想过无忧无虑地翱翔天际（除了还得担心自己剩下多少气压），那么$(l:base_concepts/upgrades#jet_boots_1)喷气靴升级/$就是为你准备的。喷气靴升级共有 5 个等级，飞行速度会逐级提升，但耗气量也会更高。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "When the upgrade is active, simply hold the $(k:pneumaticcraft.boots.jet_boots) key to thrust in the direction you're looking.$(p)$(thing)Jet Boots/$ are a $(bold)heavy/$ user of air; it's strongly recommended to add multiple $(l:base_concepts/upgrades#volume)Volume Upgrades/$ to your boots (and $(l:armor/pneumatic_chestplate)chestplate/$, with $(l:base_concepts/upgrades#charging)Charging Upgrades/$).$(p)Use of an $(l:machines/aerial_interface)Aerial Interface/$ is also advised when possible, along with a good charging infrastructure at your base.",
-   "当该升级处于激活状态时，只需按住 $(k:pneumaticcraft.boots.jet_boots) 键，即可朝你视线所指的方向推进。$(p)$(thing)喷射靴/$会 $(bold)大量/$ 消耗空气；强烈建议你在靴子上加装多个 $(l:base_concepts/upgrades#volume)容量升级/$（以及在 $(l:armor/pneumatic_chestplate)胸甲/$ 上加装多个 $(l:base_concepts/upgrades#charging)充气升级/$）。$(p)如果条件允许，也建议使用 $(l:machines/aerial_interface)空气接口/$，并在基地配备良好的充气基础设施。"
+   "当该升级处于激活状态时，只需按住$(k:pneumaticcraft.boots.jet_boots) 键，即可朝你视线所指的方向推进。$(p)$(thing)喷射靴/$会$(bold)大量/$消耗空气；强烈建议你在靴子上加装多个$(l:base_concepts/upgrades#volume)容量升级/$（以及在$(l:armor/pneumatic_chestplate)胸甲/$上加装多个$(l:base_concepts/upgrades#charging)充气升级/$）。$(p)如果条件允许，也建议使用$(l:machines/aerial_interface)空气接口/$，并在基地配备良好的充气基础设施。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "With $(l:base_concepts/upgrades#jet_boots_3)Jet Boots Upgrades: Tier III/$ or better, you will also have access to $(thing)Builder Mode/$, which allows for more creative-style (but slower) flight control and improved airborne digging speed.$(p)This can be toggled on & off via the armor GUI (and bound to a toggle key).",
-   "拥有 $(l:base_concepts/upgrades#jet_boots_3)喷气靴升级：III级/$ 或更高等级后，你还可以使用 $(thing)建筑工模式/$，它能提供更偏创造模式风格（但更慢）的飞行控制，并提升你在空中的挖掘速度。$(p)你可以在护甲 GUI 中将其开启或关闭（也可绑定到一个切换按键）。"
+   "拥有$(l:base_concepts/upgrades#jet_boots_3)喷气靴升级：III级/$或更高等级后，你还可以使用$(thing)建筑工模式/$，它能提供更偏创造模式风格（但更慢）的飞行控制，并提升你在空中的挖掘速度。$(p)你可以在护甲 GUI 中将其开启或关闭（也可绑定到一个切换按键）。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "With $(l:base_concepts/upgrades#jet_boots_4)Jet Boots Upgrades: Tier IV/$ or better, you also get access to $(thing)Flight Stabilizers/$, which will bring you to an immediate halt when you release the thrust key (at an air cost proportional to the speed you were travelling at).$(p)Like Builder Mode, this too can be toggled on & off via the armor GUI (and bound to a toggle key).",
-   "拥有 $(l:base_concepts/upgrades#jet_boots_4)喷气靴升级：IV级/$ 或更高等级后，你还可以使用 $(thing)飞行稳定/$；当你松开推进键时，它会让你立即停下（会消耗空气，消耗量与你当时的飞行速度成正比）。$(p)和建筑模式一样，这项功能也可以通过护甲 GUI 开启或关闭（并可绑定到一个切换按键）。"
+   "拥有$(l:base_concepts/upgrades#jet_boots_4)喷气靴升级：IV级/$或更高等级后，你还可以使用$(thing)飞行稳定/$；当你松开推进键时，它会让你立即停下（会消耗空气，消耗量与你当时的飞行速度成正比）。$(p)和建筑模式一样，这项功能也可以通过护甲 GUI 开启或关闭（并可绑定到一个切换按键）。"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "By adding up to 4 $(l:base_concepts/upgrades#dispenser)Dispenser Upgrades/$ to the boots, you gain the ability to execute a $(bold)pneumatic kick/$.  This will do moderate damage to entities (and not just living entities!), but also inflict heavy knockback, at a modest air cost.$(p)Press $(thing)$(k:pneumaticcraft.boots.kick)/$ to kick.",
-   "给靴子最多加装 4 个$(l:base_concepts/upgrades#dispenser)发射器升级/$后，你将获得施展$(bold)气动飞踢/$的能力。它会对实体造成中等伤害（而且不只是对生物实体！），同时还会造成强力击退，只消耗少量空气。$(p)按下 $(thing)$(k:pneumaticcraft.boots.kick)/$ 即可踢击。"
+   "给靴子最多加装 4 个$(l:base_concepts/upgrades#dispenser)发射器升级/$后，你将获得施展$(bold)气动飞踢/$的能力。它会对实体造成中等伤害（而且不只是对生物实体！），同时还会造成强力击退，只消耗少量空气。$(p)按下$(thing)$(k:pneumaticcraft.boots.kick)/$即可踢击。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "With a $(l:base_concepts/upgrades#flippers)Flippers Upgrade/$ installed, you will enjoy a moderate benefit to your swim speed. This has no extra air cost, so is a much cheaper alternative to the Jet Boots when in the water.",
-   "安装 $(l:base_concepts/upgrades#flippers)脚蹼升级/$ 后，你的游泳速度会得到适度提升。它不会额外消耗空气，因此在水中时，它是喷气靴便宜得多的替代方案。"
+   "安装$(l:base_concepts/upgrades#flippers)脚蹼升级/$后，你的游泳速度会得到适度提升。它不会额外消耗空气，因此在水中时，它是喷气靴便宜得多的替代方案。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "With a $(l:base_concepts/upgrades#stomp)Stomp Upgrade/$ installed and active, you can rain destruction down on your foes. If you hit the ground fast enough to take damage (even if that damage is absorbed by your boots), nearby mobs will be injured, proportionally to how fast you arrived. This uses up some air for each mob that was injured thus.",
-   "安装并启用 $(l:base_concepts/upgrades#stomp)震地升级/$ 后，你就能从天而降，摧毁敌人。如果你落地时速度快到足以受到伤害（即使伤害被靴子吸收了），附近的生物也会受伤，伤害会与你落地时的速度成正比。每伤到一个生物，都会消耗一些空气。"
+   "安装并启用$(l:base_concepts/upgrades#stomp)震地升级/$后，你就能从天而降，摧毁敌人。如果你落地时速度快到足以受到伤害（即使伤害被靴子吸收了），附近的生物也会受伤，伤害会与你落地时的速度成正比。每伤到一个生物，都会消耗一些空气。"
   ]
  ]
 }

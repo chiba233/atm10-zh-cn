@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Refinery/$ is a multiblock machine which uses $(l:base_concepts/heat)heat/$ to refine $(l:base_concepts/oil)Oil/$ into various fuels. It starts to work at 100°C. The higher the temperature applied, the faster it refines. The fuels that can be produced are, sorted from lightest to heaviest:$(li)$(thing)LPG (Liquefied Petroleum Gas)/$$(li)$(thing)Gasoline/$$(li)$(thing)Kerosene/$$(li)$(thing)Diesel/$",
-   "$(item)精炼厂/$是一台多方块机器，使用 $(l:base_concepts/heat)热量/$ 将 $(l:base_concepts/oil)石油/$ 精炼成各种燃料。它会在 100°C 时开始工作。施加的温度越高，精炼速度就越快。可产出的燃料按从最轻到最重排序如下：$(li)$(thing)液化石油气 (LPG)/$$(li)$(thing)汽油/$$(li)$(thing)煤油/$$(li)$(thing)柴油/$"
+   "$(item)精炼厂/$是一台多方块机器，使用$(l:base_concepts/heat)热量/$将$(l:base_concepts/oil)石油/$精炼成各种燃料。它会在 100°C 时开始工作。施加的温度越高，精炼速度就越快。可产出的燃料按从最轻到最重排序如下：$(li)$(thing)液化石油气 (LPG)/$$(li)$(thing)汽油/$$(li)$(thing)煤油/$$(li)$(thing)柴油/$"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "The $(thing)Refinery/$ is a multiblock structure: place down a $(item)Refinery Controller/$, then stack 2-4 $(item)Refinery Outputs/$ on top of or beside the Controller. $(p)Different multiblock sizes give different yields; given 10mB of oil as input:$(p)$(bold)2 Outputs/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)Diesel/$ (4mB)$(br)$(bold)3 Outputs/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)Kerosene/$ (3mB)$(li)$(thing)Diesel/$ (2mB)",
-   "$(thing)精炼厂/$是一种多方块结构：先放置一个 $(item)精炼厂控制器/$，然后在控制器上方或侧面堆叠 2 到 4 个 $(item)精炼厂输出端/$。$(p)不同的多方块尺寸会有不同的产出；以 10mB 石油作为输入时：$(p)$(bold)2 个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)柴油/$（4mB）$(br)$(bold)3 个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)煤油/$（3mB）$(li)$(thing)柴油/$（2mB）"
+   "$(thing)精炼厂/$是一种多方块结构：先放置一个$(item)精炼厂控制器/$，然后在控制器上方或侧面堆叠 2 到 4 个$(item)精炼厂输出端/$。$(p)不同的多方块尺寸会有不同的产出；以 10mB 石油作为输入时：$(p)$(bold)2 个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)柴油/$（4mB）$(br)$(bold)3 个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)煤油/$（3mB）$(li)$(thing)柴油/$（2mB）"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "All produced liquids can be used as fuel in a $(l:compressors/liquid_compressor)Liquid Compressor/$ (with lighter fuels being of better quality).$(p)However, there are two other very important uses:$(li)$(thing)LPG/$ is used to make liquid $(l:components/plastic)Plastic/$$(li)$(thing)Diesel/$ is used to make $(l:components/lubricant)Lubricant/$ for $(l:base_concepts/upgrades#speed)Speed Upgrades/$.$(p)A $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$ is used for both of these processes.",
-   "所有产出的液体都可以在 $(l:compressors/liquid_compressor)液体压缩机/$ 中作为燃料使用（其中较轻的燃料品质更好）。$(p)不过，它们还有另外两种非常重要的用途：$(li)$(thing)液化石油气/$ 用于制造液态 $(l:components/plastic)塑料/$$(li)$(thing)柴油/$ 用于制造 $(l:components/lubricant)润滑油/$，以供 $(l:base_concepts/upgrades#speed)速度升级/$ 使用。$(p)这两种工艺都要用到 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$。"
+   "所有产出的液体都可以在$(l:compressors/liquid_compressor)液体压缩机/$中作为燃料使用（其中较轻的燃料品质更好）。$(p)不过，它们还有另外两种非常重要的用途：$(li)$(thing)液化石油气/$用于制造液态$(l:components/plastic)塑料/$$(li)$(thing)柴油/$用于制造$(l:components/lubricant)润滑油/$，以供$(l:base_concepts/upgrades#speed)速度升级/$使用。$(p)这两种工艺都要用到$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "Since the $(item)Refinery/$ is a multiblock with many faces exposed to the air, it can lose $(l:base_concepts/heat)Heat/$ quite rapidly if not well insulated. Therefore, it's strongly recommended to cover all unused faces of the multiblock to maximize efficiency. Note that any non-heat-conducting blocks can be used, including semi-solid blocks like $(item)slabs/$ or $(item)trapdoors/$, but $(l:machines/thermal_lagging)Thermal Lagging/$ is especially recommended.",
-   "由于 $(item)精炼厂/$ 是一个有许多面暴露在空气中的多方块结构，如果没有做好隔热，就会相当迅速地损失 $(l:base_concepts/heat)热量/$。因此，强烈建议将这个多方块结构所有未使用的面都覆盖起来，以最大化效率。请注意，任何不导热的方块都可以使用，包括像 $(item)台阶/$ 或 $(item)活板门/$ 这样的半实体方块，但尤其推荐使用 $(l:machines/thermal_lagging)隔热板/$。"
+   "由于$(item)精炼厂/$是一个有许多面暴露在空气中的多方块结构，如果没有做好隔热，就会相当迅速地损失$(l:base_concepts/heat)热量/$。因此，强烈建议将这个多方块结构所有未使用的面都覆盖起来，以最大化效率。请注意，任何不导热的方块都可以使用，包括像$(item)台阶/$或$(item)活板门/$这样的半实体方块，但尤其推荐使用$(l:machines/thermal_lagging)隔热板/$。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "You can use a $(l:machines/vortex_tube)Vortex Tube/$ to heat the $(item)Refinery/$, or place hot fluids (Lava...) or blocks (Magma...) next to any $(item)Refinery/$ blocks.  Note that such fluids and blocks will get used up (their heat gets drained), so you may wish to find a way to automate the production and placement of those resources.",
-   "你可以使用 $(l:machines/vortex_tube)涡流管/$ 来加热 $(item)精炼厂/$，或者将高温流体（如熔岩）或方块（如岩浆块）放置在任意属于 $(item)精炼厂/$ 的机器旁边。请注意，这类流体和方块会被消耗掉（其热量会被抽干），因此你可能需要想办法自动化生产并放置这些资源。"
+   "你可以使用$(l:machines/vortex_tube)涡流管/$来加热$(item)精炼厂/$，或者将高温流体（如熔岩）或方块（如岩浆块）放置在任意属于$(item)精炼厂/$的机器旁边。请注意，这类流体和方块会被消耗掉（其热量会被抽干），因此你可能需要想办法自动化生产并放置这些资源。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "The $(item)Refinery/$ has $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ support: recipes can be added and removed. Follow the link below for more information.",
-   "$(item)精炼厂/$支持 $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$：可以添加和移除配方。点击下方链接了解更多信息。"
+   "$(item)精炼厂/$支持$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$：可以添加和移除配方。点击下方链接了解更多信息。"
   ],
   [
    [

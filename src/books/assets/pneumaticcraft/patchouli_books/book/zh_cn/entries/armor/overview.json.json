@@ -16,7 +16,7 @@
     "text"
    ],
    "What if you mix $(pncr) with the HUD from $(thing)Iron Man/$? You get $(thing)Pneumatic Armor/$!$(p)Although this armor was inspired by Tony Stark's toy, it doesn't mean it's invincible in any way: by default, the armor has only slightly better protection and durability than the equivalent $(thing)Iron Armor/$ piece. ",
-   "如果把$(#228)气动工艺$()与 $(thing)钢铁侠/$ 的 HUD 混合在一起，会得到什么？答案是 $(thing)气动护甲/$！$(p)虽然这套护甲的灵感来自托尼·斯塔克的玩具，但这并不意味着它在任何方面都是无敌的：默认情况下，这套护甲的防护能力和耐久度都只比对应的 $(thing)铁护甲/$ 部件略好一点。"
+   "如果把$(#228)气动工艺$()与$(thing)钢铁侠/$的 HUD 混合在一起，会得到什么？答案是$(thing)气动护甲/$！$(p)虽然这套护甲的灵感来自托尼·斯塔克的玩具，但这并不意味着它在任何方面都是无敌的：默认情况下，这套护甲的防护能力和耐久度都只比对应的$(thing)铁护甲/$部件略好一点。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "However, this armor is highly upgradable. To use upgrades (and to pressurize the armor), put the armor in a $(l:machines/charging_station)Charging Station/$.$(p)Upgrades common to all pieces are described in the following pages. Piece-specific upgrades are described separately in the pages for each armor piece.",
-   "不过，这套护甲具有很高的升级潜力。要使用升级（以及为护甲加压），请将护甲放入 $(l:machines/charging_station)充气站/$ 中。$(p)所有护甲部件通用的升级会在后续页面中说明。各部件专属的升级则会分别在对应护甲部件的页面中介绍。"
+   "不过，这套护甲具有很高的升级潜力。要使用升级（以及为护甲加压），请将护甲放入$(l:machines/charging_station)充气站/$中。$(p)所有护甲部件通用的升级会在后续页面中说明。各部件专属的升级则会分别在对应护甲部件的页面中介绍。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "When you equip an armor piece, it will $(thing)boot up/$ within a few seconds. You can press $(thing)$(k:pneumaticcraft.armor.options)/$ to open a GUI, which allows you to configure installed upgrades and adjust the armor HUD. With more upgrades installed, more options will appear in the GUI.$(p)Note that all upgrades can be toggled on/off via the GUI checkboxes, and you can even bind a key to each checkbox to quickly toggle features when outside the GUI.",
-   "当你装备上一件护甲时，它会在几秒内$(thing)启动/$。你可以按下 $(thing)$(k:pneumaticcraft.armor.options)/$ 打开一个 GUI，在那里你可以配置已安装的升级卡，并调整盔甲 HUD。安装的升级卡越多，GUI 中出现的选项也就越多。$(p)请注意，所有升级卡都可以通过 GUI 中的复选框开启/关闭，你甚至还可以为每个复选框绑定一个按键，以便在离开 GUI 时快速切换各项功能。"
+   "当你装备上一件护甲时，它会在几秒内$(thing)启动/$。你可以按下$(thing)$(k:pneumaticcraft.armor.options)/$打开一个 GUI，在那里你可以配置已安装的升级卡，并调整盔甲 HUD。安装的升级卡越多，GUI 中出现的选项也就越多。$(p)请注意，所有升级卡都可以通过 GUI 中的复选框开启/关闭，你甚至还可以为每个复选框绑定一个按键，以便在离开 GUI 时快速切换各项功能。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "Every armor piece is dynamically re-colorable from the default grey texture; each piece has a $(thing)primary/$ and $(thing)secondary/$ color which can be adjusted independently, and the Helmet $(thing)eyepiece/$ can also have its own color.$(p)To adjust colors, just use the $(bold)Colors.../$ screen from the main armor GUI screen. No special upgrades are needed for this; it's builtin functionality!",
-   "每件护甲都可以从默认的灰色纹理动态重新着色；每个部件都有可独立调整的 $(thing)主/$ 色和 $(thing)副/$ 色，而头盔的 $(thing)目镜/$ 也可以拥有自己的颜色。$(p)要调整颜色，只需在主护甲 GUI 界面中打开 $(bold)颜色……/$ 界面即可。为此不需要任何特殊升级；这是内置功能！"
+   "每件护甲都可以从默认的灰色纹理动态重新着色；每个部件都有可独立调整的$(thing)主/$色和$(thing)副/$色，而头盔的$(thing)目镜/$也可以拥有自己的颜色。$(p)要调整颜色，只需在主护甲 GUI 界面中打开$(bold)颜色……/$界面即可。为此不需要任何特殊升级；这是内置功能！"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "$(l:base_concepts/upgrades#armor)Armor Upgrades/$ increase the protection and toughness of each armor piece. With 2 upgrades installed, each piece is as good as the corresponding $(thing)Diamond Armor/$ piece.  With the maximum 4 upgrades, the protection is thus superior to $(thing)Diamond Armor/$.",
-   "$(l:base_concepts/upgrades#armor)护甲升级/$会提高每件护甲的防护值和韧性。安装 2 个升级后，每一件护甲都能达到对应的 $(thing)钻石护甲/$部件水平。安装满 4 个升级后，其防护性能将优于 $(thing)钻石护甲/$。"
+   "$(l:base_concepts/upgrades#armor)护甲升级/$会提高每件护甲的防护值和韧性。安装 2 个升级后，每一件护甲都能达到对应的$(thing)钻石护甲/$部件水平。安装满 4 个升级后，其防护性能将优于$(thing)钻石护甲/$。"
   ],
   [
    [
@@ -124,7 +124,7 @@
     "text"
    ],
    "A $(l:base_concepts/upgrades#gilded)Gilded Upgrade/$ can be installed in any armor piece, and fools $(thing)Piglins/$ into believing that you're actually wearing $(thing)Gold Armor/$. Silly Piglins.",
-   "$(l:base_concepts/upgrades#gilded)镶金升级/$可以安装在任意一件护甲上，并让 $(thing)猪灵/$ 误以为你穿着的其实是 $(thing)金盔甲/$。愚蠢的猪灵。"
+   "$(l:base_concepts/upgrades#gilded)镶金升级/$可以安装在任意一件护甲上，并让$(thing)猪灵/$误以为你穿着的其实是$(thing)金盔甲/$。愚蠢的猪灵。"
   ],
   [
    [
@@ -133,7 +133,7 @@
     "text"
    ],
    "The $(l:base_concepts/upgrades#radiation_shielding)Radiation Shielding Upgrade/$ provides protection against the harmful effects of Mekanism radiation, same as Mekanism's own $(l:https://wiki.aidancbrady.com/wiki/Radiation_Shielding_Unit)Radiation Shielding Unit/$. Note that you must have a Shielding Upgrade in every armor piece to receive full protection.",
-   "$(l:base_concepts/upgrades#radiation_shielding)辐射防护升级/$可提供对抗通用机械辐射有害影响的保护，效果与通用机械自带的 $(l:https://wiki.aidancbrady.com/wiki/Radiation_Shielding_Unit)辐射屏蔽单元/$ 相同。请注意，你必须在每件护甲上都安装一个防护升级，才能获得完整防护。"
+   "$(l:base_concepts/upgrades#radiation_shielding)辐射防护升级/$可提供对抗通用机械辐射有害影响的保护，效果与通用机械自带的$(l:https://wiki.aidancbrady.com/wiki/Radiation_Shielding_Unit)辐射屏蔽单元/$相同。请注意，你必须在每件护甲上都安装一个防护升级，才能获得完整防护。"
   ],
   [
    [

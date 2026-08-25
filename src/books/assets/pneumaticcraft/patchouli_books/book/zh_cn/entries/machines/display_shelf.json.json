@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Display Shelf/$ functions exactly like its bigger brother the $(l:machines/display_table)Display Table/$, but is half-height. In addition, it will not render its legs if the block beneath it does not have a solid top face.",
-   "$(item)展示台/$的功能与它的大哥 $(l:machines/display_table)展示桌/$ 完全相同，但只有半格高。此外，如果其下方的方块顶部表面不坚实，它将不会渲染桌腿。"
+   "$(item)展示台/$的功能与它的大哥$(l:machines/display_table)展示桌/$完全相同，但只有半格高。此外，如果其下方的方块顶部表面不坚实，它将不会渲染桌腿。"
   ],
   [
    [

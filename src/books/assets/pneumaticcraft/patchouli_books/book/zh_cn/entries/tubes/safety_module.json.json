@@ -34,7 +34,7 @@
     "text"
    ],
    "When you apply an $(l:tubes/module_expansion_card)Module Expansion Card/$ to the Safety Module, the module gains a GUI (right-click) providing far more control over the threshold level. You can set a precise threshold in the GUI, or with the $(bold)Advanced Config/$ checkbox, configure interpolated threshold levels based on the signal. This functions very much like the $(l:tubes/pressure_gauge_module#img)Pressure Gauge GUI/$, but in reverse.",
-   "当你将 $(l:tubes/module_expansion_card)模块拓展卡/$ 安装到安全模块上后，该模块会获得一个 GUI（右键打开），从而让你能对阈值进行更精细的控制。你可以在 GUI 中设置精确阈值，或者勾选 $(bold)高级配置/$，根据信号来配置插值阈值。它的工作方式与 $(l:tubes/pressure_gauge_module#img)压力表 GUI/$ 十分类似，只是方向相反。"
+   "当你将$(l:tubes/module_expansion_card)模块拓展卡/$安装到安全模块上后，该模块会获得一个 GUI（右键打开），从而让你能对阈值进行更精细的控制。你可以在 GUI 中设置精确阈值，或者勾选$(bold)高级配置/$，根据信号来配置插值阈值。它的工作方式与$(l:tubes/pressure_gauge_module#img)压力表 GUI/$十分类似，只是方向相反。"
   ],
   [
    [

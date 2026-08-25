@@ -16,7 +16,7 @@
     "text"
    ],
    "To be able to craft higher tier materials, you'll need an $(thing)Assembly System/$; a collection of $(thing)Assembly Machines/$. These machines communicate with each other when they're horizontally adjacent. Only one machine of each type can exist (with the exception of the $(item)Assembly IO Unit/$, see below). The assembly line runs on $(l:base_concepts/pressure)compressed air/$, but you only need to suuply air to the Assembly Controller to power the whole system.",
-   "要合成更高等级的材料，你需要一个 $(thing)装配系统/$：也就是由多个 $(thing)装配机/$ 组成的结构。当这些机器在水平方向上相邻时，它们就会彼此通信。在同一个装配系统中，每种装配机只能存在一台（$(item)装配台交互设备/$ 除外，见下文）。每个装配系统都需要 $(l:base_concepts/pressure)压缩空气/$ 才能运转，但你只需要向 $(item)装配台/$ 供应空气，就能为整个系统提供动力。"
+   "要合成更高等级的材料，你需要一个$(thing)装配系统/$：也就是由多个$(thing)装配机/$组成的结构。当这些机器在水平方向上相邻时，它们就会彼此通信。在同一个装配系统中，每种装配机只能存在一台（$(item)装配台交互设备/$除外，见下文）。每个装配系统都需要$(l:base_concepts/pressure)压缩空气/$才能运转，但你只需要向$(item)装配台/$供应空气，就能为整个系统提供动力。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "An $(thing)Assembly System/$ must include $(italic)two/$ $(item)IO Units/$; one import unit, and one export unit: $(6)orange/$ means it's an export unit, $(9)blue/$ means it's an import unit. For an $(item)IO Unit/$ to work it needs to be able to reach an $(item)Assembly Platform/$, as well as an inventory to extract or store items (depending on its mode).",
-   "一个 $(thing)装配系统/$ 必须包含 $(italic)两个/$ $(item)交互设备/$：一个输入设备和一个输出设备。$(6)橙色/$ 表示它是输出设备，$(9)蓝色/$ 表示它是输入设备。要让 $(item)交互设备/$ 正常工作，它必须挨着 $(item)装配平台/$ 摆放（可放在斜角），同时还需要挨着它摆放一个物品容器，用于提取或存储物品（取决于它是输入还是输出）。"
+   "一个$(thing)装配系统/$必须包含$(italic)两个/$$(item)交互设备/$：一个输入设备和一个输出设备。$(6)橙色/$表示它是输出设备，$(9)蓝色/$表示它是输入设备。要让$(item)交互设备/$正常工作，它必须挨着$(item)装配平台/$摆放（可放在斜角），同时还需要挨着它摆放一个物品容器，用于提取或存储物品（取决于它是输入还是输出）。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "The $(item)Assembly Platform/$ is a worktable for the other $(thing)Assembly Machines/$. It is used to hold items in place when drilling/lasering.$(p)The $(item)Assembly Platform/$ is best positioned centrally, as all other machines need to access it.",
-   "$(item)装配平台/$是供其他 $(thing)装配机/$ 使用的工作台。它用于在钻孔/激光加工时将物品固定在位。$(p)$(item)装配平台/$最好放在中央位置，因为其他所有机器都需要访问它。"
+   "$(item)装配平台/$是供其他$(thing)装配机/$使用的工作台。它用于在钻孔/激光加工时将物品固定在位。$(p)$(item)装配平台/$最好放在中央位置，因为其他所有机器都需要访问它。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "The $(item)Assembly Laser/$ is able to cut through materials, used to slice an item up, or to cut off edges.$(p)Like the $(item)Assembly Drill/$, this machine can $(italic)not/$ reach diagonally.",
-   "$(item)装配激光/$能够切割材料，可用于将物品切开，或切除边缘。$(p)和 $(item)装配钻头/$ 一样，这台机器$(italic)无法/$斜向触及。"
+   "$(item)装配激光/$能够切割材料，可用于将物品切开，或切除边缘。$(p)和$(item)装配钻头/$一样，这台机器$(italic)无法/$斜向触及。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "To craft items with the $(thing)Assembly System/$, put an $(l:manufacturing/assembly_programs)Assembly Program/$ in the $(item)Assembly Controller/$, and put the required items in the input inventory.$(p)Any items which match a recipe known to the controller and inserted program will be automatically processed.",
-   "要使用 $(thing)装配系统/$ 制作物品，请将一个 $(l:manufacturing/assembly_programs)装配程序/$ 放入 $(item)装配台/$ 中，并将所需物品放入输入容器中。$(p)任何符合装配台与已插入程序所识别配方的物品，都会被自动处理。"
+   "要使用$(thing)装配系统/$制作物品，请将一个$(l:manufacturing/assembly_programs)装配程序/$放入$(item)装配台/$中，并将所需物品放入输入容器中。$(p)任何符合装配台与已插入程序所识别配方的物品，都会被自动处理。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "The $(thing)Assembly System/$ has $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ support: recipes can be added and removed. Follow the link below for more information.",
-   "$(thing)装配系统/$支持 $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$：可以添加和移除配方。点击下方链接了解更多信息。"
+   "$(thing)装配系统/$支持$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$：可以添加和移除配方。点击下方链接了解更多信息。"
   ],
   [
    [

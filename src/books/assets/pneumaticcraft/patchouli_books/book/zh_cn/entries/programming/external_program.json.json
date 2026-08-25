@@ -25,7 +25,7 @@
     "text"
    ],
    "This widget can be used to debug $(item)Drone/$ programs, as $(l:programming/programmer)Programmers/$ also count as an inventory. Just program a $(item)Drone/$ with the $(thing)External Program/$ widget with an area of (only) the $(item)Programmer/$, and place it down.$(p)Now put a $(item)Drone/$ or $(item)Network API/$ in the programmer, and create your program. When you hit the $(thing)⟶ (export)/$ button in the $(item)Programmer/$, the deployed $(item)Drone/$ will immediately execute your program.",
-   "这个控件可用于调试 $(item)雄蜂/$ 程序，因为 $(l:programming/programmer)编程器/$ 也算作一种容器。只需给一只 $(item)雄蜂/$ 安装带有 $(thing)外部程序/$ 控件的程序，并将作用区域设为（仅）$(item)编程器/$，然后把它放下即可。$(p)现在，把一只 $(item)雄蜂/$ 或一个 $(item)网络API/$ 放入编程器中，然后创建你的程序。当你点击 $(item)编程器/$ 中的 $(thing)⟶（导出）/$ 按钮时，已部署的 $(item)雄蜂/$ 就会立即执行你的程序。"
+   "这个控件可用于调试$(item)雄蜂/$程序，因为$(l:programming/programmer)编程器/$也算作一种容器。只需给一只$(item)雄蜂/$安装带有$(thing)外部程序/$控件的程序，并将作用区域设为（仅）$(item)编程器/$，然后把它放下即可。$(p)现在，把一只$(item)雄蜂/$或一个$(item)网络API/$放入编程器中，然后创建你的程序。当你点击$(item)编程器/$中的$(thing)⟶（导出）/$按钮时，已部署的$(item)雄蜂/$就会立即执行你的程序。"
   ],
   [
    [

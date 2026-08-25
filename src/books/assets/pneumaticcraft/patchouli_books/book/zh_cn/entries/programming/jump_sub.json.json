@@ -16,7 +16,7 @@
     "text"
    ],
    "This widget behaves like $(thing)Jump/$ except when the subroutine has completed, execution will continue in the widget connected to the bottom of the $(thing)Jump Subroutine/$ widget. A $(thing)Jump Subroutine/$ widget is useful for reusing common code and calling subroutines with arbitrary arguments by assigning variables before jumping to the subroutine.",
-   "这个组件的行为和 $(thing)跳跃/$ 类似，但当子程序执行完成后，程序会继续从连接在 $(thing)跳转子程序/$ 组件底部的组件处执行。$(thing)跳转子程序/$ 组件非常适合复用常用代码，也可以通过在跳转到子程序前先设置变量，从而以任意参数调用子程序。"
+   "这个组件的行为和$(thing)跳跃/$类似，但当子程序执行完成后，程序会继续从连接在$(thing)跳转子程序/$组件底部的组件处执行。$(thing)跳转子程序/$组件非常适合复用常用代码，也可以通过在跳转到子程序前先设置变量，从而以任意参数调用子程序。"
   ],
   [
    [

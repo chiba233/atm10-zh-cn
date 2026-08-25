@@ -16,7 +16,7 @@
     "text"
    ],
    "This advanced widget will execute a subroutine for every connected $(l:programming/item_filter)Item Filter/$. For each filter, it will set the specified variable to that filter, and jump to the $(l:programming/label)Label/$ which matches the connected $(l:programming/text)Text/$ widget. When that routine is done executing (when it reaches the end of a program where it would usually jump back to $(l:programming/start)Start/$), it will come back to this widget and do the same for the next $(thing)Item Filter/$.",
-   "这个高级组件会为每个已连接的 $(l:programming/item_filter)物品过滤器/$ 执行一个子程序。对于每个过滤器，它都会将指定变量设为该过滤器，并跳转到与已连接的 $(l:programming/text)文本/$ 组件相匹配的 $(l:programming/label)标签/$。当该流程执行完毕后（即到达程序末尾，而通常此时会跳回到 $(l:programming/start)开始/$），它会返回到这个组件，并对下一个 $(thing)物品过滤器/$ 执行同样的操作。"
+   "这个高级组件会为每个已连接的$(l:programming/item_filter)物品过滤器/$执行一个子程序。对于每个过滤器，它都会将指定变量设为该过滤器，并跳转到与已连接的$(l:programming/text)文本/$组件相匹配的$(l:programming/label)标签/$。当该流程执行完毕后（即到达程序末尾，而通常此时会跳回到$(l:programming/start)开始/$），它会返回到这个组件，并对下一个$(thing)物品过滤器/$执行同样的操作。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can break out of the loop by setting the item variable used by the $(thing)For Each Item/$ to an empty filter (use the $(l:programming/item_assign)Item Assign/$ widget to do this). Next time, when the program jumps back to the $(thing)For Each Item/$, it will notice this and cancel further traversal of filters.",
-   "你可以通过将 $(thing)对于每个物品/$ 所使用的物品变量设为空过滤器来跳出循环（使用 $(l:programming/item_assign)物品赋值/$ 组件即可做到这一点）。下次当程序跳回到 $(thing)对于每个物品/$ 时，它会注意到这一点，并取消对过滤器的后续遍历。"
+   "你可以通过将$(thing)对于每个物品/$所使用的物品变量设为空过滤器来跳出循环（使用$(l:programming/item_assign)物品赋值/$组件即可做到这一点）。下次当程序跳回到$(thing)对于每个物品/$时，它会注意到这一点，并取消对过滤器的后续遍历。"
   ],
   [
    [

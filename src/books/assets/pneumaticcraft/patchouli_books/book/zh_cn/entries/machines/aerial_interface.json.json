@@ -25,7 +25,7 @@
         "text"
       ],
       "By default, your main inventory is accessed through any side face of the Interface, and your armor slots are accessed via the top/bottom faces. However, this can be reconfigured via the $(bold)Side Configuration/$ GUI side-tab.$(p)You can connect any face to any of:$(li)Main inventory$(li)Armor slots$(li)Offhand slot$(li)Ender inventory (as accessed by vanilla $(item)Ender Chests/$).",
-      "默认情况下，你的主物品栏可通过接口的任意侧面访问，而盔甲槽则通过顶部/底部面访问。不过，这可以通过 $(bold)侧面配置/$ GUI 侧边标签重新配置。$(p)你可以将任意一个面连接到以下任意一种：$(li)主物品栏$(li)盔甲槽$(li)副手槽$(li)末影物品栏（通过原版的 $(item)末影箱子/$ 访问）。"
+      "默认情况下，你的主物品栏可通过接口的任意侧面访问，而盔甲槽则通过顶部/底部面访问。不过，这可以通过$(bold)侧面配置/$ GUI 侧边标签重新配置。$(p)你可以将任意一个面连接到以下任意一种：$(li)主物品栏$(li)盔甲槽$(li)副手槽$(li)末影物品栏（通过原版的$(item)末影箱子/$访问）。"
     ],
     [
       [
@@ -52,7 +52,7 @@
         "text"
       ],
       "An $(item)Aerial Interface/$ accepts $(thing)Forge Energy/$ (compatible with RF power and the power from many other mods). The energy stored in its internal buffer (100,000) is used to charge any FE-chargeable item in the player's inventory (and armor slots).",
-      "$(item)空气接口/$可以接收 $(thing)Forge能量/$（与 RF 能量以及许多其他模组的能量兼容）。其内部缓冲区中存储的能量（100,000）会用于为玩家物品栏（以及护甲栏）中任何可用 FE 充能的物品充能。"
+      "$(item)空气接口/$可以接收$(thing)Forge能量/$（与 RF 能量以及许多其他模组的能量兼容）。其内部缓冲区中存储的能量（100,000）会用于为玩家物品栏（以及护甲栏）中任何可用 FE 充能的物品充能。"
     ],
     [
       [
@@ -70,7 +70,7 @@
         "text"
       ],
       "By inserting a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ you can make the $(item)Aerial Interface/$ act like a remote auto-feeder. Only food items will be accepted by the Interface, and only when you're hungry enough to fully utilize the provided meal. Note that when an inventory offers a stack of >1, the Interface waits until you can consume that amount. To make sure the smallest amount of food can be utilized use slow inserters such as $(item)Hoppers/$.",
-      "插入 $(l:base_concepts/upgrades#dispenser)发射器升级/$ 后，你就能让 $(item)空气接口/$ 像远程自动喂食器一样工作。空气接口只会接受食物物品，而且仅在你足够饥饿、能够完全吃下所提供的食物时才会接受。请注意，当一个容器提供的是大于 1 个的物品堆时，空气接口会等到你能够消耗这么多时才会进行喂食。为确保能利用最少量的食物，请使用像 $(item)漏斗/$ 这样的慢速输入器。"
+      "插入$(l:base_concepts/upgrades#dispenser)发射器升级/$后，你就能让$(item)空气接口/$像远程自动喂食器一样工作。空气接口只会接受食物物品，而且仅在你足够饥饿、能够完全吃下所提供的食物时才会接受。请注意，当一个容器提供的是大于 1 个的物品堆时，空气接口会等到你能够消耗这么多时才会进行喂食。为确保能利用最少量的食物，请使用像$(item)漏斗/$这样的慢速输入器。"
     ],
     [
       [
@@ -124,7 +124,7 @@
         "text"
       ],
       "By pointing a $(l:tubes/charging_module)Charging Module/$ at the $(item)Aerial Interface/$, you can charge any $(l:base_concepts/pressure)pressurizable/$ items in your inventory.$(p)Note that to charge any worn $(l:armor/overview)Pneumatic Armor/$ items, the Charging Module must be pointed at a side of the Interface which is connected to your armor slots.",
-      "将 $(l:tubes/charging_module)充气管道模块/$ 指向 $(item)空气接口/$ 后，你就可以为物品栏中任何 $(l:base_concepts/pressure)可充气/$ 物品充能。$(p)请注意，若要为已穿戴的 $(l:armor/overview)气动装甲/$ 物品充能，充气管道模块必须指向空气接口上与你的护甲槽相连的一侧。"
+      "将$(l:tubes/charging_module)充气管道模块/$指向$(item)空气接口/$后，你就可以为物品栏中任何$(l:base_concepts/pressure)可充气/$物品充能。$(p)请注意，若要为已穿戴的$(l:armor/overview)气动装甲/$物品充能，充气管道模块必须指向空气接口上与你的护甲槽相连的一侧。"
     ],
     [
       [

@@ -16,7 +16,7 @@
     "text"
    ],
    "Like the $(l:programming/void_item)Void Item widget/$, this will immediately and permanently destroy any fluid in the drone's tank - beware! It is very strongly recommended to use this in conjunction with an $(l:programming/liquid_filter)Liquid Filter/$. With a filter, only fluid allowed by the filter will be voided.",
-   "和 $(l:programming/void_item)销毁物品部件/$ 一样，它会立即且永久地销毁无人机储罐中的任何流体——请务必小心！强烈建议将其与 $(l:programming/liquid_filter)流体过滤/$ 配合使用。有过滤器时，只有被过滤器允许的流体才会被销毁。"
+   "和$(l:programming/void_item)销毁物品部件/$一样，它会立即且永久地销毁无人机储罐中的任何流体——请务必小心！强烈建议将其与$(l:programming/liquid_filter)流体过滤/$配合使用。有过滤器时，只有被过滤器允许的流体才会被销毁。"
   ],
   [
    [

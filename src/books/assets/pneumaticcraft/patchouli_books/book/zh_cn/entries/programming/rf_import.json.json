@@ -16,7 +16,7 @@
     "text"
    ],
    "$(l:tools/drone)Drones/$ have an internal buffer of 100,000 FE (Forge Energy).  Using this widget, you can import energy from an energy-providing block (e.g. a $(item)Thermal Expansion Energy Cell/$ or $(item)Immersive Engineering Capacitor/$) to the drone's internal storage.$(p)$(italic)Despite its name, this widget imports FE (Forge Energy), not RF (Redstone Flux). The name is historical./$",
-   "$(l:tools/drone)无人机/$ 内部有一个 100,000 FE（Forge Energy）的缓冲区。使用这个组件，你可以把来自供能方块（例如 $(item)Thermal Expansion Energy Cell/$ 或 $(item)Immersive Engineering Capacitor/$）的能量导入到无人机内部存储中。$(p)$(italic)虽然这个组件的名字如此，但它导入的是 FE（Forge Energy），而不是 RF（Redstone Flux）。这个名字只是历史遗留。/$"
+   "$(l:tools/drone)无人机/$内部有一个 100,000 FE（Forge Energy）的缓冲区。使用这个组件，你可以把来自供能方块（例如$(item)Thermal Expansion Energy Cell/$或$(item)Immersive Engineering Capacitor/$）的能量导入到无人机内部存储中。$(p)$(italic)虽然这个组件的名字如此，但它导入的是 FE（Forge Energy），而不是 RF（Redstone Flux）。这个名字只是历史遗留。/$"
   ],
   [
    [

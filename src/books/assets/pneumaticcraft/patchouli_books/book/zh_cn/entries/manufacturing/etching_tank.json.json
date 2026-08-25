@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(thing)Etching Tank/$ should first be filled with $(l:manufacturing/etching_acid)Etching Acid/$. Then insert up to 25 $(thing)Empty PCB's/$ which have already been either partially or fully exposed in a $(l:manufacturing/uv_light_box)UV Light Box/$.$(p)While it's possible just to pour Etching Acid into the world and throw PCB's into the pool, using the Etching Tank is a much safer and faster way to do it.",
-   "先将 $(thing)蚀刻器/$ 装入 $(l:manufacturing/etching_acid)蚀刻酸/$。然后放入最多 25 个已在 $(l:manufacturing/uv_light_box)紫外线灯箱/$ 中部分或完全曝光过的 $(thing)空印刷电路板/$。$(p)虽然你也可以直接把蚀刻酸倒在地上，再把印刷电路板扔进酸池里，但使用蚀刻器会安全得多，也快得多。"
+   "先将$(thing)蚀刻器/$装入$(l:manufacturing/etching_acid)蚀刻酸/$。然后放入最多 25 个已在$(l:manufacturing/uv_light_box)紫外线灯箱/$中部分或完全曝光过的$(thing)空印刷电路板/$。$(p)虽然你也可以直接把蚀刻酸倒在地上，再把印刷电路板扔进酸池里，但使用蚀刻器会安全得多，也快得多。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can pipe $(thing)Empty PCB's/$ in on any side. Successfully-etched $(thing)Unassembled PCB's/$ are moved into the top right output slot, while $(thing)Failed PCB's/$ go into the bottom-right slot. For automated extraction, extract Unassembled PCB's from the side of the machine, and Failed PCB's from the top or bottom. You could automate this by piping Failed PCB's into a $(thing)Blast Furnace/$ to get unexposed Empty PCB's back, and restart the process.",
-   "你可以从任意一侧输入 $(thing)空印刷电路板/$。成功蚀刻的 $(thing)未组装的印刷电路板/$ 会被移入右上方的输出槽，而 $(thing)失效的印刷电路板/$ 则会进入右下方的槽位。若要自动提取，请从机器侧面提取未组装的印刷电路板，并从顶部或底部提取失效的印刷电路板。你还可以将失效的印刷电路板通过管道送入 $(thing)高炉/$，取回未曝光的空印刷电路板，然后重新开始这一流程。"
+   "你可以从任意一侧输入$(thing)空印刷电路板/$。成功蚀刻的$(thing)未组装的印刷电路板/$会被移入右上方的输出槽，而$(thing)失效的印刷电路板/$则会进入右下方的槽位。若要自动提取，请从机器侧面提取未组装的印刷电路板，并从顶部或底部提取失效的印刷电路板。你还可以将失效的印刷电路板通过管道送入$(thing)高炉/$，取回未曝光的空印刷电路板，然后重新开始这一流程。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Without $(l:base_concepts/heat)Heat/$, the Etching Tank takes 150 seconds to fully etch a PCB (although of course it can etch up to 25 in parallel). If you apply heat to the tank, you can further reduce the processing time, down to a minimum of 30 seconds; the hotter the tank gets, the faster the processing time. However, be warned that when heated, a small amount of Etching Acid will be used up while PCB's are being etched.",
-   "如果没有 $(l:base_concepts/heat)热量/$，蚀刻器将一块电路板完全蚀刻需要 150 秒（当然，它也可以同时并行蚀刻最多 25 块）。如果你对蚀刻器加热，还可以进一步缩短处理时间，最短可降至 30 秒；蚀刻器越热，处理速度就越快。不过要注意，在加热状态下，蚀刻电路板时会消耗少量蚀刻酸。"
+   "如果没有$(l:base_concepts/heat)热量/$，蚀刻器将一块电路板完全蚀刻需要 150 秒（当然，它也可以同时并行蚀刻最多 25 块）。如果你对蚀刻器加热，还可以进一步缩短处理时间，最短可降至 30 秒；蚀刻器越热，处理速度就越快。不过要注意，在加热状态下，蚀刻电路板时会消耗少量蚀刻酸。"
   ],
   [
    [

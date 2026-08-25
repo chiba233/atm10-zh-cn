@@ -25,7 +25,7 @@
     "text"
    ],
    "A $(thing)Label/$ widget can be used to create a $(italic)branch/$ in the program flow (when using $(l:programming/conditions)Conditions/$), or just to organize sections of your program for clarity by putting them next to each other. A useful tip is to check $(bold)Show Flow/$ checkbox at the bottom left of the $(l:programming/programmer)Programmer/$ GUI;  it will show lines linking $(thing)Jump/Condition/Label/$ widgets of the same name.",
-   "$(thing)标签/$组件可用于在程序流程中创建一个$(italic)分支/$（使用$(l:programming/conditions)条件/$时），也可以将它们彼此相邻放置，以更清晰地整理程序的各个部分。一个实用的小技巧是勾选$(l:programming/programmer)编程器/$ GUI 左下角的 $(bold)显示流程/$ 复选框；这样会显示将同名的 $(thing)跳转/条件/标签/$ 组件连接起来的线条。"
+   "$(thing)标签/$组件可用于在程序流程中创建一个$(italic)分支/$（使用$(l:programming/conditions)条件/$时），也可以将它们彼此相邻放置，以更清晰地整理程序的各个部分。一个实用的小技巧是勾选$(l:programming/programmer)编程器/$ GUI 左下角的$(bold)显示流程/$复选框；这样会显示将同名的$(thing)跳转/条件/标签/$组件连接起来的线条。"
   ],
   [
    [

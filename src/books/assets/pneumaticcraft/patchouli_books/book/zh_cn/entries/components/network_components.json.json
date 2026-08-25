@@ -16,7 +16,7 @@
     "text"
    ],
    "These components are used primarily to set up a $(l:programming/security_station)Security Station/$, but some are also used as crafting components, and the $(l:components/network_components#network_storage)Network Storage/$ and $(l:components/network_components#network_api)Network API/$ can be used to store $(l:tools/drone)Drone/$ programs.",
-   "这些组件主要用于搭建 $(l:programming/security_station)安全站/$，但其中一些也可用作合成材料，而 $(l:components/network_components#network_storage)网络存储/$ 和 $(l:components/network_components#network_api)网络API/$ 还可用于存储 $(l:tools/drone)雄蜂/$ 程序。"
+   "这些组件主要用于搭建$(l:programming/security_station)安全站/$，但其中一些也可用作合成材料，而$(l:components/network_components#network_storage)网络存储/$和$(l:components/network_components#network_api)网络API/$还可用于存储$(l:tools/drone)雄蜂/$程序。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "The $(item)Network Registry/$  is a required component in a $(l:machines/security_station)Security Station/$.$(br)This is a target for hackers; if $(italic)all/$ Registries are hacked, your $(item)Security Station/$ has been compromised.",
-   "$(item)网络注册表/$是 $(l:machines/security_station)安全站/$中的必需组件。$(br)这是黑客的攻击目标；如果$(italic)所有/$注册表都被黑入，你的$(item)安全站/$就已被攻破。"
+   "$(item)网络注册表/$是$(l:machines/security_station)安全站/$中的必需组件。$(br)这是黑客的攻击目标；如果$(italic)所有/$注册表都被黑入，你的$(item)安全站/$就已被攻破。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "The $(item)Network Node/$ is a generic component in a $(l:machines/security_station)Security Station/$, used to form pathways between the required components.",
-   "$(item)网络节点/$是 $(l:machines/security_station)安全站/$中的一种通用组件，用于在所需组件之间形成连接路径。"
+   "$(item)网络节点/$是$(l:machines/security_station)安全站/$中的一种通用组件，用于在所需组件之间形成连接路径。"
   ],
   [
    [

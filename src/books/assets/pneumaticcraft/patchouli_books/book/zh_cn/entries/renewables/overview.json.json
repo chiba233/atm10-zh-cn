@@ -16,7 +16,7 @@
     "text"
    ],
    "This is a very quick guide to producing renewable $(thing)Biodiesel/$. Follow the steps here, and refer to other pages in this section for more detail on specific topics (other pages may be advancement-locked, but will unlock as you complete the prerequisite steps).",
-   "这是一份快速指南，教你如何生产可再生的 $(thing)生物柴油/$。请按照这里的步骤进行，并参阅本节中的其他页面以了解各个具体主题的更多细节（其他页面可能会被进度锁定，但当你完成前置步骤后就会解锁）。"
+   "这是一份快速指南，教你如何生产可再生的$(thing)生物柴油/$。请按照这里的步骤进行，并参阅本节中的其他页面以了解各个具体主题的更多细节（其他页面可能会被进度锁定，但当你完成前置步骤后就会解锁）。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Step 1a: Make some $(thing)Yeast Culture/$: get some mushrooms and water, and combine them in a $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$. You will need to ensure the TPP has temperature of between 30°C and 60°C, which may be easy or tricky depending on your biome and altitude.",
-   "步骤 1a：先制作一些 $(thing)酵母菌/$：获取一些蘑菇和水，并将它们放入 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$ 中。你需要确保 TPP 的温度保持在 30°C 到 60°C 之间，这根据你所在的生物群系和海拔高度，可能很容易，也可能比较棘手。"
+   "步骤 1a：先制作一些$(thing)酵母菌/$：获取一些蘑菇和水，并将它们放入$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中。你需要确保 TPP 的温度保持在 30°C 到 60°C 之间，这根据你所在的生物群系和海拔高度，可能很容易，也可能比较棘手。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Step 2: Make some $(thing)Ethanol/$ by adding your $(thing)Yeast Culture/$ and some $(thing)Sugar/$ to a $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$. This is temperature-dependent in a very similar way to step 1a.",
-   "第 2 步：将你的 $(thing)酵母菌/$ 和一些 $(thing)砂糖/$ 加入 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$ 中，制作一些 $(thing)乙醇/$。这同样取决于温度，方式与步骤 1a 非常相似。"
+   "第 2 步：将你的$(thing)酵母菌/$和一些$(thing)砂糖/$加入$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中，制作一些$(thing)乙醇/$。这同样取决于温度，方式与步骤 1a 非常相似。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "Step 3: Make some $(thing)Vegetable Oil/$ by squeezing $(thing)seeds/$ or $(thing)crops/$ in a $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$ with a little pressure.",
-   "第 3 步：在稍加压力的 $(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中挤压 $(thing)种子/$ 或 $(thing)作物/$，制作一些 $(thing)植物油/$。"
+   "第 3 步：在稍加压力的$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中挤压$(thing)种子/$或$(thing)作物/$，制作一些$(thing)植物油/$。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Step 4: Combine your $(thing)Ethanol/$ and $(thing)Vegetable Oil/$ in a $(l:manufacturing/fluid_mixer)Fluid Mixer/$. Congratulations, you have made some renewable fuel!",
-   "第 4 步：将你的 $(thing)乙醇/$ 和 $(thing)植物油/$ 放入 $(l:manufacturing/fluid_mixer)流体混合器/$ 中混合。恭喜，你已经制作出一些可再生燃料了！"
+   "第 4 步：将你的$(thing)乙醇/$和$(thing)植物油/$放入$(l:manufacturing/fluid_mixer)流体混合器/$中混合。恭喜，你已经制作出一些可再生燃料了！"
   ]
  ]
 }

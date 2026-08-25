@@ -25,7 +25,7 @@
     "text"
    ],
    "$(li)1. Ensure the Vacuum Trap has -0.5 bar of pressure, or lower. $(l:base_concepts/upgrades#volume)Volume Upgrades/$ are recommended here. Also, if you intend to move the Vacuum Trap around, be sure to wrench it rather than breaking it with a pickaxe, to preserve any stored vacuum.$(li)2. Insert a non-full $(l:spawning/spawner_core)Spawner Core/$ to receive captured mobs.$(li)3. Open the Vacuum Trap door, either by $(thing)sneak & right-clicking it/$, or by applying a redstone signal.",
-   "$(li)1. 确保真空陷阱的气压为 -0.5 bar 或更低。这里推荐使用 $(l:base_concepts/upgrades#volume)容量升级/$。另外，如果你打算移动真空陷阱，一定要用扳手拆卸，而不是用镐子破坏它，这样才能保留其中储存的真空。$(li)2. 插入一个未装满的 $(l:spawning/spawner_core)刷怪笼核心/$，用于接收捕获的生物。$(li)3. 打开真空陷阱的门，可以通过 $(thing)潜行右击/$，或施加红石信号来实现。"
+   "$(li)1. 确保真空陷阱的气压为 -0.5 bar 或更低。这里推荐使用$(l:base_concepts/upgrades#volume)容量升级/$。另外，如果你打算移动真空陷阱，一定要用扳手拆卸，而不是用镐子破坏它，这样才能保留其中储存的真空。$(li)2. 插入一个未装满的$(l:spawning/spawner_core)刷怪笼核心/$，用于接收捕获的生物。$(li)3. 打开真空陷阱的门，可以通过$(thing)潜行右击/$，或施加红石信号来实现。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "The Vacuum Trap will never capture:$(li)Players$(li)Drones$(li)Boss mobs (Wither, Ender Dragon...)$(li)Tamed animals$(li)Any mob spawned by a vanilla Spawner$(p)In addition, you can blacklist mobs by adding their entity ID (e.g. $(thing)minecraft:zombie/$) to the $(thing)pneumaticcraft:vacuum_trap_blacklisted/$ entity type tag.",
-   "真空陷阱绝不会捕获：$(li)玩家$(li)雄蜂$(li)Boss生物（凋灵、末影龙……）$(li)驯服动物$(li)任何由原版刷怪箱生成的生物$(p)此外，你还可以将生物的实体 ID（例如 $(thing)minecraft:zombie/$）添加到实体类型标签 $(thing)pneumaticcraft:vacuum_trap_blacklisted/$ 中，将其列入黑名单。"
+   "真空陷阱绝不会捕获：$(li)玩家$(li)雄蜂$(li)Boss生物（凋灵、末影龙……）$(li)驯服动物$(li)任何由原版刷怪箱生成的生物$(p)此外，你还可以将生物的实体 ID（例如$(thing)minecraft:zombie/$）添加到实体类型标签$(thing)pneumaticcraft:vacuum_trap_blacklisted/$中，将其列入黑名单。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "If the Vacuum Trap's tank contains at least 100mB of $(l:base_concepts/memory_essence)Memory Essence/$, mob absorption efficiency will be greatly increased; instead of contributing 1% to the installed $(thing)Spawner Core/$'s essence, a captured mob will contribute 2 - 4%, i.e. instead of needing to capture 100 mobs to fill a core, you will only need to capture 25-50 mobs. 100mB of Memory Essence will be used each time a mob is captured.",
-   "如果真空陷阱的储罐中至少含有 100mB 的 $(l:base_concepts/memory_essence)记忆源质/$，吸收生物的效率将大幅提升；被捕获的生物将不再只为已安装的 $(thing)刷怪笼核心/$ 提供 1% 的源质，而是会提供 2 - 4%。也就是说，原本需要捕获 100 只生物才能充满一个核心，现在只需捕获 25-50 只。每次捕获生物时都会消耗 100mB 的记忆源质。"
+   "如果真空陷阱的储罐中至少含有 100mB 的$(l:base_concepts/memory_essence)记忆源质/$，吸收生物的效率将大幅提升；被捕获的生物将不再只为已安装的$(thing)刷怪笼核心/$提供 1% 的源质，而是会提供 2 - 4%。也就是说，原本需要捕获 100 只生物才能充满一个核心，现在只需捕获 25-50 只。每次捕获生物时都会消耗 100mB 的记忆源质。"
   ],
   [
    [

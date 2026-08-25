@@ -16,7 +16,7 @@
     "text"
    ],
    "When placed on a vanilla $(item)Spawner/$, this item $(thing)agitates/$ the Spawner:$(li)The spawner will keep spawning while no player is near$(li)It prevents spawned entities despawning when players leave the area$(p)Mob farm anyone?$(p)$(thing)Sneak-right-click/$ with a $(l:logistics/logistics_configurator)Logistics Configurator/$ or another agitator to remove it.",
-   "当放置在原版 $(item)生物生成器/$ 上时，此物品会 $(thing)激活/$ 该生物生成器：$(li)即使附近没有玩家，生物生成器也会继续生成生物$(li)它还能防止已生成的实体在玩家离开区域时消失$(p)想建个刷怪场吗？$(p)使用 $(l:logistics/logistics_configurator)物流配置器/$ 或另一个激活器对其 $(thing)潜行右击/$ 即可将其移除。"
+   "当放置在原版$(item)生物生成器/$上时，此物品会$(thing)激活/$该生物生成器：$(li)即使附近没有玩家，生物生成器也会继续生成生物$(li)它还能防止已生成的实体在玩家离开区域时消失$(p)想建个刷怪场吗？$(p)使用$(l:logistics/logistics_configurator)物流配置器/$或另一个激活器对其$(thing)潜行右击/$即可将其移除。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "$(thing)Apotheosis/$ is a mod which adds (among other things) powerful customization of vanilla Spawners. It changes Spawner internals enough that Spawner Agitators cannot fully interact with them. Since you have Apotheosis installed, Spawner Agitator functionality is limited to preventing mobs despawning when players are far away; to allow mobs to spawn when no players are near, use Apotheosis functionality.",
-   "$(thing)Apotheosis/$ 是一个模组，它会为原版刷怪笼提供强大的自定义功能（以及其他内容）。它对刷怪笼内部机制的改动很大，以至于刷怪笼激活器无法与其完全交互。由于你安装了 Apotheosis，刷怪笼激活器的功能将仅限于防止生物在玩家距离较远时消失；若要让刷怪笼在附近没有玩家时也能生成生物，请使用 Apotheosis 自带的功能。"
+   "$(thing)Apotheosis/$是一个模组，它会为原版刷怪笼提供强大的自定义功能（以及其他内容）。它对刷怪笼内部机制的改动很大，以至于刷怪笼激活器无法与其完全交互。由于你安装了 Apotheosis，刷怪笼激活器的功能将仅限于防止生物在玩家距离较远时消失；若要让刷怪笼在附近没有玩家时也能生成生物，请使用 Apotheosis 自带的功能。"
   ],
   [
    [

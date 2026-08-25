@@ -25,7 +25,7 @@
     "text"
    ],
    "With a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ installed, the $(item)Air Cannon/$ behaves like a vanilla $(item)Dispenser/$ for certain items, e.g. TNT or Fire Charges.$(p)With an $(l:base_concepts/upgrades#entity_tracker)Entity Tracker Upgrade/$, the $(item)Air Cannon/$ will not launch items from its inventory, but instead launch the nearest entity (including you!) when triggered.",
-   "安装 $(l:base_concepts/upgrades#dispenser)发射器升级/$ 后，$(item)空气炮/$ 对某些物品的行为会像原版的 $(item)发射器/$ 一样，例如 TNT 或火焰弹。$(p)安装 $(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$ 后，$(item)空气炮/$ 被触发时将不会从其容器中发射物品，而是会发射最近的实体（包括你自己！）。"
+   "安装$(l:base_concepts/upgrades#dispenser)发射器升级/$后，$(item)空气炮/$对某些物品的行为会像原版的$(item)发射器/$一样，例如 TNT 或火焰弹。$(p)安装$(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$后，$(item)空气炮/$被触发时将不会从其容器中发射物品，而是会发射最近的实体（包括你自己！）。"
   ],
   [
    [

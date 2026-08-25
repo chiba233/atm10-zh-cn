@@ -25,7 +25,7 @@
     "text"
    ],
    "When you place down or rotate a $(thing)Vortex Tube/$, the hot end will face toward you. Note that each end has a narrow red or blue band indicating which is which.$(p)Pressurized air is required to make the $(thing)Vortex Tube/$ work. Higher pressure leads to greater temperature differentials, but air will also be used at a greater rate.",
-   "当你放置或旋转一个 $(thing)涡流管/$ 时，热端会朝向你。注意，两端各有一道狭窄的红色或蓝色条纹，用于区分哪一端是什么。$(p)$(thing)涡流管/$ 需要压缩空气才能运作。压力越高，温差就越大，但空气的消耗速度也会更快。"
+   "当你放置或旋转一个$(thing)涡流管/$时，热端会朝向你。注意，两端各有一道狭窄的红色或蓝色条纹，用于区分哪一端是什么。$(p)$(thing)涡流管/$需要压缩空气才能运作。压力越高，温差就越大，但空气的消耗速度也会更快。"
   ],
   [
    [

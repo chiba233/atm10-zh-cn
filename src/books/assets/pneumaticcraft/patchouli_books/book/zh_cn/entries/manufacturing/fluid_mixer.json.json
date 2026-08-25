@@ -16,7 +16,7 @@
     "text"
    ],
    "A $(thing)Fluid Mixer/$ uses $(l:base_concepts/pressure)pressure/$ to combine two fluids into a resulting fluid and/or item. Its primary use is in $(l:renewables/biodiesel)Biodiesel/$ production.$(p)The Fluid Mixer will run faster if more pressure is provided (but will also use air faster).",
-   "$(thing)流体混合器/$使用$(l:base_concepts/pressure)气压/$将两种流体混合为一种结果流体和/或物品。它的主要用途是生产 $(l:renewables/biodiesel)生物柴油/$。$(p)提供的气压越高，流体混合器运行得越快（但也会更快消耗空气）。"
+   "$(thing)流体混合器/$使用$(l:base_concepts/pressure)气压/$将两种流体混合为一种结果流体和/或物品。它的主要用途是生产$(l:renewables/biodiesel)生物柴油/$。$(p)提供的气压越高，流体混合器运行得越快（但也会更快消耗空气）。"
   ],
   [
    [

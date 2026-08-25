@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Smart Chest/$ is a 72-slot chest which (like its little brother the $(l:machines/reinforced_chest)Reinforced Chest/$) has obsidian-level blast resistance, and keeps its inventory when broken. However, it has some other very powerful features...",
-   "$(item)智能箱子/$是一个拥有 72 个槽位的箱子，和它的小兄弟 $(l:machines/reinforced_chest)强化箱子/$ 一样，具备黑曜石级别的抗爆性，并且被破坏后仍会保留其中的容器内容。不过，它还有一些其他非常强大的功能……"
+   "$(item)智能箱子/$是一个拥有 72 个槽位的箱子，和它的小兄弟$(l:machines/reinforced_chest)强化箱子/$一样，具备黑曜石级别的抗爆性，并且被破坏后仍会保留其中的容器内容。不过，它还有一些其他非常强大的功能……"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "$(li)If you $(thing)Alt+Left-click/$ a slot with an item in it, the Smart Chest will start filtering that slot to only accept that item.$(li)You can $(thing)Alt+Left-click/$ a filtered slot to remove the filtering again.$(li)If you $(thing)Alt+Left-click/$ an empty slot, that slot and all subsequent slots will be closed, effectively reducing the inventory size.$(li)If you $(thing)Alt+Left-click/$ the first closed slot, all closed slots will be reopened.",
-   "$(li)如果你对一个内有物品的槽位执行 $(thing)Alt+左键单击/$，智能箱子就会开始过滤该槽位，使其只接受该物品。$(li)你可以对已过滤的槽位执行 $(thing)Alt+左键单击/$，再次移除该过滤设置。$(li)如果你对一个空槽位执行 $(thing)Alt+左键单击/$，该槽位及其后续所有槽位都会被关闭，从而有效减少容器大小。$(li)如果你对第一个已关闭的槽位执行 $(thing)Alt+左键单击/$，所有已关闭的槽位都会重新打开。"
+   "$(li)如果你对一个内有物品的槽位执行$(thing)Alt+左键单击/$，智能箱子就会开始过滤该槽位，使其只接受该物品。$(li)你可以对已过滤的槽位执行$(thing)Alt+左键单击/$，再次移除该过滤设置。$(li)如果你对一个空槽位执行$(thing)Alt+左键单击/$，该槽位及其后续所有槽位都会被关闭，从而有效减少容器大小。$(li)如果你对第一个已关闭的槽位执行$(thing)Alt+左键单击/$，所有已关闭的槽位都会重新打开。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Each face of the Smart Chest can be separately configured to push items, pull items or do nothing (the default). To configure faces, open the $(thing)Side Configuration/$ GUI tab.$(p)Faces configured to push items will try to send items from the Smart Chest to an adjacent inventory on that face.  With a $(item)Dispenser Upgrade/$ installed, the chest will eject items into the world if there is no adjacent inventory.",
-   "智能箱子的每个面都可以分别配置为推送物品、拉取物品，或不执行任何操作（默认）。要配置各个面，请打开 $(thing)侧面配置/$ GUI 选项卡。$(p)被配置为推送物品的面会尝试将物品从智能箱子发送到该面相邻的容器中。安装 $(item)发射器升级/$ 后，如果相邻位置没有容器，箱子就会将物品弹射到世界中。"
+   "智能箱子的每个面都可以分别配置为推送物品、拉取物品，或不执行任何操作（默认）。要配置各个面，请打开$(thing)侧面配置/$ GUI 选项卡。$(p)被配置为推送物品的面会尝试将物品从智能箱子发送到该面相邻的容器中。安装$(item)发射器升级/$后，如果相邻位置没有容器，箱子就会将物品弹射到世界中。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "Faces configured to pull items will try to pull items from an adjacent inventory on that face.$(p)If you install a $(l:base_concepts/upgrades#magnet)Magnet Upgrade/$, the chest can absorb nearby items on the ground. This only works for faces that have been configured to pull items; the default pickup area is a 3x3x3 cube adjacent to the pulling face, which can be increased with $(l:base_concepts/upgrades#range)Range Upgrades/$.",
-   "被配置为拉取物品的面，会尝试从该面相邻的容器中拉取物品。$(p)如果你安装了 $(l:base_concepts/upgrades#magnet)磁铁升级/$，箱子就能吸收地面上附近的物品。这只对已配置为拉取物品的面生效；默认拾取范围是拉取面相邻的一个 3x3x3 立方体区域，并且可以通过 $(l:base_concepts/upgrades#range)范围升级/$ 进一步扩大。"
+   "被配置为拉取物品的面，会尝试从该面相邻的容器中拉取物品。$(p)如果你安装了$(l:base_concepts/upgrades#magnet)磁铁升级/$，箱子就能吸收地面上附近的物品。这只对已配置为拉取物品的面生效；默认拾取范围是拉取面相邻的一个 3x3x3 立方体区域，并且可以通过$(l:base_concepts/upgrades#range)范围升级/$进一步扩大。"
   ],
   [
    [

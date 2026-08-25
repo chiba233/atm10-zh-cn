@@ -25,7 +25,7 @@
     "text"
    ],
    "Those inventories are then connected with $(l:logistics/logistics_drone)Logistics Drones/$ or $(l:tubes/pressure_tubes)Pressure Tubes/$ with $(l:tubes/logistics_module)Logistics Modules/$ attached.$(p)The $(thing)Logistics System/$ is heavily inspired by $(l:https://wiki.factorio.com/Logistic_network)Factorio/$, and if you've played that game, the concepts will be familiar. The primary difference is that this mod provides $(l:logistics/frames)Frames/$ to attach to existing inventories/tanks, rather than separate logistic chests.",
-   "然后，这些容器会通过 $(l:logistics/logistics_drone)物流无人机/$ 或连接了 $(l:tubes/logistics_module)物流管道模块/$ 的 $(l:tubes/pressure_tubes)压力管道/$ 连接起来。$(p)$(thing)物流系统/$ 在很大程度上借鉴了 $(l:https://wiki.factorio.com/Logistic_network)异星工厂/$，如果你玩过那款游戏，这些概念就会很熟悉。主要区别在于，这个模组提供的是可附加到现有容器/储罐上的 $(l:logistics/frames)框架/$，而不是独立的物流箱。"
+   "然后，这些容器会通过$(l:logistics/logistics_drone)物流无人机/$或连接了$(l:tubes/logistics_module)物流管道模块/$的$(l:tubes/pressure_tubes)压力管道/$连接起来。$(p)$(thing)物流系统/$在很大程度上借鉴了$(l:https://wiki.factorio.com/Logistic_network)异星工厂/$，如果你玩过那款游戏，这些概念就会很熟悉。主要区别在于，这个模组提供的是可附加到现有容器/储罐上的$(l:logistics/frames)框架/$，而不是独立的物流箱。"
   ]
  ]
 }

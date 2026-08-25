@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Solar Cell/$ is used to craft and repair $(l:compressors/solar_compressor)Solar Compressors/$.",
-   "$(item)太阳能元件/$可用于合成和修理 $(l:compressors/solar_compressor)太阳能压缩机/$。"
+   "$(item)太阳能元件/$可用于合成和修理$(l:compressors/solar_compressor)太阳能压缩机/$。"
   ]
  ]
 }

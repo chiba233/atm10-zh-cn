@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Liquid Hopper/$ is a device which you can use to transfer fluids. Like the $(l:machines/omnidirectional_hopper)Omnidirectional Hopper/$, its input and output can point in any direction, and it uses the same placement and rotation rules. You can add $(l:base_concepts/upgrades#speed)Speed Upgrades/$ to increase the transfer rate.",
-   "$(item)流体漏斗/$是一种可用于传输流体的装置。和 $(l:machines/omnidirectional_hopper)全向漏斗/$ 一样，它的输入端和输出端可以朝向任意方向，并且使用相同的放置与旋转规则。你可以加入 $(l:base_concepts/upgrades#speed)速度升级/$ 来提高传输速率。"
+   "$(item)流体漏斗/$是一种可用于传输流体的装置。和$(l:machines/omnidirectional_hopper)全向漏斗/$一样，它的输入端和输出端可以朝向任意方向，并且使用相同的放置与旋转规则。你可以加入$(l:base_concepts/upgrades#speed)速度升级/$来提高传输速率。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "If a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ is inserted into the $(item)Liquid Hopper/$, it can absorb any liquid block (1000mB) at the $(9)input/$ side, and dispense 1000mB of any stored liquid at the $(6)output/$ side. This can be used for example as a water pump.$(p)It can also absorb any $(item)Experience Orbs/$ at the input side, converting them to $(l:base_concepts/memory_essence)Memory Essence/$.",
-   "如果将 $(l:base_concepts/upgrades#dispenser)发射器升级/$ 插入 $(item)流体漏斗/$，它会吸取 $(9)输入/$ 侧的任意液体方块（1000mB），并在 $(6)输出/$ 侧放出 1000mB 的任意已储存液体。例如，它可以用作水泵。$(p)它还能吸收 $(9)输入/$ 侧的任意$(item)经验球/$，并将其转化为$(l:base_concepts/memory_essence)记忆源质/$。"
+   "如果将$(l:base_concepts/upgrades#dispenser)发射器升级/$插入$(item)流体漏斗/$，它会吸取$(9)输入/$侧的任意液体方块（1000mB），并在$(6)输出/$侧放出 1000mB 的任意已储存液体。例如，它可以用作水泵。$(p)它还能吸收$(9)输入/$侧的任意$(item)经验球/$，并将其转化为$(l:base_concepts/memory_essence)记忆源质/$。"
   ],
   [
    [

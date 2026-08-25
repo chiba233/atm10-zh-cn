@@ -16,7 +16,7 @@
     "text"
    ],
    "The Drone Interface is a $(thing)ComputerCraft/OpenComputers peripheral/$ that's used to communicate with $(l:tools/drone)Drones/$. To do so, program a $(item)Drone/$ with a $(l:programming/computer_control)Computer Control puzzle piece/$.$(p)When the Drone executes the Computer Control piece, it'll try to connect to an $(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)available/$ $(item)Drone Interface/$ located within the puzzle piece's area.",
-   "无人机接口是一种 $(thing)ComputerCraft/OpenComputers 外设/$，用于与 $(l:tools/drone)雄蜂/$ 通信。为此，需要给 $(item)雄蜂/$ 编入一个 $(l:programming/computer_control)计算机控制拼图块/$。$(p)当雄蜂执行这个计算机控制拼图块时，它会尝试连接到位于该拼图块作用范围内、$(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)可用/$ 的 $(item)无人机接口/$。"
+   "无人机接口是一种$(thing)ComputerCraft/OpenComputers 外设/$，用于与$(l:tools/drone)雄蜂/$通信。为此，需要给$(item)雄蜂/$编入一个$(l:programming/computer_control)计算机控制拼图块/$。$(p)当雄蜂执行这个计算机控制拼图块时，它会尝试连接到位于该拼图块作用范围内、$(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)可用/$的$(item)无人机接口/$。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "You may notice that the program opposite has to explicitly wait until the Dig (and Goto) actions are done before continuing, unlike when writing Drone programs via the $(l:programming/programmer)Programmer/$. This is because your Lua computer program is running in a separate thread and can't interact with the world directly; it just tells the drone what to do next, and needs to ask the drone if it's done yet.",
-   "你可能会注意到，对面的这个程序必须明确等待 Dig（挖掘）和 Goto（前往）动作完成后才能继续；而通过 $(l:programming/programmer)编程器/$ 编写无人机程序时则不是这样。这是因为你的 Lua 电脑程序运行在独立线程中，无法直接与世界交互；它只能告诉无人机下一步该做什么，并且需要询问无人机是否已经完成。"
+   "你可能会注意到，对面的这个程序必须明确等待 Dig（挖掘）和 Goto（前往）动作完成后才能继续；而通过$(l:programming/programmer)编程器/$编写无人机程序时则不是这样。这是因为你的 Lua 电脑程序运行在独立线程中，无法直接与世界交互；它只能告诉无人机下一步该做什么，并且需要询问无人机是否已经完成。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "$(#800)addArea(<x1>,<y1>,<z1>)/$$(p)$(#800)addArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<areaType>)/$$(p)Adds an area to the current stored area of the Drone. When using the latter method, x1/y1/z1 represent the first point (which would be P1 of an $(l:tools/gps_area_tool)GPS Area Tool/$), and x2/y2/z2 represent the second point, or P2 of the GPS Area Tool.$(p)getAreaTypes() can be used to list the valid area types.",
-   "$(#800)addArea(<x1>,<y1>,<z1>)/$$(p)$(#800)addArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<areaType>)/$$(p)将一个区域添加到无人机当前存储的区域中。使用后一种方法时，x1/y1/z1 表示第一个点（也就是 $(l:tools/gps_area_tool)区域定位工具/$ 的 P1），而 x2/y2/z2 表示第二个点，也就是区域定位工具的 P2。$(p)可使用 getAreaTypes() 列出有效的区域类型。"
+   "$(#800)addArea(<x1>,<y1>,<z1>)/$$(p)$(#800)addArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<areaType>)/$$(p)将一个区域添加到无人机当前存储的区域中。使用后一种方法时，x1/y1/z1 表示第一个点（也就是$(l:tools/gps_area_tool)区域定位工具/$的 P1），而 x2/y2/z2 表示第二个点，也就是区域定位工具的 P2。$(p)可使用 getAreaTypes() 列出有效的区域类型。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "$(#800)addWhitelistItemFilter(<item/block name>, <useNBT>, <useModSimilarity>)/$$(p)Acts as an $(l:programming/item_filter)Item Filter/$ widget on the right of another widget. The item/block name is the registry name, e.g. $(thing)pneumaticcraft:pressure_tube/$. The 'useXXX' are all booleans that determine what filters will be used (as in the Item Filter widget GUI).",
-   "$(#800)addWhitelistItemFilter(<物品/方块名称>, <useNBT>, <useModSimilarity>)/$$(p)作为另一个组件右侧的一个$(l:programming/item_filter)物品过滤器/$组件。物品/方块名称为注册名，例如 $(thing)pneumaticcraft:pressure_tube/$。其中“useXXX”全都是布尔值，用于决定启用哪些过滤条件（与物品过滤器组件 GUI 中的设置相同）。"
+   "$(#800)addWhitelistItemFilter(<物品/方块名称>, <useNBT>, <useModSimilarity>)/$$(p)作为另一个组件右侧的一个$(l:programming/item_filter)物品过滤器/$组件。物品/方块名称为注册名，例如$(thing)pneumaticcraft:pressure_tube/$。其中“useXXX”全都是布尔值，用于决定启用哪些过滤条件（与物品过滤器组件 GUI 中的设置相同）。"
   ],
   [
    [
@@ -124,7 +124,7 @@
     "text"
    ],
    "$(#800)addWhitelistLiquidFilter(<liquid name>)/$$(p)Acts as you've put a $l(:programming/liquid_filter)Liquid Filter/$ piece on the right of a piece. You must supply the fluid's registry name (e.g. $(thing)minecraft:water/$).",
-   "$(#800)addWhitelistLiquidFilter(<液体名称>)/$$(p)效果等同于在一个部件的右侧放置了一个 $l(:programming/liquid_filter)液体过滤器/$ 部件。你必须提供该流体的注册名（例如 $(thing)minecraft:water/$）。"
+   "$(#800)addWhitelistLiquidFilter(<液体名称>)/$$(p)效果等同于在一个部件的右侧放置了一个 $l(:programming/liquid_filter)液体过滤器/$部件。你必须提供该流体的注册名（例如$(thing)minecraft:water/$）。"
   ],
   [
    [
@@ -205,7 +205,7 @@
     "text"
    ],
    "$(#800)evaluateCondition()/$$(p)Returns true/false. Used in $(l:programming/conditions)conditions/$ only. Will return true/false depending on whether or not the condition is satisfied. Drone Conditions can be checked right after setting $(#800)setAction()/$, but non-Drone conditions require that you wait until $(#800)isActionDone()/$ returns true before the result of $(#800)evaluateCondition()/$ is useful.",
-   "$(#800)evaluateCondition()/$$(p)返回 true/false。仅用于 $(l:programming/conditions)conditions/$。它会根据条件是否满足来返回 true/false。无人机条件可以在设置 $(#800)setAction()/$ 后立即检查，但对于非无人机条件，你需要等到 $(#800)isActionDone()/$ 返回 true 后，$(#800)evaluateCondition()/$ 的结果才有意义。"
+   "$(#800)evaluateCondition()/$$(p)返回 true/false。仅用于$(l:programming/conditions)conditions/$。它会根据条件是否满足来返回 true/false。无人机条件可以在设置$(#800)setAction()/$后立即检查，但对于非无人机条件，你需要等到$(#800)isActionDone()/$返回 true 后，$(#800)evaluateCondition()/$的结果才有意义。"
   ],
   [
    [
@@ -232,7 +232,7 @@
     "text"
    ],
    "$(#800)getAction()/$$(p)Returns a string that represents the last action set by $(#800)setAction()/$. Will return $(thing)nil/$ when no action is set. Can be used to make sure to only call $(#800)isActionDone()/$ when this method does not return nil.",
-   "$(#800)getAction()/$$(p)返回一个字符串，表示由 $(#800)setAction()/$ 设置的上一个动作。未设置任何动作时将返回 $(thing)nil/$。可用于确保仅在此方法不返回 nil 时才调用 $(#800)isActionDone()/$。"
+   "$(#800)getAction()/$$(p)返回一个字符串，表示由$(#800)setAction()/$设置的上一个动作。未设置任何动作时将返回$(thing)nil/$。可用于确保仅在此方法不返回 nil 时才调用$(#800)isActionDone()/$。"
   ],
   [
    [
@@ -241,7 +241,7 @@
     "text"
    ],
    "$(#800)getAllActions()/$$(p)Returns a table of all the current selectable actions (like $(thing)pneumaticcraft:dig/$ or $(thing)pneumaticcraft:place'/$. Each of these actions corresponds directly to a programming widget available in the $(l:programming/programmer#ids)Programmer/$ GUI.$(p)Note: for actions which start with $(thing)pneumaticcraft:/$ (which is all default actions), the $(thing)pneumaticcraft:/$ prefix is optional.",
-   "$(#800)getAllActions()/$$(p)返回一个包含当前所有可选择动作的表（例如 $(thing)pneumaticcraft:dig/$ 或 $(thing)pneumaticcraft:place'/$）。这些动作中的每一个都直接对应于 $(l:programming/programmer#ids)编程器/$ GUI 中可用的一个编程元件。$(p)注意：对于以 $(thing)pneumaticcraft:/$ 开头的动作（即所有默认动作），前缀 $(thing)pneumaticcraft:/$ 是可选的。"
+   "$(#800)getAllActions()/$$(p)返回一个包含当前所有可选择动作的表（例如$(thing)pneumaticcraft:dig/$或$(thing)pneumaticcraft:place'/$）。这些动作中的每一个都直接对应于$(l:programming/programmer#ids)编程器/$ GUI 中可用的一个编程元件。$(p)注意：对于以$(thing)pneumaticcraft:/$开头的动作（即所有默认动作），前缀$(thing)pneumaticcraft:/$是可选的。"
   ],
   [
    [
@@ -259,7 +259,7 @@
     "text"
    ],
    "$(#800)getDronePosition()/$$(p)Returns the x/y/z position of the Drone. This method is here for historic compatibility, and it's recommended to use the new $(#800)getDronePositionVec()/$ method instead.",
-   "$(#800)getDronePosition()/$$(p)返回无人机的 x/y/z 坐标。此方法保留是为了兼容旧版本，建议改用新的 $(#800)getDronePositionVec()/$ 方法。"
+   "$(#800)getDronePosition()/$$(p)返回无人机的 x/y/z 坐标。此方法保留是为了兼容旧版本，建议改用新的$(#800)getDronePositionVec()/$方法。"
   ],
   [
    [
@@ -268,7 +268,7 @@
     "text"
    ],
    "$(#800)getDronePosition()/$$(p)Returns a table of the x/y/z coordinates of the Drone. Individual values can be easily extracted with the .x, .y and .z fields, e.g. $(#800)xpos = getDronePosition().x/$.",
-   "$(#800)getDronePosition()/$$(p)返回一个包含无人机 x/y/z 坐标的表。可通过 .x、.y 和 .z 字段轻松提取各个值，例如 $(#800)xpos = getDronePosition().x/$。"
+   "$(#800)getDronePosition()/$$(p)返回一个包含无人机 x/y/z 坐标的表。可通过 .x、.y 和 .z 字段轻松提取各个值，例如$(#800)xpos = getDronePosition().x/$。"
   ],
   [
    [
@@ -277,7 +277,7 @@
     "text"
    ],
    "$(#800)getUpgrades(<upgrade>)/$$(p)Get the number of inserted upgrades of the given type.$(p)The upgrade name can be found by mousing over any PneumaticCraft upgrade item with advanced info enabled (F3+H) and taking the item name with the '_upgrade' part removed.$(p)e.g for $(thing)pneumaticcraft:speed_upgrade/$, the name is \"speed\".",
-   "$(#800)getUpgrades(<upgrade>)/$$(p)获取已插入的指定类型升级数量。$(p)升级名称可以通过在启用高级信息（F3+H）时，将鼠标悬停在任意气动工艺升级物品上查看；取其物品名称并移除“_upgrade”部分即可。$(p)例如，对于 $(thing)pneumaticcraft:speed_upgrade/$，其名称是“speed”。"
+   "$(#800)getUpgrades(<upgrade>)/$$(p)获取已插入的指定类型升级数量。$(p)升级名称可以通过在启用高级信息（F3+H）时，将鼠标悬停在任意气动工艺升级物品上查看；取其物品名称并移除“_upgrade”部分即可。$(p)例如，对于$(thing)pneumaticcraft:speed_upgrade/$，其名称是“speed”。"
   ],
   [
    [
@@ -286,7 +286,7 @@
     "text"
    ],
    "$(#800)getVariable(<variable name>)/$$(p)Returns the value of the variable from this Drone (x, y and z). It is possible to get $(l:programming/variables#global)global/$ (# prefix) and $(l:programming/variables#special)special/$ variables ($ prefix) too.",
-   "$(#800)getVariable(<变量名>)/$$(p)返回该雄蜂中的变量值（x、y 和 z）。也可以获取 $(l:programming/variables#global)全局/$（# 前缀）和 $(l:programming/variables#special)特殊/$（$ 前缀）变量。"
+   "$(#800)getVariable(<变量名>)/$$(p)返回该雄蜂中的变量值（x、y 和 z）。也可以获取$(l:programming/variables#global)全局/$（# 前缀）和$(l:programming/variables#special)特殊/$（$ 前缀）变量。"
   ],
   [
    [
@@ -295,7 +295,7 @@
     "text"
    ],
    "$(#800)hideArea()/$$(p)Stops in-world highlighting of the area stored in the Drone, as shown by $(#800)showArea()/$.",
-   "$(#800)hideArea()/$$(p)停止高亮显示存储在无人机中的区域，该区域可通过 $(#800)showArea()/$ 在世界中显示。"
+   "$(#800)hideArea()/$$(p)停止高亮显示存储在无人机中的区域，该区域可通过$(#800)showArea()/$在世界中显示。"
   ],
   [
    [
@@ -331,7 +331,7 @@
     "text"
    ],
    "$(#800)setAction(<action>)/$$(p)Set an action for the Drone to do. This should be one of the actions returned by $(#800)getAllActions()/$; these correspond directly to programming widgets in the $(l:programming/programmer)Programmer/$ GUI, which shows the action name in widget tooltips when F3+H is toggled.$(p)Note that when the prefix is $(thing)pneumaticcraft:/$, that prefix is optional.",
-   "$(#800)setAction(<action>)/$$(p)为无人机设置一个要执行的动作。这应当是由 $(#800)getAllActions()/$ 返回的动作之一；这些动作与 $(l:programming/programmer)Programmer/$ GUI 中的编程组件直接对应，并且在开启 F3+H 时，会在组件提示框中显示动作名称。$(p)请注意，当前缀为 $(thing)pneumaticcraft:/$ 时，该前缀是可选的。"
+   "$(#800)setAction(<action>)/$$(p)为无人机设置一个要执行的动作。这应当是由$(#800)getAllActions()/$返回的动作之一；这些动作与$(l:programming/programmer)Programmer/$ GUI 中的编程组件直接对应，并且在开启 F3+H 时，会在组件提示框中显示动作名称。$(p)请注意，当前缀为$(thing)pneumaticcraft:/$时，该前缀是可选的。"
   ],
   [
    [
@@ -349,7 +349,7 @@
     "text"
    ],
    "$(#800)setCanSteal(<true/false>)/$$(p)When the \"pickup_item\" action is used, this controls whether drones are allowed to steal items they normally should leave alone, e.g. items on an $(thing)Immersive Engineering/$ conveyor belt.$(p)The default is 'false': drones will not try to steal items.",
-   "$(#800)setCanSteal(<true/false>)/$$(p)使用“pickup_item”动作时，此项用于控制无人机是否可以顺手牵羊拿走它们通常应当不去碰的物品，例如位于 $(thing)Immersive Engineering/$ 传送带上的物品。$(p)默认值为“false”：无人机不会尝试顺手牵羊拿取物品。"
+   "$(#800)setCanSteal(<true/false>)/$$(p)使用“pickup_item”动作时，此项用于控制无人机是否可以顺手牵羊拿走它们通常应当不去碰的物品，例如位于$(thing)Immersive Engineering/$传送带上的物品。$(p)默认值为“false”：无人机不会尝试顺手牵羊拿取物品。"
   ],
   [
    [
@@ -376,7 +376,7 @@
     "text"
    ],
    "$(#800)setCraftingGrid(<item/block name>, <item/block name>, ...(9x))/$$(p)Sets up the crafting grid so when the \"crafting\" action is used, this recipe will be used. You need to specify all 9 items making up the recipe; for empty spaces supply $(thing)nil/$. The item naming format is the same as for item filters.",
-   "$(#800)setCraftingGrid(<物品/方块名称>, <物品/方块名称>, ...(9x))/$$(p)设置合成终端，这样在使用“crafting”操作时，就会使用这个配方。你需要指定构成该配方的全部 9 个物品；空位请填入 $(thing)nil/$。物品命名格式与物品过滤器相同。"
+   "$(#800)setCraftingGrid(<物品/方块名称>, <物品/方块名称>, ...(9x))/$$(p)设置合成终端，这样在使用“crafting”操作时，就会使用这个配方。你需要指定构成该配方的全部 9 个物品；空位请填入$(thing)nil/$。物品命名格式与物品过滤器相同。"
   ],
   [
    [
@@ -412,7 +412,7 @@
     "text"
    ],
    "$(#800)setMaxActions(<amount>)/$$(p)This sets the maximum number of actions performed on blocks before the action is considered 'done'. This applies to the \"place\", \"dig\" and \"block_right_click\" actions. Be sure to also call $(#800)setUseMaxActions(true)/$ to enable usage of this.",
-   "$(#800)setMaxActions(<amount>)/$$(p)这会设置在该操作被视为“完成”之前，对方块执行的最大操作次数。这适用于“place”、“dig”和“block_right_click”操作。请务必同时调用 $(#800)setUseMaxActions(true)/$ 以启用此功能。"
+   "$(#800)setMaxActions(<amount>)/$$(p)这会设置在该操作被视为“完成”之前，对方块执行的最大操作次数。这适用于“place”、“dig”和“block_right_click”操作。请务必同时调用$(#800)setUseMaxActions(true)/$以启用此功能。"
   ],
   [
    [
@@ -421,7 +421,7 @@
     "text"
    ],
    "$(#800)setOperator(<\"=\" / \">=\" / \"<=\">)/$$(p)Used in conditions only. Says whether or not the condition is checking for an equal amount (=), an equal or greater than amount (>=), or an equal or lesser than amount (<=). The amount can be set using $(#800)setCount()/$.",
-   "$(#800)setOperator(<\"=\" / \">=\" / \"<=\">)/$$(p)仅用于条件中。用于指定条件检查的是等于（=）、大于等于（>=）还是小于等于（<=）。数量可以通过 $(#800)setCount()/$ 设置。"
+   "$(#800)setOperator(<\"=\" / \">=\" / \"<=\">)/$$(p)仅用于条件中。用于指定条件检查的是等于（=）、大于等于（>=）还是小于等于（<=）。数量可以通过$(#800)setCount()/$设置。"
   ],
   [
    [
@@ -457,7 +457,7 @@
     "text"
    ],
    "$(#800)setRightClickType(\"click_item\" / \"click_block\")/$$(p)When the current action is \"block_right_click\", this controls whether the drone should use the click logic of its held item (e.g. use a $(item)Flint and Steel/$), or try to activate the targeted block (e.g. flip a $(item)Lever/$). The default is \"click_item\".",
-   "$(#800)setRightClickType(\"click_item\" / \"click_block\")/$$(p)当当前动作是“block_right_click”时，此项用于控制无人机是使用其手持物品的点击逻辑（例如使用 $(item)打火石/$），还是尝试激活目标方块（例如扳动 $(item)拉杆/$）。默认值为“click_item”。"
+   "$(#800)setRightClickType(\"click_item\" / \"click_block\")/$$(p)当当前动作是“block_right_click”时，此项用于控制无人机是使用其手持物品的点击逻辑（例如使用$(item)打火石/$），还是尝试激活目标方块（例如扳动$(item)拉杆/$）。默认值为“click_item”。"
   ],
   [
    [
@@ -484,7 +484,7 @@
     "text"
    ],
    "$(#800)setSignText(<line1>, <line2>, ..., <lineN>)/$$(p)Sets the text that will be sent to Signs and Aphorism Tiles when the $(thing)edit_sign/$ action is used.",
-   "$(#800)setSignText(<line1>, <line2>, ..., <lineN>)/$$(p)设置在使用 $(thing)edit_sign/$ 操作时，将发送到告示牌和格言瓷砖的文本。"
+   "$(#800)setSignText(<line1>, <line2>, ..., <lineN>)/$$(p)设置在使用$(thing)edit_sign/$操作时，将发送到告示牌和格言瓷砖的文本。"
   ],
   [
    [
@@ -502,7 +502,7 @@
     "text"
    ],
    "$(#800)setUseCount(<true/false>)/$$(p)Sets whether or not the Drone has a maximum number of imported /exported / dropped items. If true, be sure to also call $(#800)setCount()/$.",
-   "$(#800)setUseCount(<true/false>)/$$(p)设置雄蜂是否对导入/导出/丢弃的物品设定最大数量限制。若为 true，请务必同时调用 $(#800)setCount()/$。"
+   "$(#800)setUseCount(<true/false>)/$$(p)设置雄蜂是否对导入/导出/丢弃的物品设定最大数量限制。若为 true，请务必同时调用$(#800)setCount()/$。"
   ],
   [
    [
@@ -511,7 +511,7 @@
     "text"
    ],
    "$(#800)setUseMaxActions(<true/false>)/$$(p)Sets whether or not the Drone has a maximum number of actions performed on one block at a time before the command is considered 'done'. Applies to the \"place\", \"dig\" and \"block_right_click\" actions. If true, be sure to also call $(#800)setMaxActions()/$.",
-   "$(#800)setUseMaxActions(<true/false>)/$$(p)设置雄蜂在同一时间对单个方块执行操作时，是否在执行达到最大次数后才将该命令视为“完成”。适用于“place”“dig”和“block_right_click”操作。如果为 true，请务必同时调用 $(#800)setMaxActions()/$。"
+   "$(#800)setUseMaxActions(<true/false>)/$$(p)设置雄蜂在同一时间对单个方块执行操作时，是否在执行达到最大次数后才将该命令视为“完成”。适用于“place”“dig”和“block_right_click”操作。如果为 true，请务必同时调用$(#800)setMaxActions()/$。"
   ],
   [
    [
@@ -520,7 +520,7 @@
     "text"
    ],
    "$(#800)setVariable(<variable name>, <x>, <y>, <z>)/$$(p)Sets a $(l:programming/variables)variable/$ for this Drone to given X/Y/Z coordinates. It is possible to set $(l:programming/variables#global)global variables/$.",
-   "$(#800)setVariable(<变量名称>, <x>, <y>, <z>)/$$(p)将此无人机的$(l:programming/variables)变量/$设置为给定的 X/Y/Z 坐标。也可以设置 $(l:programming/variables#global)全局变量/$。"
+   "$(#800)setVariable(<变量名称>, <x>, <y>, <z>)/$$(p)将此无人机的$(l:programming/variables)变量/$设置为给定的 X/Y/Z 坐标。也可以设置$(l:programming/variables#global)全局变量/$。"
   ],
   [
    [
@@ -529,7 +529,7 @@
     "text"
    ],
    "$(#800)setVariable(<variable name>, <boolean>)/$$(p)Sets a $(l:programming/coordinate_operator)variable/$ for this Drone. 'true' is equivalent to passing (1,0,0), and 'false' is equivalent to passing (0,0,0).",
-   "$(#800)setVariable(<变量名>, <boolean>)/$$(p)为此无人机设置一个 $(l:programming/coordinate_operator)变量/$。'true' 等同于传入 (1,0,0)，而 'false' 等同于传入 (0,0,0)。"
+   "$(#800)setVariable(<变量名>, <boolean>)/$$(p)为此无人机设置一个$(l:programming/coordinate_operator)变量/$。'true' 等同于传入 (1,0,0)，而 'false' 等同于传入 (0,0,0)。"
   ],
   [
    [
@@ -538,7 +538,7 @@
     "text"
    ],
    "$(#800)showArea()/$$(p)Will show the current stored area using the same area renderer used if you click $(thing)Show Area/$ in a programming widget options GUI. $(#800)hideArea()/$ can be used to hide any such areas.",
-   "$(#800)showArea()/$$(p)将使用与在程序部件选项 GUI 中点击 $(thing)显示区域/$ 时相同的区域渲染器，来显示当前存储的区域。$(#800)hideArea()/$ 可用于隐藏任何此类区域。"
+   "$(#800)showArea()/$$(p)将使用与在程序部件选项 GUI 中点击$(thing)显示区域/$时相同的区域渲染器，来显示当前存储的区域。$(#800)hideArea()/$可用于隐藏任何此类区域。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "Compressed air is the $(pncr) $(thing)power system/$, based on real-world pressure mechanics.$(li)Compressed air is $(italic)produced/$ by a class of machines called $(thing)Compressors/$, of which there are several types.$(li)All pressurizable machines and tools have a $(thing)volume/$ (measured in mL), which is the amount of air they can store at standard atmospheric pressure, or $(ttcolor)$(t:This mod uses 0 bar to represent standard atmospheric pressure, also known as Gauge Pressure)0 bar/$.",
-   "压缩空气是这种$(#228)气动工艺$()$(thing)动力系统/$，其运作基于现实世界中的压力机制。$(li)压缩空气由一类名为 $(thing)压缩机/$ 的机器$(italic)产生/$，其中又分为好几种类型。$(li)所有可加压的机器和工具都有一个$(thing)容积/$（以 mL 为单位），表示它们在标准大气压下，也就是 $(ttcolor)$(t:本模组用 0 bar 表示标准大气压，也就是表压)0 bar/$ 时能够储存的空气量。"
+   "压缩空气是这种$(#228)气动工艺$()$(thing)动力系统/$，其运作基于现实世界中的压力机制。$(li)压缩空气由一类名为$(thing)压缩机/$的机器$(italic)产生/$，其中又分为好几种类型。$(li)所有可加压的机器和工具都有一个$(thing)容积/$（以 mL 为单位），表示它们在标准大气压下，也就是$(ttcolor)$(t:本模组用 0 bar 表示标准大气压，也就是表压)0 bar/$时能够储存的空气量。"
   ],
   [
    [

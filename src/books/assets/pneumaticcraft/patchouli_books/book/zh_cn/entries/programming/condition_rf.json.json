@@ -16,7 +16,7 @@
     "text"
    ],
    "This is a $(l:programming/conditions)Condition/$ widget.$(p)The $(thing)Condition: RF/$ widget allows you to (remotely) check if the $(thing)Forge Energy (FE)/$ level of the block(s) in the connected $(l:programming/area)Area/$ widget matches the configured FE threshold.$(p)$(italic)Despite its name, this widget checks FE, not RF (Redstone Flux). The name is historical./$",
-   "这是一个 $(l:programming/conditions)条件/$组件。$(p)$(thing)条件：RF/$ 组件可让你（远程）检查已连接的 $(l:programming/area)区域/$ 组件中的方块，其 $(thing)FE/RF 能量/$ 水平是否符合已配置的 FE 阈值。$(p)$(italic)尽管它叫这个名字，但这个组件检查的是 FE，而不是 RF（Redstone Flux，红石通量）。这个名称只是历史遗留。/$"
+   "这是一个$(l:programming/conditions)条件/$组件。$(p)$(thing)条件：RF/$组件可让你（远程）检查已连接的$(l:programming/area)区域/$组件中的方块，其$(thing)FE/RF 能量/$水平是否符合已配置的 FE 阈值。$(p)$(italic)尽管它叫这个名字，但这个组件检查的是 FE，而不是 RF（Redstone Flux，红石通量）。这个名称只是历史遗留。/$"
   ],
   [
    [

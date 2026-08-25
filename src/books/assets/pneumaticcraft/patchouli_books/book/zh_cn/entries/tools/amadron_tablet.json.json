@@ -25,7 +25,7 @@
     "text"
    ],
    "The tablet GUI is smart enough to figure out what you can buy by looking at the bound inventory and/or tank. When you order $(ttcolor)$(t:Resources can be either items or fluids)resources/$, a $(thing)Drone/$ will spawn to collect the resources you're paying with. Once collection is complete, a second $(thing)Drone/$ will arrive to deliver the purchased items.$(p)This is a way to get items you can't get otherwise, like the $(l:components/pcb_blueprint)PCB Blueprint/$ and $(l:manufacturing/assembly_programs)Assembly Programs/$. It also adds some random $(thing)Villager Trades/$; these trades are re-shuffled daily.",
-   "平板界面会通过查看已绑定的容器和/或储罐，智能判断你能够购买什么。当你订购$(ttcolor)$(t:Resources can be either items or fluids)资源/$时，会生成一只 $(thing)雄蜂/$ 来收集你用于支付的资源。收集完成后，第二只 $(thing)雄蜂/$ 会到来并送达你购买的物品。$(p)这是一种获取原本无法获得物品的方法，例如 $(l:components/pcb_blueprint)印刷电路板蓝图/$ 和 $(l:manufacturing/assembly_programs)装配程序/$。它还会添加一些随机的 $(thing)村民交易/$；这些交易每天都会重新刷新。"
+   "平板界面会通过查看已绑定的容器和/或储罐，智能判断你能够购买什么。当你订购$(ttcolor)$(t:Resources can be either items or fluids)资源/$时，会生成一只$(thing)雄蜂/$来收集你用于支付的资源。收集完成后，第二只$(thing)雄蜂/$会到来并送达你购买的物品。$(p)这是一种获取原本无法获得物品的方法，例如$(l:components/pcb_blueprint)印刷电路板蓝图/$和$(l:manufacturing/assembly_programs)装配程序/$。它还会添加一些随机的$(thing)村民交易/$；这些交易每天都会重新刷新。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "By clicking the $(bold)Custom Player Trade/$ button (on the $(bold)Custom Trades/$ side tab) you can offer your own resources to be traded for other players' resources. In the trading GUI you can select an resource to sell on the left-hand side, and a resource you want to buy on the right-hand side. You can set the trade amounts with the text fields.",
-   "点击 $(bold)自定义交易/$侧边标签上的 $(bold)添加自定义玩家交易/$ 按钮后，你就可以拿出自己的资源，与其他玩家的资源进行交易。在自定义商店界面中，你可以在左侧选择要出售的资源，在右侧选择想要购买的资源。你可以通过文本框设置交易数量。"
+   "点击$(bold)自定义交易/$侧边标签上的$(bold)添加自定义玩家交易/$按钮后，你就可以拿出自己的资源，与其他玩家的资源进行交易。在自定义商店界面中，你可以在左侧选择要出售的资源，在右侧选择想要购买的资源。你可以通过文本框设置交易数量。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "Other players can now accept the offer up to the amount that is in stock. When a player accepts an offer you'll be notified (provided you are online), and a $(thing)Drone/$ will arrive to deliver you the resources that the other player paid you with. A trade has been completed!",
-   "现在其他玩家可以接受该报价，最多接受当前库存中的数量。当有玩家接受报价时，你会收到通知（前提是你在线），并且会有一台 $(thing)雄蜂/$ 抵达，将另一位玩家支付给你的资源运送给你。一笔交易已完成！"
+   "现在其他玩家可以接受该报价，最多接受当前库存中的数量。当有玩家接受报价时，你会收到通知（前提是你在线），并且会有一台$(thing)雄蜂/$抵达，将另一位玩家支付给你的资源运送给你。一笔交易已完成！"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "By $(thing)shift-clicking/$ the $(#F00)x/$ button on one of your own trades in the Amadron GUI, the trade will be removed, and Amadron will attempt to return your resources to the inventory/tank that provided it. $(p)$(bold)Warning:/$ Amadron take no responsibility for resources lost in the event of a problem returning them!",
-   "在亚马龙 GUI 中，对你自己的某个交易的 $(#F00)x/$ 按钮进行 $(thing)Shift+单击/$，即可移除该交易，亚马龙会尝试将你的资源返还到提供这些资源的容器/储罐中。$(p)$(bold)警告：/$如果在返还过程中出现问题而导致资源丢失，亚马龙概不负责！"
+   "在亚马龙 GUI 中，对你自己的某个交易的$(#F00)x/$按钮进行$(thing)Shift+单击/$，即可移除该交易，亚马龙会尝试将你的资源返还到提供这些资源的容器/储罐中。$(p)$(bold)警告：/$如果在返还过程中出现问题而导致资源丢失，亚马龙概不负责！"
   ],
   [
    [

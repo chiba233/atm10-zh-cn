@@ -16,7 +16,7 @@
     "text"
    ],
    "This powerful module is used to connect inventories to a $(l:logistics/overview)Logistics System/$, effectively allowing controlled item and fluid transfer via pressure tubes.$(p)The inventory or fluid tank that the module points at must be fitted with a $(l:logistics/frames)Logistics Frame/$.$(p)The Logistics Module does not accept an $(l:tubes/module_expansion_card)Module Expansion Card/$.",
-   "这个强大的模块用于将容器连接到 $(l:logistics/overview)物流系统/$，从而通过压力管道实现受控的物品与流体传输。$(p)该模块所指向的容器或流体储罐必须安装一个 $(l:logistics/frames)物流框架/$。$(p)物流管道模块不能安装 $(l:tubes/module_expansion_card)模块拓展卡/$。"
+   "这个强大的模块用于将容器连接到$(l:logistics/overview)物流系统/$，从而通过压力管道实现受控的物品与流体传输。$(p)该模块所指向的容器或流体储罐必须安装一个$(l:logistics/frames)物流框架/$。$(p)物流管道模块不能安装$(l:tubes/module_expansion_card)模块拓展卡/$。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Two Logistics Modules connecting chests with $(l:logistics/frames#passive_provider)Passive Provider/$ and $(l:logistics/frames#requester)Requester/$ Frames.",
-   "两个物流管道模块使用 $(l:logistics/frames#passive_provider)被动供应/$ 和 $(l:logistics/frames#requester)请求者/$ 框架连接箱子。"
+   "两个物流管道模块使用$(l:logistics/frames#passive_provider)被动供应/$和$(l:logistics/frames#requester)请求者/$框架连接箱子。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "A network of Logistics Modules is defined by all the modules connected to each other by $(l:tubes/pressure_tubes)Pressure Tubes/$; note that any air-using machines do $(italic)not/$ form part of the network.$(p)You can select a channel via the module GUI, or by right-clicking with any $(item)dye/$; only Logistics Modules of the same color will communicate with each other, effectively giving you 16 $(thing)channels/$ on each network.",
-   "一个物流管道模块网络，由所有通过 $(l:tubes/pressure_tubes)压力管道/$ 相互连接的模块组成；请注意，任何使用空气的机器都 $(italic)不/$ 属于该网络。$(p)你可以在模块的 GUI 中选择频道，也可以手持任意 $(item)染料/$ 右键选择；只有相同颜色的物流管道模块之间才会相互通信，这实际上让你在每个网络上都拥有 16 个 $(thing)频道/$。"
+   "一个物流管道模块网络，由所有通过$(l:tubes/pressure_tubes)压力管道/$相互连接的模块组成；请注意，任何使用空气的机器都$(italic)不/$属于该网络。$(p)你可以在模块的 GUI 中选择频道，也可以手持任意$(item)染料/$右键选择；只有相同颜色的物流管道模块之间才会相互通信，这实际上让你在每个网络上都拥有 16 个$(thing)频道/$。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Logistics Modules need $(l:base_concepts/pressure)pressure/$; 3 bar is required to let the modules operate. The air used is a multiplication of distance, amount transported and a constant. This means that it requires more air to transport a full stack of items, and also more to transport it a long way. The air is used at the $(italic)receiving/$ Logistics Module, since the air is flowing towards that module.",
-   "物流管道模块需要 $(l:base_concepts/pressure)压力/$；模块运行需要 3 巴。消耗的空气量由运输距离、运输数量和一个常数相乘得出。这意味着运输一整组物品需要更多空气，运输距离越远也需要更多空气。空气会在 $(italic)接收/$物流管道模块处消耗，因为空气正流向该模块。"
+   "物流管道模块需要$(l:base_concepts/pressure)压力/$；模块运行需要 3 巴。消耗的空气量由运输距离、运输数量和一个常数相乘得出。这意味着运输一整组物品需要更多空气，运输距离越远也需要更多空气。空气会在$(italic)接收/$物流管道模块处消耗，因为空气正流向该模块。"
   ],
   [
    [

@@ -16,7 +16,7 @@
     "text"
    ],
    "This widget makes the $(l:tools/drone)Drone/$ behave like a $(l:logistics/logistics_drone)Logistics Drone/$, but allows some extra flexibility over the base Logistic Drone functionality:$(li)It can be used with other widgets, e.g. a $(l:programming/standby)Standby/$ widget for more efficient air usage$(li)A custom $(l:programming/area)Area/$ can be defined (a standard Logistics Drone has a 33x33x33 area centered on the drone, which cannot be changed)",
-   "这个组件会让 $(l:tools/drone)无人机/$ 的行为像一台 $(l:logistics/logistics_drone)物流无人机/$，但相比基础物流无人机功能提供了更多灵活性：$(li)它可以和其他组件搭配使用，例如用 $(l:programming/standby)待机/$ 组件来提高空气使用效率$(li)还可以自定义 $(l:programming/area)区域/$（标准物流无人机的区域是以自身为中心的 33x33x33，且无法更改）"
+   "这个组件会让$(l:tools/drone)无人机/$的行为像一台$(l:logistics/logistics_drone)物流无人机/$，但相比基础物流无人机功能提供了更多灵活性：$(li)它可以和其他组件搭配使用，例如用$(l:programming/standby)待机/$组件来提高空气使用效率$(li)还可以自定义$(l:programming/area)区域/$（标准物流无人机的区域是以自身为中心的 33x33x33，且无法更改）"
   ],
   [
    [

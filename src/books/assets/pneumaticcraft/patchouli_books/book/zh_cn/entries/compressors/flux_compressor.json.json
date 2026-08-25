@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Flux Compressor/$ converts $(thing)Forge Energy/$ (compatible with $(thing)Redstone Flux/$ and the energy systems of various other mods) into $(l:base_concepts/pressure)compressed air/$. It consumes a base 40 FE/tick, but can be upgraded with $(l:base_concepts/upgrades#speed)Speed Upgrades/$.$(p)The Flux Compressor has a capacity of 100,000 FE and accepts FE at double the rate it uses it.",
-   "$(item)通量压缩机/$可将 $(thing)Forge能量/$（兼容 $(thing)红石通量/$ 以及各种其他模组的能量系统）转换为 $(l:base_concepts/pressure)压缩空气/$。其基础能耗为 40 FE/刻，但可使用 $(l:base_concepts/upgrades#speed)速度升级/$ 进行升级。$(p)通量压缩机可储存 100,000 FE，并且接受 FE 的速率是其消耗速率的两倍。"
+   "$(item)通量压缩机/$可将$(thing)Forge能量/$（兼容$(thing)红石通量/$以及各种其他模组的能量系统）转换为$(l:base_concepts/pressure)压缩空气/$。其基础能耗为 40 FE/刻，但可使用$(l:base_concepts/upgrades#speed)速度升级/$进行升级。$(p)通量压缩机可储存 100,000 FE，并且接受 FE 的速率是其消耗速率的两倍。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Crafting a $(item)Flux Compressor/$$(p)This generator must be $(l:base_concepts/heat)cooled/$, as its efficiency will drop as the temperature rises, up to the point where no air is generated at all.",
-   "合成一个 $(item)通量压缩机/$$(p)这种发电机必须进行$(l:base_concepts/heat)冷却/$，因为随着温度升高，它的效率会下降，直到完全无法产生空气。"
+   "合成一个$(item)通量压缩机/$$(p)这种发电机必须进行$(l:base_concepts/heat)冷却/$，因为随着温度升高，它的效率会下降，直到完全无法产生空气。"
   ]
  ]
 }

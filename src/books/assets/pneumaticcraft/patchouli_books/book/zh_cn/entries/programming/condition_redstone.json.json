@@ -16,7 +16,7 @@
     "text"
    ],
    "This is a $(l:programming/conditions)Condition/$ widget.$(p)The $(thing)Condition: Redstone/$ widget allows you to (remotely) check if the Redstone level of the block(s) in the connected $(l:programming/area)Area/$ widget matches the configured Redstone threshold.",
-   "这是一个 $(l:programming/conditions)条件/$ 组件。$(p)$(thing)条件：红石/$ 组件可让你（远程）检查已连接的 $(l:programming/area)区域/$ 组件中的方块红石等级是否与所配置的红石阈值相匹配。"
+   "这是一个$(l:programming/conditions)条件/$组件。$(p)$(thing)条件：红石/$组件可让你（远程）检查已连接的$(l:programming/area)区域/$组件中的方块红石等级是否与所配置的红石阈值相匹配。"
   ],
   [
    [

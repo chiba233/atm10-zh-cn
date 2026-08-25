@@ -61,7 +61,7 @@
     "text"
    ],
    "(For modpack makers) All block heat properties are defined in datapacks. You can add your own definitions or override/remove default definitions by adding JSON files to $(thing)data/<mod-id>/pneumaticcraft/block_heat_properties/$.",
-   "（供整合包制作者参考）所有方块热属性都在数据包中定义。你可以通过将 JSON 文件添加到 $(thing)data/<mod-id>/pneumaticcraft/block_heat_properties/$，来添加你自己的定义，或覆盖/移除默认定义。"
+   "（供整合包制作者参考）所有方块热属性都在数据包中定义。你可以通过将 JSON 文件添加到$(thing)data/<mod-id>/pneumaticcraft/block_heat_properties/$，来添加你自己的定义，或覆盖/移除默认定义。"
   ],
   [
    [
@@ -106,7 +106,7 @@
     "text"
    ],
    "A $(l:machines/heat_pipe)Heat Pipe/$ is an insulated core of compressed iron which can transmit heat between blocks, without any thermal connection to adjacent air or fluid blocks. It's a more compact (and cheaper) alternative to using $(item)Compressed Iron Blocks/$ to transmit heat. You can also attach $(item)Heat Sinks/$ directly to a Heat Pipe.",
-   "$(l:machines/heat_pipe)热管/$是由绝缘压缩铁核心制成的部件，可以在方块之间传递热量，且不会与相邻的空气方块或流体方块产生任何热连接。与使用 $(item)压缩铁块/$ 来传递热量相比，它更加紧凑（也更便宜）。你还可以将 $(item)散热片/$ 直接连接到热管上。"
+   "$(l:machines/heat_pipe)热管/$是由绝缘压缩铁核心制成的部件，可以在方块之间传递热量，且不会与相邻的空气方块或流体方块产生任何热连接。与使用$(item)压缩铁块/$来传递热量相比，它更加紧凑（也更便宜）。你还可以将$(item)散热片/$直接连接到热管上。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "When connecting a vanilla $(item)Furnace/$ to any dynamic heat source (such as a $(l:machines/vortex_tube)Vortex Tube/$, but also blocks like the $(l:compressors/advanced_air_compressor)Advanced Air Compressor/$ which produces heat), the heat will be consumed by the Furnace to \"fuel\" it, making it possible to run Furnaces purely on heat, requiring no solid fuel. This is both convenient and more efficient.",
-   "当把原版 $(item)熔炉/$ 连接到任意动态热源时（例如 $(l:machines/vortex_tube)涡流管/$，也包括像 $(l:compressors/advanced_air_compressor)高级空气压缩机/$ 这样会产生热量的方块），熔炉会消耗这些热量来作为“燃料”，从而可以完全依靠热量运行熔炉，而不再需要任何固体燃料。这既方便，也更加高效。"
+   "当把原版$(item)熔炉/$连接到任意动态热源时（例如$(l:machines/vortex_tube)涡流管/$，也包括像$(l:compressors/advanced_air_compressor)高级空气压缩机/$这样会产生热量的方块），熔炉会消耗这些热量来作为“燃料”，从而可以完全依靠热量运行熔炉，而不再需要任何固体燃料。这既方便，也更加高效。"
   ],
   [
    [
@@ -124,7 +124,7 @@
     "text"
    ],
    "This furnace \"fueling\" will start to work at 100°C, and will go faster with higher temperatures. Placing multiple heat sources around the Furnace will increase the heating effect.$(p)This heating effect also works for the vanilla $(item)Blast Furnace/$ and $(item)Smoker/$.",
-   "这种熔炉“供热”会在达到 100°C 时开始运作，并且温度越高，运作速度就越快。在熔炉周围放置多个热源会增强加热效果。$(p)这种加热效果同样适用于原版的 $(item)高炉/$ 和 $(item)发烟器/$。"
+   "这种熔炉“供热”会在达到 100°C 时开始运作，并且温度越高，运作速度就越快。在熔炉周围放置多个热源会增强加热效果。$(p)这种加热效果同样适用于原版的$(item)高炉/$和$(item)发烟器/$。"
   ],
   [
    [

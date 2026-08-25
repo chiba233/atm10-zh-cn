@@ -16,7 +16,7 @@
     "text"
    ],
    "The $(item)Smart Chest Upgrade Kit/$ is a convenience which lets you upgrade any wooden chest or $(l:machines/reinforced_chest)Reinforced Chest/$ to a $(l:machines/smart_chest)Smart Chest/$ in-place, keeping the chest's items. Just $(thing)Sneak-Right-click/$ the upgrade kit against any valid chest to upgrade it.",
-   "$(item)智能箱子升级组件/$是一种便利用品，可让你在保留箱内物品的同时，直接将任意木制箱子或 $(l:machines/reinforced_chest)强化箱子/$原地升级为 $(l:machines/smart_chest)智能箱子/$。只需手持升级组件对任意可升级的箱子执行 $(thing)潜行右击/$ 即可完成升级。"
+   "$(item)智能箱子升级组件/$是一种便利用品，可让你在保留箱内物品的同时，直接将任意木制箱子或$(l:machines/reinforced_chest)强化箱子/$原地升级为$(l:machines/smart_chest)智能箱子/$。只需手持升级组件对任意可升级的箱子执行$(thing)潜行右击/$即可完成升级。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "$(p)Note: If used on a $(item)Reinforced Chest/$, you will get back a Reinforced Chest as an item drop. If used on a $(item)wooden chest/$, you will get that chest back as an item drop.",
-   "$(p)注意：如果对 $(item)强化箱子/$ 使用，你会以掉落物形式拿回一个强化箱子。如果对 $(item)木箱/$ 使用，你会以掉落物形式拿回那个箱子。"
+   "$(p)注意：如果对$(item)强化箱子/$使用，你会以掉落物形式拿回一个强化箱子。如果对$(item)木箱/$使用，你会以掉落物形式拿回那个箱子。"
   ],
   [
    [

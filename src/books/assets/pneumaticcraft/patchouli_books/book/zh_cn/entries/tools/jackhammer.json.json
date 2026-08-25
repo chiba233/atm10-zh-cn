@@ -70,7 +70,7 @@
     "text"
    ],
    "The Jackhammer cannot be enchanted normally in an $(thing)Enchanting Table/$, but it is possible to insert a $(thing)Silk Touch/$ or $(thing)Fortune/$ enchanted book, via the GUI. A book placed in the book slot (top center) will bestow its enchantment on the Jackhammer.",
-   "手提钻无法像平常那样在 $(thing)附魔台/$ 中附魔，但你可以通过 GUI 插入一本带有 $(thing)精准采集/$ 或 $(thing)时运/$ 的附魔书。将书放入书槽（顶部中央）后，其附魔就会赋予手提钻。"
+   "手提钻无法像平常那样在$(thing)附魔台/$中附魔，但你可以通过 GUI 插入一本带有$(thing)精准采集/$或$(thing)时运/$的附魔书。将书放入书槽（顶部中央）后，其附魔就会赋予手提钻。"
   ],
   [
    [

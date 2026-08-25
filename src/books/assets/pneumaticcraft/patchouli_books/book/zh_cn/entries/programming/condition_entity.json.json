@@ -25,7 +25,7 @@
     "text"
    ],
    "Keep in mind that any $(l:programming/area)Area/$ widgets connected to this widget must have an area type of $(thing)Box/$; this is the only supported shape. It's possible to create different shapes, though, by using whitelisting/blacklisting of areas.",
-   "请记住，与此元件连接的任何 $(l:programming/area)区域/$ 元件都必须使用 $(thing)方框/$ 区域类型；这是唯一受支持的形状。不过，仍然可以通过将区域加入白名单/黑名单来创建不同的形状。"
+   "请记住，与此元件连接的任何$(l:programming/area)区域/$元件都必须使用$(thing)方框/$区域类型；这是唯一受支持的形状。不过，仍然可以通过将区域加入白名单/黑名单来创建不同的形状。"
   ],
   [
    [

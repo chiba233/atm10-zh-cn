@@ -16,7 +16,7 @@
     "text"
    ],
    "Like its little brother the $(l:components/air_canister)Air Canister/$, the $(thing)Reinforced Air Canister/$ holds air and can be charged and discharged in a $(l:machines/charging_station)Charging Station/$. However, it has an increased volume of 6000mL and can be charged to 20 bar (it won't explode).",
-   "和它的小兄弟 $(l:components/air_canister)空气罐/$ 一样，$(thing)强化空气罐/$ 也能储存空气，并可在 $(l:machines/charging_station)充气站/$ 中充气和放气。不过，它的容量提升到了 6000mL，并且可以充到 20 bar（不会爆炸）。"
+   "和它的小兄弟$(l:components/air_canister)空气罐/$一样，$(thing)强化空气罐/$也能储存空气，并可在$(l:machines/charging_station)充气站/$中充气和放气。不过，它的容量提升到了 6000mL，并且可以充到 20 bar（不会爆炸）。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "An interesting use for the $(thing)Reinforced Air Canister/$ is as a bulk air storage device, in conjunction with an inventory such as a chest and a $(l:tubes/pressure_tubes)Pressure Tube/$ with a $(l:tubes/charging_module)Charging Module/$. This can get even more interesting with an $(l:machines/aerial_interface)Aerial Interface/$ and a (vanilla) $(thing)Ender Chest/$...",
-   "$(thing)强化空气罐/$ 的一个有趣用途，是与箱子之类的容器以及带有 $(l:tubes/charging_module)充气管道模块/$ 的 $(l:tubes/pressure_tubes)压力管道/$ 搭配，作为大容量储气装置使用。若再配合 $(l:machines/aerial_interface)空气接口/$ 和一个（原版）$(thing)末影箱子/$，就更有意思了……"
+   "$(thing)强化空气罐/$的一个有趣用途，是与箱子之类的容器以及带有$(l:tubes/charging_module)充气管道模块/$的$(l:tubes/pressure_tubes)压力管道/$搭配，作为大容量储气装置使用。若再配合$(l:machines/aerial_interface)空气接口/$和一个（原版）$(thing)末影箱子/$，就更有意思了……"
   ],
   [
    [

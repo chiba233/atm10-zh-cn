@@ -16,7 +16,7 @@
     "text"
    ],
    "The Pneumatic Wrench is the $(thing)wrench/$ item for $(pncr). You can use it for a variety of tasks, including:$(p)$(li)$(thing)Right-click/$ vanilla and modded blocks to rotate them$(li)$(thing)Sneak+right-click/$ $(pncr) machines to drop them as items, preserving any stored upgrades and air in the machine.",
-   "气动扳手是$(#228)气动工艺$()的 $(thing)扳手/$物品。你可以用它执行多种任务，包括：$(p)$(li)$(thing)右击/$原版和模组方块可以旋转它们$(li)$(thing)潜行右击/$$(#228)气动工艺$()机器可使其掉落为物品，并保留机器中存储的升级和空气。"
+   "气动扳手是$(#228)气动工艺$()的$(thing)扳手/$物品。你可以用它执行多种任务，包括：$(p)$(li)$(thing)右击/$原版和模组方块可以旋转它们$(li)$(thing)潜行右击/$$(#228)气动工艺$()机器可使其掉落为物品，并保留机器中存储的升级和空气。"
   ],
   [
    [

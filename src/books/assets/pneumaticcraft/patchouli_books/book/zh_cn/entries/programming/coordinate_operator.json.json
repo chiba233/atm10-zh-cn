@@ -34,7 +34,7 @@
     "text"
    ],
    "The end result is stored in a $(l:programming/variables)variable/$, defined by the name entered in the Coordinate Operator GUI. Using this $(thing)variable/$, you can retrieve the coordinate later:$(li)In the $(l:programming/area)Area/$ widget you can, instead of using a GPS coordinate, use a $(thing)variable/$ name$(li)You can use the $(l:programming/condition_coordinate)Condition: Coordinate/$ to carry out tests on the $(thing)variable/$.",
-   "最终结果会存储在一个 $(l:programming/variables)变量/$ 中，其名称由你在坐标运算器 GUI 中输入的名称定义。使用这个 $(thing)变量/$，你之后就可以取回该坐标：$(li)在 $(l:programming/area)区域/$ 小部件中，你可以不使用 GPS 坐标，改为使用 $(thing)变量/$ 名称$(li)你可以使用 $(l:programming/condition_coordinate)条件：坐标/$ 来对该 $(thing)变量/$ 进行检测。"
+   "最终结果会存储在一个$(l:programming/variables)变量/$中，其名称由你在坐标运算器 GUI 中输入的名称定义。使用这个$(thing)变量/$，你之后就可以取回该坐标：$(li)在$(l:programming/area)区域/$小部件中，你可以不使用 GPS 坐标，改为使用$(thing)变量/$名称$(li)你可以使用$(l:programming/condition_coordinate)条件：坐标/$来对该$(thing)变量/$进行检测。"
   ],
   [
    [

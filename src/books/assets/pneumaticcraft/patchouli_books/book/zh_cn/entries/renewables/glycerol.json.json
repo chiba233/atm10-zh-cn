@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Glycerol/$ is a by-product of producing $(l:renewables/biodiesel)Biodiesel/$, but it turns out to be a rather useful substance in its own right. Its uses are detailed in the following pages.",
-   "$(thing)甘油/$是生产 $(l:renewables/biodiesel)生物柴油/$ 时的副产物，但事实证明它本身也是一种相当有用的物质。它的用途会在接下来的页面中详细说明。"
+   "$(thing)甘油/$是生产$(l:renewables/biodiesel)生物柴油/$时的副产物，但事实证明它本身也是一种相当有用的物质。它的用途会在接下来的页面中详细说明。"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Double the output of using $(thing)Sugar/$, what's not to like? This will save on your precious $(l:components/lubricant)Lubricant/$.",
-   "使用 $(thing)砂糖/$ 时产量翻倍，这还有什么不好的呢？这样还能节省你珍贵的 $(l:components/lubricant)润滑油/$。"
+   "使用$(thing)砂糖/$时产量翻倍，这还有什么不好的呢？这样还能节省你珍贵的$(l:components/lubricant)润滑油/$。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "$(thing)Glycerol/$ also makes a decent fuel item, equivalent to 4 $(thing)Planks/$ or half a lump of $(thing)Coal/$.",
-   "$(thing)甘油/$也是一种不错的燃料，相当于 4 个 $(thing)木板/$或半块 $(thing)煤炭/$。"
+   "$(thing)甘油/$也是一种不错的燃料，相当于 4 个$(thing)木板/$或半块$(thing)煤炭/$。"
   ],
   [
    [

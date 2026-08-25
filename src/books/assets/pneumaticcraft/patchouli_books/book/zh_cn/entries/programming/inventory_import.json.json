@@ -16,7 +16,7 @@
     "text"
    ],
    "This will make the $(l:tools/drone)Drone/$ move to the nearest inventory within the specified $(l:programming/area)area/$, extract items from that inventory and insert them into the $(item)Drone's/$ inventory.$(p)$(thing)Right-click/$ the widget for a setup GUI where you can specify the side the $(item)Drone/$ should extract the items from. You can also specify the maximum number of items to import.",
-   "这会使 $(l:tools/drone)无人机/$ 移动到指定 $(l:programming/area)区域/$ 内最近的容器，从该容器中提取物品并将其放入 $(item)无人机/$ 的容器中。$(p)$(thing)右击/$ 该组件可打开设置 GUI，你可以在其中指定 $(item)无人机/$ 应从哪个面提取物品。你还可以指定导入物品的最大数量。"
+   "这会使$(l:tools/drone)无人机/$移动到指定$(l:programming/area)区域/$内最近的容器，从该容器中提取物品并将其放入$(item)无人机/$的容器中。$(p)$(thing)右击/$该组件可打开设置 GUI，你可以在其中指定$(item)无人机/$应从哪个面提取物品。你还可以指定导入物品的最大数量。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "You can also connect any number (including zero) of $(l:programming/item_filter)Item Filter/$ widgets to limit the items that may be imported. Remember, filters on the $(italic)right/$ acts as a whitelist, and filters on the $(italic)left/$ act as a blacklist.$(p)This widget is done executing when the $(item)Drone's/$ inventory is full, or when no more (applicable) items can be found in the relevant inventory (or inventories).",
-   "你还可以连接任意数量（包括零个）的 $(l:programming/item_filter)物品过滤器/$ 部件，以限制可导入的物品。请记住，位于$(italic)右侧/$的过滤器充当白名单，而位于$(italic)左侧/$的过滤器充当黑名单。$(p)当$(item)无人机的/$容器已满，或在相关容器中再也找不到更多（符合条件的）物品时，此部件就会执行完毕。"
+   "你还可以连接任意数量（包括零个）的$(l:programming/item_filter)物品过滤器/$部件，以限制可导入的物品。请记住，位于$(italic)右侧/$的过滤器充当白名单，而位于$(italic)左侧/$的过滤器充当黑名单。$(p)当$(item)无人机的/$容器已满，或在相关容器中再也找不到更多（符合条件的）物品时，此部件就会执行完毕。"
   ],
   [
    [

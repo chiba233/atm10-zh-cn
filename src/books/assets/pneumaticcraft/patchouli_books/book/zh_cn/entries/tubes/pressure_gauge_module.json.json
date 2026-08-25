@@ -16,7 +16,7 @@
     "text"
    ],
    "This tube module shows the $(l:base_concepts/pressure)pressure/$ currently in the tube it's attached to. It also emits a (directional) $(#f00)redstone signal/$ of which the strength equals:$(p)$(formula)  strength = 2 x pressure/$$(p)E.g. a pressure of 3.5 bar results in a redstone signal level of 7.",
-   "这个管道模块会显示它所连接管道中当前的 $(l:base_concepts/pressure)气压/$。它还会发出一个（定向的）$(#f00)红石信号/$，其强度等于：$(p)$(formula)  强度 = 2 x 气压/$$(p)例如，3.5 bar 的气压会产生 7 级红石信号。"
+   "这个管道模块会显示它所连接管道中当前的$(l:base_concepts/pressure)气压/$。它还会发出一个（定向的）$(#f00)红石信号/$，其强度等于：$(p)$(formula)  强度 = 2 x 气压/$$(p)例如，3.5 bar 的气压会产生 7 级红石信号。"
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "Applying a $(l:tubes/module_expansion_card)Module Expansion Card/$ to the Pressure Gauge Module unlocks a GUI (right-click) to provide much more control over $(#f00)redstone signal/$ emission. By default, you can provide a threshold level: the signal will be off below that level and fully on above it (or vice versa). If you select the $(bold)Advanced Config/$ toggle in the GUI, you gain even more control (see over).",
-   "将 $(l:tubes/module_expansion_card)模块拓展卡/$ 安装到压力表模块上后，会解锁一个 GUI（右键打开），让你能对 $(#f00)红石信号/$ 的发射进行更精细的控制。默认情况下，你可以设置一个阈值：低于该值时信号关闭，高于该值时信号全开（反之亦可）。如果你在 GUI 中启用 $(bold)高级配置/$ 开关，就能获得更多控制选项（见后页）。"
+   "将$(l:tubes/module_expansion_card)模块拓展卡/$安装到压力表模块上后，会解锁一个 GUI（右键打开），让你能对$(#f00)红石信号/$的发射进行更精细的控制。默认情况下，你可以设置一个阈值：低于该值时信号关闭，高于该值时信号全开（反之亦可）。如果你在 GUI 中启用$(bold)高级配置/$开关，就能获得更多控制选项（见后页）。"
   ],
   [
    [

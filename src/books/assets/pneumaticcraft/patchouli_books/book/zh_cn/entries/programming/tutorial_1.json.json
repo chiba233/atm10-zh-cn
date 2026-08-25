@@ -16,7 +16,7 @@
     "text"
    ],
    "In this tutorial, we'll set up a simple program to make a $(l:tools/drone)Drone/$ dig out an area. Before you start, you'll need:",
-   "在本教程中，我们将设置一个简单的程序，让 $(l:tools/drone)雄蜂/$ 挖掘出一片区域。开始之前，你需要："
+   "在本教程中，我们将设置一个简单的程序，让$(l:tools/drone)雄蜂/$挖掘出一片区域。开始之前，你需要："
   ],
   [
    [
@@ -25,7 +25,7 @@
     "text"
    ],
    "$(li)A $(l:programming/programmer)Programmer/$ (of course)$(li)(If you're not in Creative Mode) A $(item)Chest/$ adjacent to the Programmer containing at least six $(l:programming/puzzle_pieces)Puzzle Pieces/$ $(li)A $(item)Chest/$ or any other inventory, containing a $(item)Shovel/$ of any type$(li)A basic $(l:tools/gps_tool)GPS Tool/$ $(li)$(l:tools/gps_area_tool)GPS Area Tool/$",
-   "$(li)一个 $(l:programming/programmer)编程器/$（当然）$(li)（如果你不在创造模式）一个与编程器相邻、内含至少六个 $(l:programming/puzzle_pieces)编程拼图/$ 的 $(item)箱子/$ $(li)一个 $(item)箱子/$ 或任何其他容器，其中装有任意类型的 $(item)铲/$$(li)一个基础 $(l:tools/gps_tool)定位工具/$ $(li)$(l:tools/gps_area_tool)区域定位工具/$"
+   "$(li)一个$(l:programming/programmer)编程器/$（当然）$(li)（如果你不在创造模式）一个与编程器相邻、内含至少六个$(l:programming/puzzle_pieces)编程拼图/$的$(item)箱子/$$(li)一个$(item)箱子/$或任何其他容器，其中装有任意类型的$(item)铲/$$(li)一个基础$(l:tools/gps_tool)定位工具/$$(li)$(l:tools/gps_area_tool)区域定位工具/$"
   ],
   [
    [
@@ -34,7 +34,7 @@
     "text"
    ],
    "Open the $(l:programming/programmer)Programmer/$ GUI. On the right, you'll see a $(thing)tray/$ of $(ttcolor)$(t:The virtual representations of Puzzle Pieces in the GUI are referred to as Programming Widgets)Programming Widgets/$. There are multiple pages of these; you can either cycle through with the arrow buttons below the tray, or expand the tray by pressing $(thing)Space/$ or $(thing)Tab/$.$(p)When expanded, a textfield appears above the tray where you can enter a $(thing)filter/$ to search for widgets. Type 'start' there now: you'll see only one widget not $(7)grayed/$ out.",
-   "打开 $(l:programming/programmer)程序编写器/$ 的界面。右侧会显示一个$(thing)托盘/$，其中有 $(ttcolor)$(t:The virtual representations of Puzzle Pieces in the GUI are referred to as Programming Widgets)编程元件/$。这些元件有多个页面；你可以使用托盘下方的箭头按钮来切换，也可以按下 $(thing)Space/$ 或 $(thing)Tab/$ 来展开托盘。$(p)展开后，托盘上方会出现一个文本框，你可以在其中输入 $(thing)过滤器/$ 来搜索元件。现在在里面输入“start”：你会看到只有一个元件没有被 $(7)灰显/$。"
+   "打开$(l:programming/programmer)程序编写器/$的界面。右侧会显示一个$(thing)托盘/$，其中有$(ttcolor)$(t:The virtual representations of Puzzle Pieces in the GUI are referred to as Programming Widgets)编程元件/$。这些元件有多个页面；你可以使用托盘下方的箭头按钮来切换，也可以按下$(thing)Space/$或$(thing)Tab/$来展开托盘。$(p)展开后，托盘上方会出现一个文本框，你可以在其中输入$(thing)过滤器/$来搜索元件。现在在里面输入“start”：你会看到只有一个元件没有被$(7)灰显/$。"
   ],
   [
    [
@@ -43,7 +43,7 @@
     "text"
    ],
    "Now drag that $(l:programming/start)Start/$ widget onto the main programming area. It will appear with a $(4)red border/$, indicating a problem: mouse over to see what.$(p)Right, there's no widget connected underneath - we will remedy that now by creating our program.$(p)Find an $(l:programming/inventory_import)Import From Inventory/$ widget and drag it to right below the $(thing)Start/$ widget.",
-   "现在将那个 $(l:programming/start)开始/$ 控件拖到主编程区域。它会带着 $(4)红色边框/$ 出现，这表示存在问题：将鼠标悬停在上面即可查看具体是什么问题。$(p)没错，它下方还没有连接任何控件——我们现在就通过创建程序来解决这个问题。$(p)找到一个 $(l:programming/inventory_import)从容器提取物品/$ 控件，并将它拖到 $(thing)开始/$ 控件正下方。"
+   "现在将那个$(l:programming/start)开始/$控件拖到主编程区域。它会带着$(4)红色边框/$出现，这表示存在问题：将鼠标悬停在上面即可查看具体是什么问题。$(p)没错，它下方还没有连接任何控件——我们现在就通过创建程序来解决这个问题。$(p)找到一个$(l:programming/inventory_import)从容器提取物品/$控件，并将它拖到$(thing)开始/$控件正下方。"
   ],
   [
    [
@@ -52,7 +52,7 @@
     "text"
    ],
    "If you place it close enough, it will 'snap' to the bottom of the $(thing)Start/$ widget. Notice how the connectors fit, like a jigsaw puzzle; hence the name $(thing)Puzzle Piece/$.$(p)Next, drag an $(l:programming/area)Area/$ widget and connect it to the right ($(ttcolor)$(t:Widgets on the right of other widgets act as a whitelist; widgets on the left act as a blacklist)not left/$) of the $(thing)Import/$ widget, and an $(l:programming/item_filter)Item Filter/$ widget, also to the right of the $(thing)Import/$ widget. Again, make sure they 'snap' together.",
-   "如果你把它放得足够近，它就会“吸附”到 $(thing)开始/$ 组件的底部。注意连接器是如何像拼图一样严丝合缝地接在一起的；因此它得名为 $(thing)拼图块/$。$(p)接下来，拖出一个 $(l:programming/area)区域/$ 组件，并将它连接到 $(thing)导入/$ 组件的右侧（$(ttcolor)$(t:Widgets on the right of other widgets act as a whitelist; widgets on the left act as a blacklist)不是左侧/$）；再拖出一个 $(l:programming/item_filter)物品过滤器/$ 组件，同样连接到 $(thing)导入/$ 组件的右侧。再次提醒，确保它们会“吸附”在一起。"
+   "如果你把它放得足够近，它就会“吸附”到$(thing)开始/$组件的底部。注意连接器是如何像拼图一样严丝合缝地接在一起的；因此它得名为$(thing)拼图块/$。$(p)接下来，拖出一个$(l:programming/area)区域/$组件，并将它连接到$(thing)导入/$组件的右侧（$(ttcolor)$(t:Widgets on the right of other widgets act as a whitelist; widgets on the left act as a blacklist)不是左侧/$）；再拖出一个$(l:programming/item_filter)物品过滤器/$组件，同样连接到$(thing)导入/$组件的右侧。再次提醒，确保它们会“吸附”在一起。"
   ],
   [
    [
@@ -70,7 +70,7 @@
     "text"
    ],
    "Now for the $(thing)Item Filter/$: $(thing)right-click/$ it to open an options GUI. Click the $(bold)Search Item.../$ button, and type 'shovel' into the result search window. Choose the shovel type that you put in the chest earlier, and press $(thing)Escape/$ to close the search box.$(p)Back in the $(thing)Item Filter/$ window, ensure 'Item Durability' is $(italic)unchecked/$, so it will also match partially used shovels. Press $(thing)Escape/$ again: back to the main GUI.",
-   "现在来设置 $(thing)物品过滤器/$：$(thing)右击/$它以打开选项 GUI。点击 $(bold)查找物品……/$ 按钮，并在结果搜索窗口中输入“shovel”。选择你先前放入箱子里的那种铲子，然后按下 $(thing)Escape/$ 关闭搜索框。$(p)回到 $(thing)物品过滤器/$ 窗口后，确保“物品耐久”处于 $(italic)未检查/$ 状态，这样它也能匹配部分使用过的铲子。再次按下 $(thing)Escape/$：回到主 GUI。"
+   "现在来设置$(thing)物品过滤器/$：$(thing)右击/$它以打开选项 GUI。点击$(bold)查找物品……/$按钮，并在结果搜索窗口中输入“shovel”。选择你先前放入箱子里的那种铲子，然后按下$(thing)Escape/$关闭搜索框。$(p)回到$(thing)物品过滤器/$窗口后，确保“物品耐久”处于$(italic)未检查/$状态，这样它也能匹配部分使用过的铲子。再次按下$(thing)Escape/$：回到主 GUI。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "At this point, we've told the Drone to pick up a shovel from the chest; now to make it dig!$(p)Drag a $(l:programming/dig)Dig/$ widget and snap it to the bottom of the $(thing)Import/$ widget.$(p)Drag another $(thing)Area/$ widget and snap it to the right of the $(thing)Dig/$ widget.",
-   "此时，我们已经让无人机从箱子里拿起一把铲子；现在该让它开始挖掘了！$(p)拖动一个 $(l:programming/dig)挖掘/$ 部件，并将其吸附到 $(thing)导入/$ 部件的下方。$(p)再拖动一个 $(thing)区域/$ 部件，并将其吸附到 $(thing)挖掘/$ 部件的右侧。"
+   "此时，我们已经让无人机从箱子里拿起一把铲子；现在该让它开始挖掘了！$(p)拖动一个$(l:programming/dig)挖掘/$部件，并将其吸附到$(thing)导入/$部件的下方。$(p)再拖动一个$(thing)区域/$部件，并将其吸附到$(thing)挖掘/$部件的右侧。"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "Let's define the area to be dug: take your $(thing)GPS Area Tool/$ and $(thing)right-click/$ a block to form one corner of the area. $(thing)Left-click/$ a block at the opposite corner. Since the drone will be using a shovel, try to stick to dirt/sand.$(p)Ensure the highlighted area is a $(thing)solid box/$ - it should be by default, but you can $(thing)left/right-click/$ the tool in the air to open a configuration GUI where the shape can be defined.",
-   "让我们来定义要挖掘的区域：拿上你的 $(thing)区域定位工具/$，对一个方块$(thing)右击/$，将其设为区域的一个角。再对对角处的方块$(thing)左击/$。由于无人机会使用铲子，尽量选择泥土/沙子。$(p)请确保高亮区域是一个$(thing)实心长方体/$——默认应该就是这样，但你也可以在手持该工具时对着空气$(thing)左/右击/$，打开配置GUI，在那里可以定义形状。"
+   "让我们来定义要挖掘的区域：拿上你的$(thing)区域定位工具/$，对一个方块$(thing)右击/$，将其设为区域的一个角。再对对角处的方块$(thing)左击/$。由于无人机会使用铲子，尽量选择泥土/沙子。$(p)请确保高亮区域是一个$(thing)实心长方体/$——默认应该就是这样，但你也可以在手持该工具时对着空气$(thing)左/右击/$，打开配置GUI，在那里可以定义形状。"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "Back in the Programmer GUI, take the $(thing)GPS Area Tool/$ and $(thing)left-click/$ it on the $(thing)Area/$ widget attached to the $(thing)Dig/$ widget. As before, you'll see its settings copied onto the Area widget.$(p)At this point, there should be no red highlights indicating any errors: congratulations, you have a valid program!",
-   "回到程序编辑器 GUI 中，拿起 $(thing)区域定位工具/$，然后对连接到 $(thing)挖掘/$组件上的 $(thing)区域/$组件执行 $(thing)左击/$。和之前一样，你会看到它的设置被复制到该区域组件上。$(p)此时，应该不会再有表示任何错误的红色高亮：恭喜，你已经完成了一个有效的程序！"
+   "回到程序编辑器 GUI 中，拿起$(thing)区域定位工具/$，然后对连接到$(thing)挖掘/$组件上的$(thing)区域/$组件执行$(thing)左击/$。和之前一样，你会看到它的设置被复制到该区域组件上。$(p)此时，应该不会再有表示任何错误的红色高亮：恭喜，你已经完成了一个有效的程序！"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "All that remains now is to deploy your Drone: $(thing)right-click/$ in the world somewhere near your chest, and watch it go to work!",
-   "现在剩下的就是部署你的雄蜂了：在箱子附近的某处对着世界 $(thing)右击/$，然后看着它开始工作吧！"
+   "现在剩下的就是部署你的雄蜂了：在箱子附近的某处对着世界$(thing)右击/$，然后看着它开始工作吧！"
   ]
  ]
 }

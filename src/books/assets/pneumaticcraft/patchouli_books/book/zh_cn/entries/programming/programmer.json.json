@@ -52,7 +52,7 @@
     "text"
    ],
    "$(bold)2. Widget Tray/$$(p)This area holds the widgets you will use to build your program. It holds more widgets than are shown; you can cycle through pages with the arrow buttons under the tray, or expand the tray to show all widgets with $(thing)Space/$ or $(thing)Tab/$.$(p)When expanded, the tray will also show a textfield above where you can enter a filter string to search for widgets.",
-   "$(bold)2. 程序组件托盘/$$(p)这个区域存放你用来构建程序的程序组件。它所容纳的程序组件比当前显示的更多；你可以使用托盘下方的箭头按钮切换页面，或者按下 $(thing)Space/$ 或 $(thing)Tab/$ 展开托盘以显示所有程序组件。$(p)展开后，托盘上方还会显示一个文本框，你可以在其中输入筛选字符串来搜索程序组件。"
+   "$(bold)2. 程序组件托盘/$$(p)这个区域存放你用来构建程序的程序组件。它所容纳的程序组件比当前显示的更多；你可以使用托盘下方的箭头按钮切换页面，或者按下$(thing)Space/$或$(thing)Tab/$展开托盘以显示所有程序组件。$(p)展开后，托盘上方还会显示一个文本框，你可以在其中输入筛选字符串来搜索程序组件。"
   ],
   [
    [
@@ -61,7 +61,7 @@
     "text"
    ],
    "$(bold)3. Drone Slot/$$(p)Place the $(l:tools/drone)Drone/$ (or $(l:components/network_components)Network Storage/API/$) to be programmed here. When ready to program the Drone, press the $(thing)⟶/$ button to write the program. You can use the textfield to the left to name the Drone, if you wish. You will hear audible feedback if successful.$(p)You can also use the $(thing)⟵/$ button to import a program from a Drone (or Network Storage/API).",
-   "$(bold)3. 雄蜂槽位/$$(p)将要编程的 $(l:tools/drone)雄蜂/$（或 $(l:components/network_components)网络存储/API/$）放在这里。准备好为雄蜂编程后，按下 $(thing)⟶/$ 按钮即可写入程序。如果你愿意，也可以使用左侧的文本框为雄蜂命名。若操作成功，你会听到声音反馈。$(p)你也可以使用 $(thing)⟵/$ 按钮从雄蜂（或网络存储/API）中导入程序。"
+   "$(bold)3. 雄蜂槽位/$$(p)将要编程的$(l:tools/drone)雄蜂/$（或$(l:components/network_components)网络存储/API/$）放在这里。准备好为雄蜂编程后，按下$(thing)⟶/$按钮即可写入程序。如果你愿意，也可以使用左侧的文本框为雄蜂命名。若操作成功，你会听到声音反馈。$(p)你也可以使用$(thing)⟵/$按钮从雄蜂（或网络存储/API）中导入程序。"
   ],
   [
    [
@@ -79,7 +79,7 @@
     "text"
    ],
    "$(bold)6. Navigation & Display Options/$$(p)You can use these buttons to:$(li)Navigate to the $(l:programming/start)Start/$ widget of your program$(li)Navigate to the last widget you placed$(li)Toggle display of extra info on each widget$(li)Toggle display of connection lines between $(l:programming/jump)Jump/$ and $(l:programming/label)Label/$ widgets",
-   "$(bold)6. 导航与显示选项/$$(p)你可以使用这些按钮来：$(li)导航到程序中的 $(l:programming/start)开始/$ 组件$(li)导航到你最后放置的组件$(li)切换每个组件上额外信息的显示$(li)切换 $(l:programming/jump)跳转/$ 与 $(l:programming/label)标签/$ 组件之间连接线的显示"
+   "$(bold)6. 导航与显示选项/$$(p)你可以使用这些按钮来：$(li)导航到程序中的$(l:programming/start)开始/$组件$(li)导航到你最后放置的组件$(li)切换每个组件上额外信息的显示$(li)切换$(l:programming/jump)跳转/$与$(l:programming/label)标签/$组件之间连接线的显示"
   ],
   [
    [
@@ -88,7 +88,7 @@
     "text"
    ],
    "$(bold)7. Misc Buttons/$$(p)The buttons along the left-hand edge of the GUI allow (in order):$(li)$(thing)Undo/$ of up to the last 20 actions$(li)$(thing)Redo/$ of the previous undo$(li)$(thing)Import or Export/$ your program as a JSON file to $(l:https://pastebin.com)pastebin.com/$ (Pastebin login optional)$(li)$(thing)Delete/$ your entire program (can be undone)$(li)$(thing)Convert/$ your program to $(thing)Relative/$ co-ordinates (see $(l:programming/programmer#convert_relative)this page/$ for more information)",
-   "$(bold)7. 杂项按钮/$$(p)GUI 左侧边缘的一排按钮依次可用于：$(li)$(thing)撤销/$最近 20 步以内的操作$(li)$(thing)重做/$上一次撤销的操作$(li)$(thing)导入或导出/$你的程序，将其作为 JSON 文件发送到 $(l:https://pastebin.com)pastebin.com/$（可选登录 Pastebin 账号）$(li)$(thing)删除/$你的整个程序（可撤销）$(li)$(thing)转换/$你的程序为$(thing)相对/$坐标（更多信息请参见$(l:programming/programmer#convert_relative)本页/$）"
+   "$(bold)7. 杂项按钮/$$(p)GUI 左侧边缘的一排按钮依次可用于：$(li)$(thing)撤销/$最近 20 步以内的操作$(li)$(thing)重做/$上一次撤销的操作$(li)$(thing)导入或导出/$你的程序，将其作为 JSON 文件发送到$(l:https://pastebin.com)pastebin.com/$（可选登录 Pastebin 账号）$(li)$(thing)删除/$你的整个程序（可撤销）$(li)$(thing)转换/$你的程序为$(thing)相对/$坐标（更多信息请参见$(l:programming/programmer#convert_relative)本页/$）"
   ],
   [
    [
@@ -97,7 +97,7 @@
     "text"
    ],
    "If you toggle on extended tooltip information with $(thing)F3+H/$, you will notice that the tooltip for each programming widget also includes the internal widget ID at the end. This is primarily of benefit if you intend to do any drone programming with the $(l:machines/drone_interface)Drone Interface/$ - the $(thing)setAction()/$ Lua method in the Drone Interface takes these IDs (the $(thing)pneumaticcraft:/$ prefix is optional) as a parameter.",
-   "如果你用 $(thing)F3+H/$ 开启扩展提示信息，你会注意到每个编程组件的提示文本末尾还包含其内部组件 ID。如果你打算通过 $(l:machines/drone_interface)无人机接口/$ 进行无人机编程，这会特别有用——无人机接口中的 $(thing)setAction()/$ Lua 方法会将这些 ID 作为参数（其中 $(thing)pneumaticcraft:/$ 前缀是可选的）。"
+   "如果你用$(thing)F3+H/$开启扩展提示信息，你会注意到每个编程组件的提示文本末尾还包含其内部组件 ID。如果你打算通过$(l:machines/drone_interface)无人机接口/$进行无人机编程，这会特别有用——无人机接口中的$(thing)setAction()/$ Lua 方法会将这些 ID 作为参数（其中$(thing)pneumaticcraft:/$前缀是可选的）。"
   ],
   [
    [
@@ -115,7 +115,7 @@
     "text"
    ],
    "If you want to share your programs with other players, you have a couple of options:$(li)You can use the $(thing)Pastebin/$ button to export your program to $(l:https://pastebin.com)pastebin.com/$$(li)The $(thing)Pastebin/$ GUI also allows writing the program to the clipboard for copying & pasting$(li)You can save your program to a $(l:tools/drone)Drone/$ or $(l:components/network_components)Network Storage/Network API/$ and give the item to another player on your server.",
-   "如果你想与其他玩家分享你的程序，你有几种选择：$(li)你可以使用 $(thing)Pastebin/$ 按钮将程序导出到 $(l:https://pastebin.com)pastebin.com/$$(li)$(thing)Pastebin/$ GUI 也支持将程序写入剪贴板，以便复制和粘贴$(li)你也可以将程序保存到 $(l:tools/drone)雄蜂/$ 或 $(l:components/network_components)网络存储/网络API/$ 中，并将该物品交给你服务器上的另一位玩家。"
+   "如果你想与其他玩家分享你的程序，你有几种选择：$(li)你可以使用$(thing)Pastebin/$按钮将程序导出到$(l:https://pastebin.com)pastebin.com/$$(li)$(thing)Pastebin/$ GUI 也支持将程序写入剪贴板，以便复制和粘贴$(li)你也可以将程序保存到$(l:tools/drone)雄蜂/$或$(l:components/network_components)网络存储/网络API/$中，并将该物品交给你服务器上的另一位玩家。"
   ],
   [
    [
@@ -133,7 +133,7 @@
     "text"
    ],
    "Say you've designed a program that runs an automated farm and you want to share this. People on a different world will have their farm at different coordinates, so they would have to change every single $(l:programming/area)Area/$ widget; what a pain.$(p)The $(thing)Convert to Relative/$ button makes this easier; it also provides tooltips indicating what you need to do to convert your program.",
-   "假设你设计了一个用于运行自动农场的程序，并且想把它分享出去。其他世界中的玩家，其农场坐标各不相同，因此他们就得逐个修改每一个 $(l:programming/area)区域/$ 组件；这可太麻烦了。$(p)$(thing)转换为相对坐标/$ 按钮能让这件事变得更简单；它还会提供工具提示，告诉你该如何转换你的程序。"
+   "假设你设计了一个用于运行自动农场的程序，并且想把它分享出去。其他世界中的玩家，其农场坐标各不相同，因此他们就得逐个修改每一个$(l:programming/area)区域/$组件；这可太麻烦了。$(p)$(thing)转换为相对坐标/$按钮能让这件事变得更简单；它还会提供工具提示，告诉你该如何转换你的程序。"
   ],
   [
    [
@@ -151,7 +151,7 @@
     "text"
    ],
    "You will need to add one fixed $(l:programming/coordinate_operator)Coordinate Operator/$ widget, along with a $(l:programming/coordinate)Coordinate/$ widget containing a $(thing)base position/$ (e.g. the position of an input chest). It then converts any absolute positions (area or coordinate) used in your program to coordinates relative to that base position.$(p)Now, users of your program will only have to adjust a single coordinate to use your program!",
-   "你需要添加一个固定的 $(l:programming/coordinate_operator)坐标运算器/$组件，以及一个包含 $(thing)基准位置/$（例如输入箱子的位置）的 $(l:programming/coordinate)坐标/$ 组件。这样一来，它就会将程序中使用的所有绝对坐标（区域或坐标）转换为相对于该基准位置的坐标。$(p)现在，使用你程序的人只需要调整一个坐标，就能使用你的程序了！"
+   "你需要添加一个固定的$(l:programming/coordinate_operator)坐标运算器/$组件，以及一个包含$(thing)基准位置/$（例如输入箱子的位置）的$(l:programming/coordinate)坐标/$组件。这样一来，它就会将程序中使用的所有绝对坐标（区域或坐标）转换为相对于该基准位置的坐标。$(p)现在，使用你程序的人只需要调整一个坐标，就能使用你的程序了！"
   ],
   [
    [
@@ -169,7 +169,7 @@
     "text"
    ],
    "If JEI is installed, you will notice a '+' (Move Items) button if you open the JEI recipe display while the Programmer GUI is open. Clicking it will add $(l:programming/item_filter)Item Filter/$ widgets for each input item in the recipe. If you have a $(l:programming/crafting)Crafting/$ widget in the programming area with no Item Filters attached, Item Filters will be added to the Crafting Widget to quickly & easily set up a recipe. Otherwise, they will be added in a row at the top left of the programming area.",
-   "如果安装了 JEI，那么当程序编写器界面打开时，你在查看 JEI 配方显示界面会注意到一个“+”（传送物品）按钮。点击它会为配方中的每个输入物品添加 $(l:programming/item_filter)物品过滤器/$ 控件。如果编程区域中有一个未连接任何物品过滤器的 $(l:programming/crafting)合成/$ 控件，那么物品过滤器会被添加到该合成控件上，以便快速且轻松地设置配方。否则，它们会被添加到编程区域左上角的一排位置。"
+   "如果安装了 JEI，那么当程序编写器界面打开时，你在查看 JEI 配方显示界面会注意到一个“+”（传送物品）按钮。点击它会为配方中的每个输入物品添加$(l:programming/item_filter)物品过滤器/$控件。如果编程区域中有一个未连接任何物品过滤器的$(l:programming/crafting)合成/$控件，那么物品过滤器会被添加到该合成控件上，以便快速且轻松地设置配方。否则，它们会被添加到编程区域左上角的一排位置。"
   ],
   [
    [
@@ -187,7 +187,7 @@
     "text"
    ],
    "By default, only one Item Filter is added for each unique item type (e.g. for a $(item)Stone Slab/$ recipe, only one $(item)Stone/$ filter will be created, not three). Remember that widgets can be copied by middle-clicking and dragging. If you want to add an Item Filter for every item in the recipe, including duplicates, hold Shift when clicking the '+' button in JEI.",
-   "默认情况下，每种唯一的物品类型只会添加一个物品过滤器（例如，对于一个 $(item)石台阶/$ 配方，只会创建一个 $(item)石头/$ 过滤器，而不是三个）。请记住，组件可以通过鼠标中键点击并拖动来复制。如果你想为配方中的每个物品都添加一个物品过滤器，包括重复项，请在 JEI 中点击“+”按钮时按住 Shift。"
+   "默认情况下，每种唯一的物品类型只会添加一个物品过滤器（例如，对于一个$(item)石台阶/$配方，只会创建一个$(item)石头/$过滤器，而不是三个）。请记住，组件可以通过鼠标中键点击并拖动来复制。如果你想为配方中的每个物品都添加一个物品过滤器，包括重复项，请在 JEI 中点击“+”按钮时按住 Shift。"
   ],
   [
    [
