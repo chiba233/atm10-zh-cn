@@ -16,7 +16,7 @@
     "text"
    ],
    "These components are used primarily to set up a $(l:programming/security_station)Security Station/$, but some are also used as crafting components, and the $(l:components/network_components#network_storage)Network Storage/$ and $(l:components/network_components#network_api)Network API/$ can be used to store $(l:tools/drone)Drone/$ programs.",
-   "这些组件主要用于搭建$(l:programming/security_station)安全站/$，但其中一些也可用作合成材料，而$(l:components/network_components#network_storage)网络存储/$和$(l:components/network_components#network_api)网络API/$还可用于存储$(l:tools/drone)雄蜂/$程序。"
+   "这些组件主要用于搭建$(l:machines/security_station)安全站/$，但其中一些也可用作合成材料，而$(l:components/network_components#network_storage)网络存储/$和$(l:components/network_components#network_api)网络API/$还可用于存储$(l:tools/drone)雄蜂/$程序。"
   ],
   [
    [

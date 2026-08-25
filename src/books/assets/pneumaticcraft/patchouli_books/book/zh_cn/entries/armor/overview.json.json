@@ -151,7 +151,7 @@
     "text"
    ],
    "$(l:base_concepts/upgrades#thaumcraft)Thaumcraft Upgrades/$ provide the armor piece with the equivalent vis discount of the corresponding $(thing)Thaumaturge's armor/$.  In addition, a Thaumcraft Upgrade installed in the $(l:armor/helmet)Helmet/$ acts as a $(item)Goggles of Revealing/$, showing $(thing)aura nodes/$ and displaying $(thing)aspect/$ amounts in containers.",
-   "$(l:base_concepts/upgrades#thaumcraft)神秘时代升级/$可使对应的护甲部件获得与相应$(thing)神秘使套装/$等同的 vis 折扣。此外，安装在$(l:armor/helmet)头盔/$中的神秘时代升级还会像$(item)揭示护目镜/$一样发挥作用，显示$(thing)灵气节点/$，并显示容器中的$(thing)要素/$数量。"
+   "$(l:base_concepts/upgrades#thaumcraft)神秘时代升级/$可使对应的护甲部件获得与相应$(thing)神秘使套装/$等同的 vis 折扣。此外，安装在$(l:armor/pneumatic_helmet)头盔/$中的神秘时代升级还会像$(item)揭示护目镜/$一样发挥作用，显示$(thing)灵气节点/$，并显示容器中的$(thing)要素/$数量。"
   ],
   [
    [

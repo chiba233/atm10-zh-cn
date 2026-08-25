@@ -25,7 +25,7 @@
     "text"
    ],
    "$(li)$(thing)Right-click/$ $(l:base_concepts/drones)Drones/$ to dismantle them, dropping them as an item.$(li)$(thing)Right-click/$ $(l:tubes/pressure_tubes)Pressure Tubes/$ to close/re-open sections to isolate them from each other.$(p)The $(item)Pneumatic Wrench/$ must be pressurized in a $(l:machines/charging_station)Charging Station/$ before use.",
-   "$(li)$(thing)右键点击/$$(l:base_concepts/drones)雄蜂/$可将其拆解，并掉落为物品。$(li)$(thing)右键点击/$$(l:tubes/pressure_tubes)压力管道/$可关闭/重新打开其中的部分管段，使其彼此隔离。$(p)$(item)气动扳手/$在使用前必须先在$(l:machines/charging_station)充气站/$中加压。"
+   "$(li)$(thing)右键点击/$$(l:tools/drone)雄蜂/$可将其拆解，并掉落为物品。$(li)$(thing)右键点击/$$(l:tubes/pressure_tubes)压力管道/$可关闭/重新打开其中的部分管段，使其彼此隔离。$(p)$(item)气动扳手/$在使用前必须先在$(l:machines/charging_station)充气站/$中加压。"
   ],
   [
    [

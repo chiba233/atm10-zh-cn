@@ -61,7 +61,7 @@
     "text"
    ],
    "$(li)To utilise the waste heat from advanced compressors such as the $(l:compressors/advanced_air_compressor)Advanced Air Compressor/$. Normally you would dump this heat into the atmosphere using one or more $(l:tools/heat_sink)Heat Sinks/$, but with the Thermal Compressor, it's also possible to reclaim some of this waste heat as pressure.",
-   "$(li)用于利用诸如$(l:compressors/advanced_air_compressor)高级空气压缩机/$之类的高级压缩机产生的余热。通常你会使用一个或多个$(l:tools/heat_sink)散热片/$将这些热量排放到大气中，但有了温差压缩机，也可以将其中一部分余热回收为气压。"
+   "$(li)用于利用诸如$(l:compressors/advanced_air_compressor)高级空气压缩机/$之类的高级压缩机产生的余热。通常你会使用一个或多个$(l:machines/heat_sink)散热片/$将这些热量排放到大气中，但有了温差压缩机，也可以将其中一部分余热回收为气压。"
   ],
   [
    [

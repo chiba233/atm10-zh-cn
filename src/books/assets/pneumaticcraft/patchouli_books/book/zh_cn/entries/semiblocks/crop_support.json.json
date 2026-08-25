@@ -16,7 +16,7 @@
     "text"
    ],
    "When placed on farmland with a $(thing)crop/$, this will improve the growth speed of that crop. $(thing)Green particles/$ are emitted to show when the $(item)Crop Support/$ speeds up the growth.$(p)To remove a $(item)Crop Support/$, either break the block underneath it or $(thing)sneak-right-click/$ the block with a $(l:tools/logistics_configurator)Logistics Configurator/$ or another $(item)Crop Support/$.",
-   "将它放在有$(thing)作物/$的耕地上时，它会提高该作物的生长速度。$(thing)绿色粒子/$会在$(item)作物架/$加速生长时出现，以作提示。$(p)要移除一个$(item)作物架/$，可以破坏它下方的方块，或者手持$(l:tools/logistics_configurator)物流配置器/$或另一个$(item)作物架/$对该方块执行$(thing)潜行右键/$。"
+   "将它放在有$(thing)作物/$的耕地上时，它会提高该作物的生长速度。$(thing)绿色粒子/$会在$(item)作物架/$加速生长时出现，以作提示。$(p)要移除一个$(item)作物架/$，可以破坏它下方的方块，或者手持$(l:logistics/logistics_configurator)物流配置器/$或另一个$(item)作物架/$对该方块执行$(thing)潜行右键/$。"
   ],
   [
    [

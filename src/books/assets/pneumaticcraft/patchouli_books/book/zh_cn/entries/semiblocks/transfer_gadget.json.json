@@ -34,7 +34,7 @@
     "text"
    ],
    "$(thing)Right-click/$ the $(item)Transfer Gadget/$ with an empty hand or a $(l:tools/logistics_configurator)Logistics Configurator/$ to toggle input/output mode. $(thing)Sneak+right-click/$ (or left-click - hit) to remove the $(item)Transfer Gadget/$.$(p)Because of its low speed and cheap recipe, this is ideal for early-game item/fluid transfer where space might be limited.",
-   "$(thing)右击/$$(item)传输装置/$，手中不拿物品或拿着$(l:tools/logistics_configurator)物流配置器/$时，可切换输入/输出模式。$(thing)潜行+右击/$（或左击——攻击）可移除$(item)传输装置/$。$(p)由于其速度较慢但合成配方便宜，因此非常适合游戏前期在空间有限的情况下传输物品/流体。"
+   "$(thing)右击/$$(item)传输装置/$，手中不拿物品或拿着$(l:logistics/logistics_configurator)物流配置器/$时，可切换输入/输出模式。$(thing)潜行+右击/$（或左击——攻击）可移除$(item)传输装置/$。$(p)由于其速度较慢但合成配方便宜，因此非常适合游戏前期在空间有限的情况下传输物品/流体。"
   ],
   [
    [

@@ -25,7 +25,7 @@
     "text"
    ],
    "$(l:programming/variables#global)Global Variables/$ are an advanced $(l:base_concepts/drone)Drone/$ feature, accessed via the $(l:programming/coordinate_operator)Coordinate Operator/$.$(p)$(thing)Right-clicking/$ a $(item)GPS Tool/$ in the air allows a variable name to be entered.$(p)Now, that $(thing)Global Variable/$ will track the value of the $(item)GPS Tool's/$ selected coordinate. This can be used to make $(thing)Drone programs/$ that use dynamic areas.",
-   "$(l:programming/variables#global)全局变量/$是$(l:base_concepts/drone)无人机/$的一项高级功能，可通过$(l:programming/coordinate_operator)坐标运算符/$访问。$(p)$(thing)在空中/$右击$(item)定位工具/$即可输入一个变量名。$(p)此后，该$(thing)全局变量/$将会跟踪$(item)定位工具/$当前所选坐标的值。这可用于制作使用动态区域的$(thing)无人机程序/$。"
+   "$(l:programming/variables#global)全局变量/$是$(l:tools/drone)无人机/$的一项高级功能，可通过$(l:programming/coordinate_operator)坐标运算符/$访问。$(p)$(thing)在空中/$右击$(item)定位工具/$即可输入一个变量名。$(p)此后，该$(thing)全局变量/$将会跟踪$(item)定位工具/$当前所选坐标的值。这可用于制作使用动态区域的$(thing)无人机程序/$。"
   ],
   [
    [

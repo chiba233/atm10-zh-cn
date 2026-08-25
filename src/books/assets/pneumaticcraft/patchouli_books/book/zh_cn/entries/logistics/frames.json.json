@@ -16,7 +16,7 @@
     "text"
    ],
    "$(thing)Logistics Frames/$ are attachable gadgets which are placed onto inventories or tanks to mark them as part of a $(thing)Logistics System/$.$(p)Placed frames can be configured by $(thing)right-clicking/$ with a $(l:tools/logistics_configurator)Logistics Configurator/$, and removed by $(thing)sneak+right-clicking/$ with the Configurator. Frames can also be configured in-hand by right-clicking the item form.",
-   "$(thing)物流框架/$是可附加的小装置，可安装在容器或储罐上，将其标记为$(thing)物流系统/$的一部分。$(p)放置后的框架可以使用$(l:tools/logistics_configurator)物流配置器/$$(thing)右击/$进行配置，也可以使用配置器$(thing)潜行右击/$将其拆除。框架也可以在手持时通过右击其物品形态进行配置。"
+   "$(thing)物流框架/$是可附加的小装置，可安装在容器或储罐上，将其标记为$(thing)物流系统/$的一部分。$(p)放置后的框架可以使用$(l:logistics/logistics_configurator)物流配置器/$$(thing)右击/$进行配置，也可以使用配置器$(thing)潜行右击/$将其拆除。框架也可以在手持时通过右击其物品形态进行配置。"
   ],
   [
    [
