@@ -92,7 +92,7 @@
 		"{image:atm:textures/questpics/chap3/creative_forge6.png width:200 height:100 align:center}"
 		"最后是放置更多的舱口！我们会需要它们的！"
 	]
-	quest.050CCE5D1DD6B21E.title: "&c&l自动赫菲斯托斯熔炉"
+	quest.050CCE5D1DD6B21E.title: "&c&l自动赫菲斯托斯锻炉"
 	quest.050CD33E92601651.quest_desc: [
 		"&c&l1阶&r对你来说不够用？那么你需要升级它！\\n\\n将一个埃德木木板放入&6&l锻炉&r的中心槽位，并在基座上放置4个&b神秘水晶&r和4个刷怪笼碎片。\\n\\n用锻工锤敲击它，你的&c&l1阶&r就会升级为&3&l2阶&6锻炉&r！\\n\\n现在，新的仪式将可用，&6&l锻炉&r可以容纳更多精华，并且你可以使用第二个遗物！"
 		"{image:atm:textures/questpics/forbidden/forbidden_tier1.png width:100 height:100 align:center}"
@@ -976,7 +976,7 @@
 	quest.3AFEE53B4276F8CA.quest_desc: ["总算有把工具了！\\n\\n&3潜掘镐&r是一把镐。它的特点是：你所在的 Y 坐标越低，挖得越快。\\n\\n不过它到底怎么知道自己有多深呢？"]
 	quest.3AFEE53B4276F8CA.title: "&3潜掘镐"
 	quest.3B3BD39BA02DCA13.quest_desc: ["装备&6袖珍活塞&r后，你的攻击范围会大幅提升，能从更远处打中敌人！\\n\\n我在想，哪个会赢，&6袖珍活塞&r还是&7坚定靴&r？"]
-	quest.3B5DEB942752B3BF.quest_subtitle: "没有升级，自动赫菲斯托斯熔炉无法工作"
+	quest.3B5DEB942752B3BF.quest_subtitle: "没有升级，自动赫菲斯托斯锻炉无法工作"
 	quest.3BAF4078F5776809.title: "&6热泉石胸甲"
 	quest.3BB0926C4C00BE1D.quest_desc: ["你是不是讨厌喷气背包能量耗尽？好吧，你再也不用担心了！\\n\\n你可能需要制作它之前的每一个喷气背包，一个&6&lATM之星&r，加上更昂贵的物品，但嘿，这是值得的！\\n\\n只需穿上它，像平常一样使用，只是充电次数更少。"]
 	quest.3BC0A50886A3222B.quest_desc: ["ATM10是一个自由探索的整合包，允许你以自己的方式探索模组化的Minecraft世界！\\n\\n如有任何问题或疑问，欢迎加入ATM的Discord！"]
