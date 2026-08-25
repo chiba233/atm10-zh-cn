@@ -1,4 +1,5 @@
 {
   "block.mekanismgenerators.rotational_complex": "复杂旋钮装置",
-  "block.mekanismgenerators.superheating_element": "过热元件"
+  "block.mekanismgenerators.superheating_element": "过热元件",
+  "description.mekanismgenerators.reactor.logic.depleted": "反应堆没有足够的裂变燃料维持反应时输出红石信号"
 }
