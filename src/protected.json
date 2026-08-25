@@ -3338,6 +3338,7 @@
     "src/vaultpatcher/modules/dysoncubeproject.json",
     "src/vaultpatcher/modules/enderdrives.json",
     "src/vaultpatcher/modules/enderio.json",
+    "src/vaultpatcher/modules/enderio_machine_status.json",
     "src/vaultpatcher/modules/energymeter.json",
     "src/vaultpatcher/modules/eternal_starlight.json",
     "src/vaultpatcher/modules/evilcraft.json",

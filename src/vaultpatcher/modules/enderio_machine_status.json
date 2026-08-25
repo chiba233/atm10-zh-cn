@@ -1,0 +1,60 @@
+[
+  {
+    "name": "enderio_machine_status_zh_cn",
+    "authors": "Hoshino Yumeka",
+    "dynamic": true,
+    "i18n": false,
+    "_说明": "末影接口机器界面右侧那个状态按钮（ON / IDL / ERR）的悬停说明。这 11 条在 assets/enderio/lang 里本来就有官方中文，客户端自己算出来的状态（如 idle）也确实显示中文，但服务端算出来的那几条（no_capacitor、no_energy 等）在多人游戏里始终是英文。\n\n原因在 com.enderio.enderio.foundation.network.menu_sync.MachineStatesSyncSlot：它同步机器状态时对 MutableComponent 调了 getString()，也就是**在发送侧就把可翻译组件解成了字面字符串**。专用服务端没有任何模组的语言文件，解出来必然是 en_us，客户端收到的已经是一段死文本，资源包再对也盖不住。可证伪的推论：单人存档里这几条是中文的，因为内置服务端与客户端共用同一份语言表。\n\n所以这条只能在**服务端**修，与资源蜜蜂蜂笼同理（那边也是服务端算完再下发）。列入 scripts/server_modules.txt。\n\n本模块是服务端子集里第一个 dynamic：其余 10 个都是静态改类里的 LDC 常量，而这里的英文不是任何类的常量，是运行时从语言表取的，静态够不着。仍然满足服务端准入标准——写了 target_class，只在 MachineStatesSyncSlot 在调用栈上时才生效，不会波及服务端的 NBT 与注册名。\n\n全部整串精确匹配，零个 @：这 11 句在界面上就是整串出现，加 @ 只会把它拖进「非完整匹配」那条昂贵路径而毫无收益。\n\n译文逐条抄自模组 jar 自带的 assets/enderio/lang/zh_cn.json，与本包资源包里的那 11 条逐字相同（已比对），没有新造任何译名。"
+  },
+  {
+    "target_class": [
+      "com.enderio.enderio.foundation.network.menu_sync.MachineStatesSyncSlot"
+    ],
+    "pairs": [
+      {
+        "key": "The machine is active",
+        "value": "机器正在运行"
+      },
+      {
+        "key": "The machine is idle",
+        "value": "机器已就绪"
+      },
+      {
+        "key": "The machine is blocked by redstone",
+        "value": "机器已被红石信号关闭"
+      },
+      {
+        "key": "Install a capacitor to be able to use this machine",
+        "value": "安装电容才能使用机器"
+      },
+      {
+        "key": "There is not enough power to use the machine",
+        "value": "能量不足，机器无法工作"
+      },
+      {
+        "key": "The energy storage is full",
+        "value": "能量已存满"
+      },
+      {
+        "key": "There is no item in the input",
+        "value": "未输入物品"
+      },
+      {
+        "key": "There is not enough room for the output",
+        "value": "输出槽空间不足"
+      },
+      {
+        "key": "The tank is empty",
+        "value": "储罐为空"
+      },
+      {
+        "key": "The tank is full",
+        "value": "储罐已满"
+      },
+      {
+        "key": "The Drain needs a source block under it to work",
+        "value": "蓄水槽必须放在源头方块上工作"
+      }
+    ]
+  }
+]
