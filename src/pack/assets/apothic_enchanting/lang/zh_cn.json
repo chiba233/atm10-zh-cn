@@ -424,5 +424,8 @@
   "block.apothic_enchanting.apothic_enchanting_table.desc": "附魔台的外观变体。",
   "block.apothic_enchanting.basic_bookshelf": "基础书架",
   "block.apothic_enchanting.raven_enchanting_table.desc": "可以手动调整核心附魔属性。",
-  "gui.apothic_enchanting.enchant.eterna.desc4": "受你的位阶上限属性限制为 %s"
+  "gui.apothic_enchanting.enchant.eterna.desc4": "受你的位阶上限属性限制为 %s",
+  "gui.apothic_enchanting.enchant.eterna.limited": "受你的最大位阶属性限制为 %s",
+  "gui.apothic_enchanting.enchant.eterna.limited.world_tier": "受你的世界层级限制为 %s（CTRL+T）",
+  "text.apothic_enchanting.star_prefix": "🌟 %s"
 }

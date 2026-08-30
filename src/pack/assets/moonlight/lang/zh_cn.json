@@ -1799,5 +1799,18 @@
   "gui.moonlight.config.discover_mods": "发现模组",
   "gui.moonlight.config.discover_offline": "无法获取模组列表，请检查网络连接。",
   "gui.moonlight.config.discover_title": "锦致装饰团队的更多模组",
-  "gui.moonlight.config.list_remove": "移除条目"
+  "gui.moonlight.config.list_remove": "移除条目",
+  "gui.moonlight.config.open_folder": "打开配置文件夹",
+  "gui.moonlight.config.discover_title_by": "%s 的更多模组",
+  "gui.moonlight.config.discover_by": "%s 的模组",
+  "gui.moonlight.config.list_entry": "条目 %s",
+  "tooltip.moonlight.media.link": "模组页面",
+  "moonlight.nautilus_studio.map_marker": "地图标记",
+  "moonlight.nautilus_studio.villager_trade": "村民交易",
+  "moonlight.config.common.enabled": "启用",
+  "moonlight.config.common.min": "最小值",
+  "moonlight.config.common.max": "最大值",
+  "moonlight.config.common.x": "X",
+  "moonlight.config.common.y": "Y",
+  "moonlight.config.common.z": "Z"
 }

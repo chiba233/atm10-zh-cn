@@ -485,5 +485,9 @@
   "info_book.integratedtunnels.tutorials.filter_storage_mod.text2": "为此，首先创建一个包含 &l关系相等&r运算符的 &2运算符&0 值。接着，创建一个包含 &lIntegratedDynamics&r 值（不含空格）的 &4字符串&0。然后，使用 &l应用&r 运算符，将你的 &l关系相等&r 运算符部分应用到你的 &4字符串&0 值上。",
   "info_book.integratedtunnels.tutorials.filter_storage_mod.text3": "下一步，我们还需要创建另一个 &2运算符&0 值，但这次其中包含的是 &l物品模块&r 运算符。现在，我们可以使用 &l管道&r 运算符，将我们的 &l物品模块&r 运算符传入上一步中部分应用的运算符。",
   "info_book.integratedtunnels.tutorials.filter_storage_mod.text4": "来自 &l管道&r 运算符的这个结果可以放入你的 &l物品过滤接口&r 的基于谓词的方面中，而我们所依赖的所有变量都需要放入一个 &l变量卡箱&r 中。如果所有步骤都正确完成，过滤器将只允许来自 &lIntegrated Dynamics&r 模组的物品通过，而这可以通过修改我们的 &4字符串&0 常量来自定义。",
-  "info_book.integratedtunnels.tutorials.world_block_importer_exporter.text1": "你也可以使用 &l方块破坏口&r 和 &l方块放置口&r 来破坏和放置方块，而不是将物品丢在世界中或将其捡起。还存在各种方面属性，可用于更改诸如破坏方块时是否应应用精准采集之类的设置。"
+  "info_book.integratedtunnels.tutorials.world_block_importer_exporter.text1": "你也可以使用 &l方块破坏口&r 和 &l方块放置口&r 来破坏和放置方块，而不是将物品丢在世界中或将其捡起。还存在各种方面属性，可用于更改诸如破坏方块时是否应应用精准采集之类的设置。",
+  "aspect.aspecttypes.integratedtunnels.boolean.world.matchblock": "匹配方块",
+  "aspect.aspecttypes.integratedtunnels.boolean.world.matchblock.info": "匹配方块的物品形态，而不是掉落物。",
+  "aspect.aspecttypes.integratedtunnels.boolean.passiveioignorefilter": "被动交互忽略过滤器",
+  "aspect.aspecttypes.integratedtunnels.boolean.passiveioignorefilter.info": "是否允许任何东西随时存入网络或从网络取出。"
 }

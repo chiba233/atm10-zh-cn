@@ -75,5 +75,12 @@
   "text.jei_mekanism_multiblocks.specs.layout": "布局",
   "text.jei_mekanism_multiblocks.result.processing_speed": "处理速度",
   "text.jei_mekanism_multiblocks.result.boil_efficiency": "沸腾效率",
-  "text.jei_mekanism_multiblocks.result.supercharging_elements": "超充组件：%s"
+  "text.jei_mekanism_multiblocks.result.supercharging_elements": "超充组件：%s",
+  "text.jei_mekanism_multiblocks.result.required_heater_usage": "所需加热器功率",
+  "text.jei_mekanism_multiblocks.tooltip.max_damage_ticks": "从 0%% 损伤到 100%% 损伤所需时间：%s 刻。",
+  "text.jei_mekanism_multiblocks.tooltip.required_heater_usage.plain": "在普通生物群系：%s",
+  "text.jei_mekanism_multiblocks.tooltip.required_heater_usage.coldest": "在最冷的生物群系：%s",
+  "text.jei_mekanism_multiblocks.tooltip.required_heater_usage.hottest": "在最热的生物群系：%s",
+  "text.jei_mekanism_multiblocks.tooltip.heater_near_and_1_sink_1": "'%1$s' 必须放置在",
+  "text.jei_mekanism_multiblocks.tooltip.heater_near_and_1_sink_2": "'%2$s' 的紧邻位置。"
 }

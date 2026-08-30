@@ -320,5 +320,8 @@
   "gui.jei.search": "原料筛选",
   "key.jei.pauseRecipeCycling": "暂停配方原料轮播",
   "key.jei.shareToChat": "分享物品到聊天栏",
-  "key.jei.showBookmarkTooltipFeatures": "显示书签提示框功能"
+  "key.jei.showBookmarkTooltipFeatures": "显示书签提示框功能",
+  "key.jei.recipeForward": "下一个配方",
+  "jei.config.client.advanced.recipeSyncWarningEnabled": "配方同步警告",
+  "jei.config.client.advanced.recipeSyncWarningEnabled.description": "当服务器没有把同步的配方提供给 JEI 时（例如原版服务器，或没装 JEI 的服务器），在聊天栏给出警告。"
 }

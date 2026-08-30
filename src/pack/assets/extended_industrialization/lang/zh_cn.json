@@ -326,5 +326,10 @@
   "rei_categories.extended_industrialization.electric_brewery": "电力酿造室",
   "rei_categories.extended_industrialization.steel_brewery": "发酵机",
   "text.extended_industrialization.tesla_lethal_coil_damages_players_no": "伤害玩家：否",
-  "text.extended_industrialization.tesla_lethal_coil_damages_players_yes": "伤害玩家：是"
+  "text.extended_industrialization.tesla_lethal_coil_damages_players_yes": "伤害玩家：是",
+  "block.extended_industrialization.electric_beacon": "电力信标",
+  "text.extended_industrialization.electric_beacon_beam_obstructed": "光束被遮挡",
+  "text.extended_industrialization.electric_beacon_eu_cost_tooltip": "正在消耗：%s",
+  "text.extended_industrialization.electric_beacon_help": "消耗药水，按每种效果 %s 的代价，为附近所有玩家提供该效果，持续时间为原来的一半。",
+  "text.extended_industrialization.electric_beacon_remaining_time_tooltip": "效果剩余时间：%s"
 }

@@ -766,5 +766,12 @@
   "key.ftbquests.gui_quest_panel.edit_title": "编辑标题",
   "key.ftbquests.quests": "打开任务",
   "sidebar_button.ftbquests.quests": "任务",
-  "sidebar_button.ftbquests.quests.no_team": "加入队伍以完成任务！"
+  "sidebar_button.ftbquests.quests.no_team": "加入队伍以完成任务！",
+  "key.ftbquests.cycle_pinned_tracker": "切换置顶任务追踪器的显示",
+  "ftbquests.pinned.pinned_exclude_flexible": "排除弹性模式的任务",
+  "ftbquests.pinned.pinned_exclude_flexible.tooltip": "开启后，只因弹性模式才可以开始（因而还不能完成）的任务不会出现在追踪器里\\n关闭则显示全部可开始的任务",
+  "ftbquests.pinned.pinned_visibility": "置顶追踪器的显示方式",
+  "ftbquests.pinned.visibility.all": "任务与目标",
+  "ftbquests.pinned.visibility.quests_only": "仅任务",
+  "ftbquests.pinned.visibility.hidden": "隐藏"
 }

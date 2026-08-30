@@ -1,4 +1,5 @@
 {
   "entity.amendments.medium_fireball": "中型火球",
-  "entity.amendments.medium_dragon_fireball": "中型龙息火球"
+  "entity.amendments.medium_dragon_fireball": "中型龙息火球",
+  "message.amendments.ebe_warning": "[Amendments] 检测到已安装 Enhanced Block Entities。在 EBE 自己的配置里关掉相关选项之前，告示牌的显示会出错，悬挂告示牌也不会摆动。"
 }
