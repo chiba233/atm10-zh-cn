@@ -640,7 +640,7 @@
   "computer_program.refurbished_furniture.home_control.info": "HomeControl可让您控制接入电力网络的设备的供电状态。设备必须与计算机连接至同一电力网络，才能被识别。在放置设备前，可使用铁砧重命名设备，以便在应用中更清晰地识别它们。",
   "computer_program.refurbished_furniture.marketplace": "市场",
   "computer_program.refurbished_furniture.coin_miner": "硬币矿工",
-  "jei_category.refurbished_furniture.freezer_solidifying": "凝固中",
+  "jei_category.refurbished_furniture.freezer_solidifying": "凝固",
   "jei_category.refurbished_furniture.cutting_board_slicing": "切割",
   "jei_category.refurbished_furniture.frying_pan_cooking": "油炸",
   "jei_category.refurbished_furniture.microwave_heating": "加热",
