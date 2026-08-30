@@ -682,5 +682,6 @@
   "wood_type.twilightforest.sorting": "分类木",
   "wood_type.twilightforest.time": "时光木",
   "wood_type.twilightforest.trans": "变化木",
-  "effect.supplementaries.bleeding": "流血"
+  "effect.supplementaries.bleeding": "流血",
+  "block.supplementaries.breeze_rod": "旋风棒"
 }
