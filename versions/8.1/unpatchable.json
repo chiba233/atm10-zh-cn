@@ -1,0 +1,58 @@
+{
+ "_why": "src/upstream/ 的映射对**每个**出货版本的官方文件都要能套上，套不上就退出——这条是那套结构的支点，不能松。但 ATM 在 8.1 里改了下面这些地方，而老版本里它们原样还在：删掉映射会让 7.0–8.0 一起丢，改锚点又不可能同时命中两边。所以按版本逐条登记，只放行这些，别的一个都不放。\n\n登记两头都是 fail-closed：登记了但原文其实还在 → 红（说明上游又改回来了，该撤掉登记）；没登记又找不到原文 → 红（原来的行为）。",
+ "_recorded": "2026-08-30",
+ "edits": {
+  "config/ftbquests/quests/chapters/apotheosis_gear.snbt": {
+   "which": "all",
+   "why": "8.1 把这一章 20 个 image 块的 hover 字段全删了（7.0–8.0 里还在，1 条照常命中）。这一条的英文「Sigil of Supremacy」在 8.1 的官方 en_us 里也没有对应的 image.*.title，配图在这一版根本不带标签，没有可译的落点。"
+  },
+  "config/ftbquests/quests/chapters/bumblezone.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 32 个 image 块、0 个 hover。这 4 条（Your Highness / Cell Maze / Battle Cubes / Honitel）在 8.1 的官方 en_us 里都没有对应的 image.*.title，标签整个没了。7.0–8.0 的 4 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/elmystical_agriculturerr.snbt": {
+   "which": "all",
+   "why": "8.1 这一章 69 个 image 块、0 个 hover。但这 11 条的文案在 8.1 改成了 image.*.title 翻译键，本包的任务书 delta 已经全部覆盖——译文照常出现，只是走 lang 而不是改上游。7.0–8.0 的 11 条照常命中、照常出货。"
+  },
+  "config/ftbquests/quests/chapters/extended__advanced_ae.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 12 个 image 块、0 个 hover。这 4 条（量子头盔 / 胸甲 / 护腿 / 靴子）在 8.1 没有对应的 image.*.title，标签整个没了。7.0–8.0 的 4 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/industrial_foregoing.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 32 个 image 块、0 个 hover。这 4 条在 8.1 没有对应的 image.*.title。7.0–8.0 的 4 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/iron_spells_and_spellbooks.snbt": {
+   "which": "all",
+   "why": "8.1 这一章 25 个 image 块、0 个 hover。这 16 条的文案在 8.1 改成了 image.*.title 翻译键，本包的任务书 delta 已经全部覆盖。7.0–8.0 的 16 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/justdirethings.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 3 个 image 块、0 个 hover。这一条在 8.1 改成了 image.0461FDE296ADCEA2.title，译文已改由任务书 delta 提供。7.0–8.0 的 1 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/productive_trees.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 2 个 image 块、0 个 hover。「Pilpoh's Productive Trees Guide」在 8.1 没有对应的 image.*.title。7.0–8.0 的 1 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/railcraft.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 23 个 image 块、0 个 hover。这 21 条（机车 / 高炉 / 焦炉 / 各类轨道…）在 8.1 都没有对应的 image.*.title，标签整个没了。7.0–8.0 的 21 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/relics.snbt": {
+   "which": "all",
+   "why": "8.1 这一章 21 个 image 块、0 个 hover。这 10 条的文案在 8.1 改成了 image.*.title 翻译键，本包的任务书 delta 已经全部覆盖。7.0–8.0 的 10 条不受影响。"
+  },
+  "config/ftbquests/quests/chapters/welcome.snbt": {
+   "which": "all",
+   "why": "同上，8.1 这一章 2 个 image 块、0 个 hover。「Join the Discord!」在 8.1 没有对应的 image.*.title。7.0–8.0 的 1 条不受影响。"
+  },
+  "kubejs/assets/modern_industrialization/lang/zh_cn.json": {
+   "which": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+   "why": "ATM 注入的这份文件在 8.1 从 40 行缩到 24 行，这 15 个键被删掉了——现代工业化 2.5.6 的 jar 自带 zh_cn 里这 15 条全都有正确中文（逐条核过），本包资源包里也都有，所以删了不丢东西。第 1 处（自动赫菲斯托斯锻炉）两版一字未改，照常生效。"
+  },
+  "kubejs/server_scripts/announcements/announcements.js": {
+   "which": [1],
+   "why": "8.1 沿用 8.0 重写过的公告清单：删掉了 4.0 / 4.1 / 4.2 三行，每行末尾加了分号，5.3 那条从「Eternal Starlight and Hyperbox」缩成「Hyperbox」。带分号的行与 7.0–7.3 的无分号版本不可能用同一个 find 命中。第 2/3/4 处（三条命令回执）在 8.1 照常命中、照常生效。"
+  }
+ }
+}
