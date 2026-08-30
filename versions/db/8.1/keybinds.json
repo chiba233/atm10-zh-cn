@@ -1,0 +1,5313 @@
+{
+ "keys": [
+  "key.actuallyadditions.category",
+  "key.ae2.category",
+  "key.aether.category",
+  "key.categories.apotheosis",
+  "key.categories.bridgingmod",
+  "key.categories.cataclysm",
+  "key.categories.deeperdarker",
+  "key.categories.eternal_starlight",
+  "key.categories.ftbchunks",
+  "key.categories.ftbteams",
+  "key.categories.ftbultimine",
+  "key.categories.gameplay",
+  "key.categories.hostilenetworks",
+  "key.categories.hypertube",
+  "key.categories.immersiveengineering",
+  "key.categories.integrateddynamics",
+  "key.categories.integratedterminals",
+  "key.categories.inventory",
+  "key.categories.invtweaks",
+  "key.categories.kubejs",
+  "key.categories.logisticsnetworks",
+  "key.categories.mahoutsukai",
+  "key.categories.mcjtylib",
+  "key.categories.misc",
+  "key.categories.neovitae",
+  "key.categories.oracle",
+  "key.categories.placebo",
+  "key.categories.rftools",
+  "key.categories.securitycraft",
+  "key.categories.silentgear",
+  "key.category.ars_nouveau.general",
+  "key.category.sophisticatedbackpacks.main",
+  "key.category.sophisticatedcore.main",
+  "key.category.xycraft_core.key_binds",
+  "key.curios.category",
+  "key.extendedae.category",
+  "key.guideme.category",
+  "key.industrialforegoing.category",
+  "key.irons_spellbooks.group_1",
+  "key.irons_spellbooks.group_2",
+  "key.minecolonies.categories.general",
+  "key.modernfix",
+  "key.modularrouters.category",
+  "key.moreoverlays.category",
+  "key.occultism.category",
+  "key.oritech.hotkey_category",
+  "key.pneumaticcraft.category.main",
+  "key.structurize.categories.general",
+  "key.theurgy.category",
+  "key.toastcontrol.category",
+  "key.toolbelt.category"
+ ],
+ "literals": {
+  "Auroras": [
+   "Auroras-1.21-1.6.2.jar"
+  ],
+  "Corail Tombstone": [
+   "tombstone-neoforge-1.21.1-9.5.5.jar"
+  ],
+  "Create": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "Draconic Evolution": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "Iron Jetpacks": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "Rainbows": [
+   "Rainbows-1.21-1.5.jar"
+  ],
+  "Relics": [
+   "relics-1.21.1-0.12.8.jar"
+  ],
+  "artifacts.key_category": [
+   "artifacts-neoforge-13.2.3.jar"
+  ],
+  "category.easy_villagers": [
+   "easy-villagers-neoforge-1.21.1-1.1.42.jar"
+  ],
+  "category.keybindbundles": [
+   "keybindbundles-1.4.0.jar"
+  ],
+  "category.observable.keybinds": [
+   "observable-5.4.4.jar"
+  ],
+  "category.tempad": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "crashutils.keycategory": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "framedblocks.key.categories.framedblocks": [
+   "FramedBlocks-10.6.1.jar"
+  ],
+  "iris.keybinds": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "itemGroup.mininggadgets": [
+   "mininggadgets-1.18.7.jar"
+  ],
+  "justzoom.keybinds.category": [
+   "justzoom_neoforge_2.1.0_MC_1.21.1.jar"
+  ],
+  "keybind.advancedperipherals.category": [
+   "AdvancedPeripherals-1.21.1-0.8.0a.jar"
+  ],
+  "keybind.reliquary.category": [
+   "reliquary-1.21.1-2.0.80.1570.jar"
+  ],
+  "keys.categories.enderio": [
+   "enderio-8.2.11-beta.jar"
+  ],
+  "mod.refinedstorage": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "mod.refinedstorage_quartz_arsenal": [
+   "refinedstorage-quartz-arsenal-neoforge-1.0.8.jar"
+  ],
+  "mod.universalgrid": [
+   "universalgrid-neoforge-1.21.1-0.3.2.jar"
+  ],
+  "modmenu.nameTranslation.jade": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "simplemagnets.keys.category": [
+   "simplemagnets-1.1.12c-neoforge-mc1.21.jar"
+  ],
+  "supplementaries.gui.controls": [
+   "supplementaries-1.21.1-3.9.5-neoforge.jar"
+  ]
+ },
+ "names": {
+  "auroras.key.reload_aurora_configs": [
+   "Auroras-1.21-1.6.2.jar"
+  ],
+  "cos.key.opencosarmorinventory": [
+   "cosmeticarmorreworked-1.21.1-v1-neoforge.jar"
+  ],
+  "crafting_on_a_stick.key.open_curios": [
+   "crafting_on_a_stick-1.21.0.6.jar"
+  ],
+  "crashutils.copycontainer": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "crashutils.openscreen": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "crashutils.slottooltips": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "create.keyinfo.alt_modifier": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "create.keyinfo.ctrl_modifier": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "create.keyinfo.rotate_menu": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "create.keyinfo.shift_modifier": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "create.keyinfo.toolbelt": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "create.keyinfo.toolmenu": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "framedblocks.key.update_cull": [
+   "FramedBlocks-10.6.1.jar"
+  ],
+  "framedblocks.key.wipe_cache": [
+   "FramedBlocks-10.6.1.jar"
+  ],
+  "ftbultimine.change_shape.next": [
+   "ftb-ultimine-neoforge-2101.1.15.jar"
+  ],
+  "ftbultimine.change_shape.prev": [
+   "ftb-ultimine-neoforge-2101.1.15.jar"
+  ],
+  "iris.keybind.reload": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "iris.keybind.shaderPackSelection": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "iris.keybind.toggleShaders": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "iris.keybind.wireframe": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "justzoom.keybinds.keybind.zoom": [
+   "justzoom_neoforge_2.1.0_MC_1.21.1.jar"
+  ],
+  "key.actualladditions.crafting_stick_open.desc": [
+   "actuallyadditions-1.3.26+mc1.21.1.jar"
+  ],
+  "key.ae2.mouse_wheel_item_modifier": [
+   "appliedenergistics2-19.2.17.jar"
+  ],
+  "key.ae2.part_placement_opposite": [
+   "appliedenergistics2-19.2.17.jar"
+  ],
+  "key.aether.gravitite_jump_ability.desc": [
+   "aether-1.21.1-1.5.10-neoforge.jar"
+  ],
+  "key.aether.invisibility_toggle.desc": [
+   "aether-1.21.1-1.5.10-neoforge.jar"
+  ],
+  "key.aether.open_accessories.desc": [
+   "aether-1.21.1-1.5.10-neoforge.jar"
+  ],
+  "key.ars_additions.open_lectern": [
+   "ars_additions-1.21.1-21.3.0.jar"
+  ],
+  "key.ars_elemental.open_pouch": [
+   "ars_elemental-1.21.1-0.7.10.1.jar"
+  ],
+  "key.ars_nouveau.familiar_toggle": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.head_curio_hotkey": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.next_slot": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.open_book": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.open_documentation": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.previous_slot": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc1": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc10": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc2": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc3": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc4": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc5": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc6": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc7": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc8": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc9": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.selection_hud": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.bridgingmod.toggle_bridging": [
+   "BridgingMod-2.6.2+1.21.1.neoforge-release.jar"
+  ],
+  "key.cataclysm.ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.cataclysm.boots_ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.cataclysm.chestplate_ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.cataclysm.helmet_ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.changeMysticCode": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.curios.open.desc": [
+   "curios-neoforge-9.5.1+1.21.1.jar"
+  ],
+  "key.deeperdarker.boost": [
+   "deeperdarker-neoforge-1.21.1-1.4.1.jar"
+  ],
+  "key.deeperdarker.transmit": [
+   "deeperdarker-neoforge-1.21.1-1.4.1.jar"
+  ],
+  "key.draconicevolution.dislocator_blink": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_down": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_gui": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_teleport": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_up": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.place_item": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.toggle_flight": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.toggle_magnet": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.tool_config": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.tool_modules": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.dragon_change_view": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.dragon_down": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.dragon_fireAttack": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.dragon_strike": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.drawMahoujin": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.easy_villagers.cycle_trades": [
+   "easy-villagers-neoforge-1.21.1-1.1.42.jar"
+  ],
+  "key.easy_villagers.pick_up": [
+   "easy-villagers-neoforge-1.21.1-1.1.42.jar"
+  ],
+  "key.enderio.toggle_magnet": [
+   "enderio-8.2.11-beta.jar"
+  ],
+  "key.enderio.travel_staff": [
+   "enderio-8.2.11-beta.jar"
+  ],
+  "key.extendedae.set_amount": [
+   "ExtendedAE-1.21-2.2.35-neoforge.jar"
+  ],
+  "key.extendedae.viewpattern": [
+   "ExtendedAE-1.21-2.2.35-neoforge.jar"
+  ],
+  "key.fireNobu": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.ftbchunks.add_waypoint": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.claim_manager": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.map": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.minimap.zoomIn": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.minimap.zoomOut": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.toggle_minimap": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.waypoint_manager": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbteams.open_gui": [
+   "ftb-teams-neoforge-2101.1.11.jar"
+  ],
+  "key.ftbultimine": [
+   "ftb-ultimine-neoforge-2101.1.15.jar"
+  ],
+  "key.guideme.guide": [
+   "guideme-21.1.17.jar"
+  ],
+  "key.gunDown": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.gunUp": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.hostilenetworks.open_deep_learner": [
+   "HostileNeuralNetworks-1.21.1-6.5.1.jar"
+  ],
+  "key.hypertube.tube_escape": [
+   "create_hypertube-0.6.0-NEOFORGE.jar"
+  ],
+  "key.immersiveengineering.chemthrowerSwitch": [
+   "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+  ],
+  "key.immersiveengineering.magnetEquip": [
+   "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+  ],
+  "key.immersiveengineering.railgunZoom": [
+   "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+  ],
+  "key.industrialforegoing.backpack.desc": [
+   "industrialforegoing-1.21-3.6.39.jar"
+  ],
+  "key.integrateddynamics.logic_programmer_focus_search": [
+   "integrateddynamics-1.21.1-neoforge-1.35.0-1981.jar"
+  ],
+  "key.integrateddynamics.logic_programmer_open_rename": [
+   "integrateddynamics-1.21.1-neoforge-1.35.0-1981.jar"
+  ],
+  "key.integratedterminals.terminal.craftinggrid.balance": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.craftinggrid.clearplayer": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.craftinggrid.clearstorage": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.portable.open": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.tab.next": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.tab.previous": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.invtweaks_sort_either.desc": [
+   "invtweaks-1.21.1-1.3.2.jar"
+  ],
+  "key.invtweaks_sort_inventory.desc": [
+   "invtweaks-1.21.1-1.3.2.jar"
+  ],
+  "key.invtweaks_sort_player.desc": [
+   "invtweaks-1.21.1-1.3.2.jar"
+  ],
+  "key.jade.config": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.jade.narrate": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.jade.show_details": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.jade.show_overlay": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.jade.show_recipes": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.jade.show_uses": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.jade.toggle_liquid": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.keybindbundles.open_radial_menu": [
+   "keybindbundles-1.4.0.jar"
+  ],
+  "key.keybindbundles.open_screen": [
+   "keybindbundles-1.4.0.jar"
+  ],
+  "key.kubejs.kubedex": [
+   "kubejs-neoforge-2101.7.2-build.374.jar"
+  ],
+  "key.logisticsnetworks.toggle_slot_numbers": [
+   "logisticsnetworks-1.21.1-1.13.0.jar"
+  ],
+  "key.logisticsnetworks.toggle_wrench_hud": [
+   "logisticsnetworks-1.21.1-1.13.0.jar"
+  ],
+  "key.minecolonies.toggle_goggles": [
+   "minecolonies-1.1.1374-1.21.1-snapshot.jar"
+  ],
+  "key.modernfix.config": [
+   "modernfix-neoforge-5.27.20+mc1.21.1.jar"
+  ],
+  "key.modularrouters.configure": [
+   "modular-routers-13.2.7+mc1.21.1.jar"
+  ],
+  "key.modularrouters.moduleInfo": [
+   "modular-routers-13.2.7+mc1.21.1.jar"
+  ],
+  "key.moreoverlays.chunkbounds.desc": [
+   "moreoverlays-1.24.2-mc1.21.1-neoforge.jar"
+  ],
+  "key.moreoverlays.lightoverlay.desc": [
+   "moreoverlays-1.24.2-mc1.21.1-neoforge.jar"
+  ],
+  "key.neovitae.blood_shield": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.edit_hud": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.lex_beam": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.lex_mode": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.open_guide": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.nextDestination": [
+   "rftoolsbase-1.21-6.0.11.jar"
+  ],
+  "key.observable.profile": [
+   "observable-5.4.4.jar"
+  ],
+  "key.occultism.backpack": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.occultism.ender_bag": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.occultism.storage_remote": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.openManual": [
+   "mcjtylib-1.21-9.0.21.jar"
+  ],
+  "key.oracle_index.open": [
+   "oracle_index-neoforge-1.3.1.jar"
+  ],
+  "key.oracle_index.search": [
+   "oracle_index-neoforge-1.3.1.jar"
+  ],
+  "key.oritech.augment_screen": [
+   "oritech-neoforge-1.21.1-1.2.11.jar"
+  ],
+  "key.prevDestination": [
+   "rftoolsbase-1.21-6.0.11.jar"
+  ],
+  "key.relics.active_abilities_list": [
+   "relics-1.21.1-0.12.8.jar"
+  ],
+  "key.relics.research_relic": [
+   "relics-1.21.1-0.12.8.jar"
+  ],
+  "key.securitycraft.cameraActivateNightVision": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "key.securitycraft.cameraEmitRedstone": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "key.securitycraft.cameraZoomIn": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "key.securitycraft.cameraZoomOut": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "key.securitycraft.setDefaultViewingDirection": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "key.selectiveDisplacement": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.settingsGUI": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.silentgear.cycle.back": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.silentgear.cycle.next": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.silentgear.displayItemConstruction": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.silentgear.displayItemProperties": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.silentgear.displayTraitDescriptions": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.silentgear.openItem": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.structurize.mirror": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_back": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_down": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_forward": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_left": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_right": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_up": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.place": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.rotate_ccw": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.rotate_cw": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.teleport": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.tempad.macro": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.tempad.new_location": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.tempad.shortcut": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.tempad.travel_timeline": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.theurgy.change_item_mode": [
+   "theurgy-1.21.1-neoforge-1.76.0.jar"
+  ],
+  "key.toastcontrol.clear": [
+   "ToastControl-1.21.1-9.0.1.jar"
+  ],
+  "key.toolbelt.cycle.left": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.toolbelt.cycle.right": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.toolbelt.open": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.toolbelt.slot": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.unmountVehicle": [
+   "rftoolsbuilder-1.21-7.0.6.jar"
+  ],
+  "key.xycraft_core.modifier_key": [
+   "xycraft_core-0.7.53-all.jar"
+  ],
+  "keybind.advancedperipherals.description": [
+   "AdvancedPeripherals-1.21.1-0.8.0a.jar"
+  ],
+  "keybind.advancedperipherals.glasses_hotkey": [
+   "AdvancedPeripherals-1.21.1-0.8.0a.jar"
+  ],
+  "keybind.ironjetpacks.ascend": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.decrement_throttle": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.descend": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.engine": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.hover": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.hud": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.increment_throttle": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.reliquary.fortune_coin": [
+   "reliquary-1.21.1-2.0.80.1570.jar"
+  ],
+  "mininggadgets.text.open_gui": [
+   "mininggadgets-1.18.7.jar"
+  ],
+  "options.narrator": [
+   "rebind_narrator-1.21.1-neoforge-2025.12.23.jar"
+  ],
+  "placebo.toggleTrails": [
+   "Placebo-1.21.1-9.9.2.jar"
+  ],
+  "placebo.toggleWings": [
+   "Placebo-1.21.1-9.9.2.jar"
+  ],
+  "pneumaticcraft.armor.options": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.boots.jet_boots": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.boots.kick": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.chestplate.launcher": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.helmet.debugging.drone": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.helmet.hack": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "rainbows.key.reload_rainbow_configs": [
+   "Rainbows-1.21-1.5.jar"
+  ],
+  "simplemagnets.keys.toggle": [
+   "simplemagnets-1.1.12c-neoforge-mc1.21.jar"
+  ],
+  "supplementaries.keybind.quiver": [
+   "supplementaries-1.21.1-3.9.5-neoforge.jar"
+  ]
+ },
+ "name_atoms": {
+  ".": [
+   "cyclopscore-1.21.1-neoforge-1.29.3.jar"
+  ],
+  "Description has not been set.": [
+   "Mekanism-1.21.1-10.7.19.85.jar"
+  ],
+  "alt_modifier": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "anchor": [
+   "buildinggadgets2-1.3.9.jar"
+  ],
+  "artifacts.key.%s.%s": [
+   "artifacts-neoforge-13.2.3.jar"
+  ],
+  "auroras.key.reload_aurora_configs": [
+   "Auroras-1.21-1.6.2.jar"
+  ],
+  "cameraActivateNightVision": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "cameraEmitRedstone": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "cameraZoomIn": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "cameraZoomOut": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "change_aura": [
+   "railcraft-reborn-1.21.1-1.2.10.jar"
+  ],
+  "change_direction": [
+   "ConstructionSticks-1.21.1-1.4.2.jar"
+  ],
+  "change_restriction": [
+   "ConstructionSticks-1.21.1-1.4.2.jar"
+  ],
+  "change_upgrade": [
+   "ConstructionSticks-1.21.1-1.4.2.jar"
+  ],
+  "clear_crafting_grid_matrix_to_inventory": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "clear_crafting_grid_matrix_to_network": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "compare_equipment": [
+   "Apotheosis-1.21.1-8.7.0.jar"
+  ],
+  "config": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "cos.key.opencosarmorinventory": [
+   "cosmeticarmorreworked-1.21.1-v1-neoforge.jar"
+  ],
+  "crafting_on_a_stick.key.open_curios": [
+   "crafting_on_a_stick-1.21.0.6.jar"
+  ],
+  "crashutils.copycontainer": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "crashutils.openscreen": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "crashutils.slottooltips": [
+   "crashutilities-9.0.4.jar"
+  ],
+  "create.keyinfo.": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "ctrl_modifier": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "cycle.back": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "cycle.next": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "displayItemConstruction": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "displayItemProperties": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "displayTraitDescriptions": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "exit_room": [
+   "compactmachines-neoforge-7.0.81.jar"
+  ],
+  "focus_search_bar": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "framedblocks.key.": [
+   "FramedBlocks-10.6.1.jar"
+  ],
+  "ftbultimine.change_shape.next": [
+   "ftb-ultimine-neoforge-2101.1.15.jar"
+  ],
+  "ftbultimine.change_shape.prev": [
+   "ftb-ultimine-neoforge-2101.1.15.jar"
+  ],
+  "inventory_interaction": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "iris.keybind.reload": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "iris.keybind.shaderPackSelection": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "iris.keybind.toggleShaders": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "iris.keybind.wireframe": [
+   "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
+  ],
+  "item_display_map_cycle": [
+   "twilightforest-1.21.1-4.8.3345-universal.jar"
+  ],
+  "justzoom.keybinds.keybind.zoom": [
+   "justzoom_neoforge_2.1.0_MC_1.21.1.jar"
+  ],
+  "key": [
+   "Apotheosis-1.21.1-8.7.0.jar",
+   "eternalstarlight-0.9.0+1.21.1+neoforge.jar",
+   "railcraft-reborn-1.21.1-1.2.10.jar",
+   "refinedstorage-neoforge-2.0.9.jar",
+   "refinedstorage-quartz-arsenal-neoforge-1.0.8.jar",
+   "universalgrid-neoforge-1.21.1-0.3.2.jar"
+  ],
+  "key.": [
+   "cyclopscore-1.21.1-neoforge-1.29.3.jar"
+  ],
+  "key.actualladditions.crafting_stick_open.desc": [
+   "actuallyadditions-1.3.26+mc1.21.1.jar"
+  ],
+  "key.ad_astra.open_radio": [
+   "adastra-1.21.1-1.16.19-neoforge.jar"
+  ],
+  "key.ad_astra.toggle_suit_flight": [
+   "adastra-1.21.1-1.16.19-neoforge.jar"
+  ],
+  "key.ae2.": [
+   "appliedenergistics2-19.2.17.jar"
+  ],
+  "key.ae2.mouse_wheel_item_modifier": [
+   "appliedenergistics2-19.2.17.jar"
+  ],
+  "key.ae2.part_placement_opposite": [
+   "appliedenergistics2-19.2.17.jar"
+  ],
+  "key.aether.gravitite_jump_ability.desc": [
+   "aether-1.21.1-1.5.10-neoforge.jar"
+  ],
+  "key.aether.invisibility_toggle.desc": [
+   "aether-1.21.1-1.5.10-neoforge.jar"
+  ],
+  "key.aether.open_accessories.desc": [
+   "aether-1.21.1-1.5.10-neoforge.jar"
+  ],
+  "key.ars_additions.open_lectern": [
+   "ars_additions-1.21.1-21.3.0.jar"
+  ],
+  "key.ars_elemental.open_pouch": [
+   "ars_elemental-1.21.1-0.7.10.1.jar"
+  ],
+  "key.ars_nouveau.familiar_toggle": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.head_curio_hotkey": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.next_slot": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.open_book": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.open_documentation": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.previous_slot": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc1": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc10": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc2": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc3": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc4": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc5": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc6": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc7": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc8": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.qc9": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.ars_nouveau.selection_hud": [
+   "ars_nouveau-1.21.1-5.13.1.jar"
+  ],
+  "key.bridgingmod.toggle_bridging": [
+   "BridgingMod-2.6.2+1.21.1.neoforge-release.jar"
+  ],
+  "key.cataclysm.ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.cataclysm.boots_ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.cataclysm.chestplate_ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.cataclysm.helmet_ability": [
+   "L_Ender's Cataclysm 1.21.1-3.33.jar"
+  ],
+  "key.changeMysticCode": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.curios.open.desc": [
+   "curios-neoforge-9.5.1+1.21.1.jar"
+  ],
+  "key.deeperdarker.boost": [
+   "deeperdarker-neoforge-1.21.1-1.4.1.jar"
+  ],
+  "key.deeperdarker.transmit": [
+   "deeperdarker-neoforge-1.21.1-1.4.1.jar"
+  ],
+  "key.draconicevolution.dislocator_blink": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_down": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_gui": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_teleport": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.dislocator_up": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.place_item": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.toggle_flight": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.toggle_magnet": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.tool_config": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.draconicevolution.tool_modules": [
+   "Draconic-Evolution-1.21.1-3.1.4.632.jar"
+  ],
+  "key.dragon_change_view": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.dragon_down": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.dragon_fireAttack": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.dragon_strike": [
+   "iceandfire-2.0-beta.17.jar"
+  ],
+  "key.drawMahoujin": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.easy_villagers.cycle_trades": [
+   "easy-villagers-neoforge-1.21.1-1.1.42.jar"
+  ],
+  "key.easy_villagers.pick_up": [
+   "easy-villagers-neoforge-1.21.1-1.1.42.jar"
+  ],
+  "key.enderio.toggle_magnet": [
+   "enderio-8.2.11-beta.jar"
+  ],
+  "key.enderio.travel_staff": [
+   "enderio-8.2.11-beta.jar"
+  ],
+  "key.extendedae.set_amount": [
+   "ExtendedAE-1.21-2.2.35-neoforge.jar"
+  ],
+  "key.extendedae.viewpattern": [
+   "ExtendedAE-1.21-2.2.35-neoforge.jar"
+  ],
+  "key.fireNobu": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.ftbchunks.add_waypoint": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.claim_manager": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.map": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.minimap.zoomIn": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.minimap.zoomOut": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.toggle_minimap": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbchunks.waypoint_manager": [
+   "ftb-chunks-neoforge-2101.1.21.jar"
+  ],
+  "key.ftbteams.open_gui": [
+   "ftb-teams-neoforge-2101.1.11.jar"
+  ],
+  "key.ftbultimine": [
+   "ftb-ultimine-neoforge-2101.1.15.jar"
+  ],
+  "key.guideme.guide": [
+   "guideme-21.1.17.jar"
+  ],
+  "key.gunDown": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.gunUp": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.hostilenetworks.open_deep_learner": [
+   "HostileNeuralNetworks-1.21.1-6.5.1.jar"
+  ],
+  "key.hypertube.": [
+   "create_hypertube-0.6.0-NEOFORGE.jar"
+  ],
+  "key.immersiveengineering.chemthrowerSwitch": [
+   "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+  ],
+  "key.immersiveengineering.magnetEquip": [
+   "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+  ],
+  "key.immersiveengineering.railgunZoom": [
+   "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+  ],
+  "key.industrialforegoing.backpack.desc": [
+   "industrialforegoing-1.21-3.6.39.jar"
+  ],
+  "key.integrateddynamics.logic_programmer_focus_search": [
+   "integrateddynamics-1.21.1-neoforge-1.35.0-1981.jar"
+  ],
+  "key.integrateddynamics.logic_programmer_open_rename": [
+   "integrateddynamics-1.21.1-neoforge-1.35.0-1981.jar"
+  ],
+  "key.integratedterminals.terminal.craftinggrid.balance": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.craftinggrid.clearplayer": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.craftinggrid.clearstorage": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.portable.open": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.tab.next": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.integratedterminals.terminal.tab.previous": [
+   "integratedterminals-1.21.1-neoforge-1.8.0-840.jar"
+  ],
+  "key.invtweaks_sort_either.desc": [
+   "invtweaks-1.21.1-1.3.2.jar"
+  ],
+  "key.invtweaks_sort_inventory.desc": [
+   "invtweaks-1.21.1-1.3.2.jar"
+  ],
+  "key.invtweaks_sort_player.desc": [
+   "invtweaks-1.21.1-1.3.2.jar"
+  ],
+  "key.jade.": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "key.keybindbundles.bundle_": [
+   "keybindbundles-1.4.0.jar"
+  ],
+  "key.keybindbundles.open_radial_menu": [
+   "keybindbundles-1.4.0.jar"
+  ],
+  "key.keybindbundles.open_screen": [
+   "keybindbundles-1.4.0.jar"
+  ],
+  "key.kubejs.%s": [
+   "kubejs-neoforge-2101.7.2-build.374.jar"
+  ],
+  "key.kubejs.kubedex": [
+   "kubejs-neoforge-2101.7.2-build.374.jar"
+  ],
+  "key.logisticsnetworks.toggle_slot_numbers": [
+   "logisticsnetworks-1.21.1-1.13.0.jar"
+  ],
+  "key.logisticsnetworks.toggle_wrench_hud": [
+   "logisticsnetworks-1.21.1-1.13.0.jar"
+  ],
+  "key.mapping": [
+   "compactmachines-neoforge-7.0.81.jar"
+  ],
+  "key.minecolonies.toggle_goggles": [
+   "minecolonies-1.1.1374-1.21.1-snapshot.jar"
+  ],
+  "key.modernfix.config": [
+   "modernfix-neoforge-5.27.20+mc1.21.1.jar"
+  ],
+  "key.modularrouters.configure": [
+   "modular-routers-13.2.7+mc1.21.1.jar"
+  ],
+  "key.modularrouters.moduleInfo": [
+   "modular-routers-13.2.7+mc1.21.1.jar"
+  ],
+  "key.moreoverlays.chunkbounds.desc": [
+   "moreoverlays-1.24.2-mc1.21.1-neoforge.jar"
+  ],
+  "key.moreoverlays.lightoverlay.desc": [
+   "moreoverlays-1.24.2-mc1.21.1-neoforge.jar"
+  ],
+  "key.neovitae.blood_shield": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.edit_hud": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.lex_beam": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.lex_mode": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.neovitae.open_guide": [
+   "neovitae-1.21.1-1.1.15.jar"
+  ],
+  "key.nextDestination": [
+   "rftoolsbase-1.21-6.0.11.jar"
+  ],
+  "key.observable.profile": [
+   "observable-5.4.4.jar"
+  ],
+  "key.occultism.backpack": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.occultism.ender_bag": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.occultism.familiar.": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.occultism.storage_remote": [
+   "occultism-1.21.1-neoforge-1.224.4.jar"
+  ],
+  "key.openManual": [
+   "mcjtylib-1.21-9.0.21.jar"
+  ],
+  "key.oracle_index.open": [
+   "oracle_index-neoforge-1.3.1.jar"
+  ],
+  "key.oracle_index.search": [
+   "oracle_index-neoforge-1.3.1.jar"
+  ],
+  "key.oritech.augment_screen": [
+   "oritech-neoforge-1.21.1-1.2.11.jar"
+  ],
+  "key.prevDestination": [
+   "rftoolsbase-1.21-6.0.11.jar"
+  ],
+  "key.relics.active_abilities_list": [
+   "relics-1.21.1-0.12.8.jar"
+  ],
+  "key.relics.research_relic": [
+   "relics-1.21.1-0.12.8.jar"
+  ],
+  "key.securitycraft.": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "key.selectiveDisplacement": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.settingsGUI": [
+   "mahoutsukai-1.21.1-v1.36.27.jar"
+  ],
+  "key.silentgear.": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "key.structurize.mirror": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_back": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_down": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_forward": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_left": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_right": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.move_up": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.place": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.rotate_ccw": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.rotate_cw": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.structurize.teleport": [
+   "structurize-1.0.832-1.21.1.jar"
+  ],
+  "key.tempad.macro": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.tempad.new_location": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.tempad.shortcut": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.tempad.travel_timeline": [
+   "tempad-1.21.1-3.0.4-all.jar"
+  ],
+  "key.theurgy.change_item_mode": [
+   "theurgy-1.21.1-neoforge-1.76.0.jar"
+  ],
+  "key.toastcontrol.clear": [
+   "ToastControl-1.21.1-9.0.1.jar"
+  ],
+  "key.toolbelt.cycle.left": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.toolbelt.cycle.right": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.toolbelt.open": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.toolbelt.slot": [
+   "ToolBelt-1.21.1-2.2.10.jar"
+  ],
+  "key.unmountVehicle": [
+   "rftoolsbuilder-1.21-7.0.6.jar"
+  ],
+  "key.xycraft_core.modifier_key": [
+   "xycraft_core-0.7.53-all.jar"
+  ],
+  "keybind.advancedperipherals.description": [
+   "AdvancedPeripherals-1.21.1-0.8.0a.jar"
+  ],
+  "keybind.advancedperipherals.glasses_hotkey": [
+   "AdvancedPeripherals-1.21.1-0.8.0a.jar"
+  ],
+  "keybind.ironjetpacks.ascend": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.decrement_throttle": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.descend": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.engine": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.hover": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.hud": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.ironjetpacks.increment_throttle": [
+   "IronJetpacks-1.21.1-8.0.11.jar"
+  ],
+  "keybind.reliquary.fortune_coin": [
+   "reliquary-1.21.1-2.0.80.1570.jar"
+  ],
+  "link_item_to_chat": [
+   "Apotheosis-1.21.1-8.7.0.jar"
+  ],
+  "loco.faster": [
+   "railcraft-reborn-1.21.1-1.2.10.jar"
+  ],
+  "loco.mode": [
+   "railcraft-reborn-1.21.1-1.2.10.jar"
+  ],
+  "loco.reverse": [
+   "railcraft-reborn-1.21.1-1.2.10.jar"
+  ],
+  "loco.slower": [
+   "railcraft-reborn-1.21.1-1.2.10.jar"
+  ],
+  "loco.whistle": [
+   "railcraft-reborn-1.21.1-1.2.10.jar"
+  ],
+  "mininggadgets.text.open_gui": [
+   "mininggadgets-1.18.7.jar"
+  ],
+  "narrate": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "openItem": [
+   "silent-gear-1.21.1-neoforge-4.2.1.1.jar"
+  ],
+  "open_backpack": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "open_gui": [
+   "ConstructionSticks-1.21.1-1.4.2.jar"
+  ],
+  "open_portable_grid": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "open_upgrade_screen": [
+   "compactmachines-neoforge-7.0.81.jar"
+  ],
+  "open_wireless_autocrafting_monitor": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "open_wireless_crafting_grid": [
+   "refinedstorage-quartz-arsenal-neoforge-1.0.8.jar"
+  ],
+  "open_wireless_grid": [
+   "refinedstorage-neoforge-2.0.9.jar"
+  ],
+  "open_wireless_universal_grid": [
+   "universalgrid-neoforge-1.21.1-0.3.2.jar"
+  ],
+  "open_world_tier_select": [
+   "Apotheosis-1.21.1-8.7.0.jar"
+  ],
+  "options.narrator": [
+   "rebind_narrator-1.21.1-neoforge-2025.12.23.jar"
+  ],
+  "placebo.toggleTrails": [
+   "Placebo-1.21.1-9.9.2.jar"
+  ],
+  "placebo.toggleWings": [
+   "Placebo-1.21.1-9.9.2.jar"
+  ],
+  "pneumaticcraft.armor.options": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.boots.jet_boots": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.boots.kick": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.chestplate.launcher": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.helmet.debugging.drone": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "pneumaticcraft.helmet.hack": [
+   "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar"
+  ],
+  "rainbows.key.reload_rainbow_configs": [
+   "Rainbows-1.21-1.5.jar"
+  ],
+  "range": [
+   "buildinggadgets2-1.3.9.jar"
+  ],
+  "red_thread_vision": [
+   "twilightforest-1.21.1-4.8.3345-universal.jar"
+  ],
+  "rotate_menu": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "setDefaultViewingDirection": [
+   "[1.21.1] SecurityCraft v1.10.2.1.jar"
+  ],
+  "settings_menu": [
+   "buildinggadgets2-1.3.9.jar"
+  ],
+  "shift_modifier": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "show_details": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "show_overlay": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "show_previous": [
+   "ConstructionSticks-1.21.1-1.4.2.jar"
+  ],
+  "show_recipes": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "show_uses": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "simplemagnets.keys.toggle": [
+   "simplemagnets-1.1.12c-neoforge-mc1.21.jar"
+  ],
+  "sort": [
+   "sophisticatedcore-1.21.1-1.4.90.2299.jar"
+  ],
+  "spell_bar_modifier": [
+   "irons_spellbooks-1.21.1-3.16.3.jar"
+  ],
+  "spell_quick_cast_%d": [
+   "irons_spellbooks-1.21.1-3.16.3.jar"
+  ],
+  "spell_wheel": [
+   "irons_spellbooks-1.21.1-3.16.3.jar"
+  ],
+  "spell_wheel_toggle": [
+   "irons_spellbooks-1.21.1-3.16.3.jar"
+  ],
+  "spellbook_cast": [
+   "irons_spellbooks-1.21.1-3.16.3.jar"
+  ],
+  "supplementaries.keybind.quiver": [
+   "supplementaries-1.21.1-3.9.5-neoforge.jar"
+  ],
+  "swap_hotbar": [
+   "twilightforest-1.21.1-4.8.3345-universal.jar"
+  ],
+  "switch_crest": [
+   "eternalstarlight-0.9.0+1.21.1+neoforge.jar"
+  ],
+  "switch_wireless_universal_grid_type": [
+   "universalgrid-neoforge-1.21.1-0.3.2.jar"
+  ],
+  "toggle_liquid": [
+   "Jade-1.21.1-NeoForge-15.10.6.jar"
+  ],
+  "toggle_radial_mining": [
+   "Apotheosis-1.21.1-8.7.0.jar"
+  ],
+  "toggle_random": [
+   "ConstructionSticks-1.21.1-1.4.2.jar"
+  ],
+  "toggle_tool": [
+   "justdirethings-1.5.7.jar"
+  ],
+  "toggle_upgrade_1": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "toggle_upgrade_2": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "toggle_upgrade_3": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "toggle_upgrade_4": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "toggle_upgrade_5": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "toolUI": [
+   "justdirethings-1.5.7.jar"
+  ],
+  "tool_swap": [
+   "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar"
+  ],
+  "toolbelt": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "toolmenu": [
+   "create-1.21.1-6.0.10.jar"
+  ],
+  "transfer_to_inventory": [
+   "sophisticatedcore-1.21.1-1.4.90.2299.jar"
+  ],
+  "transfer_to_storage": [
+   "sophisticatedcore-1.21.1-1.4.90.2299.jar"
+  ],
+  "tube_escape": [
+   "create_hypertube-0.6.0-NEOFORGE.jar"
+  ],
+  "undo": [
+   "ConstructionSticks-1.21.1-1.4.2.jar",
+   "buildinggadgets2-1.3.9.jar"
+  ],
+  "update_cull": [
+   "FramedBlocks-10.6.1.jar"
+  ],
+  "wipe_cache": [
+   "FramedBlocks-10.6.1.jar"
+  ],
+  "zoom": [
+   "twilightforest-1.21.1-4.8.3345-universal.jar"
+  ]
+ },
+ "unresolved": {
+  "Supplier.get()": 17,
+  "KeyMappings.getResourceName()": 10,
+  "?": 8,
+  "SBPTranslationHelper.translKeybind()": 8,
+  "KeybindHandler.getKey()": 7,
+  "KeyBindings.getKey()": 6,
+  "形参#0": 5,
+  "UVLanguage.getTranslationKey()": 5,
+  "Apotheosis.langKey()": 4,
+  "TFKeyBinds.addPrefix()": 4,
+  "CSLanguage.key()": 3,
+  "拼接(s+UUID.toString())": 3,
+  "TranslationHelper.translKeybind()": 3,
+  "LangKey.getKey()": 3,
+  "Component.getString()": 2,
+  "String.formatted()": 2,
+  "ForgeJeiKeyMappingBuilder.description": 2,
+  "IArmorUpgradeHandler.getStringKey()": 2,
+  "TranslatableContents.getKey()": 1,
+  "Objects.requireNonNull()": 1,
+  "拼接(s+形参#0)": 1,
+  "RoomUpgradeUIMapping.NAME (static)": 1,
+  "RoomExitKeyMapping$I18n.NAME (static)": 1,
+  "L10NHelpers.localize()": 1,
+  "Util.makeDescriptionId()": 1,
+  "KeyMappingConfig.translationKey()": 1,
+  "KeyRegistrationWrapper.description()": 1,
+  "拼接(s+ResourceLocation.getPath())": 1,
+  "Translations$KeyBinding.CHANGE_AURA (static)": 1,
+  "Translations$KeyBinding.REVERSE (static)": 1,
+  "Translations$KeyBinding.FASTER (static)": 1,
+  "Translations$KeyBinding.SLOWER (static)": 1,
+  "Translations$KeyBinding.MODE (static)": 1,
+  "Translations$KeyBinding.WHISTLE (static)": 1,
+  "ContentNames.FOCUS_SEARCH_BAR_TRANSLATION_KEY (static)": 1,
+  "ContentNames.CLEAR_CRAFTING_MATRIX_TO_NETWORK_TRANSLATION_KEY (static)": 1,
+  "ContentNames.CLEAR_CRAFTING_MATRIX_TO_INVENTORY_TRANSLATION_KEY (static)": 1,
+  "ContentNames.OPEN_WIRELESS_GRID_TRANSLATION_KEY (static)": 1,
+  "ContentNames.OPEN_PORTABLE_GRID_TRANSLATION_KEY (static)": 1,
+  "ContentNames.OPEN_WIRELESS_AUTOCRAFTING_MONITOR_TRANSLATION_KEY (static)": 1,
+  "ContentNames.OPEN_WIRELESS_CRAFTING_GRID_TRANSLATION_KEY (static)": 1,
+  "ContentNames.OPEN_WIRELESS_UNIVERSAL_GRID_TRANSLATION_KEY (static)": 1,
+  "ContentNames.SWITCH_WIRELESS_UNIVERSAL_GRID_TYPE_TRANSLATION_KEY (static)": 1
+ },
+ "sites": [
+  {
+   "jar": "AdvancedPeripherals-1.21.1-0.8.0a.jar",
+   "class": "de/srendi/advancedperipherals/client/KeyBindings",
+   "names": [
+    "keybind.advancedperipherals.description"
+   ],
+   "categories": [
+    "keybind.advancedperipherals.category"
+   ],
+   "name_atoms": [
+    "keybind.advancedperipherals.description"
+   ]
+  },
+  {
+   "jar": "AdvancedPeripherals-1.21.1-0.8.0a.jar",
+   "class": "de/srendi/advancedperipherals/client/KeyBindings",
+   "names": [
+    "keybind.advancedperipherals.glasses_hotkey"
+   ],
+   "categories": [
+    "keybind.advancedperipherals.category"
+   ],
+   "name_atoms": [
+    "keybind.advancedperipherals.glasses_hotkey"
+   ]
+  },
+  {
+   "jar": "Apotheosis-1.21.1-8.7.0.jar",
+   "class": "dev/shadowsoffire/apotheosis/client/AdventureKeys",
+   "names": [],
+   "categories": [
+    "key.categories.apotheosis"
+   ],
+   "name_atoms": [
+    "key",
+    "toggle_radial_mining"
+   ]
+  },
+  {
+   "jar": "Apotheosis-1.21.1-8.7.0.jar",
+   "class": "dev/shadowsoffire/apotheosis/client/AdventureKeys",
+   "names": [],
+   "categories": [
+    "key.categories.apotheosis"
+   ],
+   "name_atoms": [
+    "key",
+    "open_world_tier_select"
+   ]
+  },
+  {
+   "jar": "Apotheosis-1.21.1-8.7.0.jar",
+   "class": "dev/shadowsoffire/apotheosis/client/AdventureKeys",
+   "names": [],
+   "categories": [
+    "key.categories.apotheosis"
+   ],
+   "name_atoms": [
+    "key",
+    "link_item_to_chat"
+   ]
+  },
+  {
+   "jar": "Apotheosis-1.21.1-8.7.0.jar",
+   "class": "dev/shadowsoffire/apotheosis/client/AdventureKeys",
+   "names": [],
+   "categories": [
+    "key.categories.apotheosis"
+   ],
+   "name_atoms": [
+    "compare_equipment",
+    "key"
+   ]
+  },
+  {
+   "jar": "Auroras-1.21-1.6.2.jar",
+   "class": "auroras/util/AHelpers",
+   "names": [
+    "auroras.key.reload_aurora_configs"
+   ],
+   "categories": [
+    "Auroras"
+   ],
+   "name_atoms": [
+    "auroras.key.reload_aurora_configs"
+   ]
+  },
+  {
+   "jar": "BridgingMod-2.6.2+1.21.1.neoforge-release.jar",
+   "class": "me/cg360/mod/bridging/BridgingKeyMappings",
+   "names": [
+    "key.bridgingmod.toggle_bridging"
+   ],
+   "categories": [
+    "key.categories.bridgingmod"
+   ],
+   "name_atoms": [
+    "key.bridgingmod.toggle_bridging"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "change_restriction"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "change_upgrade"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "change_direction"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "toggle_random"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "open_gui"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "undo"
+   ]
+  },
+  {
+   "jar": "ConstructionSticks-1.21.1-1.4.2.jar",
+   "class": "mrbysco/constructionstick/client/KeybindHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "show_previous"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.place_item"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.place_item"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.tool_config"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.tool_config"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.toggle_flight"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.toggle_flight"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.toggle_magnet"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.toggle_magnet"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.dislocator_teleport"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.dislocator_teleport"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.dislocator_blink"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.dislocator_blink"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.dislocator_gui"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.dislocator_gui"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.dislocator_up"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.dislocator_up"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.dislocator_down"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.dislocator_down"
+   ]
+  },
+  {
+   "jar": "Draconic-Evolution-1.21.1-3.1.4.632.jar",
+   "class": "com/brandon3055/draconicevolution/client/keybinding/KeyBindings",
+   "names": [
+    "key.draconicevolution.tool_modules"
+   ],
+   "categories": [
+    "Draconic Evolution"
+   ],
+   "name_atoms": [
+    "key.draconicevolution.tool_modules"
+   ]
+  },
+  {
+   "jar": "ExtendedAE-1.21-2.2.35-neoforge.jar",
+   "class": "com/glodblock/github/extendedae/client/hotkey/EAEHotKey",
+   "names": [
+    "key.extendedae.viewpattern"
+   ],
+   "categories": [
+    "key.extendedae.category"
+   ],
+   "name_atoms": [
+    "key.extendedae.viewpattern"
+   ]
+  },
+  {
+   "jar": "ExtendedAE-1.21-2.2.35-neoforge.jar",
+   "class": "com/glodblock/github/extendedae/client/hotkey/EAEHotKey",
+   "names": [
+    "key.extendedae.set_amount"
+   ],
+   "categories": [
+    "key.extendedae.category"
+   ],
+   "name_atoms": [
+    "key.extendedae.set_amount"
+   ]
+  },
+  {
+   "jar": "ExtremeSoundMuffler-3.56_NeoForge-1.21.jar",
+   "class": "com/leobeliik/extremesoundmuffler/SoundMufflerCommon",
+   "names": [],
+   "categories": [
+    "key.categories.misc"
+   ],
+   "name_atoms": []
+  },
+  {
+   "jar": "FramedBlocks-10.6.1.jar",
+   "class": "xfacthd/framedblocks/client/util/KeyMappings",
+   "names": [
+    "framedblocks.key.update_cull"
+   ],
+   "categories": [
+    "framedblocks.key.categories.framedblocks"
+   ],
+   "name_atoms": [
+    "framedblocks.key.",
+    "update_cull"
+   ]
+  },
+  {
+   "jar": "FramedBlocks-10.6.1.jar",
+   "class": "xfacthd/framedblocks/client/util/KeyMappings",
+   "names": [
+    "framedblocks.key.wipe_cache"
+   ],
+   "categories": [
+    "framedblocks.key.categories.framedblocks"
+   ],
+   "name_atoms": [
+    "framedblocks.key.",
+    "wipe_cache"
+   ]
+  },
+  {
+   "jar": "HostileNeuralNetworks-1.21.1-6.5.1.jar",
+   "class": "dev/shadowsoffire/hostilenetworks/HostileClient",
+   "names": [
+    "key.hostilenetworks.open_deep_learner"
+   ],
+   "categories": [
+    "key.categories.hostilenetworks"
+   ],
+   "name_atoms": [
+    "key.hostilenetworks.open_deep_learner"
+   ]
+  },
+  {
+   "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+   "class": "blusunrize/immersiveengineering/client/IEKeybinds",
+   "names": [
+    "key.immersiveengineering.magnetEquip"
+   ],
+   "categories": [
+    "key.categories.immersiveengineering"
+   ],
+   "name_atoms": [
+    "key.immersiveengineering.magnetEquip"
+   ]
+  },
+  {
+   "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+   "class": "blusunrize/immersiveengineering/client/IEKeybinds",
+   "names": [
+    "key.immersiveengineering.chemthrowerSwitch"
+   ],
+   "categories": [
+    "key.categories.immersiveengineering"
+   ],
+   "name_atoms": [
+    "key.immersiveengineering.chemthrowerSwitch"
+   ]
+  },
+  {
+   "jar": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+   "class": "blusunrize/immersiveengineering/client/IEKeybinds",
+   "names": [
+    "key.immersiveengineering.railgunZoom"
+   ],
+   "categories": [
+    "key.categories.immersiveengineering"
+   ],
+   "name_atoms": [
+    "key.immersiveengineering.railgunZoom"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.engine"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.engine"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.hover"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.hover"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.hud"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.hud"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.ascend"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.ascend"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.descend"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.descend"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.increment_throttle"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.increment_throttle"
+   ]
+  },
+  {
+   "jar": "IronJetpacks-1.21.1-8.0.11.jar",
+   "class": "com/blakebr0/ironjetpacks/client/handler/KeybindHandler",
+   "names": [
+    "keybind.ironjetpacks.decrement_throttle"
+   ],
+   "categories": [
+    "Iron Jetpacks"
+   ],
+   "name_atoms": [
+    "keybind.ironjetpacks.decrement_throttle"
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.config"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "config",
+    "key.jade."
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.show_overlay"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "key.jade.",
+    "show_overlay"
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.toggle_liquid"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "key.jade.",
+    "toggle_liquid"
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.show_recipes"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "key.jade.",
+    "show_recipes"
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.show_uses"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "key.jade.",
+    "show_uses"
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.narrate"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "key.jade.",
+    "narrate"
+   ]
+  },
+  {
+   "jar": "Jade-1.21.1-NeoForge-15.10.6.jar",
+   "class": "snownee/jade/util/ClientProxy",
+   "names": [
+    "key.jade.show_details"
+   ],
+   "categories": [
+    "modmenu.nameTranslation.jade"
+   ],
+   "name_atoms": [
+    "key.jade.",
+    "show_details"
+   ]
+  },
+  {
+   "jar": "L_Ender's Cataclysm 1.21.1-3.33.jar",
+   "class": "com/github/L_Ender/cataclysm/init/ModKeybind",
+   "names": [
+    "key.cataclysm.ability"
+   ],
+   "categories": [
+    "key.categories.cataclysm"
+   ],
+   "name_atoms": [
+    "key.cataclysm.ability"
+   ]
+  },
+  {
+   "jar": "L_Ender's Cataclysm 1.21.1-3.33.jar",
+   "class": "com/github/L_Ender/cataclysm/init/ModKeybind",
+   "names": [
+    "key.cataclysm.helmet_ability"
+   ],
+   "categories": [
+    "key.categories.cataclysm"
+   ],
+   "name_atoms": [
+    "key.cataclysm.helmet_ability"
+   ]
+  },
+  {
+   "jar": "L_Ender's Cataclysm 1.21.1-3.33.jar",
+   "class": "com/github/L_Ender/cataclysm/init/ModKeybind",
+   "names": [
+    "key.cataclysm.chestplate_ability"
+   ],
+   "categories": [
+    "key.categories.cataclysm"
+   ],
+   "name_atoms": [
+    "key.cataclysm.chestplate_ability"
+   ]
+  },
+  {
+   "jar": "L_Ender's Cataclysm 1.21.1-3.33.jar",
+   "class": "com/github/L_Ender/cataclysm/init/ModKeybind",
+   "names": [
+    "key.cataclysm.boots_ability"
+   ],
+   "categories": [
+    "key.categories.cataclysm"
+   ],
+   "name_atoms": [
+    "key.cataclysm.boots_ability"
+   ]
+  },
+  {
+   "jar": "Mekanism-1.21.1-10.7.19.85.jar",
+   "class": "mekanism/client/key/MekKeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "Description has not been set."
+   ]
+  },
+  {
+   "jar": "Modern-Industrialization-2.5.6.jar",
+   "class": "aztech/modern_industrialization/client/MIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Modern-Industrialization-2.5.6.jar",
+   "class": "aztech/modern_industrialization/client/MIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Placebo-1.21.1-9.9.2.jar",
+   "class": "dev/shadowsoffire/placebo/patreon/TrailsManager",
+   "names": [
+    "placebo.toggleTrails"
+   ],
+   "categories": [
+    "key.categories.placebo"
+   ],
+   "name_atoms": [
+    "placebo.toggleTrails"
+   ]
+  },
+  {
+   "jar": "Placebo-1.21.1-9.9.2.jar",
+   "class": "dev/shadowsoffire/placebo/patreon/WingsManager",
+   "names": [
+    "placebo.toggleWings"
+   ],
+   "categories": [
+    "key.categories.placebo"
+   ],
+   "name_atoms": [
+    "placebo.toggleWings"
+   ]
+  },
+  {
+   "jar": "Rainbows-1.21-1.5.jar",
+   "class": "rainbows/util/RHelpers",
+   "names": [
+    "rainbows.key.reload_rainbow_configs"
+   ],
+   "categories": [
+    "Rainbows"
+   ],
+   "name_atoms": [
+    "rainbows.key.reload_rainbow_configs"
+   ]
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+   "class": "ca/teamdman/sfm/client/registry/SFMKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "ToastControl-1.21.1-9.0.1.jar",
+   "class": "dev/shadowsoffire/toastcontrol/ToastControl",
+   "names": [
+    "key.toastcontrol.clear"
+   ],
+   "categories": [
+    "key.toastcontrol.category"
+   ],
+   "name_atoms": [
+    "key.toastcontrol.clear"
+   ]
+  },
+  {
+   "jar": "ToolBelt-1.21.1-2.2.10.jar",
+   "class": "dev/gigaherz/toolbelt/client/ClientEvents$ModBusEvents",
+   "names": [
+    "key.toolbelt.open"
+   ],
+   "categories": [
+    "key.toolbelt.category"
+   ],
+   "name_atoms": [
+    "key.toolbelt.open"
+   ]
+  },
+  {
+   "jar": "ToolBelt-1.21.1-2.2.10.jar",
+   "class": "dev/gigaherz/toolbelt/client/ClientEvents$ModBusEvents",
+   "names": [
+    "key.toolbelt.cycle.left"
+   ],
+   "categories": [
+    "key.toolbelt.category"
+   ],
+   "name_atoms": [
+    "key.toolbelt.cycle.left"
+   ]
+  },
+  {
+   "jar": "ToolBelt-1.21.1-2.2.10.jar",
+   "class": "dev/gigaherz/toolbelt/client/ClientEvents$ModBusEvents",
+   "names": [
+    "key.toolbelt.cycle.right"
+   ],
+   "categories": [
+    "key.toolbelt.category"
+   ],
+   "name_atoms": [
+    "key.toolbelt.cycle.right"
+   ]
+  },
+  {
+   "jar": "ToolBelt-1.21.1-2.2.10.jar",
+   "class": "dev/gigaherz/toolbelt/client/ClientEvents$ModBusEvents",
+   "names": [
+    "key.toolbelt.slot"
+   ],
+   "categories": [
+    "key.toolbelt.category"
+   ],
+   "name_atoms": [
+    "key.toolbelt.slot"
+   ]
+  },
+  {
+   "jar": "[1.21.1] SecurityCraft v1.10.2.1.jar",
+   "class": "net/geforcemods/securitycraft/misc/KeyBindings$SCKeyMapping",
+   "names": [
+    "key.securitycraft.cameraEmitRedstone"
+   ],
+   "categories": [
+    "key.categories.securitycraft"
+   ],
+   "name_atoms": [
+    "cameraEmitRedstone",
+    "key.securitycraft."
+   ]
+  },
+  {
+   "jar": "[1.21.1] SecurityCraft v1.10.2.1.jar",
+   "class": "net/geforcemods/securitycraft/misc/KeyBindings$SCKeyMapping",
+   "names": [
+    "key.securitycraft.cameraActivateNightVision"
+   ],
+   "categories": [
+    "key.categories.securitycraft"
+   ],
+   "name_atoms": [
+    "cameraActivateNightVision",
+    "key.securitycraft."
+   ]
+  },
+  {
+   "jar": "[1.21.1] SecurityCraft v1.10.2.1.jar",
+   "class": "net/geforcemods/securitycraft/misc/KeyBindings$SCKeyMapping",
+   "names": [
+    "key.securitycraft.setDefaultViewingDirection"
+   ],
+   "categories": [
+    "key.categories.securitycraft"
+   ],
+   "name_atoms": [
+    "key.securitycraft.",
+    "setDefaultViewingDirection"
+   ]
+  },
+  {
+   "jar": "[1.21.1] SecurityCraft v1.10.2.1.jar",
+   "class": "net/geforcemods/securitycraft/misc/KeyBindings$SCKeyMapping",
+   "names": [
+    "key.securitycraft.cameraZoomIn"
+   ],
+   "categories": [
+    "key.categories.securitycraft"
+   ],
+   "name_atoms": [
+    "cameraZoomIn",
+    "key.securitycraft."
+   ]
+  },
+  {
+   "jar": "[1.21.1] SecurityCraft v1.10.2.1.jar",
+   "class": "net/geforcemods/securitycraft/misc/KeyBindings$SCKeyMapping",
+   "names": [
+    "key.securitycraft.cameraZoomOut"
+   ],
+   "categories": [
+    "key.categories.securitycraft"
+   ],
+   "name_atoms": [
+    "cameraZoomOut",
+    "key.securitycraft."
+   ]
+  },
+  {
+   "jar": "actuallyadditions-1.3.26+mc1.21.1.jar",
+   "class": "de/ellpeck/actuallyadditions/mod/ActuallyAdditionsClient",
+   "names": [
+    "key.actualladditions.crafting_stick_open.desc"
+   ],
+   "categories": [
+    "key.actuallyadditions.category"
+   ],
+   "name_atoms": [
+    "key.actualladditions.crafting_stick_open.desc"
+   ]
+  },
+  {
+   "jar": "adastra-1.21.1-1.16.19-neoforge.jar",
+   "class": "earth/terrarium/adastra/client/AdAstraClient",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key.ad_astra.toggle_suit_flight"
+   ]
+  },
+  {
+   "jar": "adastra-1.21.1-1.16.19-neoforge.jar",
+   "class": "earth/terrarium/adastra/client/AdAstraClient",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key.ad_astra.open_radio"
+   ]
+  },
+  {
+   "jar": "aether-1.21.1-1.5.10-neoforge.jar",
+   "class": "com/aetherteam/aether/client/AetherKeys",
+   "names": [
+    "key.aether.open_accessories.desc"
+   ],
+   "categories": [
+    "key.aether.category"
+   ],
+   "name_atoms": [
+    "key.aether.open_accessories.desc"
+   ]
+  },
+  {
+   "jar": "aether-1.21.1-1.5.10-neoforge.jar",
+   "class": "com/aetherteam/aether/client/AetherKeys",
+   "names": [
+    "key.aether.gravitite_jump_ability.desc"
+   ],
+   "categories": [
+    "key.aether.category"
+   ],
+   "name_atoms": [
+    "key.aether.gravitite_jump_ability.desc"
+   ]
+  },
+  {
+   "jar": "aether-1.21.1-1.5.10-neoforge.jar",
+   "class": "com/aetherteam/aether/client/AetherKeys",
+   "names": [
+    "key.aether.invisibility_toggle.desc"
+   ],
+   "categories": [
+    "key.aether.category"
+   ],
+   "name_atoms": [
+    "key.aether.invisibility_toggle.desc"
+   ]
+  },
+  {
+   "jar": "appliedenergistics2-19.2.17.jar",
+   "class": "appeng/client/Hotkeys",
+   "names": [],
+   "categories": [
+    "key.ae2.category"
+   ],
+   "name_atoms": [
+    "key.ae2."
+   ]
+  },
+  {
+   "jar": "appliedenergistics2-19.2.17.jar",
+   "class": "appeng/core/AppEngClient",
+   "names": [
+    "key.ae2.mouse_wheel_item_modifier"
+   ],
+   "categories": [
+    "key.ae2.category"
+   ],
+   "name_atoms": [
+    "key.ae2.mouse_wheel_item_modifier"
+   ]
+  },
+  {
+   "jar": "appliedenergistics2-19.2.17.jar",
+   "class": "appeng/core/AppEngClient",
+   "names": [
+    "key.ae2.part_placement_opposite"
+   ],
+   "categories": [
+    "key.ae2.category"
+   ],
+   "name_atoms": [
+    "key.ae2.part_placement_opposite"
+   ]
+  },
+  {
+   "jar": "ars_additions-1.21.1-21.3.0.jar",
+   "class": "com/github/jarva/arsadditions/ArsAdditionsClient$ClientModEvents",
+   "names": [
+    "key.ars_additions.open_lectern"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_additions.open_lectern"
+   ]
+  },
+  {
+   "jar": "ars_elemental-1.21.1-0.7.10.1.jar",
+   "class": "alexthw/ars_elemental/client/ClientEvents",
+   "names": [
+    "key.ars_elemental.open_pouch"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_elemental.open_pouch"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.open_book"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.open_book"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.selection_hud"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.selection_hud"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.open_documentation"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.open_documentation"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.next_slot"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.next_slot"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.previous_slot"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.previous_slot"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.head_curio_hotkey"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.head_curio_hotkey"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.familiar_toggle"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.familiar_toggle"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc1"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc1"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc2"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc2"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc3"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc3"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc4"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc4"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc5"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc5"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc6"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc6"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc7"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc7"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc8"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc8"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc9"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc9"
+   ]
+  },
+  {
+   "jar": "ars_nouveau-1.21.1-5.13.1.jar",
+   "class": "com/hollingsworth/arsnouveau/client/registry/ModKeyBindings",
+   "names": [
+    "key.ars_nouveau.qc10"
+   ],
+   "categories": [
+    "key.category.ars_nouveau.general"
+   ],
+   "name_atoms": [
+    "key.ars_nouveau.qc10"
+   ]
+  },
+  {
+   "jar": "artifacts-neoforge-13.2.3.jar",
+   "class": "artifacts/registry/ModKeyMappings",
+   "names": [],
+   "categories": [
+    "artifacts.key_category"
+   ],
+   "name_atoms": [
+    "artifacts.key.%s.%s"
+   ]
+  },
+  {
+   "jar": "balm-neoforge-1.21.1-21.0.65.jar",
+   "class": "net/blay09/mods/balm/client/BalmKeyMappingRegistrar",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "balm-neoforge-1.21.1-21.0.65.jar",
+   "class": "net/blay09/mods/balm/neoforge/client/keymappings/NeoForgeBalmKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "balm-neoforge-1.21.1-21.0.65.jar",
+   "class": "net/blay09/mods/balm/neoforge/client/keymappings/NeoForgeBalmKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "balm-neoforge-1.21.1-21.0.65.jar",
+   "class": "net/blay09/mods/balm/neoforge/client/keymappings/NeoForgeBalmKeyMappings",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "buildinggadgets2-1.3.9.jar",
+   "class": "com/direwolf20/buildinggadgets2/client/KeyBindings",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "settings_menu"
+   ]
+  },
+  {
+   "jar": "buildinggadgets2-1.3.9.jar",
+   "class": "com/direwolf20/buildinggadgets2/client/KeyBindings",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "undo"
+   ]
+  },
+  {
+   "jar": "buildinggadgets2-1.3.9.jar",
+   "class": "com/direwolf20/buildinggadgets2/client/KeyBindings",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "anchor"
+   ]
+  },
+  {
+   "jar": "buildinggadgets2-1.3.9.jar",
+   "class": "com/direwolf20/buildinggadgets2/client/KeyBindings",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "range"
+   ]
+  },
+  {
+   "jar": "compactmachines-neoforge-7.0.81.jar",
+   "class": "dev/compactmods/machines/client/keybinds/room/RoomUpgradeUIMapping",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key.mapping",
+    "open_upgrade_screen"
+   ]
+  },
+  {
+   "jar": "compactmachines-neoforge-7.0.81.jar",
+   "class": "dev/compactmods/machines/client/keybinds/room/RoomExitKeyMapping",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "exit_room",
+    "key.mapping"
+   ]
+  },
+  {
+   "jar": "cosmeticarmorreworked-1.21.1-v1-neoforge.jar",
+   "class": "lain/mods/cos/impl/client/KeyHandler",
+   "names": [
+    "cos.key.opencosarmorinventory"
+   ],
+   "categories": [
+    "key.categories.inventory"
+   ],
+   "name_atoms": [
+    "cos.key.opencosarmorinventory"
+   ]
+  },
+  {
+   "jar": "crafting_on_a_stick-1.21.0.6.jar",
+   "class": "com/ofekn/crafting_on_a_stick/client/COASKeyMappings",
+   "names": [
+    "crafting_on_a_stick.key.open_curios"
+   ],
+   "categories": [
+    "key.categories.inventory"
+   ],
+   "name_atoms": [
+    "crafting_on_a_stick.key.open_curios"
+   ]
+  },
+  {
+   "jar": "crashutilities-9.0.4.jar",
+   "class": "com/darkere/crashutils/ClientEvents",
+   "names": [
+    "crashutils.openscreen"
+   ],
+   "categories": [
+    "crashutils.keycategory"
+   ],
+   "name_atoms": [
+    "crashutils.openscreen"
+   ]
+  },
+  {
+   "jar": "crashutilities-9.0.4.jar",
+   "class": "com/darkere/crashutils/ClientEvents",
+   "names": [
+    "crashutils.copycontainer"
+   ],
+   "categories": [
+    "crashutils.keycategory"
+   ],
+   "name_atoms": [
+    "crashutils.copycontainer"
+   ]
+  },
+  {
+   "jar": "crashutilities-9.0.4.jar",
+   "class": "com/darkere/crashutils/ClientEvents",
+   "names": [
+    "crashutils.slottooltips"
+   ],
+   "categories": [
+    "crashutils.keycategory"
+   ],
+   "name_atoms": [
+    "crashutils.slottooltips"
+   ]
+  },
+  {
+   "jar": "create-1.21.1-6.0.10.jar",
+   "class": "com/simibubi/create/AllKeys",
+   "names": [
+    "create.keyinfo.alt_modifier",
+    "create.keyinfo.ctrl_modifier",
+    "create.keyinfo.rotate_menu",
+    "create.keyinfo.shift_modifier",
+    "create.keyinfo.toolbelt",
+    "create.keyinfo.toolmenu"
+   ],
+   "categories": [
+    "Create"
+   ],
+   "name_atoms": [
+    "alt_modifier",
+    "create.keyinfo.",
+    "ctrl_modifier",
+    "rotate_menu",
+    "shift_modifier",
+    "toolbelt",
+    "toolmenu"
+   ]
+  },
+  {
+   "jar": "create-1.21.1-6.0.10.jar",
+   "class": "com/simibubi/create/AllKeys",
+   "names": [
+    "create.keyinfo.alt_modifier",
+    "create.keyinfo.ctrl_modifier",
+    "create.keyinfo.rotate_menu",
+    "create.keyinfo.shift_modifier",
+    "create.keyinfo.toolbelt",
+    "create.keyinfo.toolmenu"
+   ],
+   "categories": [
+    "Create"
+   ],
+   "name_atoms": [
+    "alt_modifier",
+    "create.keyinfo.",
+    "ctrl_modifier",
+    "rotate_menu",
+    "shift_modifier",
+    "toolbelt",
+    "toolmenu"
+   ]
+  },
+  {
+   "jar": "create_hypertube-0.6.0-NEOFORGE.jar",
+   "class": "com/pedrorok/hypertube/registry/ModKeybinds",
+   "names": [
+    "key.hypertube.tube_escape"
+   ],
+   "categories": [
+    "key.categories.hypertube"
+   ],
+   "name_atoms": [
+    "key.hypertube.",
+    "tube_escape"
+   ]
+  },
+  {
+   "jar": "crystalix-3.0.0.jar",
+   "class": "dev/satherov/crystalix/client/KeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "crystalix-3.0.0.jar",
+   "class": "dev/satherov/crystalix/client/KeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "crystalix-3.0.0.jar",
+   "class": "dev/satherov/crystalix/client/KeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "curios-neoforge-9.5.1+1.21.1.jar",
+   "class": "top/theillusivec4/curios/client/KeyRegistry",
+   "names": [
+    "key.curios.open.desc"
+   ],
+   "categories": [
+    "key.curios.category"
+   ],
+   "name_atoms": [
+    "key.curios.open.desc"
+   ]
+  },
+  {
+   "jar": "cyclopscore-1.21.1-neoforge-1.29.3.jar",
+   "class": "org/cyclops/cyclopscore/client/key/KeyRegistry",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    ".",
+    "key."
+   ]
+  },
+  {
+   "jar": "deeperdarker-neoforge-1.21.1-1.4.1.jar",
+   "class": "com/kyanite/deeperdarker/client/Keybinds",
+   "names": [
+    "key.deeperdarker.boost"
+   ],
+   "categories": [
+    "key.categories.deeperdarker"
+   ],
+   "name_atoms": [
+    "key.deeperdarker.boost"
+   ]
+  },
+  {
+   "jar": "deeperdarker-neoforge-1.21.1-1.4.1.jar",
+   "class": "com/kyanite/deeperdarker/client/Keybinds",
+   "names": [
+    "key.deeperdarker.transmit"
+   ],
+   "categories": [
+    "key.categories.deeperdarker"
+   ],
+   "name_atoms": [
+    "key.deeperdarker.transmit"
+   ]
+  },
+  {
+   "jar": "easy-villagers-neoforge-1.21.1-1.1.42.jar",
+   "class": "de/maxhenkel/easyvillagers/Main",
+   "names": [
+    "key.easy_villagers.pick_up"
+   ],
+   "categories": [
+    "category.easy_villagers"
+   ],
+   "name_atoms": [
+    "key.easy_villagers.pick_up"
+   ]
+  },
+  {
+   "jar": "easy-villagers-neoforge-1.21.1-1.1.42.jar",
+   "class": "de/maxhenkel/easyvillagers/Main",
+   "names": [
+    "key.easy_villagers.cycle_trades"
+   ],
+   "categories": [
+    "category.easy_villagers"
+   ],
+   "name_atoms": [
+    "key.easy_villagers.cycle_trades"
+   ]
+  },
+  {
+   "jar": "enderio-8.2.11-beta.jar",
+   "class": "com/enderio/enderio/client/content/keymaps/KeymapHandler",
+   "names": [
+    "key.enderio.toggle_magnet"
+   ],
+   "categories": [
+    "keys.categories.enderio"
+   ],
+   "name_atoms": [
+    "key.enderio.toggle_magnet"
+   ]
+  },
+  {
+   "jar": "enderio-8.2.11-beta.jar",
+   "class": "com/enderio/enderio/client/content/keymaps/KeymapHandler",
+   "names": [
+    "key.enderio.travel_staff"
+   ],
+   "categories": [
+    "keys.categories.enderio"
+   ],
+   "name_atoms": [
+    "key.enderio.travel_staff"
+   ]
+  },
+  {
+   "jar": "eternalstarlight-0.9.0+1.21.1+neoforge.jar",
+   "class": "cn/leolezury/eternalstarlight/common/client/handler/ESClientSetupHandler",
+   "names": [],
+   "categories": [
+    "key.categories.eternal_starlight"
+   ],
+   "name_atoms": [
+    "key",
+    "switch_crest"
+   ]
+  },
+  {
+   "jar": "extended-industrialization-1.16.2-1.21.1.jar",
+   "class": "net/swedz/extended_industrialization/EIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "extended-industrialization-1.16.2-1.21.1.jar",
+   "class": "net/swedz/extended_industrialization/EIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "extended-industrialization-1.16.2-1.21.1.jar",
+   "class": "net/swedz/extended_industrialization/EIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "extended-industrialization-1.16.2-1.21.1.jar",
+   "class": "net/swedz/extended_industrialization/EIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "extended-industrialization-1.16.2-1.21.1.jar",
+   "class": "net/swedz/extended_industrialization/EIKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.map"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.map"
+   ]
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.toggle_minimap"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.toggle_minimap"
+   ]
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.claim_manager"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.claim_manager"
+   ]
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.minimap.zoomIn"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.minimap.zoomIn"
+   ]
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.minimap.zoomOut"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.minimap.zoomOut"
+   ]
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.add_waypoint"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.add_waypoint"
+   ]
+  },
+  {
+   "jar": "ftb-chunks-neoforge-2101.1.21.jar",
+   "class": "dev/ftb/mods/ftbchunks/client/FTBChunksClient",
+   "names": [
+    "key.ftbchunks.waypoint_manager"
+   ],
+   "categories": [
+    "key.categories.ftbchunks"
+   ],
+   "name_atoms": [
+    "key.ftbchunks.waypoint_manager"
+   ]
+  },
+  {
+   "jar": "ftb-library-neoforge-2101.1.35.jar",
+   "class": "dev/ftb/mods/ftblibrary/util/neoforge/InputImpl",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "ftb-teams-neoforge-2101.1.11.jar",
+   "class": "dev/ftb/mods/ftbteams/client/FTBTeamsClient",
+   "names": [
+    "key.ftbteams.open_gui"
+   ],
+   "categories": [
+    "key.categories.ftbteams"
+   ],
+   "name_atoms": [
+    "key.ftbteams.open_gui"
+   ]
+  },
+  {
+   "jar": "ftb-ultimine-neoforge-2101.1.15.jar",
+   "class": "dev/ftb/mods/ftbultimine/client/FTBUltimineClient",
+   "names": [
+    "key.ftbultimine"
+   ],
+   "categories": [
+    "key.categories.ftbultimine"
+   ],
+   "name_atoms": [
+    "key.ftbultimine"
+   ]
+  },
+  {
+   "jar": "ftb-ultimine-neoforge-2101.1.15.jar",
+   "class": "dev/ftb/mods/ftbultimine/client/FTBUltimineClient",
+   "names": [
+    "ftbultimine.change_shape.next"
+   ],
+   "categories": [
+    "key.categories.ftbultimine"
+   ],
+   "name_atoms": [
+    "ftbultimine.change_shape.next"
+   ]
+  },
+  {
+   "jar": "ftb-ultimine-neoforge-2101.1.15.jar",
+   "class": "dev/ftb/mods/ftbultimine/client/FTBUltimineClient",
+   "names": [
+    "ftbultimine.change_shape.prev"
+   ],
+   "categories": [
+    "key.categories.ftbultimine"
+   ],
+   "name_atoms": [
+    "ftbultimine.change_shape.prev"
+   ]
+  },
+  {
+   "jar": "guideme-21.1.17.jar",
+   "class": "guideme/internal/hotkey/OpenGuideHotkey",
+   "names": [
+    "key.guideme.guide"
+   ],
+   "categories": [
+    "key.guideme.category"
+   ],
+   "name_atoms": [
+    "key.guideme.guide"
+   ]
+  },
+  {
+   "jar": "iceandfire-2.0-beta.17.jar",
+   "class": "com/iafenvoy/iceandfire/registry/IafKeyMappings",
+   "names": [
+    "key.dragon_fireAttack"
+   ],
+   "categories": [
+    "key.categories.gameplay"
+   ],
+   "name_atoms": [
+    "key.dragon_fireAttack"
+   ]
+  },
+  {
+   "jar": "iceandfire-2.0-beta.17.jar",
+   "class": "com/iafenvoy/iceandfire/registry/IafKeyMappings",
+   "names": [
+    "key.dragon_strike"
+   ],
+   "categories": [
+    "key.categories.gameplay"
+   ],
+   "name_atoms": [
+    "key.dragon_strike"
+   ]
+  },
+  {
+   "jar": "iceandfire-2.0-beta.17.jar",
+   "class": "com/iafenvoy/iceandfire/registry/IafKeyMappings",
+   "names": [
+    "key.dragon_down"
+   ],
+   "categories": [
+    "key.categories.gameplay"
+   ],
+   "name_atoms": [
+    "key.dragon_down"
+   ]
+  },
+  {
+   "jar": "iceandfire-2.0-beta.17.jar",
+   "class": "com/iafenvoy/iceandfire/registry/IafKeyMappings",
+   "names": [
+    "key.dragon_change_view"
+   ],
+   "categories": [
+    "key.categories.gameplay"
+   ],
+   "name_atoms": [
+    "key.dragon_change_view"
+   ]
+  },
+  {
+   "jar": "industrialforegoing-1.21-3.6.39.jar",
+   "class": "com/buuz135/industrial/IndustrialForegoing",
+   "names": [
+    "key.industrialforegoing.backpack.desc"
+   ],
+   "categories": [
+    "key.industrialforegoing.category"
+   ],
+   "name_atoms": [
+    "key.industrialforegoing.backpack.desc"
+   ]
+  },
+  {
+   "jar": "integrateddynamics-1.21.1-neoforge-1.35.0-1981.jar",
+   "class": "org/cyclops/integrateddynamics/proxy/ClientProxy",
+   "names": [
+    "key.integrateddynamics.logic_programmer_focus_search"
+   ],
+   "categories": [
+    "key.categories.integrateddynamics"
+   ],
+   "name_atoms": [
+    "key.integrateddynamics.logic_programmer_focus_search"
+   ]
+  },
+  {
+   "jar": "integrateddynamics-1.21.1-neoforge-1.35.0-1981.jar",
+   "class": "org/cyclops/integrateddynamics/proxy/ClientProxy",
+   "names": [
+    "key.integrateddynamics.logic_programmer_open_rename"
+   ],
+   "categories": [
+    "key.categories.integrateddynamics"
+   ],
+   "name_atoms": [
+    "key.integrateddynamics.logic_programmer_open_rename"
+   ]
+  },
+  {
+   "jar": "integratedterminals-1.21.1-neoforge-1.8.0-840.jar",
+   "class": "org/cyclops/integratedterminals/proxy/ClientProxy",
+   "names": [
+    "key.integratedterminals.terminal.tab.next"
+   ],
+   "categories": [
+    "key.categories.integratedterminals"
+   ],
+   "name_atoms": [
+    "key.integratedterminals.terminal.tab.next"
+   ]
+  },
+  {
+   "jar": "integratedterminals-1.21.1-neoforge-1.8.0-840.jar",
+   "class": "org/cyclops/integratedterminals/proxy/ClientProxy",
+   "names": [
+    "key.integratedterminals.terminal.tab.previous"
+   ],
+   "categories": [
+    "key.categories.integratedterminals"
+   ],
+   "name_atoms": [
+    "key.integratedterminals.terminal.tab.previous"
+   ]
+  },
+  {
+   "jar": "integratedterminals-1.21.1-neoforge-1.8.0-840.jar",
+   "class": "org/cyclops/integratedterminals/proxy/ClientProxy",
+   "names": [
+    "key.integratedterminals.terminal.craftinggrid.clearplayer"
+   ],
+   "categories": [
+    "key.categories.integratedterminals"
+   ],
+   "name_atoms": [
+    "key.integratedterminals.terminal.craftinggrid.clearplayer"
+   ]
+  },
+  {
+   "jar": "integratedterminals-1.21.1-neoforge-1.8.0-840.jar",
+   "class": "org/cyclops/integratedterminals/proxy/ClientProxy",
+   "names": [
+    "key.integratedterminals.terminal.craftinggrid.clearstorage"
+   ],
+   "categories": [
+    "key.categories.integratedterminals"
+   ],
+   "name_atoms": [
+    "key.integratedterminals.terminal.craftinggrid.clearstorage"
+   ]
+  },
+  {
+   "jar": "integratedterminals-1.21.1-neoforge-1.8.0-840.jar",
+   "class": "org/cyclops/integratedterminals/proxy/ClientProxy",
+   "names": [
+    "key.integratedterminals.terminal.craftinggrid.balance"
+   ],
+   "categories": [
+    "key.categories.integratedterminals"
+   ],
+   "name_atoms": [
+    "key.integratedterminals.terminal.craftinggrid.balance"
+   ]
+  },
+  {
+   "jar": "integratedterminals-1.21.1-neoforge-1.8.0-840.jar",
+   "class": "org/cyclops/integratedterminals/proxy/ClientProxy",
+   "names": [
+    "key.integratedterminals.terminal.portable.open"
+   ],
+   "categories": [
+    "key.categories.integratedterminals"
+   ],
+   "name_atoms": [
+    "key.integratedterminals.terminal.portable.open"
+   ]
+  },
+  {
+   "jar": "invtweaks-1.21.1-1.3.2.jar",
+   "class": "invtweaks/events/KeyMappings",
+   "names": [
+    "key.invtweaks_sort_player.desc"
+   ],
+   "categories": [
+    "key.categories.invtweaks"
+   ],
+   "name_atoms": [
+    "key.invtweaks_sort_player.desc"
+   ]
+  },
+  {
+   "jar": "invtweaks-1.21.1-1.3.2.jar",
+   "class": "invtweaks/events/KeyMappings",
+   "names": [
+    "key.invtweaks_sort_inventory.desc"
+   ],
+   "categories": [
+    "key.categories.invtweaks"
+   ],
+   "name_atoms": [
+    "key.invtweaks_sort_inventory.desc"
+   ]
+  },
+  {
+   "jar": "invtweaks-1.21.1-1.3.2.jar",
+   "class": "invtweaks/events/KeyMappings",
+   "names": [
+    "key.invtweaks_sort_either.desc"
+   ],
+   "categories": [
+    "key.categories.invtweaks"
+   ],
+   "name_atoms": [
+    "key.invtweaks_sort_either.desc"
+   ]
+  },
+  {
+   "jar": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+   "class": "net/irisshaders/iris/Iris",
+   "names": [
+    "iris.keybind.reload"
+   ],
+   "categories": [
+    "iris.keybinds"
+   ],
+   "name_atoms": [
+    "iris.keybind.reload"
+   ]
+  },
+  {
+   "jar": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+   "class": "net/irisshaders/iris/Iris",
+   "names": [
+    "iris.keybind.toggleShaders"
+   ],
+   "categories": [
+    "iris.keybinds"
+   ],
+   "name_atoms": [
+    "iris.keybind.toggleShaders"
+   ]
+  },
+  {
+   "jar": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+   "class": "net/irisshaders/iris/Iris",
+   "names": [
+    "iris.keybind.shaderPackSelection"
+   ],
+   "categories": [
+    "iris.keybinds"
+   ],
+   "name_atoms": [
+    "iris.keybind.shaderPackSelection"
+   ]
+  },
+  {
+   "jar": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+   "class": "net/irisshaders/iris/Iris",
+   "names": [
+    "iris.keybind.wireframe"
+   ],
+   "categories": [
+    "iris.keybinds"
+   ],
+   "name_atoms": [
+    "iris.keybind.wireframe"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/ExtendedKeyMapping",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_2"
+   ],
+   "name_atoms": [
+    "spell_quick_cast_%d"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/ExtendedKeyMapping",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spell_wheel"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/ExtendedKeyMapping",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spell_wheel_toggle"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/ExtendedKeyMapping",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spellbook_cast"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/ExtendedKeyMapping",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spell_bar_modifier"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/KeyMappings",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_2"
+   ],
+   "name_atoms": [
+    "spell_quick_cast_%d"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/KeyMappings",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spell_wheel"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/KeyMappings",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spell_wheel_toggle"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/KeyMappings",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spellbook_cast"
+   ]
+  },
+  {
+   "jar": "irons_spellbooks-1.21.1-3.16.3.jar",
+   "class": "io/redspace/ironsspellbooks/player/KeyMappings",
+   "names": [],
+   "categories": [
+    "key.irons_spellbooks.group_1"
+   ],
+   "name_atoms": [
+    "spell_bar_modifier"
+   ]
+  },
+  {
+   "jar": "jei-1.21.1-neoforge-19.50.0.414.jar",
+   "class": "mezz/jei/neoforge/input/ForgeJeiKeyMappingBuilder",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "jei-1.21.1-neoforge-19.50.0.414.jar",
+   "class": "mezz/jei/neoforge/input/ForgeJeiKeyMappingBuilder",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "journeymap-neoforge-1.21.1-6.0.6.jar",
+   "class": "journeymap/client/event/NeoForgeKeyEvents",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "justdirethings-1.5.7.jar",
+   "class": "com/direwolf20/justdirethings/client/KeyBindings",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "toggle_tool"
+   ]
+  },
+  {
+   "jar": "justdirethings-1.5.7.jar",
+   "class": "com/direwolf20/justdirethings/client/KeyBindings",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "toolUI"
+   ]
+  },
+  {
+   "jar": "justzoom_neoforge_2.1.0_MC_1.21.1.jar",
+   "class": "de/keksuccino/justzoom/KeyMappings",
+   "names": [
+    "justzoom.keybinds.keybind.zoom"
+   ],
+   "categories": [
+    "justzoom.keybinds.category"
+   ],
+   "name_atoms": [
+    "justzoom.keybinds.keybind.zoom"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/KeyBindBundle",
+   "names": [],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.bundle_"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/KeyBindBundleManager$RadialKeyMapping",
+   "names": [],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.bundle_"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/ModKeyBindBundles$1",
+   "names": [
+    "key.keybindbundles.open_radial_menu"
+   ],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.open_radial_menu"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/ModKeyBindBundles$2",
+   "names": [
+    "key.keybindbundles.open_screen"
+   ],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.open_screen"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/PriorityKeyMapping",
+   "names": [],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.bundle_"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/PriorityKeyMapping",
+   "names": [
+    "key.keybindbundles.open_radial_menu"
+   ],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.open_radial_menu"
+   ]
+  },
+  {
+   "jar": "keybindbundles-1.4.0.jar",
+   "class": "com/matyrobbrt/keybindbundles/PriorityKeyMapping",
+   "names": [
+    "key.keybindbundles.open_screen"
+   ],
+   "categories": [
+    "category.keybindbundles"
+   ],
+   "name_atoms": [
+    "key.keybindbundles.open_screen"
+   ]
+  },
+  {
+   "jar": "kubejs-neoforge-2101.7.2-build.374.jar",
+   "class": "dev/latvian/mods/kubejs/client/KeybindRegistryKubeEvent$Builder",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key.kubejs.%s"
+   ]
+  },
+  {
+   "jar": "kubejs-neoforge-2101.7.2-build.374.jar",
+   "class": "dev/latvian/mods/kubejs/client/KubeJSClientEventHandler",
+   "names": [
+    "key.kubejs.kubedex"
+   ],
+   "categories": [
+    "key.categories.kubejs"
+   ],
+   "name_atoms": [
+    "key.kubejs.kubedex"
+   ]
+  },
+  {
+   "jar": "little-big-redstone-1.9.10-1.21.1.jar",
+   "class": "net/swedz/little_big_redstone/LBRKeybinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "logisticsnetworks-1.21.1-1.13.0.jar",
+   "class": "me/almana/logisticsnetworks/client/WrenchHudOverlay",
+   "names": [
+    "key.logisticsnetworks.toggle_wrench_hud"
+   ],
+   "categories": [
+    "key.categories.logisticsnetworks"
+   ],
+   "name_atoms": [
+    "key.logisticsnetworks.toggle_wrench_hud"
+   ]
+  },
+  {
+   "jar": "logisticsnetworks-1.21.1-1.13.0.jar",
+   "class": "me/almana/logisticsnetworks/client/SlotNumberOverlay",
+   "names": [
+    "key.logisticsnetworks.toggle_slot_numbers"
+   ],
+   "categories": [
+    "key.categories.logisticsnetworks"
+   ],
+   "name_atoms": [
+    "key.logisticsnetworks.toggle_slot_numbers"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.drawMahoujin"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.drawMahoujin"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.changeMysticCode"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.changeMysticCode"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.settingsGUI"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.settingsGUI"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.selectiveDisplacement"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.selectiveDisplacement"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.gunUp"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.gunUp"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.gunDown"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.gunDown"
+   ]
+  },
+  {
+   "jar": "mahoutsukai-1.21.1-v1.36.27.jar",
+   "class": "stepsword/mahoutsukai/Keybinds",
+   "names": [
+    "key.fireNobu"
+   ],
+   "categories": [
+    "key.categories.mahoutsukai"
+   ],
+   "name_atoms": [
+    "key.fireNobu"
+   ]
+  },
+  {
+   "jar": "mcjtylib-1.21-9.0.21.jar",
+   "class": "mcjty/lib/keys/KeyBindings",
+   "names": [
+    "key.openManual"
+   ],
+   "categories": [
+    "key.categories.mcjtylib"
+   ],
+   "name_atoms": [
+    "key.openManual"
+   ]
+  },
+  {
+   "jar": "minecolonies-1.1.1374-1.21.1-snapshot.jar",
+   "class": "com/minecolonies/api/client/ModKeyMappings",
+   "names": [
+    "key.minecolonies.toggle_goggles"
+   ],
+   "categories": [
+    "key.minecolonies.categories.general"
+   ],
+   "name_atoms": [
+    "key.minecolonies.toggle_goggles"
+   ]
+  },
+  {
+   "jar": "mininggadgets-1.18.7.jar",
+   "class": "com/direwolf20/mininggadgets/client/OurKeys",
+   "names": [
+    "mininggadgets.text.open_gui"
+   ],
+   "categories": [
+    "itemGroup.mininggadgets"
+   ],
+   "name_atoms": [
+    "mininggadgets.text.open_gui"
+   ]
+  },
+  {
+   "jar": "modernfix-neoforge-5.27.20+mc1.21.1.jar",
+   "class": "org/embeddedt/modernfix/neoforge/init/ModernFixClientForge",
+   "names": [
+    "key.modernfix.config"
+   ],
+   "categories": [
+    "key.modernfix"
+   ],
+   "name_atoms": [
+    "key.modernfix.config"
+   ]
+  },
+  {
+   "jar": "modular-routers-13.2.7+mc1.21.1.jar",
+   "class": "me/desht/modularrouters/client/ModularRoutersClient",
+   "names": [
+    "key.modularrouters.configure"
+   ],
+   "categories": [
+    "key.modularrouters.category"
+   ],
+   "name_atoms": [
+    "key.modularrouters.configure"
+   ]
+  },
+  {
+   "jar": "modular-routers-13.2.7+mc1.21.1.jar",
+   "class": "me/desht/modularrouters/client/ModularRoutersClient",
+   "names": [
+    "key.modularrouters.moduleInfo"
+   ],
+   "categories": [
+    "key.modularrouters.category"
+   ],
+   "name_atoms": [
+    "key.modularrouters.moduleInfo"
+   ]
+  },
+  {
+   "jar": "moreoverlays-1.24.2-mc1.21.1-neoforge.jar",
+   "class": "at/ridgo8/moreoverlays/KeyBindings",
+   "names": [
+    "key.moreoverlays.chunkbounds.desc"
+   ],
+   "categories": [
+    "key.moreoverlays.category"
+   ],
+   "name_atoms": [
+    "key.moreoverlays.chunkbounds.desc"
+   ]
+  },
+  {
+   "jar": "moreoverlays-1.24.2-mc1.21.1-neoforge.jar",
+   "class": "at/ridgo8/moreoverlays/KeyBindings",
+   "names": [
+    "key.moreoverlays.lightoverlay.desc"
+   ],
+   "categories": [
+    "key.moreoverlays.category"
+   ],
+   "name_atoms": [
+    "key.moreoverlays.lightoverlay.desc"
+   ]
+  },
+  {
+   "jar": "neovitae-1.21.1-1.1.15.jar",
+   "class": "com/breakinblocks/neovitae/client/event/ClientModEventHandler",
+   "names": [
+    "key.neovitae.edit_hud"
+   ],
+   "categories": [
+    "key.categories.neovitae"
+   ],
+   "name_atoms": [
+    "key.neovitae.edit_hud"
+   ]
+  },
+  {
+   "jar": "neovitae-1.21.1-1.1.15.jar",
+   "class": "com/breakinblocks/neovitae/client/event/ClientModEventHandler",
+   "names": [
+    "key.neovitae.lex_beam"
+   ],
+   "categories": [
+    "key.categories.neovitae"
+   ],
+   "name_atoms": [
+    "key.neovitae.lex_beam"
+   ]
+  },
+  {
+   "jar": "neovitae-1.21.1-1.1.15.jar",
+   "class": "com/breakinblocks/neovitae/client/event/ClientModEventHandler",
+   "names": [
+    "key.neovitae.blood_shield"
+   ],
+   "categories": [
+    "key.categories.neovitae"
+   ],
+   "name_atoms": [
+    "key.neovitae.blood_shield"
+   ]
+  },
+  {
+   "jar": "neovitae-1.21.1-1.1.15.jar",
+   "class": "com/breakinblocks/neovitae/client/event/ClientModEventHandler",
+   "names": [
+    "key.neovitae.lex_mode"
+   ],
+   "categories": [
+    "key.categories.neovitae"
+   ],
+   "name_atoms": [
+    "key.neovitae.lex_mode"
+   ]
+  },
+  {
+   "jar": "neovitae-1.21.1-1.1.15.jar",
+   "class": "com/breakinblocks/neovitae/client/event/ClientModEventHandler",
+   "names": [
+    "key.neovitae.open_guide"
+   ],
+   "categories": [
+    "key.categories.neovitae"
+   ],
+   "name_atoms": [
+    "key.neovitae.open_guide"
+   ]
+  },
+  {
+   "jar": "observable-5.4.4.jar",
+   "class": "observable/Observable$PROFILE_KEYBIND$2",
+   "names": [
+    "key.observable.profile"
+   ],
+   "categories": [
+    "category.observable.keybinds"
+   ],
+   "name_atoms": [
+    "key.observable.profile"
+   ]
+  },
+  {
+   "jar": "occultism-1.21.1-neoforge-1.224.4.jar",
+   "class": "com/klikli_dev/occultism/handlers/ClientSetupEventHandler",
+   "names": [],
+   "categories": [
+    "key.occultism.category"
+   ],
+   "name_atoms": [
+    "key.occultism.familiar."
+   ]
+  },
+  {
+   "jar": "occultism-1.21.1-neoforge-1.224.4.jar",
+   "class": "com/klikli_dev/occultism/handlers/ClientSetupEventHandler",
+   "names": [
+    "key.occultism.backpack"
+   ],
+   "categories": [
+    "key.occultism.category"
+   ],
+   "name_atoms": [
+    "key.occultism.backpack"
+   ]
+  },
+  {
+   "jar": "occultism-1.21.1-neoforge-1.224.4.jar",
+   "class": "com/klikli_dev/occultism/handlers/ClientSetupEventHandler",
+   "names": [
+    "key.occultism.ender_bag"
+   ],
+   "categories": [
+    "key.occultism.category"
+   ],
+   "name_atoms": [
+    "key.occultism.ender_bag"
+   ]
+  },
+  {
+   "jar": "occultism-1.21.1-neoforge-1.224.4.jar",
+   "class": "com/klikli_dev/occultism/handlers/ClientSetupEventHandler",
+   "names": [
+    "key.occultism.storage_remote"
+   ],
+   "categories": [
+    "key.occultism.category"
+   ],
+   "name_atoms": [
+    "key.occultism.storage_remote"
+   ]
+  },
+  {
+   "jar": "oracle_index-neoforge-1.3.1.jar",
+   "class": "rearth/oracle/OracleClient",
+   "names": [
+    "key.oracle_index.open"
+   ],
+   "categories": [
+    "key.categories.oracle"
+   ],
+   "name_atoms": [
+    "key.oracle_index.open"
+   ]
+  },
+  {
+   "jar": "oracle_index-neoforge-1.3.1.jar",
+   "class": "rearth/oracle/OracleClient",
+   "names": [
+    "key.oracle_index.search"
+   ],
+   "categories": [
+    "key.categories.oracle"
+   ],
+   "name_atoms": [
+    "key.oracle_index.search"
+   ]
+  },
+  {
+   "jar": "oritech-neoforge-1.21.1-1.2.11.jar",
+   "class": "rearth/oritech/OritechClient",
+   "names": [
+    "key.oritech.augment_screen"
+   ],
+   "categories": [
+    "key.oritech.hotkey_category"
+   ],
+   "name_atoms": [
+    "key.oritech.augment_screen"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/KeyHandler",
+   "names": [
+    "pneumaticcraft.armor.options"
+   ],
+   "categories": [
+    "key.pneumaticcraft.category.main"
+   ],
+   "name_atoms": [
+    "pneumaticcraft.armor.options"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/KeyHandler",
+   "names": [
+    "pneumaticcraft.helmet.hack"
+   ],
+   "categories": [
+    "key.pneumaticcraft.category.main"
+   ],
+   "name_atoms": [
+    "pneumaticcraft.helmet.hack"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/KeyHandler",
+   "names": [
+    "pneumaticcraft.helmet.debugging.drone"
+   ],
+   "categories": [
+    "key.pneumaticcraft.category.main"
+   ],
+   "name_atoms": [
+    "pneumaticcraft.helmet.debugging.drone"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/KeyHandler",
+   "names": [
+    "pneumaticcraft.boots.kick"
+   ],
+   "categories": [
+    "key.pneumaticcraft.category.main"
+   ],
+   "name_atoms": [
+    "pneumaticcraft.boots.kick"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/KeyHandler",
+   "names": [
+    "pneumaticcraft.chestplate.launcher"
+   ],
+   "categories": [
+    "key.pneumaticcraft.category.main"
+   ],
+   "name_atoms": [
+    "pneumaticcraft.chestplate.launcher"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/KeyHandler",
+   "names": [
+    "pneumaticcraft.boots.jet_boots"
+   ],
+   "categories": [
+    "key.pneumaticcraft.category.main"
+   ],
+   "name_atoms": [
+    "pneumaticcraft.boots.jet_boots"
+   ]
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/client/pneumatic_armor/ClientArmorRegistry",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+   "class": "me/desht/pneumaticcraft/api/client/pneumatic_helmet/IArmorUpgradeClientHandler",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "railcraft-reborn-1.21.1-1.2.10.jar",
+   "class": "mods/railcraft/client/KeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "change_aura",
+    "key"
+   ]
+  },
+  {
+   "jar": "railcraft-reborn-1.21.1-1.2.10.jar",
+   "class": "mods/railcraft/client/KeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key",
+    "loco.reverse"
+   ]
+  },
+  {
+   "jar": "railcraft-reborn-1.21.1-1.2.10.jar",
+   "class": "mods/railcraft/client/KeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key",
+    "loco.faster"
+   ]
+  },
+  {
+   "jar": "railcraft-reborn-1.21.1-1.2.10.jar",
+   "class": "mods/railcraft/client/KeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key",
+    "loco.slower"
+   ]
+  },
+  {
+   "jar": "railcraft-reborn-1.21.1-1.2.10.jar",
+   "class": "mods/railcraft/client/KeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key",
+    "loco.mode"
+   ]
+  },
+  {
+   "jar": "railcraft-reborn-1.21.1-1.2.10.jar",
+   "class": "mods/railcraft/client/KeyBinding",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "key",
+    "loco.whistle"
+   ]
+  },
+  {
+   "jar": "rebind_narrator-1.21.1-neoforge-2025.12.23.jar",
+   "class": "agency/highlysuspect/rebindnarrator/craftful/neo/RebindNarratorNeoInit",
+   "names": [
+    "options.narrator"
+   ],
+   "categories": [
+    "key.categories.misc"
+   ],
+   "name_atoms": [
+    "options.narrator"
+   ]
+  },
+  {
+   "jar": "refinedstorage-neoforge-2.0.9.jar",
+   "class": "com/refinedmods/refinedstorage/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage"
+   ],
+   "name_atoms": [
+    "focus_search_bar",
+    "key"
+   ]
+  },
+  {
+   "jar": "refinedstorage-neoforge-2.0.9.jar",
+   "class": "com/refinedmods/refinedstorage/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage"
+   ],
+   "name_atoms": [
+    "clear_crafting_grid_matrix_to_network",
+    "key"
+   ]
+  },
+  {
+   "jar": "refinedstorage-neoforge-2.0.9.jar",
+   "class": "com/refinedmods/refinedstorage/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage"
+   ],
+   "name_atoms": [
+    "clear_crafting_grid_matrix_to_inventory",
+    "key"
+   ]
+  },
+  {
+   "jar": "refinedstorage-neoforge-2.0.9.jar",
+   "class": "com/refinedmods/refinedstorage/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage"
+   ],
+   "name_atoms": [
+    "key",
+    "open_wireless_grid"
+   ]
+  },
+  {
+   "jar": "refinedstorage-neoforge-2.0.9.jar",
+   "class": "com/refinedmods/refinedstorage/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage"
+   ],
+   "name_atoms": [
+    "key",
+    "open_portable_grid"
+   ]
+  },
+  {
+   "jar": "refinedstorage-neoforge-2.0.9.jar",
+   "class": "com/refinedmods/refinedstorage/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage"
+   ],
+   "name_atoms": [
+    "key",
+    "open_wireless_autocrafting_monitor"
+   ]
+  },
+  {
+   "jar": "refinedstorage-quartz-arsenal-neoforge-1.0.8.jar",
+   "class": "com/refinedmods/refinedstorage/quartzarsenal/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.refinedstorage_quartz_arsenal"
+   ],
+   "name_atoms": [
+    "key",
+    "open_wireless_crafting_grid"
+   ]
+  },
+  {
+   "jar": "relics-1.21.1-0.12.8.jar",
+   "class": "it/hurts/sskirillss/relics/init/RelicsHotkeys",
+   "names": [
+    "key.relics.research_relic"
+   ],
+   "categories": [
+    "Relics"
+   ],
+   "name_atoms": [
+    "key.relics.research_relic"
+   ]
+  },
+  {
+   "jar": "relics-1.21.1-0.12.8.jar",
+   "class": "it/hurts/sskirillss/relics/init/RelicsHotkeys",
+   "names": [
+    "key.relics.active_abilities_list"
+   ],
+   "categories": [
+    "Relics"
+   ],
+   "name_atoms": [
+    "key.relics.active_abilities_list"
+   ]
+  },
+  {
+   "jar": "reliquary-1.21.1-2.0.80.1570.jar",
+   "class": "reliquary/handler/ClientEventHandler",
+   "names": [
+    "keybind.reliquary.fortune_coin"
+   ],
+   "categories": [
+    "keybind.reliquary.category"
+   ],
+   "name_atoms": [
+    "keybind.reliquary.fortune_coin"
+   ]
+  },
+  {
+   "jar": "rftoolsbase-1.21-6.0.11.jar",
+   "class": "mcjty/rftoolsbase/keys/KeyBindings",
+   "names": [
+    "key.nextDestination"
+   ],
+   "categories": [
+    "key.categories.rftools"
+   ],
+   "name_atoms": [
+    "key.nextDestination"
+   ]
+  },
+  {
+   "jar": "rftoolsbase-1.21-6.0.11.jar",
+   "class": "mcjty/rftoolsbase/keys/KeyBindings",
+   "names": [
+    "key.prevDestination"
+   ],
+   "categories": [
+    "key.categories.rftools"
+   ],
+   "name_atoms": [
+    "key.prevDestination"
+   ]
+  },
+  {
+   "jar": "rftoolsbuilder-1.21-7.0.6.jar",
+   "class": "mcjty/rftoolsbuilder/keys/KeyBindings",
+   "names": [
+    "key.unmountVehicle"
+   ],
+   "categories": [
+    "key.categories.rftools"
+   ],
+   "name_atoms": [
+    "key.unmountVehicle"
+   ]
+  },
+  {
+   "jar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+   "class": "net/silentchaos512/gear/client/KeyTracker",
+   "names": [
+    "key.silentgear.displayItemProperties"
+   ],
+   "categories": [
+    "key.categories.silentgear"
+   ],
+   "name_atoms": [
+    "displayItemProperties",
+    "key.silentgear."
+   ]
+  },
+  {
+   "jar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+   "class": "net/silentchaos512/gear/client/KeyTracker",
+   "names": [
+    "key.silentgear.displayTraitDescriptions"
+   ],
+   "categories": [
+    "key.categories.silentgear"
+   ],
+   "name_atoms": [
+    "displayTraitDescriptions",
+    "key.silentgear."
+   ]
+  },
+  {
+   "jar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+   "class": "net/silentchaos512/gear/client/KeyTracker",
+   "names": [
+    "key.silentgear.displayItemConstruction"
+   ],
+   "categories": [
+    "key.categories.silentgear"
+   ],
+   "name_atoms": [
+    "displayItemConstruction",
+    "key.silentgear."
+   ]
+  },
+  {
+   "jar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+   "class": "net/silentchaos512/gear/client/KeyTracker",
+   "names": [
+    "key.silentgear.openItem"
+   ],
+   "categories": [
+    "key.categories.silentgear"
+   ],
+   "name_atoms": [
+    "key.silentgear.",
+    "openItem"
+   ]
+  },
+  {
+   "jar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+   "class": "net/silentchaos512/gear/client/KeyTracker",
+   "names": [
+    "key.silentgear.cycle.back"
+   ],
+   "categories": [
+    "key.categories.silentgear"
+   ],
+   "name_atoms": [
+    "cycle.back",
+    "key.silentgear."
+   ]
+  },
+  {
+   "jar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+   "class": "net/silentchaos512/gear/client/KeyTracker",
+   "names": [
+    "key.silentgear.cycle.next"
+   ],
+   "categories": [
+    "key.categories.silentgear"
+   ],
+   "name_atoms": [
+    "cycle.next",
+    "key.silentgear."
+   ]
+  },
+  {
+   "jar": "simplemagnets-1.1.12c-neoforge-mc1.21.jar",
+   "class": "com/supermartijn642/simplemagnets/SimpleMagnetsClient",
+   "names": [
+    "simplemagnets.keys.toggle"
+   ],
+   "categories": [
+    "simplemagnets.keys.category"
+   ],
+   "name_atoms": [
+    "simplemagnets.keys.toggle"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "toggle_upgrade_5"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "toggle_upgrade_4"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "toggle_upgrade_3"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "toggle_upgrade_2"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "toggle_upgrade_1"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "tool_swap"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "inventory_interaction"
+   ]
+  },
+  {
+   "jar": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+   "class": "net/p3pp3rf1y/sophisticatedbackpacks/client/KeybindHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedbackpacks.main"
+   ],
+   "name_atoms": [
+    "open_backpack"
+   ]
+  },
+  {
+   "jar": "sophisticatedcore-1.21.1-1.4.90.2299.jar",
+   "class": "net/p3pp3rf1y/sophisticatedcore/client/ClientEventHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedcore.main"
+   ],
+   "name_atoms": [
+    "sort"
+   ]
+  },
+  {
+   "jar": "sophisticatedcore-1.21.1-1.4.90.2299.jar",
+   "class": "net/p3pp3rf1y/sophisticatedcore/client/ClientEventHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedcore.main"
+   ],
+   "name_atoms": [
+    "transfer_to_storage"
+   ]
+  },
+  {
+   "jar": "sophisticatedcore-1.21.1-1.4.90.2299.jar",
+   "class": "net/p3pp3rf1y/sophisticatedcore/client/ClientEventHandler",
+   "names": [],
+   "categories": [
+    "key.category.sophisticatedcore.main"
+   ],
+   "name_atoms": [
+    "transfer_to_inventory"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.place"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.place"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.mirror"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.mirror"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.rotate_ccw"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.rotate_ccw"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.rotate_cw"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.rotate_cw"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.move_down"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.move_down"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.move_up"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.move_up"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.move_right"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.move_right"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.move_left"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.move_left"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.move_back"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.move_back"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.move_forward"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.move_forward"
+   ]
+  },
+  {
+   "jar": "structurize-1.0.832-1.21.1.jar",
+   "class": "com/ldtteam/structurize/client/ModKeyMappings",
+   "names": [
+    "key.structurize.teleport"
+   ],
+   "categories": [
+    "key.structurize.categories.general"
+   ],
+   "name_atoms": [
+    "key.structurize.teleport"
+   ]
+  },
+  {
+   "jar": "supplementaries-1.21.1-3.9.5-neoforge.jar",
+   "class": "net/mehvahdjukaar/supplementaries/reg/ClientRegistry",
+   "names": [
+    "supplementaries.keybind.quiver"
+   ],
+   "categories": [
+    "supplementaries.gui.controls"
+   ],
+   "name_atoms": [
+    "supplementaries.keybind.quiver"
+   ]
+  },
+  {
+   "jar": "tempad-1.21.1-3.0.4-all.jar",
+   "class": "earth/terrarium/tempad/client/ModKeybinds",
+   "names": [
+    "key.tempad.shortcut"
+   ],
+   "categories": [
+    "category.tempad"
+   ],
+   "name_atoms": [
+    "key.tempad.shortcut"
+   ]
+  },
+  {
+   "jar": "tempad-1.21.1-3.0.4-all.jar",
+   "class": "earth/terrarium/tempad/client/ModKeybinds",
+   "names": [
+    "key.tempad.macro"
+   ],
+   "categories": [
+    "category.tempad"
+   ],
+   "name_atoms": [
+    "key.tempad.macro"
+   ]
+  },
+  {
+   "jar": "tempad-1.21.1-3.0.4-all.jar",
+   "class": "earth/terrarium/tempad/client/ModKeybinds",
+   "names": [
+    "key.tempad.new_location"
+   ],
+   "categories": [
+    "category.tempad"
+   ],
+   "name_atoms": [
+    "key.tempad.new_location"
+   ]
+  },
+  {
+   "jar": "tempad-1.21.1-3.0.4-all.jar",
+   "class": "earth/terrarium/tempad/client/ModKeybinds",
+   "names": [
+    "key.tempad.travel_timeline"
+   ],
+   "categories": [
+    "category.tempad"
+   ],
+   "name_atoms": [
+    "key.tempad.travel_timeline"
+   ]
+  },
+  {
+   "jar": "the_bumblezone-7.15.3+1.21.1-neoforge.jar",
+   "class": "com/telepathicgrunt/the_bumblezone/services/neoforge/NeoClientPlatformService",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "theurgy-1.21.1-neoforge-1.76.0.jar",
+   "class": "com/klikli_dev/theurgy/registry/KeyMappingsRegistry",
+   "names": [
+    "key.theurgy.change_item_mode"
+   ],
+   "categories": [
+    "key.theurgy.category"
+   ],
+   "name_atoms": [
+    "key.theurgy.change_item_mode"
+   ]
+  },
+  {
+   "jar": "tombstone-neoforge-1.21.1-9.5.5.jar",
+   "class": "ovh/corail/tombstone/registry/ClientModEvents",
+   "names": [],
+   "categories": [
+    "Corail Tombstone"
+   ],
+   "name_atoms": []
+  },
+  {
+   "jar": "tombstone-neoforge-1.21.1-9.5.5.jar",
+   "class": "ovh/corail/tombstone/registry/ClientModEvents",
+   "names": [],
+   "categories": [
+    "Corail Tombstone"
+   ],
+   "name_atoms": []
+  },
+  {
+   "jar": "tombstone-neoforge-1.21.1-9.5.5.jar",
+   "class": "ovh/corail/tombstone/registry/ClientModEvents",
+   "names": [],
+   "categories": [
+    "Corail Tombstone"
+   ],
+   "name_atoms": []
+  },
+  {
+   "jar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+   "class": "twilightforest/init/TFKeyBinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "red_thread_vision"
+   ]
+  },
+  {
+   "jar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+   "class": "twilightforest/init/TFKeyBinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "item_display_map_cycle"
+   ]
+  },
+  {
+   "jar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+   "class": "twilightforest/init/TFKeyBinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "zoom"
+   ]
+  },
+  {
+   "jar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+   "class": "twilightforest/init/TFKeyBinds",
+   "names": [],
+   "categories": [],
+   "name_atoms": [
+    "swap_hotbar"
+   ]
+  },
+  {
+   "jar": "universalgrid-neoforge-1.21.1-0.3.2.jar",
+   "class": "com/ultramega/universalgrid/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.universalgrid"
+   ],
+   "name_atoms": [
+    "key",
+    "open_wireless_universal_grid"
+   ]
+  },
+  {
+   "jar": "universalgrid-neoforge-1.21.1-0.3.2.jar",
+   "class": "com/ultramega/universalgrid/neoforge/ClientModInitializer",
+   "names": [],
+   "categories": [
+    "mod.universalgrid"
+   ],
+   "name_atoms": [
+    "key",
+    "switch_wireless_universal_grid_type"
+   ]
+  },
+  {
+   "jar": "utilityvest-1.3.0.jar",
+   "class": "dev/satherov/utilityvest/client/input/UVKeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "utilityvest-1.3.0.jar",
+   "class": "dev/satherov/utilityvest/client/input/UVKeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "utilityvest-1.3.0.jar",
+   "class": "dev/satherov/utilityvest/client/input/UVKeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "utilityvest-1.3.0.jar",
+   "class": "dev/satherov/utilityvest/client/input/UVKeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "utilityvest-1.3.0.jar",
+   "class": "dev/satherov/utilityvest/client/input/UVKeybindManager",
+   "names": [],
+   "categories": [],
+   "name_atoms": []
+  },
+  {
+   "jar": "xycraft_core-0.7.53-all.jar",
+   "class": "tv/soaryn/xycraft/core/content/registries/CoreInput",
+   "names": [
+    "key.xycraft_core.modifier_key"
+   ],
+   "categories": [
+    "key.category.xycraft_core.key_binds"
+   ],
+   "name_atoms": [
+    "key.xycraft_core.modifier_key"
+   ]
+  }
+ ]
+}
