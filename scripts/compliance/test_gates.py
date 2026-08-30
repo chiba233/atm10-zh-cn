@@ -1188,6 +1188,45 @@ def _m53(tmp, tree):
     return _unob(tmp, '9.9', None) == [7948263, 8005487]
 
 
+def _prune(tmp, upstream_has):
+    """造一版出货树 + 一版官方文件，跑 gen_missing_questpics.py --prune。
+
+    返回 (退出码, 我们画的那张还在不在)。`upstream_has=None` 表示**根本没取到**
+    该版的官方文件——那时「上游有没有这张图」是不知道，不是「没有」。
+    """
+    rel = 'create/create_shaft.png'
+    up = tmp / 'packsrc'
+    if upstream_has is not None:
+        (up / 'kubejs/assets/atm/textures/questpics/create').mkdir(parents=True)
+        if upstream_has:
+            (up / 'kubejs/assets/atm/textures/questpics' / rel).write_bytes(b'\x89PNG up')
+    tree = tmp / 'tree'
+    ours = tree / 'resourcepacks' / 'ATM10汉化包' / 'assets/atm/textures/questpics' / rel
+    ours.parent.mkdir(parents=True)
+    ours.write_bytes(b'\x89PNG ours')
+    r = subprocess.run(
+        [sys.executable, str(ROOT / 'scripts' / 'gen_missing_questpics.py'),
+         '--prune', str(up), str(tree)],
+        capture_output=True, text=True)
+    return r.returncode, ours.is_file()
+
+
+@missing_case('这一版上游自己有那张图 → 把我们画的剔掉，不许覆盖上游')
+def _m54(tmp, tree):
+    return _prune(tmp, True) == (0, False)
+
+
+@missing_case('这一版上游没有那张图 → 保留我们画的（老版本全靠它）')
+def _m55(tmp, tree):
+    return _prune(tmp, False) == (0, True)
+
+
+@missing_case('取不到该版官方文件 → 必须红，不许当成「上游没有」而覆盖过去')
+def _m56(tmp, tree):
+    rc, _ = _prune(tmp, None)
+    return rc != 0
+
+
 def run_missing(name, fn):
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)

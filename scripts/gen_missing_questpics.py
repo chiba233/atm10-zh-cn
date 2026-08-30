@@ -6,10 +6,16 @@
 """补上任务书**引用了、整合包里却没有**的章节配图。
 
 ATM10 8.0 把机械动力章节的任务连线改成一根根「传动杆」贴图，引用
-`atm:textures/questpics/create/create_shaft.png` 共 27 处——而这张图整合包里
-从来没有过：7.0/7.1/7.2/7.3/8.0 五个版本的 `questpics/create/` 都只有那 11 张，
-干净的 8.0 实例全盘 find 也没有，create 系 jar 里也没有。缺失纹理在游戏里
-就是那片品红黑格，把整章的连线画成一团花（不装本包同样如此，7.0–7.3 不受影响）。
+`atm:textures/questpics/create/create_shaft.png` 共 27 处——而这张图 7.0/7.1/7.2/
+7.3/8.0 的 `questpics/create/` 里都只有那 11 张，没有它，干净的 8.0 实例全盘 find
+也没有，create 系 jar 里也没有。缺失纹理在游戏里就是那片品红黑格，把整章的连线
+画成一团花（不装本包同样如此，7.0–7.3 不受影响）。
+
+**缺图是逐版本的事实。** ATM 在 8.1 里自己把这张图发出来了（27 处引用照旧），
+而 7.0–8.0 的官方文件里仍然没有。所以照旧画进版本中立的出货树，再由 `--prune`
+在组每一版出货树时按**该版**的官方文件剔一次：8.1 用 ATM 自己的贴图，
+7.0–8.0 用我们画的。整条 MISSING 只有在**每个在册版本**的上游都有了之后才该退休，
+那时本脚本会红着要求删掉它。
 
 成因在上游，但玩家看到的是「我装了这个包，任务书是花的」，所以补。
 资源包的加载顺序排在 KubeJS 之后（见 gen_quest_banners.py 顶部），同路径放一张
@@ -28,6 +34,7 @@ ATM10 8.0 把机械动力章节的任务连线改成一根根「传动杆」贴�
 用法:
     python3 scripts/gen_missing_questpics.py
     ATM_PACK_ROOT=<整合包目录> python3 scripts/gen_missing_questpics.py
+    python3 scripts/gen_missing_questpics.py --prune build/packsrc/8.1 build/v/8.1
 """
 import os
 import re
@@ -37,10 +44,12 @@ from pathlib import Path
 try:
     from PIL import Image, ImageDraw
 except ImportError:                                      # noqa: BLE001
-    sys.exit('需要 Pillow：python3 -m pip install Pillow')
+    # `--prune` 一张图都不画，不该被 Pillow 卡住——它是每一版出货树都要跑的一步，
+    # 也是反例测试要能单独跑的一步。画图那条路径照旧在动手前退出。
+    Image = ImageDraw = None
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from paths import PACK                                   # noqa: E402
+from paths import BUILD, PACK, ROOT                      # noqa: E402
 
 OUT = PACK / 'assets' / 'atm' / 'textures' / 'questpics'
 INST = Path(os.environ.get(
@@ -57,6 +66,8 @@ EDGE = (150, 139, 139, 255)
 
 def draw_link(w=512, h=128):
     """一段横向连线：两端齐平，便于按任意角度旋转后首尾相接。"""
+    if Image is None:
+        sys.exit('需要 Pillow：python3 -m pip install Pillow')
     im = Image.new('RGBA', (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     half = max(3, h // 12)                 # 线宽约为图高的 1/6
@@ -73,6 +84,11 @@ MISSING = {
 }
 
 
+def declared_versions():
+    """构建目标由目录决定（见 versions/README.md），这里不另抄一份清单。"""
+    return sorted(p.name for p in (ROOT / 'versions').glob('[0-9]*') if p.is_dir())
+
+
 def referenced():
     """该版本的章节文件里每个 questpic 引用了几次（路径 → 次数）。"""
     if not CHAPTERS.is_dir():
@@ -85,8 +101,8 @@ def referenced():
     return out
 
 
-def on_disk():
-    """上游实际有的图，按**小写**路径索引。
+def on_disk(root=None):
+    """上游实际有的图，按**小写**路径索引。`root` 给某一版的官方文件目录。
 
     章节里的引用一律小写（资源路径必须小写），而上游的目录名不一定：ATM 把
     现代工业化那三张放在 `ModernIndustrialization/` 下，章节却写
@@ -94,22 +110,59 @@ def on_disk():
     这三张照样显示；Linux 上找不到。这是上游 7.0 就有的老毛病，不是我们引入的，
     也不该让构建红——闸要判的是「这个引用有没有对应的图」，有，只是大小写没对齐。
     """
+    src = SRC if root is None else (
+        Path(root) / 'kubejs' / 'assets' / 'atm' / 'textures' / 'questpics')
     got = {}
-    if SRC.is_dir():
-        for p in SRC.rglob('*.png'):
-            got[str(p.relative_to(SRC)).replace(os.sep, '/').lower()] = p
+    if src.is_dir():
+        for p in src.rglob('*.png'):
+            got[str(p.relative_to(src)).replace(os.sep, '/').lower()] = p
     return got
+
+
+def prune(uproot, tree):
+    """这一版的上游自己有这张图了，就把我们画的那张从**该版**的资源包里剔掉。
+
+    缺图是逐版本的事实，不是全局事实：ATM 在 8.1 里补上了 create_shaft.png，
+    而 7.0–8.0 的官方文件里仍然没有。画进版本中立的 build/common 是对的
+    （老版本靠它），但发到 8.1 就成了「拿我们的图盖掉上游的」。所以组每版出货树时
+    再按该版的官方文件剔一次——两边都对，谁也不覆盖谁。
+
+    **取不到该版官方文件必须红**：那时候「上游有没有这张图」是不知道，
+    不是「没有」。默默按「没有」处理，就等于把覆盖上游变成静默行为。
+    """
+    up = Path(uproot)
+    if not (up / 'kubejs').is_dir():
+        sys.exit('❌ 取不到 %s 的官方文件（%s），判不了上游有没有这几张图。'
+                 % (up.name, up))
+    got = on_disk(up)
+    dst = Path(tree) / 'resourcepacks' / PACK.name / 'assets' / 'atm' / 'textures' / 'questpics'
+    for rel in sorted(MISSING):
+        if rel not in got:
+            continue
+        t = dst / rel
+        if t.is_file():
+            t.unlink()
+            print('  剔掉 %s：这一版上游自己有（%s）' % (rel, got[rel].name))
+        else:
+            print('  %s：这一版上游自己有，我们本来也没画进去' % rel)
 
 
 def main():
     used = referenced()
     got = on_disk()
     for rel, fn in sorted(MISSING.items()):
+        # 上游把图补回来了：不再是「所有版本都缺」，但也不一定是「所有版本都有」。
+        # 画进版本中立的 build/common 照旧（老版本靠它），发到已经有这张图的版本时
+        # 由 prune() 逐版剔掉——那条路径才知道每一版的官方文件长什么样。
+        stale = sorted(v for v in declared_versions()
+                       if rel in on_disk(BUILD / 'packsrc' / v))
         if rel in got:
-            # 上游把图补回来了。继续画就成了「拿我们的图盖掉上游的」——那是另一回事，
-            # 必须有人重新裁决，不许静默发生。
-            sys.exit('❌ %s 上游已经有了（%s），去掉 MISSING 里的这一条。'
-                     % (rel, got[rel].name))
+            print('  ⚠️ %s：ATM10 %s 的上游自己有了（%s），组该版出货树时会剔掉我们这张'
+                  % (rel, INST.name, got[rel].name))
+        if stale and len(stale) == len(declared_versions()):
+            # 每一个在册版本的上游都有了，这一条就该退休——再画下去只剩覆盖上游。
+            sys.exit('❌ %s 在册的 %s 个版本上游全都有了，去掉 MISSING 里的这一条。'
+                     % (rel, len(stale)))
         t = OUT / rel
         t.parent.mkdir(parents=True, exist_ok=True)
         fn().save(t)
@@ -131,4 +184,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == '--prune':
+        if len(sys.argv) != 4:
+            sys.exit('用法: %s --prune <该版官方文件目录> <该版出货树>' % sys.argv[0])
+        prune(sys.argv[2], sys.argv[3])
+    else:
+        main()

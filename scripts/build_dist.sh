@@ -74,6 +74,9 @@ if [ ! -d "$UPROOT/kubejs" ]; then
   python3 scripts/fetch_pack.py "$MC" "$UPROOT" --no-jars
 fi
 python3 scripts/gen_upstream_patches.py "$UPROOT" "$TREE" "$MC"
+# 任务书缺图是**逐版本**的事实：ATM 在 8.1 里自己发了 create_shaft.png，7.0–8.0 没有。
+# 版本中立那棵树里照旧画着（老版本靠它），这里按该版官方文件剔一次，别覆盖上游。
+python3 scripts/gen_missing_questpics.py --prune "$UPROOT" "$TREE"
 # 任务书语言：把本包的覆盖打进上游那份章节文件，按原文件名出货（含该版专属覆盖）。
 # splitter 的合并顺序在 Linux 上是随机的，同一个键必须只由一份文件持有——
 # 详见 gen_quest_lang_patches.py 顶部。
