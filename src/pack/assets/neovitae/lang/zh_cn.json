@@ -256,5 +256,8 @@
   "gui.neovitae.tabula_vitae.idle.not_enough_ev": "网络中的命源不足",
   "gui.neovitae.tabula_vitae.idle.orb_unbound": "这颗宝珠还没有绑定任何人",
   "gui.neovitae.tabula_vitae.idle.output_blocked": "输出槽已满",
-  "gui.neovitae.tabula_vitae.idle.tier_too_low": "需要更高等级的血之宝珠"
+  "gui.neovitae.tabula_vitae.idle.tier_too_low": "需要更高等级的血之宝珠",
+  "tooltip.neovitae.bound_treasures.not_a_container": "那不是一个容器",
+  "tooltip.neovitae.diviner.deusRune": "神之仪式石：%d",
+  "tooltip.neovitae.orb.network_ev": "本魂网络中约有 %s 命源"
 }
