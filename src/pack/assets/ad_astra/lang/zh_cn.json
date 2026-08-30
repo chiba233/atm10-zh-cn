@@ -1,0 +1,20 @@
+{
+  "config.ad_astra.client.title": "Ad Astra 客户端",
+  "config.ad_astra.description": "生生不息，繁荣昌盛，愿原力与你同在。",
+  "config.ad_astra.deshTier": "戴斯级",
+  "config.ad_astra.ironTier": "铁级",
+  "config.ad_astra.launchEfficientFuelCost": "高效燃料的发射消耗",
+  "config.ad_astra.launchFuelCost": "发射燃料消耗",
+  "config.ad_astra.machine.energyCapacity": "能量容量",
+  "config.ad_astra.machine.fluidCapacity": "流体容量",
+  "config.ad_astra.machine.maxEnergyInOut": "最大能量输入/输出",
+  "config.ad_astra.ostrumTier": "紫金级",
+  "config.ad_astra.steelTier": "钢级",
+  "fluid_type.ad_astra.flowing_cryo_fuel": "流动的凛冰燃料",
+  "fluid_type.ad_astra.flowing_fuel": "流动的燃油",
+  "fluid_type.ad_astra.flowing_hydrogen": "流动的氢气",
+  "fluid_type.ad_astra.flowing_oil": "流动的石油",
+  "fluid_type.ad_astra.flowing_oxygen": "流动的氧气",
+  "tag.item.ad_astra.oxygen_supplying_armor": "供氧护甲",
+  "tag.item.ad_astra.space_resistant_armor": "耐太空护甲"
+}
