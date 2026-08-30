@@ -259,5 +259,9 @@
   "gui.neovitae.tabula_vitae.idle.tier_too_low": "需要更高等级的血之宝珠",
   "tooltip.neovitae.bound_treasures.not_a_container": "那不是一个容器",
   "tooltip.neovitae.diviner.deusRune": "神之仪式石：%d",
-  "tooltip.neovitae.orb.network_ev": "本魂网络中约有 %s 命源"
+  "tooltip.neovitae.orb.network_ev": "本魂网络中约有 %s 命源",
+  "block.neovitae.tenebrae_ritual_stone": "薄暮仪式石",
+  "item.neovitae.tenebrae_scribe_tool": "铭文工具：薄暮",
+  "item.neovitae.ritual_diviner_tenebrae": "仪式占卜杖[薄暮]",
+  "tooltip.neovitae.diviner.tenebraeRune": "薄暮仪式石：%d"
 }
