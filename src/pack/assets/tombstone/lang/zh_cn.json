@@ -1255,5 +1255,7 @@
   "entity.tombstone.flying_carpet": "飞毯",
   "item.minecraft.tipped_arrow.effect.spectral": "光灵之箭",
   "effect.tombstone.concentration": "专注",
-  "effect.tombstone.spectral_bond": "灵魂羁绊"
+  "effect.tombstone.spectral_bond": "灵魂羁绊",
+  "tombstone.message.flight_not_allowed": "服务器不允许使用会飞的坐骑",
+  "effect.tombstone.silent_bond": "静默契约"
 }

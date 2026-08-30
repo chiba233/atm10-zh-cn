@@ -56,5 +56,8 @@
   "Book of Modular Bees": "模块化蜜蜂之书",
   "About how to bee a modular designer.": "关于如何成为模块化设计师。",
   "config.jade.plugin_modularbees.grid_node_state": "AE2网络状态（ModularBees）",
-  "config.jade.plugin_modularbees.power_storage": "AE2电力状态（ModularBees）"
+  "config.jade.plugin_modularbees.power_storage": "AE2电力状态（ModularBees）",
+  "block.modularbees.me_centrifuge_import": "离心机 ME 导入仓",
+  "modularbees.gui.me_import.config": "配置",
+  "modularbees.gui.me_import.storage": "存储"
 }

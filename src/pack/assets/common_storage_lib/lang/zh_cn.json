@@ -1,0 +1,5 @@
+{
+  "misc.common_storage_lib.energy": "%s ⚡",
+  "misc.common_storage_lib.fluid": "%s 🪣 %s",
+  "misc.common_storage_lib.consume": "消耗 %s"
+}

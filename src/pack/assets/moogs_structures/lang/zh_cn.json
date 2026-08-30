@@ -1,0 +1,16 @@
+{
+  "moogs_structures.config.title": "Moog's Structures",
+  "moogs_structures.config.reload_notice": "改动要重新载入世界后才生效（退回标题界面再进，或执行 /reload）。",
+  "moogs_structures.config.category.replace_vanilla": "替换原版结构",
+  "moogs_structures.config.category.structures": "结构",
+  "moogs_structures.config.universal_rarity": "总体稀有度",
+  "moogs_structures.config.universal_rarity.tooltip": "按倍数放大所有 Moog 结构的间距。数值越大越罕见，越小越常见。",
+  "moogs_structures.config.all_of_mod": "全部 %s",
+  "moogs_structures.config.mod_rarity.tooltip": "按倍数放大 %s 全部结构的间距。",
+  "moogs_structures.config.preview": "预览",
+  "moogs_structures.config.preview.unavailable": "无预览：这个模组没有设置预览链接（mod_slug）。",
+  "moogs_structures.config.enabled": "已启用",
+  "moogs_structures.config.disabled": "已禁用",
+  "moogs_structures.cloth_required.title": "Moog's Structure Lib",
+  "moogs_structures.cloth_required.message": "Moog's Structure Lib 的配置界面需要 Cloth Config API，装上它才能配置这些结构。"
+}
