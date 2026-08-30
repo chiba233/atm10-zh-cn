@@ -14,12 +14,10 @@
    "which": "all",
    "why": "同上，8.1 的这一章 21 个 image 块、0 个 hover。7.0–7.3 的 10 条不受影响。"
   },
-  "kubejs/assets/modern_industrialization/lang/zh_cn.json": {
-   "which": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-   "why": "ATM 注入的这份文件在 8.1 从 37 个键缩到 22 个，这 15 个键被删掉了。删了不丢东西：现代工业化 2.5.6 的 jar 自带 zh_cn 里这 15 条全都有正确中文（逐条核过，该 jar 在 8.0 与 8.1 是同一份字节），本包资源包里也都有。第 1 处（自动赫菲斯托斯锻炉）两版一字未改，照常生效。"
-  },
   "kubejs/server_scripts/announcements/announcements.js": {
-   "which": [1],
+   "which": [
+    1
+   ],
    "why": "8.1 沿用 8.0 重写过的公告清单：删掉了 4.0 / 4.1 / 4.2 三行，每行末尾加了分号，5.3 那条从「Eternal Starlight and Hyperbox」缩成「Hyperbox」。带分号的行与 7.0–7.3 的无分号版本不可能用同一个 find 命中，逐行拆也不行。第 2/3/4 处（三条命令回执）两版一字未改，照常生效。"
   }
  }
