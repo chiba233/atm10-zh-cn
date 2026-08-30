@@ -1,3 +1,22 @@
-# 还没实测。这一串必须真起一次 ATM10 8.1、干净退出，从游戏自己写出来的
-# options.txt 里抄；抄上一版会让汉化包被压在别的包下面，而且没有任何提示。
-# 留空时安装器不伪造列表，只写 lang:zh_cn 并提示玩家先启动一次再重跑。
+# ATM10 8.1 首次启动后游戏自己写出来的 resourcePacks 顺序（实测，不含本汉化包）。
+# 安装器新建 options.txt 时照抄这一串、把汉化包放最后一位；不这么做的话游戏会把
+# 这些内置包全插到汉化包后面，汉化包会被压在底下，等于没启用。
+# 与 8.0 的差别：多了 mod/eternal_starlight:resourcepacks/starlight_3d_mace，
+# 插在 mod/towntalk:respack 之后（永恒星光 0.8.1 → 0.9.0 带进来的内置包）。
+modularbees:dynamic_assets
+vanilla
+mod_resources
+add_xycraft_overrides_stone
+add_xycraft_overrides_metal
+add_xycraft_overrides_glass
+moonlight:merged_pack
+neovitae_materials
+mod/towntalk:respack
+mod/eternal_starlight:resourcepacks/starlight_3d_mace
+mod/dyenamicsandfriends:compat_packs/productivemetalworks/
+mod/dyenamicsandfriends:compat_packs/connectedglass/
+mod/dyenamicsandfriends:compat_packs/luminax/
+mod/dyenamicsandfriends:compat_packs/cookingforblockheads/
+mod/dyenamicsandfriends:compat_packs/botanypots/
+mod/dyenamicsandfriends:compat_packs/chromacarvings/
+modern_industrialization/generated
