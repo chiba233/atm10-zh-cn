@@ -170,6 +170,7 @@ FACE_BY_PREFIX = [
     ('undergarden/undergarden_vegetation','pixel'),
     ('chap2/atmstar_title2',     'pixel'), ('chap3/creative_creative', 'pixel'),
     ('ae2.png',                  'pixel'), ('allthemodium/all_allthemodium', 'pixel'),
+    ('aurora/',                  'pixel'),   # 白字身 + 深描边的方框点阵字
     ('apothic/other_spawners',   'pixel'), ('apothic/spawn_eggs',    'pixel'),
     ('building_tips/',           'pixel'), ('eternal/starlight_',    'pixel'),
     ('furnaces/',                'pixel'), ('generator/',            'pixel'),
@@ -610,6 +611,7 @@ BANNERS = {
     'artifacts/artifacts_necklace.png':                     '项链',
     'artifacts/artifacts_title.png':                        '奇异饰品',
     'artifacts/feet_olyfans.png':                           '足部',  # 饰品槽位名取 curios 的官方译法
+    'aurora/aurora_title.png':                              '极光',  # 8.1 新增的章节；同目录的 aurora_ring 是纯图形
     'basic_power/allthepower.png':                          '基础能量',
     'basicarmor/armor_title.png':                           '基础护甲',
     'bees/productive_bees.png':                             '资源蜜蜂',
