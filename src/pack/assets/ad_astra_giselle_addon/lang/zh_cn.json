@@ -18,6 +18,7 @@
   "description.ad_astra_giselle_addon.can_use.cold": "在寒冷维度",
   "description.ad_astra_giselle_addon.can_use.hot": "在炎热维度",
   "description.ad_astra_giselle_addon.creative_oxygen": "氧气",
+  "description.ad_astra_giselle_addon.space_breathing_unit": "可以在 Ad Astra 维度中呼吸；遇到雨水或在水中时还会给手持物品充满氧气；背包里需要且只能有 1 个氧气罐",
   "gui.ad_astra_giselle_addon.rocket_sensor.current": "当前输出：%s",
   "gui.ad_astra_giselle_addon.rocket_sensor.inverted": "反转输出",
   "gui.ad_astra_giselle_addon.workingarea": "工作范围",
