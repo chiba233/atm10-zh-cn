@@ -199,6 +199,44 @@ jobs:
 
       # 资源树育种结构（哪个任务对应哪棵树、父本是谁）是**该版基线**，
       # 跟 jars.json / keybinds.json 一样：版本入库时扫一次，人过目后提交，
+      # 任务书底本必须与「拿现在的取值器、对着该版钉的官方文件」算出来的一致。
+      # 这道闸是为一次真实事故加的：取值器读不了多行数组，八千多个键里七百多个被静默
+      # 丢掉，入库的基线因此少了一大截，而 check_en_drift.py 只会安静地少看，不会喊
+      # ——ATM 把「12 个耀光下界书架」改成 13 个就这么漏了整整一版。
+      # 基线本身错了的时候，只有拿现值重算一遍才发现得了。
+      #
+      # 只要 overrides（上面每个版本都取过了），不用 jar：模组 lang 那半本来就不入库。
+      # 与其余基线一样**不自动信任**：重算、上传 artifact、红着等人提交。
+      - name: 任务书底本与现在的取值器是否一致（不自动信任，红着等人提交）
+        id: qbase
+        env:
+          BASELINE_WRITE: '1'
+        run: |
+          set -euo pipefail
+          stale=''
+          for v in ${{ steps.t.outputs.list }}; do
+            python3 scripts/build_en_baseline.py --check-quest "$v" "build/packsrc/$v" || stale="$stale $v"
+          done
+          if [ -n "$stale" ]; then
+            echo "QBASE_STALE=1" >> "$GITHUB_ENV"
+            echo "STALE_VERS=$stale" >> "$GITHUB_ENV"
+          fi
+
+      - uses: actions/upload-artifact@v7
+        if: env.QBASE_STALE == '1'
+        with:
+          name: quest-baseline
+          path: versions/db/*/quest_baseline.json
+          retention-days: 30
+
+      - name: 任务书底本没入库就到此为止
+        if: env.QBASE_STALE == '1'
+        run: |
+          echo "❌ 这几版的任务书底本与现在算出来的对不上：$STALE_VERS"
+          echo "   下载 artifact「quest-baseline」，人工核对后提交 versions/db/*/quest_baseline.json。"
+          echo "   基线错了不会有人喊——check_en_drift.py 只会安静地少看几百个键。"
+          exit 1
+
       # 之后每次构建只读它。已发布版本的章节与配方不会再变，没有理由每次都下 jar 重扫。
       #
       # 只在缺基线时才扫，也只为缺的那些版本取 jar（按画像单取一个，核 sha256）。
