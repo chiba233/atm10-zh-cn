@@ -2204,6 +2204,7 @@
 	quest.7B4AF35313D7D779.title: "&6究极机器框架"
 	quest.7B5D34650BBD97D9.title: "&5星河"
 	quest.7B937E68FEFBBA98.title: "&d星钻胸甲"
+	quest.7BB3BF6162F05265.quest_desc: ["有时候要把转速调到某个具体的 RPM 挺麻烦……那不如用&f转速控制器&r！\\n\\n转速控制器会从上方的&d大型齿轮&r取用&d旋转力&r，再通过插在它里面的&8传动杆&r以相反方向输出一个指定的转速。\\n\\n在它侧面按住右键可以改设定的 RPM。不管&d大型齿轮&r送进来的转速是多少，它给&8传动杆&r的永远是你设定的那个 RPM。\\n\\n哪怕比原本的转速还快……我觉得这大概不是设计好的……"]
 	quest.7BC616DDB5933479.quest_desc: ["这一张可以用&5猩红精华瓶&r加上撰写卷轴的常规材料做出来。\\n你需要确保它到了 10 级，并且已经升到&6传说&r品质。"]
 	quest.7BC616DDB5933479.title: "&4凋灵之首 法术卷轴"
 	quest.7BCD4A425CF6199B.quest_desc: ["在击败由&9希奥弗伦斯敕令术&r召唤的仁慈之山羊后，你将获得一份残暴灵髓。将其与一些可可豆结合即可制作棕色粉笔。"]
@@ -2297,6 +2298,7 @@
 	task.17B0E19125FCFA1A.title: "发光蜜蜂蜜脾"
 	task.17C7DC04BC22C0D7.title: "锡蜜蜂蜜脾"
 	task.181135E3A83C5B9E.title: "锌蜜蜂蜜脾"
+	task.20BE26C2CE1F9749.title: "终极精华镐"
 	task.259A95D0B50071E9.title: "辉光钢武器"
 	task.25FF884779D98BAD.title: "塑料砖块™"
 	task.263F0E416A8E1110.title: "铜蜜蜂蜜脾"
@@ -2328,13 +2330,17 @@
 	task.5C358DFF9CD0D1D9.title: "辐射蜜蜂蜜脾"
 	task.5DEABD15EDE5736F.title: "晶工艺玻璃"
 	task.5E017E6B7E3F56B7.title: "黏液蜜蜂蜜脾"
+	task.6043422E5606334E.title: "探索类模组的钻石镐"
 	task.624ADD79136376C0.title: "晶工艺世界物品"
 	task.64A9FAB9457BC59A.title: "铀燃料棒"
+	task.66F50AF3299FA4C5.title: "神秘农业的镐"
 	task.6D4F62833424ADC0.title: "铁蜜蜂蜜脾"
+	task.6D5BE02E9FAED45C.title: "版权所有"
 	task.7219DDD36CAB6346.title: "低能MOX燃料棒"
 	task.723147B28E759948.title: "版权所有"
 	task.79AEDC66EB312BCA.title: "黄铜蜜蜂蜜脾"
 	task.79FB7E7194336B30.title: "附魔台"
 	task.7B7C1C5BFEC92058.title: "绿宝石蜜蜂蜜脾"
+	task.7DA13EB040BC1C19.title: "版权所有"
 	task.7DE03D4A420D1028.title: "访问黑暗神庙"
 }

@@ -94,9 +94,36 @@ def mod_en(mods_dir):
     return out
 
 
-def snbt_pairs(text):
+# 一条 snbt 值里的字符串字面量。转义大体按 JSON 的规矩，所以逐个再 json.loads 一次。
+_SNBT_STR = re.compile(r'"((?:[^"\\]|\\.)*)"')
+
+
+def _unescape(s):
+    """把字面量还原成文本。
+
+    SNBT 允许 JSON 不认的转义——本包里有 4 处 `\\&`（转义颜色码的 & ，让它按普通
+    字符显示）。这种解不了的原样留着：这些值只用来互相比对与查漂移，保持原形不丢字，
+    比为了「解析成功」去猜它是什么意思安全。
+    """
+    try:
+        return json.loads('"%s"' % s)
+    except ValueError:
+        return s
+
+
+def snbt_pairs(text, where=''):
     """snbt 取值。数组常常跨多行（quest_desc 一段一行），必须按方括号配平续读，
-    不能只用单行正则——早先那版对整合包的英文文件一条都没取到。"""
+    不能只用单行正则——早先那版对整合包的英文文件一条都没取到。
+
+    **SNBT 的数组元素之间没有逗号**，所以跨行的值 `json.loads` 必然失败。早先那版
+    在失败处 `except: pass`，于是每一条多行 quest_desc 都被静默丢掉：整合包 8922 个
+    任务书键里有 716 个对它是隐形的，本包自己的 delta 也有 225 个。后果不是少几行日志——
+    `quest_baseline.json` 靠它建，`check_en_drift.py` 又靠那份基线，于是「上游把多行正文
+    改了」这类漂移**一次都报不出来**。ATM 在 8.1 里把「12 个耀光下界书架」改成 13 个，
+    就是这么漏过去的（见 CHANGELOG R25）。
+
+    解析不出来一律抛错，不许再吞：一个取值器安静地少给几百个键，比它报错难查得多。
+    """
     out = {}
     lines = text.split('\n')
     i = 0
@@ -109,11 +136,19 @@ def snbt_pairs(text):
                 i += 1
                 v += '\n' + lines[i]
                 bal += lines[i].count('[') - lines[i].count(']')
-            try:
-                val = json.loads(v)
-                out[k] = '\n'.join(val) if isinstance(val, list) else val
-            except Exception:
-                pass
+            if v.lstrip().startswith('['):
+                # 数组：逐个取字符串字面量，段与段之间按换行接起来
+                out[k] = '\n'.join(_unescape(s) for s in _SNBT_STR.findall(v))
+            elif v.lstrip().startswith('"'):
+                mm = _SNBT_STR.match(v.lstrip())
+                if mm is None:
+                    # 以引号开头却读不出来 = 取值器跟不上写法了，必须红。
+                    # 不以引号开头的（false、数字、{…}）是章节文件里的结构字段，
+                    # 不是译文，跳过；本函数只负责取字符串。
+                    raise SystemExit(
+                        '❌ %s 里的 %s 以引号开头却取不出值，取值器该改了：%r'
+                        % (where or 'snbt', k, v[:120]))
+                out[k] = _unescape(mm.group(1))
         i += 1
     return out
 
