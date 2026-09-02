@@ -97,5 +97,20 @@
         "value": "伐木器"
       }
     ]
+  },
+  {
+    "target_class": [
+      "dev.compactmods.machines.feature.CMFeaturePacks"
+    ],
+    "pairs": [
+      {
+        "key": "Compact Machines: Room Upgrades",
+        "value": "压缩空间机械：房间升级"
+      },
+      {
+        "key": "Compact Machines: Basic Room Templates",
+        "value": "压缩空间机械：基础房间模板"
+      }
+    ]
   }
 ]

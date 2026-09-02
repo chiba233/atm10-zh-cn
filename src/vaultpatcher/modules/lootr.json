@@ -31,5 +31,20 @@
         "value": "转换失败："
       }
     ]
+  },
+  {
+    "target_class": [
+      "noobanidus.mods.lootr.neoforge.event.HandleResourcePacks"
+    ],
+    "pairs": [
+      {
+        "key": "Disable Lootr Advancements",
+        "value": "禁用战利品进度"
+      },
+      {
+        "key": "Disable Lootr Converting Suspicious Blocks",
+        "value": "禁用战利品转化可疑方块"
+      }
+    ]
   }
 ]

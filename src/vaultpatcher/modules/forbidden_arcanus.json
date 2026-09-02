@@ -34,5 +34,16 @@
         "value": "不止是优雅的家具。"
       }
     ]
+  },
+  {
+    "target_class": [
+      "com.stal111.forbidden_arcanus.common.CommonSetup"
+    ],
+    "pairs": [
+      {
+        "key": "Forbidden Arcanus: Preview Features",
+        "value": "禁忌与奥秘：预览功能"
+      }
+    ]
   }
 ]
