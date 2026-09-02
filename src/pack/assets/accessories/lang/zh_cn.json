@@ -35,6 +35,7 @@
  "accessories.key.category.accessories": "饰品",
  "argument.livingEntities.nonLiving": "此命令只能作用于生物实体，但所提供的选择器包含非生物实体",
  "gamerule.accessories.keepAccessoryInventory": "保留饰品栏",
+ "gamerule.accessories.keepAccessoryInventory.description": "死亡后保留饰品栏中的物品。",
  "#comment": "Config Related Below",
  "accessories.key.open_accessories_screen": "打开饰品界面",
  "accessories.slot.cosmetics.toggle.show": "显示装饰性槽位",

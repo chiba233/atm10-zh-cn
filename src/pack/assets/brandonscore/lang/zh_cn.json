@@ -1,4 +1,6 @@
 {
+ "gamerule.brandonscore:allowSignEditing": "允许编辑告示牌",
+ "gamerule.brandonscore:allowSignEditing.description": "潜行并空手右键已放置的告示牌可重新打开编辑界面。",
  "gui.brandonscore.hud_config.enabled.false": "已禁用",
  "gui.brandonscore.hud_config.enabled.true": "已启用",
  "gui.brandonscore.hud_config.name": "神龙HUD设置",
