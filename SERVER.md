@@ -1,10 +1,5 @@
 # 服务端汉化包 · 安装说明
 
-[![GitHub](https://img.shields.io/badge/GitHub-chiba233%2Fatm10--zh--cn-181717?logo=github)](https://github.com/chiba233/atm10-zh-cn)
-[![Contributing](https://img.shields.io/badge/Contributing-guide-blue.svg)](./CONTRIBUTING.md)
-[![Security](https://img.shields.io/badge/Security-policy-red.svg)](./SECURITY.md)
-[![License](https://img.shields.io/badge/License-GPL--3.0-green.svg)](./LICENSE)
-
 > **单机玩家不需要本包**，装客户端包就够了。本包是给开**专用服务器**的人用的。
 
 ## 兼容版本
@@ -23,15 +18,16 @@
 2. 把包内的 `mods/` `vaultpatcher/` `kubejs/` `config/` **覆盖**到服务器数据目录（含 `mods/`、`server.properties` 的那一层）。
 3. **完整重启服务器。**
 
-> 任务书语言文件是**整份替换**，会覆盖同名文件，这是正常的。包里那些内容只有 `{}` 的 `zz_hanhua_*.snbt` / `_*.snbt` 是有意为之，不是漏生成。
+> 任务书语言文件整份替换、覆盖同名文件是正常的；包里内容只有 `{}` 的
+> `zz_hanhua_*.snbt` / `_*.snbt` 也是正常的。
 
-**只改了任务书文本时可以不重启**，执行 `ftbquests reload` 即可让在线玩家生效：
+**只改了任务书文本时可以不重启**，`ftbquests reload` 即可对在线玩家生效：
 
 ```bash
 docker exec <容器名> rcon-cli ftbquests reload
 ```
 
-在服务端控制台直接敲 `ftbquests reload` 效果相同。VaultPatcher 与 kubejs 的改动仍需完整重启。
+（服务端控制台直接敲同名命令也行。VaultPatcher 与 kubejs 的改动仍需完整重启。）
 
 ## 验证
 
@@ -41,6 +37,8 @@ docker exec <容器名> rcon-cli ftbquests reload
 
 ## 注意
 
-⚠️ **绝不能把客户端包的 `config/mysticalcustomization` 上传到服务器**，会让所有玩家进服时刷 `error creating crop with id null`。本服务端包已不含该目录，请确认你也没有手动复制上去。
+⚠️ **别把客户端包的 `config/mysticalcustomization` 传到服务器**——所有玩家进服会刷
+`error creating crop with id null`。本包不含该目录，确认你没手动复制过去。
 
-⚠️ **绝不能把客户端的 VaultPatcher 模块装到服务端**。服务端只用类定向模块（清单见 `scripts/server_modules.txt`），全局替换模块会污染 NBT / 注册名导致存档损坏。
+⚠️ **别把客户端的 VaultPatcher 模块装到服务端**——会污染 NBT 与注册名，损坏存档。
+服务端只用类定向模块（清单见 `scripts/server_modules.txt`）。
