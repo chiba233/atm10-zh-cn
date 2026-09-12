@@ -35,7 +35,7 @@ SRC_ONLY = {'blockui_legacy_labels.json'}
 
 # ── 显示层动态替换是**全局**开销，不是「只在目标类里」 ──────────────────────
 #
-# 读 vaultpatcher 1.5.2 的字节码（sha256 034b53b7…，javap 逐条看）得到的事实：
+# 读 vaultpatcher 1.5.3-fix 的字节码（sha256 d79668dd…，javap 逐条看）得到的事实：
 #
 #   VPNeoForgeMinecraftClassProcessor.targets() = {
 #       net.minecraft.network.chat.contents.PlainTextContents$LiteralContents,

@@ -14,7 +14,7 @@
   "建筑风格名、111 对是模组列表名，都来自运行时构造的字符串，改不成静态 LDC。",
   "去掉全部 dynamic 模块确实能让注入彻底消失，但要丢掉 1085 条译文。",
   "",
-  "为什么不等上游：1.5.3 的 DynamicReplaceUtils.java 与 1.5.2 blob sha 完全相同，未修。",
+  "为什么还要打：上游到 1.5.3-fix 仍未修，DynamicReplaceUtils.java 与 1.5.2 逐字节相同。",
   "",
   "GPL-3.0：VaultPatcher 是 GPL-3.0，本仓库同许可。分发改过的版本需要保留许可、",
   "注明已修改、并提供对应源码——本目录的 *.json 加上 upstream 里钉死的 ref/sha256",
@@ -24,17 +24,17 @@
  "jar": {
   "_说明": "src/mods.lock.json 里那个 jar，必须与此哈希逐字节相同；对不上就退出，不猜。",
   "path": "mods/vaultpatcher.jar",
-  "sha256": "034b53b79aecabf7635f16937a3216e16a01eb97700919330189a5a35524d67f"
+  "sha256": "d79668dd66f3edeffa347917ba10ff7930c9d09788aa86528d4af6514fc6af52"
  },
 
  "upstream": {
   "_说明": "补丁按这个 tag 的源码写的。取下来必须逐个核 sha256——上游改了同名 tag 也会当场发现。",
   "repo": "3093FengMing/VaultPatcher",
-  "ref": "1.5.2-all",
-  "raw": "https://raw.githubusercontent.com/3093FengMing/VaultPatcher/1.5.2-all/",
+  "ref": "1.5.3-fix-all",
+  "raw": "https://raw.githubusercontent.com/3093FengMing/VaultPatcher/1.5.3-fix-all/",
   "sources": {
    "DynamicReplaceUtils.java": "8f3b2e6dbdb93acf1291e57e4ca93234da6c7e5775f48821f5a59477a76649a4",
-   "Pairs.java": "534dcc9596f8c96a9cceed335cf10c141a512f499db318bdce305f5896fbcffd"
+   "Pairs.java": "f8b50ff3ecbe5fc045aa8993e268f429ded46c5e1ee9c9632198c20cb270743a"
   }
  },
 
@@ -85,13 +85,13 @@
    "me/fengming/vaultpatcher_asm/core/utils/DynamicReplaceUtils.class",
    "me/fengming/vaultpatcher_asm/core/utils/DynamicReplaceUtils$1.class"
   ],
-  "total_entries": 106
+  "total_entries": 104
  },
 
  "release": {
   "_说明": [
    "javac 的 --release：**对齐 jar 里原有 class 的版本**，不是对齐运行时。",
-   "vaultpatcher-all-1.5.2.jar 里 72 个 class 全是 major 52（Java 8），",
+   "vaultpatcher-all-1.5.3-fix.jar 里 70 个 class 全是 major 52（Java 8），",
    "所以这里也编 8——编高了既和同一个 jar 里其余 class 不一致，",
    "也会在只有 JDK 17 的构建容器上直接编不过（2026-08-13 CI 上就是这么炸的：",
    "release version 21 not supported）。补丁本身没用到 8 以上的 API。"

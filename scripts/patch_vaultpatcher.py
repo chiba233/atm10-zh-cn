@@ -33,7 +33,7 @@ GraalVM 21 上实测单次 18.3us（栈遍历 9.4us + 1085 对线性扫 10.2us�
   只作用于走 NeoForge 类加载管线的类；VaultPatcher 自己的类由它自己的
   transformation service 加载，不在管线里。
 - **删 dynamic 模块能让注入彻底消失**，但要丢 1085 条译文（建筑风格名 828、模组列表名 111）。
-- **等上游没用**：1.5.3 的 `DynamicReplaceUtils.java` 与 1.5.2 blob sha 完全相同。
+- **等上游没用**：到 1.5.3-fix 为止 `DynamicReplaceUtils.java` 一个字节没改。
 
 ## 闸
 

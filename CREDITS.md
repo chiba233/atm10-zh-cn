@@ -4,7 +4,7 @@
 
 ## 一、本包不含广告，也不含任何加载器 / 启动器模组
 
-本包只有一个 jar：`mods/vaultpatcher.jar`（[VaultPatcher](https://modrinth.com/mod/vault-patcher) 1.5.2，
+本包只有一个 jar：`mods/vaultpatcher.jar`（[VaultPatcher](https://modrinth.com/mod/vault-patcher) 1.5.3-fix，
 作者 [FengMing3093](https://github.com/3093FengMing/VaultPatcher)，GPL-3.0-only，
 字节码文本替换框架，替换表全部在 `vaultpatcher/modules/` 里，明文可查）。
 它不入本仓库，构建时按 `src/mods.lock.json` 里记的 sha256 从 Modrinth 现取并校验。
