@@ -1058,7 +1058,7 @@
     "src/mods/vaultpatcher/verify/com/ldtteam/structurize/client/gui/WindowExtendedBuildTool.java",
     "src/module_hashes.json",
     "src/optional-mods-pinyin/LICENSE-just-enough-characters.txt",
-    "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.26.jar",
+    "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.29.jar",
     "src/optional-mods-pinyin/来源与许可.md",
     "src/pack/assets/abnormals_delight/lang/zh_cn.json",
     "src/pack/assets/abundant_atmosphere/lang/zh_cn.json",
@@ -3533,6 +3533,12 @@
       "approved": "用户",
       "date": "2026-07-28",
       "why": "无效改动：blockui 的 ButtonImage 不按 textalign 摆标签，实测该属性已进玩家安装的包但界面照旧贴左上，236 处改动是空转"
+    },
+    {
+      "path": "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.26.jar",
+      "approved": "用户",
+      "date": "2026-09-12",
+      "why": "被同目录的 jecharacters-1.21.1-neoforge-4.5.29.jar 取代。assemble.py 把本目录整个拷进出货树，两个 jar 同时在会让包里带两份同一个模组。"
     }
   ]
 }
