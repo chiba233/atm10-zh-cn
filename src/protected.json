@@ -3536,7 +3536,7 @@
     },
     {
       "path": "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.26.jar",
-      "approved": "用户",
+      "approved": "42f086c7",
       "date": "2026-09-12",
       "why": "被同目录的 jecharacters-1.21.1-neoforge-4.5.29.jar 取代。assemble.py 把本目录整个拷进出货树，两个 jar 同时在会让包里带两份同一个模组。"
     }
