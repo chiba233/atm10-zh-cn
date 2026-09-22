@@ -60,6 +60,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
+import urllib.error
 import urllib.request
 import zipfile
 from pathlib import Path
@@ -77,13 +79,33 @@ def sha256(b):
 
 
 def fetch(url, want, name):
-    """按 sha256 取一份东西，缓存在 build/vpcache/<sha256>。哈希对不上就退出。"""
+    """按 sha256 取一份东西，缓存在 build/vpcache/<sha256>。哈希对不上就退出。
+
+    限速要退避重试。Maven Central 对 CI 的出口 IP 会回 429，一次就把整个构建
+    带走——而这不是「补丁不适用」，只是这一秒不给下。退避重试之后仍然失败才算
+    失败：异常照样抛出去，哈希照样核，没有任何一条路会让没核过的字节混进来。
+    """
     CACHE.mkdir(parents=True, exist_ok=True)
     c = CACHE / want
     if c.exists() and sha256(c.read_bytes()) == want:
         return c.read_bytes()
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=180) as r:
-        data = r.read()
+    for i in range(6):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA),
+                                        timeout=180) as r:
+                data = r.read()
+            break
+        except urllib.error.HTTPError as e:
+            if e.code not in (403, 408, 425, 429, 500, 502, 503, 504) or i == 5:
+                raise
+            wait = float(e.headers.get('Retry-After') or 0) or (2 ** i)
+            print('  %s：HTTP %s，%.0f 秒后重试（第 %d 次）'
+                  % (name, e.code, min(wait, 60), i + 1), flush=True)
+            time.sleep(min(wait, 60))
+        except urllib.error.URLError:
+            if i == 5:
+                raise
+            time.sleep(2 ** i)
     got = sha256(data)
     if got != want:
         sys.exit('❌ %s 哈希对不上——**不要用这个文件**\n'
