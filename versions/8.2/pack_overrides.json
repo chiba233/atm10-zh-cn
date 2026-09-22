@@ -1,0 +1,23 @@
+{
+ "_": "该版专属的资源包译文。只用于「同一个键在这一版的参数个数与别版不同」——一份中文对不了两版。每条必须写 why。见 scripts/gen_pack_overrides.py。",
+ "lang": {
+  "apothic_enchanting": {
+   "text.apothic_enchanting.star_prefix": {
+    "value": "🌟 ",
+    "why": "8.1 的 ApothicEnchanting 1.6.1 里这条英文是「🌟 %s」，名字由参数带进来；8.2 的 1.6.2 改成了「🌟 」，一个参数都不传。公共树那份跟着 8.1 写，带一个 %s，在 8.2 上没有参数可填，TranslatableContents 会抛 TranslatableFormatException。这一条只能按版本分叉，直到 8.1 及更早停止出货。"
+   }
+  },
+  "apotheosis": {
+   "text.apotheosis.touched_by_malice": {
+    "value": "受恶意侵蚀（x%s）",
+    "why": "8.1 的 Apotheosis 8.7.0 里这条英文是「Touched by Malice」，没有参数；8.2 的 8.8.0 改成了「Touched by Malice (x%s)」，多出一个层数。公共树那份不带参数，在 8.2 上不会报错，但层数会被默默吞掉——玩家看不出这条词缀叠了几层。x 的写法跟本文件里已有的「%sx%s范围」一致。"
+   }
+  },
+  "lootr": {
+   "lootr.commands.summon": {
+    "value": "已使用战利品表 %3$s 于 %2$s 处生成出了 Lootr 的%1$s。",
+    "why": "8.1 的 lootr 1.11.38.124 里这条英文是「Summoned a Lootr Cart at %s using the loot table %s.」，种类写死在句子里，两个参数依次是坐标、战利品表；8.2 的 1.11.38.126 改成了「Summoned a Lootr %s at %s using the loot table %s.」，种类变成第一个参数，坐标与战利品表各往后挪一位。公共树那份按两个参数写，在 8.2 上会把种类填进坐标的位置。句式照抄同一文件里参数形状一样、两版都没变的 lootr.commands.create。"
+   }
+  }
+ }
+}
