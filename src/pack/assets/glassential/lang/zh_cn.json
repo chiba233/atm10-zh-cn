@@ -149,5 +149,9 @@
   "tooltip.glassential.painter.eyedropper": "Shift+右击任意方块以复制其颜色",
   "message.glassential.brush.copy_success": "已将颜色 %s 复制到画笔",
   "message.glassential.brush.copy_failed": "无法从此方块复制颜色",
-  "tooltip.glassential.painter.color": "颜色：%s"
+  "tooltip.glassential.painter.color": "颜色：%s",
+  "block.glassential.smart_glass": "智能玻璃",
+  "tooltip.glassential.smart": "受到红石充能时变为磨砂",
+  "tooltip.glassential.smart.panel": "一个信号就能让整片相连的玻璃一起变磨砂",
+  "tooltip.glassential.smart.hint": "变磨砂后仍然透光"
 }

@@ -266,5 +266,6 @@
   "tag.fluid.c.ignites": "易燃流体",
   "block.createaddition.connector_old": "连接器（旧）",
   "block.createaddition.copper_wire_casing": "铜线外壳",
-  "block.createaddition.servo_motor": "伺服马达"
+  "block.createaddition.servo_motor": "伺服马达",
+  "block.createaddition.electric_pump": "电动泵"
 }
