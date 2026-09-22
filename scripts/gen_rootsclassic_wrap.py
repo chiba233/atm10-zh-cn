@@ -67,12 +67,16 @@ KEY = re.compile(r'\.page\d+info$')
 
 MOD_LIMIT = 160          # ResearchPage.makeLines 里的常数
 
-# 160 是从下面这份 jar 的字节码里读出来的（sipush 160，紧跟着 if_icmple）。模组一升级
-# 这个数就可能变，而变了之后这里算出来的行宽全是错的、还不会有人发现。所以把它钉到
-# 版本库已经记着的那份 jar 上：对不上就红，逼人回去重读一次字节码再改这里。
+# 160 是从下面这几份 jar 的字节码里**逐份**读出来的（sipush 160，紧跟着 if_icmple）。
+# 模组一升级这个数就可能变，而变了之后这里算出来的行宽全是错的、还不会有人发现。
+# 所以把它钉到版本库已经记着的那些 jar 上：出现没登记过的 jar 就红，逼人回去重读一次
+# 字节码再往这里加。**不许只因为「又升了一版」就把新 sha 填进来**——填之前必须真读。
 JAR_PREFIX = 'rootsclassic'
-JAR_SHA256 = '9407e843601bf5998c8f24b608f70a510b3727d2f3b8bef9753348a3147ba83d'
-JAR_FILE_ID = 7886347
+VERIFIED_JARS = {
+    # fileID: sha256
+    7886347: '9407e843601bf5998c8f24b608f70a510b3727d2f3b8bef9753348a3147ba83d',
+    8860609: '29d8a909126a93947197ab4b7b8c0bfa779b0f0eeeb0068423254ffb9631c7dc',
+}
 SPACE = 6                # ASCII 空格按 ASCII 上限算，同样是往大了估
 BUDGET = MOD_LIMIT - SPACE
 
@@ -146,14 +150,17 @@ def check_jar_pinned():
         raise SystemExit('❌ versions/db/*/jars.json 里找不到 %s——没法确认 makeLines '
                          '的行宽常数还是不是 %d' % (JAR_PREFIX, MOD_LIMIT))
     bad = {v: s for v, s in seen.items()
-           if s[1] != JAR_SHA256 or s[2] != JAR_FILE_ID}
+           if VERIFIED_JARS.get(s[2]) != s[1]}
     if bad:
         raise SystemExit(
-            '❌ RootsClassic 换版本了，%d 这个行宽常数必须重新从字节码里读一遍\n'
+            '❌ RootsClassic 换了一份没登记过的 jar，%d 这个行宽常数必须重新从字节码里'
+            '读一遍\n'
             '   （javap -c elucent/rootsclassic/research/ResearchPage.class，'
             '看 makeLines 里 if_icmple 前面那个 sipush）\n'
-            '   期望 fileID %d / sha256 %s\n   实际 %s'
-            % (MOD_LIMIT, JAR_FILE_ID, JAR_SHA256,
+            '   读出来确实还是 %d，才把它加进 VERIFIED_JARS；不是就改 MOD_LIMIT。\n'
+            '   已登记：%s\n   没登记：%s'
+            % (MOD_LIMIT, MOD_LIMIT,
+               '、'.join('fileID %d' % f for f in sorted(VERIFIED_JARS)),
                '；'.join('%s→%s' % (v, s) for v, s in sorted(bad.items()))))
     return seen
 
