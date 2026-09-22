@@ -1868,5 +1868,6 @@
   "text.modern_industrialization.FuelEfficiencyFluid": "可以烧流体燃料，效率 %s！（每消耗 1 mb 得到 %s EU）",
   "text.modern_industrialization.FuelEfficiencyFluidNormal": "可以烧流体燃料，效率正常。",
   "text.modern_industrialization.FuelEfficiencyItem": "可以烧物品燃料，效率 %s！（每消耗 1 个得到 %s EU）",
-  "text.modern_industrialization.FuelEfficiencyItemNormal": "可以烧物品燃料，效率正常。"
+  "text.modern_industrialization.FuelEfficiencyItemNormal": "可以烧物品燃料，效率正常。",
+  "block.modern_industrialization.deepslate_iridium_ore": "深层铱矿石"
 }
