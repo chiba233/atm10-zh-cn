@@ -1,12 +1,6 @@
 {
  "_": "该版专属的资源包译文。只用于「同一个键在这一版的参数个数与别版不同」——一份中文对不了两版。每条必须写 why。见 scripts/gen_pack_overrides.py。",
  "lang": {
-  "apothic_enchanting": {
-   "text.apothic_enchanting.star_prefix": {
-    "value": "🌟 ",
-    "why": "8.1 的 ApothicEnchanting 1.6.1 里这条英文是「🌟 %s」，名字由参数带进来；8.2 的 1.6.2 改成了「🌟 」，一个参数都不传。公共树那份跟着 8.1 写，带一个 %s，在 8.2 上没有参数可填，TranslatableContents 会抛 TranslatableFormatException。这一条只能按版本分叉，直到 8.1 及更早停止出货。"
-   }
-  },
   "apotheosis": {
    "text.apotheosis.touched_by_malice": {
     "value": "受恶意侵蚀（x%s）",

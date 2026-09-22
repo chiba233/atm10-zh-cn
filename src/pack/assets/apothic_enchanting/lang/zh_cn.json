@@ -427,5 +427,5 @@
   "gui.apothic_enchanting.enchant.eterna.desc4": "受你的位阶上限属性限制为 %s",
   "gui.apothic_enchanting.enchant.eterna.limited": "受你的最大位阶属性限制为 %s",
   "gui.apothic_enchanting.enchant.eterna.limited.world_tier": "受你的世界层级限制为 %s（CTRL+T）",
-  "text.apothic_enchanting.star_prefix": "🌟 %s"
+  "text.apothic_enchanting.star_prefix": "🌟 "
 }
