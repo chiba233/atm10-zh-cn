@@ -109,6 +109,12 @@ BAKED_NAME_OVERRIDES = {
     'Mimic Trophy': '宝箱怪奖杯',
     'Sentry Trophy': '哨石奖杯',
     'Sheep Trophy': '绵羊奖杯',
+    'Skeleton Trophy': '骷髅奖杯',
+    'Slider Trophy': '滑块奖杯',
+    'Spear Trophy': '矛奖杯',
+    'Summoned Skeleton Trophy': '召唤骷髅奖杯',
+    'Summoned Vex Trophy': '召唤恼鬼奖杯',
+    'Troll Trophy': '巨魔奖杯',
 }
 
 
