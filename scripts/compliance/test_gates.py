@@ -44,6 +44,7 @@
 用法:
     python3 scripts/compliance/test_gates.py
 """
+import hashlib
 import json
 import os
 import shutil
@@ -1326,6 +1327,22 @@ def _po_file_fixture(tmp, layers, public='公共页', sources=None, target=True)
     return r, r / 'tree/resourcepacks/ATM10汉化包' / rel
 
 
+def _po_record_dropped(r, public='公共页', sha256=None):
+    """登记一份确由版权闸从公共树剔除的源页。"""
+    rel = Path('assets/demo/guide/page.md')
+    source = r / 'src/pack' / rel
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(public, encoding='utf-8')
+    got = hashlib.sha256(source.read_bytes()).hexdigest()
+    manifest = r / 'build/snapshots/upstream_identical_dropped.json'
+    manifest.parent.mkdir(parents=True, exist_ok=True)
+    manifest.write_text(json.dumps({'files': {rel.as_posix(): {
+        'sha256': sha256 or got,
+        'jar': 'demo.jar',
+        'entry': rel.as_posix(),
+    }}}), encoding='utf-8')
+
+
 @missing_case('整文件版本层生效 → 覆盖公共页，并打印文件数与层名')
 def _m64(tmp, tree):
     r, f = _po_file_fixture(
@@ -1374,6 +1391,25 @@ def _m69(tmp, tree):
                             sources={'old-a': '旧页 A', 'old-b': '旧页 B'})
     rc, out = _po_run(r)
     return rc != 0 and '只能有一个所有者' in out
+
+
+@missing_case('版权闸剔除的公共页 → 路径与哈希都匹配才允许版本层恢复')
+def _m70(tmp, tree):
+    r, f = _po_file_fixture(tmp, {'new-books': {'why': '新版正文已改写'}},
+                            sources={'new-books': '新版专属页'}, target=False)
+    _po_record_dropped(r)
+    rc, out = _po_run(r)
+    return (rc == 0 and f.read_text(encoding='utf-8') == '新版专属页'
+            and '覆盖资源包文件 1 个（new-books）' in out)
+
+
+@missing_case('版权闸剔除记录哈希不符 → 必须红，不许拿旧清单新增文件')
+def _m71(tmp, tree):
+    r, _ = _po_file_fixture(tmp, {'new-books': {'why': '新版正文已改写'}},
+                            sources={'new-books': '新版专属页'}, target=False)
+    _po_record_dropped(r, sha256='0' * 64)
+    rc, out = _po_run(r)
+    return rc != 0 and '匹配剔除记录' in out
 
 
 def run_missing(name, fn):

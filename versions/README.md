@@ -36,7 +36,9 @@ ls -d versions/[0-9]*        # 这就是 MC_VERSIONS，新建一个目录＝多�
 没登记又确实缺 → 红（有人在偷偷放行）。反例见 `scripts/compliance/test_gates.py`。
 
 `pack_overrides.json` 同样是 fail-closed：文件层不存在或为空、目标不在公共资源包、
-内容与公共页相同、两层撞同一路径，都会直接红。散文整页分叉只放在
+内容与公共页相同、两层撞同一路径，都会直接红。公共页若因与模组自带中文逐字节相同
+而被版权闸剔除，只有该次构建的剔除清单路径与 SHA-256 都匹配时才允许恢复。
+散文整页分叉只放在
 `src/pack_overrides/<层名>/assets/`；公共页仍留在 `src/pack/`，老版本不会被新版正文覆盖。
 
 ## 机器层：`versions/db/<版本>/`

@@ -23,6 +23,7 @@
     python3 scripts/audit_upstream.py --mods … --licenses   # 顺便查许可
     python3 scripts/audit_upstream.py --mods … --tree <出货树>  # 核产物，非零即失败
     python3 scripts/audit_upstream.py --mods … --tree … --drop  # 顺手删掉
+    python3 scripts/audit_upstream.py --mods … --tree … --drop --manifest <剔除清单>
 """
 import hashlib
 import json
@@ -160,7 +161,7 @@ def main(mods, want_licenses=False):
     return len(exact)
 
 
-def audit_tree(mods, tree, drop=False):
+def audit_tree(mods, tree, drop=False, manifest=None):
     """核**产物**：出货树里不许有任何与已装模组逐字节相同的文件。
 
     这条闸挡两种东西：上游自带的中文被我们原样搬进包里；以及别人写的译文
@@ -173,6 +174,9 @@ def audit_tree(mods, tree, drop=False):
     第二轮指出：删除动作本身是**静默**的——退出码恒为 0，CI 日志里翻不出「这次
     构建到底删了什么」，误删了也没人知道。所以删除照旧，只是现在会把删了什么、
     删了几个、来自哪些模组，用 ⚠️ 摆到日志里最显眼的地方。
+
+    `manifest` 给后续版本文件层留下路径与内容哈希；只有清单与 `src/pack/` 公共源
+    同时吻合，文件层才可恢复一份已经实质修改过的新版页面。
     """
     _jars, by_hash, _by_name = index_jars(mods)
     hits = []
@@ -184,14 +188,30 @@ def audit_tree(mods, tree, drop=False):
             continue
         h = hashlib.sha256(b).hexdigest()
         if h in by_hash:
-            hits.append((p, by_hash[h]))
+            hits.append((p, h, by_hash[h]))
     dropped = []
-    for p, (j, n) in hits:
+    for p, _h, (j, n) in hits:
         tag = '⚠️ 已删除' if drop else '  命中'
         print('   %s %s\n       ← %s ! %s' % (tag, p.relative_to(tree), j, n))
         if drop:
             p.unlink()
             dropped.append((p, j))
+    if manifest is not None:
+        if not drop:
+            raise SystemExit('❌ --manifest 只可与 --drop 一起使用。')
+        manifest = Path(manifest)
+        manifest.parent.mkdir(parents=True, exist_ok=True)
+        manifest.write_text(json.dumps({
+            'files': {
+                p.relative_to(tree).as_posix(): {
+                    'sha256': h,
+                    'jar': j,
+                    'entry': n,
+                }
+                for p, h, (j, n) in hits
+            },
+        }, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')
+        print('版权闸剔除清单：%d 个文件 -> %s' % (len(hits), manifest))
     print('出货树里与已装模组逐字节相同的文件：%d 个%s'
           % (len(hits), '（已删）' if drop and hits else ''))
     if drop and dropped:
@@ -212,5 +232,6 @@ if __name__ == '__main__':
         sys.exit(__doc__)
     mods = a[a.index('--mods') + 1]
     if '--tree' in a:
-        sys.exit(1 if audit_tree(mods, a[a.index('--tree') + 1], '--drop' in a) else 0)
+        mf = a[a.index('--manifest') + 1] if '--manifest' in a else None
+        sys.exit(1 if audit_tree(mods, a[a.index('--tree') + 1], '--drop' in a, mf) else 0)
     sys.exit(1 if main(mods, '--licenses' in a) else 0)

@@ -24,11 +24,14 @@
 - 覆盖的命名空间在出货树里没有 zh_cn.json → 红（写错了地方，这条永远不生效）
 - 覆盖的值/文件与公共树里的**完全相同** → 红（登记过期了）
 - 文件层不存在、为空、目标不在公共树、两层撞同一路径 → 红
+- 唯一例外是公共页被版权闸按逐字节相同剔除：必须有该次构建生成的路径 + sha256
+  清单，且它与 `src/pack/` 公共源完全一致，版本层才可恢复修改后的页面
 - 没写 why、值不是字符串、JSON 坏了 → 红
 
 用法:
     python3 scripts/gen_pack_overrides.py <版本> <出货树>
 """
+import hashlib
 import json
 import re
 import shutil
@@ -36,6 +39,23 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+DROPPED_MANIFEST = ROOT / 'build' / 'snapshots' / 'upstream_identical_dropped.json'
+
+
+def dropped_public_source(rel):
+    """返回经版权闸剔除且哈希仍匹配的公共源；其余情况一律返回 None。"""
+    public = ROOT / 'src' / 'pack' / rel
+    if not public.is_file() or not DROPPED_MANIFEST.is_file():
+        return None
+    try:
+        doc = json.loads(DROPPED_MANIFEST.read_text(encoding='utf-8'))
+        rec = (doc.get('files') or {}).get(rel.as_posix())
+    except Exception:                                      # noqa: BLE001
+        return None
+    if not isinstance(rec, dict) or not re.fullmatch(r'[0-9a-f]{64}', str(rec.get('sha256', ''))):
+        return None
+    got = hashlib.sha256(public.read_bytes()).hexdigest()
+    return public if got == rec['sha256'] else None
 
 
 def main(ver, tree):
@@ -100,9 +120,15 @@ def main(ver, tree):
                 sys.exit('❌ 文件层 %s 的 %s 不在 assets/ 下。' % (name, rel))
             dest = packs[0] / rel
             if not dest.is_file():
-                sys.exit('❌ %s 的文件层 %s 要覆盖 %s，但公共树里没有这个文件——'
-                         '路径写错或公共层已变。' % (p.relative_to(ROOT), name, rel))
-            if dest.read_bytes() == source.read_bytes():
+                public = dropped_public_source(rel)
+                if public is None:
+                    sys.exit('❌ %s 的文件层 %s 要覆盖 %s，但公共树里没有这个文件——'
+                             '路径写错、公共层已变，或缺少版权闸生成的匹配剔除记录。'
+                             % (p.relative_to(ROOT), name, rel))
+                baseline = public
+            else:
+                baseline = dest
+            if baseline.read_bytes() == source.read_bytes():
                 sys.exit('❌ %s 的文件层 %s 里 %s 与公共树完全相同，这条覆盖是白写的。'
                          % (p.relative_to(ROOT), name, rel))
             if rel in planned:
@@ -110,6 +136,7 @@ def main(ver, tree):
                          % (p.relative_to(ROOT), name, planned[rel][0], rel))
             planned[rel] = (name, source, dest)
     for _, source, dest in planned.values():
+        dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, dest)
     nfiles = len(planned)
     if n:

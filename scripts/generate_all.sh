@@ -114,5 +114,6 @@ if [ "$HAVE_JARS" = 1 ]; then
 
   echo "▶ 版权闸：剔除与已装模组逐字节相同的文件"
   PACK_DIR=$(python3 -c "import sys;sys.path.insert(0,'scripts');from paths import PACK;print(PACK)")
-  python3 scripts/compliance/audit_upstream.py --mods "$ATM_PACK_ROOT/mods" --tree "$PACK_DIR" --drop
+  python3 scripts/compliance/audit_upstream.py --mods "$ATM_PACK_ROOT/mods" --tree "$PACK_DIR" --drop \
+    --manifest build/snapshots/upstream_identical_dropped.json
 fi
