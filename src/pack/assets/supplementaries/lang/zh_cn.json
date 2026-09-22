@@ -683,5 +683,7 @@
   "wood_type.twilightforest.time": "时光木",
   "wood_type.twilightforest.trans": "变化木",
   "effect.supplementaries.bleeding": "流血",
-  "block.supplementaries.breeze_rod": "旋风棒"
+  "block.supplementaries.breeze_rod": "旋风棒",
+  "supplementaries.configuration.plunderer.galleon.description": "若 'rope' 功能被禁用，大帆船会自动一并禁用",
+  "supplementaries.configuration.globe.sepia_globe.description": "若 'antique_ink' 功能被禁用，墨绘地球仪会自动一并禁用"
 }

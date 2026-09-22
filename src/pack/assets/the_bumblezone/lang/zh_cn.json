@@ -1790,5 +1790,9 @@
   "tag.entity_type.the_bumblezone.queens_desire.too_many_legs_spiders": "各种非洞穴蜘蛛",
   "entity.the_bumblezone.bee_stinger_drops": "蜂刺",
   "entity.the_bumblezone.cosmic_crystal": "宇宙水晶",
-  "fluid_type.the_bumblezone.honey_fluid": "蜂蜜"
+  "fluid_type.the_bumblezone.honey_fluid": "蜂蜜",
+  "item.the_bumblezone.carpenter_bee_boots_mining_enchant_tip": "（挖掘类附魔在脚部生效）",
+  "the_bumblezone.midnightconfig.allowForestryCompat": "允许加载内置的林业兼容数据包",
+  "the_bumblezone.configuration.forestrycompat": "林业兼容",
+  "the_bumblezone.configuration.allowforestrycompat": "林业兼容数据包"
 }

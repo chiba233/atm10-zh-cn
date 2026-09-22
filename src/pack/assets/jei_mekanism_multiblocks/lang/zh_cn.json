@@ -82,5 +82,21 @@
   "text.jei_mekanism_multiblocks.tooltip.required_heater_usage.coldest": "在最冷的生物群系：%s",
   "text.jei_mekanism_multiblocks.tooltip.required_heater_usage.hottest": "在最热的生物群系：%s",
   "text.jei_mekanism_multiblocks.tooltip.heater_near_and_1_sink_1": "'%1$s' 必须放置在",
-  "text.jei_mekanism_multiblocks.tooltip.heater_near_and_1_sink_2": "'%2$s' 的紧邻位置。"
+  "text.jei_mekanism_multiblocks.tooltip.heater_near_and_1_sink_2": "'%2$s' 的紧邻位置。",
+  "text.jei_mekanism_multiblocks.building.lasers": "激光发射器",
+  "text.jei_mekanism_multiblocks.enter": "输入",
+  "text.jei_mekanism_multiblocks.duration.days": "%s天",
+  "text.jei_mekanism_multiblocks.duration.hours": "%s时",
+  "text.jei_mekanism_multiblocks.duration.minutes": "%s分",
+  "text.jei_mekanism_multiblocks.duration.seconds": "%s秒",
+  "text.jei_mekanism_multiblocks.duration.ticks": "%s刻",
+  "text.jei_mekanism_multiblocks.example": "示例",
+  "text.jei_mekanism_multiblocks.specs.target_energy": "目标能量",
+  "text.jei_mekanism_multiblocks.result.pcs_production": "PCS 产量",
+  "text.jei_mekanism_multiblocks.result.energy_per_polonium": "每单位钋的能量",
+  "text.jei_mekanism_multiblocks.result.antimatter_per_polonium": "每单位钋的反物质",
+  "text.jei_mekanism_multiblocks.result.required_laser_energy": "所需激光能量",
+  "text.jei_mekanism_multiblocks.result.energy_rate": "能量速率",
+  "text.jei_mekanism_multiblocks.result.merge_time": "合并时间",
+  "text.jei_mekanism_multiblocks.tooltip.click_to_simulate": "点击模拟‘%s’"
 }

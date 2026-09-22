@@ -1862,5 +1862,11 @@
   "tag.fluid.c.oxygen": "氧",
   "tag.fluid.c.steam": "蒸汽",
   "tag.fluid.c.sulfuric_acid": "硫酸",
-  "tag.fluid.c.tritium": "氚"
+  "tag.fluid.c.tritium": "氚",
+  "modern_industrialization.configuration.maxMultiblockHighlightOverlayRange": "多方块放置提示范围",
+  "modern_industrialization.configuration.maxMultiblockHighlightOverlayRange.tooltip": "手持仓或扳手且距离在这么多格以内时，显示多方块结构中可以放置的位置。设为 0 关闭。",
+  "text.modern_industrialization.FuelEfficiencyFluid": "可以烧流体燃料，效率 %s！（每消耗 1 mb 得到 %s EU）",
+  "text.modern_industrialization.FuelEfficiencyFluidNormal": "可以烧流体燃料，效率正常。",
+  "text.modern_industrialization.FuelEfficiencyItem": "可以烧物品燃料，效率 %s！（每消耗 1 个得到 %s EU）",
+  "text.modern_industrialization.FuelEfficiencyItemNormal": "可以烧物品燃料，效率正常。"
 }

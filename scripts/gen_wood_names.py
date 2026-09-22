@@ -60,7 +60,8 @@ from pathlib import Path
 import vanilla
 from paths import COMMON, PACK, snapshot
 ROOT = Path(__file__).resolve().parent.parent
-SNAPSHOT = snapshot('wood_planks_names.json')
+# v2 的候选只认实际安装的 jar / KubeJS；换名使旧版 PACK 污染快照自动失效。
+SNAPSHOT = snapshot('wood_planks_names_v2.json')
 
 HAND = PACK / 'assets' / 'sophisticatedstorage' / 'lang' / 'zh_cn.json'
 OUT = PACK / 'assets' / 'hanhua_wood_names' / 'lang' / 'zh_cn.json'
@@ -83,7 +84,7 @@ def wood_from_planks(zh):
 def scan(instance):
     inst = Path(instance)
     mcroot = inst.parent.parent
-    jar_en, jar_zh, pack_zh = {}, {}, {}
+    jar_en, jar_zh, pack_zh, kube_zh = {}, {}, {}, {}
 
     def load(raw):
         try:
@@ -113,13 +114,16 @@ def scan(instance):
     take(vanilla.client_en(inst), jar_en)
     take(vanilla.client_zh(inst), jar_zh)
 
-    for base in (PACK, COMMON / 'kubejs' / 'assets'):
+    for base, sink in ((PACK, pack_zh), (COMMON / 'kubejs' / 'assets', kube_zh)):
         for p in base.rglob('lang/zh_cn.json'):
-            take(json.loads(p.read_text(encoding='utf-8')), pack_zh)
+            take(json.loads(p.read_text(encoding='utf-8')), sink)
 
     snap = {}
-    for key in sorted(set(jar_en) | set(jar_zh) | set(pack_zh)):
-        zh = pack_zh.get(key) or jar_zh.get(key)
+    # PACK 收着许多未安装模组的备用译文，不能拿它来证明木板实际存在；否则不同
+    # 模组的同名木头会凭空制造裸名歧义。jar 与 KubeJS 才决定候选，PACK 只覆盖译名。
+    installed = set(jar_en) | set(jar_zh) | set(kube_zh)
+    for key in sorted(installed):
+        zh = pack_zh.get(key) or kube_zh.get(key) or jar_zh.get(key)
         if not zh or not CJK.search(zh):
             continue                       # 木板名本身没汉化 → 推不出中文木头名
         snap[key] = zh
@@ -144,18 +148,19 @@ def build(snap):
             full['wood_name.sophisticatedstorage.%s.%s' % (ns, path)] = name
         bare.setdefault('wood_name.sophisticatedstorage.' + path, {}).setdefault(name, []).append(ns)
 
-    out, dropped = dict(full), []
+    out, dropped, skipped = dict(full), [], 0
+    for k in list(out):
+        if k in hand:                     # 手写键已有明确所有者，不再参与生成或歧义统计
+            del out[k]
+            skipped += 1
     for k, vals in bare.items():
+        if k in hand:
+            skipped += 1
+            continue
         if len(vals) > 1:                 # 不同模组同名木头、译名还不一样 → 宁可显英文也不张冠李戴
             dropped.append((k, sorted(vals)))
             continue
         out[k] = next(iter(vals))
-
-    skipped = 0
-    for k in list(out):
-        if k in hand:                     # 手写的优先（11 种原版木头），生成器不覆盖
-            del out[k]
-            skipped += 1
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(dict(sorted(out.items())), ensure_ascii=False, indent=2) + '\n',

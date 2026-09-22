@@ -28,5 +28,7 @@
   "waystones.groups.dimension.the_bumblezone.the_bumblezone": "蜜蜂领域",
   "waystones.groups.dimension.undergarden.undergarden": "深暗之园",
   "waystones.configuration.general.allowEveryoneToManageGlobalWaystones": "允许所有人管理全局路径点",
-  "waystones.configuration.general.allowEveryoneToManageGlobalWaystones.tooltip": "设为 true 后，所有人都可以管理全局路径点。"
+  "waystones.configuration.general.allowEveryoneToManageGlobalWaystones.tooltip": "设为 true 后，所有人都可以管理全局路径点。",
+  "gui.waystones.manage_waystones.hide_waystone": "隐藏路径点",
+  "gui.waystones.manage_waystones.show_waystone": "显示路径点"
 }
