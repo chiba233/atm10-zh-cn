@@ -84,6 +84,33 @@ SKIP_IDS = {
 SENTENCEY = re.compile(r'[！!？?。，,；;：:…]')
 MAX_NAME_LEN = 16
 
+# TrophyData.Name 只剩这串英文，原实体 ID 已经丢失；同名实体不可能再按命名空间
+# 区分。这里不是选某一个实体的译名，而是给**烘焙后的公共键**定一个能覆盖所有
+# 候选的通名。各模组自己的实体名保持不动，带 translation key / 中文烘焙名的
+# 另外几种形态仍会生成各自的精确译名。
+BAKED_NAME_OVERRIDES = {
+    'Abyss Blast Trophy': '深渊冲击波奖杯',
+    'Amber Bee Trophy': '琥珀蜜蜂奖杯',
+    'Ball Lightning Trophy': '球状闪电奖杯',
+    'Ball lightning Trophy': '球状闪电奖杯',
+    'Boat Trophy': '船奖杯',
+    'Boat with Chest Trophy': '运输船奖杯',
+    'Bullet Trophy': '子弹奖杯',
+    'Chaos Bee Trophy': '混沌蜜蜂奖杯',
+    'Chest boat Trophy': '运输船奖杯',
+    'Echoing Strike Trophy': '回响打击奖杯',
+    'Fireball Trophy': '火球奖杯',
+    'Flame strike Trophy': '烈焰轰击奖杯',
+    'Ice Crystal Trophy': '冰晶奖杯',
+    'Ice Spike Trophy': '冰霜尖刺奖杯',
+    'Ice crystal Trophy': '冰晶奖杯',
+    'Ice spike Trophy': '冰霜尖刺奖杯',
+    'Item frame Trophy': '物品展示框奖杯',
+    'Mimic Trophy': '宝箱怪奖杯',
+    'Sentry Trophy': '哨石奖杯',
+    'Sheep Trophy': '绵羊奖杯',
+}
+
 
 def id_to_name(entity_id):
     """复刻 TrophyManager.idToName：冒号后首字母大写，其余 `_` 换空格。"""
@@ -232,10 +259,13 @@ def build(snap):
             if form:
                 cand.setdefault(form + ' Trophy', {}).setdefault(val, set()).add(eid)
 
-    out, dropped = {}, []
+    out, dropped, resolved = {}, [], []
     for name, vals in cand.items():
         if len(vals) == 1:
             out[name] = next(iter(vals))
+        elif name in BAKED_NAME_OVERRIDES:
+            out[name] = BAKED_NAME_OVERRIDES[name]
+            resolved.append(name)
         else:
             dropped.append((name, sorted(vals)))
 
@@ -243,6 +273,8 @@ def build(snap):
     OUT.write_text(json.dumps(dict(sorted(out.items())), ensure_ascii=False,
                               indent=2) + '\n', encoding='utf-8')
     print('生成: %d 条 -> %s' % (len(out), OUT.relative_to(ROOT)))
+    if resolved:
+        print('同名烘焙键统一 %d 条（实体 ID 已丢失，采用公共通名）' % len(resolved))
     if dropped:
         print('歧义丢弃 %d 条（多个实体撞同一串烘焙名且译名不同）：' % len(dropped))
         for name, vals in sorted(dropped)[:20]:
