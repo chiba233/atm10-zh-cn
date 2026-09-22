@@ -1311,6 +1311,71 @@ def _m63(tmp, tree):
     return rc != 0 and '解析失败' in out
 
 
+def _po_file_fixture(tmp, layers, public='公共页', sources=None, target=True):
+    """造最小文件覆盖层；sources 是 {层名: 文件内容}。"""
+    r, _ = _po_fixture(tmp, {'files': layers})
+    rel = Path('assets/demo/guide/page.md')
+    if target:
+        f = r / 'tree/resourcepacks/ATM10汉化包' / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(public, encoding='utf-8')
+    for name, body in (sources or {}).items():
+        f = r / 'src/pack_overrides' / name / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(body, encoding='utf-8')
+    return r, r / 'tree/resourcepacks/ATM10汉化包' / rel
+
+
+@missing_case('整文件版本层生效 → 覆盖公共页，并打印文件数与层名')
+def _m64(tmp, tree):
+    r, f = _po_file_fixture(
+        tmp, {'old-books': {'why': '旧版模组仍使用旧剧情'}},
+        sources={'old-books': '旧版专属页'})
+    rc, out = _po_run(r)
+    return (rc == 0 and f.read_text(encoding='utf-8') == '旧版专属页'
+            and '覆盖资源包文件 1 个（old-books）' in out)
+
+
+@missing_case('登记的文件层不存在或为空 → 必须红')
+def _m65(tmp, tree):
+    r, _ = _po_file_fixture(tmp, {'missing': {'why': 'w'}})
+    rc, out = _po_run(r)
+    return rc != 0 and '不存在或为空' in out
+
+
+@missing_case('整文件版本层没写 why → 必须红')
+def _m66(tmp, tree):
+    r, _ = _po_file_fixture(tmp, {'old-books': {'why': ' '}},
+                            sources={'old-books': '旧版专属页'})
+    rc, out = _po_run(r)
+    return rc != 0 and '没写 why' in out
+
+
+@missing_case('整文件覆盖与公共页相同 → 必须红（登记已过期）')
+def _m67(tmp, tree):
+    r, _ = _po_file_fixture(tmp, {'old-books': {'why': 'w'}},
+                            sources={'old-books': '公共页'})
+    rc, out = _po_run(r)
+    return rc != 0 and '白写' in out
+
+
+@missing_case('整文件覆盖的目标不在公共树 → 必须红，不许悄悄新塞文件')
+def _m68(tmp, tree):
+    r, _ = _po_file_fixture(tmp, {'old-books': {'why': 'w'}},
+                            sources={'old-books': '旧版专属页'}, target=False)
+    rc, out = _po_run(r)
+    return rc != 0 and '公共树里没有这个文件' in out
+
+
+@missing_case('两个文件层撞同一路径 → 必须红，不许靠层名顺序决定')
+def _m69(tmp, tree):
+    layers = {'old-a': {'why': 'w'}, 'old-b': {'why': 'w'}}
+    r, _ = _po_file_fixture(tmp, layers,
+                            sources={'old-a': '旧页 A', 'old-b': '旧页 B'})
+    rc, out = _po_run(r)
+    return rc != 0 and '只能有一个所有者' in out
+
+
 def run_missing(name, fn):
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)

@@ -3103,37 +3103,21 @@
     "src/pack/assets/toastcontrol/lang/zh_cn.json",
     "src/pack/assets/tombstone/lang/zh_cn.json",
     "src/pack/assets/tombstone/text/coral_chant_1_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/coral_chant_1_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/coral_chant_2_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/coral_chant_2_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/coral_chant_3_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/coral_chant_3_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/coral_chant_4_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/coral_chant_4_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/elyra_diary_1_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/elyra_diary_1_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/elyra_diary_2_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/elyra_diary_2_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/elyra_diary_3_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/elyra_diary_3_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/elyra_diary_4_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/elyra_diary_4_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/erdos_fragments_1_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/erdos_fragments_1_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/erdos_fragments_2_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/erdos_fragments_2_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/erdos_fragments_3_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/erdos_fragments_3_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/erdos_fragments_4_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/erdos_fragments_4_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/rite_of_silent_bond_1_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/rite_of_silent_bond_1_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/rite_of_silent_bond_2_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/rite_of_silent_bond_2_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/rite_of_silent_bond_3_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/rite_of_silent_bond_3_fr_fr-zh_cn.txt",
     "src/pack/assets/tombstone/text/rite_of_silent_bond_4_en_us-zh_cn.txt",
-    "src/pack/assets/tombstone/text/rite_of_silent_bond_4_fr_fr-zh_cn.txt",
     "src/pack/assets/torchmaster/lang/zh_cn.json",
     "src/pack/assets/tot/lang/zh_cn.json",
     "src/pack/assets/trashcans/lang/zh_cn.json",
@@ -3216,6 +3200,23 @@
     "src/pack/assets/yungsapi/lang/zh_cn.json",
     "src/pack/assets/zerocore/lang/zh_cn.json",
     "src/pack/pack.png",
+    "src/pack_overrides/books-8.0/assets/enderdrives/ae2guide/_zh_cn/enderdrives_intro/enderdrives_intro.md",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/coral_chant_1_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/coral_chant_2_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/coral_chant_3_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/coral_chant_4_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/elyra_diary_1_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/elyra_diary_2_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/elyra_diary_3_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/elyra_diary_4_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/erdos_fragments_1_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/erdos_fragments_2_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/erdos_fragments_3_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/erdos_fragments_4_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/rite_of_silent_bond_1_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/rite_of_silent_bond_2_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/rite_of_silent_bond_3_en_us-zh_cn.txt",
+    "src/pack_overrides/books-8.0/assets/tombstone/text/rite_of_silent_bond_4_en_us-zh_cn.txt",
     "src/protected.json",
     "src/rules/README.md",
     "src/rules/config.json",
@@ -3542,6 +3543,102 @@
       "approved": "42f086c7",
       "date": "2026-09-12",
       "why": "被同目录的 jecharacters-1.21.1-neoforge-4.5.29.jar 取代。assemble.py 把本目录整个拷进出货树，两个 jar 同时在会让包里带两份同一个模组。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/coral_chant_1_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/coral_chant_2_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/coral_chant_3_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/coral_chant_4_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/elyra_diary_1_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/elyra_diary_2_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/elyra_diary_3_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/elyra_diary_4_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/erdos_fragments_1_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/erdos_fragments_2_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/erdos_fragments_3_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/erdos_fragments_4_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/rite_of_silent_bond_1_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/rite_of_silent_bond_2_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/rite_of_silent_bond_3_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
+    },
+    {
+      "path": "src/pack/assets/tombstone/text/rite_of_silent_bond_4_fr_fr-zh_cn.txt",
+      "approved": "用户",
+      "date": "2026-09-22",
+      "why": "Tombstone 中文卷轴只需以 en_us 原稿为底本；fr_fr 中文副本对中文客户端不生效，且造成同一中文正文维护两份真源。"
     }
   ]
 }

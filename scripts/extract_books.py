@@ -118,7 +118,14 @@ def main(mods_dir, tree=None):
             stat['与上游完全相同'] += 1
             continue
         if f.suffix.lower() in PROSE_EXT:
-            prose[rel] = {'src': up_path, 'sha1': books.sha1(up)}
+            ent = {'src': up_path, 'sha1': books.sha1(up)}
+            # 版本文件层登记的是「另一份原稿指纹该去哪个中文整页」。重跑提取只更新
+            # 当前底本，不能顺手把已核过的跨版本关系抹掉。
+            old = prose.get(rel) or {}
+            for field in ('equivalent_sha1', 'variants'):
+                if old.get(field):
+                    ent[field] = old[field]
+            prose[rel] = ent
             stat['散文（记指纹）'] += 1
             continue
         if f.suffix.lower() != '.json':

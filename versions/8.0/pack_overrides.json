@@ -1,0 +1,8 @@
+{
+ "_": "该版专属的资源包差异。lang 单键与 files 整页覆盖都必须写 why，见 scripts/gen_pack_overrides.py。",
+ "files": {
+  "books-8.0": {
+   "why": "8.0 起 EnderDrives 1.5.23 增加末影流体磁盘页面，Tombstone 9.5.4 重写四组共 16 篇故事；7.0–7.3 仍用旧模组与旧中文，不能被新版整页覆盖。"
+  }
+ }
+}

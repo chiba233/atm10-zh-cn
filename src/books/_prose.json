@@ -4,51 +4,87 @@
   "src": "assets/advanced_ae/ae2guide/aae_intro/aae_intro-index.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/advanced_io_bus.md": {
-  "sha1": "c5245889201c194cc6673797970671c9362e0924",
+  "sha1": "b39522af51f72001c7ce1fa7c47299d10fa73ed7",
+  "equivalent_sha1": [
+   "c5245889201c194cc6673797970671c9362e0924"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/advanced_io_bus.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/advanced_pattern_encoder.md": {
-  "sha1": "31da5d9520ad8e1bafe50e1f90a243e4c8e3d717",
+  "sha1": "6547f1fc39bf41c4b83e2c654de024b07a160896",
+  "equivalent_sha1": [
+   "31da5d9520ad8e1bafe50e1f90a243e4c8e3d717"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/advanced_pattern_encoder.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/advanced_pattern_provider.md": {
-  "sha1": "fd8484c74e375e64338af89fe3212fc4d50875c2",
+  "sha1": "99fc39efd8275fc02ab97b53f3e0b1377a981744",
+  "equivalent_sha1": [
+   "fd8484c74e375e64338af89fe3212fc4d50875c2"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/advanced_pattern_provider.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/app_upgrade_items.md": {
-  "sha1": "0b924d1ebe3892f38b803ec205a9a569a9ccf239",
+  "sha1": "2b402db654cf2d425086848d94d2e1b3a0d79bbe",
+  "equivalent_sha1": [
+   "0b924d1ebe3892f38b803ec205a9a569a9ccf239"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/app_upgrade_items.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/import_export_bus.md": {
-  "sha1": "5469199977b6d3ac39b66128ca982fd23ce70beb",
+  "sha1": "ff3dcc4a5b3ada1cb9be815b3572d07ac6e9a80e",
+  "equivalent_sha1": [
+   "5469199977b6d3ac39b66128ca982fd23ce70beb"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/import_export_bus.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/quantum_armor.md": {
-  "sha1": "35036da4a82f74fa80bc703b1b468414cb0aa967",
+  "sha1": "24a6c2147660fab234d57f96b6a93ee2b93bd9bd",
+  "equivalent_sha1": [
+   "35036da4a82f74fa80bc703b1b468414cb0aa967"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/quantum_armor.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/quantum_computer.md": {
-  "sha1": "b4de73fca16cb074f1e5e18b6845d6fbd6bea4b6",
+  "sha1": "cba965c0c91b27554a3cb0a9f12d23ecccefa5f5",
+  "equivalent_sha1": [
+   "b4de73fca16cb074f1e5e18b6845d6fbd6bea4b6"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/quantum_computer.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/quantum_crafter.md": {
-  "sha1": "71e611b6620e2254cf47bb3f77c323c5d4740a4d",
+  "sha1": "1299edfc32d11df8b3f3c2362dd55a50c783758a",
+  "equivalent_sha1": [
+   "71e611b6620e2254cf47bb3f77c323c5d4740a4d"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/quantum_crafter.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/quantum_crafter_terminal.md": {
-  "sha1": "0826195f2e2a7c4051f66a294f85991c05f25b01",
+  "sha1": "d9e263b001bb3f3664947bc2e6f3a2b8e75ceffb",
+  "equivalent_sha1": [
+   "0826195f2e2a7c4051f66a294f85991c05f25b01"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/quantum_crafter_terminal.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/reaction_chamber.md": {
-  "sha1": "fc0a70bceba231eb74a6fa6ce785ca3d56c005da",
+  "sha1": "93923a46f1042adc7d5252ad72665d2ad76f32e2",
+  "equivalent_sha1": [
+   "fc0a70bceba231eb74a6fa6ce785ca3d56c005da"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/reaction_chamber.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/stock_export_bus.md": {
-  "sha1": "90822c7a4ee144f7909e06df3dd2b9e337ce49c3",
+  "sha1": "7f1cd7e45283ee4828156ca8feb9669b4d0a3e3d",
+  "equivalent_sha1": [
+   "90822c7a4ee144f7909e06df3dd2b9e337ce49c3"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/stock_export_bus.md"
  },
  "assets/advanced_ae/ae2guide/_zh_cn/aae_intro/throughput_monitor.md": {
-  "sha1": "daa743016f4728179b5de35b0e09e96dcffe53bb",
+  "sha1": "afaf2171b5bf079e3082114c1a49211b39048d1b",
+  "equivalent_sha1": [
+   "daa743016f4728179b5de35b0e09e96dcffe53bb"
+  ],
   "src": "assets/advanced_ae/ae2guide/aae_intro/throughput_monitor.md"
  },
  "assets/ae2/ae2guide/_zh_cn/ae2-mechanics/ae2-mechanics-index.md": {
@@ -685,7 +721,10 @@
  },
  "assets/enderdrives/ae2guide/_zh_cn/enderdrives_intro/enderdrives_intro.md": {
   "sha1": "36c155bcfe699fc9f05fa942b1c9fe190ddce7c3",
-  "src": "assets/enderdrives/ae2guide/enderdrives_intro/enderdrives_intro.md"
+  "src": "assets/enderdrives/ae2guide/enderdrives_intro/enderdrives_intro.md",
+  "variants": {
+   "0fc3da4006585f4571016500239b826b118d147d": "books-8.0"
+  }
  },
  "assets/enderdrives/ae2guide/_zh_cn/enderdrives_intro/tapedrive_intro.md": {
   "sha1": "ae0a08699f11a7ebace9de253eb30b586502804c",
@@ -720,35 +759,59 @@
   "src": "assets/expandedae/ae2guide/qol-features.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/active_formation_plane.md": {
-  "sha1": "4f750e2faf73c9102b63a0ac2abf44de052069e2",
+  "sha1": "e5f1294b422539ce540faaf17bcc60c9f7f0e0fc",
+  "equivalent_sha1": [
+   "4f750e2faf73c9102b63a0ac2abf44de052069e2"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/active_formation_plane.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/assembler_matrix.md": {
-  "sha1": "74f4808608f95504bb63726b9df3a2ede18c06f8",
+  "sha1": "d25b699e3e202ef3bc00ba45f089cb0fd6e09d7c",
+  "equivalent_sha1": [
+   "74f4808608f95504bb63726b9df3a2ede18c06f8"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/assembler_matrix.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/caner.md": {
-  "sha1": "0924e16d6b7e063d684b9406bfea7ce0c321d897",
+  "sha1": "10c4753550fbffc18e0c7a6e88565cde13eff647",
+  "equivalent_sha1": [
+   "0924e16d6b7e063d684b9406bfea7ce0c321d897"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/caner.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/circuit_cutter.md": {
-  "sha1": "83cc4ce0238dc22fb62d9a41fbf297e6a95b2783",
+  "sha1": "142b13734837000e8647d79c3fa584f119f523c2",
+  "equivalent_sha1": [
+   "83cc4ce0238dc22fb62d9a41fbf297e6a95b2783"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/circuit_cutter.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/concurrent_processor.md": {
-  "sha1": "f2a9d162bd07caa701f6ae37d6465f4fc158e48b",
+  "sha1": "a74fbb4774eec6361842b76aa6a79a2f53ca2189",
+  "equivalent_sha1": [
+   "f2a9d162bd07caa701f6ae37d6465f4fc158e48b"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/concurrent_processor.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/config_modifier.md": {
-  "sha1": "bfb2f0915ef1b451a1f49aea8a9e6738a7808a13",
+  "sha1": "43cf81f49e67fefbfb96847d36f76da8e1a9cd75",
+  "equivalent_sha1": [
+   "bfb2f0915ef1b451a1f49aea8a9e6738a7808a13"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/config_modifier.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/crystal_assembler.md": {
-  "sha1": "d501e22d8719f84dd370bbd4e977085f77cddcb5",
+  "sha1": "107c5103d4d31f3edad389d95a17050ce012e769",
+  "equivalent_sha1": [
+   "d501e22d8719f84dd370bbd4e977085f77cddcb5"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/crystal_assembler.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/crystal_fixer.md": {
-  "sha1": "f8b7d405f69c5026c4fc511df3c99219f55acddf",
+  "sha1": "08909f6c871f437c2835bd01fb43a8ece91e21e1",
+  "equivalent_sha1": [
+   "f8b7d405f69c5026c4fc511df3c99219f55acddf"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/crystal_fixer.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_block.md": {
@@ -756,11 +819,17 @@
   "src": "assets/extendedae/ae2guide/epp_intro/entro_block.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_budding.md": {
-  "sha1": "1d7e6c6d81fcd4a60c1e6679261f8de31a9b44f2",
+  "sha1": "d643f962889811fa76d9195823b71776480d2095",
+  "equivalent_sha1": [
+   "1d7e6c6d81fcd4a60c1e6679261f8de31a9b44f2"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/entro_budding.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_crystal.md": {
-  "sha1": "29e4ccd021be7fd6d54be03c5f13b1f207a78547",
+  "sha1": "3fb434f751acd773dfbfd04f2c4bcc3939a4765b",
+  "equivalent_sha1": [
+   "29e4ccd021be7fd6d54be03c5f13b1f207a78547"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/entro_crystal.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_dust.md": {
@@ -768,19 +837,31 @@
   "src": "assets/extendedae/ae2guide/epp_intro/entro_dust.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_ingot.md": {
-  "sha1": "a80335c8c93b8727ee44f90b4984d2020b4eb13b",
+  "sha1": "80cc13c84bc151078e8ffa61de1903869920bb3b",
+  "equivalent_sha1": [
+   "a80335c8c93b8727ee44f90b4984d2020b4eb13b"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/entro_ingot.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_seed.md": {
-  "sha1": "529fe776751109aa396bbf4c4e9fedeb5ce8e2b2",
+  "sha1": "2136ccd4c5bc63c783aebcb7ed3bbc12216031fb",
+  "equivalent_sha1": [
+   "529fe776751109aa396bbf4c4e9fedeb5ce8e2b2"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/entro_seed.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/entro_shard.md": {
-  "sha1": "4fdc001aa1ebd9b909a567dded2e06805fccec8b",
+  "sha1": "20005d23fbfd7090289c09cb5c769acc51f4adeb",
+  "equivalent_sha1": [
+   "4fdc001aa1ebd9b909a567dded2e06805fccec8b"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/entro_shard.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/epp_intro-index.md": {
-  "sha1": "efbb285c7d19760b6ade59bf2a086e48099d5601",
+  "sha1": "42cb60820c4e006a93057b715e8f8a049751b0f0",
+  "equivalent_sha1": [
+   "efbb285c7d19760b6ade59bf2a086e48099d5601"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/epp_intro-index.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_charger.md": {
@@ -792,75 +873,129 @@
   "src": "assets/extendedae/ae2guide/epp_intro/extended_drive.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_inscriber.md": {
-  "sha1": "eddf9228a786195f44f5bd91277fa19d6b9df576",
+  "sha1": "09b816ab8944a275a032b603471adf23b121a7cf",
+  "equivalent_sha1": [
+   "eddf9228a786195f44f5bd91277fa19d6b9df576"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_inscriber.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_interface.md": {
-  "sha1": "4103b5151bc1d7ce16e942a734bdcdcc6f5c8a61",
+  "sha1": "476385ecbb5966c6705e40c909b505417302eee0",
+  "equivalent_sha1": [
+   "4103b5151bc1d7ce16e942a734bdcdcc6f5c8a61"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_interface.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_io_bus.md": {
-  "sha1": "effd6bd40c838540387811ff5620acd78696ec4a",
+  "sha1": "ef42c350df12a0703e45973815c2acff5461680c",
+  "equivalent_sha1": [
+   "effd6bd40c838540387811ff5620acd78696ec4a"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_io_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_io_port.md": {
-  "sha1": "200bcaf13c236ae5a8ef676fdb047ea5b49562b3",
+  "sha1": "35f4a8376b4bc31f8c255f9a16bde5d44a1db4d7",
+  "equivalent_sha1": [
+   "200bcaf13c236ae5a8ef676fdb047ea5b49562b3"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_io_port.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_modecular_assembler.md": {
-  "sha1": "44d228a46b5edde951ace68a44754fba3a5220f5",
+  "sha1": "f28c2cd4093b1c3eebb6a3ff981af0b493109242",
+  "equivalent_sha1": [
+   "44d228a46b5edde951ace68a44754fba3a5220f5"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_modecular_assembler.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_pattern_provider.md": {
-  "sha1": "6d907f02c248e7465dbdde6c5393c19d96d26f9d",
+  "sha1": "fc1603b7271ace5b51c09e08e2e7c145b3317bef",
+  "equivalent_sha1": [
+   "6d907f02c248e7465dbdde6c5393c19d96d26f9d"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_pattern_provider.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/extended_pattern_terminal.md": {
-  "sha1": "016345a2a50d5013300867b4c184f40af5312ed6",
+  "sha1": "e5345721e4355c5a4ce6d947dfce49a622a03e16",
+  "equivalent_sha1": [
+   "016345a2a50d5013300867b4c184f40af5312ed6"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/extended_pattern_terminal.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/infinity_cell.md": {
-  "sha1": "0207140025951ab473bd4dda7f37b7c3f5720407",
+  "sha1": "f2c05fdffb485cc38f9de5607254ea3addf2286f",
+  "equivalent_sha1": [
+   "0207140025951ab473bd4dda7f37b7c3f5720407"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/infinity_cell.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/ingredient_buffer.md": {
-  "sha1": "1b0e7a2154bc8636d6c3b8e72e9b3d6c578f042d",
+  "sha1": "2e3318213a71b3dbbfdec892026c13ad9cbfb2a4",
+  "equivalent_sha1": [
+   "1b0e7a2154bc8636d6c3b8e72e9b3d6c578f042d"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/ingredient_buffer.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/machine_frame.md": {
-  "sha1": "515410229d92be1a3d95013a608076a931fa51ea",
+  "sha1": "c107deb31e501b6ca4231ebb1d86d25fa64af339",
+  "equivalent_sha1": [
+   "515410229d92be1a3d95013a608076a931fa51ea"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/machine_frame.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/mod_export_bus.md": {
-  "sha1": "992eac7babef7d52fec425bdd5583902b0790c69",
+  "sha1": "1f8474aaed7a849b1ae7d501f400e3af38706a5f",
+  "equivalent_sha1": [
+   "992eac7babef7d52fec425bdd5583902b0790c69"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/mod_export_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/mod_storage_bus.md": {
-  "sha1": "e131b2bc415c7cce6fc0745e354364fa9b562ab6",
+  "sha1": "f7fcdb104a0b4458755f580b8e0ef90590783bf4",
+  "equivalent_sha1": [
+   "e131b2bc415c7cce6fc0745e354364fa9b562ab6"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/mod_storage_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/oversize_interface.md": {
-  "sha1": "930fc6619544ef200ebf08d8b5d46c03ef7ae947",
+  "sha1": "a0399c16503ae48748147c74f1d6cc6b8d2d25ba",
+  "equivalent_sha1": [
+   "930fc6619544ef200ebf08d8b5d46c03ef7ae947"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/oversize_interface.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/packing_tape.md": {
-  "sha1": "eb23a51230c9675958f6a43597d8b040ae2d0f43",
+  "sha1": "64595fa9dd36aa8f627119164c543cc6ad511751",
+  "equivalent_sha1": [
+   "eb23a51230c9675958f6a43597d8b040ae2d0f43"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/packing_tape.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/pattern_modifier.md": {
-  "sha1": "755e6b660da7b2a580952dc4703ed6cc02919c2e",
+  "sha1": "cb03f3cf10a2bb8969399a39232b5d3c10241566",
+  "equivalent_sha1": [
+   "755e6b660da7b2a580952dc4703ed6cc02919c2e"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/pattern_modifier.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/precise_export_bus.md": {
-  "sha1": "070eeaccb1061137fc6bf4343cc0a23b9c23a70c",
+  "sha1": "435a16dd16705ea280aa0746c56462c977043e32",
+  "equivalent_sha1": [
+   "070eeaccb1061137fc6bf4343cc0a23b9c23a70c"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/precise_export_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/precise_storage_bus.md": {
-  "sha1": "06c7228c8788d85692597fc9bcfc820b4ac0abc3",
+  "sha1": "92192012d3a546cc47ddc556bd1680a31c882e7a",
+  "equivalent_sha1": [
+   "06c7228c8788d85692597fc9bcfc820b4ac0abc3"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/precise_storage_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/quartz_blend.md": {
-  "sha1": "fd9ba2946a1fc71a4658671290cd96090f6f416c",
+  "sha1": "a47b53459c2b2e10560df1ab59582f8085693205",
+  "equivalent_sha1": [
+   "fd9ba2946a1fc71a4658671290cd96090f6f416c"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/quartz_blend.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/silicon_block.md": {
@@ -868,39 +1003,66 @@
   "src": "assets/extendedae/ae2guide/epp_intro/silicon_block.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/smart_annihilation_plane.md": {
-  "sha1": "a5e43404452b9cde8a86d6b9bbf55774bb7b203b",
+  "sha1": "79ddffb045c6e7cbe4b472dcc91d33657cf3d6a5",
+  "equivalent_sha1": [
+   "a5e43404452b9cde8a86d6b9bbf55774bb7b203b"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/smart_annihilation_plane.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/tag_export_bus.md": {
-  "sha1": "8f5b4f7a0f55de885ef0d2ec6b3ae9be25bc3516",
+  "sha1": "51b14addfb2b0f941559ffca8ace8f3c7ccc2593",
+  "equivalent_sha1": [
+   "8f5b4f7a0f55de885ef0d2ec6b3ae9be25bc3516"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/tag_export_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/tag_storage_bus.md": {
-  "sha1": "d9e6d07446be801624d532116b0f2d77d832d397",
+  "sha1": "9d96892cb6f699de5ec92e5d62668e9b3457e06a",
+  "equivalent_sha1": [
+   "d9e6d07446be801624d532116b0f2d77d832d397"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/tag_storage_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/threshold_export_bus.md": {
-  "sha1": "1fdaca43b2719b719f2c9283454b8107119207f0",
+  "sha1": "70de0f7e60b2367e2f327eeffbcefa3035790ed9",
+  "equivalent_sha1": [
+   "1fdaca43b2719b719f2c9283454b8107119207f0"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/threshold_export_bus.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/threshold_level_emitter.md": {
-  "sha1": "a41793082d2f075eebb32fee5849c7fbce8b7fc4",
+  "sha1": "2692f419a24ee7733a1882c29ef232bd03ec52ea",
+  "equivalent_sha1": [
+   "a41793082d2f075eebb32fee5849c7fbce8b7fc4"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/threshold_level_emitter.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/upgrade_items.md": {
-  "sha1": "e0c31ad68abd05968290a07a34ff6b504d89d31d",
+  "sha1": "7feeb952afdf3423967cc5e431939b08c66a52f3",
+  "equivalent_sha1": [
+   "e0c31ad68abd05968290a07a34ff6b504d89d31d"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/upgrade_items.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/void_cell.md": {
-  "sha1": "0c350311f3f9b4b56ad19578a9850f9a0dd0bf60",
+  "sha1": "0cda762626e7a483ceb2285d8dba8d9adaf107e0",
+  "equivalent_sha1": [
+   "0c350311f3f9b4b56ad19578a9850f9a0dd0bf60"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/void_cell.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/wireless_connector.md": {
-  "sha1": "cbe936fab1623256baac11f223b6fe7b469de877",
+  "sha1": "a9bfe4918bb220e6b8319ed2220944a9b9f4eac7",
+  "equivalent_sha1": [
+   "cbe936fab1623256baac11f223b6fe7b469de877"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/wireless_connector.md"
  },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/wireless_hub.md": {
-  "sha1": "4807057c9a3c21e33c9be6bb0c1240bf3a9f0731",
+  "sha1": "5df06c746def828e98fef31572eefaffa030100b",
+  "equivalent_sha1": [
+   "4807057c9a3c21e33c9be6bb0c1240bf3a9f0731"
+  ],
   "src": "assets/extendedae/ae2guide/epp_intro/wireless_hub.md"
  },
  "assets/little_big_redstone/guide/_zh_cn/floppy_disks.md": {
@@ -2693,131 +2855,115 @@
  },
  "assets/tombstone/text/coral_chant_1_en_us-zh_cn.txt": {
   "sha1": "424ef83f5112f6378245df8f41bd0940a72c8492",
-  "src": "assets/tombstone/text/coral_chant_1_en_us.txt"
- },
- "assets/tombstone/text/coral_chant_1_fr_fr-zh_cn.txt": {
-  "sha1": "564335ec979a1de4d0bf3fdea2044181d73c9856",
-  "src": "assets/tombstone/text/coral_chant_1_fr_fr.txt"
+  "src": "assets/tombstone/text/coral_chant_1_en_us.txt",
+  "variants": {
+   "847bf4df9c26c2fdb59f07962d40878fc5b5dd24": "books-8.0"
+  }
  },
  "assets/tombstone/text/coral_chant_2_en_us-zh_cn.txt": {
   "sha1": "df2196543b5a7a6eb700de04f4e696d309c744d5",
-  "src": "assets/tombstone/text/coral_chant_2_en_us.txt"
- },
- "assets/tombstone/text/coral_chant_2_fr_fr-zh_cn.txt": {
-  "sha1": "5989fc99be511bd03f6058a3a4c0598e840e40b8",
-  "src": "assets/tombstone/text/coral_chant_2_fr_fr.txt"
+  "src": "assets/tombstone/text/coral_chant_2_en_us.txt",
+  "variants": {
+   "ee7743ab858933cdf6daecf14032f2b71399e777": "books-8.0"
+  }
  },
  "assets/tombstone/text/coral_chant_3_en_us-zh_cn.txt": {
   "sha1": "7b2f6f8a4784801a03b0bb9fd053ccbc39ee4805",
-  "src": "assets/tombstone/text/coral_chant_3_en_us.txt"
- },
- "assets/tombstone/text/coral_chant_3_fr_fr-zh_cn.txt": {
-  "sha1": "6aa57c9cf3ff1c9e2847484caceede8b49a31255",
-  "src": "assets/tombstone/text/coral_chant_3_fr_fr.txt"
+  "src": "assets/tombstone/text/coral_chant_3_en_us.txt",
+  "variants": {
+   "88d652c088e666fd929cc67dfdc49f633e55c156": "books-8.0"
+  }
  },
  "assets/tombstone/text/coral_chant_4_en_us-zh_cn.txt": {
   "sha1": "eef25aca81a3d4e914e141e94637d04799218bee",
-  "src": "assets/tombstone/text/coral_chant_4_en_us.txt"
- },
- "assets/tombstone/text/coral_chant_4_fr_fr-zh_cn.txt": {
-  "sha1": "97406307b20b9e44acdada7f19c349c390a118c8",
-  "src": "assets/tombstone/text/coral_chant_4_fr_fr.txt"
+  "src": "assets/tombstone/text/coral_chant_4_en_us.txt",
+  "variants": {
+   "524b9984ef0e5267e983249b191a6a52eee82558": "books-8.0"
+  }
  },
  "assets/tombstone/text/elyra_diary_1_en_us-zh_cn.txt": {
   "sha1": "0db76571b691db6861b2920a87c38257a19b8558",
-  "src": "assets/tombstone/text/elyra_diary_1_en_us.txt"
- },
- "assets/tombstone/text/elyra_diary_1_fr_fr-zh_cn.txt": {
-  "sha1": "9df48075ba77cb54fc2b8ec9bb07eadb2d9ea800",
-  "src": "assets/tombstone/text/elyra_diary_1_fr_fr.txt"
+  "src": "assets/tombstone/text/elyra_diary_1_en_us.txt",
+  "variants": {
+   "046ad7fbceec462a857f4acfa26307ced411f79d": "books-8.0"
+  }
  },
  "assets/tombstone/text/elyra_diary_2_en_us-zh_cn.txt": {
   "sha1": "2b0dd34794358e598e726b2eb8150ebf4dfe3b21",
-  "src": "assets/tombstone/text/elyra_diary_2_en_us.txt"
- },
- "assets/tombstone/text/elyra_diary_2_fr_fr-zh_cn.txt": {
-  "sha1": "567d032603f78bbc0b438962056d0751345e75ed",
-  "src": "assets/tombstone/text/elyra_diary_2_fr_fr.txt"
+  "src": "assets/tombstone/text/elyra_diary_2_en_us.txt",
+  "variants": {
+   "e01fe56f7e97f19cb599c5738c96dfb1eb6cedce": "books-8.0"
+  }
  },
  "assets/tombstone/text/elyra_diary_3_en_us-zh_cn.txt": {
   "sha1": "42036468bfad6bbacaf9dcb3e3c0f348c426ac8f",
-  "src": "assets/tombstone/text/elyra_diary_3_en_us.txt"
- },
- "assets/tombstone/text/elyra_diary_3_fr_fr-zh_cn.txt": {
-  "sha1": "f26095c5657240b3446c975e61892c9c1a5dc22b",
-  "src": "assets/tombstone/text/elyra_diary_3_fr_fr.txt"
+  "src": "assets/tombstone/text/elyra_diary_3_en_us.txt",
+  "variants": {
+   "1e93d6cef9a6c3d5849fc5b614341438e3478e1e": "books-8.0"
+  }
  },
  "assets/tombstone/text/elyra_diary_4_en_us-zh_cn.txt": {
   "sha1": "ebed4a9782433141c111d6e3cc185b61e50fd113",
-  "src": "assets/tombstone/text/elyra_diary_4_en_us.txt"
- },
- "assets/tombstone/text/elyra_diary_4_fr_fr-zh_cn.txt": {
-  "sha1": "f5dbb1f835f9b90023dc6368d47c8992d13e4f79",
-  "src": "assets/tombstone/text/elyra_diary_4_fr_fr.txt"
+  "src": "assets/tombstone/text/elyra_diary_4_en_us.txt",
+  "variants": {
+   "49fc69e9038a80cdbdb158b2fd2a1540a6c1183a": "books-8.0"
+  }
  },
  "assets/tombstone/text/erdos_fragments_1_en_us-zh_cn.txt": {
   "sha1": "77b74194622bc3dff809841e15d2e905d8ce6581",
-  "src": "assets/tombstone/text/erdos_fragments_1_en_us.txt"
- },
- "assets/tombstone/text/erdos_fragments_1_fr_fr-zh_cn.txt": {
-  "sha1": "b4aacb8dbb30557197c7a0e97df2ba3efc0d8095",
-  "src": "assets/tombstone/text/erdos_fragments_1_fr_fr.txt"
+  "src": "assets/tombstone/text/erdos_fragments_1_en_us.txt",
+  "variants": {
+   "b2d6312abf84046c6d3e5555b78fa5ec47fc37ec": "books-8.0"
+  }
  },
  "assets/tombstone/text/erdos_fragments_2_en_us-zh_cn.txt": {
   "sha1": "ab2b47a48e5bdce8b871208b791f284c6dd1b325",
-  "src": "assets/tombstone/text/erdos_fragments_2_en_us.txt"
- },
- "assets/tombstone/text/erdos_fragments_2_fr_fr-zh_cn.txt": {
-  "sha1": "8db5f22eb486a4a54bd57da664e6c6fc711db678",
-  "src": "assets/tombstone/text/erdos_fragments_2_fr_fr.txt"
+  "src": "assets/tombstone/text/erdos_fragments_2_en_us.txt",
+  "variants": {
+   "2a1c3c5752fd055437ba8a8066cbb2a1b827d3bf": "books-8.0"
+  }
  },
  "assets/tombstone/text/erdos_fragments_3_en_us-zh_cn.txt": {
   "sha1": "cfd2dbe8ce0ec03b8a73a7efe544d7c41dda8b09",
-  "src": "assets/tombstone/text/erdos_fragments_3_en_us.txt"
- },
- "assets/tombstone/text/erdos_fragments_3_fr_fr-zh_cn.txt": {
-  "sha1": "fede19ef3e0cce743a99a40b3456670e7e096a1d",
-  "src": "assets/tombstone/text/erdos_fragments_3_fr_fr.txt"
+  "src": "assets/tombstone/text/erdos_fragments_3_en_us.txt",
+  "variants": {
+   "486833f4e15b6ca63c7c7233471be121db190a4c": "books-8.0"
+  }
  },
  "assets/tombstone/text/erdos_fragments_4_en_us-zh_cn.txt": {
   "sha1": "f5f489478f6faa6a44193586a8bb8a0ddd812201",
-  "src": "assets/tombstone/text/erdos_fragments_4_en_us.txt"
- },
- "assets/tombstone/text/erdos_fragments_4_fr_fr-zh_cn.txt": {
-  "sha1": "f7dcfbed5d2edb5dc648c4dfbed1f3a161d927f2",
-  "src": "assets/tombstone/text/erdos_fragments_4_fr_fr.txt"
+  "src": "assets/tombstone/text/erdos_fragments_4_en_us.txt",
+  "variants": {
+   "e43317e3743e6143ee6c41352c5b83ebee634804": "books-8.0"
+  }
  },
  "assets/tombstone/text/rite_of_silent_bond_1_en_us-zh_cn.txt": {
   "sha1": "499a37d10f2d33e56a2a30caf2eee82d1afdbd7e",
-  "src": "assets/tombstone/text/rite_of_silent_bond_1_en_us.txt"
- },
- "assets/tombstone/text/rite_of_silent_bond_1_fr_fr-zh_cn.txt": {
-  "sha1": "e6a55b3d2d8a654971d08817fe7cf6baa73e7c33",
-  "src": "assets/tombstone/text/rite_of_silent_bond_1_fr_fr.txt"
+  "src": "assets/tombstone/text/rite_of_silent_bond_1_en_us.txt",
+  "variants": {
+   "90130881e3ae60d16406a8e71bfe71e568b42f2a": "books-8.0"
+  }
  },
  "assets/tombstone/text/rite_of_silent_bond_2_en_us-zh_cn.txt": {
   "sha1": "c5ed4bd851ea665583c78f65149592ba2967da83",
-  "src": "assets/tombstone/text/rite_of_silent_bond_2_en_us.txt"
- },
- "assets/tombstone/text/rite_of_silent_bond_2_fr_fr-zh_cn.txt": {
-  "sha1": "6182996f86c211cd2ee9163eb4dea6c650c324bd",
-  "src": "assets/tombstone/text/rite_of_silent_bond_2_fr_fr.txt"
+  "src": "assets/tombstone/text/rite_of_silent_bond_2_en_us.txt",
+  "variants": {
+   "740be88a1d71faff0812c9db2b38fe311d03fc44": "books-8.0"
+  }
  },
  "assets/tombstone/text/rite_of_silent_bond_3_en_us-zh_cn.txt": {
   "sha1": "91821308279790515fcab3cbeb014936302e02d2",
-  "src": "assets/tombstone/text/rite_of_silent_bond_3_en_us.txt"
- },
- "assets/tombstone/text/rite_of_silent_bond_3_fr_fr-zh_cn.txt": {
-  "sha1": "a0f603793fec796d48504e8398cfeab87b7e4774",
-  "src": "assets/tombstone/text/rite_of_silent_bond_3_fr_fr.txt"
+  "src": "assets/tombstone/text/rite_of_silent_bond_3_en_us.txt",
+  "variants": {
+   "3ea5d4b678a6279938aebc0e9c0ee6050234a6b1": "books-8.0"
+  }
  },
  "assets/tombstone/text/rite_of_silent_bond_4_en_us-zh_cn.txt": {
   "sha1": "c0f09eaa748fcd3fa97f8786c76f8c459aff85b9",
-  "src": "assets/tombstone/text/rite_of_silent_bond_4_en_us.txt"
- },
- "assets/tombstone/text/rite_of_silent_bond_4_fr_fr-zh_cn.txt": {
-  "sha1": "bb8cb9b2e6b5d06db695609a07076aeb0fe96841",
-  "src": "assets/tombstone/text/rite_of_silent_bond_4_fr_fr.txt"
+  "src": "assets/tombstone/text/rite_of_silent_bond_4_en_us.txt",
+  "variants": {
+   "de0bba24bab11c2446cc1bcff0a79d8edeab46f0": "books-8.0"
+  }
  },
  "assets/xnet/gui/controller.gui": {
   "sha1": "e71435bc733a5867239bc486a368d85758aaa6b3",

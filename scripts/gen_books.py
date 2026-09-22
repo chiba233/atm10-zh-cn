@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 import books
-from paths import PACK
+from paths import PACK, ROOT
 
 # 命中率下限：低于这个数说明不是零星漂移，而是整块对不上了
 MIN_HIT = 0.90
@@ -76,14 +76,28 @@ def main(mods_dir):
     n_skip += len(copies)
 
     drift = []
+    resolved = {}
     prose = json.loads(books.MAP_PROSE.read_text(encoding='utf-8'))
     for rel, info in prose.items():
         data = jars.read(info['src'])
         if data is None:
             n_skip += 1
             continue
-        if books.sha1(data) != info['sha1']:
-            drift.append(rel)
+        got = books.sha1(data)
+        # 纯 BOM / 英语文法润色不需要复制一份中文页，但老版本仍会携带旧字节。
+        # 已逐页核过语义等价的历史指纹单独登记；它不同于 variants，后者必须有
+        # 对应的整页中文版本层，不能拿来静默放过正文改写。
+        if got == info['sha1'] or got in (info.get('equivalent_sha1') or []):
+            continue
+        layer = (info.get('variants') or {}).get(got)
+        if layer:
+            translated = ROOT / 'src' / 'pack_overrides' / layer / rel
+            if not translated.is_file():
+                sys.exit('❌ %s 把当前英文指纹登记到文件层 %s，但对应译文不存在：%s'
+                         % (rel, layer, translated.relative_to(ROOT)))
+            resolved[layer] = resolved.get(layer, 0) + 1
+            continue
+        drift.append(rel)
 
     total = ok = n_json = 0
     miss = []
@@ -120,6 +134,8 @@ def main(mods_dir):
     print('导览书：结构型 %d 个文件、%d/%d 条译文落位（%.1f%%）；'
           '与原文相同没写 %d 个；该版本没有的跳过 %d 个'
           % (n_json, ok, total, rate * 100, n_same, n_skip))
+    for layer, count in sorted(resolved.items()):
+        print('  散文页：%d 个当前原稿已由版本文件层 %s 接管' % (count, layer))
     if drift:
         print('  ⚠️ %d 个散文页的英文原稿与提取时不同（上游改过，译文可能已过时）：' % len(drift))
         for r in drift[:15]:

@@ -27,12 +27,17 @@ ls -d versions/[0-9]*        # 这就是 MC_VERSIONS，新建一个目录＝多�
 | `neoforge.txt` | 该版的 NeoForge 版本号，出货说明里按版本现填 | `build_dist.sh` |
 | `default_resource_packs.txt` | 该版 `options.txt` 里 `resourcePacks` 的默认顺序。**没实测就留空并写明原因**——那串顺序必须真起一次实例、干净退出才拿得到；抄上一版会让汉化包被压在别的包下面，而且没有任何提示。留空时安装器不伪造这一行，只提示玩家先启动一次 | `build_dist.sh`、`test_installer.py` |
 | `quest_overrides.snbt` | 该版专属的任务书中文（见下「什么时候该分叉」） | `gen_quest_lang_patches.py` 等 |
+| `pack_overrides.json` | 该版专属的资源包差异：`lang` 定点覆盖单键，`files` 引用 `src/pack_overrides/<层名>/` 整页覆盖散文；每项都必须写 `why` | `gen_pack_overrides.py` |
 | `unobtainable.json` | 该版在 CurseForge 上**已被删除**的 jar，按 fileID 逐个登记并写 `why` | `fetch_pack.py`、`build_version_db.py` |
 | `unpatchable.json` | `src/upstream/` 里某条改动**在这一版套不上**，逐条登记并写 `why` | `gen_upstream_patches.py` |
 | `upstream/<原文件路径>.json` | 该版专属的上游映射，在通用映射**之后**对同一段文本再套一次 | `gen_upstream_patches.py` |
 
 后三个是登记表，共同的规矩：**双向 fail-closed**。登记了但实际还在 → 红（登记过期）；
 没登记又确实缺 → 红（有人在偷偷放行）。反例见 `scripts/compliance/test_gates.py`。
+
+`pack_overrides.json` 同样是 fail-closed：文件层不存在或为空、目标不在公共资源包、
+内容与公共页相同、两层撞同一路径，都会直接红。散文整页分叉只放在
+`src/pack_overrides/<层名>/assets/`；公共页仍留在 `src/pack/`，老版本不会被新版正文覆盖。
 
 ## 机器层：`versions/db/<版本>/`
 
@@ -127,9 +132,16 @@ python3 scripts/check_en_drift.py 7.3 8.0
 `gen_books.py` 报「英文原稿与提取时不同」是闸在正常工作，但**「英文改了」不等于
 「译文错了」**。核过的结论记在这里。
 
+纯 BOM 或不改变中文含义的英文润色，最新字节写入 `sha1`，旧版字节写入
+`equivalent_sha1`；两者都视为同一份中文底本。正文实质变化不能登记为等价，必须用
+`variants` 指向有译文的版本文件层。
+
 | 何时 | 什么 | 结论 |
 |---|---|---|
 | ATM10 7.3（ExtendedAE 2.2.33 → 2.2.35） | `assets/extendedae/ae2guide/epp_intro/` 46 页里 41 页变了 | **纯英语文法润色，译文无需跟进** |
+| ATM10 8.0（AdvancedAE 1.6.11 → 1.6.12） | 12 个散文页指纹变化 | **正文逐字相同，仅新增 UTF-8 BOM；更新底本指纹即可** |
+| ATM10 8.0（EnderDrives 1.4.4 → 1.5.23） | 末影磁盘页新增 6 种流体磁盘 | **机制内容新增；8.0–8.2 由 `books-8.0` 文件层接管，7.0–7.3 保留旧页** |
+| ATM10 8.0（Tombstone 9.5.3 → 9.5.4） | 4 组共 16 篇英文故事全部重写 | **正文实质变化；只以 `en_us` 为底本翻译，8.0–8.2 由 `books-8.0` 文件层接管** |
 
 抽查的差异形状：`an combination` → `a combination`、`at the same` 漏掉的 `time` 补回、
 `can place block or drop items actively` → `can actively place blocks or drop items`、

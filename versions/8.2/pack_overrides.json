@@ -1,5 +1,10 @@
 {
- "_": "该版专属的资源包译文。只用于「同一个键在这一版的参数个数与别版不同」——一份中文对不了两版。每条必须写 why。见 scripts/gen_pack_overrides.py。",
+ "_": "该版专属的资源包差异。lang 单键与 files 整页覆盖都必须写 why，见 scripts/gen_pack_overrides.py。",
+ "files": {
+  "books-8.0": {
+   "why": "8.2 的 EnderDrives/Tombstone 散文页与 8.0 新版正文相同；公共树保留 7.0–7.3 的旧中文，因此本版必须叠加 books-8.0。"
+  }
+ },
  "lang": {
   "apotheosis": {
    "text.apotheosis.touched_by_malice": {
