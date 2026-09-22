@@ -629,5 +629,6 @@
   "block.evilcraft.eternal_water.auto_output.disabled": "自动输出已禁用",
   "entity.evilcraft.blood_pearl": "血之珍珠",
   "block.evilcraft.gem_stone_torch_wall": "宝石石火把墙上",
-  "block.evilcraft.invisible_redstone": "隐形红石"
+  "block.evilcraft.invisible_redstone": "隐形红石",
+  "info_book.evilcraft.second_age.evolved_blood_machinery.purifier.text4": "最后，&1净化器&0还能撤销由&1血能注入器&0造成的生物头颅堕落。将其完全注满&4血液&0，再放入&1凋灵骷髅头颅&0、&1苦力怕的头&0或&1僵尸的头&0，即可让该头颅退回到堕落链上的前一阶段。"
 }

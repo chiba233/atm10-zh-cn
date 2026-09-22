@@ -489,5 +489,10 @@
   "aspect.aspecttypes.integratedtunnels.boolean.world.matchblock": "匹配方块",
   "aspect.aspecttypes.integratedtunnels.boolean.world.matchblock.info": "匹配方块的物品形态，而不是掉落物。",
   "aspect.aspecttypes.integratedtunnels.boolean.passiveioignorefilter": "被动交互忽略过滤器",
-  "aspect.aspecttypes.integratedtunnels.boolean.passiveioignorefilter.info": "是否允许任何东西随时存入网络或从网络取出。"
+  "aspect.aspecttypes.integratedtunnels.boolean.passiveioignorefilter.info": "是否允许任何东西随时存入网络或从网络取出。",
+  "gui.integratedtunnels.partsettings.channel.interface.pasted": "接口频道",
+  "aspect.aspecttypes.integratedtunnels.integer.player.rightclickduration": "右击持续时间",
+  "aspect.aspecttypes.integratedtunnels.integer.player.rightclickduration.info": "右击被按住的刻数。",
+  "aspect.aspecttypes.integratedtunnels.boolean.player.networkinventory": "网络物品栏",
+  "aspect.aspecttypes.integratedtunnels.boolean.player.networkinventory.info": "网络是否作为玩家物品栏使用。"
 }
