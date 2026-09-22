@@ -1227,6 +1227,90 @@ def _m56(tmp, tree):
     return rc != 0
 
 
+# versions/<版本>/pack_overrides.json。资源包译文版本中立是个前提，不是定律：
+# 同一个键在两版里参数个数不同时，一份中文对不了两版——少写参数只漏掉一段文字，
+# 多写参数会让 TranslatableContents 抛异常，整行显示成未替换的模板。
+#
+# 口子开了就得有反例证明它没被开大：写错命名空间、登记过期、没写理由、值不是
+# 字符串、文件坏掉，五种写歪的覆盖都必须红。否则这张表就成了「往里加一行就能让
+# 任何译文分叉悄悄生效」的开关。
+def _po_fixture(tmp, doc=None, base=None):
+    """造一棵最小出货树 + 一份该版覆盖，返回 (仓库根, 那份 zh_cn.json)。"""
+    r = tmp / 'porepo'
+    (r / 'scripts').mkdir(parents=True, exist_ok=True)
+    shutil.copy(ROOT / 'scripts' / 'gen_pack_overrides.py', r / 'scripts')
+    lang = r / 'tree' / 'resourcepacks' / 'ATM10汉化包' / 'assets' / 'demo' / 'lang'
+    lang.mkdir(parents=True)
+    f = lang / 'zh_cn.json'
+    f.write_text(json.dumps(base if base is not None else {'demo.k': '公共树的值'},
+                            ensure_ascii=False), encoding='utf-8')
+    if doc is not None:
+        d = r / 'versions' / '9.9'
+        d.mkdir(parents=True, exist_ok=True)
+        (d / 'pack_overrides.json').write_text(
+            doc if isinstance(doc, str) else json.dumps(doc, ensure_ascii=False),
+            encoding='utf-8')
+    return r, f
+
+
+def _po_run(r):
+    x = subprocess.run([sys.executable, str(r / 'scripts' / 'gen_pack_overrides.py'),
+                        '9.9', str(r / 'tree')], capture_output=True, text=True, cwd=r)
+    return x.returncode, x.stdout + x.stderr
+
+
+_PO_OK = {'lang': {'demo': {'demo.k': {'value': '该版的值', 'why': '这一版上游多了个参数'}}}}
+
+
+@missing_case('该版覆盖生效 → 出货树里的值真的换了，并打印条数')
+def _m57(tmp, tree):
+    r, f = _po_fixture(tmp, _PO_OK)
+    rc, out = _po_run(r)
+    return (rc == 0 and '覆盖资源包译文 1 条' in out
+            and json.loads(f.read_text(encoding='utf-8'))['demo.k'] == '该版的值')
+
+
+@missing_case('没有这份覆盖文件 → 什么都不做（不是每版都需要分叉）')
+def _m58(tmp, tree):
+    r, f = _po_fixture(tmp)
+    rc, out = _po_run(r)
+    return rc == 0 and '覆盖资源包译文' not in out
+
+
+@missing_case('覆盖的命名空间在出货树里没有 zh_cn.json → 必须红')
+def _m59(tmp, tree):
+    doc = {'lang': {'不存在的命名空间': {'x': {'value': 'v', 'why': 'w'}}}}
+    rc, out = _po_run(_po_fixture(tmp, doc)[0])
+    return rc != 0 and '永远不会生效' in out
+
+
+@missing_case('覆盖的值与公共树完全相同 → 必须红（这条登记已经过期）')
+def _m60(tmp, tree):
+    doc = {'lang': {'demo': {'demo.k': {'value': '公共树的值', 'why': 'w'}}}}
+    rc, out = _po_run(_po_fixture(tmp, doc)[0])
+    return rc != 0 and '白写' in out
+
+
+@missing_case('覆盖没写 why → 必须红')
+def _m61(tmp, tree):
+    doc = {'lang': {'demo': {'demo.k': {'value': '该版的值', 'why': '   '}}}}
+    rc, out = _po_run(_po_fixture(tmp, doc)[0])
+    return rc != 0 and '没写 why' in out
+
+
+@missing_case('覆盖的 value 不是字符串 → 必须红')
+def _m62(tmp, tree):
+    doc = {'lang': {'demo': {'demo.k': {'value': 123, 'why': 'w'}}}}
+    rc, out = _po_run(_po_fixture(tmp, doc)[0])
+    return rc != 0 and 'value 不是字符串' in out
+
+
+@missing_case('覆盖文件是坏 JSON → 必须红，不许当成「没有覆盖」放过')
+def _m63(tmp, tree):
+    rc, out = _po_run(_po_fixture(tmp, '{坏')[0])
+    return rc != 0 and '解析失败' in out
+
+
 def run_missing(name, fn):
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)

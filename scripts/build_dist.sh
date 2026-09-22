@@ -74,6 +74,9 @@ if [ ! -d "$UPROOT/kubejs" ]; then
   python3 scripts/fetch_pack.py "$MC" "$UPROOT" --no-jars
 fi
 python3 scripts/gen_upstream_patches.py "$UPROOT" "$TREE" "$MC"
+# 资源包译文按命名空间+键索引、版本中立，唯一的例外走 versions/<版本>/pack_overrides.json
+# （同一个键在两版里参数个数不同时，一份中文对不了两版）。
+python3 scripts/gen_pack_overrides.py "$MC" "$TREE"
 # 任务书缺图是**逐版本**的事实：ATM 在 8.1 里自己发了 create_shaft.png，7.0–8.0 没有。
 # 版本中立那棵树里照旧画着（老版本靠它），这里按该版官方文件剔一次，别覆盖上游。
 python3 scripts/gen_missing_questpics.py --prune "$UPROOT" "$TREE"
