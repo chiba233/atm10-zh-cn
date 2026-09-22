@@ -60,7 +60,8 @@ from pathlib import Path
 import vanilla
 from paths import COMMON, PACK, snapshot
 ROOT = Path(__file__).resolve().parent.parent
-SNAPSHOT = snapshot('trophy_entity_names.json')
+# v2 只让已安装资产命名空间使用资源包补键，旧快照里的未安装模组候选必须失效。
+SNAPSHOT = snapshot('trophy_entity_names_v2.json')
 OUT = (PACK / 'assets'
        / 'hanhua_trophies' / 'lang' / 'zh_cn.json')
 
@@ -96,12 +97,16 @@ def id_to_name(entity_id):
 def scan(instance):
     inst = Path(instance)
     mcroot = inst.parent.parent          # …/.minecraft
-    jar_en, jar_zh, pack_zh = {}, {}, {}
+    jar_en, jar_zh, pack_zh, kube_zh = {}, {}, {}, {}
+    pack_sources = {}
+    jar_namespaces = set()
 
-    def take(data, sink):
+    def take(data, sink, source=None):
         for k, v in data.items():
             if isinstance(v, str) and SUBKEY_RE.match(k):
                 sink.setdefault(k, v)
+                if source:
+                    pack_sources.setdefault(k, set()).add(source)
 
     def load(raw):
         try:
@@ -118,6 +123,9 @@ def scan(instance):
             for n in zf.namelist():
                 if not n.startswith('assets/'):
                     continue
+                parts = n.split('/', 2)
+                if len(parts) == 3 and parts[1]:
+                    jar_namespaces.add(parts[1])
                 if n.endswith('/lang/en_us.json'):
                     take(load(zf.read(n)), jar_en)
                 elif n.endswith('/lang/zh_cn.json'):
@@ -127,10 +135,15 @@ def scan(instance):
     take(vanilla.client_en(inst), jar_en)
     take(vanilla.client_zh(inst), jar_zh)
 
-    # 本包（资源包 + kubejs 覆盖）优先级最高
-    for base in (PACK, COMMON / 'kubejs' / 'assets'):
-        for p in base.rglob('lang/zh_cn.json'):
-            take(json.loads(p.read_text(encoding='utf-8')), pack_zh)
+    # 本包与 KubeJS 分开收：资源包会保留未安装模组的备用译文，不能直接证明实体存在；
+    # KubeJS 则确实能定义 jar 里没有的实体键。资源包按文件所在 assets 命名空间
+    # 记来源，不能只看键内命名空间：村民职业常写成 entity.minecraft.villager.<modid>.*。
+    for p in PACK.rglob('lang/zh_cn.json'):
+        rel = p.relative_to(PACK).parts
+        source = rel[1] if len(rel) > 1 and rel[0] == 'assets' else None
+        take(json.loads(p.read_text(encoding='utf-8')), pack_zh, source)
+    for p in (COMMON / 'kubejs' / 'assets').rglob('lang/zh_cn.json'):
+        take(json.loads(p.read_text(encoding='utf-8')), kube_zh)
 
     # 组合式实体名模板：`entity.<ns>.name` = "Shiny %s" 这种，实体的显示名是
     # 模板 + 一个参数拼出来的，参数常常是**没翻译的注册名**（实测 Shiny 的奖杯
@@ -139,11 +152,20 @@ def scan(instance):
     for key, en in jar_en.items():
         m = re.match(r'^entity\.([a-z0-9_-]+)\.name$', key)
         if m and en.count('%s') == 1:
-            tmpl[m.group(1)] = {'en': en, 'zh': pack_zh.get(key) or jar_zh.get(key)}
+            tmpl[m.group(1)] = {
+                'en': en,
+                'zh': pack_zh.get(key) or kube_zh.get(key) or jar_zh.get(key),
+            }
 
-    # 键的全集：只扫 jar_en 会漏掉「模组自己不出 en_us、由本包补的」实体
+    # 键的全集：已安装模组可以由本包补实体键，但未安装模组的备用译文不能混入。
+    # 只看 jar 语言键会漏掉 shiny 这类由本包补齐大量实体名的已安装模组，所以用
+    # jar 内实际出现过的 assets 命名空间作为存在性边界。
     snap = {}
-    for key in sorted(set(jar_en) | set(jar_zh) | set(pack_zh)):
+    installed = set(jar_en) | set(jar_zh) | set(kube_zh)
+    for key, sources in pack_sources.items():
+        if sources & jar_namespaces:
+            installed.add(key)
+    for key in sorted(installed):
         m = KEY_RE.match(key)
         sub = m is None
         if sub:
@@ -154,7 +176,7 @@ def scan(instance):
         if eid in SKIP_IDS:
             continue
         en = jar_en.get(key)
-        zh = pack_zh.get(key) or jar_zh.get(key)
+        zh = pack_zh.get(key) or kube_zh.get(key) or jar_zh.get(key)
         if not zh or zh == en:
             continue                      # 没中文 / 中文就是英文 → 没得翻
         if SENTENCEY.search(zh) or len(zh) > MAX_NAME_LEN:
