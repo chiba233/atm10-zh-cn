@@ -1,0 +1,1377 @@
+{
+ "subtitles": {
+  "00A91BD731486644": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ceylon_ebony_leaves"
+   ],
+   "right": [
+    "productivetrees:sour_cherry_leaves"
+   ]
+  },
+  "00B7DD3AFC94B037": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:beech_leaves"
+   ],
+   "right": [
+    "productivetrees:alder_leaves"
+   ]
+  },
+  "00DEFA26F2B896D6": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "minecraft:oak_leaves",
+    "minecraft:birch_leaves"
+   ]
+  },
+  "00FF2CA7BA326007": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mandarin_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "0145727E40D7F674": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:cempedak_leaves"
+   ],
+   "right": [
+    "productivetrees:breadfruit_leaves"
+   ]
+  },
+  "01B2DDD81065B4EF": {
+   "kind": "pollination",
+   "left": [
+    "minecraft:jungle_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "01CF1A9D9F29AFF7": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:pomelo_leaves"
+   ],
+   "right": [
+    "productivetrees:orange_leaves"
+   ]
+  },
+  "01F51EBFEC660549": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "productivetrees:european_larch_leaves"
+   ]
+  },
+  "0480DF316ACF12DA": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:western_hemlock_leaves"
+   ],
+   "right": [
+    "minecraft:jungle_leaves"
+   ]
+  },
+  "04DEC6E210F06D65": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "productivetrees:cocobolo_leaves"
+   ]
+  },
+  "052BE1D845794702": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "minecraft:acacia_leaves"
+   ]
+  },
+  "054F3A0499F8A0D8": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:sweet_chestnut_leaves"
+   ],
+   "right": [
+    "productivetrees:copoazu_leaves"
+   ]
+  },
+  "056E1E3B1ED14917": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "minecraft:dark_oak_leaves"
+   ]
+  },
+  "05F428C34DD00B61": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:blue_yonder_leaves"
+   ],
+   "right": [
+    "productivetrees:rippling_willow_leaves"
+   ]
+  },
+  "06EA86F9F6C9DECF": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:plum_leaves"
+   ],
+   "right": [
+    "productivetrees:peach_leaves"
+   ]
+  },
+  "0813CEDCC201216A": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:kapok_leaves"
+   ],
+   "right": [
+    "productivetrees:old_fustic_leaves"
+   ]
+  },
+  "08C6B7D2DAE87222": {
+   "kind": "pollination",
+   "left": [
+    "minecraft:oak_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "08DB91D079C5B715": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_maple_leaves"
+   ],
+   "right": [
+    "productivetrees:mahogany_leaves"
+   ]
+  },
+  "0A467A0CFFCF1490": {
+   "kind": "mutation",
+   "source": "productivetrees:beech_sapling"
+  },
+  "0B70D40FA951E13B": {
+   "kind": "pollination",
+   "left": [
+    "minecraft:oak_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "0BD908937BC6E97B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:kapok_leaves"
+   ],
+   "right": [
+    "productivetrees:rosewood_leaves"
+   ]
+  },
+  "0BFAF1499415DD68": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "0C7491BA5857AA00": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "minecraft:jungle_leaves"
+   ]
+  },
+  "0D888A4C5EF0073E": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mahogany_leaves"
+   ],
+   "right": [
+    "productivetrees:kapok_leaves"
+   ]
+  },
+  "0E4DA8EE961D443F": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:sycamore_fig_leaves"
+   ],
+   "right": [
+    "productivetrees:sugar_maple_leaves"
+   ]
+  },
+  "10162AD188CB3327": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:plum_leaves"
+   ],
+   "right": [
+    "productivetrees:red_delicious_apple_leaves"
+   ]
+  },
+  "11B1FB0AB2677902": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "productivetrees:silver_lime_leaves"
+   ]
+  },
+  "1322907FDFF08ADA": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:walnut_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves",
+    "productivetrees:silver_lime_leaves"
+   ]
+  },
+  "14D9C071E184DE3B": {
+   "kind": "mutation",
+   "source": "productivetrees:purple_crepe_myrtle_sapling"
+  },
+  "14F856E0D32FBB5B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "productivetrees:balsa_leaves"
+   ]
+  },
+  "1556777B07BD7C2B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:european_larch_leaves"
+   ],
+   "right": [
+    "productivetrees:sugar_maple_leaves"
+   ]
+  },
+  "15FF9D19FBC873CF": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:plum_leaves"
+   ],
+   "right": [
+    "productivetrees:peach_leaves"
+   ]
+  },
+  "16FA120455D36B58": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:orange_leaves"
+   ],
+   "right": [
+    "minecraft:mangrove_leaves"
+   ]
+  },
+  "1815661333016983": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:date_palm_leaves"
+   ],
+   "right": [
+    "productivetrees:black_cherry_leaves"
+   ]
+  },
+  "18601369F049D10D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ceylon_ebony_leaves"
+   ],
+   "right": [
+    "productivetrees:purple_crepe_myrtle_leaves"
+   ]
+  },
+  "18D4BE3AF7869DE2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ceylon_ebony_leaves"
+   ],
+   "right": [
+    "productivetrees:persimmon_leaves"
+   ]
+  },
+  "19C22C5B247F4D7D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ceylon_ebony_leaves"
+   ],
+   "right": [
+    "productivetrees:kapok_leaves"
+   ]
+  },
+  "1A09AF508EFAE0EC": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:citron_leaves"
+   ],
+   "right": [
+    "productivetrees:key_lime_leaves"
+   ]
+  },
+  "1BC611E39465B026": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:wenge_leaves"
+   ],
+   "right": [
+    "productivetrees:silver_lime_leaves"
+   ]
+  },
+  "1CD5ABD827CEB3AE": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:brazil_nut_leaves"
+   ],
+   "right": [
+    "productivetrees:balsa_leaves"
+   ]
+  },
+  "1D1ABA9BD978E8A1": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:citron_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "1D31C515533DAD36": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:cave_dweller_leaves"
+   ],
+   "right": [
+    "productivetrees:soul_tree_leaves"
+   ]
+  },
+  "1D6FAF0E25A0D596": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:clove_leaves"
+   ],
+   "right": [
+    "productivetrees:allspice_leaves"
+   ]
+  },
+  "1DFC9F33D9FD6357": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:cacao_leaves"
+   ],
+   "right": [
+    "productivetrees:candlenut_leaves"
+   ]
+  },
+  "1F146FE1002643B2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:brazilwood_leaves"
+   ],
+   "right": [
+    "productivetrees:rose_gum_leaves"
+   ]
+  },
+  "1F1B4948FCC14BB4": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_fir_leaves"
+   ],
+   "right": [
+    "minecraft:spruce_leaves"
+   ]
+  },
+  "20DDAC076A2479A8": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:purple_spiral_leaves"
+   ],
+   "right": [
+    "productivetrees:sparkle_cherry_leaves"
+   ]
+  },
+  "21B8116BDADD7476": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:papaya_leaves"
+   ],
+   "right": [
+    "productivetrees:cacao_leaves"
+   ]
+  },
+  "227BEFEF59977CC4": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:rosewood_leaves"
+   ],
+   "right": [
+    "productivetrees:teak_leaves"
+   ]
+  },
+  "23A5F5C9BC7B5CC7": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:plum_leaves"
+   ],
+   "right": [
+    "productivetrees:walnut_leaves"
+   ]
+  },
+  "257D8912FC58DB59": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:brazilwood_leaves"
+   ],
+   "right": [
+    "productivetrees:mahogany_leaves"
+   ]
+  },
+  "25F4D4A723B298A4": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_delicious_apple_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "263FBD9ED2756190": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:walnut_leaves"
+   ],
+   "right": [
+    "productivetrees:coconut_leaves"
+   ]
+  },
+  "268768465119632A": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:aspen_leaves"
+   ],
+   "right": [
+    "productivetrees:alder_leaves"
+   ]
+  },
+  "28FB4B9DCC268404": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:plum_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "291EE514A1602C46": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "minecraft:flowering_azalea_leaves"
+   ]
+  },
+  "298437197EA5680D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:black_cherry_leaves"
+   ],
+   "right": [
+    "productivetrees:cacao_leaves"
+   ]
+  },
+  "2993EAB4850B7172": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:white_willow_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "29FA0E9664935566": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "productivetrees:cacao_leaves"
+   ]
+  },
+  "2AA407EB0BF2922E": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:sweetgum_leaves"
+   ],
+   "right": [
+    "productivetrees:loblolly_pine_leaves"
+   ]
+  },
+  "2ACFD25B43F0499C": {
+   "kind": "mutation",
+   "source": "productivetrees:ipe_sapling"
+  },
+  "2C0984E03F308959": {
+   "kind": "mutation",
+   "source": "productivetrees:pink_ipe_sapling"
+  },
+  "2CA2B3A1783B4040": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:aspen_leaves"
+   ],
+   "right": [
+    "productivetrees:alder_leaves"
+   ]
+  },
+  "2D6FDCC948DB927D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mahogany_leaves"
+   ],
+   "right": [
+    "productivetrees:teak_leaves"
+   ]
+  },
+  "2DC639C39AE90272": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:yellow_meranti_leaves"
+   ],
+   "right": [
+    "productivetrees:rose_gum_leaves"
+   ]
+  },
+  "2E6F761585C1FB4D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ash_leaves"
+   ],
+   "right": [
+    "productivetrees:silver_lime_leaves"
+   ]
+  },
+  "2E89ABF1A6145184": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:brazilwood_leaves"
+   ],
+   "right": [
+    "productivetrees:kapok_leaves"
+   ]
+  },
+  "327587EEEF6849BE": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_fir_leaves"
+   ],
+   "right": [
+    "productivetrees:european_larch_leaves"
+   ]
+  },
+  "33977CEF056F0A13": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:alder_leaves"
+   ],
+   "right": [
+    "productivetrees:rowan_leaves"
+   ]
+  },
+  "3458F19FB41C7F0E": {
+   "kind": "mutation",
+   "source": "productivetrees:red_crepe_myrtle_sapling"
+  },
+  "3512A883CD4E007C": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:bull_pine_leaves"
+   ],
+   "right": [
+    "minecraft:spruce_leaves"
+   ]
+  },
+  "3707C3EDA1C5A0B2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:firecracker_leaves"
+   ],
+   "right": [
+    "productivetrees:flickering_sun_leaves"
+   ]
+  },
+  "37AD651E91FE3E20": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:pomelo_leaves"
+   ],
+   "right": [
+    "productivetrees:key_lime_leaves"
+   ]
+  },
+  "37B805E875D82A8B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "productivetrees:teak_leaves"
+   ]
+  },
+  "38C236042AB5DDB9": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:bull_pine_leaves"
+   ],
+   "right": [
+    "productivetrees:silver_fir_leaves"
+   ]
+  },
+  "3942B5F5FD8ADF89": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:sycamore_fig_leaves"
+   ],
+   "right": [
+    "productivetrees:breadfruit_leaves"
+   ]
+  },
+  "396E7A2078F2CBC5": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ash_leaves"
+   ],
+   "right": [
+    "productivetrees:whitebeam_leaves"
+   ]
+  },
+  "399858D28294D633": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mandarin_leaves"
+   ],
+   "right": [
+    "productivetrees:citron_leaves"
+   ]
+  },
+  "3A2249D94C019F0E": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "3A79E24283523E58": {
+   "kind": "pollination",
+   "left": [
+    "minecraft:spruce_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "3BAEF1A3FDB818A4": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:european_larch_leaves"
+   ],
+   "right": [
+    "productivetrees:red_maple_leaves"
+   ]
+  },
+  "3BD304D851F49EC0": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:elderberry_leaves"
+   ],
+   "right": [
+    "productivetrees:silver_fir_leaves"
+   ]
+  },
+  "419C808FE10DB496": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "productivetrees:wenge_leaves"
+   ]
+  },
+  "427B9C6D95885DE2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_delicious_apple_leaves"
+   ],
+   "right": [
+    "minecraft:flowering_azalea_leaves"
+   ]
+  },
+  "43265FEF45846357": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:pomelo_leaves"
+   ],
+   "right": [
+    "productivetrees:citron_leaves"
+   ]
+  },
+  "44FEE957BD333241": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "productivetrees:sour_cherry_leaves"
+   ]
+  },
+  "4510FD92BACF00FF": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:plum_leaves"
+   ],
+   "right": [
+    "productivetrees:sweet_chestnut_leaves"
+   ]
+  },
+  "45D1FFB263CD722D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "productivetrees:clove_leaves"
+   ]
+  },
+  "4676E9CD0F312C1A": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mandarin_leaves"
+   ],
+   "right": [
+    "productivetrees:kumquat_leaves"
+   ]
+  },
+  "481205F0C9B08200": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "productivetrees:clove_leaves"
+   ]
+  },
+  "489A811AB1CFCBA3": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:kapok_leaves"
+   ],
+   "right": [
+    "minecraft:dark_oak_leaves"
+   ]
+  },
+  "48B97E3C2A93BC46": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:aspen_leaves"
+   ],
+   "right": [
+    "productivetrees:beech_leaves"
+   ]
+  },
+  "48BA8ACFADE3C8CE": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:citron_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "4AEB4BF7624ABA0F": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:firecracker_leaves"
+   ],
+   "right": [
+    "productivetrees:soul_tree_leaves"
+   ]
+  },
+  "4AFA3CB55F6C10C2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:pandanus_leaves"
+   ],
+   "right": [
+    "productivetrees:coconut_leaves"
+   ]
+  },
+  "4D562F5D72038083": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:alder_leaves"
+   ],
+   "right": [
+    "productivetrees:european_larch_leaves"
+   ]
+  },
+  "4DC4FFD69B1688BF": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "productivetrees:rose_gum_leaves"
+   ]
+  },
+  "4E802144C6E40D43": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ceylon_ebony_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "4E8ECD407C8EA2DC": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mandarin_leaves"
+   ],
+   "right": [
+    "productivetrees:pomelo_leaves"
+   ]
+  },
+  "5030F1D96457202E": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:european_larch_leaves"
+   ],
+   "right": [
+    "minecraft:spruce_leaves"
+   ]
+  },
+  "504752A1C9EFED76": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:citron_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "5160D62F07A642A7": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:rowan_leaves"
+   ],
+   "right": [
+    "productivetrees:beech_leaves"
+   ]
+  },
+  "526A9655A62C93F4": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:european_larch_leaves"
+   ],
+   "right": [
+    "productivetrees:bull_pine_leaves"
+   ]
+  },
+  "526CED9509FAA79B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:blue_yonder_leaves"
+   ],
+   "right": [
+    "productivetrees:firecracker_leaves"
+   ]
+  },
+  "52B2ADE472707372": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:golden_delicious_apple_leaves"
+   ],
+   "right": [
+    "productivetrees:granny_smith_apple_leaves"
+   ]
+  },
+  "53292D808E8F5218": {
+   "kind": "mutation",
+   "source": "productivetrees:blackthorn_sapling"
+  },
+  "53BA0C64804ADD24": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:pomelo_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "53BDD0459F7B1D60": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:coffea_leaves"
+   ],
+   "right": [
+    "productivetrees:teak_leaves"
+   ]
+  },
+  "54E7967B45B20F36": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:holly_leaves"
+   ],
+   "right": [
+    "productivetrees:purple_crepe_myrtle_leaves"
+   ]
+  },
+  "5753E0138A072A3F": {
+   "kind": "pollination",
+   "left": [
+    "minecraft:cherry_leaves"
+   ],
+   "right": [
+    "minecraft:oak_leaves",
+    "minecraft:dark_oak_leaves"
+   ]
+  },
+  "577A5FC500E14C05": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:lawson_cypress_leaves"
+   ],
+   "right": [
+    "minecraft:oak_leaves"
+   ]
+  },
+  "5A84A64CB3D3E6F5": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:white_willow_leaves"
+   ],
+   "right": [
+    "minecraft:oak_leaves",
+    "minecraft:birch_leaves",
+    "productivetrees:silver_lime_leaves"
+   ]
+  },
+  "5B0FF8E0B58A4150": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:walnut_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "5B114CE7192A0549": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:beech_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "5C26EBA2F58F28F1": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_delicious_apple_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "5DCDDC346359DF28": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsa_leaves"
+   ],
+   "right": [
+    "minecraft:dark_oak_leaves"
+   ]
+  },
+  "5E766840DAB839A2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ash_leaves"
+   ],
+   "right": [
+    "productivetrees:sugar_maple_leaves"
+   ]
+  },
+  "5F4AA7E7D050C327": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:white_poplar_leaves"
+   ],
+   "right": [
+    "productivetrees:ceylon_ebony_leaves"
+   ]
+  },
+  "5FC92F3794004A98": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:rippling_willow_leaves"
+   ],
+   "right": [
+    "productivetrees:soul_tree_leaves"
+   ]
+  },
+  "5FD88ED4937971D7": {
+   "kind": "mutation",
+   "source": "productivetrees:tuscarora_crepe_myrtle_sapling"
+  },
+  "6255E2FE6DD4084A": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:holly_leaves"
+   ],
+   "right": [
+    "productivetrees:alder_leaves"
+   ]
+  },
+  "6280748583C62E05": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_maple_leaves"
+   ],
+   "right": [
+    "minecraft:jungle_leaves"
+   ]
+  },
+  "62991D7431A48F6D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:banana_leaves"
+   ],
+   "right": [
+    "productivetrees:kapok_leaves"
+   ]
+  },
+  "640D6ADA17709D3A": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:yellow_meranti_leaves"
+   ],
+   "right": [
+    "productivetrees:kapok_leaves"
+   ]
+  },
+  "6497A255E427A5EB": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:balsam_fir_leaves"
+   ],
+   "right": [
+    "productivetrees:bull_pine_leaves"
+   ]
+  },
+  "64A09E2E3EF16C31": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:banana_leaves"
+   ],
+   "right": [
+    "productivetrees:teak_leaves"
+   ]
+  },
+  "6678AB58930F4B91": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:white_willow_leaves"
+   ],
+   "right": [
+    "productivetrees:aspen_leaves"
+   ]
+  },
+  "674A6B0EDA0D348B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "minecraft:mangrove_leaves"
+   ]
+  },
+  "684BB9D2F2AC87A6": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:wenge_leaves"
+   ],
+   "right": [
+    "productivetrees:cocobolo_leaves"
+   ]
+  },
+  "6AE0A69DB3CDBCAA": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:sweet_crabapple_leaves"
+   ],
+   "right": [
+    "minecraft:flowering_azalea_leaves"
+   ]
+  },
+  "6BF6C7C04F26D8BA": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:black_ember_leaves"
+   ],
+   "right": [
+    "productivetrees:soul_tree_leaves"
+   ]
+  },
+  "6D14ACECD2084456": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:wenge_leaves"
+   ],
+   "right": [
+    "minecraft:oak_leaves"
+   ]
+  },
+  "6D95CB7906C0DC84": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:beech_leaves"
+   ],
+   "right": [
+    "productivetrees:cacao_leaves"
+   ]
+  },
+  "6DAECA44E28DA9BA": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:beech_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "6E0DF05DEF48D2EB": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:almond_leaves"
+   ],
+   "right": [
+    "productivetrees:cashew_leaves"
+   ]
+  },
+  "6E9782258731E444": {
+   "kind": "mutation",
+   "source": "productivetrees:white_ipe_sapling"
+  },
+  "6FBF112811FB707C": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ash_leaves"
+   ],
+   "right": [
+    "minecraft:birch_leaves"
+   ]
+  },
+  "708129CB530BAC67": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:wild_cherry_leaves"
+   ],
+   "right": [
+    "productivetrees:cacao_leaves"
+   ]
+  },
+  "70A4E2B0491634FA": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:sugar_apple_leaves"
+   ],
+   "right": [
+    "productivetrees:banana_leaves"
+   ]
+  },
+  "70F7B018CD61E946": {
+   "kind": "pollination",
+   "left": [
+    "minecraft:dark_oak_leaves"
+   ],
+   "right": [
+    "minecraft:jungle_leaves"
+   ]
+  },
+  "71AA40CB2948A8D7": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:blue_yonder_leaves"
+   ],
+   "right": [
+    "productivetrees:soul_tree_leaves"
+   ]
+  },
+  "74297A72584F5D7B": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:alder_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  },
+  "747BA0DB44A49A4F": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_delicious_apple_leaves"
+   ],
+   "right": [
+    "productivetrees:sand_pear_leaves"
+   ]
+  },
+  "74CD3FC35F245DF2": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:blue_yonder_leaves"
+   ],
+   "right": [
+    "productivetrees:flickering_sun_leaves"
+   ]
+  },
+  "75CE67D3AA75C798": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_delicious_apple_leaves"
+   ],
+   "right": [
+    "productivetrees:granny_smith_apple_leaves"
+   ]
+  },
+  "762C54C261ED5D29": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "productivetrees:mahogany_leaves"
+   ]
+  },
+  "77D3546953550E39": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:bull_pine_leaves"
+   ],
+   "right": [
+    "minecraft:spruce_leaves"
+   ]
+  },
+  "799CC9FEEDE471B1": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mango_leaves"
+   ],
+   "right": [
+    "productivetrees:star_anise_leaves"
+   ]
+  },
+  "7A3DD8CAD6A5692D": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:red_delicious_apple_leaves"
+   ],
+   "right": [
+    "productivetrees:sugar_maple_leaves"
+   ]
+  },
+  "7B1693793419B769": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "minecraft:cherry_leaves"
+   ]
+  },
+  "7B3920DE6306A94A": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:mandarin_leaves"
+   ],
+   "right": [
+    "productivetrees:kumquat_leaves"
+   ]
+  },
+  "7D0AE6FCB0996218": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:teak_leaves"
+   ],
+   "right": [
+    "productivetrees:ipe_leaves"
+   ]
+  },
+  "7D7DC3C695CD7236": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:silver_lime_leaves"
+   ],
+   "right": [
+    "minecraft:spruce_leaves"
+   ]
+  },
+  "7DA48EDCF28DBE03": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:ginkgo_leaves"
+   ],
+   "right": [
+    "productivetrees:hazel_leaves"
+   ]
+  },
+  "7E7637DAD2C242CB": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:european_larch_leaves"
+   ],
+   "right": [
+    "minecraft:spruce_leaves"
+   ]
+  },
+  "7EC89242980768B3": {
+   "kind": "pollination",
+   "left": [
+    "productivetrees:pecan_leaves"
+   ],
+   "right": [
+    "productivetrees:wild_cherry_leaves"
+   ]
+  }
+ },
+ "titles": {
+  "4E802144C6E40D43": "productivetrees:purple_crepe_myrtle_sapling",
+  "5FD88ED4937971D7": "productivetrees:moonlight_magic_crepe_myrtle_sapling"
+ }
+}
