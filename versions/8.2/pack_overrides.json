@@ -3,6 +3,9 @@
  "files": {
   "books-8.0": {
    "why": "8.2 的 EnderDrives/Tombstone 散文页与 8.0 新版正文相同；公共树保留 7.0–7.3 的旧中文，因此本版必须叠加 books-8.0。"
+  },
+  "books-8.2": {
+   "why": "8.2 升级 AE2 Import Export Card 1.9.0、Modern Industrialization 2.5.8 与 Oracle Index 1.4.0，六页散文新增功能或改变机制说明；8.1 及以前仍须保留旧正文。"
   }
  },
  "lang": {

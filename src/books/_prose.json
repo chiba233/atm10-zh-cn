@@ -149,7 +149,10 @@
  },
  "assets/ae2/ae2guide/_zh_cn/ae2importexportcard-index.md": {
   "sha1": "00a96a8cb24aad16955e0cbd1228c5bc8fd0e510",
-  "src": "assets/ae2/ae2guide/ae2importexportcard-index.md"
+  "src": "assets/ae2/ae2guide/ae2importexportcard-index.md",
+  "variants": {
+   "9fb2e5546061eabed77ef85ed857d1c2395dadc3": "books-8.2"
+  }
  },
  "assets/ae2/ae2guide/_zh_cn/assets/assemblies/import_storage_export_pipe.snbt": {
   "sha1": "56f10b006908f20b8ccd6fe73441a8bee1d608fc",
@@ -1231,7 +1234,10 @@
  },
  "assets/modern_industrialization/mi_guidebook/_zh_cn/electric_age/large_steam_boiler.md": {
   "sha1": "ea834f4d3865a7f9f7cb47f39fa06de5df4fb813",
-  "src": "assets/modern_industrialization/mi_guidebook/electric_age/large_steam_boiler.md"
+  "src": "assets/modern_industrialization/mi_guidebook/electric_age/large_steam_boiler.md",
+  "variants": {
+   "c0851cf5d6cc820a0eaf083dd8858eb9c92d2042": "books-8.2"
+  }
  },
  "assets/modern_industrialization/mi_guidebook/_zh_cn/electric_age/large_tank.md": {
   "sha1": "66cf51ad0094abb9150924ee9be1995442d4b623",
@@ -1243,7 +1249,10 @@
  },
  "assets/modern_industrialization/mi_guidebook/_zh_cn/electric_age/oil_processing.md": {
   "sha1": "c9dbdedeeca68919f6c1c16cc22ff59d3a7a778d",
-  "src": "assets/modern_industrialization/mi_guidebook/electric_age/oil_processing.md"
+  "src": "assets/modern_industrialization/mi_guidebook/electric_age/oil_processing.md",
+  "variants": {
+   "ae7ec0b74ee394814229133890ff9ec04f8b6926": "books-8.2"
+  }
  },
  "assets/modern_industrialization/mi_guidebook/_zh_cn/electric_age/portable_storage_unit.md": {
   "sha1": "ce954d27df0e0b2c9fcbcc3bb6b2b4b598026375",
@@ -1363,15 +1372,24 @@
  },
  "assets/oracle_index/books/oracle-index/.translated/zh_cn/docs/developer/setup.mdx": {
   "sha1": "6ff0a8733e6ec0954c66c62c344a4cc686a11c94",
-  "src": "assets/oracle_index/books/oracle-index/docs/developer/setup.mdx"
+  "src": "assets/oracle_index/books/oracle-index/docs/developer/setup.mdx",
+  "variants": {
+   "71c66890b7e176f5bff1df07a2ac3bc5ab38f889": "books-8.2"
+  }
  },
  "assets/oracle_index/books/oracle-index/.translated/zh_cn/docs/search.mdx": {
   "sha1": "a15d0557dadc5982df2a860d8742af0abcc98ddf",
-  "src": "assets/oracle_index/books/oracle-index/docs/search.mdx"
+  "src": "assets/oracle_index/books/oracle-index/docs/search.mdx",
+  "variants": {
+   "429a3f113cf8ddfc6b1ac9922f10d779391b77de": "books-8.2"
+  }
  },
  "assets/oracle_index/books/oracle-index/.translated/zh_cn/docs/user_guide.mdx": {
   "sha1": "5d88d2f5cb98ae35f7f43dc9f9180e6a6bf19832",
-  "src": "assets/oracle_index/books/oracle-index/docs/user_guide.mdx"
+  "src": "assets/oracle_index/books/oracle-index/docs/user_guide.mdx",
+  "variants": {
+   "39471995c9d74146ed7016cf9d9df8717a3a755d": "books-8.2"
+  }
  },
  "assets/oracle_index/books/oritech/.translated/zh_cn/content/arcane/enchanter_block.mdx": {
   "sha1": "a173c36feb67123bb67a7f9b1f1d768500832fbf",

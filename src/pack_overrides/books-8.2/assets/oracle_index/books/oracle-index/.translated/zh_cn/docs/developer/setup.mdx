@@ -1,0 +1,56 @@
+---
+title: 游戏内模组视图设置
+---
+
+本页面面向希望其Wiki内容可通过Oracle Index模组在游戏中访问的开发者。
+
+## 项目设置
+1. 按照moddedmc.wiki的说明，正常创建你的wiki目录/内容布局
+2. 确保你为**所有**内容都配备了_meta.json文件。Oracle索引使用meta.json文件构建导航栏。
+3. 将整个wiki复制到你的mods资源文件夹中。此操作可自动化，详见[auto gradle sync](../developer/gradle_task)。正确路径为："resources/assets/oracle_index/books/your-mod-id/"。
+4. Oracle索引将自动加载你模组的资源。
+
+最终生成的目录结构应如下所示：
+
+<center>
+<ModAsset location="oracle-index:folder_layout" width={600} />
+</center>
+
+不支持热重载。请使用moddedmc.wiki实时预览功能来创建您的Wiki内容。不过资源重载仍可刷新游戏内内容。
+
+游戏内wiki资源可通过资源包（亦可内置于模组中）添加。请参阅oritech仓库，了解具体设置方法。
+
+### Markdown兼容性
+
+Oracle索引支持ModdedMC Wiki常用的Markdown与MDX功能，包括表格、警告框、图片、代码标签页、标注框、配方、音频和视频链接。语法及确切限制请参阅[Markdown与MDX参考](./markdown)。
+
+这里使用的是专用的游戏内渲染器，而非网页浏览器。它不会执行任意HTML、JSX、JavaScript、CSS或自定义React组件。不支持的HTML块会被忽略。普通的`<img>`受支持；使用原始标签形式的`<center>`、`<div>`和`<span>`包装标签则会被丢弃。
+
+对于结构版本1的Wiki，图片与音频文件应放在Wiki目录内的`assets/<namespace>/`下。旧格式Wiki则使用`.assets/<namespace>/`。旧有的`.assets/item/<namespace>/`目录已经没有必要，因为使用注册物品ID时会直接渲染其游戏内模型。
+
+具有有效`id`的内容页还会获得一个游戏内属性面板，其中的堆叠上限、耐久度、挖掘信息、亮度等级等数据均取自当前游戏注册表。
+
+### 物品链接
+Oracle索引新增的一项功能是为wiki页面关联相关物品。为此，需在mdx前置数据中新增一个参数："related_items"，其值为一个游戏内物品ID数组。其格式如下所示：
+```
+---
+title: Generators
+icon: oritech:basic_generator_block
+related_items: [oritech:basic_generator_block, oritech:bio_generator_block, oritech:lava_generator_block, oritech:fuel_generator_block, oritech:big_solar_panel_block]
+---
+这里放你自己的内容。
+```
+
+这些链接将自动为内容维基条目生成。
+
+### 自定义书本 / 打开界面
+Oracle索引默认不附带指南书。然而，在你的模组中，你只需轻松添加一个新的书籍物品，并在玩家使用该书时打开指定界面即可。
+你还可以通过其他机制（如另一界面中的按钮）来打开该书。
+
+请在客户端执行以下代码：
+```java
+// 这里的 Oritech 是 wiki 的名字。
+// 条目资源始终使用 oracle_index 命名空间。
+Identifier entry = Identifier.of("oracle_index", "books/oritech/docs/intro.mdx");
+OracleClient.openScreen("oritech", entry, MinecraftClient.getInstance().currentScreen);
+```

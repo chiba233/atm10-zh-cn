@@ -142,6 +142,9 @@ python3 scripts/check_en_drift.py 7.3 8.0
 | ATM10 8.0（AdvancedAE 1.6.11 → 1.6.12） | 12 个散文页指纹变化 | **正文逐字相同，仅新增 UTF-8 BOM；更新底本指纹即可** |
 | ATM10 8.0（EnderDrives 1.4.4 → 1.5.23） | 末影磁盘页新增 6 种流体磁盘 | **机制内容新增；8.0–8.2 由 `books-8.0` 文件层接管，7.0–7.3 保留旧页** |
 | ATM10 8.0（Tombstone 9.5.3 → 9.5.4） | 4 组共 16 篇英文故事全部重写 | **正文实质变化；只以 `en_us` 为底本翻译，8.0–8.2 由 `books-8.0` 文件层接管** |
+| ATM10 8.2（AE2 Import Export Card 1.6.0 → 1.9.0） | 输入输出卡总览新增“选取方块卡” | **新增功能；仅 8.2 由 `books-8.2` 文件层接管** |
+| ATM10 8.2（Modern Industrialization 2.5.6 → 2.5.8） | 大型蒸汽锅炉与原油处理两页补充并修正燃料倍率 | **机制说明变化；仅 8.2 由 `books-8.2` 文件层接管** |
+| ATM10 8.2（Oracle Index 1.3.1 → 1.4.0） | 开发设置、搜索、用户指南三页补充渲染兼容性、译文回落与搜索限制 | **实质新增；仅 8.2 由 `books-8.2` 文件层接管** |
 
 抽查的差异形状：`an combination` → `a combination`、`at the same` 漏掉的 `time` 补回、
 `can place block or drop items actively` → `can actively place blocks or drop items`、
