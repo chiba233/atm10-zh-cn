@@ -292,7 +292,15 @@ function Do-Backup {
         Write-Host '⚠️ 就地解压模式下没有可备份的原文件（已被解压覆盖），跳过备份。'
         return
     }
+    # 备份是**覆盖**式写入：同一秒里装第二次会撞上同一个目录，于是第二次备份的是
+    # 已经汉化过的文件，把第一次那份原文盖掉，玩家的回退数据就没了。撞上就往后加序号。
     $script:TS = Get-Date -Format 'yyyyMMdd-HHmmss'
+    # 序号补零：恢复界面按名字排序取最后一个当「最近一次」，不补零 -10 会排在 -2 前面。
+    if (Test-Path -LiteralPath (Join-Path $ScriptDir "backups/$script:TS")) {
+        $i = 2
+        while (Test-Path -LiteralPath (Join-Path $ScriptDir ('backups/{0}-{1:d2}' -f $script:TS, $i))) { $i++ }
+        $script:TS = '{0}-{1:d2}' -f $script:TS, $i
+    }
     $script:BK = Join-Path $ScriptDir "backups/$script:TS"
     [System.IO.Directory]::CreateDirectory($script:BK) | Out-Null
     $newFiles = @()

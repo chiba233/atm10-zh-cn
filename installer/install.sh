@@ -353,7 +353,17 @@ do_backup() {
     say "⚠️ 就地解压模式下没有可备份的原文件（已被解压覆盖），跳过备份。"
     return
   fi
+  # 备份是**覆盖**式写入：同一秒里装第二次会撞上同一个目录，于是第二次备份的是
+  # 已经汉化过的文件，把第一次那份原文盖掉，玩家的回退数据就没了。
+  # 撞上就往后加序号，绝不复用已存在的目录。
   TS="$(date +%Y%m%d-%H%M%S)"
+  # 序号补零：do_restore 默认取 `ls -1 | tail -1`（字典序最后）当「最近一次」，
+  # 不补零的话 -10 会排在 -2 前面，默认就挑错了。
+  if [ -e "$SCRIPT_DIR/backups/$TS" ]; then
+    i=2
+    while [ -e "$SCRIPT_DIR/backups/$(printf '%s-%02d' "$TS" "$i")" ]; do i=$((i + 1)); done
+    TS="$(printf '%s-%02d' "$TS" "$i")"
+  fi
   BK="$SCRIPT_DIR/backups/$TS"
   mkdir -p "$BK"
   n=0
