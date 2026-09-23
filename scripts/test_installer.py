@@ -765,6 +765,12 @@ def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
+def longpath(p):
+    """Windows 上超过 MAX_PATH 的路径，Python 自己也读不到，要加扩展前缀。"""
+    s = str(p)
+    return '\\\\?\\' + s if IS_WIN and len(s) > 259 else s
+
+
 HOSTILE = tmp / "带 [0.9.1正式版] 和 [3月23日更新] 的 & 目录'"
 HOSTILE.mkdir()
 inst2, rel2 = build_case(HOSTILE)
@@ -828,5 +834,42 @@ assert not (rel3 / 'backups').exists() or not any((rel3 / 'backups').iterdir()),
     '中止了却还是建了备份'
 print('✅ 反例：待装文件不足时安装器报错退出，未改动实例（证明这道闸不是摆设）')
 
-shutil.rmtree(tmp, ignore_errors=True)
+# ⑤ 长路径：备份路径比载荷自己的路径多出 `\backups\<时间戳>` 这一截。Windows 的
+#    MAX_PATH=260 算的是完整路径，于是会出现「载荷装得进去、它的备份写不出来」，
+#    而且报的是 DirectoryNotFoundException，看着像目录没建成。这里把实例目录垫进那条
+#    窄窗口，让最深的那个文件正好落在「源 <260、备份 >260」上。非 Windows 上没有这条
+#    上限，用例照跑，只是不构成压力。
+DEEP_REL = max(payload_of(rel), key=len)
+# 源   = 实例 + \ATM10-汉化补丁\ + 相对路径      = L + R + 12
+# 备份 = 源   + \backups\<15 位时间戳>           = L + R + 36
+WANT = 236 - len(DEEP_REL)          # 源 248、备份 272，两边离边界都有余量
+pad = WANT - len(str(tmp)) - 10
+assert pad >= 1, (f'临时目录 {len(str(tmp))} 字符、最深相对路径 {len(DEEP_REL)} 字符，'
+                  f'垫不出「源 <260、备份 >260」的窗口——这条用例必须真的跨过 260 才有意义')
+DEEP = tmp / ('d' * pad)
+DEEP.mkdir()
+inst5, rel5 = build_case(DEEP)
+deep_dst = inst5 / DEEP_REL
+deep_dst.parent.mkdir(parents=True, exist_ok=True)
+deep_dst.write_text('OLD-DEEP', encoding='utf-8')
+assert len(str(rel5 / DEEP_REL)) < 260, '夹具的载荷路径自己就超了 260，垫过头了'
+
+rc5, out5 = run_apply_only(rel5)
+assert rc5 == 0, f'深目录下安装失败（退出码 {rc5}）：\n{out5}'
+bk5 = sorted(p for p in (rel5 / 'backups').iterdir() if p.is_dir())[-1]
+bak5 = bk5 / DEEP_REL
+assert len(str(bak5)) > 260, f'备份路径只有 {len(str(bak5))} 字符，没跨过 MAX_PATH，等于没测'
+assert os.path.isfile(longpath(bak5)), f'深路径文件被覆盖了却没进备份（{len(str(bak5))} 字符）\n{out5}'
+with open(longpath(bak5), encoding='utf-8') as _fh:
+    assert _fh.read() == 'OLD-DEEP', '深路径备份里不是覆盖前的原内容'
+assert deep_dst.read_text(encoding='utf-8') != 'OLD-DEEP', '深路径文件没被覆盖，等于没装'
+r = subprocess.run((['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
+                     str(rel5 / 'install.ps1'), 'restore', bk5.name] if IS_WIN else
+                    ['bash', str(rel5 / 'install.sh'), 'restore', bk5.name]),
+                   capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=300)
+assert r.returncode == 0, f'深目录下 restore 失败：{r.stdout}{r.stderr}'
+assert deep_dst.read_text(encoding='utf-8') == 'OLD-DEEP', '深路径文件没还原回原内容'
+print(f'✅ 长路径：备份路径 {len(str(bak5))} 字符（> MAX_PATH=260），备份、安装、还原三步都过')
+
+shutil.rmtree(longpath(tmp), ignore_errors=True)
 print(f'✅ 安装脚本端到端测试通过（{platform.system()}）')

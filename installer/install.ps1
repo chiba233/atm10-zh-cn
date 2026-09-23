@@ -31,6 +31,62 @@ $script:BK = ''
 $script:InPlace = $false
 $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
+# ── 长路径 ──────────────────────────────────────────────────────────────
+# 备份层比游戏自己的路径多出 `\汉化文件夹\backups\<时间戳>\` 四十来个字符，于是实例
+# 目录稍深一点就会出现「原文件读得到、它的备份写不进去」。超过 MAX_PATH 时 Win32 返回
+# ERROR_PATH_NOT_FOUND，而 .NET 4.6.2 起不再在托管层判长度，抛出来的是
+# DirectoryNotFoundException（「Could not find a part of the path」），看着像目录没建成。
+# `\\?\` 前缀能绕开，但它不做任何规范化、只认绝对路径，PowerShell 5.1 的 FileSystem
+# 提供程序也不收这种路径。所以这里只在**今天必然抛异常的长度上**才切到 .NET API：
+# 短路径照旧走 Copy-Item，行为一个字不变；非 Windows 整套短路（那里没有 MAX_PATH）。
+$script:OnWindows = ($PSVersionTable.PSVersion.Major -lt 6) -or $IsWindows
+# 文件路径上限 259 个字符，目录还要给 8.3 短名留 12 个，所以是 247。
+function Test-LongFilePath([string]$p) { return ($script:OnWindows -and $p -and $p.Length -gt 259) }
+function Test-LongDirPath([string]$p)  { return ($script:OnWindows -and $p -and $p.Length -gt 247) }
+
+function To-ExtendedPath([string]$p) {
+    # 任何一步出意外都原样退回：宁可维持今天的行为，也不能让这个帮手把正常环境弄挂。
+    if (-not $script:OnWindows -or -not $p) { return $p }
+    if ($p.StartsWith('\\?\')) { return $p }
+    try { $full = [System.IO.Path]::GetFullPath($p) } catch { return $p }
+    if ($full.StartsWith('\\')) { return '\\?\UNC\' + $full.Substring(2) }
+    if ($full -match '^[A-Za-z]:\\')  { return '\\?\' + $full }
+    return $p
+}
+
+function New-DirForFile([string]$file) {
+    $dir = Split-Path $file
+    if (Test-LongDirPath $dir) { $dir = To-ExtendedPath $dir }
+    [void][System.IO.Directory]::CreateDirectory($dir)
+}
+
+function Copy-OneFile([string]$from, [string]$to, [switch]$Force) {
+    if ((Test-LongFilePath $from) -or (Test-LongFilePath $to)) {
+        [System.IO.File]::Copy((To-ExtendedPath $from), (To-ExtendedPath $to), $true)
+    } elseif ($Force) {
+        Copy-Item -LiteralPath $from -Destination $to -Force
+    } else {
+        Copy-Item -LiteralPath $from -Destination $to
+    }
+}
+
+function Get-FilesUnder([string]$root) {
+    # 返回相对 $root 的路径。先照旧走 Get-ChildItem —— 正常情况下行为与过去完全一致，
+    # 包括它默认跳过隐藏文件这一条；只有它整条炸掉（5.1 碰上超长路径就是如此）才退到
+    # 扩展路径枚举。**先整体装进变量再返回**：半截失败不会把已枚举的那部分漏出去变成重复项。
+    $rel = $null
+    try {
+        $rel = @(Get-ChildItem -LiteralPath $root -Recurse -File |
+                 ForEach-Object { $_.FullName.Substring($root.Length + 1) })
+    } catch { $rel = $null }
+    if ($null -eq $rel) {
+        $r = To-ExtendedPath $root
+        $rel = @([System.IO.Directory]::EnumerateFiles($r, '*', [System.IO.SearchOption]::AllDirectories) |
+                 ForEach-Object { $_.Substring($r.Length + 1) })
+    }
+    return $rel
+}
+
 # 判定一个目录是不是游戏实例根目录。
 # 不能只看 options.txt —— **刚装好、一次都没启动过的整合包没有 options.txt**
 # （它是 Minecraft 首次退出时才写的）。也不能只看 mods\ —— 汉化包自己的文件夹里
@@ -280,8 +336,8 @@ function Get-PayloadFiles {
         # 「[0.9.1正式版]」这种目录名并不罕见（整合包分享站的常见命名）。
         $abs = Join-Path $ScriptDir $d
         if (Test-Path -LiteralPath $abs) {
-            Get-ChildItem -LiteralPath $abs -Recurse -File | Where-Object { $_.Name -ne '.DS_Store' } | ForEach-Object {
-                $_.FullName.Substring($ScriptDir.Length + 1)
+            Get-FilesUnder $abs | Where-Object { [System.IO.Path]::GetFileName($_) -ne '.DS_Store' } | ForEach-Object {
+                Join-Path $d $_
             }
         }
     }
@@ -309,8 +365,8 @@ function Do-Backup {
         $dst = Join-Path $script:Target $f
         if (Test-Path -LiteralPath $dst) {
             $to = Join-Path $script:BK $f
-            [System.IO.Directory]::CreateDirectory((Split-Path $to)) | Out-Null
-            Copy-Item -LiteralPath $dst -Destination $to
+            New-DirForFile $to
+            Copy-OneFile $dst $to
             $n++
         } else {
             $newFiles += $f
@@ -555,8 +611,8 @@ function Do-Apply {
     foreach ($f in $payload) {
         $dst = Join-Path $script:Target $f
         if ((Join-Path $ScriptDir $f) -eq $dst) { continue }   # 双保险：源即目标就跳过
-        [System.IO.Directory]::CreateDirectory((Split-Path $dst)) | Out-Null
-        Copy-Item -LiteralPath (Join-Path $ScriptDir $f) -Destination $dst -Force
+        New-DirForFile $dst
+        Copy-OneFile (Join-Path $ScriptDir $f) $dst -Force
         $copied++
     }
     # 再核一遍是否真的落地：复制静默失败、目标只读、路径被通配符吃掉都在这里露馅。
@@ -655,11 +711,11 @@ function Do-Restore([string]$name) {
             if ($f) { Remove-Item -LiteralPath (Join-Path $script:Target $f) -Force -ErrorAction SilentlyContinue }
         }
     }
-    Get-ChildItem -LiteralPath $bk -Recurse -File | Where-Object { $_.Name -ne '新增文件清单.txt' } | ForEach-Object {
-        $rel = $_.FullName.Substring($bk.Length + 1)
+    foreach ($rel in (Get-FilesUnder $bk)) {
+        if ([System.IO.Path]::GetFileName($rel) -eq '新增文件清单.txt') { continue }
         $dst = Join-Path $script:Target $rel
-        [System.IO.Directory]::CreateDirectory((Split-Path $dst)) | Out-Null
-        Copy-Item -LiteralPath $_.FullName -Destination $dst -Force
+        New-DirForFile $dst
+        Copy-OneFile (Join-Path $bk $rel) $dst -Force
     }
     Write-Host "✅ 已恢复备份 $name（含 options.txt，安装时新增的文件已删除）"
 }
