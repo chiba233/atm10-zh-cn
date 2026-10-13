@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Changelog"
+  short_description: "按版本节写给玩家看的更新日志"
+  default_prompt: "Use $write-changelog to add the user-visible changes on this branch to CHANGELOG.md."
