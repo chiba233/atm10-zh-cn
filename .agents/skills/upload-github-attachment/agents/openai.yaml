@@ -1,0 +1,4 @@
+interface:
+  display_name: "Upload GitHub Attachment"
+  short_description: "把本地文件上传为 GitHub 附件"
+  default_prompt: "Use $upload-github-attachment to upload this file for a GitHub issue or pull request."
