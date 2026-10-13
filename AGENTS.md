@@ -1,8 +1,9 @@
-# CLAUDE.md
+# AGENTS.md
 
-写给在本仓库里干活的自动化助手。`AGENTS.md` 内容与本文件完全相同，只是换个文件名供不同工具读取。
+写给在本仓库里干活的自动化助手。`CLAUDE.md` 只有一行 `@AGENTS.md`，各家工具读到的是同一份内容。
 
-内容限于**这个代码库的技术事实**：仓库怎么组织、改动怎么落、哪些东西一改就坏。
+内容限于**这个代码库的技术事实与工作约定**：仓库怎么组织、改动怎么落、公开文本怎么写、哪些东西一改就坏。
+动手前先在[任务路由](#任务路由)里找到对应的任务，读列出的文件。
 
 ---
 
@@ -130,3 +131,60 @@ python3 scripts/fetch_one_jar.py <版本> <jar 名前缀> <输出目录>
   `scripts/compliance/protect.py` 把关。新加文件要先 `git add` 再跑
   `protect.py --update` 登记（它靠 `git ls-files`，顺序反了会「新收 0 个」）。
   这个闸红了通常意味着删错了文件。
+
+---
+
+## 写作
+
+- 公开文本按 [`simple-chinese`](.agents/skills/simple-chinese/SKILL.md) 写。公开文本指 commit 消息、PR 与 issue 文本、CHANGELOG、README、文档与代码注释。
+- 这条不管游戏内的译文。译文按上文「译名的真源在哪里」处理。
+- 不改代码、标识符、命令、路径与报错原文。
+- 本仓库最常犯的几条：
+  - 写了人：谁提的、谁拍板、私下怎么沟通的。只写事和技术依据。
+  - 写了本地环境：本地、本机路径、机器名。
+  - 写了历史经过：「原先……现在……」。历史在 git 里。
+  - 更新日志里写了根因和机制。它们写进 commit 正文和代码注释。
+  - 标题写成疑问句。标题写陈述句。
+  - 用分号连起两件事。写成两句。
+
+---
+
+## Git 与 PR
+
+### 提交
+
+- 标题用 Conventional Commits 的标准类型：`feat`、`fix`、`docs`、`chore`、`ci`、`refactor`、`test`。scope 可写可不写，例如 `fix(installer): …`。描述用中文，不用 gitmoji。历史上的 `doc:` 提交保持原样。
+- 标题一行。关联 issue 时，在末尾写 `(#N)`。
+- 一件事一个提交。顺手改的东西单独提交。
+- 正文默认不写。只在改动看不出根因、代码注释里又放不下时写，三到五行。译名决策写上真源。
+- 自动化助手提交时加 `--no-gpg-sign`。不改仓库或全局的 `commit.gpgsign`。
+- 提交前对提交消息跑禁词检查，命令见 `simple-chinese`「自检」。
+
+### 分支与推送
+
+- 分支名：`<类型>/<issue 号>-<简短名>`。没有 issue 时省掉号，例如 `fix/59-pam-stock`、`docs/agent-skills`。
+- 拉取用 `git pull --rebase`。
+- 推送前先 `git fetch`。不 force push，`main` 的保护规则也禁止 force push。
+- agent 配置（`AGENTS.md`、`CLAUDE.md`、`.agents/skills/`）的改动单独提交、单独开 PR。
+
+### PR 与合并
+
+- 开 PR 用 [`create-pr`](.agents/skills/create-pr/SKILL.md)。写更新日志用 [`write-changelog`](.agents/skills/write-changelog/SKILL.md)。
+- `main` 只允许 squash 合并。合并前必须通过 `上游漂移 + 汉化校验` 与 `build` 两项检查。
+- 不打 tag，不发 release，不触发 Release workflow。发版由维护者做。
+
+---
+
+## 任务路由
+
+skill 在 `.agents/skills/<名字>/SKILL.md`，`.claude/skills` 指向同一个目录。开始任务前先读表里列出的文件。
+
+| 任务 | 先读 |
+|---|---|
+| 写或改 commit 消息、PR 与 issue 文本、文档、代码注释 | [`simple-chinese`](.agents/skills/simple-chinese/SKILL.md) |
+| 开、创建或准备 PR | [`create-pr`](.agents/skills/create-pr/SKILL.md) |
+| 往 CHANGELOG 加条目、开新版本节、写致谢 | [`write-changelog`](.agents/skills/write-changelog/SKILL.md) |
+| 给 issue、PR 或评论贴本地截图与文件 | [`upload-github-attachment`](.agents/skills/upload-github-attachment/SKILL.md) |
+| 改译名 | 本文件「译名的真源在哪里」与「一个名字有多处表面」 |
+| 改上游自带的文件或导览书译文 | [`CONTRIBUTING.md`](CONTRIBUTING.md)「改上游自带的文件」「改导览书译文」 |
+| 改闸 | 本文件「闸」，以及 `scripts/compliance/` 下的反例测试 |
