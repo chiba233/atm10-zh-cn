@@ -169,3 +169,13 @@ All the Mods 10\          ← 实例根目录
 **[0xyk3r](https://github.com/0xyk3r)**（贡献者）· **BBSMC 汉化组**（早期参考）·
 **All the Mods 团队**（整合包与任务书官方中文）·
 各模组原作者与 CFPA 社区 · **Claude Fable 5**（fable5 老师，我还记得你）。
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=chiba233%2Fatm10-zh-cn&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=chiba233/atm10-zh-cn&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=chiba233/atm10-zh-cn&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=chiba233/atm10-zh-cn&type=date&legend=top-left" />
+ </picture>
+</a>
