@@ -119,6 +119,27 @@ python3 scripts/fetch_one_jar.py <版本> <jar 名前缀> <输出目录>
 
 ---
 
+## 覆盖率与缺口的口径
+
+`versions/db/<版本>/lang_baseline_local.json` 只收本包已经译过的键，以及每个键翻译时对着的英文原文（见 `scripts/build_en_baseline.py`）。它用来查英文底本有没有变，不是该版的全量 `en_us`。
+
+- 不拿它当分母算覆盖率。分母里只有本包已译的键，算出来必然是 100%。
+- 不拿它回答「全包有多少条某类文本」。它只能回答本包译过的键。
+- 覆盖率的分母是该版全部模组 jar 的 `en_us`，加上整合包 `kubejs/assets` 里的 `en_us`。
+
+「某版新增且未译」要用两个版本的 jar 求差：
+
+1. 新版 jar 的 `en_us` 键，减去旧版 jar 的 `en_us` 键。
+2. 再减去新版模组自带的 `zh_cn`、本包的 `zh_cn`、整合包 `kubejs/assets` 里已有的键。
+
+旧版 jar 用 `fetch_one_jar.py <旧版本> <jar 名前缀> <输出目录>` 取。`jars.json` 钉了每个 jar 的 fileID 与 sha256。整合包已经原地升级、旧 jar 不在了，也照样取得到。
+
+「`en_us` 有这个键、`zh_cn` 没有」本身不是缺口。先减掉上面三个来源，再排除死键与只在开发环境注册的键。死键指被别名替换、游戏里不会显示的键。
+
+扫描结果是 100% 或 0 时，先拿一个已知的正例验证扫描器，再报数。
+
+---
+
 ## 闸
 
 `scripts/check.py` 是规则解释器，规则数据在 `src/rules/*.json`；
@@ -186,5 +207,6 @@ skill 在 `.agents/skills/<名字>/SKILL.md`，`.claude/skills` 指向同一个�
 | 往 CHANGELOG 加条目、开新版本节、写致谢 | [`write-changelog`](.agents/skills/write-changelog/SKILL.md) |
 | 给 issue、PR 或评论贴本地截图与文件 | [`upload-github-attachment`](.agents/skills/upload-github-attachment/SKILL.md) |
 | 改译名 | 本文件「译名的真源在哪里」与「一个名字有多处表面」 |
+| 算覆盖率、缺口或「某版新增且未译」 | 本文件「覆盖率与缺口的口径」 |
 | 改上游自带的文件或导览书译文 | [`CONTRIBUTING.md`](CONTRIBUTING.md)「改上游自带的文件」「改导览书译文」 |
 | 改闸 | 本文件「闸」，以及 `scripts/compliance/` 下的反例测试 |
