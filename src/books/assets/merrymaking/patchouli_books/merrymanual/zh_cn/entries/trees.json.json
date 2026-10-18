@@ -1,6 +1,6 @@
 {
  "src": "assets/merrymaking/patchouli_books/merrymanual/en_us/entries/trees.json",
- "sha1": "9a7a296175c308e2a6f974589eb0b116dabaac2d",
+ "sha1": "ae24a00aa623382ce64de5febeba6f33ff6138f3",
  "t": [
   [
    [
@@ -107,6 +107,15 @@
    ],
    "Decorated Christmas Tree",
    "已装饰的圣诞树"
+  ],
+  [
+   [
+    "pages",
+    10,
+    "title"
+   ],
+   "Toppers",
+   "树顶饰"
   ]
  ]
 }
