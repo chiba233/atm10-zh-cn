@@ -685,5 +685,19 @@
   "effect.supplementaries.bleeding": "流血",
   "block.supplementaries.breeze_rod": "旋风棒",
   "supplementaries.configuration.plunderer.galleon.description": "若 'rope' 功能被禁用，大帆船会自动一并禁用",
-  "supplementaries.configuration.globe.sepia_globe.description": "若 'antique_ink' 功能被禁用，墨绘地球仪会自动一并禁用"
+  "supplementaries.configuration.globe.sepia_globe.description": "若 'antique_ink' 功能被禁用，墨绘地球仪会自动一并禁用",
+  "item.supplementaries.pignata": "小猪皮纳塔",
+  "entity.supplementaries.pignata": "小猪皮纳塔",
+  "block.supplementaries.pignata_anchor": "小猪皮纳塔锚点",
+  "message.supplementaries.pignata.full": "这个小猪皮纳塔已经装满了",
+  "subtitles.supplementaries.pignata.burst": "小猪皮纳塔：破裂",
+  "subtitles.supplementaries.pignata.hit": "小猪皮纳塔：受击",
+  "supplementaries.configuration.rope.lead_knots": "拴绳结",
+  "supplementaries.configuration.rope.lead_knots.description": "拴绳可以系在绳索上",
+  "supplementaries.configuration.building.pignata": "小猪皮纳塔",
+  "supplementaries.configuration.blackboard.connected_gui": "连接界面",
+  "supplementaries.configuration.blackboard.connected_gui.description": "打开黑板界面时，同时显示最多 3x3 块相连的黑板，可以一次在所有黑板上作画",
+  "supplementaries.configuration.pignata": "小猪皮纳塔",
+  "supplementaries.configuration.pignata.heal_interval": "回血间隔",
+  "supplementaries.configuration.pignata.heal_interval.description": "小猪皮纳塔恢复一颗心的伤害所需的刻数"
 }
