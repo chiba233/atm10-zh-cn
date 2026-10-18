@@ -1059,7 +1059,7 @@
     "src/mods/vaultpatcher/verify/com/ldtteam/structurize/client/gui/WindowExtendedBuildTool.java",
     "src/module_hashes.json",
     "src/optional-mods-pinyin/LICENSE-just-enough-characters.txt",
-    "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.29.jar",
+    "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.30.jar",
     "src/optional-mods-pinyin/来源与许可.md",
     "src/pack/assets/abnormals_delight/lang/zh_cn.json",
     "src/pack/assets/abundant_atmosphere/lang/zh_cn.json",
@@ -3554,6 +3554,12 @@
       "approved": "42f086c7",
       "date": "2026-09-12",
       "why": "被同目录的 jecharacters-1.21.1-neoforge-4.5.29.jar 取代。assemble.py 把本目录整个拷进出货树，两个 jar 同时在会让包里带两份同一个模组。"
+    },
+    {
+      "path": "src/optional-mods-pinyin/jecharacters-1.21.1-neoforge-4.5.29.jar",
+      "approved": "2026-10-18T13:26:45+07:00",
+      "date": "2026-10-18",
+      "why": "被同目录的 jecharacters-1.21.1-neoforge-4.5.30.jar 取代。assemble.py 把本目录整个拷进出货树，两个 jar 同时在会让包里带两份同一个模组。"
     },
     {
       "path": "src/pack/assets/tombstone/text/coral_chant_1_fr_fr-zh_cn.txt",
