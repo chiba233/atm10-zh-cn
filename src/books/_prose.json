@@ -2036,7 +2036,10 @@
   "src": "assets/oracle_index/books/oritech/docs/multiblocks.mdx"
  },
  "assets/oracle_index/books/oritech/.translated/zh_cn/docs/particle_accelerator.mdx": {
-  "sha1": "600e141b19485a08a50e74c4ae785b145570a6bd",
+  "sha1": "73b10952df945dd2451f97f670490e90ada51026",
+  "equivalent_sha1": [
+   "600e141b19485a08a50e74c4ae785b145570a6bd"
+  ],
   "src": "assets/oracle_index/books/oritech/docs/particle_accelerator.mdx"
  },
  "assets/oracle_index/books/oritech/.translated/zh_cn/docs/reactor/components.mdx": {
