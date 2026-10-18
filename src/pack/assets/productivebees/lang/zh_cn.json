@@ -1166,5 +1166,12 @@
   "block.productivebees.honey": "蜂蜜",
   "block.productivebees.invisible_redstone_block": "隐形红石方块",
   "biome.productivebees.beach_or_river": "海滩或河流",
-  "biome.productivebees.mountain_or_hill": "山地或丘陵"
+  "biome.productivebees.mountain_or_hill": "山地或丘陵",
+  "entity.productivebees.amaramber_bee": "绯夜脂蜜蜂",
+  "entity.productivebees.deepsilver_bee": "深银蜜蜂",
+  "entity.productivebees.glacite_bee": "永冻石蜜蜂",
+  "entity.productivebees.malarite_bee": "瘴紫石蜜蜂",
+  "entity.productivebees.starcore_bee": "星核蜜蜂",
+  "entity.productivebees.starlit_diamond_bee": "星钻蜜蜂",
+  "entity.productivebees.thermal_bee": "热泉石蜜蜂"
 }
