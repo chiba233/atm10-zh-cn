@@ -1,0 +1,400 @@
+{
+ "src": "assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/spawner/runes.json",
+ "sha1": "811fdddfa5367aec0c1b5fe1fd0384e20e46708e",
+ "t": [
+  [
+   [
+    "name"
+   ],
+   "Spawner Runes",
+   "刷怪笼符文"
+  ],
+  [
+   [
+    "pages",
+    0,
+    "text"
+   ],
+   "After reading about $(l:apotheosis:spawner/stats)Spawner Stats$(), you may be wondering how to change them.$(p)Enter $(9)Spawner Runes$(). Hold a rune and right-click a $(9)Mob Spawner$() to apply it.$(p)Every rune and its effect is visible in JEI under the uses of Mob Spawners.",
+   "读过$(l:apotheosis:spawner/stats)刷怪笼状态$()之后，你可能想知道怎样修改这些数值。$(p)这就要用到$(9)刷怪笼符文$()。手持符文右击$(9)刷怪笼$()即可应用。$(p)每种符文及其效果都可以在 JEI 里刷怪笼的用途中查看。"
+  ],
+  [
+   [
+    "pages",
+    1,
+    "text"
+   ],
+   "Runes are forged from $(9)Spawner Chains$(), which drop when a spawner is destroyed by an explosion.$(p)The initial explosion triggers a cascade. A few seconds later it detonates, littering the ground with the stored mob and many chains.",
+   "符文用$(9)刷怪笼锁链$()锻造。刷怪笼被爆炸摧毁时会掉落锁链。$(p)最初的爆炸会引发连锁反应。几秒后它会再次爆炸，地上会散落出笼里储存的生物和大量锁链。"
+  ],
+  [
+   [
+    "pages",
+    1,
+    "title"
+   ],
+   "Spawner Chains",
+   "刷怪笼锁链"
+  ],
+  [
+   [
+    "pages",
+    2,
+    "text"
+   ],
+   "Once you have some chains, the first thing you'll need to do is craft some blank $(9)Spawner Runes$().",
+   "有了锁链之后，第一件事是合成一些空白的$(9)刷怪笼符文$()。"
+  ],
+  [
+   [
+    "pages",
+    2,
+    "title"
+   ],
+   "Blank Runes",
+   "空白符文"
+  ],
+  [
+   [
+    "pages",
+    3,
+    "text"
+   ],
+   "There are four core upgrade runes, one for each World Tier above Haven.$(p)These runes modify the core stats: Min/Max Spawn Delay, Spawn Count, Max Entities, and Activation Range.",
+   "核心升级符文共有四种，居所之上的每个世界层级各一种。$(p)这些符文修改核心数值：最小/最大生成延迟、生成数量、最大实体数和激活范围。"
+  ],
+  [
+   [
+    "pages",
+    3,
+    "title"
+   ],
+   "Upgrade Runes",
+   "升级符文"
+  ],
+  [
+   [
+    "pages",
+    4,
+    "text"
+   ],
+   "Each tier rune is crafted around that tier's $(9)Rarity Material$().",
+   "每种层级符文都以该层级的$(9)珍宝材料$()为核心合成。"
+  ],
+  [
+   [
+    "pages",
+    4,
+    "title"
+   ],
+   "Frontiersman's Rune",
+   "拓荒者符文"
+  ],
+  [
+   [
+    "pages",
+    5,
+    "text"
+   ],
+   "The core stat upgrades increase with the rune's tier.",
+   "符文的层级越高，核心数值提升越多。"
+  ],
+  [
+   [
+    "pages",
+    5,
+    "title"
+   ],
+   "Wayfarer's Rune",
+   "旅人符文"
+  ],
+  [
+   [
+    "pages",
+    6,
+    "text"
+   ],
+   "The higher runes require an $(9)Infused Spawner Rune$() and rarer materials.",
+   "更高级的符文需要$(9)灌注刷怪笼符文$()和更稀有的材料。"
+  ],
+  [
+   [
+    "pages",
+    6,
+    "title"
+   ],
+   "Mountaineer's Rune",
+   "登山者符文"
+  ],
+  [
+   [
+    "pages",
+    7,
+    "text"
+   ],
+   "The final rune will create an unstoppable engine of mob creation.",
+   "最后这种符文会造出一台势不可挡的刷怪机器。"
+  ],
+  [
+   [
+    "pages",
+    7,
+    "title"
+   ],
+   "Thundering Rune",
+   "雷霆符文"
+  ],
+  [
+   [
+    "pages",
+    8,
+    "text"
+   ],
+   "Changing other (non-core) stats requires a rune dedicated to that stat. Each stat has one rune, with the cost depending on how strong the effect is.",
+   "修改其他（非核心）数值需要对应该数值的专用符文。每种数值各有一种符文，成本取决于效果有多强。"
+  ],
+  [
+   [
+    "pages",
+    8,
+    "title"
+   ],
+   "Stat Runes",
+   "属性符文"
+  ],
+  [
+   [
+    "pages",
+    9,
+    "text"
+   ],
+   "This rune changes a Spawner's Spawn Range.",
+   "这种符文会改变刷怪笼的生成范围。"
+  ],
+  [
+   [
+    "pages",
+    9,
+    "title"
+   ],
+   "Spawning Range",
+   "生成范围"
+  ],
+  [
+   [
+    "pages",
+    10,
+    "text"
+   ],
+   "This rune gives a spawner redstone control. The spawner will not operate without a redstone signal.",
+   "这种符文让刷怪笼受红石控制。没有红石信号时刷怪笼不会工作。"
+  ],
+  [
+   [
+    "pages",
+    10,
+    "title"
+   ],
+   "Control",
+   "控制"
+  ],
+  [
+   [
+    "pages",
+    11,
+    "text"
+   ],
+   "This rune makes the mob spawning process ignore light levels.$(p)Dark mobs can spawn in light, and vice versa.",
+   "这种符文让生物生成时无视光照等级。$(p)暗处生成的生物可以在亮处生成，反之亦然。"
+  ],
+  [
+   [
+    "pages",
+    11,
+    "title"
+   ],
+   "Perpetual Twilight",
+   "永恒暮光"
+  ],
+  [
+   [
+    "pages",
+    12,
+    "text"
+   ],
+   "This rune makes all spawned mobs make no sound.$(p)No hurt noises, no ambient noises, nothing.",
+   "这种符文让生成的生物都不发出声音。$(p)没有受伤声，没有环境音，什么都没有。"
+  ],
+  [
+   [
+    "pages",
+    12,
+    "title"
+   ],
+   "Silence!",
+   "安静！"
+  ],
+  [
+   [
+    "pages",
+    13,
+    "text"
+   ],
+   "This rune will cause spawned mobs to be reverted to their infant form.$(p)Assuming they have one, anyway. If they don't, nothing will happen.",
+   "这种符文会让生成的生物变回幼年形态。$(p)前提是它们有幼年形态。没有的话，什么也不会发生。"
+  ],
+  [
+   [
+    "pages",
+    13,
+    "title"
+   ],
+   "The Fountain of Youth",
+   "青春之泉"
+  ],
+  [
+   [
+    "pages",
+    14,
+    "text"
+   ],
+   "This rune causes spawned mobs to be set on fire.$(p)Obviously, this won't work if the mob is immune to fire.",
+   "这种符文会让生成的生物着火。$(p)显然，对免疫火焰的生物无效。"
+  ],
+  [
+   [
+    "pages",
+    14,
+    "title"
+   ],
+   "Burn Them All!",
+   "全都烧掉！"
+  ],
+  [
+   [
+    "pages",
+    15,
+    "text"
+   ],
+   "Stronger runes need an $(9)Infused Spawner Rune$(), which are created via Infusion Enchanting.",
+   "更强的符文需要$(9)灌注刷怪笼符文$()，它通过灌注附魔制作。"
+  ],
+  [
+   [
+    "pages",
+    15,
+    "title"
+   ],
+   "Infused Runes",
+   "灌注符文"
+  ],
+  [
+   [
+    "pages",
+    16,
+    "text"
+   ],
+   "This infused rune causes spawned mobs to have no entity AI.$(p)Unlike 'true' no AI mobs, they can still be pushed around.",
+   "这种灌注符文让生成的生物没有实体 AI。$(p)与「真正」的无 AI 生物不同，它们仍然可以被推动。"
+  ],
+  [
+   [
+    "pages",
+    16,
+    "title"
+   ],
+   "Brain Drain",
+   "脑子空空"
+  ],
+  [
+   [
+    "pages",
+    17,
+    "text"
+   ],
+   "This infused rune is a direct upgrade to the $(9)Rune of Perpetual Twilight$().$(p)All spawn conditions, including light, will be ignored. Empty space is still required.",
+   "这种灌注符文是$(9)永恒暮光符文$()的直接升级。$(p)所有生成条件，包括光照，都会被无视。但仍然需要有空位。"
+  ],
+  [
+   [
+    "pages",
+    17,
+    "title"
+   ],
+   "Defying All Logic",
+   "违背一切常理"
+  ],
+  [
+   [
+    "pages",
+    18,
+    "text"
+   ],
+   "This infused rune allows the spawner to run without a player nearby.$(p)The mobs might get lonely.",
+   "这种灌注符文让刷怪笼在附近没有玩家时也能运作。$(p)生物们可能会觉得寂寞。"
+  ],
+  [
+   [
+    "pages",
+    18,
+    "title"
+   ],
+   "Alone in the World",
+   "世上只剩我"
+  ],
+  [
+   [
+    "pages",
+    19,
+    "text"
+   ],
+   "This infused rune grants Echoing, which causes spawned mobs to drop an additional copy of their loot table.$(p)It can be applied multiple times.",
+   "这种灌注符文赋予回响效果，让生成的生物额外掉落一份战利品表里的物品。$(p)它可以多次应用。"
+  ],
+  [
+   [
+    "pages",
+    19,
+    "title"
+   ],
+   "Again and Again",
+   "一遍又一遍"
+  ],
+  [
+   [
+    "pages",
+    20,
+    "text"
+   ],
+   "Hold $(9)Nether Quartz$() in your off hand while applying a rune to reverse its effect.$(p)The quartz is not consumed.$(p)Tier runes cannot be inverted.",
+   "应用符文时在副手拿着$(9)下界石英$()，可以反转符文的效果。$(p)石英不会被消耗。$(p)层级符文不能反转。"
+  ],
+  [
+   [
+    "pages",
+    20,
+    "title"
+   ],
+   "Inverting Runes",
+   "反转符文"
+  ],
+  [
+   [
+    "pages",
+    21,
+    "text"
+   ],
+   "Stat runes respect the caps shown in JEI, while tier runes set values directly.$(p)Hold Shift over a spawner item to see its stats.",
+   "属性符文遵守 JEI 里显示的上限，层级符文则直接设定数值。$(p)把鼠标悬停在刷怪笼物品上并按住 Shift，可以查看它的数值。"
+  ],
+  [
+   [
+    "pages",
+    21,
+    "title"
+   ],
+   "Notes",
+   "备注"
+  ]
+ ]
+}

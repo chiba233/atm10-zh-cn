@@ -1,0 +1,49 @@
+{
+ "src": "assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/wandering_trader.json",
+ "sha1": "83de23edc21fc857f85ce049129dda51edbb981f",
+ "t": [
+  [
+   [
+    "name"
+   ],
+   "Wandering Trader",
+   "流浪商人"
+  ],
+  [
+   [
+    "pages",
+    0,
+    "text"
+   ],
+   "Have you ever met one of those shady merchants that just appear on your lawn?$(p)Those are called $(9)Wandering Traders$().$(p)Typically they only sell hot garbage.",
+   "你有没有遇到过那种会突然出现在你家草坪上的可疑商贩？$(p)他们叫$(9)流浪商人$()。$(p)通常他们只卖破烂。"
+  ],
+  [
+   [
+    "pages",
+    1,
+    "text"
+   ],
+   "However, Apotheosis adds a ton of new trades to their tables so they are actually worth interacting with.$(p)These trades include items like $(9)Beacons$() and $(9)Totems of Undying$(), as well as random $(9)Affix Items$(), priced in emeralds plus their repair material.",
+   "不过，神化给他们的交易表加了大量新交易，跟他们打交道终于值得了。$(p)这些交易包括$(9)信标$()、$(9)不死图腾$()等物品，还有随机的$(9)词缀物品$()，价格是绿宝石加上该物品的修复材料。"
+  ],
+  [
+   [
+    "pages",
+    2,
+    "text"
+   ],
+   "In $(9)Summit$() and $(9)Pinnacle$(), traders may also offer powerful preset gear. Most of it requires Apothic Enchanting or Apothic Spawners to be installed.",
+   "在$(9)高峰$()和$(9)顶点$()层级，商人还可能出售强力的预设装备。其中大部分需要装有神化附魔或神化刷怪笼。"
+  ],
+  [
+   [
+    "pages",
+    3,
+    "text"
+   ],
+   "Apotheosis also makes Wandering Traders appear more often, stay for a shorter time, and allows them to spawn underground (configurable).",
+   "神化还会让流浪商人出现得更频繁、停留时间更短，并允许他们在地下生成（可配置）。"
+  ]
+ ]
+}
