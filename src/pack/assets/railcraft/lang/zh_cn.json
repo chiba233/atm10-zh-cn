@@ -1075,5 +1075,9 @@
   "tips.railcraft.water_tank_siding": "多方块结构：3x3x3 (中空)",
   "tips.railcraft.whistle_track": "驶过的机车会鸣笛",
   "Railcraft Reborn Book": "铁路重生手册",
-  "It's a book that contains advice on Railcraft Reborn.$(br2)It is currently in beta, new categories will arrive.": "这是一本关于铁路重制版的指南手册。$(br2)当前处于测试阶段，后续将新增分类。"
+  "It's a book that contains advice on Railcraft Reborn.$(br2)It is currently in beta, new categories will arrive.": "这是一本关于铁路重制版的指南手册。$(br2)当前处于测试阶段，后续将新增分类。",
+  "entity.railcraft.bed_minecart": "床矿车",
+  "item.railcraft.bed_minecart": "床矿车",
+  "key.railcraft.bed_minecart.sleep": "在床矿车里睡觉",
+  "tips.railcraft.bed_minecart.keys": "按 %s 下车，按 %s 睡觉"
 }

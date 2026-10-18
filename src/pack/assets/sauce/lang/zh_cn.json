@@ -92,5 +92,6 @@
  "sauce.perk.mana_discount.water": "水元素魔符消耗减免",
  "sauce.perk.mana_discount.water.desc": "降低水元素学派法术的魔力消耗。",
  "sauce.perk.spell_damage_multiplier": "法术伤害倍率（新生魔艺）",
- "sauce.perk.spell_damage_multiplier.desc": "新生魔艺法术的伤害倍率。"
+ "sauce.perk.spell_damage_multiplier.desc": "新生魔艺法术的伤害倍率。",
+ "block.sauce.arcane_plinth": "奥术基柱"
 }

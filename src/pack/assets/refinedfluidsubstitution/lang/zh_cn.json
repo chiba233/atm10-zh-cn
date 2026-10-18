@@ -1,0 +1,4 @@
+{
+  "item.refinedfluidsubstitution.fluid_substitution_pattern": "流体替换样板",
+  "item.refinedfluidsubstitution.fluid_substitution_pattern.help": "让自动合成使用存储的流体，而不是装满的桶。"
+}

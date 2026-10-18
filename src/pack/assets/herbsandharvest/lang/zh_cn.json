@@ -968,5 +968,6 @@
   "tooltip.item.spice_jar.amount": "数量：%s",
   "tooltip.item.spice_jar.contents": "包含：",
   "block.herbsandharvest.cinnamon_tree_bottom": "肉桂树（下段）",
-  "block.herbsandharvest.cinnamon_tree_top": "肉桂树（上段）"
+  "block.herbsandharvest.cinnamon_tree_top": "肉桂树（上段）",
+  "block.herbsandharvest.pot": "汤锅"
 }

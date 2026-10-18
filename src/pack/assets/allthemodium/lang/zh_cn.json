@@ -310,5 +310,14 @@
   "dimension.allthemodium.the_other": "异界",
   "tooltip.allthemodium.teleport_pad": "双手都为空时，潜行 + 右击即可传送",
   "allthemodium_book": "全铱合金手册",
-  "This Book wil give you information about the Allthemodium Mod, and the ATM Mod Packs": "本书将为你介绍 Allthemodium 模组和 ATM 整合包的相关信息"
+  "This Book wil give you information about the Allthemodium Mod, and the ATM Mod Packs": "本书将为你介绍 Allthemodium 模组和 ATM 整合包的相关信息",
+  "conduit.allthemodium.allthemodium_energy": "ATM能量导管",
+  "conduit.allthemodium.allthemodium_fluid": "ATM流体导管",
+  "conduit.allthemodium.allthemodium_item": "ATM物品导管",
+  "item.allthemodium.allthemodium_capacitor": "ATM电容",
+  "item.allthemodium.allthemodium_grinding_ball": "ATM磨珠",
+  "item.allthemodium.unobtainium_capacitor": "难得素电容",
+  "item.allthemodium.unobtainium_grinding_ball": "难得素磨珠",
+  "item.allthemodium.vibranium_capacitor": "振金电容",
+  "item.allthemodium.vibranium_grinding_ball": "振金磨珠"
 }
