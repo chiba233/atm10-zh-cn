@@ -1869,5 +1869,17 @@
   "text.modern_industrialization.FuelEfficiencyFluidNormal": "可以烧流体燃料，效率正常。",
   "text.modern_industrialization.FuelEfficiencyItem": "可以烧物品燃料，效率 %s！（每消耗 1 个得到 %s EU）",
   "text.modern_industrialization.FuelEfficiencyItemNormal": "可以烧物品燃料，效率正常。",
-  "block.modern_industrialization.deepslate_iridium_ore": "深层铱矿石"
+  "block.modern_industrialization.deepslate_iridium_ore": "深层铱矿石",
+  "ftbquests.task.modern_industrialization.built_multiblock": "建造多方块结构",
+  "ftbquests.task.modern_industrialization.built_multiblock.machine": "机器",
+  "modern_industrialization.configuration.steamPerWater": "每单位水产生的蒸汽",
+  "modern_industrialization.configuration.steamPerWater.tooltip": "每煮沸 1 mB 水产生多少蒸汽。",
+  "text.modern_industrialization.BuildMultiblock": "建造%s",
+  "text.modern_industrialization.ConfigCardConfiguredFluid": "已配置（%d）",
+  "text.modern_industrialization.ConfigCardConfiguredNoFluid": "已配置（无流体）",
+  "text.modern_industrialization.ConfigCardHelpPipes1": "管道配置：",
+  "text.modern_industrialization.ConfigCardHelpPipes2": "- 在物品或流体管道的连接处按住 %s + %s，把它的设置存进配置卡。",
+  "text.modern_industrialization.ConfigCardHelpPipes3": "- 对物品或流体管道的连接处使用 %s，应用配置卡里的设置。",
+  "text.modern_industrialization.ConfigCardWrongType": "保存的配置不适用于这种管道。",
+  "text.modern_industrialization.MeWire": "能像福鲁伊克斯色ME线缆一样传输 %s 个 ME 频道，但不能连接子部件。可与现代工业化的管道和线缆共用一个方块（最多 3 种）。"
 }
