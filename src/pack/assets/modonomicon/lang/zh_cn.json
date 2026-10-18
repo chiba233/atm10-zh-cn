@@ -271,5 +271,6 @@
   "book.modonomicon.demo_leaflet.leaflet.leaflet.description": "",
   "tooltip.modonomicon.condition.advancement": "需要进度：%s",
   "tooltip.modonomicon.fluid.amount": "%s mB",
-  "tooltip.modonomicon.fluid.amount_and_capacity": "%s / %s mB"
+  "tooltip.modonomicon.fluid.amount_and_capacity": "%s / %s mB",
+  "book.modonomicon.demo.features.recipe.smithing_single.text": "只含一个配方和一些文字的锻造配方页。"
 }

@@ -68,5 +68,7 @@
   "attribute.name.irons_lib.healing_received.desc": "所受治疗的增幅",
   "transmog.irons_lib.ruby_warrior": "红宝石战士",
   "transmog.irons_lib.onyx_shadow": "缟玛瑙之影",
-  "transmog.irons_lib.sapphire_scholar": "蓝宝石学者"
+  "transmog.irons_lib.sapphire_scholar": "蓝宝石学者",
+  "attribute.name.irons_lib.projectile_damage": "弹射物伤害",
+  "attribute.name.irons_lib.projectile_damage.desc": "所有弹射物伤害的百分比加成"
 }

@@ -12,5 +12,8 @@
   "moogs_structures.config.enabled": "已启用",
   "moogs_structures.config.disabled": "已禁用",
   "moogs_structures.cloth_required.title": "Moog's Structure Lib",
-  "moogs_structures.cloth_required.message": "Moog's Structure Lib 的配置界面需要 Cloth Config API，装上它才能配置这些结构。"
+  "moogs_structures.cloth_required.message": "Moog's Structure Lib 的配置界面需要 Cloth Config API，装上它才能配置这些结构。",
+  "moogs_structures.config.mod_frequency.tooltip": "每种%s结构的常见程度。2x 约为两倍数量，0.5x 约为一半。",
+  "moogs_structures.config.universal_frequency": "全局频率",
+  "moogs_structures.config.universal_frequency.tooltip": "所有 Moog 结构的常见程度。2x 约为两倍数量，0.5x 约为一半。"
 }

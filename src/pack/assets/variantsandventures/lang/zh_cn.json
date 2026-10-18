@@ -123,5 +123,11 @@
   "yacl3.config.variantsandventures:variantsandventures.parchedSpawnerChance.desc": "地牢中干枯森林刷怪笼的出现概率，例如 80% 表示在沙漠生物群系的地牢中，所有骷髅刷怪笼中有 80% 将被替换为干枯森林刷怪笼。",
   "entity.variantsandventures.murk_purple_shearing": "紫色幽暗绵羊",
   "entity.variantsandventures.murk_red_shearing": "红色幽暗绵羊",
-  "entity.variantsandventures.murk_yellow_shearing": "黄色幽暗绵羊"
+  "entity.variantsandventures.murk_yellow_shearing": "黄色幽暗绵羊",
+  "yacl3.config.variantsandventures:variantsandventures.murkSpawnMaxGroupSize": "暗黑骷髅最大群体规模",
+  "yacl3.config.variantsandventures:variantsandventures.murkSpawnMaxGroupSize.desc": "在温暖海洋生物群系中一次最多生成的暗黑骷髅数量。",
+  "yacl3.config.variantsandventures:variantsandventures.murkSpawnMinGroupSize": "暗黑骷髅最小群体规模",
+  "yacl3.config.variantsandventures:variantsandventures.murkSpawnMinGroupSize.desc": "在温暖海洋生物群系中一次最少生成的暗黑骷髅数量。",
+  "yacl3.config.variantsandventures:variantsandventures.murkSpawnWeight": "暗黑骷髅生成权重",
+  "yacl3.config.variantsandventures:variantsandventures.murkSpawnWeight.desc": "暗黑骷髅的生成权重。值越高，暗黑骷髅在温暖海洋生物群系中相对其他生物生成得越频繁。"
 }

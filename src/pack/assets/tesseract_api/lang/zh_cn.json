@@ -2,5 +2,7 @@
   "eu_cost_transformer.tesseract_api.percentage": "%d%%",
   "text.tesseract_api.mi_machine_batcher_recipe": "可将 %s 个配方成批运行。",
   "text.tesseract_api.mi_machine_batcher_size_and_cost": "可按批次运行，每批最多 %d 个，EU 消耗为 %s 倍。",
-  "text.tesseract_api.tooltips_shift_required": "按住【潜行键】查看信息"
+  "text.tesseract_api.tooltips_shift_required": "按住【潜行键】查看信息",
+  "text.tesseract_api.spliterator": "、",
+  "text.tesseract_api.spliterator_last": "和"
 }

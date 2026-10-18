@@ -98,5 +98,7 @@
   "text.jei_mekanism_multiblocks.result.required_laser_energy": "所需激光能量",
   "text.jei_mekanism_multiblocks.result.energy_rate": "能量速率",
   "text.jei_mekanism_multiblocks.result.merge_time": "合并时间",
-  "text.jei_mekanism_multiblocks.tooltip.click_to_simulate": "点击模拟‘%s’"
+  "text.jei_mekanism_multiblocks.tooltip.click_to_simulate": "点击模拟‘%s’",
+  "text.jei_mekanism_multiblocks.preview": "预览",
+  "text.jei_mekanism_multiblocks.preview.layers": "层数：%1$s/%2$s"
 }

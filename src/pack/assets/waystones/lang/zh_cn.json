@@ -30,5 +30,9 @@
   "waystones.configuration.general.allowEveryoneToManageGlobalWaystones": "允许所有人管理全局路径点",
   "waystones.configuration.general.allowEveryoneToManageGlobalWaystones.tooltip": "设为 true 后，所有人都可以管理全局路径点。",
   "gui.waystones.manage_waystones.hide_waystone": "隐藏路径点",
-  "gui.waystones.manage_waystones.show_waystone": "显示路径点"
+  "gui.waystones.manage_waystones.show_waystone": "显示路径点",
+  "commands.waystones.cooldown.add.success.multiple": "已为%3$d名玩家的%2$s冷却时间增加%1$d秒",
+  "commands.waystones.cooldown.add.success.single": "已为%3$s的%2$s冷却时间增加%1$d秒",
+  "commands.waystones.cooldown.set.success.multiple": "已将%3$d名玩家的%1$s冷却时间设为%2$d秒",
+  "commands.waystones.cooldown.set.success.single": "已将%3$s的%1$s冷却时间设为%2$d秒"
 }

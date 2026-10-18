@@ -1,0 +1,7 @@
+{
+  "gui.appflux.flux_accessor.fast_mode": "快速模式",
+  "gui.appflux.flux_accessor.input_mode": "仅输入",
+  "gui.appflux.flux_accessor.input_output_mode": "输入与输出",
+  "gui.appflux.flux_accessor.io_mode": "输入/输出模式",
+  "gui.appflux.flux_accessor.output_mode": "仅输出"
+}

@@ -75,5 +75,6 @@
   "extremesoundmuffler.configuration.disableCreativeInventoryButton": "禁用创造模式物品栏按钮",
   "extremesoundmuffler.configuration.creativeInvButtonX": "创造模式按钮 X 坐标",
   "extremesoundmuffler.configuration.creativeInvButtonY": "创造模式按钮 Y 坐标",
-  "extremesoundmuffler.configuration.disableAnchors": "禁用锚点"
+  "extremesoundmuffler.configuration.disableAnchors": "禁用锚点",
+  "slider.title.everything": "全部"
 }

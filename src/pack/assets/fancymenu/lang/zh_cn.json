@@ -3366,5 +3366,9 @@
   "fancymenu.widgetified_screens.title_screen.forge.top.example.line2": "用于显示 Beta 版本警告和其他内容。",
   "fancymenu.widgetified_screens.title_screen.logo": "Minecraft 标志",
   "fancymenu.widgetified_screens.title_screen.realmsnotification": "Realms 通知图标",
-  "fancymenu.widgetified_screens.title_screen.splash": "原版随机宣传语"
+  "fancymenu.widgetified_screens.title_screen.splash": "原版随机宣传语",
+  "fancymenu.elements.browser.rinku_failed.line_1": "浏览器初始化失败！",
+  "fancymenu.elements.browser.rinku_failed.line_2": "详情请查看游戏日志。",
+  "fancymenu.elements.browser.rinku_initializing.line_1": "浏览器正在启动……",
+  "fancymenu.elements.browser.rinku_initializing.line_2": "正在等待 Rinku 完成初始化。"
 }

@@ -1268,5 +1268,6 @@
   "block.oritech.reactor_medium_indicator_block": "反应堆中温指示方块",
   "block.oritech.superconductor_connection": "超导体连接",
   "block.oritech.tank_item_model": "储罐物品模型",
-  "block.oritech.transparent_item_pipe_connection": "透明物品管道连接"
+  "block.oritech.transparent_item_pipe_connection": "透明物品管道连接",
+  "oritech.configuration.interaction": "交互设置"
 }

@@ -159,5 +159,9 @@
   "item.minecraft.lingering_potion.effect.apothic_attributes.flying": "滞留型飞行药水",
   "item.minecraft.tipped_arrow.effect.apothic_attributes.flying": "飞行之箭",
   "apothic_attributes:cooldown_reduction": "冷却缩减",
-  "apothic_attributes:cooldown_reduction.desc": "减少触发类技能与效果的冷却时间。冷却以 ⌛ 符号表示。"
+  "apothic_attributes:cooldown_reduction.desc": "减少触发类技能与效果的冷却时间。冷却以 ⌛ 符号表示。",
+  "attribute.name.generic.gravity.desc": "朝地面方向的加速度，单位为格/秒²",
+  "attribute.name.generic.step_height.desc": "不跳跃就能迈上的高度，单位为格。",
+  "attribute.name.player.block_interaction_range.desc": "能与方块交互的距离，单位为格。",
+  "attribute.name.player.entity_interaction_range.desc": "能与实体交互的距离，单位为格。"
 }
