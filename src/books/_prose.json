@@ -1168,6 +1168,18 @@
   "sha1": "e07eb53dbc86346198a85cec4154fef9fbb7aeeb",
   "src": "assets/little_big_redstone/guide/sticky_notes.md"
  },
+ "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/building-gadgets.md": {
+  "sha1": "a82a1d5bd5625dc67621d54889e9e76f29fa7798",
+  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/building-gadgets.md"
+ },
+ "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/computercraft.md": {
+  "sha1": "f85a51c422a8fd209d0653b857da2e9a0aac702c",
+  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/computercraft.md"
+ },
+ "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/index.md": {
+  "sha1": "f052d3b466ccfa2ad4da5aed327e58109982c9a7",
+  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/index.md"
+ },
  "assets/megacells/ae2guide/_zh_cn/bulk_cell.md": {
   "sha1": "daccec61caf782a0f65aff8cf3e119b2ec9af4ca",
   "src": "assets/megacells/ae2guide/bulk_cell.md"
