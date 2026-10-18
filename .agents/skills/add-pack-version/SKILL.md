@@ -19,7 +19,7 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 
 版本还没发布时，它会报「CurseForge 上找不到」，并列出最近 50 个文件里已有的版本号。
 
-还没发布时，可以先做第五步里能确定的补译：对照 `AllTheMods/ATM-10` 的 main 分支，以及各模组仓库里对应版本的标签。本机装的实例是旧版，不能拿来当新版的底本。
+还没发布时，可以先做第五步里能确定的补译：对照 `AllTheMods/ATM-10` 的 main 分支，以及各模组仓库里对应版本的标签。已经装好的整合包还是旧版，不能拿来当新版的底本。
 
 ## 第一步：声明构建目标
 
@@ -27,7 +27,7 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 
 1. `versions/<版本>/.keep`：空文件。CI 看到这个目录，才会把这一版当作构建目标。
 2. `versions/<版本>/neoforge.txt`：manifest 里的 NeoForge 版本号，例如 `21.1.259`。
-3. `versions/<版本>/default_resource_packs.txt`：这一版首次启动后，游戏写进 `options.txt` 的 `resourcePacks` 顺序，不含汉化包。这个值要在装好的这一版实例里实测，CI 拿不到。文件头的注释写明与上一版的差别。
+3. `versions/<版本>/default_resource_packs.txt`：这一版首次启动后，游戏写进 `options.txt` 的 `resourcePacks` 顺序，不含汉化包。这个值要在装好的这一版整合包里实测，CI 拿不到。文件头的注释写明与上一版的差别。
 
 ## 第二步：取 CI 生成的基线入库
 
@@ -61,7 +61,7 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 
 底本用这一版钉的 jar：
 
-- 新版 jar：`versions/db/<版本>/jars.json` 入库后，用 `fetch_one_jar.py <版本> <文件名> <目录>` 取。本机装的实例只有确实是这一版时，才能直接读它的 `mods/`。
+- 新版 jar：`versions/db/<版本>/jars.json` 入库后，用 `fetch_one_jar.py <版本> <文件名> <目录>` 取。装好的整合包确实是这一版时，才能直接读它的 `mods/`。
 - 旧版 jar：`fetch_one_jar.py <上一版> <文件名> <目录>`。
 
 用 `crash_assistant/modlist.json` 或两版的 `jars.json` 比出新增、移除、升级的模组，然后按下表逐类查：
@@ -99,5 +99,5 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 
 - 本机不跑 `generate_all.sh`。构建只在 CI 里验证。
 - 不在本机生成基线，只提交 CI 的 artifact。
-- 不拿旧版实例当新版的底本。
+- 不拿旧版整合包当新版的底本。
 - 版本还没发布时，不写依赖 `jars.json` 的东西。
