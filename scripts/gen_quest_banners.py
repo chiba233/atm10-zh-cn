@@ -587,6 +587,8 @@ TEXTURED = {
     'building_tips/building_tips.png',
     'building_tips/tips.png',
     'xycraft/xycraft.png',                   # 碎石纹
+    'create/caddon_crafts.png',              # 红色裂纹石纹
+    'create/caddon_aquatic.png',             # 水纹
 }
 
 BANNERS = {
@@ -622,6 +624,11 @@ BANNERS = {
     'building_tips/tips.png':                               '技巧',
     'bumblezone/bumble_title.png':                          '蜜蜂领域',
     'cataclysm/cataclysm_title.png':                        '灾变',
+    'create/caddon_aquatic.png':                            '瀚海雄心',  # 8.3 新增的「机械动力附属」章；五张横幅取本章任务标题里的模组名
+    'create/caddon_ars.png':                                '新生魔艺造物',
+    'create/caddon_crafts.png':                             '创想附加',
+    'create/caddon_dragon.png':                             '龙+',
+    'create/caddon_enchantment.png':                        '附魔工业',
     'create/create_title.png':                              '机械动力',
     'deepndark/dnd_title.png':                              '幽邃黑暗',
     'draconic/draconic_title.png':                          '龙之进化',
