@@ -192,6 +192,7 @@ python3 scripts/fetch_one_jar.py <版本> <jar 名前缀> <输出目录>
 
 - 开 PR 用 [`create-pr`](.agents/skills/create-pr/SKILL.md)。写更新日志用 [`write-changelog`](.agents/skills/write-changelog/SKILL.md)。
 - `main` 只允许 squash 合并。合并前必须通过 `上游漂移 + 汉化校验` 与 `build` 两项检查。
+- squash 合并的提交信息取 PR 标题与 PR 正文。PR 正文要写成能直接当提交正文读的样子。
 - 不打 tag，不发 release，不触发 Release workflow。发版由维护者做。
 
 ---
@@ -205,6 +206,7 @@ skill 在 `.agents/skills/<名字>/SKILL.md`，`.claude/skills` 指向同一个�
 | 写或改 commit 消息、PR 与 issue 文本、文档、代码注释 | [`simple-chinese`](.agents/skills/simple-chinese/SKILL.md) |
 | 开、创建或准备 PR | [`create-pr`](.agents/skills/create-pr/SKILL.md) |
 | 往 CHANGELOG 加条目、开新版本节、写致谢 | [`write-changelog`](.agents/skills/write-changelog/SKILL.md) |
+| ATM10 发了新版，让汉化包支持它 | [`add-pack-version`](.agents/skills/add-pack-version/SKILL.md) |
 | 给 issue、PR 或评论贴本地截图与文件 | [`upload-github-attachment`](.agents/skills/upload-github-attachment/SKILL.md) |
 | 改译名 | 本文件「译名的真源在哪里」与「一个名字有多处表面」 |
 | 算覆盖率、缺口或「某版新增且未译」 | 本文件「覆盖率与缺口的口径」 |

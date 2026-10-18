@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Pack Version"
+  short_description: "给汉化包加一个新的 ATM10 整合包版本"
+  default_prompt: "Use $add-pack-version to add support for the new ATM10 pack version in one PR."
