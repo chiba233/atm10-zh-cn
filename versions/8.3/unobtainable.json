@@ -1,0 +1,7 @@
+{
+ "_why": "ATM10 8.3 的 manifest 里有 1 个文件在 CurseForge 上取不到：fileID 8778582（projectID 1676502，CC: Tweaked 1.21.1-forge-1.120.2）。/download 接口 404，重试无用。这是 versions/8.2/unobtainable.json 登记过的同一个文件。\n\n这一版缺口的边界：同一个 manifest 里还列了同一个 mod 的 1.21.1-forge-1.113.1（projectID 282001，fileID 5714512），那一份下得下来，所以 computercraft 这个命名空间不会整个缺席。拿不到的只是 1.113.1 → 1.120.2 之间新增或改动的那部分键。",
+ "_recorded": "2026-10-18",
+ "files": {
+  "8778582": {"projectID": 1676502, "http": 404}
+ }
+}
