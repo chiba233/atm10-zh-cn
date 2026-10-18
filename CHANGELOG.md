@@ -36,6 +36,8 @@
 
 感谢 **[heartsperch](https://github.com/heartsperch)** 的反馈：[#59](https://github.com/chiba233/atm10-zh-cn/issues/59)。
 
+感谢 **[zunxia](https://github.com/zunxia)** 的反馈：[#56](https://github.com/chiba233/atm10-zh-cn/issues/56)、[#57](https://github.com/chiba233/atm10-zh-cn/issues/57)。
+
 ## R26
 
 ### 支持 All the Mods 10 **8.2**
