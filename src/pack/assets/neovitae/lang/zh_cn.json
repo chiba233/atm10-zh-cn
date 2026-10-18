@@ -277,5 +277,21 @@
   "ritual.neovitae.dungeon.build_height": "传送门会顶出世界的建筑高度上限，把仪式上下挪一挪。",
   "ritual.neovitae.dungeon.missing_structure": "传送门的结构缺失，请联系服务器管理员。",
   "ritual.neovitae.dungeon.obstructed": "传送门被 %s 个方块挡住了。把红框标出来的清掉，第一个在 %s, %s, %s。",
-  "ritual.neovitae.dungeon.world_border": "传送门会越过世界边界，把仪式往里挪一挪。"
+  "ritual.neovitae.dungeon.world_border": "传送门会越过世界边界，把仪式往里挪一挪。",
+  "book.neovitae.guide.alchemy_arrays.ender_sever_array.description": "阻止附近的末影人及其同类传送。",
+  "book.neovitae.guide.alchemy_arrays.ender_sever_array.intro.text": "[#](8B0000)末影切断阵列[#]()会切断末影人瞬移时牵引的那些丝线。法阵存续期间，任何末影人都无法传送出或传送进它[#](8B0000)16 格[#]()范围内的空间。\\n\\n[#](8B0000)潜影贝[#]()同样会被牢牢定住，其他像末影人那样穿梭空间的生物也是如此。",
+  "book.neovitae.guide.alchemy_arrays.ender_sever_array.intro.title": "末影切断阵列",
+  "book.neovitae.guide.alchemy_arrays.ender_sever_array.name": "末影切断阵列",
+  "book.neovitae.guide.alchemy_arrays.ender_sever_array.usage.text": "只有生物会被束缚。你自己的[#](8B0000)末影珍珠[#]()和[#](8B0000)紫颂果[#]()照常能带你传送。\\n\\n铭刻完成后，这个阵列不再消耗你的本魂。把它放在末影人农场旁边，或者任何你希望挨打的末影人留下来应战的地方。\\n\\n在一层奥术粉灰之上以[#](8B0000)强固石板[#]()和[#](8B0000)末影之眼[#]()铭刻而成。",
+  "book.neovitae.guide.alchemy_arrays.vortex_sigil.tabula_rasa.text": "拿着[#](8B0000)空白石板[#]()右击正在运转的涡流，就能把石板嵌进印记。此后涡流会[#](2E8B57)无视所有玩家[#]()，不论他们手持什么、是否潜行。怪物和其他生物仍会照常被吸入。\\\n\\\n空手右击印记可以取回石板，涡流会重新吸引玩家。破坏印记也会返还石板。",
+  "book.neovitae.guide.alchemy_arrays.vortex_sigil.tabula_rasa.title": "空白石板",
+  "chat.neovitae.vortex_array.already_ignoring": "这个涡流已经在无视玩家了",
+  "chat.neovitae.vortex_array.ignore_players": "涡流不再吸引玩家",
+  "chat.neovitae.vortex_array.tabula_removed": "涡流会重新吸引玩家",
+  "item.neovitae.array_ender_sever": "末影切断阵列",
+  "jei.neovitae.dungeon_stone.spread.info": "地城石会向普通石头蔓延。\n\n把一块地城石与三块石头以任意摆法合成，可以得到四块同要素的地城石。只要一块，就能转化任意多的石头。\n\n每种要素的第一块地城石，来自放入该要素灵质晶簇的炼金炉，或用该要素灵质作燃料的狱火锻炉。",
+  "jei.neovitae.effect.ender_sever.desc": "阻止阵列 16 格内的末影人、潜影贝等生物传送",
+  "jei.neovitae.effect.ender_sever.name": "末影切断阵列",
+  "jei.neovitae.recipe.dungeon_stone_spread": "地城石蔓延",
+  "tooltip.neovitae.array_effect.ender_sever": "阻止 16 格内的末影人、潜影贝等生物传送。"
 }
