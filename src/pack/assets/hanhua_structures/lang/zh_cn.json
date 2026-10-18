@@ -823,5 +823,21 @@
   "structure.towns_and_towers.towns": "城镇",
   "structure.underground_villages.underground_villages": "地下村庄",
   "structure.xycraft_world.harvestable_node_set": "可采收晶簇",
-  "structure.minecraft.trial_chambers": "试炼密室"
+  "structure.minecraft.trial_chambers": "试炼密室",
+  "structure.astralsorcery.column": "石柱",
+  "structure.astralsorcery.column_structures": "石柱",
+  "structure.astralsorcery.dig_site": "挖掘遗址",
+  "structure.astralsorcery.dig_site_structures": "挖掘遗址",
+  "structure.astralsorcery.focal_point": "降星点",
+  "structure.astralsorcery.focal_point_structures": "降星点",
+  "structure.astralsorcery.moon_dial": "月晷",
+  "structure.astralsorcery.moon_dial_structures": "月晷",
+  "structure.astralsorcery.obliteration": "湮灭遗迹",
+  "structure.astralsorcery.obliteration_structures": "湮灭遗迹",
+  "structure.astralsorcery.rotunda_1": "圆顶厅·1号",
+  "structure.astralsorcery.rotunda_2": "圆顶厅·2号",
+  "structure.astralsorcery.rotunda_structures": "圆顶厅",
+  "structure.mvs.lil_house": "迷你小屋",
+  "structure.mvs.medium_igloo_2": "中型雪屋(变体)",
+  "structure.mss.trees": "树木"
 }
