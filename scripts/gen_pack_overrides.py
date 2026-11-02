@@ -116,8 +116,19 @@ def main(ver, tree):
             if source.is_symlink():
                 sys.exit('❌ 文件层 %s 里不许放符号链接：%s' % (name, source))
             rel = source.relative_to(src)
-            if not rel.parts or rel.parts[0] != 'assets':
-                sys.exit('❌ 文件层 %s 的 %s 不在 assets/ 下。' % (name, rel))
+            if not rel.parts or rel.parts[0] not in ('assets', 'kubejs'):
+                sys.exit('❌ 文件层 %s 的 %s 不在 assets/ 或 kubejs/ 下。' % (name, rel))
+            if rel.parts[0] == 'kubejs':
+                # kubejs/ 下是该版新增的脚本，落在出货树根目录；只许新增，不许盖掉公共树的文件。
+                dest = tree / rel
+                if dest.exists():
+                    sys.exit('❌ %s 的文件层 %s 要新增 %s，但出货树里已经有这个文件。'
+                             % (p.relative_to(ROOT), name, rel))
+                if rel in planned:
+                    sys.exit('❌ %s 的文件层 %s 与 %s 都写 %s；同一路径只能有一个所有者。'
+                             % (p.relative_to(ROOT), name, planned[rel][0], rel))
+                planned[rel] = (name, source, dest)
+                continue
             dest = packs[0] / rel
             if not dest.is_file():
                 public = dropped_public_source(rel)

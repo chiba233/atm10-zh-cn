@@ -6,6 +6,9 @@
   },
   "books-8.2": {
    "why": "8.4 的 AE2 Import Export Card 1.9.1、Oracle Index 1.4.0 与 8.3 是同一份 jar；Modern Industrialization 升到 2.5.11，但 large_steam_boiler.md 与 oil_processing.md 的英文与 2.5.10 逐字节相同，所以沿用 books-8.2；8.1 及以前仍须保留旧正文。"
+  },
+  "kubejs-questpics": {
+   "why": "8.4 的 KubeJS 2101.7.2 build 377（提交 7973e69e）把 kubejs/assets 排到玩家资源包之上，汉化包里的中文任务书横幅被 ATM 原图盖住。这一层只给 8.4 带上客户端脚本，进世界时把汉化包里的横幅注册回原路径。8.1–8.3 的 KubeJS 是 build 374，汉化包仍在 kubejs/assets 之上，不需要。"
   }
  },
  "lang": {
