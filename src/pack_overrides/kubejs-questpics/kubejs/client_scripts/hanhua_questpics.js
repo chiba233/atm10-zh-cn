@@ -11,23 +11,26 @@
 const $NativeImage = Java.loadClass('com.mojang.blaze3d.platform.NativeImage')
 const $DynamicTexture = Java.loadClass('net.minecraft.client.renderer.texture.DynamicTexture')
 
-const HANHUA_PACK_MARK = 'ATM10汉化包'
+// 汉化包独有的命名空间（hanhua_pack_check.js 的隐藏键 atm10zhcn.pack.version 就在这里）。
+// 按它找出汉化包真实的包 ID，不依赖文件名，改名也认得出。
+const HANHUA_PROBE = 'atm10zhcn:lang/zh_cn.json'
 
 // 本脚本注册过的横幅，条件不满足时要释放掉
 const hanhuaRegistered = {}
 
-function hanhuaActive() {
-  if (String(Client.getLanguageManager().getSelected()) != 'zh_cn') return false
-  let enabled = false
-  Client.getResourcePackRepository().getSelectedIds().forEach(packId => {
-    if (String(packId).indexOf(HANHUA_PACK_MARK) >= 0) enabled = true
-  })
-  return enabled
+// 语言是简体中文且汉化包已启用时，返回汉化包的包 ID，否则返回 null。
+// 只有已启用的资源包才会出现在资源管理器里，找不到隐藏键就是没启用。
+function hanhuaPackId() {
+  if (String(Client.getLanguageManager().getSelected()) != 'zh_cn') return null
+  const probe = Client.getResourceManager().getResourceStack(HANHUA_PROBE)
+  if (probe.isEmpty()) return null
+  return String(probe.get(probe.size() - 1).sourcePackId())
 }
 
 ClientEvents.loggedIn(event => {
   const textures = Client.getTextureManager()
-  if (!hanhuaActive()) {
+  const packId = hanhuaPackId()
+  if (packId == null) {
     Object.keys(hanhuaRegistered).forEach(key => {
       textures.release(hanhuaRegistered[key])
       delete hanhuaRegistered[key]
@@ -38,10 +41,10 @@ ClientEvents.loggedIn(event => {
     id => id.getNamespace() == 'atm' && id.getPath().endsWith('.png'))
   stacks.forEach((id, stack) => {
     if (stack.isEmpty()) return
-    if (String(stack.get(stack.size() - 1).sourcePackId()).indexOf(HANHUA_PACK_MARK) >= 0) return
+    if (String(stack.get(stack.size() - 1).sourcePackId()) == packId) return
     let ours = null
     stack.forEach(res => {
-      if (String(res.sourcePackId()).indexOf(HANHUA_PACK_MARK) >= 0) ours = res
+      if (String(res.sourcePackId()) == packId) ours = res
     })
     if (ours == null) return
     try {
