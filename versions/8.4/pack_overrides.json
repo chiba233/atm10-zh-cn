@@ -1,0 +1,25 @@
+{
+ "_": "该版专属的资源包差异。lang 单键与 files 整页覆盖都必须写 why，见 scripts/gen_pack_overrides.py。",
+ "files": {
+  "books-8.0": {
+   "why": "8.4 的 EnderDrives 1.5.23、Tombstone 9.5.6 与 8.3 是同一份 jar，散文页与 8.0 新版正文相同；公共树保留 7.0–7.3 的旧中文，因此本版必须叠加 books-8.0。"
+  },
+  "books-8.2": {
+   "why": "8.4 的 AE2 Import Export Card 1.9.1、Oracle Index 1.4.0 与 8.3 是同一份 jar；Modern Industrialization 升到 2.5.11，但 large_steam_boiler.md 与 oil_processing.md 的英文与 2.5.10 逐字节相同，所以沿用 books-8.2；8.1 及以前仍须保留旧正文。"
+  }
+ },
+ "lang": {
+  "apotheosis": {
+   "text.apotheosis.touched_by_malice": {
+    "value": "受恶意侵蚀（x%s）",
+    "why": "8.4 的 Apotheosis 8.9.0 与 8.3 是同一份 jar，这条英文仍带一个层数参数；公共树那份不带参数，沿用 8.3 的分叉。"
+   }
+  },
+  "lootr": {
+   "lootr.commands.summon": {
+    "value": "已使用战利品表 %3$s 于 %2$s 处生成出了 Lootr 的%1$s。",
+    "why": "8.4 的 lootr 1.11.38.127 与 8.3 是同一份 jar：种类、坐标、战利品表三个参数；公共树那份按两个参数写，沿用 8.3 的分叉。"
+   }
+  }
+ }
+}
