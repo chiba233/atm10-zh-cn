@@ -54,6 +54,20 @@
     "value": "显示或隐藏原料与书签叠加层。这项偏好在重启游戏后仍会保留。",
     "why": "8.4 的 JEI 19.70 改了这条说明：叠加层的显示状态现在会跨游戏保存。公共树那份是 8.3 及以前「只对本次游戏生效、不写入配置文件」的说法。"
    }
+  },
+  "mahoutsukai": {
+   "mahoutsukai.book.displacement_boundary.desc": {
+    "value": "位移结界会把进入其范围（%%val2）的实体传送到另一侧；如果目的地被挡住，会向上寻找空位。 %%n %%n它每%%val1秒消耗施法者%%val0点法力。",
+    "why": "8.4 的 Mahou Tsukai 1.36.29 改了位移结界的行为说明：目的地被挡住时向上找空位，不再替换方块。公共树那份是 8.3 及以前的说法。"
+   },
+   "mahoutsukai.config.authority_break_slow_down_factor.comment": {
+    "value": "保留设置；破坏方块后的额外减速目前已停用。",
+    "why": "8.4 的 Mahou Tsukai 1.36.29 把这项改成保留设置。公共树那份是 8.3 及以前「目标碰到墙时的缓慢因数」的说法。"
+   },
+   "mahoutsukai.config.authority_break_slow_down_factor.name": {
+    "value": "假借之权保留缓慢因数",
+    "why": "8.4 的 Mahou Tsukai 1.36.29 把这项改名为保留设置。公共树那份是 8.3 及以前的「假借之权缓慢因数（墙）」。"
+   }
   }
  }
 }

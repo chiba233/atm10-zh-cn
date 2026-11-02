@@ -1988,5 +1988,17 @@
   "effect.mahoutsukai.mana_taken_cooldown": "魔力汲取冷却",
   "effect.mahoutsukai.rpsw_cooldown": "RPSW 冷却",
   "effect.mahoutsukai.treasury_projection_gauntlet": "宝库投影护手",
-  "effect.mahoutsukai.zap_cooldown": "电击冷却"
+  "effect.mahoutsukai.zap_cooldown": "电击冷却",
+  "mahoutsukai.config.alchemical_wildcard_class.comment": "默认为空的自定义交换类别，可放入任意方块和方块标签。",
+  "mahoutsukai.config.alchemical_wildcard_class.name": "炼金交换通配方块",
+  "mahoutsukai.config.heavens_cup_batch_size.comment": "遍历时每一步处理的天堂之杯网络节点数",
+  "mahoutsukai.config.heavens_cup_batch_size.name": "天堂之杯遍历批量",
+  "jei.category.mahoutsukai.mahoujin": "魔法阵",
+  "jei.category.mahoutsukai.scrolls": "魔法卷轴",
+  "jei.category.mahoutsukai.weapons": "魔法武器",
+  "jei.mahoutsukai.clarent.instructions": "站在龙息中，手持已强化的剑右击",
+  "mahoutsukai.config.familiar_interesting_block_render_range.comment": "离使魔多远以内的值得注意的方块会被高亮",
+  "mahoutsukai.config.mystic_staff_explosion_sound.comment": "法力聚爆魔杖的爆炸是否播放音效",
+  "mahoutsukai.config.mystic_staff_explosion_sound.name": "法力聚爆魔杖爆炸音效",
+  "mahoutsukai.config.familiar_interesting_block_render_range.name": "使魔高亮值得注意方块的范围"
 }
