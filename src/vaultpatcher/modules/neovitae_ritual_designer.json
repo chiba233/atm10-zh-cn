@@ -1,0 +1,108 @@
+[
+  {
+    "name": "neovitae_ritual_designer_zh_cn",
+    "authors": "Hoshino Yumeka",
+    "dynamic": false,
+    "i18n": false,
+    "_说明": "仪式设计器（开发工具，需要管理员权限）的物品提示与聊天消息。这些句子硬编码在 ItemRitualDesigner 的常量池里，没有翻译键，资源包够不着。\n\n逐条反汇编确认：每条普通字符串 ldc 之后紧接 Component.literal，拼接配方的结果也直接进 Component.literal，都只用于显示。拼接配方按 \\u0001 切段查表，只列显示用的文字段。\n\n同一个类里还有生成仪式 Java 代码的字符串（addRune(components, 、EnumRuneType. 等），那段代码会复制到剪贴板，一个都不能动，pairs 里没有它们。"
+  },
+  {
+    "target_class": [
+      "com.breakinblocks.neovitae.common.item.ItemRitualDesigner"
+    ],
+    "pairs": [
+      {
+        "key": "Dev Tool - Requires OP",
+        "value": "开发工具 - 需要管理员权限"
+      },
+      {
+        "key": "Shift + Right-click block: set corner",
+        "value": "潜行右击方块：设置角点"
+      },
+      {
+        "key": "  (set opposite corners of the ritual volume)",
+        "value": "  （设置仪式范围的两个对角）"
+      },
+      {
+        "key": "Right-click Master Ritual Stone: generate code",
+        "value": "右击主仪式石：生成代码"
+      },
+      {
+        "key": "Shift + Right-click air: clear corners",
+        "value": "潜行右击空气：清除角点"
+      },
+      {
+        "key": "Positions cleared!",
+        "value": "已清除角点！"
+      },
+      {
+        "key": "Ritual Designer requires operator permissions",
+        "value": "仪式设计器需要管理员权限"
+      },
+      {
+        "key": "Corner 1 set to: ",
+        "value": "角点 1 已设为："
+      },
+      {
+        "key": "Corner 2 set to: ",
+        "value": "角点 2 已设为："
+      },
+      {
+        "key": "Reset! Corner 1 set to: ",
+        "value": "已重置！角点 1 已设为："
+      },
+      {
+        "key": "Please set both corners first!",
+        "value": "请先设置两个角点！"
+      },
+      {
+        "key": "Shift + Right-click opposite corners of the ritual area",
+        "value": "潜行右击仪式区域的两个对角"
+      },
+      {
+        "key": "Ritual code copied to clipboard!",
+        "value": "仪式代码已复制到剪贴板！"
+      },
+      {
+        "key": "No runes found. Top non-rune blocks in the volume:",
+        "value": "没有找到符文。范围内数量最多的非符文方块："
+      },
+      {
+        "key": "No rune blocks found in the selected area!",
+        "value": "所选区域内没有找到符文方块！"
+      },
+      {
+        "key": "CONFLICT: This pattern matches existing ritual: ",
+        "value": "冲突：此图案与已有的仪式相同："
+      },
+      {
+        "key": "Modify the rune layout to make it unique.",
+        "value": "请修改符文布局，使它独一无二。"
+      },
+      {
+        "key": "Scanning area: ",
+        "value": "扫描区域："
+      },
+      {
+        "key": " blocks)",
+        "value": " 个方块)"
+      },
+      {
+        "key": "Found ",
+        "value": "找到 "
+      },
+      {
+        "key": " rune blocks",
+        "value": " 个符文方块"
+      },
+      {
+        "key": "Corner 1: ",
+        "value": "角点 1："
+      },
+      {
+        "key": "Corner 2: ",
+        "value": "角点 2："
+      }
+    ]
+  }
+]

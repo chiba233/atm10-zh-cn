@@ -1,0 +1,20 @@
+[
+  {
+    "name": "stevescarts_module_type_zh_cn",
+    "authors": "Hoshino Yumeka",
+    "dynamic": false,
+    "i18n": false,
+    "_说明": "模块物品提示里的「Module Type: TOOL」。这一行由 ModuleData 的拼接配方 \\u0001Module Type: \\u0001\\u0001 拼出，没有翻译键。拼接结果直接进 Component.literal 再加入提示列表，只用于显示。\n\n只译「Module Type: 」这一段。后面的 TOOL 是 ModuleType 枚举的常量名，改它会让 valueOf 失效，不能动。冒号跟相邻那行「模块成本: 」一样用半角。"
+  },
+  {
+    "target_class": [
+      "vswe.stevescarts.api.modules.data.ModuleData"
+    ],
+    "pairs": [
+      {
+        "key": "Module Type: ",
+        "value": "模块类型: "
+      }
+    ]
+  }
+]
