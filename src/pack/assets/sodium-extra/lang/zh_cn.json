@@ -538,5 +538,7 @@
   "options.particles.xycraft_world.aluminum_flame": "铝火焰",
   "options.particles.xycraft_world.copper_flame": "铜火焰",
   "sodium-extra.option.light_updates_warning": "光照更新警告",
-  "sodium-extra.option.light_updates_warning.tooltip": "禁用调试界面(F3)中关于光照更新的警告消息。仅在你了解光照更新对性能和视觉正确性的影响时再禁用。"
+  "sodium-extra.option.light_updates_warning.tooltip": "禁用调试界面(F3)中关于光照更新的警告消息。仅在你了解光照更新对性能和视觉正确性的影响时再禁用。",
+  "sodium-extra.option.panini_projection_quality": "帕尼尼投影质量",
+  "sodium-extra.option.panini_projection_quality.tooltip": "帕尼尼投影启用时，世界渲染的宽高占窗口分辨率的百分比。数值越高细节越好，移动时尤其明显，GPU 开销也越大。\n100%：原生分辨率\n150%：世界像素为 2.25 倍\n200%：世界像素为 4 倍\n400%：世界像素为 16 倍\n手和界面保持正常分辨率。"
 }
