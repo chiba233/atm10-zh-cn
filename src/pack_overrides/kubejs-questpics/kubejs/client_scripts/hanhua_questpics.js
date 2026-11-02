@@ -48,9 +48,10 @@ ClientEvents.loggedIn(event => {
     })
     if (ours == null) return
     try {
-      // read 有 byte[] 与 InputStream 两个重载；java.io 被 KubeJS 的类过滤挡住，Rhino 判不出流的类型，
+      // read 与 register 都有重载，Rhino 判不出该用哪个（java.io 又被类过滤挡住），
       // 不指明签名会报「ambiguous」。
-      textures.register(id, new $DynamicTexture($NativeImage['read(java.io.InputStream)'](ours.open())))
+      const tex = new $DynamicTexture($NativeImage['read(java.io.InputStream)'](ours.open()))
+      textures['register(net.minecraft.resources.ResourceLocation,net.minecraft.client.renderer.texture.AbstractTexture)'](id, tex)
       hanhuaRegistered[String(id)] = id
     } catch (e) {
       console.error('汉化包横幅 ' + id + ' 加载失败：' + e)
