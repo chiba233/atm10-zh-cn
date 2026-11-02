@@ -10,7 +10,7 @@
 [![Security](https://img.shields.io/badge/Security-policy-red.svg)](./SECURITY.md)
 [![License](https://img.shields.io/badge/License-GPL--3.0-green.svg)](./LICENSE)
 
-All the Mods 10 的简体中文汉化补丁，**同时支持 8.1 / 8.2 / 8.3 / 8.4**，每个整合包版本一个专属包。
+All the Mods 10 的简体中文汉化补丁，**同时支持 7.0 / 7.1 / 7.2 / 7.3 / 8.0 / 8.1 / 8.2 / 8.3 / 8.4**，每个整合包版本一个专属包。
 
 > **装这一个就够。** 语言文件 18.4 万余条、任务书、19 本模组手册、467 种蜂、
 > 799 条结构名、201 张图片艺术字都在里面，是完整的一份，不是叠加在别家之上的补充包。
@@ -27,6 +27,11 @@ Minecraft 均为 1.21.1。**必须下载与你整合包版本对应的那个包�
 | All the Mods 10 **8.3** | 21.1.259 |
 | All the Mods 10 **8.2** | 21.1.251 |
 | All the Mods 10 **8.1** | 21.1.249 |
+| All the Mods 10 **8.0** | 21.1.247 |
+| All the Mods 10 **7.3** | 21.1.247 |
+| All the Mods 10 **7.2** | 21.1.241 |
+| All the Mods 10 **7.1** | 21.1.234 |
+| All the Mods 10 **7.0** | 21.1.228 |
 
 每个正式版最多为 4 个整合包版本出包。更早的整合包版本，请到 [Releases](../../releases) 里找当时发布的正式版。
 
