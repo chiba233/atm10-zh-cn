@@ -10370,6 +10370,48 @@
    }
   ]
  },
+ "neovitae_ritual_designer.json": {
+  "blocks": [
+   {
+    "classes": {
+     "com.breakinblocks.neovitae.common.item.ItemRitualDesigner": {
+      "actual": "com.breakinblocks.neovitae.common.item.ItemRitualDesigner",
+      "how": "declared",
+      "jar": "neovitae-1.21.1-1.1.15.jar"
+     }
+    },
+    "i": 1,
+    "jars": [
+     "neovitae-1.21.1-1.1.15.jar"
+    ],
+    "keys": {
+     "  (set opposite corners of the ritual volume)": "exact",
+     " blocks)": "substring",
+     " rune blocks": "substring",
+     "CONFLICT: This pattern matches existing ritual: ": "exact",
+     "Corner 1 set to: ": "exact",
+     "Corner 1: ": "substring",
+     "Corner 2 set to: ": "exact",
+     "Corner 2: ": "substring",
+     "Dev Tool - Requires OP": "exact",
+     "Found ": "substring",
+     "Modify the rune layout to make it unique.": "exact",
+     "No rune blocks found in the selected area!": "exact",
+     "No runes found. Top non-rune blocks in the volume:": "exact",
+     "Please set both corners first!": "exact",
+     "Positions cleared!": "exact",
+     "Reset! Corner 1 set to: ": "exact",
+     "Right-click Master Ritual Stone: generate code": "exact",
+     "Ritual Designer requires operator permissions": "exact",
+     "Ritual code copied to clipboard!": "exact",
+     "Scanning area: ": "substring",
+     "Shift + Right-click air: clear corners": "exact",
+     "Shift + Right-click block: set corner": "exact",
+     "Shift + Right-click opposite corners of the ritual area": "exact"
+    }
+   }
+  ]
+ },
  "observable.json": {
   "blocks": [
    {
@@ -13881,6 +13923,26 @@
      "Modular Cart": "exact",
      "No modules loaded": "substring",
      "The cart failed to be placed into the world, this is due to an issue with one or more modules. Please post your log on the issue tracker here: ": "substring"
+    }
+   }
+  ]
+ },
+ "stevescarts_module_type.json": {
+  "blocks": [
+   {
+    "classes": {
+     "vswe.stevescarts.api.modules.data.ModuleData": {
+      "actual": "vswe.stevescarts.api.modules.data.ModuleData",
+      "how": "declared",
+      "jar": "stevescarts-1.21-1.2.18-neoforge.jar"
+     }
+    },
+    "i": 1,
+    "jars": [
+     "stevescarts-1.21-1.2.18-neoforge.jar"
+    ],
+    "keys": {
+     "Module Type: ": "substring"
     }
    }
   ]
