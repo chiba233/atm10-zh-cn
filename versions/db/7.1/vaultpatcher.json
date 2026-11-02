@@ -10642,6 +10642,46 @@
    }
   ]
  },
+ "neovitae_ritual_designer.json": {
+  "blocks": [
+   {
+    "classes": {
+     "com.breakinblocks.neovitae.common.item.ItemRitualDesigner": {
+      "actual": null,
+      "how": "not_found",
+      "jar": null
+     }
+    },
+    "i": 1,
+    "jars": [],
+    "keys": {
+     "  (set opposite corners of the ritual volume)": "missing",
+     " blocks)": "missing",
+     " rune blocks": "missing",
+     "CONFLICT: This pattern matches existing ritual: ": "missing",
+     "Corner 1 set to: ": "missing",
+     "Corner 1: ": "missing",
+     "Corner 2 set to: ": "missing",
+     "Corner 2: ": "missing",
+     "Dev Tool - Requires OP": "missing",
+     "Found ": "missing",
+     "Modify the rune layout to make it unique.": "missing",
+     "No rune blocks found in the selected area!": "missing",
+     "No runes found. Top non-rune blocks in the volume:": "missing",
+     "Please set both corners first!": "missing",
+     "Positions cleared!": "missing",
+     "Reset! Corner 1 set to: ": "missing",
+     "Right-click Master Ritual Stone: generate code": "missing",
+     "Ritual Designer requires operator permissions": "missing",
+     "Ritual code copied to clipboard!": "missing",
+     "Scanning area: ": "missing",
+     "Shift + Right-click air: clear corners": "missing",
+     "Shift + Right-click block: set corner": "missing",
+     "Shift + Right-click opposite corners of the ritual area": "missing"
+    }
+   }
+  ]
+ },
  "observable.json": {
   "blocks": [
    {
@@ -14111,6 +14151,26 @@
      "Modular Cart": "exact",
      "No modules loaded": "substring",
      "The cart failed to be placed into the world, this is due to an issue with one or more modules. Please post your log on the issue tracker here: ": "substring"
+    }
+   }
+  ]
+ },
+ "stevescarts_module_type.json": {
+  "blocks": [
+   {
+    "classes": {
+     "vswe.stevescarts.api.modules.data.ModuleData": {
+      "actual": "vswe.stevescarts.api.modules.data.ModuleData",
+      "how": "declared",
+      "jar": "stevescarts-1.21-1.2.18-neoforge.jar"
+     }
+    },
+    "i": 1,
+    "jars": [
+     "stevescarts-1.21-1.2.18-neoforge.jar"
+    ],
+    "keys": {
+     "Module Type: ": "substring"
     }
    }
   ]

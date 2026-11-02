@@ -64,5 +64,6 @@
   "bhc.configuration.allowStartingHealthTweaks": "允许初始生命值调整",
   "bhc.configuration.startingHealth": "初始生命值",
   "bhc.configuration.Server": "服务器",
-  "tooltip.bhc.drop_info": "%s: %s%%"
+  "tooltip.bhc.drop_info": "%s: %s%%",
+  "attribute.bhc.heart_effectiveness": "心之效力"
 }

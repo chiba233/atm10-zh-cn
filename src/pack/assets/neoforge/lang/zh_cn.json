@@ -6,5 +6,11 @@
  "item.neoforge.conditions": "条件",
  "item.neoforge.false": "关闭",
  "item.neoforge.mod_loaded": "模组已加载",
- "item.neoforge.none": "无"
+ "item.neoforge.none": "无",
+ "neoforge.configgui.splitPacketMaxSizeLimitMb": "拆分数据包最大大小（MB）",
+ "neoforge.configgui.splitPacketMaxSizeLimitMb.tooltip": "重组后数据包允许的最大大小，单位为 MB。超过的数据包会导致客户端断开连接。",
+ "neoforge.configgui.maxAdhocChannelLimit": "临时频道数量上限",
+ "neoforge.configgui.maxAdhocChannelLimit.tooltip": "每个网络连接最多可以注册的临时频道数量。",
+ "neoforge.network.packet_splitter.too_big": "收到的拆分数据包超出了最大限制。",
+ "neoforge.network.adhoc_channels.too_many": "注册的临时频道过多。"
 }

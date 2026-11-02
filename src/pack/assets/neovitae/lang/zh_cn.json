@@ -293,5 +293,11 @@
   "jei.neovitae.effect.ender_sever.desc": "阻止阵列 16 格内的末影人、潜影贝等生物传送",
   "jei.neovitae.effect.ender_sever.name": "末影切断阵列",
   "jei.neovitae.recipe.dungeon_stone_spread": "地城石蔓延",
-  "tooltip.neovitae.array_effect.ender_sever": "阻止 16 格内的末影人、潜影贝等生物传送。"
+  "tooltip.neovitae.array_effect.ender_sever": "阻止 16 格内的末影人、潜影贝等生物传送。",
+  "gui.neovitae.athanor.group.input": "输入槽",
+  "gui.neovitae.athanor.group.input_bucket": "流体输入槽",
+  "gui.neovitae.athanor.group.output": "输出槽",
+  "gui.neovitae.athanor.group.output_bucket": "流体输出槽",
+  "gui.neovitae.athanor.group.tool": "工具槽",
+  "tooltip.neovitae.bound_treasures.too_far": "这个容器只能在附近打开"
 }

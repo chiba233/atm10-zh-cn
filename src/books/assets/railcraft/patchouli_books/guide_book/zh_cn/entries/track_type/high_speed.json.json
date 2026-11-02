@@ -1,6 +1,6 @@
 {
  "src": "assets/railcraft/patchouli_books/guide_book/en_us/entries/track_type/high_speed.json",
- "sha1": "17b07d0d87eb472daf972ea2d0fea25c14faecb1",
+ "sha1": "fd37589bab76ff149922ec5547b50c5287f7acdb",
  "t": [
   [
    [
@@ -15,8 +15,8 @@
     0,
     "text"
    ],
-   "This type of tracks is a little different from normal tracks. Any carts travelling on these rails can travel 2.5 times faster than normal, but only in a straight line. This speed is configurable. Additionally, attempting to leave these tracks without first slowing down will always result in an explosion. Collisions are bad too. More information can be found here.",
-   "此类轨道与普通轨道略有不同。任何在这些轨道上行驶的矿车，其直线行驶速度均为普通轨道的2.5倍——该速度可调节。此外，若矿车未提前减速便试图驶离此类轨道，必将引发爆炸。碰撞同样危险。更多详情请参见此处。"
+   "This type of tracks is a little different from normal tracks. Any carts travelling on these rails can travel 2.5 times faster than normal, but only in a straight line. This speed is configurable. Slopes are allowed, but carts slow down to about normal speed on them and within two tracks of them. Additionally, attempting to leave these tracks without first slowing down will always result in an explosion. Collisions are bad too.",
+   "此类轨道与普通轨道略有不同。任何在这些轨道上行驶的矿车，其直线行驶速度均为普通轨道的2.5倍——该速度可调节。可以铺设斜坡，但矿车在斜坡上以及斜坡前后两格轨道内会降到接近普通的速度。此外，若矿车未提前减速便试图驶离此类轨道，必将引发爆炸。碰撞同样危险。"
   ]
  ]
 }
