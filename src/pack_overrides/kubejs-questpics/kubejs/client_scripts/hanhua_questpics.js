@@ -49,9 +49,10 @@ ClientEvents.loggedIn(event => {
     if (ours == null) return
     try {
       // read 与 register 都有重载，Rhino 判不出该用哪个（java.io 又被类过滤挡住），
-      // 不指明签名会报「ambiguous」。
-      const tex = new $DynamicTexture($NativeImage['read(java.io.InputStream)'](ours.open()))
-      textures['register(net.minecraft.resources.ResourceLocation,net.minecraft.client.renderer.texture.AbstractTexture)'](id, tex)
+      // 不指明签名会报「ambiguous」。这里不用 const 中转：KubeJS 的 Rhino 在回调里第二次执行到
+      // try 块中的 const 时会报「redeclaration of var」。
+      textures['register(net.minecraft.resources.ResourceLocation,net.minecraft.client.renderer.texture.AbstractTexture)'](
+        id, new $DynamicTexture($NativeImage['read(java.io.InputStream)'](ours.open())))
       hanhuaRegistered[String(id)] = id
     } catch (e) {
       console.error('汉化包横幅 ' + id + ' 加载失败：' + e)
