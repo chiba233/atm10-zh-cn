@@ -1794,5 +1794,11 @@
   "item.the_bumblezone.carpenter_bee_boots_mining_enchant_tip": "（挖掘类附魔在脚部生效）",
   "the_bumblezone.midnightconfig.allowForestryCompat": "允许加载内置的林业兼容数据包",
   "the_bumblezone.configuration.forestrycompat": "林业兼容",
-  "the_bumblezone.configuration.allowforestrycompat": "林业兼容数据包"
+  "the_bumblezone.configuration.allowforestrycompat": "林业兼容数据包",
+  "item.the_bumblezone.music_disc_hive_speed_beepop": "音乐唱片",
+  "item.the_bumblezone.music_disc_perzzona_hive": "音乐唱片",
+  "item.the_bumblezone.music_disc_string_like_a_bee": "音乐唱片",
+  "the_bumblezone.music_disc_hive_speed_beepop.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的Hive-Speed Beepop。",
+  "the_bumblezone.music_disc_perzzona_hive.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的Perzzona Hive。",
+  "the_bumblezone.music_disc_string_like_a_bee.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的String like a Bee。"
 }
