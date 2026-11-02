@@ -6,8 +6,9 @@
 """任务书章节横幅上的艺术字（烤进 PNG，语言文件够不着）。
 
 ATM 的任务书每章顶上挂一张标题图，文字直接画在 PNG 里。原图在整合包自带的
-`kubejs/assets/atm/textures/questpics/`，资源包的加载顺序排在 KubeJS 之后
-（对着 ReloadableResourceManager 日志核过），所以本包放同路径的图即可覆盖。
+`kubejs/assets/atm/textures/questpics/`。KubeJS 2101.7.2 build 377 起这一层排在
+玩家资源包之上（KubeJS 提交 7973e69e，对着 ReloadableResourceManager 日志核过），
+所以 build_dist.sh 把生成的图同时放进客户端包的 kubejs/assets 同一路径，替换原图。
 
 ## 写什么字：单一真源 = 该图所属章节的中文标题
 
