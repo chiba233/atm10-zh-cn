@@ -56,6 +56,14 @@
    "replace": [
     "        event.cancel(\"整合包当前版本为空，是否已安装BetterCompatibilityCheck？\")\n"
    ]
+  },
+  {
+   "find": [
+    "        event.player.tell(Text.translatable(\"=====[  %s  ]=====\", Text.yellow(\"All The Mods Announcements\").bold()).gold().bold())\n"
+   ],
+   "replace": [
+    "        event.player.tell(Text.translatable(\"=====[  %s  ]=====\", Text.yellow(\"All The Mods 公告\").bold()).gold().bold())\n"
+   ]
   }
  ]
 }
