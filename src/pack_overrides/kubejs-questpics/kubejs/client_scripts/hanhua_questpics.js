@@ -48,7 +48,9 @@ ClientEvents.loggedIn(event => {
     })
     if (ours == null) return
     try {
-      textures.register(id, new $DynamicTexture($NativeImage.read(ours.open())))
+      // read 有 byte[] 与 InputStream 两个重载；java.io 被 KubeJS 的类过滤挡住，Rhino 判不出流的类型，
+      // 不指明签名会报「ambiguous」。
+      textures.register(id, new $DynamicTexture($NativeImage['read(java.io.InputStream)'](ours.open())))
       hanhuaRegistered[String(id)] = id
     } catch (e) {
       console.error('汉化包横幅 ' + id + ' 加载失败：' + e)
