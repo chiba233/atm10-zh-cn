@@ -22,14 +22,14 @@ const hanhuaRegistered = {}
 // 只有已启用的资源包才会出现在资源管理器里，找不到隐藏键就是没启用。
 function hanhuaPackId() {
   if (String(Client.getLanguageManager().getSelected()) != 'zh_cn') return null
-  const probe = Client.getResourceManager().getResourceStack(HANHUA_PROBE)
+  var probe = Client.getResourceManager().getResourceStack(HANHUA_PROBE)
   if (probe.isEmpty()) return null
   return String(probe.get(probe.size() - 1).sourcePackId())
 }
 
 ClientEvents.loggedIn(event => {
-  const textures = Client.getTextureManager()
-  const packId = hanhuaPackId()
+  var textures = Client.getTextureManager()
+  var packId = hanhuaPackId()
   if (packId == null) {
     Object.keys(hanhuaRegistered).forEach(key => {
       textures.release(hanhuaRegistered[key])
@@ -37,12 +37,12 @@ ClientEvents.loggedIn(event => {
     })
     return
   }
-  const stacks = Client.getResourceManager().listResourceStacks('textures/questpics',
+  var stacks = Client.getResourceManager().listResourceStacks('textures/questpics',
     id => id.getNamespace() == 'atm' && id.getPath().endsWith('.png'))
   stacks.forEach((id, stack) => {
     if (stack.isEmpty()) return
     if (String(stack.get(stack.size() - 1).sourcePackId()) == packId) return
-    let ours = null
+    var ours = null
     stack.forEach(res => {
       if (String(res.sourcePackId()) == packId) ours = res
     })
