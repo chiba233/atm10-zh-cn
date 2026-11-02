@@ -294,5 +294,22 @@
   "text.little_big_redstone.logic_help_pulse_throttler": "对输入信号进行节流，输出持续时间可配置的信号。",
   "text.little_big_redstone.logic_config_button_label_comparator_output_override": "输出覆盖：",
   "text.little_big_redstone.logic_config_button_tooltip_comparator_output_override": "比较器匹配输入时输出的信号。",
-  "text.little_big_redstone.logic_config_tooltip_comparator_output_override": "  输出覆盖：%s"
+  "text.little_big_redstone.logic_config_tooltip_comparator_output_override": "  输出覆盖：%s",
+  "entity.little_big_redstone.sticky_note": "便签",
+  "entity.little_big_redstone.sticky_note.black": "黑色便签",
+  "entity.little_big_redstone.sticky_note.blue": "蓝色便签",
+  "entity.little_big_redstone.sticky_note.brown": "棕色便签",
+  "entity.little_big_redstone.sticky_note.cyan": "青色便签",
+  "entity.little_big_redstone.sticky_note.gray": "灰色便签",
+  "entity.little_big_redstone.sticky_note.green": "绿色便签",
+  "entity.little_big_redstone.sticky_note.light_blue": "淡蓝色便签",
+  "entity.little_big_redstone.sticky_note.light_gray": "淡灰色便签",
+  "entity.little_big_redstone.sticky_note.lime": "黄绿色便签",
+  "entity.little_big_redstone.sticky_note.magenta": "品红色便签",
+  "entity.little_big_redstone.sticky_note.orange": "橙色便签",
+  "entity.little_big_redstone.sticky_note.pink": "粉红色便签",
+  "entity.little_big_redstone.sticky_note.purple": "紫色便签",
+  "entity.little_big_redstone.sticky_note.red": "红色便签",
+  "entity.little_big_redstone.sticky_note.white": "白色便签",
+  "entity.little_big_redstone.sticky_note.yellow": "黄色便签"
 }
