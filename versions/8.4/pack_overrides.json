@@ -80,6 +80,16 @@
     "value": "每队奖励",
     "why": "8.4 的 FTB Quests 2101.1.37 把「Team Reward」改成「Per-Team Reward」，强调奖励按队伍各发一份。公共树那份是 8.3 及以前的「队伍奖励」。"
    }
+  },
+  "structurize": {
+   "structurize.preview_renderer.exception": {
+    "value": "蓝图预览渲染期间发生了错误。如果不介意，请将 latest.log 提交到 Structurize 的 Issue 追踪器。谢谢！",
+    "why": "8.4 的 Structurize 1.0.837 把「our issue tracker」改成「Structurize's issue tracker」。公共树那份是 8.3 及以前的「我们的」。"
+   },
+   "structurize.preview_renderer.cannot_render": {
+    "value": "渲染蓝图“%s”时发生了无法恢复的错误。如果您不介意，请将 latest.log 提交到 Structurize 的问题追踪器。谢谢！",
+    "why": "8.4 的 Structurize 1.0.837 把「our issue tracker」改成「Structurize's issue tracker」。公共树那份是 8.3 及以前的「我们的」。"
+   }
   }
  }
 }
