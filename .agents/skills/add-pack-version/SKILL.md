@@ -46,7 +46,7 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 | 上游改写映射在这一版套不上 | 这一版确实没有这段原文：在 `versions/<版本>/unpatchable.json` 登记，写明 `why`。原文改了样子、仍要译：写 `versions/<版本>/upstream/<路径>.json`。两者常常要一起做，例如进服公告 |
 | 任务书章节没有 hover 字段可改 | 同样登记进 `unpatchable.json` |
 | artifact `productive-trees-baseline` | 提交 `versions/db/<版本>/productive_trees.json` |
-| artifact `quest-baseline` 或 `vaultpatcher-db` | 提交对应的 `versions/db/*/` 文件 |
+| artifact `quest-baseline` 或 `vaultpatcher-db` | 提交对应的 `versions/db/*/` 文件。补译任务书新增了键以后，底本会再过期一次，同样取这个 artifact |
 
 闸红了是包不达标。改内容，不改闸。
 
@@ -55,7 +55,11 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 逐项对照上一版的 `versions/<上一版>/`，判断哪些在新版仍然适用：
 
 - `pack_overrides.json`：每一层都按新版 jar 判断是否仍适用，写明 `why`（哪个 jar、与哪一版逐字节相同）。
-- `quest_overrides.snbt`：上一版有、新版仍需要的覆盖照抄。例如转位器任务的失效副标题，8.1、8.2、8.3 各要一份。漏掉的话，旧问题会在新版里回来。
+- `quest_overrides.snbt`：上一版有、新版仍需要的覆盖照抄。例如转位器任务的失效副标题，8.1、8.2、8.3 各要一份。漏掉的话，旧问题会在新版里回来。整合包自带中文在新版里自己修好了的，就不再带。
+- `unpatchable.json` 与 `upstream/`：把 `src/upstream/` 的全部映射套到新版官方文件上（`gen_upstream_patches.apply_one`），先不带登记试一次，再带上上一版的登记与专属映射试一次。不带时套不上、带上后全部命中的，就照抄到新版。`why` 里的数字（如 image 块数）按新版文件重数。这两样 CI 不会提醒，漏了就会在 build 阶段才报红。
+- `unobtainable.json`：只在新版 `jars.json` 的 `unobtainable` 不为空时才需要。
+
+最后把 `versions/<上一版>/` 和 `versions/<新版>/` 的文件列表并排比一遍，每一个缺的文件都要能说出不带的理由。
 
 ## 第四步：找出新版带进来的文本
 
