@@ -68,6 +68,13 @@ jobs:
         id: g_gates
         run: python3 scripts/compliance/test_gates.py
 
+      # 打包白名单决定发版挂哪些包：先验它取不到会红，再对仓库里那份真白名单跑一次。
+      - name: 打包白名单
+        id: g_whitelist
+        run: |
+          python3 scripts/compliance/test_release_versions.py
+          echo "打包、发布的版本：$(python3 scripts/release_versions.py)"
+
       # 资源树育种公式：反例测试全合成、不读真包也不联网；
       # 「各版本一致」这条只读几份 versions/db/<版本>/productive_trees.json，
       # 同样不下 jar。两条都够便宜，放快闸里 PR 阶段就拦。
@@ -173,6 +180,7 @@ jobs:
             emit 'dynamic @ 子串键互不为子串' '${{ steps.g_dynsub.outcome }}'
             emit '模块内容哈希'               '${{ steps.g_modhash.outcome }}'
             emit '闸的反例测试'               '${{ steps.g_gates.outcome }}'
+            emit '打包白名单'                 '${{ steps.g_whitelist.outcome }}'
             emit '育种公式生成器的反例测试'   '${{ steps.g_trees.outcome }}'
             emit '育种公式各版本一致'         '${{ steps.g_trees_ver.outcome }}'
             emit '从 src/ 摊出货树'           '${{ steps.g_assemble.outcome }}'

@@ -172,7 +172,7 @@ jobs:
         run: python3 scripts/compliance/check_minecolonies_paths.py "$ATM_PACK_ROOT/mods"
 
       - name: 打包全部整合包版本
-        # 不给第二个参数 = 出 versions/ 下声明过的全部版本。
+        # 不给第二个参数 = 出 versions/whitelist.txt 里的全部版本。
         # 通配只在仓库声明过的版本里展开，ATM 发新版不会自动混进来。
         run: ./scripts/build_dist.sh "${{ steps.release.outputs.version }}"
 
@@ -227,8 +227,8 @@ jobs:
           # 一是把 server 包当客户端下，二是装完没把资源包挪到「已选」最顶部——
           # 后者会让大部分汉化不生效，看上去就像我们没翻。两者都发生在**下载那一刻**，
           # 游戏内提示救不了：服务端包里根本没有 kubejs/client_scripts。
-          # 例子里的整合包版本按 versions/ 现取，不写死，出 7.4 时不必记得改这里。
-          EX_MC=$(ls -d versions/[0-9]* | xargs -n1 basename | sort -V | tail -1)
+          # 例子里的整合包版本按白名单现取，不写死，出新版时不必记得改这里。
+          EX_MC=$(python3 scripts/release_versions.py | tr ' ' '\n' | tail -1)
           {
             echo 'notes<<RELEASE_NOTES_EOF'
             printf '%s\n' \
@@ -249,19 +249,19 @@ jobs:
           #   atm10-zh_cn-{client,server}-<补丁版本>-atm<整合包版本>.zip
           # build_dist.sh 直接产出 ASCII 名（连解压出来的文件夹名也是 ASCII）——
           # 中文文件夹名在 Windows 各解压软件下编码不一致，用户拿到手就是乱码。
-          # 每个声明过的整合包版本都必须有客户端 + 服务端两个包，缺一个就别发。
+          # 白名单里每个整合包版本都必须有客户端 + 服务端两个包，缺一个就别发。
           # 按清单逐个点名，不是 `ls` 出多少算多少——少打了一个版本必须当场发现。
           # （不用 mapfile：那是 bash 4+ 的内建，本机 bash 3.2 跑不了，
           #   本地就验不了这段门控。）
           ZIPS=()
-          for v in $(ls -d versions/[0-9]* | xargs -n1 basename); do
+          for v in $(python3 scripts/release_versions.py); do
             for side in client server; do
               f="dist/atm10-zh_cn-${side}-${RELEASE_VERSION}-atm${v}.zip"
               [ -f "$f" ] || { echo "❌ 缺少 $f"; exit 1; }
               ZIPS+=("$f")
             done
           done
-          [ "${#ZIPS[@]}" -ge 2 ] || { echo "❌ versions/ 下一个版本都没有"; exit 1; }
+          [ "${#ZIPS[@]}" -ge 2 ] || { echo "❌ versions/whitelist.txt 里一个版本都没有"; exit 1; }
           printf '  挂载: %s\n' "${ZIPS[@]}"
 
           {
@@ -317,7 +317,7 @@ jobs:
             fi
             printf '| 预发布 | %s |\n' "$BETA"
             printf '| 整合包版本 | %s |\n' \
-              "$(ls -d versions/[0-9]* 2>/dev/null | xargs -n1 basename | tr '\n' ' ')"
+              "$(python3 scripts/release_versions.py)"
             printf '\n### 挂载的包\n\n| 文件 | 大小 | sha256 |\n|---|--:|---|\n'
             for f in dist/*.zip; do
               [ -f "$f" ] || continue

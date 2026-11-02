@@ -13,7 +13,7 @@
 # 一个补丁版本可以同时产出 7.0 / 7.1 / 7.2 三个包。补丁自己的版本号与整合包版本解耦。
 #
 # 用法:
-#   ./scripts/build_dist.sh r12            # 出 versions/ 下声明过的全部整合包版本
+#   ./scripts/build_dist.sh r12            # 出 versions/whitelist.txt 里的全部整合包版本
 #   ./scripts/build_dist.sh r12 7.2        # 只出 7.2
 #   ./scripts/build_dist.sh r12 "7.1 7.2"  # 出指定几个
 set -euo pipefail
@@ -22,8 +22,18 @@ cd "$(dirname "$0")/.."
 VERSION="${1:?用法: build_dist.sh <补丁版本号，如 r12> [整合包版本，默认全部]}"
 # 目标整合包版本：没给就取 versions/ 下所有声明过的（**只认仓库里有的**，
 # 绝不去 CurseForge 现查——那样 ATM 一发新版 CI 就会自动构建一个没验证过的包）
-MC_VERSIONS="${2:-$(ls -d versions/[0-9]* 2>/dev/null | xargs -n1 basename | tr '\n' ' ')}"
-[ -n "${MC_VERSIONS// /}" ] || { echo "❌ versions/ 下没有任何整合包版本目录"; exit 1; }
+REQUESTED="${2:-$(ls -d versions/[0-9]* 2>/dev/null | xargs -n1 basename | tr '\n' ' ')}"
+[ -n "${REQUESTED// /}" ] || { echo "❌ versions/ 下没有任何整合包版本目录"; exit 1; }
+# 只打 versions/whitelist.txt 里的版本。没列进去的是维护版本，跳过并点名。
+ALLOWED="$(python3 scripts/release_versions.py)"
+MC_VERSIONS=""
+for v in $REQUESTED; do
+  case " $ALLOWED " in
+    *" $v "*) MC_VERSIONS="$MC_VERSIONS $v" ;;
+    *) echo "跳过 $v：不在 versions/whitelist.txt 里，不打包" ;;
+  esac
+done
+[ -n "${MC_VERSIONS// /}" ] || { echo "❌ 要打包的版本一个都不在 versions/whitelist.txt 里"; exit 1; }
 CBASE="atm10-zh_cn-client"
 SBASE="atm10-zh_cn-server"
 
