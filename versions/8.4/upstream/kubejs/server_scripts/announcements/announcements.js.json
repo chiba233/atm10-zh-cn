@@ -1,5 +1,5 @@
 {
- "_说明": "8.3 沿用 8.0 起重写过的这份公告清单（这一段在 8.3 的原文里整块命中 1 次）：删掉 4.0/4.1/4.2 三行、每行末尾补了分号、5.3 从「mods … Eternal Starlight and Hyperbox」改成「mod … Hyperbox」。带分号的行与 7.0–7.3 的无分号版本不可能共用一个 find，所以这一版单给一份。同文件另外三处（命令回执）两版一字未改，仍走 src/upstream 那份通用映射。",
+ "_说明": "8.4 沿用 8.0 起重写过的这份公告清单（第 1 处在 8.4 的原文里整块命中 1 次）：删掉 4.0/4.1/4.2 三行、每行末尾补了分号、5.3 从「mods … Eternal Starlight and Hyperbox」改成「mod … Hyperbox」。带分号的行与 7.0–7.3 的无分号版本不可能共用一个 find，所以这一版单给一份。第 2 处是 8.4 在清单末尾新加的 7.0–8.3 六行，只有 8.4 的原文里有。同文件另外三处（命令回执）各版一字未改，仍走 src/upstream 那份通用映射。",
  "src": "kubejs/server_scripts/announcements/announcements.js",
  "edits": [
   {
@@ -26,6 +26,24 @@
     "  addAnnouncement(\"5.0\", \"已移除模组：模块化机械重生，请改用现代工业化\");\n",
     "  addAnnouncement(\"5.3\", Text.of(\"我们正在准备\").append(Text.red(\"移除\")).append(\"模组\").append(Text.blue(\"超立方盒\")).append(\"，更新到6.0+版本时请做好准备！\"));\n",
     "  addAnnouncement(\"5.5\", Text.of(\"我们刚刚推出了\").append(Text.green(\"全部宝可梦（ATM10 + 方块宝可梦）\").clickOpenUrl(\"https://www.curseforge.com/minecraft/modpacks/all-the-mons\").hover(Text.translatable(\"mco.notification.visitUrl.buttonText.default\"))).append(\"，现已开放公开测试！\"));\n"
+   ]
+  },
+  {
+   "find": [
+    "  addAnnouncement(\"7.0\", \"Replaced Embeddium with Sodium\");\n",
+    "  addAnnouncement(\"7.2\", \"Added mod: Invasive Optimizations\");\n",
+    "  addAnnouncement(\"8.0\", \"Added mods: Neo Vitae and Auroral\");\n",
+    "  addAnnouncement(\"8.1\", \"Added mods: Ad Astra, Giselle Addon, and Logistics Networks\");\n",
+    "  addAnnouncement(\"8.2\", \"Added mods: Create Copycats+ and Just Enough Stuff\");\n",
+    "  addAnnouncement(\"8.3\", \"Added mod: Astral Sorcery\");\n"
+   ],
+   "replace": [
+    "  addAnnouncement(\"7.0\", \"将 Embeddium 替换为钠\");\n",
+    "  addAnnouncement(\"7.2\", \"新增模组：Invasive Optimizations\");\n",
+    "  addAnnouncement(\"8.0\", \"新增模组：新血魔法和极光\");\n",
+    "  addAnnouncement(\"8.1\", \"新增模组：Ad Astra、Giselle 附属和物流网络\");\n",
+    "  addAnnouncement(\"8.2\", \"新增模组：机械动力：伪装方块+ 和 Just Enough Stuff\");\n",
+    "  addAnnouncement(\"8.3\", \"新增模组：星辉魔法\");\n"
    ]
   }
  ]
