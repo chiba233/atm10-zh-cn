@@ -116,5 +116,6 @@
   "tooltip.crystalix.lmb": "%s 或 %s 以向前切换",
   "tooltip.crystalix.mmb": "按 %s 打开颜色选择器",
   "tooltip.crystalix.rmb": "%s 或 %s 可向后切换",
-  "property.crystalix.apply_colorless": "应用无色：%s"
+  "property.crystalix.apply_colorless": "应用无色：%s",
+  "tooltip.crystalix.disabled": "已被服务器配置禁用"
 }
