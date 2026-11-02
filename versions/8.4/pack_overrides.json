@@ -20,6 +20,24 @@
     "value": "已使用战利品表 %3$s 于 %2$s 处生成出了 Lootr 的%1$s。",
     "why": "8.4 的 lootr 1.11.38.127 与 8.3 是同一份 jar：种类、坐标、战利品表三个参数；公共树那份按两个参数写，沿用 8.3 的分叉。"
    }
+  },
+  "integratedscripting": {
+   "info_book.integratedscripting.terminal.text7": {
+    "value": "编辑器支持有限的语法高亮，并会把第一处语法错误所在的行标成红色。将鼠标悬停在那一行上可以查看错误信息。",
+    "why": "8.4 的 Integrated Scripting 改写了这句：编辑器现在会标出第一处语法错误。公共树那份写的是 8.3 及以前「无法检测语法错误」的旧说法。"
+   },
+   "info_book.integratedscripting.writing.methods.text4": {
+    "value": "例如，全局函数&oitemstackIsStackable&r接受单个&8物品&0参数，并返回一个&9布尔型&0。相应的对象方法为&oisStackable&r，不接受参数。",
+    "why": "8.4 的 Integrated Scripting 把示例里的函数名改成 itemstackIsStackable 与 isStackable。公共树那份是 8.3 及以前的 itemstackStackable 与 stackable。"
+   },
+   "info_book.integratedscripting.advanced.external_editing.text2": {
+    "value": "脚本文件位于&oworld/integratedscripting/scripting-disks/&r目录下（单人世界见&osaves/&r目录）。各&l脚本磁盘&r分属不同的子目录，目录名称则分别是它们的ID。&l脚本磁盘&r的目录下即是该磁盘中存有的所有脚本文件。",
+    "why": "8.4 的 Integrated Scripting 把脚本目录改成 world/integratedscripting/scripting-disks/。公共树那份是 8.3 及以前的 world/integratedscripting/。"
+   },
+   "info_book.integratedscripting.tutorials.functions.text7": {
+    "value": "此示例脚本中调用了物品的内置方法，诸如&oisStackable()&r和&osize()&r。有关哪些方法可用的详细信息，后续可见完整手册。",
+    "why": "8.4 的 Integrated Scripting 把示例方法 stacksize() 改成 size()。公共树那份是 8.3 及以前的 stacksize()。"
+   }
   }
  }
 }
