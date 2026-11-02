@@ -38,6 +38,16 @@
     "value": "此示例脚本中调用了物品的内置方法，诸如&oisStackable()&r和&osize()&r。有关哪些方法可用的详细信息，后续可见完整手册。",
     "why": "8.4 的 Integrated Scripting 把示例方法 stacksize() 改成 size()。公共树那份是 8.3 及以前的 stacksize()。"
    }
+  },
+  "integratedterminals": {
+   "gui.integratedterminals.craftingplan.status.invalid_inputs": {
+    "value": "输入未被接受",
+    "why": "8.4 的 Integrated Terminals 1.11.1 把这条状态从「Recipe Not Allowed」改成「Inputs Not Accepted」。公共树那份是 8.3 及以前的说法。"
+   },
+   "gui.integratedterminals.craftingplan.status.invalid_inputs.desc": {
+    "value": "合成目标拒收了输入原料，稍后会重试",
+    "why": "8.4 的 Integrated Terminals 1.11.1 改了这条说明：合成目标拒收输入后会稍后重试。公共树那份是 8.3 及以前「无法插入」的说法。"
+   }
   }
  }
 }
