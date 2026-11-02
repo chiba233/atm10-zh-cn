@@ -156,13 +156,6 @@ PY
 python3 scripts/mkzip.py "${CSTAGE}/resourcepacks/${PACK_NAME}.zip" "$PSTAGE"
 rm -rf "$PSTAGE"
 cp -R "$TREE/config" "$TREE/kubejs" "$TREE/mods" "$TREE/vaultpatcher" "$TREE/可选mods-拼音搜索" "$CSTAGE/"
-# KubeJS 2101.7.2 build 377 起 kubejs/assets 排在玩家资源包之上（KubeJS 提交 7973e69e），
-# ATM 自带的英文横幅会盖掉资源包里的中文横幅。客户端包把该版资源包里的横幅
-# 也放进 kubejs/assets 同一路径，安装时替换 ATM 的英文图（安装器会先备份原图）。
-QP="assets/atm/textures/questpics"
-[ -d "$PACK_SRC/$QP" ] || { echo "❌ ${MC} 的资源包里没有 $QP，横幅没生成"; exit 1; }
-mkdir -p "$CSTAGE/kubejs/$QP"
-cp -R "$PACK_SRC/$QP/." "$CSTAGE/kubejs/$QP/"
 # 该版专属的任务书覆盖已经由 gen_quest_lang_patches.py 打进上游文件了（它优先级最高），
 # 这里不再单独发一个 delta 文件——发了就又是「同一个键两份文件」。
 cp installer/install.sh installer/install.ps1 "installer/双击安装-Windows.bat" "$CSTAGE/"
