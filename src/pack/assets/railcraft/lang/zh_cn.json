@@ -1079,5 +1079,9 @@
   "entity.railcraft.bed_minecart": "床矿车",
   "item.railcraft.bed_minecart": "床矿车",
   "key.railcraft.bed_minecart.sleep": "在床矿车里睡觉",
-  "tips.railcraft.bed_minecart.keys": "按 %s 下车，按 %s 睡觉"
+  "tips.railcraft.bed_minecart.keys": "按 %s 下车，按 %s 睡觉",
+  "item.railcraft.netherite_tunnel_bore_head": "下界合金掘进机钻头",
+  "railcraft.configuration.boilersExplode": "锅炉会爆炸",
+  "railcraft.configuration.lockingTrackTrainDelay": "锁定铁轨列车延迟",
+  "tips.railcraft.track_kit.already_applied": "已经装过铁轨套件"
 }
