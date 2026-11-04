@@ -1893,5 +1893,19 @@
   "block.modern_industrialization.auto_reconstructor": "自动原子再构机",
   "rei_categories.modern_industrialization.auto_empowerer": "自动充能台",
   "rei_categories.modern_industrialization.auto_fermenting_press": "自动发酵压榨机",
-  "rei_categories.modern_industrialization.auto_reconstructor": "自动原子再构机"
+  "rei_categories.modern_industrialization.auto_reconstructor": "自动原子再构机",
+  "block.modern_industrialization.atomic_item_input_hatch": "原子物品输入舱",
+  "block.modern_industrialization.atomic_item_output_hatch": "原子物品输出舱",
+  "block.modern_industrialization.atomic_fluid_input_hatch": "原子流体输入舱",
+  "block.modern_industrialization.atomic_fluid_output_hatch": "原子流体输出舱",
+  "block.modern_industrialization.atomic_energy_input_hatch": "原子能量输入舱",
+  "block.modern_industrialization.atomic_energy_output_hatch": "原子能量输出舱",
+  "block.modern_industrialization.lv_atomic_transformer": "低压至原子变压器",
+  "block.modern_industrialization.atomic_lv_transformer": "原子至低压变压器",
+  "block.modern_industrialization.mv_atomic_transformer": "中压至原子变压器",
+  "block.modern_industrialization.atomic_mv_transformer": "原子至中压变压器",
+  "block.modern_industrialization.atomic_storage_unit": "原子储能单元",
+  "cable_tier_long.modern_industrialization.atomic": "原子",
+  "cable_tier_short.modern_industrialization.atomic": "原子",
+  "machine_casing.modern_industrialization.atomic": "原子"
 }
