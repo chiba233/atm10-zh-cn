@@ -404,5 +404,7 @@
   "advancements.extended_industrialization.ultimate_laser_drill.description": "合成终极激光手钻。",
   "advancements.extended_industrialization.ultimate_laser_drill.title": "岩石与石头，刻进骨头！",
   "tag.item.extended_industrialization.generated_recipes_blacklist.canning_food": "罐装食物自动生成配方黑名单",
-  "tag.item.extended_industrialization.generated_recipes_blacklist.composting": "堆肥自动生成配方黑名单"
+  "tag.item.extended_industrialization.generated_recipes_blacklist.composting": "堆肥自动生成配方黑名单",
+  "text.extended_industrialization.farmer_enhanced_fortune": "使用%s时，所有掉落物都会增加，而不只是%s通常影响的那些。",
+  "text.extended_industrialization.machine_chainer_help_max_transfer": "最多只能传输该电压等级线缆 %s 倍的能量。"
 }

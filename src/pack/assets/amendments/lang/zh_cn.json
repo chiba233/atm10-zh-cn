@@ -184,5 +184,17 @@
   "amendments.configuration.buckets.axolotl_variants.description": "美西螈桶会显示里面美西螈的颜色",
   "amendments.configuration.misc.villager_trade_buttons": "村民交易按钮",
   "amendments.configuration.misc.villager_trade_buttons.description": "让村民交易按钮的外观与织布机、切石机的按钮一致",
-  "amendments.configuration.misc.hotbar_slot_animation_wrap.description": "快捷栏选框动画是否在两端循环"
+  "amendments.configuration.misc.hotbar_slot_animation_wrap.description": "快捷栏选框动画是否在两端循环",
+  "amendments.configuration.container_pickup": "容器拾取",
+  "amendments.configuration.container_pickup.held_container_pickup": "手持容器拾取",
+  "amendments.configuration.container_pickup.held_container_pickup.description": "拾起的物品会直接进入所选那只手里拿着的收纳袋、潜影盒或任何带物品栏的物品。把要排除的物品加进 amendments:held_pickup_blacklist 标签",
+  "amendments.configuration.container_pickup.pickup_sound": "拾取音效",
+  "amendments.configuration.container_pickup.pickup_sound.description": "把物品拾进手持容器时播放音效",
+  "amendments.configuration.hotbar_slot_animation": "快捷栏槽位动画",
+  "amendments.configuration.hotbar_slot_animation.speed": "速度",
+  "amendments.configuration.hotbar_slot_animation.speed.description": "让选中的快捷栏槽位滑到新位置。数值越大越快，0 为原版行为",
+  "amendments.configuration.hotbar_slot_animation.wrap": "回绕",
+  "amendments.configuration.hotbar_slot_animation.wrap.description": "快捷栏槽位动画是否从一端绕到另一端",
+  "amendments.configuration.hotbar_slot_animation.opaque_behavior": "不透明时的行为",
+  "amendments.configuration.hotbar_slot_animation.opaque_behavior.description": "选中框纹理不透明时动画怎么做。NONE 保持在物品上层，IN_BACKGROUND 移到物品后面，TURNS_OFF 关闭动画"
 }

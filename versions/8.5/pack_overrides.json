@@ -1,0 +1,98 @@
+{
+ "_": "该版专属的资源包差异。lang 单键与 files 整页覆盖都必须写 why，见 scripts/gen_pack_overrides.py。8.5 的这份从 8.4 照抄，各条 why 记的是 8.4 时的判断；8.5 的英文没有另核。",
+ "files": {
+  "books-8.0": {
+   "why": "沿用 8.4：8.4 的 EnderDrives 1.5.23、Tombstone 9.5.6 与 8.3 是同一份 jar，散文页与 8.0 新版正文相同；公共树保留 7.0–7.3 的旧中文，因此本版必须叠加 books-8.0。"
+  },
+  "books-8.2": {
+   "why": "沿用 8.4：8.4 的 AE2 Import Export Card 1.9.1、Oracle Index 1.4.0 与 8.3 是同一份 jar；Modern Industrialization 升到 2.5.11，但 large_steam_boiler.md 与 oil_processing.md 的英文与 2.5.10 逐字节相同，所以沿用 books-8.2；8.1 及以前仍须保留旧正文。"
+  },
+  "kubejs-questpics": {
+   "why": "沿用 8.4：8.4 的 KubeJS 2101.7.2 build 377（提交 7973e69e）把 kubejs/assets 排到玩家资源包之上，汉化包里的中文任务书横幅被 ATM 原图盖住。这一层只给 8.4 带上客户端脚本，进世界时把汉化包里的横幅注册回原路径。8.1–8.3 的 KubeJS 是 build 374，汉化包仍在 kubejs/assets 之上，不需要。"
+  }
+ },
+ "lang": {
+  "apotheosis": {
+   "text.apotheosis.touched_by_malice": {
+    "value": "受恶意侵蚀（x%s）",
+    "why": "沿用 8.4：8.4 的 Apotheosis 8.9.0 与 8.3 是同一份 jar，这条英文仍带一个层数参数；公共树那份不带参数，沿用 8.3 的分叉。"
+   }
+  },
+  "lootr": {
+   "lootr.commands.summon": {
+    "value": "已使用战利品表 %3$s 于 %2$s 处生成出了 Lootr 的%1$s。",
+    "why": "沿用 8.4：8.4 的 lootr 1.11.38.127 与 8.3 是同一份 jar：种类、坐标、战利品表三个参数；公共树那份按两个参数写，沿用 8.3 的分叉。"
+   }
+  },
+  "integratedscripting": {
+   "info_book.integratedscripting.terminal.text7": {
+    "value": "编辑器支持有限的语法高亮，并会把第一处语法错误所在的行标成红色。将鼠标悬停在那一行上可以查看错误信息。",
+    "why": "沿用 8.4：8.4 的 Integrated Scripting 改写了这句：编辑器现在会标出第一处语法错误。公共树那份写的是 8.3 及以前「无法检测语法错误」的旧说法。"
+   },
+   "info_book.integratedscripting.writing.methods.text4": {
+    "value": "例如，全局函数&oitemstackIsStackable&r接受单个&8物品&0参数，并返回一个&9布尔型&0。相应的对象方法为&oisStackable&r，不接受参数。",
+    "why": "沿用 8.4：8.4 的 Integrated Scripting 把示例里的函数名改成 itemstackIsStackable 与 isStackable。公共树那份是 8.3 及以前的 itemstackStackable 与 stackable。"
+   },
+   "info_book.integratedscripting.advanced.external_editing.text2": {
+    "value": "脚本文件位于&oworld/integratedscripting/scripting-disks/&r目录下（单人世界见&osaves/&r目录）。各&l脚本磁盘&r分属不同的子目录，目录名称则分别是它们的ID。&l脚本磁盘&r的目录下即是该磁盘中存有的所有脚本文件。",
+    "why": "沿用 8.4：8.4 的 Integrated Scripting 把脚本目录改成 world/integratedscripting/scripting-disks/。公共树那份是 8.3 及以前的 world/integratedscripting/。"
+   },
+   "info_book.integratedscripting.tutorials.functions.text7": {
+    "value": "此示例脚本中调用了物品的内置方法，诸如&oisStackable()&r和&osize()&r。有关哪些方法可用的详细信息，后续可见完整手册。",
+    "why": "沿用 8.4：8.4 的 Integrated Scripting 把示例方法 stacksize() 改成 size()。公共树那份是 8.3 及以前的 stacksize()。"
+   }
+  },
+  "integratedterminals": {
+   "gui.integratedterminals.craftingplan.status.invalid_inputs": {
+    "value": "输入未被接受",
+    "why": "沿用 8.4：8.4 的 Integrated Terminals 1.11.1 把这条状态从「Recipe Not Allowed」改成「Inputs Not Accepted」。公共树那份是 8.3 及以前的说法。"
+   },
+   "gui.integratedterminals.craftingplan.status.invalid_inputs.desc": {
+    "value": "合成目标拒收了输入原料，稍后会重试",
+    "why": "沿用 8.4：8.4 的 Integrated Terminals 1.11.1 改了这条说明：合成目标拒收输入后会稍后重试。公共树那份是 8.3 及以前「无法插入」的说法。"
+   }
+  },
+  "jei": {
+   "jei.config.client.ingredientList.overlaysEnabled.description": {
+    "value": "显示或隐藏原料与书签叠加层。这项偏好在重启游戏后仍会保留。",
+    "why": "沿用 8.4：8.4 的 JEI 19.70 改了这条说明：叠加层的显示状态现在会跨游戏保存。公共树那份是 8.3 及以前「只对本次游戏生效、不写入配置文件」的说法。"
+   }
+  },
+  "mahoutsukai": {
+   "mahoutsukai.book.displacement_boundary.desc": {
+    "value": "位移结界会把进入其范围（%%val2）的实体传送到另一侧；如果目的地被挡住，会向上寻找空位。 %%n %%n它每%%val1秒消耗施法者%%val0点法力。",
+    "why": "沿用 8.4：8.4 的 Mahou Tsukai 1.36.29 改了位移结界的行为说明：目的地被挡住时向上找空位，不再替换方块。公共树那份是 8.3 及以前的说法。"
+   },
+   "mahoutsukai.config.authority_break_slow_down_factor.comment": {
+    "value": "保留设置；破坏方块后的额外减速目前已停用。",
+    "why": "沿用 8.4：8.4 的 Mahou Tsukai 1.36.29 把这项改成保留设置。公共树那份是 8.3 及以前「目标碰到墙时的缓慢因数」的说法。"
+   },
+   "mahoutsukai.config.authority_break_slow_down_factor.name": {
+    "value": "假借之权保留缓慢因数",
+    "why": "沿用 8.4：8.4 的 Mahou Tsukai 1.36.29 把这项改名为保留设置。公共树那份是 8.3 及以前的「假借之权缓慢因数（墙）」。"
+   }
+  },
+  "neovitae": {
+   "book.neovitae.guide.spiritus.spirit_accumulator.cost.text": {
+    "value": "除了反应物之外，炼金炉工作所在的区块还必须存有[#](8B0000)45 点原生[#]()灵质。在[#](8B0000)恶念坩埚[#]()里烧掉一块[#](8B0000)灵质结晶[#]()就足以补上——只要该要素低于 50，一块结晶就给 50。\\\n\\\n[#](2E8B57)另外还需要一枚魂结斑粒，那东西只能在恶魔领域的深层宝库里找到。[#]()",
+    "why": "沿用 8.4：8.4 的 Neo Vitae 1.1.48 把补足 45 点原生灵质的材料从「原生碎片」改成「灵质结晶」。公共树那份是 8.3 及以前的说法。"
+   }
+  },
+  "ftbquests": {
+   "ftbquests.reward.team_reward": {
+    "value": "每队奖励",
+    "why": "沿用 8.4：8.4 的 FTB Quests 2101.1.37 把「Team Reward」改成「Per-Team Reward」，强调奖励按队伍各发一份。公共树那份是 8.3 及以前的「队伍奖励」。"
+   }
+  },
+  "structurize": {
+   "structurize.preview_renderer.exception": {
+    "value": "蓝图预览渲染期间发生了错误。如果不介意，请将 latest.log 提交到 Structurize 的 Issue 追踪器。谢谢！",
+    "why": "沿用 8.4：8.4 的 Structurize 1.0.837 把「our issue tracker」改成「Structurize's issue tracker」。公共树那份是 8.3 及以前的「我们的」。"
+   },
+   "structurize.preview_renderer.cannot_render": {
+    "value": "渲染蓝图“%s”时发生了无法恢复的错误。如果您不介意，请将 latest.log 提交到 Structurize 的问题追踪器。谢谢！",
+    "why": "沿用 8.4：8.4 的 Structurize 1.0.837 把「our issue tracker」改成「Structurize's issue tracker」。公共树那份是 8.3 及以前的「我们的」。"
+   }
+  }
+ }
+}

@@ -460,8 +460,8 @@
   "jukebox_song.the_bumblezone.radiance_renren": "RenRen - 光耀",
   "jukebox_song.the_bumblezone.life_renren": "RenRen - 生命",
   "jukebox_song.the_bumblezone.a_last_first_last": "普恩普德勒 - 最后的第一个最后",
-  "jukebox_song.the_bumblezone.drowning_in_despair": "潘普德勒 - 沉溺于绝望",
-  "jukebox_song.the_bumblezone.beenna_box": "彭普德勒 - 蜂盒",
+  "jukebox_song.the_bumblezone.drowning_in_despair": "普恩普德勒 - 沉溺于绝望",
+  "jukebox_song.the_bumblezone.beenna_box": "普恩普德勒 - 蜂盒",
   "entity.the_bumblezone.rootmin": "根虫",
   "entity.the_bumblezone.variant_bee": "蜜蜂变种",
   "entity.the_bumblezone.honey_slime": "蜂蜜史莱姆",
@@ -1800,5 +1800,8 @@
   "item.the_bumblezone.music_disc_string_like_a_bee": "音乐唱片",
   "the_bumblezone.music_disc_hive_speed_beepop.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的Hive-Speed Beepop。",
   "the_bumblezone.music_disc_perzzona_hive.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的Perzzona Hive。",
-  "the_bumblezone.music_disc_string_like_a_bee.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的String like a Bee。"
+  "the_bumblezone.music_disc_string_like_a_bee.description": "如果你仔细听，你仍然可以听到一群愤怒的蜜蜂的嗡嗡声…这张稀有的音乐唱片可以从流浪商人或某些蜜蜂领域结构中获得！这首歌是Punpudle的String like a Bee。",
+  "jukebox_song.the_bumblezone.hive_speed_beepop": "普恩普德勒 - 蜂巢极速比波普",
+  "jukebox_song.the_bumblezone.perzzona_hive": "普恩普德勒 - 蜂格蜂巢",
+  "jukebox_song.the_bumblezone.string_like_a_bee": "普恩普德勒 - 弦如蜜蜂"
 }
