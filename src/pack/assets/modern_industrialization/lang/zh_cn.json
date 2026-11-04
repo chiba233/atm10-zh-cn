@@ -1887,5 +1887,11 @@
   "modern_industrialization.configuration.multiblockTooltipOverlay": "多方块提示叠加层",
   "modern_industrialization.configuration.multiblockTooltipOverlay.tooltip": "看向多方块结构的全息投影时，显示方块信息。",
   "text.modern_industrialization.AttributeInfiniteDamage.desc": "造成实际上无限的伤害。",
-  "text.modern_industrialization.AttributeQuantumArmor.desc": "有几率完全抵消所有伤害。穿戴整套时，受到的所有伤害都会被抵消。"
+  "text.modern_industrialization.AttributeQuantumArmor.desc": "有几率完全抵消所有伤害。穿戴整套时，受到的所有伤害都会被抵消。",
+  "block.modern_industrialization.auto_empowerer": "自动充能台",
+  "block.modern_industrialization.auto_fermenting_press": "自动发酵压榨机",
+  "block.modern_industrialization.auto_reconstructor": "自动原子再构机",
+  "rei_categories.modern_industrialization.auto_empowerer": "自动充能台",
+  "rei_categories.modern_industrialization.auto_fermenting_press": "自动发酵压榨机",
+  "rei_categories.modern_industrialization.auto_reconstructor": "自动原子再构机"
 }
