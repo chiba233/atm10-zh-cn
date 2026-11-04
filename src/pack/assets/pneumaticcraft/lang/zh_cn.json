@@ -2278,5 +2278,8 @@
   "block.pneumaticcraft.fake_ice": "隐形冰",
   "block.pneumaticcraft.gasoline": "汽油",
   "block.pneumaticcraft.kerosene_lamp_light": "煤油灯光源",
-  "block.pneumaticcraft.memory_essence": "记忆精华"
+  "block.pneumaticcraft.memory_essence": "记忆精华",
+  "pneumaticcraft.armor.gui.misc.forge_energy": "FE 能量",
+  "pneumaticcraft.entityTracker.label.main": "主",
+  "pneumaticcraft.entityTracker.label.stopped": "已停止"
 }
