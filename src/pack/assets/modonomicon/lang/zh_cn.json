@@ -272,5 +272,21 @@
   "tooltip.modonomicon.condition.advancement": "需要进度：%s",
   "tooltip.modonomicon.fluid.amount": "%s mB",
   "tooltip.modonomicon.fluid.amount_and_capacity": "%s / %s mB",
-  "book.modonomicon.demo.features.recipe.smithing_single.text": "只含一个配方和一些文字的锻造配方页。"
+  "book.modonomicon.demo.features.recipe.smithing_single.text": "只含一个配方和一些文字的锻造配方页。",
+  "book.modonomicon.demo.features.file_pages.name": "文件页",
+  "book.modonomicon.demo.features.file_pages.description": "展示文件页的条目：覆盖、增加、删除单个页面。",
+  "book.modonomicon.demo.features.file_pages.anchored.title": "将被删除（锚点）",
+  "book.modonomicon.demo.features.file_pages.anchored.text": "这一页会被文件页 `20_remove_by_anchor.json` 删掉。\n如果文件页生效，你就永远看不到这段文字。\n",
+  "book.modonomicon.demo.features.file_pages.indexed.title": "将被删除（序号）",
+  "book.modonomicon.demo.features.file_pages.indexed.text": "这一页会被文件页 `10_remove_by_index.json` 删掉。\n如果文件页生效，你就永远看不到这段文字。\n",
+  "book.modonomicon.demo.features.file_pages.removed.title": "将被删除（ID）",
+  "book.modonomicon.demo.features.file_pages.removed.text": "这一页会被文件页 `30_remove_by_id.json` 删掉。\n如果文件页生效，你就永远看不到这段文字。\n",
+  "book.modonomicon.demo.features.file_pages.replaced.title": "将被替换",
+  "book.modonomicon.demo.features.file_pages.replaced.text": "这一页会被文件页 `40_override_by_id.json` 替换。\n如果文件页生效，你读到的就是替换后的内容，而不是这段。\n",
+  "book.modonomicon.demo.features.file_pages.replacement.title": "替换页",
+  "book.modonomicon.demo.features.file_pages.replacement.text": "这段文字来自文件页 `40_override_by_id.json`， \\\n它替换了 id 为 `replaced` 的原页面。\n",
+  "book.modonomicon.demo.features.file_pages.appended.title": "追加的页面",
+  "book.modonomicon.demo.features.file_pages.appended.text": "这一页由文件页 `50_append_extra.json` 加进来。 \\\n它没有指定目标页，所以追加在条目末尾。\n",
+  "book.modonomicon.demo.features.file_pages.staying.title": "保留的页面",
+  "book.modonomicon.demo.features.file_pages.staying.text": "没有任何文件页指向这一页，所以它留着。\n它的 `load_condition` 通过（已加载模组：modonomicon）。\n"
 }
