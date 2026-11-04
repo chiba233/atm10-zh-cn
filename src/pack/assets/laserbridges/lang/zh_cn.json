@@ -7,5 +7,7 @@
   "block.laserbridges.laser_block_powered": "激光方块",
   "block.laserbridges.laser_fence_powered": "激光方块",
   "block.laserbridges.laser_attached_receiver": "激光接收器",
-  "block.laserbridges.laser_attached_receiver_fence": "激光栅栏接收器"
+  "block.laserbridges.laser_attached_receiver_fence": "激光栅栏接收器",
+  "block.laserbridges.laser_source_fullblock": "激光源（完整方块）",
+  "block.laserbridges.laser_fence_source_fullblock": "激光栅栏源（完整方块）"
 }
