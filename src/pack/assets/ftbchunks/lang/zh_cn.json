@@ -355,5 +355,10 @@
   "ftbchunks.claim_mode.circle": "圆形圈地",
   "ftbchunks.fps": "FPS：%d",
   "minimap.info.ftbchunks.fps.title": "FPS",
-  "ftbchunks.commands.is_force_loaded": "强制加载：%s"
+  "ftbchunks.commands.is_force_loaded": "强制加载：%s",
+  "ftbchunks.config.server.nether_portal_creation": "下界传送门创建",
+  "ftbchunks.config.server.nether_portal_creation.tooltip": "原版在别的队伍认领的区块里为玩家创建下界传送门时怎么做。\nno_portal：允许玩家传送，但不创建传送门结构\nfailure：完全阻止传送\nallow：照常创建传送门",
+  "ftbchunks.nether_portal.failure": "无法在这里传送：远程传送门的创建被阻止了！",
+  "ftbchunks.nether_portal.no_portal": "允许传送，但不创建传送门",
+  "ftbchunks.admin_bypass_reminder": "提醒：FTB 区块的管理员绕过保护当前已开启。\n用 '/ftbchunks admin bypass_protection' 可以开关它。"
 }
