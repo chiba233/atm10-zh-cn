@@ -1,5 +1,17 @@
 # Changelog
 
+## R30
+
+### 其他修复
+
+| 哪里 | 之前 | 现在 |
+|---|---|---|
+| **AE2扩展** 的 ME真空接口，按 G 打开的指南页 | 整页英文 | 中文 |
+
+### 致谢
+
+感谢 **[lxt254103](https://github.com/lxt254103)** 的反馈：[#71](https://github.com/chiba233/atm10-zh-cn/issues/71)。
+
 ## R29
 
 ### 支持 All the Mods 10 **8.5**
