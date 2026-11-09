@@ -1047,6 +1047,10 @@
   ],
   "src": "assets/extendedae/ae2guide/epp_intro/upgrade_items.md"
  },
+ "assets/extendedae/ae2guide/_zh_cn/epp_intro/vacuum_interface.md": {
+  "sha1": "d4cfbbe795a64a29b6201fff7ae7aec25064aac1",
+  "src": "assets/extendedae/ae2guide/epp_intro/vacuum_interface.md"
+ },
  "assets/extendedae/ae2guide/_zh_cn/epp_intro/void_cell.md": {
   "sha1": "0cda762626e7a483ceb2285d8dba8d9adaf107e0",
   "equivalent_sha1": [
