@@ -2,5 +2,8 @@
   "gui.sophisticatedcore.settings.buttons.z_offset": "深度",
   "gui.sophisticatedcore.settings.buttons.z_offset_detail": "凸出 = 左键\n凹入 = 右键",
   "gui.sophisticatedcore.upgrades.tank.contents_tooltip": "%s mB / 共 %s mB",
-  "gui.sophisticatedcore.upgrades.battery.contents_tooltip": "%s FE / 共 %s FE"
+  "gui.sophisticatedcore.upgrades.battery.contents_tooltip": "%s FE / 共 %s FE",
+  "item.sophisticatedcore.storage.tooltip.fluid_xp": "%s级经验 %s",
+  "item.sophisticatedcore.storage.tooltip.fluid_with_capacity": "%s / %s mB %s",
+  "item.sophisticatedcore.storage.tooltip.fluid_xp_with_capacity": "%s / %s级经验 %s"
 }
