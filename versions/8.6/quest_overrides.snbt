@@ -78,4 +78,20 @@
 		"{image:atm:textures/questpics/soul_lava_process.png width:100 height:100 align:center}"
 	]
 	quest.459F6257FB16AC47.quest_desc: ["最后一环让命血祭坛完整。每一族符文都有了它的最高位置。\\n\\n你起初只放下一个方块的祭坛，如今成了一座大教堂。"]
+	quest.5F8B53354BCA4474.title: "魔法回收心得"
+	quest.5F8B53354BCA4474.quest_desc: ["本整合包禁用了回收书。提交它的合成材料，即可解锁这项回收进度及其原本的奖励。提交的物品会被消耗。已经拿过这项进度的话，再次领取不会再给进度奖励。任务进度与队伍共享，奖励每个玩家都要各自领取。"]
+	quest.E6861E48F2134892.title: "回收工心得"
+	quest.E6861E48F2134892.quest_desc: ["本整合包禁用了回收书。提交它的合成材料，即可解锁这项回收进度及其原本的奖励。提交的物品会被消耗。已经拿过这项进度的话，再次领取不会再给进度奖励。任务进度与队伍共享，奖励每个玩家都要各自领取。"]
+	quest.00CD26939D0B4C1A.title: "回收大师心得"
+	quest.00CD26939D0B4C1A.quest_desc: ["本整合包禁用了回收书。提交它的合成材料，即可解锁这项回收进度及其原本的奖励。提交的物品会被消耗。已经拿过这项进度的话，再次领取不会再给进度奖励。任务进度与队伍共享，奖励每个玩家都要各自领取。"]
+	reward_table.00E1FAFD0EF07752.title: "现代工业化：蒸汽材料"
+	reward_table.0F18B2B15BE4FF2B.title: "现代工业化：蒸汽时代奖励"
+	reward_table.2B3CE3172F836885.title: "现代工业化：终局组件"
+	reward_table.3602F483568B92BA.title: "通用：混合奖励"
+	reward_table.38EA3D35FF94DD47.title: "现代工业化：基础电动组件"
+	reward_table.3EFA2A65D70FADCC.title: "奥瑞科技：机器插件"
+	reward_table.5F919CCD30D9E7F6.title: "现代工业化：进阶电动组件"
+	reward_table.639509C7B28C90DF.title: "旧版：传说奖励"
+	reward_table.677C7D01E9C0064B.title: "现代工业化：数字组件"
+	reward_table.74447919FD89521E.title: "现代工业化：涡轮材料"
 }
