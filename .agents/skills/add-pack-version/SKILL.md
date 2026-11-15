@@ -84,6 +84,8 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 - 新版 jar：`versions/db/<版本>/jars.json` 入库后，用 `fetch_one_jar.py <版本> <文件名> <目录>` 取。装好的整合包确实是这一版时，才能直接读它的 `mods/`。
 - 旧版 jar：`fetch_one_jar.py <上一版> <文件名> <目录>`。
 
+本包的译文不只在公共层，还散在各版本的覆盖层里：`versions/*/quest_overrides.snbt`、`versions/*/pack_overrides.json` 的 `lang`、`src/pack_overrides/*/`。求出缺口后、动手译之前，把缺口里的键在**所有版本**的这几处扫一遍。已经有译文的就照抄，别另译一份。扫描器先拿一个已知在覆盖层里的键验证能扫到，再看结果。
+
 用 `crash_assistant/modlist.json` 或两版的 `jars.json` 比出新增、移除、升级的模组，然后按下表逐类查：
 
 | 表面 | 怎么查 |
