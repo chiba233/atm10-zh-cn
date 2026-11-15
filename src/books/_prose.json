@@ -735,11 +735,17 @@
  },
  "assets/energymeter/guides/energymeter/guide/_zh_cn/index.md": {
   "sha1": "49a8e290c6b21d40696a9223c7d6bbfe9dbe9136",
-  "src": "assets/energymeter/guides/energymeter/guide/index.md"
+  "src": "assets/energymeter/guides/energymeter/guide/index.md",
+  "variants": {
+   "391515c94edfe524a2647758e79844e2dcf5019d": "books-8.5"
+  }
  },
  "assets/energymeter/guides/energymeter/guide/_zh_cn/interface.md": {
   "sha1": "5bcc1acfedb2187cfbc71a906503093891cb714d",
-  "src": "assets/energymeter/guides/energymeter/guide/interface.md"
+  "src": "assets/energymeter/guides/energymeter/guide/interface.md",
+  "variants": {
+   "bc4791510fa812be23539f0b445f89d98e3bd424": "books-8.5"
+  }
  },
  "assets/expandedae/ae2guide/_zh_cn/cards.md": {
   "sha1": "8cfbab57d048a6ad7ca6a294a5a68699353d8b77",
@@ -1178,11 +1184,17 @@
  },
  "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/computercraft.md": {
   "sha1": "f85a51c422a8fd209d0653b857da2e9a0aac702c",
-  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/computercraft.md"
+  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/computercraft.md",
+  "variants": {
+   "5269104c07f7aed327303e25ef49a99ed9e9e17a": "books-8.6"
+  }
  },
  "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/index.md": {
   "sha1": "f052d3b466ccfa2ad4da5aed327e58109982c9a7",
-  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/index.md"
+  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/index.md",
+  "variants": {
+   "c814023f299be4d5e0fc0e160f36b6a8834d6ee8": "books-8.6"
+  }
  },
  "assets/megacells/ae2guide/_zh_cn/bulk_cell.md": {
   "sha1": "daccec61caf782a0f65aff8cf3e119b2ec9af4ca",
