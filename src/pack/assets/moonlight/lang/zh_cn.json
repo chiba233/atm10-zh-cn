@@ -1857,5 +1857,6 @@
   "moonlight.configuration.config_screen.favourite_mods": "收藏的模组",
   "moonlight.configuration.config_screen.favourite_mods.description": "置顶在模组界面最上方的模组。点模组磁贴上的星标即可添加或移除",
   "moonlight.configuration.config_screen.mod_list_descending": "模组列表倒序",
-  "moonlight.configuration.config_screen.mod_list_descending.description": "模组界面按 Z 到 A 排序"
+  "moonlight.configuration.config_screen.mod_list_descending.description": "模组界面按 Z 到 A 排序",
+  "gui.moonlight.config.general": "常规"
 }
