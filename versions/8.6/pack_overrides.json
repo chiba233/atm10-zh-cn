@@ -99,6 +99,50 @@
     "value": "渲染蓝图“%s”时发生了无法恢复的错误。如果您不介意，请将 latest.log 提交到 Structurize 的问题追踪器。谢谢！",
     "why": "沿用 8.4、8.5：8.4 的 Structurize 1.0.837 把「our issue tracker」改成「Structurize's issue tracker」。公共树那份是 8.3 及以前的「我们的」。"
    }
+  },
+  "fancymenu": {
+   "fancymenu.overlay.menu_bar.customization.settings.custom_window_title.tooltip": {
+    "value": "设置一个自定义窗口标题，用它来替换\n默认的“Minecraft 1.X.X”标题。\n\n支持占位符。占位符的值变化时，\n标题会自动更新。",
+    "why": "8.6 的 FancyMenu 3.10.0 改了这条英文：补了一段「支持占位符，值变化时标题自动更新」。公共树那份是 8.5 及以前的说法。"
+   },
+   "fancymenu.placeholders.negate_number.desc": {
+    "value": "把给定数字变成负数返回。\n如果给定数字本来就是负数或零，就原样返回。",
+    "why": "8.6 的 FancyMenu 3.10.0 改了这条英文：从「取相反数」改成「一律返回负数，负数和零原样返回」。公共树那份是 8.5 及以前的说法。"
+   },
+   "fancymenu.placeholders.video_background_paused_state.desc": {
+    "value": "按标识符返回 Video 菜单背景的暂停状态。\n如果背景已暂停，则返回 'true'，否则返回 'false'。\n\n要获取背景的标识符，右键编辑器背景，\n然后点“复制背景标识符”。",
+    "why": "8.6 的 FancyMenu 3.10.0 改了这条英文：把 element 改成 background。公共树那份是 8.5 及以前的说法。"
+   }
+  },
+  "logisticsnetworks": {
+   "gui.logisticsnetworks.node.filter.unfilterable": {
+    "value": "能量和魔源无法过滤",
+    "why": "8.6 的 物流网络 1.18.0 改了这条英文：写明是能量和魔源不能过滤。公共树那份是 8.5 及以前的说法。"
+   },
+   "gui.logisticsnetworks.computer.lnet_invalid_file": {
+    "value": ".lnet 文件无效：%s",
+    "why": "8.6 的 物流网络 1.18.0 改了这条英文：多了一个 %s 参数，带出无效的原因。公共树那份是 8.5 及以前的说法。"
+   }
+  },
+  "rftoolsutility": {
+   "message.rftoolsutility.redstone_receiver.gold": {
+    "value": "右击红石信号发信器或其他红石信号接收器进行链接",
+    "why": "8.6 的 RFTools Utility 7.0.13 改了这条英文：把 Matter Transmitter 改正为 Redstone Transmitter。公共树那份是 8.5 及以前的说法。"
+   }
+  },
+  "sophisticatedstorage": {
+   "item.sophisticatedstorage.pump_upgrade.tooltip": {
+    "value": "在储罐和相邻方块之间泵送流体",
+    "why": "8.6 的 精妙存储 1.6.18 改了这条英文：把「储罐升级」改成「储罐」，储罐方块也能用。公共树那份是 8.5 及以前的说法。"
+   },
+   "item.sophisticatedstorage.xp_pump_upgrade.tooltip": {
+    "value": "在储罐和玩家之间泵送经验",
+    "why": "8.6 的 精妙存储 1.6.18 改了这条英文：把「储罐升级」改成「储罐」，储罐方块也能用。公共树那份是 8.5 及以前的说法。"
+   },
+   "item.sophisticatedstorage.advanced_pump_upgrade.tooltip": {
+    "value": "在储罐和相邻方块之间泵送流体\n适用于手持流体容器和世界中的流体方块\n允许过滤泵送的流体",
+    "why": "8.6 的 精妙存储 1.6.18 改了这条英文：把「储罐升级」改成「储罐」，储罐方块也能用。公共树那份是 8.5 及以前的说法。"
+   }
   }
  }
 }

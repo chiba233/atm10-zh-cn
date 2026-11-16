@@ -1078,6 +1078,38 @@
   ],
   "src": "assets/extendedae/ae2guide/epp_intro/wireless_hub.md"
  },
+ "assets/industrialization_overdrive/guide/_zh_cn/index.md": {
+  "sha1": "51445ff4d4bcb655e082b5e064d4e46829979224",
+  "src": "assets/industrialization_overdrive/guide/index.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/items/items-index.md": {
+  "sha1": "c969d62fc5e05d468471b10b3326244322b6e62c",
+  "src": "assets/industrialization_overdrive/guide/items/items-index.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/items/multiblock_builder.md": {
+  "sha1": "f334e97d5f2748de019361551e28e12e0d037e1b",
+  "src": "assets/industrialization_overdrive/guide/items/multiblock_builder.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/items/upgrade_stacker.md": {
+  "sha1": "0780b5a1f93e139fe6e80d2581315b000a780016",
+  "src": "assets/industrialization_overdrive/guide/items/upgrade_stacker.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/machines/machines-index.md": {
+  "sha1": "15e26254c9c125effdd52e103158711d643359bf",
+  "src": "assets/industrialization_overdrive/guide/machines/machines-index.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/machines/me_hatches.md": {
+  "sha1": "0a802157c06849d49f71e64d24a7b94eb9f8f7a3",
+  "src": "assets/industrialization_overdrive/guide/machines/me_hatches.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/machines/multi_processing_array.md": {
+  "sha1": "fb0ec7ba072a101c484a8041830e9403ade568b2",
+  "src": "assets/industrialization_overdrive/guide/machines/multi_processing_array.md"
+ },
+ "assets/industrialization_overdrive/guide/_zh_cn/machines/pyrolyse_oven.md": {
+  "sha1": "f779d014859515220063a9d113941fa2438574df",
+  "src": "assets/industrialization_overdrive/guide/machines/pyrolyse_oven.md"
+ },
  "assets/little_big_redstone/guide/_zh_cn/floppy_disks.md": {
   "sha1": "72738e7f1c8257cfe2157cf6b0f1ea636065a6aa",
   "src": "assets/little_big_redstone/guide/floppy_disks.md"
@@ -1188,6 +1220,10 @@
   "variants": {
    "5269104c07f7aed327303e25ef49a99ed9e9e17a": "books-8.6"
   }
+ },
+ "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/curios.md": {
+  "sha1": "ecf14742ae2c5e36626f5be4d9598168c2e0b952",
+  "src": "assets/logisticsnetworks/guides/logisticsnetworks/guide/integrations/curios.md"
  },
  "assets/logisticsnetworks/guides/logisticsnetworks/guide/_zh_cn/integrations/index.md": {
   "sha1": "f052d3b466ccfa2ad4da5aed327e58109982c9a7",
