@@ -2,7 +2,7 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""上游英文格式快照生成器 —— 供 check.py 离线做占位符/颜色码安全校验。
+"""上游英文格式快照生成器，供 check.py 离线做占位符/颜色码安全校验。
 
 只快照「本包翻了、且英文原文或译文里含 % 或 §」的键，文件体积可控。
 

@@ -3,15 +3,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 name: CI
 
-# 每个 PR / main push 都跑的**快闸**。
+# 每个 PR 与 main push 都运行的快速检查，不下载 mod jar（那在 build.yml，一次十几分钟）。
 #
-# 仓库里没有出货目录树，所以第一步永远是 assemble.py 从 src/ 现摊。
-# 这里刻意**不下 480 个 mod jar**（那是 Build / Release 的活，一次十几分钟）：
-# 快闸只覆盖不需要读 jar 的部分——
-#   1. 上游漂移：对每个声明过的整合包版本，拿该版官方文件套一遍我们的改动映射。
-#      ATM 改了哪一行，这里立刻红。这是整套多版本结构最要紧的一道闸。
-#   2. 汉化文件本身的硬检查（JSON / 枚举协议值 / 占位符 / 任务书 delta …）。
-# 安装脚本的三系统矩阵在 installer-test.yml，完整打包在 build.yml。
+# 先用 assemble.py 从 src/ 组装出货树，然后：
+#   1. 上游漂移：用每个声明过的整合包版本的官方文件套一遍改动映射，ATM 改了哪一行就失败。
+#   2. 汉化文件检查（JSON、枚举协议值、占位符、任务书 delta 等）。
+# 安装器的三系统测试在 installer-test.yml，完整打包在 build.yml。
 on:
   push:
     branches: [main]
@@ -22,10 +19,9 @@ jobs:
     name: 上游漂移 + 汉化校验
     runs-on: ubuntu-latest
     steps:
-      # 保护清单要跟**上一版**比（清单自己也不许变短），所以要完整历史。
-      # 别改回浅克隆：fetch-depth: 2 只够「一次 push 一笔」——一次推三笔时
-      # github.event.before 就落在克隆之外，PR 的 base.sha 更是随便就在几十笔前。
-      # 那条闸取不到 base 现在会红（见 protect.py 的 base_rev），浅克隆等于直接挂 CI。
+      # 保护清单要和上一版比较，需要完整历史。fetch-depth: 2 只够一次 push 一笔，
+      # 一次推多笔时 github.event.before 不在克隆里，PR 的 base.sha 也可能在几十笔之前，
+      # 取不到 base 时 protect.py 会失败。
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
@@ -34,72 +30,63 @@ jobs:
         with:
           python-version: '3.12'
 
-      # 排在所有事情最前面：src/ 下少一个汉化文件，这里当场红，不用等
-      # 十几分钟的完整构建。这个仓库被删过 1033 个文件，分四笔，全是
-      # 「我觉得这批没用」删的，逐笔回滚过——原委见 scripts/compliance/protect.py。
-      # 先验闸自己会不会红——一道从没被触发过的闸等于没有闸。
-      - name: 保护闸自检
+      # 放在最前面：src/ 少一个文件就立刻失败，不用等完整构建。
+      # 先运行反例测试，确认保护清单检查本身会失败。
+      - name: 保护清单检查的反例测试
         id: g_protect_self
         run: python3 scripts/compliance/test_protect.py
 
-      - name: 保护清单（汉化只许加不许删）
+      - name: 检查保护清单
         id: g_protect
         env:
           PROTECT_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-          # 流水线里 git 用不了 = 两条闸静默关掉，这里必须当失败。
+          # 流水线里 git 不可用必须失败。
           PROTECT_REQUIRE_GIT: '1'
         run: python3 scripts/compliance/protect.py --check
 
-      # 对抗审计（2026-07-28）抓到：这个脚本写完了却从没接进任何流水线 = 假闸。
-      # 它不需要 mod jar，PR 阶段就能跑。dynamic 模块里两条 @ 子串键互为子串时，
-      # String.replace 的遍历顺序不确定，会把长的那条啃掉、翻出半中半英。
-      - name: dynamic 模块的 @ 子串键互不为子串
+      # 不需要 mod jar，PR 阶段就能运行。dynamic 模块里两条 @ 子串键互为子串时，
+      # String.replace 的遍历顺序不确定，长的那条会被部分替换，结果半中半英。
+      - name: 检查 VaultPatcher dynamic 模块的子串键
         id: g_dynsub
         run: python3 scripts/compliance/check_dynamic_substrings.py
 
-      # 保护清单管「文件在不在」，这一条管「内容对不对」。出过「撤回一项汉化只撤了一半」
-      # 「以为改好了其实改的是另一份」这类事故——文件都在，内容已经不是预期的了。
+      # 保护清单检查文件在不在，这一步检查 VaultPatcher 模块内容有没有被改动。
       - name: 模块内容哈希
         id: g_modhash
         run: python3 scripts/compliance/check_module_hashes.py
 
-      # 闸的反例测试：每条都复刻一次真实事故，验它真的会红。写了闸不等于有闸。
-      - name: 闸的反例测试
+      # 每条反例复现一次真实事故，验证检查确实会失败。
+      - name: 检查脚本的反例测试
         id: g_gates
         run: python3 scripts/compliance/test_gates.py
 
-      # 打包白名单决定发版挂哪些包：先验它取不到会红，再对仓库里那份真白名单跑一次。
+      # 打包白名单决定发版包含哪些包：先验证取不到时会失败，再检查仓库里的白名单。
       - name: 打包白名单
         id: g_whitelist
         run: |
           python3 scripts/compliance/test_release_versions.py
           echo "打包、发布的版本：$(python3 scripts/release_versions.py)"
 
-      # 资源树育种公式：反例测试全合成、不读真包也不联网；
-      # 「各版本一致」这条只读几份 versions/db/<版本>/productive_trees.json，
-      # 同样不下 jar。两条都够便宜，放快闸里 PR 阶段就拦。
-      # 扫基线那一步要真 jar，在 build.yml。
+      # 资源树育种公式：反例测试全是合成数据，不读整合包也不联网。「各版本一致」只读
+      # versions/db/<版本>/productive_trees.json。扫描基线要用 jar，在 build.yml。
       - name: 育种公式生成器的反例测试
         id: g_trees
         run: python3 scripts/compliance/test_productive_trees_quest_lang.py
 
-      - name: 育种公式在各版本之间必须一致
+      - name: 比对各版本的育种公式
         id: g_trees_ver
         run: python3 scripts/gen_productive_trees_quest_lang.py --verify-versions
 
-      - name: 从 src/ 摊出货树
+      - name: 从 src/ 组装出货树
         id: g_assemble
         run: python3 scripts/assemble.py
 
-      # 对着**每个版本各自的**官方文件套映射。找不到原文就退出——
-      # 上游改了文案而我们没跟，构建当场失败，而不是发出一个
-      # 「旧上游 + 我们的改动」把人家的修复整个覆盖掉的包。
+      # 用每个版本自己的官方文件套映射，找不到原文就退出：否则发出去的是「旧上游 + 本包改动」，
+      # 上游的修复会被覆盖。
 
-      # ATM10 的某个已发布版本，overrides 内容是不会变的，所以缓存键就用仓库里记的
-      # 那三个指纹——只有我们**有意**改了目标版本时才会失效。
-      # 这一步是为了把 CurseForge（全链唯一不可控的外部依赖）从最高频的那道闸上挪开：
-      # 命中缓存就完全不联网；未命中才下，且下完必须与 versions/<版本>/overrides.sha256
-      # 对得上，否则构建当场红。
+      # 已发布版本的 overrides 不会变，缓存键用仓库里记录的指纹，只有改了目标版本才失效。
+      # 命中缓存就不访问 CurseForge。未命中才下载，下载后必须与 versions/<版本>/overrides.sha256
+      # 一致，否则失败。
       - uses: actions/cache@v6
         with:
           path: build/packsrc
@@ -122,12 +109,10 @@ jobs:
             python3 scripts/gen_vaultpatcher.py "$v" "build/v/$v"
           done
 
-      # 把踩过的雷全部变成硬检查：
-      # JSON 合法性 / 枚举协议值禁翻 / VaultPatcher 主配置 / .gui choice 保持英文 /
-      # 占位符与颜色码 / 任务书 delta 无重复键。逐版本各查一遍。
-      # 这里**故意不设 GATE_STRICT**：上面取整合包用的是 --no-jars，于是要读 jar 才能
-      # 产出的那几样（界面 XML / 蜂名脚本 / 上游格式串快照）在这条流水线里真的不存在，
-      # 设了就是必红。带 jar 的完整生成在 build.yml，GATE_STRICT=1 设在那边。
+      # 逐版本检查：JSON 合法、枚举协议值不译、VaultPatcher 主配置、.gui choice 保持英文、
+      # 占位符与颜色码、任务书 delta 无重复键。
+      # 不设 GATE_STRICT：这里用 --no-jars，界面 XML、蜂名脚本、上游格式串快照这些要读 jar 的
+      # 生成物不存在。完整生成与 GATE_STRICT=1 在 build.yml。
       - name: 汉化文件校验（各版本）
         id: g_check
         run: |
@@ -137,10 +122,9 @@ jobs:
             python3 scripts/check.py "build/v/$v"
           done
 
-      # 任务书的 & 颜色码写错，进游戏整段描述会被红字报错顶掉。这条必须查
-      # 「整合包自带中文 + 我们的覆盖」合并后的结果——错在整合包那份文件里，
-      # 而那份文件我们不出货，只查出货树是看不见的。
-      - name: 任务书 & 颜色码（各版本）
+      # 任务书的 & 颜色码写错，游戏里整段描述会被红字报错替代。要查整合包自带中文与本包覆盖
+      # 合并后的结果，错误可能在整合包的文件里，只查出货树看不到。
+      - name: 检查任务书的 & 颜色码（各版本）
         id: g_quest
         run: |
           set -euo pipefail
@@ -153,41 +137,39 @@ jobs:
         id: g_installer
         run: bash -n installer/install.sh
 
-      # 把这 10 道闸的结果摊在 run 摘要页上。红了直接看是哪一条，不用展开日志往下翻。
-      # 前面某条红了之后，它后面的步骤根本不会跑，outcome 是空的——那也是信息：
-      # 「⬜ 没轮到」与「✅ 过了」必须分得开，否则一眼看去像是全绿。
+      # 在 run 摘要页列出各项检查的结果。某项失败后，后面的步骤不运行，outcome 为空，
+      # 摘要里显示「未运行」，与「通过」区分开。
       #
-      # **写摘要的语句整块兜底**：这套闸是 fail-closed 的，绝不能让一个只用来看的
-      # 功能变成新的失败源。所以放最后、带 if: always()、末尾 `|| true`。
+      # 摘要放在最后，带 if: always() 和 `|| true`，生成摘要出错不影响检查结果。
       - name: 作业摘要
         if: always()
         run: |
           emit() {
             case "$2" in
-              success) m='✅ 通过' ;;
-              failure) m='❌ **红了**' ;;
-              *)       m='⬜ 没轮到' ;;
+              success) m='通过' ;;
+              failure) m='失败' ;;
+              *)       m='未运行' ;;
             esac
             printf '| %s | %s |\n' "$1" "$m"
           }
           {
             echo '## 上游漂移 + 汉化校验'
             echo
-            echo '| 闸 | 结果 |'
+            echo '| 检查 | 结果 |'
             echo '|---|---|'
-            emit '保护闸自检'                 '${{ steps.g_protect_self.outcome }}'
-            emit '保护清单（只许加不许删）'   '${{ steps.g_protect.outcome }}'
-            emit 'dynamic @ 子串键互不为子串' '${{ steps.g_dynsub.outcome }}'
-            emit '模块内容哈希'               '${{ steps.g_modhash.outcome }}'
-            emit '闸的反例测试'               '${{ steps.g_gates.outcome }}'
-            emit '打包白名单'                 '${{ steps.g_whitelist.outcome }}'
-            emit '育种公式生成器的反例测试'   '${{ steps.g_trees.outcome }}'
-            emit '育种公式各版本一致'         '${{ steps.g_trees_ver.outcome }}'
-            emit '从 src/ 摊出货树'           '${{ steps.g_assemble.outcome }}'
-            emit '上游文件漂移检测'           '${{ steps.g_drift.outcome }}'
-            emit '汉化文件校验'               '${{ steps.g_check.outcome }}'
-            emit '任务书 & 颜色码'            '${{ steps.g_quest.outcome }}'
-            emit '安装脚本语法检查'           '${{ steps.g_installer.outcome }}'
+            emit '保护清单检查的反例测试'                 '${{ steps.g_protect_self.outcome }}'
+            emit '检查保护清单'                           '${{ steps.g_protect.outcome }}'
+            emit '检查 VaultPatcher dynamic 模块的子串键' '${{ steps.g_dynsub.outcome }}'
+            emit '模块内容哈希'                           '${{ steps.g_modhash.outcome }}'
+            emit '检查脚本的反例测试'                     '${{ steps.g_gates.outcome }}'
+            emit '打包白名单'                             '${{ steps.g_whitelist.outcome }}'
+            emit '育种公式生成器的反例测试'               '${{ steps.g_trees.outcome }}'
+            emit '比对各版本的育种公式'                   '${{ steps.g_trees_ver.outcome }}'
+            emit '从 src/ 组装出货树'                     '${{ steps.g_assemble.outcome }}'
+            emit '上游文件漂移检测'                       '${{ steps.g_drift.outcome }}'
+            emit '汉化文件校验'                           '${{ steps.g_check.outcome }}'
+            emit '检查任务书的 & 颜色码'                  '${{ steps.g_quest.outcome }}'
+            emit '安装脚本语法检查'                       '${{ steps.g_installer.outcome }}'
             echo
             echo "覆盖的整合包版本：$(ls -d versions/[0-9]* 2>/dev/null | xargs -n1 basename | tr '\n' ' ')"
           } >> "$GITHUB_STEP_SUMMARY" || true

@@ -3,43 +3,34 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""把每个 `KeyMapping(name, …, category)` 的**注册名**与**分类标题**扫出来。
+"""扫描每个 `KeyMapping(name, …, category)` 的注册名与分类标题。
 
-两个字段各有各的用处：
+- 分类是「按键绑定」界面里的分组标题，可能是翻译键（补 lang 即可），也可能是硬编码字面量
+  （`Create`、`Auroras` 等，只能用 VaultPatcher 改常量池）。
+- 注册名是 options.txt 里 `key_<name>` 的 name，不能被翻译改动：改掉一个字，玩家保存的绑定
+  就对不上，该键位静默回到默认值。
 
-- **分类**是「按键绑定」界面里的分组标题。它要么是翻译键（补 lang 就能翻），
-  要么是硬编码字面量（`Create`、`Auroras`…，只能走 VaultPatcher 改常量池）。
-- **注册名**是 options.txt 里 `key_<name>` 的那个 name。**它绝对不能被翻译碰到**：
-  改掉一个字，玩家存的绑定就对不上，该键位静默回默认值。
-
-为什么不能只认 `ldc` 常量
-------------------------
-第一版就是「取构造调用前入栈的字符串常量」。拿 options.txt 的 494 条真值一比：
-只认出 191 个，其中 25 个还是假的（把分类、格式串当成了注册名）。真实代码里名字
-很少当场写死，常见形态：
+只取构造调用前入栈的字符串常量不够：对照 options.txt 的 494 条真值，只认出 191 个，其中 25 个
+是错的（把分类、格式串当成了注册名）。实际代码里名字常见这些形态：
 
     new KeyMapping(NAME_FIELD, …)                 静态字段
     for (AllKeys k : values()) new KeyMapping(k.description, …)
-                                                  枚举实例字段，且字段本身是
-                                                  `"create.keyinfo." + name` 拼出来的
+                                                  枚举实例字段，字段本身由
+                                                  `"create.keyinfo." + name` 拼出
     register("key.foo.bar", "key.categories.x")   helper 方法的形参
     "artifacts.key.%s.%s".formatted(a, b)         运行期格式化
 
-所以这里做的是**真·数据流分析**：按 CFG 逐指令模拟操作数栈（分支处合并、
-`long`/`double` 老实占两格），按方法描述符定位第几个参数，再顺着取值链回溯——
-静态字段查 `ConstantValue` 与 `<clinit>`；枚举顺着 `<clinit>` 的构造实参 →
-`<init>` 的 `putfield` 表达式 → getter 的 `getfield` 串起来，形参代入常量实参；
-字符串拼接（`invokedynamic makeConcat*`、`StringBuilder`、`String.concat`）
-一并求值。
-
-取不到就是取不到，**留空，不猜**，并且把取不到的形态原样打印出来。宁可少报也不能
-报错的名字——上一版正是靠猜把分类当成注册名报了三条假命中。
+所以这里做数据流分析：按 CFG 逐指令模拟操作数栈（分支处合并，`long`/`double` 占两格），按方法
+描述符定位第几个参数，再沿取值链回溯，静态字段查 `ConstantValue` 与 `<clinit>`。枚举沿 `<clinit>`
+的构造实参 → `<init>` 的 `putfield` 表达式 → getter 的 `getfield` 串起来，形参代入常量实参。
+字符串拼接（`invokedynamic makeConcat*`、`StringBuilder`、`String.concat`）一并求值。
+取不到的值留空，不猜测，并打印取不到的形态。
 
 用法:
     python3 scripts/scan_keybinds.py <mods 目录> [输出.json] [--truth options.txt]
 
-`--truth` 拿一份真跑过的 options.txt 当验收标准，直接打印召回率、假名单、
-以及没取到的那些值长什么样。扫描器的数字必须先过这一关才配拿去下结论。
+`--truth` 用一份实际运行过的 options.txt 验收，打印召回率、误报名单和没取到的值的形态。
+扫描结果要先通过这项验收才能使用。
 """
 import json
 import struct
@@ -304,7 +295,7 @@ class Sim:
     """在一个方法体上跑操作数栈模拟，遇到 KeyMapping 构造就回调。
 
     按 CFG 做，不是线性扫：三元表达式那种 `goto` 会让线性扫的栈深度错位，
-    错位之后「第几个参数」全是错的。分支汇合处逐格合并，值不一致就退化成未知——
+    错位之后「第几个参数」全是错的。分支汇合处逐格合并，值不一致就退化成未知，
     宁可未知也不能给一个错的值。
     """
 
@@ -841,7 +832,7 @@ def subst(val, actual, this=None):
 
 
 def resolve(jar, val, depth=0):
-    """把一个栈值化成字符串集合。取不到就返回空集——不猜。"""
+    """把一个栈值化成字符串集合。取不到就返回空集，不猜。"""
     if not isinstance(val, tuple) or not val or depth > MAX_DEPTH:
         return set()
     kind = val[0]
@@ -887,8 +878,8 @@ def resolve(jar, val, depth=0):
 def resolve_member(jar, owner, expr, recv, depth):
     """实例字段 / getter：把接收者可能的每个常量实例代进表达式。
 
-    接收者是具体常量（`AllKeys.TOOLBELT`）就只代那一个；接收者是循环变量
-    （`for (AllKeys k : values())`）则把**全部**常量代一遍——那个 for 循环本来
+    接收者是具体常量（`AllKeys.TOOLBELT`）就只代那一个。接收者是循环变量
+    （`for (AllKeys k : values())`）则把全部常量代一遍，那个 for 循环本来
     就会给每个常量都注册一个键位。
     """
     if expr is None:
@@ -905,14 +896,14 @@ def resolve_member(jar, owner, expr, recv, depth):
 
 
 def atoms(jar, val, depth=0, seen=None):
-    """把 name 表达式里能追到的**全部字符串字面量**收齐。
+    """把 name 表达式里能追到的全部字符串字面量收齐。
 
     这才是安全门控要的东西。最终名字常常要到运行期才拼得出来
     （`"artifacts.key.%s.%s".formatted(…)`），但组成它的那几个字面量是死的、
-    在常量池里躺着的——而 VaultPatcher 改的正是常量池。所以只要我们替换的串
+    在常量池里躺着的，而 VaultPatcher 改的正是常量池。所以只要我们替换的串
     落进这个集合，就一定动到了某个按键注册名，不管最终名字长什么样。
 
-    与 resolve() 的区别：resolve 要求整条链每一环都算得出来，算不出就整体作废；
+    与 resolve() 的区别：resolve 要求整条链每一环都算得出来，算不出就整体作废。
     atoms 只要沿途见到字面量就收，链断了也把已经收到的留下。
     """
     if not isinstance(val, tuple) or not val or depth > MAX_DEPTH:
@@ -944,8 +935,8 @@ def atoms(jar, val, depth=0, seen=None):
         e = jar.field_expr(val[1], val[2])
         if e is None:
             return out
-        # 只把**这个字段**的表达式逐实例代入。绝不能把常量的全部构造实参一锅端：
-        # 那会把整个枚举（连 tooltip 整句）都算成按键名的原子，门控就全是假警报。
+        # 只把这个字段的表达式逐实例代入，不能把常量的全部构造实参都收进来：
+        # 那会把整个枚举（包括 tooltip 整句）算成按键名的片段，检查会全是误报。
         insts = narrow(jar, val[1], val[4])
         for a in (insts.values() if insts else [None]):
             out |= atoms(jar, e if a is None else subst(e, a), depth + 1, seen)
@@ -1108,9 +1099,9 @@ def main(mods_dir, out_path=None, truth=None):
                           'categories': sorted(ct), 'name_atoms': sorted(at)})
     keys = sorted(c for c in cats if c.startswith('key.'))
     lits = sorted(c for c in cats if not c.startswith('key.'))
-    print('按键分类 %d 个（翻译键 %d、硬编码字面量 %d）；解出的完整注册名 %d 个'
+    print('按键分类 %d 个（翻译键 %d、硬编码字面量 %d），解出的完整注册名 %d 个'
           % (len(cats), len(keys), len(lits), len(names)))
-    print('KeyMapping 构造点 %d 处，其中 %d 处能追到字符串原子（%.1f%%）；原子共 %d 个'
+    print('KeyMapping 构造点 %d 处，其中 %d 处能追到字符串片段（%.1f%%），片段共 %d 个'
           % (covered[1], covered[0], 100.0 * covered[0] / max(1, covered[1]),
              len(name_atoms)))
     if shapes:
@@ -1135,10 +1126,7 @@ def main(mods_dir, out_path=None, truth=None):
 
 
 def report(names, options_txt):
-    """拿一份真跑过的 options.txt 当真值：召回率与假名字都摆出来。
-
-    报数之前必须过这一关。扫描器自己说扫到多少个是不作数的。
-    """
+    """用一份实际运行过的 options.txt 当真值，打印召回率与误报。报数之前必须先通过这项验收。"""
     truth = set()
     for line in Path(options_txt).read_text(encoding='utf-8').splitlines():
         if line.startswith('key_'):
@@ -1146,7 +1134,7 @@ def report(names, options_txt):
     got = set(names)
     miss, extra = sorted(truth - got), sorted(got - truth)
     print('── 拿 %s 验收 ──' % options_txt)
-    print('  真值 %d 条；命中 %d（召回 %.1f%%）；漏 %d；不在真值里的 %d'
+    print('  真值 %d 条，命中 %d（召回 %.1f%%），漏 %d，不在真值里的 %d'
           % (len(truth), len(truth & got),
              100.0 * len(truth & got) / max(1, len(truth)), len(miss), len(extra)))
     for label, lst in (('漏', miss), ('多', extra)):

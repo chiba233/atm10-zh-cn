@@ -53,7 +53,7 @@ def sha1(b):
 
 
 def walk(obj, pre=()):
-    """产出 (JSON 路径, 字符串值)。路径是 ('pages', 0, 'text') 这样的**元组**——
+    """产出 (JSON 路径, 字符串值)。路径是 ('pages', 0, 'text') 这样的元组，
     不能用 `.pages[0].text` 那种拼接串：Oracle Index 的 `_meta.json` 里
     键名本身就带点（`addons.mdx`），拼出来的路径没法还原。"""
     if isinstance(obj, dict):
@@ -79,7 +79,7 @@ def signature(o):
 def pair(en, zh, pre=()):
     """同时走中英文两棵树，产出 (英文路径, 英文串, 中文串)。
 
-    列表按**形状**对齐（difflib），所以上游在中间插一页不会让后面的译文整体错位——
+    列表按形状对齐（difflib），所以上游在中间插一页不会让后面的译文整体错位，
     这正是 pneumaticcraft 的 drone.json 踩到的坑：上游在 pages[7] 插了一页，
     按下标硬对会把第 8 页的中文糊到第 7 页上。
 
@@ -109,7 +109,7 @@ def pair(en, zh, pre=()):
 
 
 def get_at(obj, path):
-    """按 walk 产出的路径取值；取不到返回 None。"""
+    """按 walk 产出的路径取值。取不到返回 None。"""
     cur = obj
     for step in path:
         try:

@@ -3,52 +3,36 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""为某个 ATM10 版本建 VaultPatcher 的**专属**数据库。
+"""为某个 ATM10 版本建 VaultPatcher 的专属数据库。
 
-## 为什么要一版一份
+VaultPatcher 按字符串精确匹配替换硬编码文本，匹配不上就不替换，玩家看到英文，日志里也没有记录。
+模组在整合包版本之间升级会造成两类失效：
 
-VaultPatcher 靠字符串精确匹配替换硬编码文本，而且失配是**静默**的——对不上就是不替换，
-玩家看到英文，日志一个字都没有。模组在整合包版本之间升级会带来两类破坏：
+1. 类改名或移动位置：整块补丁失效。7.2 里有 6 处（`ToolbarPanel` 变成内部类，RFTools 的
+   `GuiTools` 移进了 mcjtylib 等）。
+2. 文案改写：单条 key 失效，例如 industrialization_overdrive 1.11.2→1.12.1。
 
-1. **类改名 / 搬家**：整块补丁失效。实测 7.2 里就有 6 处
-   （`ToolbarPanel` 变成了内部类、RFTools 的 `GuiTools` 搬进了 mcjtylib……）
-2. **文案改写**：单条 key 失效。industrialization_overdrive 1.11.2→1.12.1 就换了措辞。
+所以按该版本实际的 jar 逐条核对，产出这一版专属的数据：
 
-所以不能拿一份模块文件同时发给 7.0/7.1/7.2 —— 那等于对老版本闭着眼睛发。
-这里对着**该版本真实的 jar** 逐条核验，产出这一版专属的：
-
-- 每个 target_class 在这一版的**实际位置**（搬了家就自动找回来）
+- 每个 target_class 在这一版的实际位置（移动过的自动找回）
 - 每条 key 在这一版是否存在（exact / substring / missing）
-- 每个模块命中的 jar **精确文件名**（带版本号，作为门控与追溯依据）
+- 每个模块命中的 jar 的完整文件名（带版本号，用于门控与追溯）
 
-打包时按这份数据库生成版本专属的模块：搬了家的类改成该版真实位置、
-这一版不存在的 key 剔掉，并附覆盖率报告。
+打包时据此生成版本专属的模块：移动过的类改成实际位置，不存在的 key 剔除，并附覆盖率报告。
 
-## 类搬家了怎么自动找回
+类找回：先按声明的全限定名找，找不到就在全部 jar 里找同简单类名的候选，取常量池里命中本块 key
+最多的那个。命中 0 条时报「找不到」，不把补丁打到别的类上。
 
-先按声明的全限定名找；找不到就在全部 jar 里找**同简单类名**的候选，
-取常量池里命中本块 key 最多的那个。命中 0 条的不算数——宁可报「找不到」，
-也不要张冠李戴把补丁打到别的类上。
+`jars.json` 记录每个 jar 的 sha256，有 `mods.provenance.json` 时一并记录 CurseForge 的 `fileID`
+（不可变，重传会换新 ID）。目录里有 manifest 之外的 jar 就拒绝建库。
 
-## 证据必须锚到字节
-
-这份库的全部合法性来自「对着该版本真实的 jar 逐条核验」。所以 `jars.json` 记的是
-每个 jar 的 **sha256**，能拿到 `mods.provenance.json` 时还会一并记下 CurseForge 的
-`fileID`（不可变，重传会换新 ID）。目录里出现 manifest 之外的 jar 就直接拒绝建库。
-
-## 加了新模块之后怎么补老版本
-
-`gen_vaultpatcher.py` 要求**每个模块在每一版都有记录**——没有记录就等于没对着那一版的
-jar 核过，此时把模块发下去是闭着眼睛发。所以新增一个带 target_class 的模块，五个版本
-的库全都过期了。
-
-但老版本的 `jars.json` 是**冻结的字节基线**，不该因为加了个模块就整份重写。
-`--only-missing` 就是为此：只算库里还没有的那几个模块，并入现有库；`jars.json`
-一个字不改，改为拿它**核对**下载回来的这批 jar（`verify`，对不上当场红）。
+新增一个带 target_class 的模块时，所有版本的库都会过期（`gen_vaultpatcher.py` 要求每个模块在每一版
+都有记录）。老版本的 `jars.json` 是固定的字节基线，不重写：`--only-missing` 只计算库里还没有的模块，
+并入现有库，同时用 `jars.json` 核对下载的 jar（`verify`，对不上就失败）。
 
 用法:
     python3 scripts/build_version_db.py 7.1 <该版本的mods目录>
-    python3 scripts/build_version_db.py 7.1 <mods目录> --verify        # 只核字节
+    python3 scripts/build_version_db.py 7.1 <mods目录> --verify        # 只核对字节
     python3 scripts/build_version_db.py 7.1 <mods目录> --only-missing  # 只补缺的模块
 """
 import hashlib
@@ -75,9 +59,8 @@ def build_index(mods_dir):
         try:
             with zipfile.ZipFile(j) as z:
                 names = [n for n in z.namelist() if n.endswith('.class')]
-                # 库常常以 jar-in-jar 的形式塞在 META-INF/jarjar/ 里（NeoForge 的常规做法）。
-                # 只扫外层会漏掉一整批类——例如 Create 的配置界面 catnip 就在
-                # ponder-*.jar 里面，不往里挖就会把我们指向它的模块判成「目标类找不到」。
+                # 库常以 jar-in-jar 形式放在 META-INF/jarjar/ 里（NeoForge 的常规做法），只扫外层会漏掉
+                # 一批类。例如 Create 配置界面的 catnip 在 ponder-*.jar 里面，不往里找会判成目标类找不到。
                 for inner in [n for n in z.namelist()
                               if n.startswith('META-INF/jarjar/') and n.endswith('.jar')]:
                     try:
@@ -91,8 +74,8 @@ def build_index(mods_dir):
             by_path.setdefault(n, j)
             last = n.rsplit('/', 1)[-1][:-6]
             by_simple[last].append(n)
-            # 内部类要同时按最内层名建索引：声明写的是 `….item.Builder`，
-            # 而它在新版里是 `….item.ItemDescription$Builder`，只按整段名查会漏。
+            # 内部类同时按最内层名建索引：声明写的是 `….item.Builder`，
+            # 新版里是 `….item.ItemDescription$Builder`，只按完整名查会漏。
             if '$' in last:
                 by_simple[last.rsplit('$', 1)[-1]].append(n)
     return by_path, by_simple
@@ -120,7 +103,7 @@ def pool_of(by_path, cls_path, cache):
 
 
 def resolve(declared, keys, by_path, by_simple, cache):
-    """声明的类在这一版的实际位置；搬家了就按 key 命中数找回"""
+    """声明的类在这一版的实际位置，移动过的按 key 命中数找回"""
     p = declared.replace('.', '/') + '.class'
     if p in by_path:
         jar, pool = pool_of(by_path, p, cache)
@@ -141,14 +124,11 @@ def resolve(declared, keys, by_path, by_simple, cache):
 
 
 def jar_records(mods_dir):
-    """这一版**实际被核验的那批 jar** 的字节指纹。
+    """这一版实际核对过的 jar 的字节指纹。
 
-    只记文件名是记了个寂寞：CurseForge 同名重传、本机换过的 jar、下坏的文件，
-    记录都长得一模一样，而整套 vaultpatcher.json 的合法性全建立在
-    「对着该版真实的 jar 逐条核验」这句话上。没有哈希，这句话没有证据。
-
-    （这不是假想：7.2 的库原本就是拿本机实例建的，里面躺着自制的 ysm 桩 mod
-    和换过版本的 cc-tweaked，只看文件名完全看不出来。）
+    只记文件名的话，CurseForge 同名重传、换过版本的 jar、下载损坏的文件，记录都一样，
+    无法证明库是对着该版真实的 jar 核对出来的。例如用开发机上的实例建库时，里面有自制的
+    ysm 桩 mod 和换过版本的 cc-tweaked，只看文件名看不出来。
     """
     out = {}
     for j in sorted(Path(mods_dir).glob('*.jar')):
@@ -173,14 +153,12 @@ def write_jars(ver, mods_dir):
     recs = jar_records(mods_dir)
     meta = load_provenance(mods_dir)
     prov = meta.get('jars') or {}
-    # 少下的 jar 必须**逐个被显式登记**才放行。放宽门控是不行的：残缺的集合会让
-    # vaultpatcher.json 里的 "missing" 变成假判定——不是这一版没有这个 key，
-    # 只是我们没看到那个 jar。登记之后这条边界摆在明面上。
-    # 判据与 fetch_pack 共用同一个函数：两处各写一遍迟早会漂。
+    # 少下载的 jar 必须逐个登记才放行：残缺的集合会让 vaultpatcher.json 里的 "missing"
+    # 分不清是这一版没有这个 key，还是没下载到 jar。判断与 fetch_pack 共用同一个函数。
     undeclared = unregistered_missing(ver, meta.get('missing_file_ids') or [])
     if undeclared:
         sys.exit('❌ 这份 %s 的 jar 没下全（%s/%s），且以下 fileID 没有登记原因：%s\n'
-                 '   限速就重跑 fetch_pack.py 补齐；真的 404 了就写进 '
+                 '   限速就重新运行 fetch_pack.py 补齐。确实 404 的就写进 '
                  'versions/%s/unobtainable.json 说明情况。\n'
                  '   拿残缺集合建库会得出「这一版没有这个 key」的假结论。'
                  % (ver, meta.get('got'), meta.get('expected'), undeclared[:8], ver))
@@ -193,7 +171,7 @@ def write_jars(ver, mods_dir):
         if not pr:
             continue
         if pr.get('sha256') != r['sha256']:
-            sys.exit('❌ %s 的字节与下载时记的对不上——这份 jar 被动过' % name)
+            sys.exit('❌ %s 的字节与下载时记录的不一致，这份 jar 被改过' % name)
         r['projectID'], r['fileID'] = pr.get('projectID'), pr.get('fileID')
     if stray:
         sys.exit('❌ %d 个 jar 不在这一版的官方 manifest 里，这不是一份干净的 %s：\n   %s\n'
@@ -214,7 +192,7 @@ def write_jars(ver, mods_dir):
 
 
 def verify(ver, mods_dir):
-    """拿仓库里记的哈希核对一个 mods 目录。缓存命中也要核——缓存同样可能是坏的。"""
+    """用仓库里记录的哈希核对一个 mods 目录。缓存命中也要核对，缓存同样可能是坏的。"""
     f = ROOT / 'versions' / 'db' / ver / 'jars.json'
     if not f.is_file():
         sys.exit('❌ versions/db/%s/jars.json 不存在' % ver)
@@ -247,14 +225,14 @@ def main(ver, mods_dir, only_missing=False):
             sys.exit('❌ versions/db/%s/vaultpatcher.json 不存在，没有可增补的库。\n'
                      '   去掉 --only-missing 整份重建。' % ver)
         db = json.loads(f.read_text(encoding='utf-8'))
-        # 这一版的字节基线是冻结的：增补不重写 jars.json，改为拿它核对这批 jar。
-        # 少下 / 下坏 / 拿错版本都会当场红，而不是悄悄写出一份「这一版没有这个 key」。
+        # 这一版的字节基线是固定的：增补时不重写 jars.json，而是用它核对这批 jar，
+        # 少下、下坏、下错版本都会失败。
         verify(ver, mods_dir)
         todo = [p for p in todo if p.name not in db]
         if not todo:
             print('%s: 库里已有全部 %d 个模块，无需增补' % (ver, len(db)))
             return
-        print('%s: 增补 %d 个模块 —— %s'
+        print('%s: 增补 %d 个模块：%s'
               % (ver, len(todo), '、'.join(p.name for p in todo)))
     else:
         write_jars(ver, mods_dir)
@@ -268,11 +246,10 @@ def main(ver, mods_dir, only_missing=False):
         except Exception as e:
             sys.exit('❌ %s 解析失败: %s' % (f.name, e))
         rec = {'blocks': []}
-        # dynamic 模块（模块头 "dynamic": true）替换的是**运行时**才拼出来的字符串
-        # ——比如 MineColonies 的风格名来自 jar 内 blueprints/*/pack.json，类常量池里
-        # 根本没有它。拿「常量匹配」去核这类 key，结果必然是一片 missing，覆盖率被拖垮，
-        # 打包时还会把它们当「这一版不存在」剔掉，等于这个模块白写。
-        # 所以只核**类在不在**（类没了照样要红），key 一律记 dynamic，不计入覆盖率。
+        # dynamic 模块（模块头 "dynamic": true）替换的是运行时拼出的字符串，例如 MineColonies 的
+        # 风格名来自 jar 内 blueprints/*/pack.json，类常量池里没有。按常量匹配核对会全是 missing，
+        # 打包时还会被当成不存在剔掉。所以只核对类是否存在（类没了仍要失败），key 一律记为 dynamic，
+        # 不计入覆盖率。
         dyn = any(isinstance(b, dict) and b.get('dynamic') for b in blocks)
         for bi, blk in enumerate(blocks):
             if not isinstance(blk, dict) or 'pairs' not in blk:
@@ -308,7 +285,7 @@ def main(ver, mods_dir, only_missing=False):
         json.dumps(db, ensure_ascii=False, indent=1, sort_keys=True) + '\n', encoding='utf-8')
     tot = stat['key_exact'] + stat['key_substring'] + stat['key_missing']
     if only_missing:
-        # 说清楚这几个数只覆盖这次增补的那几个模块，别被当成全库覆盖率读。
+        # 这几个数只覆盖这次增补的模块，不是全库覆盖率。
         print('  （以下只统计本次增补的 %d 个模块）' % len(todo))
     print('  target_class: 原位 %d / 搬家已找回 %d / 找不到 %d'
           % (stat['class_declared'], stat['class_moved'], stat['class_not_found']))

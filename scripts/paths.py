@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """全仓库统一的目录约定。
 
-仓库里**没有任何一棵出货用的目录树**：`kubejs/`、`config/`、`resourcepacks/`、
+仓库里没有任何一棵出货用的目录树：`kubejs/`、`config/`、`resourcepacks/`、
 `mods/` 全部是构建时现生成的，落在 `build/` 下（`.gitignore` 排除）。
 仓库里只有 `src/`（手写的真源与映射）和 `scripts/`（生成器）。
 
@@ -24,7 +24,7 @@ import os
 import sys
 from pathlib import Path
 
-# Windows runner 的 stdout 默认 cp1252，打不出中文——脚本会在 print 那一行直接崩，
+# Windows runner 的 stdout 默认 cp1252，打不出中文，脚本会在 print 那一行直接崩，
 # 而且崩在「干完活之后」，看起来像是活没干成。所有脚本都 import 这个模块，
 # 所以放在这里一次性解决。
 for _s in (sys.stdout, sys.stderr):

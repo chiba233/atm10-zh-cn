@@ -3,24 +3,24 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""把**正文写死在 JSON 里**的那类书翻出来。
+"""把正文写死在 JSON 里的那类书翻出来。
 
 大多数导览书（Patchouli / AE2 Guide / Oracle Index）的文本要么走语言文件，
 要么按语言分目录，`gen_books.py` 已经覆盖。但有的模组自己造了一套书：
-文件放在 `assets/<ns>/books/` 这种**与语言无关**的路径下，字段里一半是语言键、
-一半是直接写死的英文。写死的那一半，资源包的 `lang/zh_cn.json` 根本够不着——
+文件放在 `assets/<ns>/books/` 这种与语言无关的路径下，字段里一半是语言键、
+一半是直接写死的英文。写死的那一半，资源包的 `lang/zh_cn.json` 根本够不着，
 玩家看到的就是「目录和章节名是中文、正文全是英文」。
 
 要翻只能整份文件覆盖。这里的做法：
 
-- 仓库里**不存这些文件的副本**，只存 `原文 → 译文` 的成对映射
-  （`src/books/literal/<ns>.json`），构建时现取 jar 里那一份来套；
-- 套用是**带引号的整串替换**（`"原文"` → `"译文"`），不做 JSON 解析重排。
+- 仓库里不存这些文件的副本，只存 `原文 → 译文` 的成对映射
+  （`src/books/literal/<ns>.json`），构建时现取 jar 里那一份来套。
+- 套用是带引号的整串替换（`"原文"` → `"译文"`），不做 JSON 解析重排。
   一来保住上游的排版与字段顺序，二来 herbsandharvest 有两份文件上游自己就
-  不是合法 JSON（尾部多一段），解析一遍再吐出来会把它们改坏；
-- 每份文件记了提取时的 sha1。**对得上**就要求每条映射至少命中一次，
-  落不下即硬失败；**对不上**说明上游改过，落不下的逐条列出，
-  命中率跌破下限一样失败——不允许「悄悄少翻一半」。
+  不是合法 JSON（尾部多一段），解析一遍再吐出来会把它们改坏。
+- 每份文件记了提取时的 sha1。对得上就要求每条映射至少命中一次，
+  落不下即硬失败。对不上说明上游改过，落不下的逐条列出，
+  命中率跌破下限一样失败，不允许「悄悄少翻一半」。
 
 用法:
     python3 scripts/gen_literal_books.py <mods 目录>
@@ -56,7 +56,7 @@ def main(mods_dir):
             strict = books.sha1(raw) == info['sha1']
             if not strict:
                 drift.append(rel)
-            # JSON 文件按「带引号整串」替换——引号把字段值的边界钉死，不会误伤别的串；
+            # JSON 文件按「带引号整串」替换，引号把字段值的边界钉死，不会误伤别的串。
             # XML 之类没有这层边界，用 raw 模式原样替换，由映射自己写足上下文
             raw = info.get('raw', False)
             for en, zh in info['t']:
@@ -71,7 +71,7 @@ def main(mods_dir):
                              '   原文: %r' % (rel, en[:80]))
                 else:
                     miss.append((rel, en[:60]))
-            # assets/ 是资源包能覆盖的；data/ 只有数据包能覆盖，
+            # assets/ 是资源包能覆盖的。data/ 只有数据包能覆盖，
             # 走整合包自带 KubeJS 的 kubejs/data（本仓库既有做法）
             t = (PACK / rel) if rel.startswith('assets/') else \
                 (COMMON / 'kubejs' / rel)

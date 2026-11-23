@@ -5,19 +5,19 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """主菜单按钮图上的中文文字生成器。
 
-ATM 的主菜单按钮把文字**烤进了 PNG**（996×234，FancyMenu 直接贴图），
+ATM 的主菜单按钮把文字烤进了 PNG（996×234，FancyMenu 直接贴图），
 语言文件够不着，只能重绘。本脚本负责「擦掉文字区、重新写中文」这一步。
 
 ## 为什么要有这个脚本
 
 第一版是手工渲染的、没留脚本，字号字重要再调就无从下手。
-现在把参数固化在这里：**擦除矩形是常量**，所以脚本可以反复跑而不会越擦越多
-（不是去检测已有文字再擦——那样每跑一次都会啃掉一点边缘）。
+现在把参数固化在这里：擦除矩形是常量，所以脚本可以反复跑而不会越擦越多
+（不是去检测已有文字再擦，那样每跑一次都会啃掉一点边缘）。
 
 ## 常量怎么来的
 
 对 14 张图逐像素量过：
-- 文字区 x[280..900] y[50..143] 之内**只有文字**，矩形外一圈是纯背景色；
+- 文字区 x[280..900] y[50..143] 之内只有文字，矩形外一圈是纯背景色。
   左边的圆形图标止于 x≈250，下划线自 y≈146 起（akliz 是 153），都不在矩形内。
 - 背景在该区域是纯色（灰态 #DFE0E1 / 高亮态 #CECFD1），所以直接填色即可抹掉。
 - 文字为实心单色，取区域内最深的像素即该图的文字色（模组=橙、Akliz=红，其余近黑）。
@@ -26,8 +26,8 @@ ATM 的主菜单按钮把文字**烤进了 PNG**（996×234，FancyMenu 直接�
 现为 Hiragino Sans GB **W6**（比原来粗一档）、字高 **62px**（+27%），底边仍锚在 y=132
 （与下划线的间距不变）。
 
-水平位置改为**统一居中于下划线**（x[236..888] 的中点 562）。第一版是逐图沿用英文原文的
-中心，结果 2 字标签（选项/退出）与 4~5 字标签（单人游戏/租用服务器）中心相差近 60px；
+水平位置改为统一居中于下划线（x[236..888] 的中点 562）。第一版是逐图沿用英文原文的
+中心，结果 2 字标签（选项/退出）与 4~5 字标签（单人游戏/租用服务器）中心相差近 60px。
 字放大后这个错位更明显，故一并对齐。
 
 用法:
@@ -47,7 +47,7 @@ except ImportError:
 from paths import COMMON
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = COMMON / 'config' / 'fancymenu' / 'assets'
-# 按钮图是**就地重绘**的：擦掉文字区再写中文。所以必须先有整合包的原图。
+# 按钮图是就地重绘的：擦掉文字区再写中文。所以必须先有整合包的原图。
 # 成品不入 git（见 .gitignore），本地/CI 跑之前从整合包拷一份干净的过来。
 PACK = Path(os.environ.get(
     'ATM_PACK_ROOT',
@@ -59,8 +59,8 @@ def save_png(im, path):
     """确定性写 PNG：参数一律显式给。
 
     Pillow 的默认压缩级别/optimize 策略换个版本就可能变，写出来的字节跟着变，
-    于是产物哈希对不上而图其实一模一样——这种噪声会让「比 sha256」这件事失去意义。
-    显式钉死之后，字节只剩下**栅格化**这一个变量，而它由 toolchain.lock.json
+    于是产物哈希对不上而图其实一模一样，这种噪声会让「比 sha256」这件事失去意义。
+    显式钉死之后，字节只剩下栅格化这一个变量，而它由 toolchain.lock.json
     里钉的 Pillow wheel（自带 freetype）决定。
     """
     im.save(path, format='PNG', optimize=False, compress_level=9)
@@ -81,8 +81,8 @@ def ensure_sources():
     print('  已从整合包取回 %d 张按钮原图' % n)
 
 # 字体按顺序找第一个存在的，一律取中粗那一档。
-# 首选仓库里的 assets-src/fonts/bold.otf（思源黑体 Bold，OFL，跑 scripts/fetch_fonts.sh 取）——
-# 这样 Linux 上的 CI 也能生成出**逐字节相同**的结果；macOS 自带字体只作为没取字体时的兜底。
+# 首选仓库里的 assets-src/fonts/bold.otf（思源黑体 Bold，OFL，跑 scripts/fetch_fonts.sh 取），
+# 这样 Linux 上的 CI 也能生成出逐字节相同的结果。macOS 自带字体只作为没取字体时的兜底。
 FONT_CANDIDATES = [
     (str(ROOT / 'assets-src' / 'fonts' / 'bold.otf'), 0),
     (str(ROOT / 'assets-src' / 'fonts' / 'bold.ttf'), 0),
@@ -114,7 +114,7 @@ BUTTONS = {
 # GitHub / Reddit / Discord 等品牌按钮保持英文，不在此列
 
 # 本包自己加的两个按钮（首页最下方）：整合包里没有这两张原图，拿 ATM 自己的
-# GitHub 按钮当底稿——它左边的图标就是 GitHub logo，而这两个按钮也正是跳 GitHub，
+# GitHub 按钮当底稿，它左边的图标就是 GitHub logo，而这两个按钮也正是跳 GitHub，
 # 语义对得上，视觉也与首页其余按钮完全一致。只擦文字区、图标原样保留。
 NEW_BUTTONS = {
     'hanhua_home':   ('github', '汉化包主页'),
@@ -138,7 +138,7 @@ def text_color(im):
 def render(word, color, target_h=TARGET_H):
     """把词渲染成一张紧贴文字的 RGBA 图（超采样后缩回）
 
-    target_h 缺省是主菜单按钮的字高；gen_mod_textures.py 拿它按各自原图的字高复用。
+    target_h 缺省是主菜单按钮的字高。gen_mod_textures.py 拿它按各自原图的字高复用。
     """
     # 先按目标字高反推字号：CJK 字面高度约为字号的 0.86
     size = int(round(target_h / 0.86))

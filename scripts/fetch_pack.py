@@ -3,20 +3,16 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""把某个版本的 ATM10 整合包备齐成一个能当 ATM_PACK_ROOT 用的目录。
+"""把某个版本的 ATM10 整合包下载成可当 ATM_PACK_ROOT 用的目录。
 
-两种用法，成本差一个数量级：
+- `--no-jars`：只解 `overrides/`，里面有打补丁用的官方文件（ATM 的 kubejs/*.js、config/*.json），
+  每个目标版本都要一份。
+- 全量：再按 manifest 下载 480 个 mod jar。只有读 jar 里 en_us 与注册表的生成器需要（奖杯名、
+  木头名、蜂名、格式串快照），一次构建取最新版即可。
 
-- `--no-jars`：只解 `overrides/`。**打补丁用的官方文件**（ATM 自己的 kubejs/*.js、
-  config/*.json）就在里面，每个目标版本都要来一份，构建时对着它套映射。
-- 全量：再按 manifest 把 480 个 mod jar 下齐。只有「读 jar 里的 en_us 与注册表」
-  的那几个生成器需要（奖杯名、木头名、蜂名、格式串快照），一次构建取最新那版即可。
-
-CurseForge 的网页 API 没有配额说明但会限速。踩过的坑都写进代码里了：
-默认 UA 会被挡（必须伪装成浏览器）、并发压到 4、失败按指数退避重试、
-整轮重来收漏网的、**不查元数据**直接下载并从跳转后的 CDN 地址取文件名、
-下不来时把**真实的 HTTP 错误**打出来（以前吞成 None，只看得到「下得太少」，
-分不清是限速还是接口变了，白折腾好几轮）。
+CurseForge 的网页 API 会限速：默认 UA 会被拦截，所以伪装成浏览器。并发 4，失败按指数退避重试，
+整轮重来补漏。不查元数据，直接下载并从跳转后的 CDN 地址取文件名。下载失败时打印真实的 HTTP 错误，
+以区分限速与接口变化。
 
 用法:
     python3 scripts/fetch_pack.py 7.2 build/packsrc/7.2 --no-jars   # 只要官方文件
@@ -43,16 +39,11 @@ TRIES = 6
 
 
 def unregistered_missing(ver, missing):
-    """这几个下不来的 fileID 里，哪些没在 versions/<版本>/unobtainable.json 登记。
+    """下载失败的 fileID 里，哪些没在 versions/<版本>/unobtainable.json 登记。
 
-    CurseForge 删过文件，某些版本的官方 jar 集合是**永久**拿不全的。那不是「下漏了」，
-    但也不能因此放宽门控——残缺的集合会让版本库里的 "missing" 变成假判定（不是这一版
-    没有这个 key，只是我们没看到那个 jar）。所以要求一个个显式登记：登记过的放行，
-    其余照旧红，缺口的边界始终摆在明面上。
-
-    **登记文件不存在 = 一条都没登记**，不是「全都放行」：这道闸的默认必须是红的，
-    否则一次文件名写错就能让整个机制静默失效。fetch_pack 与 build_version_db 都用
-    这一个函数，判据只有一份。
+    CurseForge 删过文件，有些版本的官方 jar 永久拿不全。残缺的集合会让版本库里的 "missing"
+    分不清是这一版没有这个 key，还是没下载到 jar，所以要逐个登记：登记过的放行，其余失败。
+    登记文件不存在时一条都不放行。fetch_pack 与 build_version_db 共用这个函数。
     """
     known = {}
     kf = ROOT / 'versions' / ver / 'unobtainable.json'
@@ -62,10 +53,9 @@ def unregistered_missing(ver, missing):
 
 
 def fetch(url, timeout=180, required=True):
-    """取一个 URL，返回 (内容, 最终URL)。限速/抽风就退避重试。
+    """取一个 URL，返回 (内容, 最终URL)。限速或偶发失败时退避重试。
 
-    **失败原因必须留下来**：以前这里把异常吞成 None，CI 上 482 个 jar 全下不来时
-    只看得到「jar 下得太少」，看不出到底是限速、403 还是 404，白折腾好几轮。
+    失败原因必须保留，否则只看得到 jar 下得太少，分不清是限速、403 还是 404。
     """
     last = None
     for i in range(TRIES):
@@ -100,9 +90,8 @@ class _Head(urllib.request.Request):
 def head_name(url, timeout=60, tries=3):
     """只问跳转后的文件名，不取正文。
 
-    要重试：探不到名字就等于没有交叉验证，而 GET 的跳转**确实会偶发指到别的文件**
-    （实测 cc-tweaked 1.113.1 的 ID 拿回来一个 1.120.0）。探不到就返回 None，
-    调用方照常下载，但那一份会被当成「来路不明」记下来。
+    要重试：GET 的跳转偶尔会指到别的文件（cc-tweaked 1.113.1 的 ID 拿回过 1.120.0），文件名用来
+    交叉验证。探不到就返回 None，调用方照常下载，但会把那一份记为来源不明。
     """
     for i in range(tries):
         try:
@@ -120,15 +109,13 @@ def head_name(url, timeout=60, tries=3):
 
 
 def tree_digest(root, only=None):
-    """overrides 的确定性指纹：路径 + 内容，排序后逐个吃进去。
+    """overrides 的确定性指纹：路径与内容，排序后逐个计入。
 
-    `only` 给一份相对路径清单，就只算这些文件。**必须给**：解出来的 overrides
-    和后面下载的 480 个 jar 落在同一个目录下，整目录扫会把 jar 也算进指纹，
-    于是「第一次跑过、第二次跑就报指纹不符」。
+    `only` 是相对路径清单，必须给：overrides 和下载的 480 个 jar 在同一个目录下，整目录扫描会把 jar
+    也算进去，第二次运行就会报指纹不符。
 
-    ATM10 的某个已发布版本，它的 overrides 内容是**不会变**的。把指纹记进仓库，
-    CI 上无论是从缓存拿的还是现下的，都要跟它对得上——CurseForge 哪天换了内容
-    （或者下载被人动了手脚），构建当场红，而不是悄悄拿另一份东西去打补丁。
+    已发布版本的 overrides 不会变。指纹记在仓库里，CI 无论用缓存还是重新下载都要与它一致，
+    CurseForge 换了内容或下载被篡改时构建失败。
     """
     root = Path(root)
     if only is None:
@@ -144,11 +131,10 @@ def tree_digest(root, only=None):
 
 
 def check_digest(ver, digest, record=False):
-    """跟 versions/<版本>/overrides.sha256 对照；没记过就打印出来让人记上。
+    """与 versions/<版本>/overrides.sha256 对照，没记录过就打印出来。
 
-    `record=True` 时把指纹写进去——**只给「新版本首次入库」那条流水线用**。
-    平时绝不能自动记：那等于把「下载被污染」变成「悄悄把污染当成基线」。
-    写出来的文件仍然要人过目并提交，机器只负责算，不负责拍板。
+    `record=True` 时写入指纹，只用于新版本首次入库的流水线：平时自动写入的话，被污染的下载会变成基线。
+    写出的文件仍要人核对后提交。
     """
     f = Path(__file__).resolve().parent.parent / 'versions' / ver / 'overrides.sha256'
     if not f.is_file():
@@ -181,10 +167,7 @@ def find_file_id(ver):
 
 
 def site_file_name(project_id, file_id):
-    """问 CurseForge 站点 API 要这个文件的真名（不需要 API key）。
-
-    取不到就返回 None——宁可让外层报错，也别编一个假名字。
-    """
+    """问 CurseForge 站点 API 这个文件的真实文件名（不需要 API key），取不到返回 None。"""
     url = 'https://www.curseforge.com/api/v1/mods/%d/files/%d' % (project_id, file_id)
     try:
         req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
@@ -226,20 +209,16 @@ def main(ver, out, jars=True, record=False):
     prov = {}
 
     def one(f):
-        """下一个 jar。**不查元数据**——下载接口会跳转到带文件名的 CDN 地址，
-        文件名直接从最终 URL 取。少一半请求，也少一个会 404 的接口。
+        """下载一个 jar。不查元数据，下载接口会跳转到带文件名的 CDN 地址，文件名从最终 URL 取。
 
-        顺手把 (projectID, fileID, sha256, size) 记进 prov：CurseForge 的 fileID
-        是不可变的（重传会得到新 ID），把它和实际字节的哈希绑在一起，才谈得上
-        「这份 jar 就是那一版官方用的那一份」。只记文件名等于什么都没记。
+        同时把 (projectID, fileID, sha256, size) 记进 prov：CurseForge 的 fileID 不可变（重传会得到
+        新 ID），与字节哈希绑定，才能证明这份 jar 就是那一版官方用的那份。
 
-        任何异常都不许抛：一个文件下不来只该少一个 jar，由外层整轮重试兜住；
-        抛出去会顺着 ex.map 把整个构建炸掉。"""
+        不抛异常：下载失败只少一个 jar，由外层整轮重试处理，抛出去会让 ex.map 中断整个构建。"""
         try:
             url = ('https://www.curseforge.com/api/v1/mods/%d/files/%d/download'
                    % (f['projectID'], f['fileID']))
-            # 先用 HEAD 把跳转后的文件名问出来：本地已经有了就不必再拉一遍正文。
-            # 少了这一步，补记出处就得把四百多个 jar 整包重下。
+            # 先用 HEAD 问出跳转后的文件名：本地已有就不再下载正文，补记来源时不用重下四百多个 jar。
             name = head_name(url)
             p = mods / name if name else None
             if p is not None and p.exists():
@@ -253,21 +232,18 @@ def main(ver, out, jars=True, record=False):
                 return None
             got = urllib.parse.unquote(str(final).rsplit('/', 1)[-1].split('?')[0])
             if name and got != name:
-                # 保险：同一个 fileID，HEAD 与 GET 报的文件名理应一致。
-                # 对不上说明这次请求拿到的不是想要的那份，当失败交给外层重试，
-                # 别把来路不明的文件收下。
+                # 同一个 fileID，HEAD 与 GET 报的文件名应该一致。不一致说明拿到的不是想要的那份，
+                # 当失败交给外层重试。
                 errors.append('fileID %d: 跳转文件名不一致 HEAD=%s GET=%s'
                               % (f['fileID'], name, got))
                 return None
             name = got
             if not name.endswith('.jar'):
-                # 跳转没带出文件名时，**别**编一个 `<fileID>.jar` 出来：manifest 的
-                # files[] 里混着 mod / 资源包 / 光影包，改名成 .jar 会把光影包伪装成
-                # mod 丢进 mods/（实测 fileID 8123287 = ComplementaryReimagined_r5.8.1.zip
-                # 这么进过 mods/）。站点 API 能给真名，问它。
+                # 跳转没带出文件名时不能编 `<fileID>.jar`：manifest 的 files[] 里有 mod、资源包、光影包，
+                # 改名成 .jar 会把光影包当成 mod 放进 mods/（fileID 8123287 =
+                # ComplementaryReimagined_r5.8.1.zip）。向站点 API 查询真实文件名。
                 name = site_file_name(f['projectID'], f['fileID']) or name
-            # 分目录不靠名字猜，看 zip 里面有什么（确定性）：
-            #   有 shaders/ → 光影包；有 pack.mcmeta → 资源包；否则当 mod
+            # 按 zip 里的内容分目录：有 shaders/ 是光影包，有 pack.mcmeta 是资源包，否则是 mod
             if name.endswith('.jar'):
                 p = mods / name
             else:
@@ -307,8 +283,7 @@ def main(ver, out, jars=True, record=False):
                     print('  jar %d/%d' % (i, len(left)), flush=True)
     print('  mod jar %d/%d，目录共 %d 个'
           % (len(got), len(todo), len(list(mods.glob('*.jar')))))
-    # manifest 里应有多少个必须一起记下来。少下了几个而不留痕，
-    # 后面建出来的版本库会拿一个残缺的 jar 集合去下「这一版没有这个 key」的结论。
+    # 一并记下 manifest 里应有多少个：少下载了却没有记录，版本库会基于残缺的 jar 集合下结论。
     for r in rels:
         if r.startswith('mods/') and r.endswith('.jar'):
             f = out / r
@@ -324,28 +299,22 @@ def main(ver, out, jars=True, record=False):
                    ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print('  出处已记入 mods.provenance.json（fileID ↔ sha256，%d/%d）'
           % (len(prov), len(todo)))
-    # 目录里出现了对不上任何 fileID 的 jar，就是来路不明的（多半是某次
-    # 跳转指错文件留下的）。留着它会污染整个集合，必须点名。
+    # 对不上任何 fileID 的 jar 来源不明（多半是跳转指错文件留下的），必须列出来。
     stray = sorted(p.name for p in mods.glob('*.jar') if p.name not in prov)
     if stray:
         print('  ⚠️ %d 个 jar 对不上任何 fileID，来路不明，建库前必须处理：' % len(stray))
         for x in stray:
             print('       %s' % x)
-    # 一个都不许缺。以前的阈值是 98%：482 项里少 9 个照样继续，而少掉的那几个 jar
-    # 里的 en_us / 注册表就这么静默地没参与生成——产物少几百条译文，退出码还是 0。
-    # 「大部分下到了」不是可复现构建，缺就是缺。（issue #9 P1-5）
-    # 唯一的例外：这一版的 manifest 里确有文件被 CurseForge 永久删除（404，重试无用）。
-    # 那不是「下漏了」，是这一版的官方集合**已经拿不全了**，而且必须一个个登记在
-    # versions/<版本>/unobtainable.json 里才算数——登记过的照常放行，没登记的照旧红。
-    # 缺口的边界因此始终摆在明面上，而不是藏在一次静默的下载失败里。
-    # （build_version_db.py 建库时读的是同一份登记，两边的判据是同一个。）
+    # 一个都不许缺（issue #9 P1-5）：缺了的 jar 里的 en_us 和注册表不参与生成，产物少几百条译文，
+    # 退出码却是 0。唯一的例外是 manifest 里有文件被 CurseForge 永久删除（404，重试无用），
+    # 必须逐个登记在 versions/<版本>/unobtainable.json 才放行。build_version_db.py 读同一份登记。
     undeclared = unregistered_missing(ver, missing)
     if undeclared:
         for e in errors[:8]:
             print('   %s' % e)
         sys.exit('❌ jar 没下齐（%d/%d），其中以下 fileID 没有登记原因：%s\n'
                  '   生成器会漏内容，中止。上面是前几条真实错误。\n'
-                 '   403/429 是限速，稍后重跑；404 若是这一版真的被删了，'
+                 '   403/429 是限速，稍后重跑。404 如果是这一版确实被删了，'
                  '写进 versions/%s/unobtainable.json 说明情况。'
                  % (len(got), len(todo), undeclared[:8], ver))
     if missing:
@@ -354,17 +323,15 @@ def main(ver, out, jars=True, record=False):
 
 
 if __name__ == '__main__':
-    # --verify：目录已经在（多半来自 CI 缓存），只核对指纹，一个字节都不下。
-    # 缓存命中也必须核——缓存里的东西同样可能是坏的。
+    # --verify：目录已存在（多半来自 CI 缓存），只核对指纹，不下载。缓存同样可能是坏的。
     if '--verify' in sys.argv:
         a = [x for x in sys.argv[1:] if x != '--verify']
         if len(a) != 2:
             sys.exit(__doc__)
         d = Path(a[1])
-        # 排除的只有「按 manifest 下载的 jar」与出处文件本身。
-        # **不能一刀切排除 mods/**：整合包自己的 overrides 里就可能带 jar
-        # （ATM10 7.2 在 overrides/mods/ 放了 cc-tweaked 1.120.0 去盖掉 manifest
-        # 里那个会崩的 1.113.1），那是指纹的正当组成部分。
+        # 只排除按 manifest 下载的 jar 与来源记录文件本身，不能排除整个 mods/：
+        # 整合包的 overrides 里也可能带 jar（ATM10 7.2 在 overrides/mods/ 放了 cc-tweaked 1.120.0，
+        # 替换 manifest 里会崩溃的 1.113.1），它们属于指纹的一部分。
         skip = {'mods.provenance.json'}
         pf = d / 'mods.provenance.json'
         if pf.is_file():

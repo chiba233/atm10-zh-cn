@@ -5,24 +5,24 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """把 versions/<版本>/pack_overrides.json 叠到该版出货树的资源包上。
 
-资源包译文按**命名空间 + 键**索引，同一个键在哪个整合包版本都是同一个键，
+资源包译文按命名空间 + 键索引，同一个键在哪个整合包版本都是同一个键，
 所以 src/pack 是版本中立的、一份通吃六个版本。这个前提会被上游打破：
 
-同一个键在两版里**参数个数不同**时，一份中文没法同时对两版成立。少写参数只是
-漏掉一段文字；多写参数会让 TranslatableContents 抛 TranslatableFormatException，
+同一个键在两版里参数个数不同时，一份中文没法同时对两版成立。少写参数只是
+漏掉一段文字。多写参数会让 TranslatableContents 抛 TranslatableFormatException，
 那一行直接显示成未替换的模板。此时只能按版本分叉。
 
 任务书那一侧早就有 versions/<版本>/quest_overrides.snbt，这里是同一个东西的
 资源包版。除了 lang 单键，还允许引用 `src/pack_overrides/<层名>/` 里的整文件覆盖：
 散文导览书没有可定点替换的键，上游改写正文时只能整页分叉。
 
-**它是例外口子，不是常规去处**：能在 src/pack 里一份写对的，就不要往这里写——
+它是例外口子，不是常规去处：能在 src/pack 里一份写对的，就不要往这里写，
 每多一条，七个版本之间就多一处要各自核对的分叉。
 
 口子两头都 fail-closed：
 
 - 覆盖的命名空间在出货树里没有 zh_cn.json → 红（写错了地方，这条永远不生效）
-- 覆盖的值/文件与公共树里的**完全相同** → 红（登记过期了）
+- 覆盖的值/文件与公共树里的完全相同 → 红（登记过期了）
 - 文件层不存在、为空、目标不在公共树、两层撞同一路径 → 红
 - 唯一例外是公共页被版权闸按逐字节相同剔除：必须有该次构建生成的路径 + sha256
   清单，且它与 `src/pack/` 公共源完全一致，版本层才可恢复修改后的页面
@@ -43,7 +43,7 @@ DROPPED_MANIFEST = ROOT / 'build' / 'snapshots' / 'upstream_identical_dropped.js
 
 
 def dropped_public_source(rel):
-    """返回经版权闸剔除且哈希仍匹配的公共源；其余情况一律返回 None。"""
+    """返回经版权闸剔除且哈希仍匹配的公共源。其余情况一律返回 None。"""
     public = ROOT / 'src' / 'pack' / rel
     if not public.is_file() or not DROPPED_MANIFEST.is_file():
         return None
@@ -90,7 +90,7 @@ def main(ver, tree):
             n += 1
         f.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-    # 散文书页这类没有 lang key，只能整文件分叉。先把**所有层**完整预检完再写：
+    # 散文书页这类没有 lang key，只能整文件分叉。先把所有层完整预检完再写：
     # 若第二层坏了才退出，第一层已经写进树，会留下半套覆盖供后续步骤误用。
     layers = doc.get('files') or {}
     if not isinstance(layers, dict):
@@ -119,7 +119,7 @@ def main(ver, tree):
             if not rel.parts or rel.parts[0] not in ('assets', 'kubejs'):
                 sys.exit('❌ 文件层 %s 的 %s 不在 assets/ 或 kubejs/ 下。' % (name, rel))
             if rel.parts[0] == 'kubejs':
-                # kubejs/ 下是该版新增的脚本，落在出货树根目录；只许新增，不许盖掉公共树的文件。
+                # kubejs/ 下是该版新增的脚本，落在出货树根目录。只许新增，不许盖掉公共树的文件。
                 dest = tree / rel
                 if dest.exists():
                     sys.exit('❌ %s 的文件层 %s 要新增 %s，但出货树里已经有这个文件。'

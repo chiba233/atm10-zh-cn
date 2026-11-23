@@ -1,50 +1,35 @@
-// ATM10 汉化补丁「绿油油版」客户端资源包自检。
-// 只读语言表与资源包列表，不下载、不写任何文件、不发网络请求。
+// ATM10 汉化补丁「绿油油版」客户端资源包自检。只读语言表与资源包列表，不下载、不写文件、不联网。
 //
-// 为什么要做：最常见也最致命的一种「汉化坏了」，是玩家根本没在选项里启用资源包，
-// 或者把它压在了别的包下面。这两种情况下玩家看到的是满屏英文，得出的结论却是
-// 「这个汉化包是坏的」。README 的警告与配图只能拦住会看 README 的人。
+// 玩家没启用资源包，或把它放在别的包下面时，看到的是满屏英文。这里在进入世界后提示。两层判断：
 //
-// 两层判据，各管各的，都测**结果**而不是配置：
+//   一、是否生效。资源包里有一个本包独有的键 atm10zhcn.pack.version
+//       （assets/atm10zhcn/lang/zh_cn.json，值由构建脚本按发布版本填入）。语言表是所有启用的包
+//       合并后的结果，查得到就说明包生效了。读 options.txt 只能查配置，文件损坏时会误判为正常。
+//       查到的值与本脚本的版本不一致，说明启用的是旧版本的包（安装器只覆盖不删除，改过名的
+//       旧包会留着）。
 //
-//   一、生效。资源包里埋了一个只有我们定义的键 atm10zhcn.pack.version
-//       （assets/atm10zhcn/lang/zh_cn.json，值由构建脚本按发布版本现填）。
-//       语言表是所有启用的包合并后的最终结果，所以查得到 = 包真的生效了。
-//       读 options.txt 或看包在不在选中列表里都是查「配置」，在「名字对了但
-//       文件坏了」这类情况下会给出错误的绿灯，所以不走那条路。
-//       顺带还能抓到版本错配：查到的值与本脚本的版本不一致，说明玩家的
-//       resourcepacks 里启用着旧版本的包（安装器只覆盖不删除，改过名的旧包
-//       会一直留着）。
+//   二、顺序。探针键排第几都查得到，第一层测不出顺序。确认包已加载后再查 PackRepository：
+//       排在本包之后（优先级更高）的包里，有没有也提供 zh_cn 语言文件的。只有这种包会覆盖本包，
+//       玩家放在最上面的材质包不算。正常安装时本包就是最后一个，不用打开任何包。
 //
-//   二、顺序。探针键只有我们定义，排第几都查得到，所以第一层测不出顺序——
-//       这一点是实机验过的：把包拖到最低优先级，第一层照样报 ok。
-//       既然第一层已经证明包加载了，这时候再去问 PackRepository 就是可靠的。
-//       判据不是「必须排在最后一个」——那样玩家装个材质包放最上面就会被误报——
-//       而是「排在我们之后（优先级更高）的包里，有没有人也提供 zh_cn 语言文件」，
-//       只有那种包才会真的压住我们。正常安装下我们就是最后一个，这一步一个包
-//       都不用打开，零开销。
+// 判断不了就不提示：配置正常的玩家每次进游戏都看到红字，比不做这个功能还糟。
 //
-// 判不准一律闭嘴。这跟构建期的闸正好相反：闸取不到基准要红，这里取不到判据必须
-// 静默——给一个配置正常的玩家每次进游戏弹一次红字，比不做这个功能还糟。
+// 与 hanhua_update_check.js 相同的两条约束：
+//    - 块里只赋值，不声明。KubeJS 的 Rhino 把 try/if/for 块内的 const 提升成函数作用域的 var，
+//      执行时抛 TypeError: redeclaration of var，又被 catch 吞掉。声明都写在函数体顶层，用 let。
+//      由 check.py 的 js-no-const-inside-block 检查。
+//    - Java.loadClass 只用字符串字面量，且类要通过 kubejs.classfilter.txt。这里用到的四个类都在
+//      `+ net.minecraft` 放行范围内（只有 net.minecraft.Util 被禁）。由 check_kubejs_classfilter.py
+//      检查。
 //
-// ⚠️ 遵守 hanhua_update_check.js 用两个发出去的版本换来的两条教训：
-//    - **块里只许赋值，不许声明。** KubeJS 的 Rhino 会把 try/if/for 块内的 const
-//      提升成函数作用域的 var，执行到声明那句抛 TypeError: redeclaration of var，
-//      而且是运行时才抛、又被 catch 吞掉，表现成「什么都没发生」。所有声明写在
-//      函数体顶层用 let。由 check.py 的 js-no-const-inside-block 守住。
-//    - **Java.loadClass 只用字符串字面量，且类要过 kubejs.classfilter.txt。**
-//      这里用到的四个类都在 `+ net.minecraft` 放行范围内（只有 net.minecraft.Util
-//      被禁）。由 check_kubejs_classfilter.py 守住。
-//
-// 整份包在 IIFE 里：KubeJS 的 client_scripts 共用同一个全局作用域，顶层 const
-// 撞名会让**整批脚本**加载失败（cb979c1 踩过一次）。
+// 整份放在 IIFE 里：client_scripts 共用一个全局作用域，顶层 const 重名会让整批脚本加载失败。
 (function () {
   const PROBE_KEY = 'atm10zhcn.pack.version'
   const PROBE_NAMESPACE = 'atm10zhcn'
   const PACK_VERSION = '@@PATCHVER@@'
   const LANG_PATH = 'lang/zh_cn.json'
-  // 进世界后等 3 秒再说话。loggedIn 在连接阶段就触发，世界真正加载完还要一会儿，
-  // 立刻说会被进服刷屏冲掉；等 3 秒正好落在模组的进服提示后面。
+  // 进世界 3 秒后再提示：loggedIn 在连接阶段触发，立刻提示会被进服消息冲掉，
+  // 3 秒后正好在模组的进服提示之后。
   const DELAY_TICKS = 20 * 3
 
   let pending = 0
@@ -56,7 +41,7 @@
   }
 
   // ---------- 第一层：包生效了没有 ----------
-  // 'ok' / 'missing' / 'mismatch:<包里写的版本>'；判不准返回 null
+  // 'ok' / 'missing' / 'mismatch:<包里写的版本>'。判不准返回 null
   function inspectLang() {
     let I18nClass = null
     let value = ''
@@ -78,7 +63,7 @@
   }
 
   // ---------- 第二层：有没有人压在我们上面 ----------
-  // 'top' / 'blocked' / 'blocked:<玩家自己装的包名>'；判不准返回 null
+  // 'top' / 'blocked' / 'blocked:<玩家自己装的包名>'。判不准返回 null
   function inspectOrder() {
     let McClass = null
     let PackTypeClass = null
@@ -102,21 +87,21 @@
       PackTypeClass = Java.loadClass('net.minecraft.server.packs.PackType')
       LocClass = Java.loadClass('net.minecraft.resources.ResourceLocation')
       repo = McClass.getInstance().getResourcePackRepository()
-      // 越靠后优先级越高。注意这个列表跟资源包界面看到的不是一回事：NeoForge 把
-      // 每个模组自带的资源拆成独立的包，实测 ATM10 7.3 有 534 项，而界面里只有十几项。
+      // 越靠后优先级越高。这个列表与资源包界面不同：NeoForge 把每个模组自带的资源拆成独立的包，
+      // ATM10 7.3 有 534 项，界面里只有十几项。
       list = repo.getSelectedPacks().toArray()
     } catch (err) {
       say('顺序自检取不到包列表，跳过：' + err)
       return null
     }
 
-    // 先定位我们自己：认命名空间，不认文件名——玩家把 zip 改了名也照样找得到
+    // 按命名空间定位本包，不按文件名，玩家改了 zip 名也找得到
     for (i = 0; i < list.length; i++) {
       hit = false
       try {
         res = list[i].open()
-        // close() 放 finally：open() 成功之后任何一步抛异常，句柄都得还回去，
-        // 否则这个循环会在五百多个包上漏一串没关的 zip
+        // close() 放在 finally：open() 成功后任何一步抛异常都要关闭句柄，
+        // 否则五百多个包会留下一串未关闭的 zip
         try {
           namespaces = res.getNamespaces(PackTypeClass.CLIENT_RESOURCES)
           hit = namespaces.contains(PROBE_NAMESPACE)
@@ -137,7 +122,7 @@
     }
     say('顺序自检：我们排在 ' + (ourIndex + 1) + '/' + list.length)
 
-    // 再看排在我们之后的包里，谁也提供 zh_cn。正常安装下这个循环一次都不进。
+    // 再看排在本包之后的包里谁也提供 zh_cn。正常安装时这个循环一次都不进。
     for (i = ourIndex + 1; i < list.length; i++) {
       pack = list[i]
       hit = false
@@ -161,11 +146,9 @@
       }
       if (hit) {
         blockers++
-        // 只点名玩家自己装的包（file/ 开头）。原版与模组自带资源确实也压着我们，
-        // 但报出来没用：那个列表有五百多项而界面里只有十几项，报数字只会让玩家
-        // 以为是 bug。不管压着的是什么，要做的动作都一样——把汉化包拖到最顶部。
-        // 用 id 不用 getTitle()：「模组自带资源」那个包的标题是全部模组 jar 的
-        // 文件名清单，几百行，会把聊天栏刷爆（实机踩过）。
+        // 只列出玩家自己装的包（file/ 开头）：原版与模组自带资源有五百多项，界面里只有十几项，
+        // 列出来玩家看不懂，而要做的都一样，把汉化包拖到最顶部。用 id 不用 getTitle()：
+        // 「模组自带资源」的标题是全部模组 jar 的文件名清单，有几百行。
         id = String(pack.getId())
         if (id.indexOf('file/') === 0 && names.length < 3) {
           names.push(id.substring('file/'.length))

@@ -3,86 +3,48 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""任务书章节横幅上的艺术字（烤进 PNG，语言文件够不着）。
+"""任务书章节横幅上的艺术字（画在 PNG 里，语言文件处理不了）。
 
-ATM 的任务书每章顶上挂一张标题图，文字直接画在 PNG 里。原图在整合包自带的
-`kubejs/assets/atm/textures/questpics/`，资源包的加载顺序排在 KubeJS 之后
-（对着 ReloadableResourceManager 日志核过），所以本包放同路径的图即可覆盖。
+原图在整合包的 `kubejs/assets/atm/textures/questpics/`。资源包在 KubeJS 之后加载
+（按 ReloadableResourceManager 日志核对），本包放同路径的图即可覆盖。
 
-## 写什么字：单一真源 = 该图所属章节的中文标题
+文字取引用该图那一章的中文标题。脚本启动时核验每张标题图只属于一个章节。
 
-每张标题图都只被一个章节引用（脚本启动时会重新核验），所以直接取那一章
-已有的中文标题，不另造词。这样任务书侧边栏、章节标题、横幅三处永远一致。
+## 配色从原图自动采样
 
-## 怎么画：从原图采样，而不是逐张手调
+1. 用最小值滤波把不透明区腐蚀掉描边厚度（原图描边 3~4 像素），腐蚀掉的外圈取中位色
+   作描边色，剩下的是内部像素。只排除紧贴透明的一圈不够，残留的黑描边会被当成材质，
+   中文笔画上出现黑斑。
+2. 默认只取本色与描边色重画。TEXTURED 里点名的材质字（APOTHIC 裂纹石、UNDERGARDEN
+   长苔石、EXTENDED AND ADVANCED AE 方块字等）才提取材质：按行把原字内部像素横向平铺成
+   材质板，用中文字形当遮罩取色。只取最高的一条文字带，两行异色的原图（APOTHIC 灰 /
+   ENCHANTING 紫）整块采样会在中文上形成一道色带。
+3. 描边宽度按图高的 4.5% 估，最少 2px。
+4. 文字等比放大到 `min(可用宽/字宽, 可用高/字高)` 后居中，4 倍超采样渲染再缩回。
 
-这些是带渐变和描边的艺术字，一张张配色调不过来，也不可复现。做法是：
+中文排几行，材质板就竖向重复几遍。材质板是原图一行英文的竖向剖面，只拉伸一次的话，
+第二行会落在下半段的暗部阴影上。
 
-1. **描边色 / 内部像素的划分**：先用最小值滤波把不透明区**整体腐蚀掉描边的厚度**
-   （原图描边普遍有 3~4 像素厚，只排除紧贴透明的那一圈远远不够——剩下几层黑描边
-   会被当成材质采进去，中文笔画上就是一块块黑斑）。腐蚀掉的外圈取中位色作描边色，
-   腐蚀后活下来的才算内部像素；
-2. **默认只取颜色，不抠材质**：绝大多数标题字就是「单色 + 描边」，
-   取原图的本色与描边色、自己干净地画就够了。硬去抠材质反而引入一串问题
-   （描边被当材质→黑斑、两行时第二行套上暗部→像缺笔、细笔画腐蚀不动→整片黑）。
-   只有**确实是材质字**的那几张（APOTHIC 裂纹石、UNDERGARDEN 长苔石、
-   FIRE DRAGON 岩浆岩……）才走材质路径，名单写死在 TEXTURED 里。
-   下面这段讲的就是那条材质路径：ATM 的标题字大多不是纯色——APOTHIC 是裂纹石头、
-   UNDERGARDEN 是长苔石、EXTENDED AND ADVANCED AE 干脆是用方块贴图拼出来的立体字。
-   只取一个颜色或一条竖向渐变，纹理和方块效果就全没了（"抠烂了"）。
-   做法是按行提取原字内部（非描边）的像素序列，横向平铺成一张与画布同大的材质板，
-   再用中文字形当遮罩去取色——中文看起来就像用同一种材料刻出来的。
-   **只取最高的那一条文字带**：不少原图是两行且两行异色（APOTHIC 灰 / ENCHANTING 紫、
-   DRACONIC / EVOLUTION、INDUSTRIAL FOREGOING 加一行小字副标），
-   整块一起采会把「上灰下紫」当成渐变，映到一行中文上就是拦腰一道色带（斑纹）；
-3. **描边宽度**：按图高的 4.5% 估，最少 2px；
-4. 文字按 `min(可用宽/字宽, 可用高/字高)` 等比放到最大后居中，
-   4 倍超采样渲染再缩回，边缘与原图同级顺滑。
+尺寸按原图的内容框计算。有些图（如 id_title 400×400）文字只占中间一条，按整块画布
+铺满会超出任务书的固定框。
 
-**中文排几行，材质板就竖向重复几遍**：材质板是从原图**一行**英文取的竖向剖面
-（上部高光、下部阴影）。中文若排两行而材质只拉伸一次，第二行就正好落在剖面的
-下半段——整行套上字母底部的暗部阴影，看起来像被抠烂了。
+## 带装饰的图只换文字框
 
-**尺寸基准是原图的内容框，不是整块画布** —— 有些图（如 id_title 400×400）文字只占
-中间一条，按整块画布铺满会让中文比原文大一圈，贴进任务书的固定框里就撑爆了。
+神秘学两侧的怪、气动工艺的图标、暮色森林的石砖带都要保留。BOXES 标出英文字所在的框
+（百分比），只替换框内。暮色森林的字压在石砖带上，从字上方干净的砖行取纹理补上。
 
-## 带装饰的图：只换文字框
+## 字体逐图判定
 
-少数图除了文字还有别的东西（神秘学两侧站着两只怪、气动工艺右边有小图标、
-暮色森林的字压在一条石砖带上）。整张重画会把这些一起抹掉，所以给它们单独标出
-「只有英文字的那个框」（按百分比），只在框内替换；框外原样保留。
-暮色森林那条石砖带被文字压着，抹掉会留个洞，所以从文字上方干净的砖行取一条
-纹理平铺补上。
+- 像素字：不透明遮罩按 k×k 方格对齐检查，某个 k≥2 能让每格全实或全空，说明原图是
+  1 倍点阵放大 k 倍，用 Unifont 点阵渲染并放大 k 倍。
+- 其余按平均笔画宽度占字高的比例，在细黑、粗黑、粗宋之间选。SERIF 表点名的
+  （天境、蜜蜂领域、自然灵气、遗物、神秘学等）用宋体 Black。
 
-## 字形：逐图判定，不是全套一种字
+点阵渲染用 Minecraft 渲染中文的 GNU Unifont（16×16，整合包 assets 里的
+`minecraft/font/unifont.zip`），系统黑体的平滑矢量字形与原图的像素英文不搭。在 1 倍尺度
+按 `.hex` 位图拼字并膨胀描边，再整数倍最近邻放大，笔画与描边都是方块状。
 
-原图 154 张的字体各不相同——有 MC 那种方块像素字（CHAPTER 2 / Mekanism / Powah）、
-有粗衬线（The Aether / Bumblezone / Nature's Aura）、有粗黑无衬线（Create / Artifacts）、
-也有细体（Deeper and Darker / Integrated Dynamics）。全用同一种字既不像原作也不好看。
-
-判定是机械的，不靠人眼逐张点名：
-
-- **是不是像素字**：把不透明遮罩按 k×k 方格对齐检查（k 从大到小试），
-  若某个 k≥2 能让每个格子内部要么全实要么全空，说明原图是 1 倍点阵放大 k 倍来的，
-  即像素字体 → 用 Minecraft 自己的 Unifont 点阵渲染，放大倍率对齐原图的 k。
-- **笔画粗细**：量平均笔画宽度占字高的比例，据此在细黑 / 粗黑 / 粗宋之间选。
-- 少数明显是衬线体的（天境 / 蜜蜂领域 / 自然灵气 / 遗物 / 神秘学 等）在 SERIF 表里点名，
-  走宋体 Black。
-
-## 点阵渲染细节
-
-早期版本用系统黑体渲染，字形是平滑矢量，跟原图的像素英文完全不搭。
-正解是用 **Minecraft 渲染中文时用的那套字**——GNU Unifont，16×16 点阵，
-整合包 assets 里就有（`minecraft/font/unifont.zip`，随资源索引下载，无需外部字体）。
-
-流程：按 Unifont 的 `.hex` 位图在 **1 倍尺度**拼出文字 → 按整数倍**最近邻**放大到目标框。
-这样笔画边缘是硬像素块，和原图的像素英文同一套观感；描边也在 1 倍尺度做膨胀再一起放大，
-所以描边同样是方块状，不会出现矢量字那种圆滑边。
-
-## 例外：不动的图
-
-- 4 张压根不是文字（木框、末影人图标、五芒星、气动工艺图标）
-- 章节里那些非标题的插图（矿车、生物图鉴等）本来就没字
+不处理：4 张不是文字的图（木框、末影人图标、五芒星、气动工艺图标），以及没有字的插图。
 
 用法:
     python3 scripts/gen_quest_banners.py            # 重新生成
@@ -103,8 +65,7 @@ import vanilla
 from paths import PACK, SRC
 ROOT = Path(__file__).resolve().parent.parent
 OUT = PACK / 'assets' / 'atm' / 'textures' / 'questpics'
-# 源图 / 任务书来自整合包本体。默认取本机实例，CI 上用 ATM_PACK_ROOT 指向
-# 官方包解压出来的 overrides 目录，这样 Linux 上也能复现出同样的图。
+# 源图与任务书来自整合包。默认取开发机上的实例，CI 用 ATM_PACK_ROOT 指向官方包的 overrides。
 INST = Path(os.environ.get(
     'ATM_PACK_ROOT',
     '/Users/yumeka/Documents/minecraft/.minecraft/versions/All the Mods 10'))
@@ -115,8 +76,7 @@ MARGIN = 4    # 原图四周的透明边
 LINE_GAP = 2  # 多行时的行距（1 倍尺度像素）
 
 # ---------------------------------------------------------------- 字体
-# 优先用仓库里 assets-src/fonts/<名字>.(ttf|otf|ttc)；没有就退回系统自带的。
-# 想让某一类更贴原图，把对应字体丢进那个目录即可，不用改代码（见该目录的 README）。
+# 优先用 assets-src/fonts/<名字>.(ttf|otf|ttc)，没有就退回系统字体（见该目录的 README）。
 FONTS_DIR = ROOT / 'assets-src' / 'fonts'
 SYSTEM_FALLBACK = {
     'thin':  ('/System/Library/Fonts/Hiragino Sans GB.ttc', 0),   # 冬青黑 W3
@@ -128,12 +88,10 @@ SYSTEM_FALLBACK = {
 
 
 def save_png(im, path):
-    """确定性写 PNG：参数一律显式给。
+    """确定性写 PNG：参数一律显式给出。
 
-    Pillow 的默认压缩级别/optimize 策略换个版本就可能变，写出来的字节跟着变，
-    于是产物哈希对不上而图其实一模一样——这种噪声会让「比 sha256」这件事失去意义。
-    显式钉死之后，字节只剩下**栅格化**这一个变量，而它由 toolchain.lock.json
-    里钉的 Pillow wheel（自带 freetype）决定。
+    Pillow 的默认压缩级别和 optimize 策略随版本变，同样的图会写出不同字节。显式固定后，
+    字节只取决于 toolchain.lock.json 里固定的 Pillow wheel（自带 freetype）。
     """
     im.save(path, format='PNG', optimize=False, compress_level=9)
 
@@ -202,7 +160,7 @@ def pick_face(rel):
 def pixel_scale(im):
     """原图是不是像素字？是就返回放大倍率 k，不是返回 1。
 
-    判据一（硬）：像素字**没有抗锯齿**——alpha 只有 0 和 255 两种值。
+    判据一（硬）：像素字没有抗锯齿，alpha 只有 0 和 255 两种值。
     矢量渲染的标题字边缘一定有半透明过渡，这条一票否决。
     判据二：再找最大的 k，使得按 k×k 方格切开后几乎每格内部纯色。
     """
@@ -258,31 +216,22 @@ def load_unifont():
 try:
     UNIFONT = load_unifont()
 except Exception:
-    # Unifont 只是没有像素字体时的兜底。CI 上没有 .minecraft 资源索引，
-    # 但 assets-src/fonts/pixel-*.ttf 一定在（fetch_fonts.sh 取的），所以用不到它。
+    # Unifont 只在没有像素字体时用。CI 上没有 .minecraft 资源索引，但有 assets-src/fonts/pixel-*.ttf。
     UNIFONT = {}
 
-# 点阵中文字面：优先用 assets-src/fonts/pixel-<设计尺寸>.ttf（缝合像素字体，OFL，
-# 跑 scripts/fetch_fonts.sh 取），没有就退回 Unifont。两者都在**设计尺寸**上光栅化
-# 成纯 0/1 点阵，再交给 render() 做整数倍最近邻放大，边缘始终是硬的，不会糊。
+# 点阵中文优先用 assets-src/fonts/pixel-<设计尺寸>.ttf（缝合像素字体，OFL，由 fetch_fonts.sh
+# 下载），没有就用 Unifont。都在设计尺寸上栅格化成 0/1 点阵，再由 render() 整数倍最近邻放大。
 #
-# 为什么不用 Unifont：它的汉字画在 16px 字框里、笔画只有 1px，放大后笔画相对字高
-# 只占 1/16，配在原图那种粗壮的像素英文旁边显得又细又虚。12px 的汉字实际着墨高
-# 11px，同样 1px 笔画占 1/11，放大倍率大了四成半，笔画跟着粗四成半，才压得住。
+# Unifont 的汉字笔画只占字高 1/16，放大后配原图的粗像素英文显得太细。12px 字着墨高 11px，
+# 笔画占 1/11，粗四成半。
 #
-# 为什么要两档：放大倍率 k 只能取整数（取不整就不是硬边像素了），字框越高 k 的
-# 台阶越粗。只用 12px 时有十几张图算出来的 k 比理论值差整整一档，字偏小。备一档
-# 10px 兜着，既保住整数倍放大又不至于太小。
+# 放大倍率 k 只能取整数，只用 12px 时十几张图的 k 比理论值小一档，所以再备一档 10px。
+# 8px 的字框只有 7px，「斯」「械」「塔」的笔画会粘在一起，所以最小用 10px。
 #
-# 8px 那档下过又撤了：字框只有 7px，笔画多的字（斯、械、塔）笔画会粘在一起糊成
-# 一团，撑得再满也没用。字号大小服从可读性，不为贴近原图英文的尺寸让路。
+# 方舟像素字体 zh_cn 12px 缺「旋热然聚嗡蟒骏」等常用字，10px/16px 只有千余字。缝合版
+# （方舟 + Cubic 11 + Galmuri）在 8px/12px 上覆盖本包用到的全部字。
 #
-# 为什么是缝合像素字体而不是方舟像素字体：方舟的 zh_cn 12px 缺「旋热然聚嗡蟒骏」
-# 这类常用字，10px/16px 更是只做了千把个常用字。缝合字体就是拿方舟 + Cubic 11 +
-# Galmuri 拼起来补全覆盖的，8px/12px 对本包用到的字是零缺字。
-#
-# 缺字必须查字表判定，不能靠「渲染出来像不像豆腐块」反推——「口」这个字本身就长
-# 那样。曾经漏查，「斯库拉」「植被」整个渲成了空框。
+# 缺字按字表判定，「口」这类字渲染出来本身就像豆腐块。漏查时「斯库拉」「植被」会渲染成空框。
 PIXEL_SIZES = (10, 12)
 
 
@@ -325,11 +274,9 @@ PIXEL_CHARSET = {s: ttf_charset(pixel_face(s)) for s in PIXEL_SIZES if pixel_fac
 
 
 def hole_count(mask):
-    """点阵里被笔画围起来的封闭内白个数。
+    """点阵里被笔画围起来的封闭内白个数，用来判断小字框下笔画是否粘连。
 
-    用来判定「笔画糊在一起了」：字框一小，「械」的两个口、「堆」的三横之间就会
-    粘连，内白随之消失。数内白比数着墨比例灵——好的点阵字在小字框下会**简化**
-    笔画而不是加粗，着墨比例看不出差别，内白却实打实少了。
+    好的点阵字在小字框下会简化笔画，着墨比例变化不大，内白个数会减少。
     """
     h, w = len(mask), len(mask[0])
     seen = [[False] * w for _ in range(h)]
@@ -363,36 +310,31 @@ def hole_count(mask):
 
 
 def pixel_candidates(text):
-    """能完整写出这段文字的档位；一档都没有就退回 Unifont（None）"""
+    """能完整写出这段文字的档位。一档都没有就退回 Unifont（None）"""
     need = {ord(c) for c in text if c != '\n'}
     ok = [s for s in PIXEL_SIZES if s in PIXEL_CHARSET and need <= PIXEL_CHARSET[s]]
     return ok or [None]
 
-# 图 → 中文。取值来自「引用该图那一章的中文标题」，脚本会核验对得上。
-# 少数几条与章节标题不同，原因写在行尾。
-# 带装饰的图：(左, 上, 右, 下) 百分比 —— 只有英文字的那个框；框外原样保留。
-# inpaint=True 表示框内是有底纹的（不能直接抹成透明），从 patch_from 那几行取纹理平铺。
+# 图 → 中文，取引用该图那一章的中文标题（脚本会核验），例外的原因写在行尾。
+# 带装饰的图：box 是英文字所在的框（左, 上, 右, 下，百分比），框外原样保留。
+# inpaint=True 表示框内有底纹，从 patch_from 那几行取纹理平铺。
 BOXES = {
-    # 两只怪的爪子和字的阴影连成一块，连通域切不开，硬校验只能豁免；成图逐张看过
+    # 两只怪的爪子和字的阴影连成一块，连通域切不开，硬校验只能豁免。成图逐张看过
     'occultism/occultism_title.png': dict(box=(16, 27, 73, 67), touching=True),   # 左右两只怪要留
-    # 末尾的 T / D 和右边那个压力管图标在横向上挨着（字止于 91%，图标起于 90%），
-    # 切不干净：框收到 82.7% 会把 T、D 两个英文字母留在图上，只能取 91.4% 让图标
-    # 最左侧一小块跟着被擦掉。硬校验对它豁免。
+    # 末尾的 T、D 与右边的压力管图标横向相挨（字止于 91%，图标起于 90%）。框收到 82.7%
+    # 会留下 T、D，所以取 91.4%，图标最左侧一小块会被擦掉，硬校验豁免。
     'pneumaticcraft/pnc_title.png':  dict(box=(0, 0, 91.4, 100), touching=True),
     'twilight_forest_title.png':     dict(box=(5, 18, 95, 72), patch_from=(86, 96)),  # 字压在石砖带上
-    # 下面这些两端挂着装饰（方块、蜜蜂、剑、钻石、模组图标），只换中间那条文字。
-    # 边界值不是目测拍的，是按连通域算出来的：先取不透明遮罩的 8 邻接连通域，
-    # 文字是一组、两端装饰各是一组，框取文字那组的包围盒。目测过一版，
-    # 结果把「悬赏板」左边那对剑和「食物与耕种」左边的装饰各啃掉一块，
-    # 所以下面加了 check_boxes() 硬校验，边界切断任何连通域就直接报错退出。
+    # 下面这些两端有装饰（方块、蜜蜂、剑、钻石、模组图标），只换中间的文字。边界按 8 邻接
+    # 连通域计算：文字一组、两端装饰各一组，框取文字那组的包围盒。check_boxes() 校验
+    # 边界不切断任何连通域。
     'ae2.png':                       dict(box=(0, 0, 78, 100)),   # 右边那个「2」是 logo 图案，留着当序号
     'basic_power/allthepower.png':   dict(box=(20, 0, 79, 100)),
     'bounty.png':                    dict(box=(31, 0, 68, 100)),
     'food_and_farming.png':          dict(box=(14, 0, 85, 100)),
     'tips_and_tricks.png':           dict(box=(16, 0, 82, 100)),
-    # 这两张的装饰和文字在像素上是**连着**的（蜜蜂触角搭在字上、神秘农业整条黑底是
-    # 一块），连通域切不开，硬校验对它们只能豁免。边界改从「有墨但没有字色」的
-    # 列区间取（蜜蜂 19~24% 与 76~81% 两段只有触角没有字），并逐张看过成图。
+    # 这两张的装饰与文字像素相连（蜜蜂触角搭在字上，神秘农业整条黑底是一块），硬校验豁免。
+    # 边界取「有墨但没有字色」的列区间（蜜蜂 19~24% 与 76~81% 只有触角），成图逐张看过。
     'bees/productive_bees.png':      dict(box=(24, 0, 76, 100), touching=True),
     'mystical_agriculture/title.png': dict(box=(21, 0, 81, 100), patch_from=(4, 14),
                                           touching=True),        # 底是不透明黑条
@@ -402,13 +344,10 @@ BOXES = {
 def check_boxes():
     """硬校验：擦除框的边界不许切断任何连通域。
 
-    框写偏一点，两端的装饰就会被啃掉半个而人眼未必立刻发现（「悬赏板」左边那对剑
-    就这么少了一把）。这里逐张核：凡是同时有像素在框内又有像素在框外的连通域，
-    就说明边界从它身上穿过去了，直接报错。
+    同时有像素在框内和框外的连通域，说明边界从它身上穿过，装饰会被切掉一半，直接报错。
     """
     for rel, cfg in sorted(BOXES.items()):
-        # patch_from 的图底是整块不透明背景，框必然横切它——但框内会拿干净的
-        # 背景条补回去，不算啃掉装饰，所以跳过。
+        # patch_from 的图底是整块背景，框必然横切它，框内会用干净背景条补回，跳过。
         if cfg.get('touching') or 'patch_from' in cfg:
             continue
         im = Image.open(SRC / rel).convert('RGBA')
@@ -436,45 +375,38 @@ def check_boxes():
                             if 0 <= p < w and 0 <= q < h and not seen[q][p] and a[p, q] > 40:
                                 seen[q][p] = True
                                 st.append((p, q))
-                # 被切掉的是小的那半：装饰被啃 or 英文没擦干净，两种都不能要。
-                # 留一点容差——有的图装饰的尖端和文字在像素上就是挨着的（悬赏板的剑尖
-                # 压进文字第一列），差几个像素切不开，也确实看不出来。
+                # 被切掉的是较小的那部分：装饰被切掉，或英文没擦干净，都不行。留一点容差，
+                # 有的装饰尖端与文字像素相挨（悬赏板的剑尖压进文字第一列），切不开也看不出。
                 loss = min(ins, out)
                 if npx >= 20 and loss:
                     if loss > max(64, npx * 0.01):
                         sys.exit('❌ %s 的擦除框切断了一个连通域（框内 %d / 框外 %d）'
-                                 '——边界会把装饰啃掉半个，改 BOXES' % (rel, ins, out))
+                                 '，边界会切掉装饰，改 BOXES' % (rel, ins, out))
                     print('  ⚠ %s 擦除框边界擦掉了 %d 像素（在容差内）' % (rel, loss))
 
-# ── 文字压在美术上的图：按描边抠字，美术原样留着 ──────────────────────────
+# ── 文字压在美术上的图：按描边抠字，美术原样保留 ──────────────────────────
 #
-# BOXES 那条路是「框内整块擦掉、框外保留」，前提是装饰在文字**两侧**。
-# neovitae 不是：文字压在凤凰与圣杯上，两侧的 DNA 装饰又和文字同处一条带。
-# 按框擦会把凤凰拦腰挖空，装饰也一起没。
+# neovitae 的文字压在凤凰与圣杯上，两侧的 DNA 装饰与文字在同一条带上，BOXES 按框擦除会把
+# 凤凰挖空。只有文字有浅色描边，美术是纯深红，所以：取浅色遮罩，膨胀成闭合轮廓，从画布
+# 外围洪水填充，填不到的是字腹，描边加字腹就是英文字。这张图抠出 10.5 万像素
+# （不透明区的 56%），美术完整保留。
 #
-# 可用的特征是**浅色描边只出现在文字上**——凤凰、圣杯、装饰都是纯深红，没有白边。
-# 于是：取浅色遮罩 → 膨胀成闭合轮廓 → 从画布外围洪水填充 → 灌不到的就是字腹，
-# 描边 ∪ 字腹 = 英文字。这张图抠出 10.5 万像素（占不透明区 56%），
-# 凤凰、圣杯、血滴、两侧装饰、底部标尺全部完整。
-#
-#   light  判定「这是描边」的 RGB 下限
-#   dense  判定「这一列/行属于字」的像素数下限，按图高取比例。装饰线很细，
-#          用它把两端装饰排除在字的外接框之外——既不擦它们，也不让它们把
-#          绘制框撑到满宽（撑宽了中文会被拉扁）
-#   scale  中文相对英文外接框的高度比。CJK 字身撑满字面框，而英文有升降部，
-#          取 1.0 会让中文比原文高出一截，把底部那条标尺压掉
+#   light  判定为描边的 RGB 下限
+#   dense  判定一列或一行属于字的像素数下限，按图高取比例。装饰线很细，用它把两端装饰
+#          排除在字的外接框之外，既不擦掉装饰，也不撑宽绘制框（撑宽会把中文拉扁）
+#   scale  中文相对英文外接框的高度比。英文有升降部，CJK 撑满字面框，取 1.0 会让中文
+#          高出一截，压掉底部的标尺
 WORDMARK = {
     'neovitae/neovitae.png': dict(light=(195, 185, 185), dense=0.04, scale=0.86),
 }
 
 
 def wordmark_split(im, rel, cfg):
-    """按描边把压在美术上的英文字抠出来。
+    """按描边抠出压在美术上的英文字。
 
     → (只含英文字的子图, 该子图在原图里的位置, 已清掉英文字与投影的底图)
 
-    每一步都 fail-closed：抠不出字就退出。静默返回空遮罩的话，产出的是一张
-    只剩中文、美术全丢的图——而这种图不会有任何闸报错，只有玩家会看到。
+    抠不出字就退出：返回空遮罩会产出一张只剩中文、美术全丢的图，没有任何检查会报错。
     """
     from PIL import ImageChops, ImageDraw, ImageFilter
     W, H = im.size
@@ -487,11 +419,11 @@ def wordmark_split(im, rel, cfg):
         ImageChops.multiply(bl.point(lambda v: 255 if v > lo[2] else 0), solid))
     n_light = sum(light.point(lambda v: 1 if v else 0).getdata())
     if n_light < W * H * 0.004:
-        sys.exit('❌ %s 的浅色描边只有 %d 像素，抠不出英文字——WORDMARK 的 light 阈值不对'
+        sys.exit('❌ %s 的浅色描边只有 %d 像素，抠不出英文字，WORDMARK 的 light 阈值不对'
                  % (rel, n_light))
 
-    # 膨胀成闭合轮廓，再从画布外围灌水：灌不到的封闭区域就是字腹。
-    # 先加一圈透明边，保证 (0,0) 一定在字外——原图四角万一有墨，灌水会从内部起步。
+    # 膨胀成闭合轮廓，再从画布外围洪水填充，填不到的封闭区域是字腹。
+    # 先加一圈透明边，保证 (0,0) 在字外。
     edge = light.filter(ImageFilter.MaxFilter(5))
     pad = Image.new('L', (W + 2, H + 2), 0)
     pad.paste(edge, (1, 1))
@@ -501,8 +433,7 @@ def wordmark_split(im, rel, cfg):
     if not word.getbbox():
         sys.exit('❌ %s 抠出来的英文字是空的' % rel)
 
-    # 字的外接框只取「密集」的行列：装饰线很细，这样把它们排除在框外，
-    # 既不会被擦掉，也不会把绘制框撑宽
+    # 外接框只取像素密集的行列，把细装饰线排除在外，既不擦掉，也不撑宽绘制框
     wp = word.load()
     thr = max(6, round(H * cfg['dense']))
     cols = [x for x in range(W) if sum(1 for y in range(H) if wp[x, y]) >= thr]
@@ -511,8 +442,8 @@ def wordmark_split(im, rel, cfg):
         sys.exit('❌ %s 抠出来的英文字不成片（dense 阈值 %d 太高）' % (rel, thr))
     bx0, by0, bx1, by1 = cols[0], rows[0], cols[-1] + 1, rows[-1] + 1
 
-    # 清底：框内擦掉字；字外一圈的低饱和像素是原字的投影与描边余烬，一并清掉。
-    # 美术是饱和的深红，按饱和度就能分开；清理只在框内做，框外一个像素不碰。
+    # 清底：擦掉框内的字，以及字外一圈低饱和的投影与描边残留（美术是饱和深红，按饱和度区分）。
+    # 只在框内清理。
     near = word.filter(ImageFilter.MaxFilter(41))
     far = word.filter(ImageFilter.MaxFilter(81))
     base = im.copy()
@@ -564,16 +495,12 @@ STYLE = {
     'eternal/starlight_tools.png':   ((248, 176, 0), (100, 76, 160)),
     # 金描边 + 浅灰字身，自动采样把描边采成了浅灰，整块糊在一起看不出字
     'forbidden/forbidden_automatic.png': ((188, 140, 12), (178, 178, 178)),
-    # create 那组 8 张横幅原图配色完全一致（字身 167,112,61 / 描边 60,60,60），
-    # 但只有这一张的原文 "Rotational Power" 排了两行、图高 145px 而非 72~85px。
-    # 两行之间那条暗底把采样拉偏，采出来主客颠倒：出货成了浅灰字身(210,218,218)
-    # 配棕色描边，和同一页其余 7 张（字身 167,112,61 + 近黑描边）对不上。
-    # 这里直接钉成与那 7 张一致的配色。同类失效见上面的 pneumaticcraft。
+    # create 那组 8 张配色相同（字身 167,112,61 / 描边 60,60,60），只有这张排了两行、
+    # 图高 145px，两行间的暗底会把采样拉偏，字身与描边颠倒。固定成与另外 7 张一致的配色。
     'create/create_title_power.png': ((14, 14, 14), (167, 112, 61)),
 }
 
-# 只有这几张确实是「文字当遮罩、底下压材质图」，值得抠；其余一律取本色干净地画。
-# 想给某张加材质，把路径加进来即可。
+# 只有这几张是「文字当遮罩、底下压材质图」，才提取材质，其余只取本色。要给某张加材质，加进这里。
 TEXTURED = {
     'apothic/logo.png',                      # 裂纹石头
     'apothic/spawners_title.png',
@@ -613,7 +540,7 @@ BANNERS = {
     'artifacts/artifacts_necklace.png':                     '项链',
     'artifacts/artifacts_title.png':                        '奇异饰品',
     'artifacts/feet_olyfans.png':                           '足部',  # 饰品槽位名取 curios 的官方译法
-    'aurora/aurora_title.png':                              '极光',  # 8.1 新增的章节；同目录的 aurora_ring 是纯图形
+    'aurora/aurora_title.png':                              '极光',  # 8.1 新增的章节。同目录的 aurora_ring 是纯图形
     'basic_power/allthepower.png':                          '基础能量',
     'basicarmor/armor_title.png':                           '基础护甲',
     'bees/productive_bees.png':                             '资源蜜蜂',
@@ -624,7 +551,7 @@ BANNERS = {
     'building_tips/tips.png':                               '技巧',
     'bumblezone/bumble_title.png':                          '蜜蜂领域',
     'cataclysm/cataclysm_title.png':                        '灾变',
-    'create/caddon_aquatic.png':                            '瀚海雄心',  # 8.3 新增的「机械动力附属」章；五张横幅取本章任务标题里的模组名
+    'create/caddon_aquatic.png':                            '瀚海雄心',  # 8.3 新增的「机械动力附属」章。五张横幅取本章任务标题里的模组名
     'create/caddon_ars.png':                                '新生魔艺造物',
     'create/caddon_crafts.png':                             '创想附加',
     'create/caddon_dragon.png':                             '龙+',
@@ -675,10 +602,10 @@ BANNERS = {
     'tips_and_tricks.png':                                  '技巧与窍门',
     'twilight_forest_title.png':                            '暮色森林',
     'undergarden/undergarden_title.png':                    '深暗之园',
-    # ↓ 第二批：章节内的分区标签 / 生物名 / 阶级图等。生物与 Boss 名一律取模组 lang 的官方译名。
+    # 章节内的分区标签、生物名、阶级图等。生物与 Boss 名取模组 lang 的官方译名。
     # 纯图标（无文字）的不在此列：apothic/gear_{augment,gem,reforge,salvage,simple,smith}、
     # apothic/enchant_{deep,end,nether,ocean}（是书架插图）、chap3/creative_{crucible4,enchanter5,forge4}、
-    # extremereactors/titleimage2；building_tips/building_title_* 是建筑师本人的 ID，属人名，不翻。
+    # extremereactors/titleimage2。building_tips/building_title_* 是建筑师本人的 ID，属人名，不翻。
     'apothic/enchant_arcana.png': '阿卡那',
     'apothic/enchant_eterna.png': '位阶',
     'apothic/enchant_infusions.png': '灌注',
@@ -811,8 +738,7 @@ def crop_box(im, rel):
     wm = WORDMARK.get(rel)
     if wm:
         sub, at, base = wordmark_split(im, rel, wm)
-        # 这里返回的是**新** dict，不是 WORDMARK 里那个——往全局配置上挂
-        # 每张图现算的底图，跑第二张时就会拿到上一张的底
+        # 返回新 dict：底图挂到全局 WORDMARK 上的话，处理下一张时会拿到上一张的底图
         return sub, at, dict(wm, canvas=base)
     cfg = BOXES.get(rel)
     if cfg:
@@ -837,9 +763,8 @@ def sample_style(im, rel=''):
 
     a = im.getchannel('A').point(lambda v: 255 if v > 200 else 0)
     ap = a.load()
-    # 腐蚀量按图高 5% 起，若腐蚀后什么都不剩（像素字笔画本来就细）就**逐级减小**，
-    # 而不是退回「完全不腐蚀」——那条兜底会把黑描边整个算进材质，
-    # 中文笔画里就会出现莫名其妙的黑纹理（斯库拉就是这么烂的）。
+    # 腐蚀量从图高 5% 起，腐蚀后什么都不剩（像素字笔画细）就逐级减小。不能退回完全不腐蚀：
+    # 黑描边会整个算进材质，中文笔画里出现黑色纹理（例如「斯库拉」）。
     edge, inner = [], {}
     for ring in range(max(1, round(H * 0.05)), 0, -1):
         er = a.filter(ImageFilter.MinFilter(2 * ring + 1))
@@ -857,7 +782,7 @@ def sample_style(im, rel=''):
         allpx.sort(key=sum, reverse=True)
         inner = {0: allpx[:max(1, len(allpx) // 3)]}
         edge = allpx[-max(1, len(allpx) // 3):]
-    # 描边色取腐蚀掉的外圈里**最深**的那一档，避免把渐变亮部当描边
+    # 描边色取腐蚀掉的外圈里最深的那一档，避免把渐变亮部当描边
     if edge:
         edge.sort(key=sum)
         outline = med(edge[:max(1, len(edge) // 3)])
@@ -866,8 +791,8 @@ def sample_style(im, rel=''):
     ys = sorted(inner)
     if not ys:
         return outline, Image.new('RGB', (W, H), (255, 255, 255)), max(2, round(H * 0.045)), '空'
-    # 切成一条条连续的「有墨行」，只留最高的那条 —— 多行异色的原图（APOTHIC 灰 /
-    # ENCHANTING 紫）整块一起用会让中文上下两截色
+    # 只留最高的一条连续「有墨行」：两行异色的原图（APOTHIC 灰 / ENCHANTING 紫）
+    # 整块采样会让中文上下两截颜色不同
     peak = max(len(v) for v in inner.values())
     runs, cur = [], []
     for y in range(ys[0], ys[-1] + 1):
@@ -879,8 +804,8 @@ def sample_style(im, rel=''):
         runs.append(cur)
     band = [y for y in (max(runs, key=len) if runs else ys) if y in inner]
 
-    # 默认只取本色、自己干净地画。抠材质只对确实是材质字的那几张做——
-    # 硬抠的收益远小于它带来的问题（描边混进材质→黑斑、两行时第二行套暗部→像缺笔）。
+    # 默认只取本色重画。提取材质只用于 TEXTURED 里的图：描边混进材质会出黑斑，
+    # 两行时第二行会套上暗部。
     pool = [c for y in band for c in inner[y]]
     if rel not in TEXTURED:
         return (outline, Image.new('RGB', (W, H), body_color(pool, outline)),
@@ -901,10 +826,9 @@ def sample_style(im, rel=''):
 
 
 def body_color(pool, outline, med=None):
-    """字的本色。取中位色；若与描边色太接近就改取偏亮的四分位。
+    """字的本色，取中位色。与描边色太接近时改取偏亮的四分位。
 
-    气动工艺那张就是这么翻的：原字是浅灰配深描边，腐蚀后剩下的多是中间调，
-    中位色几乎等于描边色，画出来整个字糊成一团深色，白字完全看不见。
+    例如气动工艺：浅灰字配深描边，腐蚀后多是中间调，中位色接近描边色，白字会看不见。
     """
     if not pool:
         return (255, 255, 255)
@@ -917,11 +841,10 @@ def body_color(pool, outline, med=None):
 
 
 def tile_plate(plate, text, gw, gh):
-    """中文排几行，材质板就竖向重复几遍——否则第二行会套到字母底部的暗部阴影。
+    """中文排几行，材质板就竖向重复几遍，否则第二行会套上字母底部的暗部阴影。
 
-    另外：原图两行时，"最高的那条墨带"有时会把两行连着算成一条（下行的升部与
-    上行的降部之间没断开），这样材质板里就含了「亮—暗—亮—暗」两轮。
-    所以多行时只取材质板的上 55%（高光与本色所在），再重复，避免整行套上阴影。
+    原图两行时，最高墨带可能把两行连成一条，材质板里有两轮亮暗。所以多行时只取
+    材质板的上 55%（高光与本色）再重复。
     """
     n = text.count('\n') + 1
     if n > 1:
@@ -941,15 +864,13 @@ def render_vector(text, w, h, outline, plate, sw, face):
     size = ah
     for _ in range(12):
         f = ImageFont.truetype(path, max(1, int(size)) * SS, index=idx)
-        # 画布必须按文字的实际尺寸开。早先固定用 (w*SS*3, h*SS*3) 并从 (w*SS, h*SS)
-        # 起笔，长文字会画出右边界被裁掉，getbbox 量到残缺字形，字号迭代跟着算错，
-        # 输出就是缺角断笔的「抠烂」字。
+        # 画布按文字实际尺寸开。固定尺寸起笔会裁掉长文字右侧，getbbox 量到残缺字形，
+        # 字号迭代跟着算错。
         sp = int(round(size * SS * 0.12))
         tb = ImageDraw.Draw(Image.new('L', (1, 1))).multiline_textbbox(
             (0, 0), text, font=f, stroke_width=sw * SS, align='center', spacing=sp)
-        # 画布留足余量再裁：textbbox 对多行的下伸部估得不准，余量小了第二行的
-        # core（字身）会被画布底裁掉，而 allm（含描边）没被裁——渲染出来就是
-        # 「下半行只剩一坨描边、字身没了」。余量给到半个字高，之后按 bbox 裁掉多余。
+        # 画布留足余量再裁：textbbox 对多行的下伸部估得不准，余量小了第二行的 core（字身）
+        # 会被裁掉而 allm（含描边）没有，下半行只剩描边。余量取半个字高。
         pad = int(sw * SS) + int(size * SS * 0.5) + 8
         big = (int(tb[2] - tb[0]) + 2 * pad, int(tb[3] - tb[1]) + 2 * pad)
         allm = Image.new('L', big, 0)
@@ -963,10 +884,8 @@ def render_vector(text, w, h, outline, plate, sw, face):
         if abs(k - 1) < 0.01:
             break
         size = max(1, size * k)
-    # core 必须用**同样的 stroke_width** 画（只是描边填 0），否则多行会错位：
-    # PIL 算多行行距时是 line_spacing = 单行高 + stroke_width + spacing，
-    # 带描边和不带描边算出来的第二行位置差约两倍描边宽 —— 第二行下半截 core 盖不到，
-    # 渲染出来就只剩 allm 的描边色，看着像字被截掉一块。
+    # core 必须用同样的 stroke_width 画（描边填 0）：PIL 的多行行距是单行高 + stroke_width
+    # + spacing，带不带描边，第二行位置差约两倍描边宽，第二行下半截会只剩描边色。
     core = Image.new('L', big, 0)
     ImageDraw.Draw(core).text(org, text, font=f, fill=255, stroke_width=sw * SS,
                               stroke_fill=0, align='center', spacing=sp)
@@ -998,12 +917,10 @@ MIN_CONTRAST = 96      # 描边与字身的明度差下限（0~255）
 
 
 def boost_contrast(outline, plate):
-    """保证描边与字身的明度差够大，不够就把描边推开。
+    """保证描边与字身的明度差足够，不够就把描边推开。
 
-    原图英文笔画粗、字内面积大，描边和字身接近一点也还看得清；中文笔画又细又密，
-    同一套配色贴上去就糊成一坨（自动化锻炉的浅灰字配浅金描边、应用能源的深蓝配深蓝
-    都是这么糊掉的）。所以不逐张调色，统一在这里加一道保底：明度差不到
-    MIN_CONTRAST 就沿原描边色的方向把它压暗或提亮，色相不变，只动明暗。
+    中文笔画细密，用原图英文的配色会看不清（例如自动化锻炉的浅灰字配浅金描边、应用能源的
+    深蓝配深蓝）。明度差小于 MIN_CONTRAST 时，沿原描边色的方向压暗或提亮，色相不变。
     """
     sm = plate.resize((8, 8), Image.LANCZOS)
     px = list(sm.getdata())
@@ -1020,7 +937,7 @@ def boost_contrast(outline, plate):
 
 
 def place(glyph, w, h):
-    """硬性收口：字号迭代未必收敛，超出可用框就直接等比缩回去，绝不让画布裁掉笔画。"""
+    """最后保证尺寸：字号迭代未必收敛，超出可用框就直接等比缩回去，不让画布裁掉笔画。"""
     aw, ah = w - 2 * MARGIN, h - 2 * MARGIN
     gw, gh = glyph.size
     if gw > aw or gh > ah:
@@ -1036,7 +953,7 @@ def pixel_mask(text, size=None):
     """把文字排成 1 倍尺度的 0/1 点阵（无抗锯齿），供整数倍放大用。
 
     size 给定就用那一档方舟像素字体，整行交给 PIL 排（顺带拿到字距和比例宽度），
-    在设计尺寸上出来的就是纯黑白；size=None 退回 Unifont 自己拼字。
+    在设计尺寸上出来的就是纯黑白。size=None 退回 Unifont 自己拼字。
     """
     if size is not None:
         f = ImageFont.truetype(str(pixel_face(size)), size)
@@ -1079,9 +996,8 @@ def render(text, w, h, outline, plate, sw):
     """点阵排字，整数倍最近邻放大后按材质板上色"""
     # 描边：1 倍尺度上按切比雪夫距离膨胀 ow 圈，放大后就是方块状的粗描边
     aw, ah = w - 2 * MARGIN, h - 2 * MARGIN
-    # 描边固定 1 圈（1 倍尺度）。放大 k 倍后描边就是 k 像素，与点阵字的 1px 笔画
-    # 放大后同宽——早先按 sw 取 2 圈，k=8 时描边 16px 而笔画才 8px，字被描边吃掉，
-    # 中间的本色几乎看不见（气动工艺就是这么糊掉的）。
+    # 描边固定 1 圈（1 倍尺度），放大 k 倍后与点阵笔画同宽。取 2 圈时 k=8 的描边 16px、
+    # 笔画 8px，本色几乎看不见（例如气动工艺）。
     ow = 1
     # 逐档试字框，挑放大后填得最满的那档（见 PIXEL_SIZES 处的说明）
     best, holes0 = None, None
@@ -1090,8 +1006,7 @@ def render(text, w, h, outline, plate, sw):
         h1, w1 = len(c1), len(c1[0])
         kk = max(1, min(aw // (w1 + 2 * ow), ah // (h1 + 2 * ow)))
         fill = min(kk * (w1 + 2 * ow) / aw, kk * (h1 + 2 * ow) / ah)
-        # 从大字框往小试。填充率差不多就用大的；小字框只有在**既明显撑得更满
-        # （多 8 个百分点以上）又没把笔画糊到一起**时才换——可读性不给尺寸让路。
+        # 从大字框往小试。小字框只有在明显更满（多 8 个百分点以上）且笔画没粘连时才换。
         if best is None:
             best, holes0 = (fill, c1, kk), hole_count(c1)
         elif fill > best[0] + 0.08 and hole_count(c1) >= holes0:
@@ -1127,9 +1042,8 @@ def chapter_titles():
     """图 → 引用它的章节中文标题（用于核验译名没跑偏）"""
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from check_quest_item_names import parse_lang, strip
-    # 整合包的中文任务书有两种形态：进过游戏的实例里是合并好的 zh_cn.snbt，
-    # 刚解压的官方包里则还是拆开的 lang/zh_cn/**.snbt（合并是进游戏时才做的）。
-    # 两种都要认，否则 CI 上对着官方包跑会直接找不到文件。
+    # 中文任务书有两种形态：进过游戏的实例里是合并好的 zh_cn.snbt，官方包里是拆开的
+    # lang/zh_cn/**.snbt（进游戏时才合并）。CI 对着官方包跑，两种都要认。
     zh = {}
     one = QUESTS / 'lang' / 'zh_cn.snbt'
     if one.exists():
@@ -1162,15 +1076,12 @@ def main(check_only=False):
         if not src.exists():
             sys.exit('❌ 找不到原图 %s（本脚本要对着整合包实例跑）' % src)
         used = titles.get(rel, [])
-        # 真正的风险形状：这张图**当章节标题用**（文案就是某个章节的标题），却被
-        # 标题不同的两个章节共用——写死一个，另一个章节就顶着别人的标题。
-        # 只是「被两个章节引用」不构成风险：内容横幅（如 gear_tiers 的「世界层级」）
-        # 与章节标题无关，两处显示同一句话本来就对。
-        # 2026-08-02：ATM10 7.3 改了 Apotheosis 系的章节结构，gear_tiers.png 同时被
-        # 「神化装备」「神化附魔」引用，旧写法在这里必红——红的是闸太宽，不是内容有错。
+        # 风险是：这张图当章节标题用，却被标题不同的两个章节共用，其中一章会显示别人的标题。
+        # 内容横幅被多个章节引用不算风险，例如 7.3 起 gear_tiers.png 同时被「神化装备」
+        # 「神化附魔」引用。
         if len(set(used)) > 1 and text in used:
             sys.exit('❌ %s 的文案「%s」正是章节标题，而它被标题不同的多个章节共用 %s'
-                     '——写死会让另一个章节顶着别人的标题' % (rel, text, used))
+                     '，写死会让另一个章节显示别人的标题' % (rel, text, used))
         im = Image.open(src).convert('RGBA')
         sub, at, cfg = crop_box(im, rel)
         outline, plate, sw, how = sample_style(sub, rel)
@@ -1190,8 +1101,7 @@ def main(check_only=False):
             # 保留框外的装饰：在原图上抠掉文字框，再把中文贴回去
             canvas = im.copy()
             if cfg.get('canvas') is not None:
-                # 按描边抠字那条路：底图已经把英文字和投影清干净了，
-                # 再按框整块擦会把压在字底下的美术一起挖掉
+                # 按描边抠字的底图已清掉英文与投影，再按框擦会挖掉字下的美术
                 canvas = cfg['canvas'].copy()
             elif 'patch_from' in cfg:    # 框内有底纹，取干净的几行平铺补上
                 a, b = cfg['patch_from']
@@ -1199,8 +1109,8 @@ def main(check_only=False):
                 strip = im.crop((at[0], ya, at[0] + sub.width, yb))
                 sh = max(1, strip.height)
                 for y in range(0, sub.height, sh):
-                    # 最后一条要裁掉超出部分——原先整条贴，会溢出文字框下沿，
-                    # 把框外本该原样保留的像素一起盖掉（暮色森林被盖掉了 5 万多个）
+                    # 最后一条裁掉超出部分：整条贴会溢出文字框下沿，盖掉框外像素
+                    # （暮色森林会盖掉 5 万多个）
                     canvas.paste(strip.crop((0, 0, strip.width, min(sh, sub.height - y))),
                                  (at[0], at[1] + y))
             else:

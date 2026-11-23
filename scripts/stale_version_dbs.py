@@ -6,15 +6,15 @@
 """列出「VaultPatcher 库缺模块记录」的整合包版本，一行一个。
 
 `gen_vaultpatcher.py` 打包时会对每个模块查 `versions/db/<版本>/vaultpatcher.json`，
-查不到就红——因为没有记录就等于没对着那一版真实的 jar 核过 target_class 与 key，
+查不到就红，因为没有记录就等于没对着那一版真实的 jar 核过 target_class 与 key，
 此时把模块发给那一版的用户，是闭着眼睛发。
 
-那道闸只会在构建到某一版时才炸，一次报一版；而加一个带 target_class 的模块会让
-**五版**同时过期。这里把「哪几版缺、缺哪几个」一次性算出来，CI 拿它决定要为哪些
+那道闸只会在构建到某一版时才炸，一次报一版。而加一个带 target_class 的模块会让
+五版同时过期。这里把「哪几版缺、缺哪几个」一次性算出来，CI 拿它决定要为哪些
 版本取 jar 补库。
 
-判据必须和那道闸**同一份**：跳过哪些模块（SRC_ONLY / PERF_HOLD）直接从
-`gen_vaultpatcher` 导入，不在这里另抄一份清单——两份清单迟早会漂。
+判据必须和那道闸同一份：跳过哪些模块（SRC_ONLY / PERF_HOLD）直接从
+`gen_vaultpatcher` 导入，不在这里另抄一份清单，两份清单迟早会漂。
 
     python3 scripts/stale_version_dbs.py          # 缺的版本，一行一个
     python3 scripts/stale_version_dbs.py --why    # 连缺哪几个模块一起打印

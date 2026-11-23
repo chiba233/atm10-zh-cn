@@ -1,28 +1,20 @@
-// ATM10 汉化补丁「绿油油版」客户端更新提示。
-// 仅在本次客户端会话首次进入世界/服务器时读取一次 GitHub 最新正式 Release；
-// 绝不下载或写入任何文件，失败也只写一行日志。
+// ATM10 汉化补丁「绿油油版」客户端更新提示。每次客户端会话首次进入世界或服务器时，读取一次
+// GitHub 最新正式 Release。不下载、不写文件，失败只写一行日志。
 //
-// ⚠️ 不能用 java.net.http / java.lang.System。KubeJS 自带的 kubejs.classfilter.txt 里
-//    有 `- java.net` 与 `- java.lang`（白名单里没有 System），`Java.loadClass` 会当场
-//    抛异常。vr16-beta4 / vr16 里的旧写法正是死在这里，异常又被 catch 吞掉，表现成
-//    「什么都没发生」，跟「已经是最新版」无法区分，所以发出去了也没人看得出来。
-//    改用整合包类路径上本来就有的 Apache HttpClient 4.5.13：HttpGet 收字符串 URL，
-//    脚本里一个受限类都不出现。这条约束由 check_kubejs_classfilter.py 在构建时守住。
+// 不能用 java.net.http / java.lang.System：kubejs.classfilter.txt 里有 `- java.net` 与 `- java.lang`
+//    （白名单里没有 System），Java.loadClass 会抛异常，被 catch 吞掉后看起来和「已是最新版」一样。
+//    所以用整合包类路径上的 Apache HttpClient 4.5.13，HttpGet 接收字符串 URL，脚本里不出现受限类。
+//    由 check_kubejs_classfilter.py 在构建时检查。
 //
-// ⚠️ **块里只许赋值，不许声明。** KubeJS 的 Rhino 里，写在 `try {}` / `if {}` 这类
-//    嵌套块内部的 `const` 会抛 `TypeError: redeclaration of var <名字>`，而且是
-//    **运行时**才抛：脚本加载阶段照样 0 errors，躺在事件回调里就表现成「什么都没
-//    发生」。2026-08-01 实机踩过两次。拿整包 ATM10 的 kubejs 对照过：上游能跑的
-//    `const` 全部在函数/回调体的顶层，没有任何一处写进块里。所以这里所有变量都在
-//    函数体顶层用 `let` 声明，`try` 内部只做赋值。这条由 check.py 的
-//    js-no-const-inside-block 守住。
+// 块里只赋值，不声明。KubeJS 的 Rhino 里，`try {}` / `if {}` 等嵌套块内部的 `const` 会在运行时抛
+//    `TypeError: redeclaration of var <名字>`，加载阶段不报错，写在事件回调里就是没有效果。上游的
+//    `const` 都在函数或回调体顶层。所以变量都在函数体顶层用 `let` 声明，`try` 内部只赋值。
+//    由 check.py 的 js-no-const-inside-block 检查。
 //
-// ⚠️ 所有 JS 只在主线程跑。HTTP 交给 ForkJoinPool.commonPool()（守护线程，不会拖住
-//    游戏退出）在 Java 侧完成，脚本只在客户端 tick 里轮询 isDone()——不依赖「Rhino
-//    能否在非主线程执行回调」这种没法静态确认的事。
+// JS 只在主线程运行。HTTP 交给 ForkJoinPool.commonPool()（守护线程，不影响游戏退出）在 Java 侧
+//    完成，脚本在客户端 tick 里轮询 isDone()，不依赖 Rhino 能否在非主线程执行回调。
 //
-// 整份包在 IIFE 里：KubeJS 的 client_scripts 共用同一个全局作用域，顶层 const 撞名
-// 会让**整批脚本**加载失败（cb979c1 踩过一次）。
+// 整份放在 IIFE 里：client_scripts 共用一个全局作用域，顶层 const 重名会让整批脚本加载失败。
 (function () {
   const HANHUA_VERSION = '@@PATCHVER@@'
   const RELEASES_URL = 'https://github.com/chiba233/atm10-zh-cn/releases/latest'
@@ -36,13 +28,13 @@
   let settled = false
 
   function releaseVersion(tag) {
-    // 发布工作流允许 12、v12、r12、vr12 及其 12.1 这种多段版本号，
-    // 也允许 -release11、-beta2、-rc3 这类后缀。release 的序号同样是版本的一部分。
+    // 发布工作流允许 12、v12、r12、vr12 及 12.1 这种多段版本号，也允许 -release11、-beta2、-rc3
+    // 这类后缀。release 的序号也是版本的一部分。
     let match = String(tag).match(/^v?r?(\d+(?:\.\d+)*)(?:-(release|beta|rc)(\d+))?$/i)
     if (!match) return null
     return {
       parts: match[1].split('.').map(part => Number(part)),
-      // 同一数字版本下，beta < rc < 正式版；没有后缀也按正式版处理。
+      // 同一数字版本下，beta < rc < 正式版。没有后缀也按正式版处理。
       stage: match[2] ? { beta: 1, rc: 2, release: 3 }[match[2].toLowerCase()] : 3,
       serial: match[3] ? Number(match[3]) : 0
     }
@@ -59,8 +51,8 @@
     return latest.serial > current.serial
   }
 
-  // 读环境变量同样不能用 java.lang.System（被过滤表拒了）。commons-lang3 在整合包
-  // 类路径上，且不在黑名单里。读不到就当没设——不为了读个开关而放弃整个检查。
+  // 读环境变量也不能用 java.lang.System（被过滤表拒绝）。commons-lang3 在整合包类路径上且未被禁止。
+  // 读不到就当没设。
   function skipByEnv() {
     let SystemUtilsClass = null
     let value = ''
@@ -130,7 +122,7 @@
 
   ClientEvents.loggedIn(event => {
     if (settled || task !== null) return
-    // dev 构建解析不出版本号：一个请求都不发，也不留日志。
+    // dev 构建解析不出版本号，不发请求也不写日志。
     if (releaseVersion(HANHUA_VERSION) === null) return
     if (skipByEnv()) return
     startRequest()
@@ -151,7 +143,7 @@
     let latest = null
     let latestVersion = null
     try {
-      // BasicResponseHandler 对非 2xx 会抛，所以走到这里就是拿到正文了。
+      // BasicResponseHandler 遇到非 2xx 会抛异常，走到这里说明拿到了正文。
       matched = String(task.get()).match(/"tag_name"\s*:\s*"([^"]+)"/)
     } catch (err) {
       return done('更新检查失败（网络或 GitHub 限流）：' + err)

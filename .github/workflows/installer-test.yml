@@ -3,10 +3,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 name: Installer test
 
-# 安装脚本一旦改动，必须在 macOS / Windows / Linux 三台 runner 上
-# 跑端到端测试（造假实例 → 应用汉化 → 断言 → 恢复备份 → 断言，
-# 含可选拼音 mods 分支）。测试驱动是跨平台的 scripts/test_installer.py：
-# Unix 走 install.sh，Windows 走 powershell 5.1 + install.ps1（与用户双击 .bat 一致）。
+# 安装器改动后，在 macOS / Windows / Linux 三个 runner 上运行端到端测试（造假实例，应用汉化，
+# 断言，恢复备份，断言，含可选拼音 mods）。测试驱动是 scripts/test_installer.py：
+# Unix 走 install.sh，Windows 走 powershell 5.1 + install.ps1（与双击 .bat 一致）。
 on:
   push:
     branches: [main]
@@ -35,8 +34,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    # 安装器会去 GitHub API 查最新版。端到端测试不该依赖外网，也不该每次
-    # 三个系统各打一次 API（未认证只有 60 次/小时，撞上限就红得莫名其妙）。
+    # 安装器会查询 GitHub API 的最新版。端到端测试不依赖外网，未认证的 API 每小时只有 60 次。
     env:
       ATM_SKIP_UPDATE_CHECK: '1'
     steps:
@@ -46,10 +44,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      # 仓库里没有 config/ kubejs/ 这些出货目录，先从 src/ 摊出来。
-      # 安装器测试不碰图片与 lang 生成物，所以不用下整合包。
-      - name: 从 src/ 摊出货树
+      # 先从 src/ 组装出货树。安装器测试不涉及图片与 lang 生成物，不用下载整合包。
+      - name: 从 src/ 组装出货树
         run: python scripts/assemble.py
 
-      - name: 端到端测试（应用 → 恢复 → 可选mods）
+      # 依次测试应用汉化、恢复原状、安装可选模组。
+      - name: 安装器端到端测试
         run: python scripts/test_installer.py

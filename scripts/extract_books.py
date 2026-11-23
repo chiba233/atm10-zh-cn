@@ -7,15 +7,15 @@
 
 ## 为什么导览书不能整份提交
 
-Patchouli / AE2 Guide / Modonomicon 这类导览书，译文是**上游 JSON 的整份副本**，
+Patchouli / AE2 Guide / Modonomicon 这类导览书，译文是上游 JSON 的整份副本，
 只有里面的字符串换成了中文。结构、页码、配方引用全是上游的。这意味着：
 
 - 模组更新导览书（加一页、改配方、拆章节），我们那份旧副本会把新内容整个盖掉，
-  玩家永远看不到，**而且没有任何报错**。
+  玩家永远看不到，而且没有任何报错。
 - 已现形的实例（2026-07-27 实测）：
   `pneumaticcraft/…/programming/conditions.json` 上游多出 `pages[8].entries[9]`，
   `pneumaticcraft/…/tools/drone.json` 上游的 `pages[7].title` / `pages[8]` 整段变了
-  而我们那份错位——这两页此刻就在吞掉上游内容。
+  而我们那份错位，这两页此刻就在吞掉上游内容。
 
 所以仓库里只留「哪个位置、原文是什么、译成什么」，构建时拿**目标版本 jar 里的
 那份 JSON** 重新套一遍：上游加的页原样保留（暂时是英文），上游改过的位置会被点名。
@@ -30,13 +30,13 @@ Patchouli / AE2 Guide / Modonomicon 这类导览书，译文是**上游 JSON 的
 
 ## 怎么用
 
-改导览书译文的正确流程是**改构建出来的那份**，再反解回映射：
+改导览书译文的正确流程是改构建出来的那份，再反解回映射：
 
     ATM_PACK_ROOT=<整合包目录> ./scripts/generate_all.sh     # 书生成到 build/common
     $EDITOR build/common/resourcepacks/ATM10汉化包/assets/…/x.json
     python3 scripts/extract_books.py <整合包目录>/mods        # 反解回 src/books/
 
-本脚本**只更新它在译文树里真正看到的那些文件**，不动其余映射。早先它是「先清空
+本脚本只更新它在译文树里真正看到的那些文件，不动其余映射。早先它是「先清空
 src/books/ 再从 src/pack 重建」，转换完成后 src/pack 里已经没有导览书了，
 再跑一次就会把 988 份映射全删掉（2026-07-27 真踩了一次，靠 git 捞回来的）。
 
@@ -52,7 +52,7 @@ import books
 from paths import PACK as PACK_BUILT, SRC
 
 PACK = SRC / 'pack'
-# 这些前缀下的东西是导览书/手册，归本脚本管；lang/ 与本包独有资源不动
+# 这些前缀下的东西是导览书/手册，归本脚本管。lang/ 与本包独有资源不动
 BOOK_DIRS = ('patchouli_books', 'ae2guide', 'modopedia', 'books', 'guides',
              'guidebook', 'guide', 'mi_guidebook', 'mj_guide', 'text',
              'manual', 'gui', '_zh_cn')
@@ -92,7 +92,7 @@ def main(mods_dir, tree=None):
         sys.exit('❌ 译文树不在: %s\n'
                  '   先跑: ATM_PACK_ROOT=<整合包目录> ./scripts/generate_all.sh' % src)
     print('译文取自: %s' % src)
-    # **增量更新**：只动本次看到的文件，其余映射原样保留
+    # 增量更新：只动本次看到的文件，其余映射原样保留
     books.BOOKS.mkdir(parents=True, exist_ok=True)
     copies = json.loads(books.MAP_COPIES.read_text(encoding='utf-8')) \
         if books.MAP_COPIES.exists() else {}

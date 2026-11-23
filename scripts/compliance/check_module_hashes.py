@@ -5,12 +5,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """核对 src/vaultpatcher/modules/ 的内容哈希。
 
-保护清单（protect.py）管的是**文件在不在**，这份管的是**内容对不对**。
+保护清单（protect.py）管的是文件在不在，这份管的是内容对不对。
 两者缺一不可：这个仓库出过「撤回一项汉化只撤了一半」「以为改好了其实改的是另一份」
 这类事故，文件都还在，内容却已经不是预期的了。
 
-任何模块内容变化都会让这里变红。**红了不代表要改闸**——先确认那处改动是不是自己
-有意做的；确认无误再跑 gen_module_hashes.py 重新钉。
+任何模块内容变化都会让这里变红。红了不代表要改闸，先确认那处改动是不是自己
+有意做的。确认无误再跑 gen_module_hashes.py 重新钉。
 
 用法:
     python3 scripts/compliance/check_module_hashes.py

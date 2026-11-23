@@ -3,11 +3,11 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""给随包分发的 VaultPatcher 打两处性能补丁 —— 现拉源、现打、现编、现塞进 jar。
+"""给随包分发的 VaultPatcher 打两处性能补丁，现拉源、现打、现编、现塞进 jar。
 
 ## 为什么
 
-VaultPatcher 只要存在**任意一个** dynamic 模块，就会把
+VaultPatcher 只要存在任意一个 dynamic 模块，就会把
 `DynamicReplaceUtils.__mappingString` 注入进这三处（拿真 `Font.class` 喂它的
 `VPMinecraftTransformer` 实测过，不是读代码猜的）：
 
@@ -15,33 +15,33 @@ VaultPatcher 只要存在**任意一个** dynamic 模块，就会把
     net.minecraft.network.chat.contents.PlainTextContents$LiteralContents#<init>(String)
     net.minecraft.network.chat.FormattedText#of(String[,Style])
 
-也就是**游戏每帧画的每一个字符串**都要走一次。而那个方法在开头无条件
+也就是游戏每帧画的每一个字符串都要走一次。而那个方法在开头无条件
 `Thread.getStackTrace()`，又对整张替换表做线性 `String.equals`。
 GraalVM 21 上实测单次 18.3us（栈遍历 9.4us + 1085 对线性扫 10.2us）。
 玩家机器的 spark 采样里它占 Render thread 的 3.45%~9.09%，随玩家装的 HUD 模组增长，
 `StackTraceElement.initStackTraceElements` 一度是自身耗时第一名。
 
-补丁只做两件事，都不改行为：栈遍历改成命中之后再取；dyn 模式补一张哈希表做精确查表。
+补丁只做两件事，都不改行为：栈遍历改成命中之后再取。dyn 模式补一张哈希表做精确查表。
 打完实测 18,339ns → 348ns，且 1085 个键的命中/未命中/边界值输出摘要与官方 jar
 逐字节相同（`594ab0f8…`）。
 
 ## 为什么不走别的路
 
-- **没有配置开关**：`VaultPatcherConfig` 只有 `enableClassPatch` / `loadAllModules`，
+- 没有配置开关：`VaultPatcherConfig` 只有 `enableClassPatch` / `loadAllModules`，
   关不掉 dynamic。
-- **`vaultpatcher/patch/` 够不着**：那条路是 NeoForge 的 `SimpleClassProcessor`，
-  只作用于走 NeoForge 类加载管线的类；VaultPatcher 自己的类由它自己的
+- `vaultpatcher/patch/` 够不着：那条路是 NeoForge 的 `SimpleClassProcessor`，
+  只作用于走 NeoForge 类加载管线的类。VaultPatcher 自己的类由它自己的
   transformation service 加载，不在管线里。
-- **删 dynamic 模块能让注入彻底消失**，但要丢 1085 条译文（建筑风格名 828、模组列表名 111）。
-- **等上游没用**：到 1.5.3-fix 为止 `DynamicReplaceUtils.java` 一个字节没改。
+- 删 dynamic 模块能让注入彻底消失，但要丢 1085 条译文（建筑风格名 828、模组列表名 111）。
+- 等上游没用：到 1.5.3-fix 为止 `DynamicReplaceUtils.java` 一个字节没改。
 
 ## 闸
 
-全程 fail-closed，任何一步对不上就退出，绝不「跳过」——跳过等于悄悄发一个慢 jar：
+全程 fail-closed，任何一步对不上就退出，绝不「跳过」，跳过等于悄悄发一个慢 jar：
 
 1. jar 的 sha256 必须等于 manifest 里钉的（上游换版就当场炸，由人重新核补丁还适不适用）
 2. 拉下来的每个源文件 sha256 必须对上
-3. 每处 `find` 在原文里**必须命中且只命中一次**
+3. 每处 `find` 在原文里必须命中且只命中一次
 4. 编译产物只允许替换 manifest 里列的那 3 个条目，条目总数必须对上
 5. 除这 3 个 + 新增的 `MODIFIED.txt` 外，其余条目必须逐字节不变
 
@@ -49,7 +49,7 @@ GraalVM 21 上实测单次 18.3us（栈遍历 9.4us + 1085 对线性扫 10.2us�
 
 VaultPatcher 是 GPL-3.0，本仓库同许可。分发改过的版本要保留许可、注明已修改、
 提供对应源码。`src/mods/vaultpatcher/*.json` 加上 manifest 里钉死的 ref/sha256
-就是完整的对应源码；本脚本另往 jar 根写一份 `MODIFIED.txt` 说明改了什么。
+就是完整的对应源码。本脚本另往 jar 根写一份 `MODIFIED.txt` 说明改了什么。
 
 用法:
     python3 scripts/patch_vaultpatcher.py <出货树>        # 一般是 build/common
@@ -82,7 +82,7 @@ def fetch(url, want, name):
     """按 sha256 取一份东西，缓存在 build/vpcache/<sha256>。哈希对不上就退出。
 
     限速要退避重试。Maven Central 对 CI 的出口 IP 会回 429，一次就把整个构建
-    带走——而这不是「补丁不适用」，只是这一秒不给下。退避重试之后仍然失败才算
+    带走，而这不是「补丁不适用」，只是这一秒不给下。退避重试之后仍然失败才算
     失败：异常照样抛出去，哈希照样核，没有任何一条路会让没核过的字节混进来。
     """
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -159,7 +159,7 @@ def dyn_table(tree):
 def equivalence_gate(man, tree, official, patched, work):
     """官方 jar 与补丁 jar 对同一张表的输出摘要必须逐字节相同。
 
-    只证「只改了三个 class」不够——改坏了行为同样只改这三个 class。这道闸跑的是
+    只证「只改了三个 class」不够，改坏了行为同样只改这三个 class。这道闸跑的是
     真实的 1085 对表：命中路径（从与 target_class 同名的调用方发起）、未命中路径、
     以及空串/空白/未知串这几个边界值，把全部输出拼起来取 sha256 比对。
     """
@@ -264,7 +264,7 @@ def main(tree):
                      % (sorted(missing), sorted(extra)))
 
         # class 版本必须与被替换的那一个一致。编高了同一个 jar 里版本参差，老 JVM 直接
-        # 加载不了；而 --release 写错在只有低版本 JDK 的构建容器上才会暴露（CI 上炸过一次）。
+        # 加载不了。而 --release 写错在只有低版本 JDK 的构建容器上才会暴露（CI 上炸过一次）。
         src_zip0 = zipfile.ZipFile(jar)
         with src_zip0:
             for name, data in built.items():

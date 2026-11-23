@@ -13,8 +13,8 @@
     const $HttpClient = Java.loadClass('java.net.http.HttpClient')
 
 KubeJS 自带的 `kubejs.classfilter.txt` 里写着 `- java.lang`（白名单里没有 `System`）
-与 `- java.net`。这两行**在任何机器上都 100% 抛异常**，可它们躺在事件回调里，
-外面又套着 `catch {}`，于是表现成「进游戏什么都没发生」——既不报错也不留日志，
+与 `- java.net`。这两行在任何机器上都 100% 抛异常，可它们躺在事件回调里，
+外面又套着 `catch {}`，于是表现成「进游戏什么都没发生」，既不报错也不留日志，
 跟「已经是最新版所以没提示」完全无法区分。加载阶段全绿（`18/18 … 0 errors`），
 CI 全绿，只有真去读 KubeJS 的字节码才看得出来。
 
@@ -31,13 +31,13 @@ CI 全绿，只有真去读 KubeJS 的字节码才看得出来。
 `- x` 同时进 denyStrong 与 denyWeak，`+ x` 同时进 allowStrong 与 allowWeak。
 所以 `- java.lang` + `+ java.lang.Integer` = 「整个包禁掉，只放行这几个具体类」。
 
-那张表**不抄进仓库**：不同 KubeJS 版本的表不一样，抄一份进来就是又一个会
-悄悄过期的上游副本。这里从**目标整合包自己那个 kubejs jar** 里现读。
+那张表不抄进仓库：不同 KubeJS 版本的表不一样，抄一份进来就是又一个会
+悄悄过期的上游副本。这里从目标整合包自己那个 kubejs jar 里现读。
 
 ## fail-closed
 
 拿不到 jar、读不到表、树里一个脚本都没有、一条 `Java.loadClass` 都没扫到、
-或者参数不是字符串字面量（静态判不了）——全部当红，不许「没发现问题所以通过」。
+或者参数不是字符串字面量（静态判不了），全部当红，不许「没发现问题所以通过」。
 
 用法:
     python3 scripts/compliance/check_kubejs_classfilter.py <mods 目录> <出货树>...

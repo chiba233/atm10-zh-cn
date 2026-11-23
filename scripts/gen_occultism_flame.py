@@ -16,13 +16,13 @@
         recipe.getRitualDummy().toString().substring(2)
               .replace("occultism:ritual_dummy/", ""))
 
-也就是把仪式象征物的**注册名**原样写进数据组件，例如 `wild_drowned`。
+也就是把仪式象征物的注册名原样写进数据组件，例如 `wild_drowned`。
 `FlameAutomationItem.appendHoverText` 再拿它去填 `%s`：
 
     item.occultism.flame_of_automation.tooltip = "%s"
 
 `TextUtil.formatDemonName(String)` 只是套一层 `§6§l…§r`，不查任何表。
-所以这行字**是数据不是翻译键**，资源包再全也翻不到它。
+所以这行字是数据不是翻译键，资源包再全也翻不到它。
 
 ## 绕法
 
@@ -31,8 +31,8 @@
 「仪式: 呼唤溺尸集群」。于是这里按资源包现有译文生成一张
 `注册名 → 中文仪式名` 的表，客户端脚本在 `ItemTooltipEvent` 里拿它换字。
 
-替换是**精确匹配**的：去掉 § 码后整行必须恰好等于表里的某个注册名才动。
-上游哪天改了 tooltip 的格式，匹配落空、脚本什么都不做——退化成今天的样子，
+替换是精确匹配的：去掉 § 码后整行必须恰好等于表里的某个注册名才动。
+上游哪天改了 tooltip 的格式，匹配落空、脚本什么都不做，退化成今天的样子，
 不会把别的行改坏。
 
 真源只有一处：资源包的 `assets/occultism/lang/zh_cn.json`。这里只做派生，
@@ -122,7 +122,7 @@ NativeEvents.onEvent(TooltipEvent, function (event) {
         for (let i = 0; i < lines.size(); i++) {
             let line = lines.get(i)
             let s = String(line.getString())
-            // 去掉 §6§l…§r 后必须**整行**就是那个注册名才换，免得误伤别的行
+            // 去掉 §6§l…§r 后必须整行就是那个注册名才换，免得误伤别的行
             let plain = s.replace(/§./g, '')
             if (!own(FLAME_ID2ZH, plain)) continue
             lines.set(i, Comp.literal(s.replace(plain, FLAME_ID2ZH[plain])).setStyle(line.getStyle()))

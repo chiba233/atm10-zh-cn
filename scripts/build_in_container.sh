@@ -3,9 +3,9 @@
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# 在**锁定的容器**里构建，产出字节可复现的包。
+# 在锁定的容器里构建，产出字节可复现的包。
 #
-# 平时直接跑 build_dist.sh 也能出包，只是那份包的 sha256 不作数——你的 Pillow、
+# 平时直接跑 build_dist.sh 也能出包，只是那份包的 sha256 不作数，你的 Pillow、
 # 你的 freetype、你的 zlib 都跟别人不一样，PNG 的字节自然不一样。要拿哈希跟
 # CI 的产物对，就得在同一套工具链里跑，那套工具链钉在 src/toolchain.lock.json。
 #

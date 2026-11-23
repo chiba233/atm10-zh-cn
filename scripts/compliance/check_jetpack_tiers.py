@@ -3,12 +3,12 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""Iron Jetpacks 的等级名不在 lang 里，在整合包的 config 里——漏一个就静默显示英文。
+"""Iron Jetpacks 的等级名不在 lang 里，在整合包的 config 里，漏一个就静默显示英文。
 
 ## 为什么要这道闸
 
 游戏里显示「Vibranium能量电池」「Creative喷气背包」。乍看像是漏翻了两条，
-其实是 17 个等级**一条都没翻**——木/石/铁那几个也是英文，只是不扎眼。
+其实是 17 个等级一条都没翻，木/石/铁那几个也是英文，只是不扎眼。
 
 物品名的模板在 lang 里（`item.ironjetpacks.cell` = `%s能量电池`），但 `%s`
 不来自 lang，来自整合包 `config/ironjetpacks/jetpacks/*.json` 里的 `name`。
@@ -18,22 +18,22 @@
     if (Language.getInstance().has(key)) return Component.translatable(key);
     return Component.literal(displayName);   // 兜底＝把 name 首字母大写
 
-也就是说 mod **留了正规注入点**：只要 lang 里有 `jetpack.<name>.name` 就用它，
-没有就悄悄回退成英文。回退是静默的——不报错、不留日志，跟「已经翻好了」
+也就是说 mod 留了正规注入点：只要 lang 里有 `jetpack.<name>.name` 就用它，
+没有就悄悄回退成英文。回退是静默的，不报错、不留日志，跟「已经翻好了」
 在任何自动检查里都长得一模一样。
 
-而等级清单是**整合包给的、随版本变**：ATM 自己加了 allthemodium / vibranium /
+而等级清单是整合包给的、随版本变：ATM 自己加了 allthemodium / vibranium /
 unobtainium / creative 这几档。下个版本 ATM 再加一档，我们这边只会静默少一条。
 所以这个清单不能手写死在仓库里，要拿目标版本的官方 config 现查。
 
 ## fail-closed
 
 上游树没取到、jetpacks 目录不在、目录里一个 json 都没有、json 解析不了、
-缺 `name` 字段、出货树里没有 ironjetpacks 的 lang——全部当红。
+缺 `name` 字段、出货树里没有 ironjetpacks 的 lang，全部当红。
 「没扫到东西所以通过」是这道闸最没用的失败形态。
 
-`"disable": true` 的档位 mod 根本不注册，不需要译名，跳过；
-但 `disable` 字段本身读不出来时按**需要译名**处理（宁可多要一条）。
+`"disable": true` 的档位 mod 根本不注册，不需要译名，跳过。
+但 `disable` 字段本身读不出来时按需要译名处理（宁可多要一条）。
 
 用法:
     python3 scripts/compliance/check_jetpack_tiers.py <上游树> <出货树>...
@@ -68,7 +68,7 @@ def read_tiers(uproot):
         name = data.get('name')
         if not isinstance(name, str) or not name.strip():
             die('%s 缺 name 字段 —— 判不了它需要哪个 lang 键' % p)
-        # 只有明确写了 true 才当停用；读不出来一律按「要译名」处理。
+        # 只有明确写了 true 才当停用。读不出来一律按「要译名」处理。
         if data.get('disable') is True:
             continue
         tiers[name] = p.name

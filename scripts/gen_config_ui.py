@@ -7,17 +7,17 @@
 
 ## 为什么不能靠翻译键
 
-这类界面（Create/AE2/…用的 catnip ConfigScreen）**没有翻译键**：它把字段名
+这类界面（Create/AE2/…用的 catnip ConfigScreen）没有翻译键：它把字段名
 `maxCellContentShown` 按驼峰拆成 `Max Cell Content Shown` 现拼出来。实测全部 jar
 里搜不到这个串，语言文件够不着，只能按最终字符串做 dynamic 替换。
 
 ## 为什么不能一条条手写
 
 整合包里 14000+ 个配置项。手挑永远追不上，而且同一个词在不同模组里译法会飘。
-所以改成**逐词词典 + 生成器**（src/config_ui_terms.json）：
+所以改成逐词词典 + 生成器（src/config_ui_terms.json）：
 
 - 字段名拆成词 → 每个词都在词典里查得到才拼出译文
-- **只要有一个词查不到，整条跳过**——不猜，宁可留英文
+- 只要有一个词查不到，整条跳过，不猜，宁可留英文
 - 要扩覆盖面就往词典加词，一次加词全整合包受益，译法自动统一
 
 ## 目标类限定
@@ -75,19 +75,19 @@ def main(argv):
     for lb in sorted(labels):
         words = lb.split()
         # 【保守模式】单个词一律不译。这类词（On / Off / Client / Sound / Mode / Level /
-        # Name…）极可能同时是配置项的**枚举值**——下拉框里选的那个值。译了就可能被
+        # Name…）极可能同时是配置项的枚举值，下拉框里选的那个值。译了就可能被
         # 反查或写回配置文件，重演 RFTools 那种「一汉化就崩」。多词短语没有这个风险，
         # 没人拿一整句当标识符。宁可少译，不冒这个险。
         if len(words) < 2:
             single += 1
             continue
         # 手写模块已经译过的，生成器不许再译一遍：两份都命中同一个 key 时，
-        # VaultPatcher 是「先注册先赢」而注册顺序没有声明——同一个标签会出现两种译文，
+        # VaultPatcher 是「先注册先赢」而注册顺序没有声明，同一个标签会出现两种译文，
         # 玩家看到哪个不确定。手写的那份是人工斟酌过的，让它赢。（对抗审计抓到 17 处冲突）
         if lb in handwritten:
             conflict += 1
             continue
-        # 「Xxx Max / Xxx Min」是「上限 / 下限」，不是「最大 / 最小」——
+        # 「Xxx Max / Xxx Min」是「上限 / 下限」，不是「最大 / 最小」，
         # 逐词直译会拼出「基础最大」「网络最大」这种残缺句。（对抗审计抓到 14 条）
         tail = {'Max': '上限', 'Min': '下限', 'Maximum': '上限', 'Minimum': '下限'}
         if len(words) > 1 and words[-1] in tail:

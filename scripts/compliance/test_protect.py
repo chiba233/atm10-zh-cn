@@ -6,7 +6,7 @@
 """验保护闸自己会不会红。
 
 一道从来没被触发过的闸，和没有这道闸是一回事。这里在临时目录里建一个
-玩具 git 仓库，把 protect.py 拿过去，逐个造出它**应该拦下**的局面，
+玩具 git 仓库，把 protect.py 拿过去，逐个造出它应该拦下的局面，
 再确认它确实退出 1。哪一条拦不住，这个脚本就红。
 
 用法:
@@ -38,7 +38,7 @@ def run(repo, *args, base=None, break_git=False, extra_env=None):
         env.update(extra_env)
     if break_git:
         # 造一个必定退 128 的假 git 顶在 PATH 前面，模拟出货容器里那种
-        # `detected dubious ownership`——真出过这个事故。
+        # `detected dubious ownership`，真出过这个事故。
         shim = Path(repo) / '.shim'
         shim.mkdir(exist_ok=True)
         (shim / 'git').write_text('#!/bin/sh\nexit 128\n')
@@ -172,7 +172,7 @@ def t_base_missing(repo):
     # 所以它从没走过「base 取不到」这条分支。而 CI 里恰恰常常取不到：
     # ci.yml 曾用 fetch-depth: 2 而 github.event.before 在三笔之外，
     # build.yml 的 checkout 连 fetch-depth 都没写（默认 1）。
-    # 那时闸打一行 ℹ️ 然后退 0——洗白式改动正好能从这里整个漏过去。
+    # 那时闸打一行 ℹ️ 然后退 0，洗白式改动正好能从这里整个漏过去。
     r = run(repo, '--check', base='0123456789abcdef0123456789abcdef01234567')
     return r.returncode == 1 and '没跑成' in r.stdout
 
