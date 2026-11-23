@@ -1,11 +1,11 @@
 ---
 name: add-pack-version
-description: 给本仓库加一个新的 All the Mods 10 整合包版本（例如 8.3）：声明构建目标、取 CI 生成的基线入库、处理 CI 报红、补译新版带进来的文本、写文档，全部放在一个「适配 <版本>」的 PR 里。用于 ATM10 发了新版、要让汉化包支持它的时候。
+description: 给本仓库加一个新的 All the Mods 10 整合包版本（例如 8.3）：声明构建目标、取 CI 生成的基线入库、处理 CI 报错、补译新版带进来的文本、写文档，全部放在一个「适配 <版本>」的 PR 里。用于 ATM10 发了新版、要让汉化包支持它的时候。
 ---
 
 # 新版本入库
 
-ATM10 发了新版，要让汉化包支持它。整个适配放在**一个分支、一个 PR** 里，标题写 `feat: 适配 <版本>`。不按模组拆成多个 PR。
+ATM10 发了新版，要让汉化包支持它。整个适配放在一个分支、一个 PR 里，标题写 `feat: 适配 <版本>`。不按模组拆成多个 PR。
 
 先读 `AGENTS.md`，尤其是「覆盖率与缺口的口径」和「Git 与 PR」。
 
@@ -13,7 +13,7 @@ ATM10 发了新版，要让汉化包支持它。整个适配放在**一个分支
 
 ## 译文落在哪一层
 
-公共层（`src/pack/`、`src/config/…/zz_hanhua_*.snbt`、`src/pack/…/_zh_cn/` 散文页）会发给**每一个出货版本**。所以判据是：这条译文对应的英文，在所有出货版本里是否都一样。
+公共层（`src/pack/`、`src/config/…/zz_hanhua_*.snbt`、`src/pack/…/_zh_cn/` 散文页）会发给每一个出货版本。所以判据是：这条译文对应的英文，在所有出货版本里是否都一样。
 
 | 情况 | 落在哪里 |
 |---|---|
@@ -23,7 +23,7 @@ ATM10 发了新版，要让汉化包支持它。整个适配放在**一个分支
 | lang 键只有新版才有 | 公共层即可：旧版没有这个键，不会显示 |
 | 散文页各版英文不同 | 公共树保留旧中文，新中文写进 `src/pack_overrides/books-<首个新版>/`，在 `_prose.json` 用 `variants` 把新英文的 sha1 指到这一层，再在每个用到新英文的版本的 `pack_overrides.json` 登记 |
 
-判断「各版英文是否相同」用各版钉的 jar 与官方文件逐字节比，不看版本号。
+判断「各版英文是否相同」用各版记录的 jar 与官方文件逐字节比，不看版本号。
 
 ## 第零步：确认这一版已经发布
 
@@ -47,7 +47,7 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 
 ## 第二步：取 CI 生成的基线入库
 
-推送后，`build` 会故意报红。它会上传 artifact `new-version-baseline-<版本>`，里面有：
+推送后，`build` 会故意失败。它会上传 artifact `new-version-baseline-<版本>`，里面有：
 
 - `versions/<版本>/overrides.sha256`：官方 overrides 的内容指纹
 - `versions/db/<版本>/`：`jars.json`、`keybinds.json`、`quest_baseline.json`、`vaultpatcher.json`
@@ -64,7 +64,7 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 | artifact `productive-trees-baseline` | 提交 `versions/db/<版本>/productive_trees.json` |
 | artifact `quest-baseline` 或 `vaultpatcher-db` | 提交对应的 `versions/db/*/` 文件。补译任务书新增了键以后，底本会再过期一次，同样取这个 artifact |
 
-闸红了是包不达标。改内容，不改闸。
+检查失败说明包不达标。改内容，不改检查。
 
 ## 第三步：版本层沿用上一版
 
@@ -72,28 +72,28 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 
 - `pack_overrides.json`：每一层都按新版 jar 判断是否仍适用，写明 `why`（哪个 jar、与哪一版逐字节相同）。
 - `quest_overrides.snbt`：上一版有、新版仍需要的覆盖照抄。例如转位器任务的失效副标题，8.1、8.2、8.3 各要一份。漏掉的话，旧问题会在新版里回来。整合包自带中文在新版里自己修好了的，就不再带。
-- `unpatchable.json` 与 `upstream/`：把 `src/upstream/` 的全部映射套到新版官方文件上（`gen_upstream_patches.apply_one`），先不带登记试一次，再带上上一版的登记与专属映射试一次。不带时套不上、带上后全部命中的，就照抄到新版。`why` 里的数字（如 image 块数）按新版文件重数。这两样 CI 不会提醒，漏了就会在 build 阶段才报红。
+- `unpatchable.json` 与 `upstream/`：把 `src/upstream/` 的全部映射套到新版官方文件上（`gen_upstream_patches.apply_one`），先不带登记试一次，再带上上一版的登记与专属映射试一次。不带时套不上、带上后全部命中的，就照抄到新版。`why` 里的数字（如 image 块数）按新版文件重数。这两样 CI 不会提前提醒，漏了要到 build 阶段才报错。
 - `unobtainable.json`：只在新版 `jars.json` 的 `unobtainable` 不为空时才需要。
 
 最后把 `versions/<上一版>/` 和 `versions/<新版>/` 的文件列表并排比一遍，每一个缺的文件都要能说出不带的理由。
 
 ## 第四步：找出新版带进来的文本
 
-底本用这一版钉的 jar：
+底本用这一版记录的 jar：
 
 - 新版 jar：`versions/db/<版本>/jars.json` 入库后，用 `fetch_one_jar.py <版本> <文件名> <目录>` 取。装好的整合包确实是这一版时，才能直接读它的 `mods/`。
 - 旧版 jar：`fetch_one_jar.py <上一版> <文件名> <目录>`。
 
-本包的译文不只在公共层，还散在各版本的覆盖层里：`versions/*/quest_overrides.snbt`、`versions/*/pack_overrides.json` 的 `lang`、`src/pack_overrides/*/`。求出缺口后、动手译之前，把缺口里的键在**所有版本**的这几处扫一遍。已经有译文的就照抄，别另译一份。扫描器先拿一个已知在覆盖层里的键验证能扫到，再看结果。
+本包的译文不只在公共层，还散在各版本的覆盖层里：`versions/*/quest_overrides.snbt`、`versions/*/pack_overrides.json` 的 `lang`、`src/pack_overrides/*/`。求出缺口后、动手译之前，把缺口里的键在所有版本的这几处扫一遍。已经有译文的就照抄，别另译一份。扫描器先拿一个已知在覆盖层里的键验证能扫到，再看结果。
 
 用 `crash_assistant/modlist.json` 或两版的 `jars.json` 比出新增、移除、升级的模组，然后按下表逐类查：
 
 | 表面 | 怎么查 |
 |---|---|
-| 模组 lang | 按 `AGENTS.md`「覆盖率与缺口的口径」求差：新版 `en_us` 减旧版，再减模组自带 `zh_cn`、本包 `zh_cn`、整合包 `kubejs/assets`。减法**按键**做：模组带了 `zh_cn` 不等于全译了，自带中文里没有的键照样要补 |
+| 模组 lang | 按 `AGENTS.md`「覆盖率与缺口的口径」求差：新版 `en_us` 减旧版，再减模组自带 `zh_cn`、本包 `zh_cn`、整合包 `kubejs/assets`。减法按键做：模组带了 `zh_cn` 不等于全译了，自带中文里没有的键照样要补 |
 | 任务书 | 对比上游 `lang/en_us` 与 ATM 自带的 `lang/zh_cn`。新章节和新任务键常常整章没有中文。上一版已覆盖的键英文变了，要分清是改了内容还是只改了语气 |
 | 任务书标题横幅 | 新章节的横幅在 `scripts/gen_quest_banners.py` 登记 |
-| 导览书 | 两件事分开看：模组自带的中文跟不上新英文时，不覆盖它，除非这份中文公认很烂；本包已经译过的页，`gen_books` 报「英文原稿与提取时不同」时要跟着新英文改。没有任何中文的新页照常补 |
+| 导览书 | 两件事分开看：模组自带的中文跟不上新英文时，不覆盖它，除非这份中文公认很烂。本包已经译过的页，`gen_books` 报「英文原稿与提取时不同」时要跟着新英文改。没有任何中文的新页照常补 |
 | VaultPatcher | 升级了的 jar 由 CI 重新核对，按 `vaultpatcher-db` 的结果处理 |
 | 可选的拼音搜索 JEC | 查有没有新版，以及新版是否还能注入升级后的 JEI、终端类模组 |
 
@@ -114,8 +114,8 @@ python3 scripts/fetch_pack.py <版本> build/packsrc/<版本> --no-jars
 ## 第七步：收尾
 
 - `上游漂移 + 汉化校验` 与 `build` 两项检查都通过。
-- 两项都绿只说明闸没拦住，不说明做完了。有几样只打警告、不报红，要主动去看：
-  - `build` 日志里 `gen_books` 的 ⚠️：「散文页的英文原稿与提取时不同」和「译文没落位」。前者按「译文落在哪一层」做版本文件层，后者重做那一段映射。
+- 两项都通过只说明检查没拦住，不说明做完了。有几样只打印警告、不报错，要主动去看：
+  - `build` 日志里 `gen_books` 的警告：「散文页的英文原稿与提取时不同」和「译文没落位」。前者按「译文落在哪一层」做版本文件层，后者重做那一段映射。
   - `upstream/` 与 `unpatchable.json`：映射能套上，不等于说明还对，也不等于没有漏译。拿新版官方文件与上一版逐字节比。不同的话，看有没有新增的英文行（例如公告清单末尾加了新版本），再按新版文件改 `_说明` 与 `why` 里的版本号和数字。
 - 下载 `build` 的 artifact，核对新加的横幅等生成物。
 - PR 正文写清做了什么、还缺什么、依据在哪。squash 合并时，提交信息就取 PR 标题与正文。
