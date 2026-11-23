@@ -3,16 +3,16 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""取**原版** Minecraft 的语言文件与字体资源。
+"""取原版 Minecraft 的语言文件与字体资源。
 
 有几个生成器要读原版的东西：奖杯名与木头名要拿原版实体/方块的中英文对照，
 横幅要拿原版渲染中文用的 Unifont 点阵。这些不在整合包里，在游戏本体里。
 
 两条路径，结果一样：
 
-1. **本机装好的实例**（HMCL / CurseForge 布局）——`<实例>/<版本>.jar` 加上
+1. 本机装好的实例（HMCL / CurseForge 布局），`<实例>/<版本>.jar` 加上
    `<.minecraft>/assets/{indexes,objects}/`。开发时直接用，不联网。
-2. **CI**——实例里只有 mods/，没有客户端 jar 也没有 assets 仓库。
+2. **CI**，实例里只有 mods/，没有客户端 jar 也没有 assets 仓库。
    这时按 Mojang 官方的版本清单现取，缓存在 `build/vanilla/`。
 
 以前只有第 1 条路，于是 `gen_trophy_names.py` 等四个生成器在 CI 上必然
@@ -60,7 +60,7 @@ def _asset_index():
 
 
 def _local(inst):
-    """本机实例布局；不成立就返回 None"""
+    """本机实例布局。不成立就返回 None"""
     inst = Path(inst)
     jars = sorted(inst.glob('*.jar'))
     if not jars:

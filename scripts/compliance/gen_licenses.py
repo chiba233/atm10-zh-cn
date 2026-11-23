@@ -5,10 +5,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """把各家模组自己的许可声明抓下来，生成随包分发的第三方许可清单。
 
-**不靠我复述，也不靠第三方网站**：每个 mod jar 的 `META-INF/neoforge.mods.toml`
+不靠我复述，也不靠第三方网站：每个 mod jar 的 `META-INF/neoforge.mods.toml`
 （Fabric 是 `fabric.mod.json`）里就写着 `license = "..."`，那是作者自己的声明，
 和 jar 一起签在字节里。有些 jar 还随带许可证全文（`LICENSE`、`LICENSE.txt`），
-那份也一并抓出来——MIT、Apache-2.0、BSD 这类的唯一实质义务就是再分发时
+那份也一并抓出来，MIT、Apache-2.0、BSD 这类的唯一实质义务就是再分发时
 附上版权声明与许可全文。
 
 产出两样：
@@ -113,7 +113,7 @@ def main(mods_dir, tree=None):
         return 0
 
     tree = Path(tree)
-    # 我们给哪些命名空间出了译文——只列这些，没碰过的不列
+    # 我们给哪些命名空间出了译文，只列这些，没碰过的不列
     pack = tree / 'resourcepacks'
     ours = set()
     for p in pack.rglob('*'):

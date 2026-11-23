@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """资源树育种公式：扫描器与生成器的反例测试。
 
-每条复刻一种「本该红却可能悄悄放行」的情形。写了闸不等于有闸——
+每条复刻一种「本该红却可能悄悄放行」的情形。写了闸不等于有闸，
 一道从没被触发过的闸和没有闸是一回事。
 
 全部用合成 jar 与合成目录，不读真整合包也不联网：这套测试要能在 PR 阶段秒跑。
@@ -28,8 +28,8 @@ import scan_productive_trees as s                                # noqa: E402
 
 POLL, MUTATION, LOOT, MACHINE = (c * 16 for c in 'ABCD')
 
-# 章节结构：四个任务。POLL / MUTATION 各产一棵树苗；LOOT 也产树苗，但它的英文
-# 副标题是来源说明；MACHINE 压根不产树苗。
+# 章节结构：四个任务。POLL / MUTATION 各产一棵树苗。LOOT 也产树苗，但它的英文
+# 副标题是来源说明。MACHINE 压根不产树苗。
 CHAPTER = '{\n\tquests: [\n' + '\n'.join(
     '\t\t{\n\t\t\tid: "%s"\n\t\t\ttasks: [{\n\t\t\t\tid: "%s"\n'
     '\t\t\t\titem: { count: 1, id: "%s" }\n\t\t\t\ttype: "item"\n\t\t\t}]\n\t\t}'
@@ -258,7 +258,7 @@ def t_refuse_src(tmp):
     rc = in_sandbox(tmp, lambda: g.main(args))
     if rc != 1 or out.exists():
         return False
-    # 换个不在 src/ 下的落点，同样的参数必须成功——否则上面那个 1
+    # 换个不在 src/ 下的落点，同样的参数必须成功，否则上面那个 1
     # 可能是别的原因（比如译名缺失），这道闸就等于没验到。
     ok_out = tmp / 'ok.snbt'
     args[-1] = str(ok_out)

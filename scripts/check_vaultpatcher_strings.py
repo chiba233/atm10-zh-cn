@@ -7,21 +7,21 @@
 
 ## 为什么必须机械查
 
-VaultPatcher 靠**字符串精确匹配**替换硬编码文本：`key` 对不上就是不替换，
-玩家看到英文，**日志里一个字都没有**。模组升个小版本把某句话改了，
-这条补丁就静默失效——这是本项目最难自查的一类问题。
+VaultPatcher 靠字符串精确匹配替换硬编码文本：`key` 对不上就是不替换，
+玩家看到英文，日志里一个字都没有。模组升个小版本把某句话改了，
+这条补丁就静默失效，这是本项目最难自查的一类问题。
 
 模块里的 `mods` 字段帮不上忙：反编译 vaultpatcher.jar 确认 `getInfoMods()`
 只被丢进 `debugInfo(...)` 打日志，不参与任何过滤，纯注释。所以这里不看它，
-改为**按 target_class 反查它在哪个 jar 里**，再去那个 class 的常量池找字符串。
+改为按 target_class 反查它在哪个 jar 里，再去那个 class 的常量池找字符串。
 
 ## 判定
 
-- **命中**：key 与常量池里某条 UTF-8 完全相等
-- **子串命中**：key 是某条常量的一部分。这是正常的——`makeConcatWithConstants`
-  把 `"Energy: " + x + " FE"` 编译成**一条** recipe 常量 `"Energy: \\u0001 FE"`，
+- 命中：key 与常量池里某条 UTF-8 完全相等
+- 子串命中：key 是某条常量的一部分。这是正常的，`makeConcatWithConstants`
+  把 `"Energy: " + x + " FE"` 编译成一条 recipe 常量 `"Energy: \\u0001 FE"`，
   而我们的 key 是其中一段。VaultPatcher 自己也是按 \\u0001 切开再逐段匹配的。
-- **找不到**：那句话在这个版本的模组里已经不存在了 → 该条补丁必然不生效
+- 找不到：那句话在这个版本的模组里已经不存在了 → 该条补丁必然不生效
 
 内部类（`Foo$1`）一并扫，字符串常常落在 lambda / 匿名类里。
 
@@ -46,7 +46,7 @@ def utf8_pool(data):
     """从 .class 字节里取出常量池中全部 CONSTANT_Utf8。
 
     只解析常量池就够了，不必读完整个 class 结构。各 tag 的长度是固定的，
-    照 JVM 规范跳过即可；tag 5/6（Long/Double）占两个槽位，是经典的坑。
+    照 JVM 规范跳过即可。tag 5/6（Long/Double）占两个槽位，是经典的坑。
     """
     if data[:4] != b'\xca\xfe\xba\xbe':
         return []
@@ -82,7 +82,7 @@ def index_jars(mods_dir):
 
 
 def strings_of(idx, dotted):
-    """某个类（含其内部类）常量池里的全部字符串；类不存在返回 None"""
+    """某个类（含其内部类）常量池里的全部字符串。类不存在返回 None"""
     base = dotted.replace('.', '/')
     main = base + '.class'
     if main not in idx:

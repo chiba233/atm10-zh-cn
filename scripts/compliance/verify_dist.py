@@ -3,20 +3,11 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""打完包之后，拆开 zip 逐项核内容——**发版前的最后一道闸**。
+"""打包后解开 zip 逐项清点内容，是发版前的最后一项检查。
 
-## 为什么必须有
-
-汉化产物已经不入 git，改由构建时生成。这带来一个新的失败模式：
-生成器悄悄少产出了、或者压根没跑，打出来的包**结构完整但里面没有汉化**，
-上传、发版、玩家下载，一路没有任何东西报错。
-
-`build_dist.sh` 开头那道守卫只查「文件在不在」。**在 ≠ 对**：
-一个 0 字节的 lang 文件、一张纯透明的横幅、一个只剩 3 条键的资源包，
-都能通过存在性检查。所以这里查的是**量**：每一项都对着实测值设了下限，
-少于下限就说明这一环生成失败了。
-
-阈值取实测值的八成左右，留出上游增删的正常波动，但拦得住「整块没了」。
+汉化产物在构建时生成，生成器少产出或没运行时，打出的包结构完整但没有汉化，上传、发版都不会报错。
+`build_dist.sh` 开头只查文件是否存在，0 字节的 lang、全透明的横幅、只剩 3 条键的资源包都能通过。
+所以这里查数量：每一项都按实测值设下限，低于下限说明这一环生成失败。
 
 用法:
     python3 scripts/verify_dist.py dist/atm10-zh_cn-client-r12-atm7.2.zip
@@ -34,11 +25,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # scripts/ 下�
 
 import toolchain
 
-# 客户端包的下限（实测值见注释）
-# 下限一律取实测值的九成上下：留出上游增删的正常波动，但拦得住「整块没了」。
-# 2026-07-27 清掉底本带来的死重后重新校准（那 236 个 lang 对应的模组
-# 在 7.0/7.1/7.2 三版 jar 里都不存在，永远加载不到）：
-#   lang 598 → 362 个文件、21.2 万 → 17.7 万键；导览书 1709 → 1683 个
+# 客户端包的下限，取实测值的九成左右：容得下上游增删的正常波动，拦得住整块丢失。
+# 去掉 7.0/7.1/7.2 三版都不存在的 236 个模组的 lang 后：lang 362 个文件、17.7 万键，导览书 1683 个。
 CLIENT_MIN = {
     'lang_files':   330,    # 实测 362 个 lang/*.json
     'lang_keys': 160000,    # 实测 17.7 万条
@@ -47,14 +35,11 @@ CLIENT_MIN = {
     'vp_modules':   140,    # 152 个 VaultPatcher 模块
     'quest_delta':   30,    # 34 个任务书 delta
     'gui_files':     20,    # 24 个 RFTools .gui
-    # 导览书文件数。CI 实测 1269 个 = 生成的 987 个 + src/ 里静态带的 325 个
-    # （两者有小幅重叠）。**别拿本机实例的数字当基准**：本机那份是玩过的实例，
-    # 装了官方包以外的 mod，书比官方包多，两边不可比。
-    # 下限取 1200：够低，容得下上游增删的正常波动；够高，整块没了一定拦得住。
-    # 它确实拦住过一次：2026-07-27 我把 97 个书本文件当「上游死重」剔了，
-    # 数字掉到 1172，这道闸红了——那批里有 27 篇 Ars Nouveau 图鉴页和
-    # 12 篇 Just Dire Things 页，是实打实的译文。所以这个数**不许为了让 CI
-    # 变绿而下调**：它掉下去，先查是不是删错了东西。
+    # 导览书文件数。CI 实测 1269 个 = 生成的 987 个 + src/ 里静态的 325 个（两者有少量重叠）。
+    # 不要用开发机上玩过的实例做基准，那里装了官方包以外的 mod，书更多。
+    # 下限 1200 容得下上游增删，拦得住整块丢失。97 个书本文件被误删时数字降到 1172，其中有
+    # 27 篇 Ars Nouveau 图鉴页和 12 篇 Just Dire Things 页。所以这个数不许为了让 CI
+    # 变绿而下调：它掉下去，先查是不是删错了东西。
     'book_files':  1200,
 }
 SERVER_MIN = {
@@ -116,21 +101,17 @@ def check(path):
         if mc and ('汉化包-%s.zip' % mc.group(1)) not in pname:
             bad.append('资源包文件名 %r 与 atm%s 对不上' % (pname, mc.group(1)))
 
-    # 说明文档必须在包里，而且必须叫这个名字。大部分人是从别处拿到 zip 的，
-    # 不会去 GitHub 看 README——文件名就是唯一能提醒他们的地方。改名要是哪天
-    # 悄悄没了（比如有人把 cp 那行改回去），这里当场红。
+    # 说明文档必须在包里，并且叫这个名字：多数人从别处拿到 zip，不会去看 GitHub 上的 README。
     README = '请安装前务必看我.md'
     if README not in [n.rsplit('/', 1)[-1] for n in names]:
-        bad.append('包里没有「%s」——从别处拿到 zip 的人就没有任何说明了' % README)
+        bad.append('包里没有「%s」，从别处拿到 zip 的玩家看不到说明' % README)
 
-    # 占位符必须已被打包脚本填掉。查**包里全部文本文件**，不只是安装器——
-    # 曾经只查 install.sh/ps1，结果 SERVER.md 里那句「适用于 ATM10 7.2 专用服务器」
-    # 是写死的，7.0 / 7.1 的包里也印着 7.2，玩家报上来才发现。
+    # 占位符必须已被打包脚本填掉。查包里全部文本文件，不只查安装器：SERVER.md 写死过
+    # 「适用于 ATM10 7.2 专用服务器」，7.0 / 7.1 的包里也印着 7.2。
     TEXT = ('.sh', '.ps1', '.bat', '.md', '.txt', '.json', '.snbt', '.js', '.mcmeta', '.url')
-    # 这几份项目文档是**原样**分发的，不是模板；它们正文里会提到占位符本身
-    # （CHANGELOG 就在讲这套机制），不能拿它们当漏填。
-    # 注意「请安装前务必看我.md」**不在**这个名单里：客户端那份是 README 原样拷的
-    # （里面没有占位符），而服务端那份是 SERVER.md 套上版本号生成的，必须继续查。
+    # 这几份项目文档原样分发，正文会提到占位符本身（CHANGELOG 讲到这套机制），不算漏填。
+    # 「请安装前务必看我.md」不在名单里：客户端那份是 README 原样复制（没有占位符），
+    # 服务端那份由 SERVER.md 填入版本号生成，必须检查。
     VERBATIM = ('CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE', '致谢与技术说明.md')
     for n in names:
         if not n.endswith(TEXT) or n.rsplit('/', 1)[-1] in VERBATIM:
@@ -143,15 +124,14 @@ def check(path):
     for k, lo in (CLIENT_MIN if is_client else SERVER_MIN).items():
         v = got.get(k, 0)
         if v < lo:
-            bad.append('%s 只有 %d，低于下限 %d —— 这一环多半没生成' % (k, v, lo))
+            bad.append('%s 只有 %d，低于下限 %d，这一环多半没有生成' % (k, v, lo))
     return bad, got, is_client
 
 
 def zip_digest(path):
-    """zip 内容的确定性指纹：只吃「路径 + 文件内容」。
+    """zip 内容的确定性指纹，只计入路径与文件内容。
 
-    不能直接 sha256 整个 zip 文件——zip 头里有时间戳和压缩器版本，同样的内容
-    换个时刻打包就是另一个哈希。要比的是内容，不是容器。
+    zip 头里有时间戳和压缩器版本，同样的内容换个时间打包就是另一个哈希，所以不对整个 zip 取 sha256。
     """
     h = hashlib.sha256()
     with zipfile.ZipFile(path) as z:
@@ -165,15 +145,13 @@ def zip_digest(path):
 def check_reproducible(paths):
     """标准工具链下，产物内容指纹必须与仓库记录的一致。
 
-    以前这里只能「比像素不能比 sha256」——因为工具链没钉住，换台机器 PNG 字节就变。
-    现在 src/toolchain.lock.json 把镜像、Pillow、字体都钉住了，字节重新可比。
-    **但只在标准环境里比**：别的环境照样能构建，只是这一节跳过并明说跳过了，
-    绝不假装比过了。
+    src/toolchain.lock.json 固定了镜像、Pillow 与字体，产物字节可以比对。只在标准环境里比对，
+    其他环境也能构建，只是跳过这一节并说明已跳过。
     """
     ok, _env, diff, _missing = toolchain.status()
     print('\n工具链: %s' % toolchain.stamp())
     if not ok:
-        print('ℹ️ 不是标准构建环境，跳过产物字节比对（%s）' % '；'.join(diff[:2]))
+        print('ℹ️ 不是标准构建环境，跳过产物字节比对（%s）' % ' / '.join(diff[:2]))
         return []
     rec = Path(__file__).resolve().parent.parent / 'versions' / 'dist.sha256'
     have = json.loads(rec.read_text(encoding='utf-8')) if rec.is_file() else {}
@@ -210,7 +188,7 @@ def main(paths):
     for b in repro:
         print('  ❌ ', b)
     if fail or repro:
-        sys.exit('\n❌ %d 个包没通过内容核验——**不要发布**' % (fail + len(repro)))
+        sys.exit('\n❌ %d 个包没通过内容核验，不要发布' % (fail + len(repro)))
     print('\n全部通过内容核验')
 
 

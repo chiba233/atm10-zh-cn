@@ -10,15 +10,15 @@ sophisticatedstorage 1.5.80 反编译结论
 （`WoodStorageBlockItem.getDisplayName` / `GenericWoodStorageHelper`）：
 
     getDisplayName(id, woodType):
-        # 注意第二个参数是**一个空格**，不是内容
+        # 注意第二个参数是一个空格，不是内容
         return Component.translatable(id, getWoodDisplayName(woodType), " ")
 
     getWoodDisplayName(woodType):
         key = "wood_name.sophisticatedstorage." + woodName.translationKeyName()
         return Component.translatableWithFallback(key, prettify(woodName.path))
 
-`block.sophisticatedstorage.barrel` = `"%s%sBarrel"` —— 第一个 %s 是木头名，
-第二个 %s 只是分隔空格。**中文不需要那个空格**，所以译文只保留一个 %s 是对的，
+`block.sophisticatedstorage.barrel` = `"%s%sBarrel"`，第一个 %s 是木头名，
+第二个 %s 只是分隔空格。中文不需要那个空格，所以译文只保留一个 %s 是对的，
 不要"补参数"（2026-07-25 踩过：补成 %s%s 后变成「限类Pink Ipe 木桶 I」）。
 
 真正的问题在 `getWoodDisplayName`：jar 里只定义了 11 种原版木头的 `wood_name.*`，
@@ -37,13 +37,13 @@ sophisticatedstorage 1.5.80 反编译结论
 
 ## 译名从哪来（单一真源）
 
-不另起一套木头译名，直接从**该木头的木板名**推导——木板名整合包里基本都翻好了：
+不另起一套木头译名，直接从该木头的木板名推导，木板名整合包里基本都翻好了：
 
     橡木木板 → 橡木     云杉木板 → 云杉木     竹板 → 竹     绯红菌板 → 绯红菌
 
-规则：结尾 `木木板` 去掉 `木板`；结尾 `木板` 去掉 `板`；结尾 `板` 去掉 `板`。
+规则：结尾 `木木板` 去掉 `木板`。结尾 `木板` 去掉 `板`。结尾 `板` 去掉 `板`。
 
-本包 `assets/sophisticatedstorage/lang/zh_cn.json` 里手写的键**优先**，
+本包 `assets/sophisticatedstorage/lang/zh_cn.json` 里手写的键优先，
 生成器不覆盖（那 11 个原版木头是手工定的译名）。
 
 用法:
@@ -60,7 +60,7 @@ from pathlib import Path
 import vanilla
 from paths import COMMON, PACK, snapshot
 ROOT = Path(__file__).resolve().parent.parent
-# v2 的候选只认实际安装的 jar / KubeJS；换名使旧版 PACK 污染快照自动失效。
+# v2 的候选只认实际安装的 jar / KubeJS。换名使旧版 PACK 污染快照自动失效。
 SNAPSHOT = snapshot('wood_planks_names_v2.json')
 
 HAND = PACK / 'assets' / 'sophisticatedstorage' / 'lang' / 'zh_cn.json'
@@ -119,7 +119,7 @@ def scan(instance):
             take(json.loads(p.read_text(encoding='utf-8')), sink)
 
     snap = {}
-    # PACK 收着许多未安装模组的备用译文，不能拿它来证明木板实际存在；否则不同
+    # PACK 收着许多未安装模组的备用译文，不能拿它来证明木板实际存在。否则不同
     # 模组的同名木头会凭空制造裸名歧义。jar 与 KubeJS 才决定候选，PACK 只覆盖译名。
     installed = set(jar_en) | set(jar_zh) | set(kube_zh)
     for key in sorted(installed):
@@ -206,7 +206,7 @@ if __name__ == '__main__':
             data = scan(root)
         else:
             data = json.loads(SNAPSHOT.read_text(encoding='utf-8'))
-            # 快照缓存的是「扫 jar 才知道有哪些木板」，**译文不缓存**：
+            # 快照缓存的是「扫 jar 才知道有哪些木板」，译文不缓存：
             # 缓存住的话，改了资源包却没删快照，产物纹丝不动。
             data = refresh_zh(data)
     build(data)

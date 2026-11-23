@@ -21,17 +21,14 @@ from paths import COMMON
 
 ROOT = Path(__file__).resolve().parent.parent
 IS_WIN = platform.system() == 'Windows'
-# 测的是**出货树**：仓库里没有 kubejs/ config/ 这些目录，它们由 assemble.py 现摊。
-# 可以传一棵合成好的版本树进来（build/v/<版本>），默认用版本中立的 build/common。
+# 测的是出货树（由 assemble.py 组装）。可以传入合成好的版本树 build/v/<版本>，默认用 build/common。
 TREE = Path(sys.argv[1]) if len(sys.argv) > 1 else COMMON
 if not TREE.is_dir():
     sys.exit('❌ 出货树不存在: %s\n'
              '   先跑: python3 scripts/assemble.py && ./scripts/generate_all.sh' % TREE)
-# ── 静态闸：`$var` 后面紧跟中文 ──────────────────────────────────────────
-# bash 在单字节语言环境（CI 容器常见 LANG=C，macOS 自带的 3.2 也一样）会把 UTF-8
-# 的头字节吃进标识符，`$name……` 变成 `$nameâ`，配上 set -u 就是 unbound variable。
-# install.sh 里为此写了一条注释，但没有闸，于是又踩了一次——补上。
-# 这条只能静态查：那两句提示平时走不到，端到端测试跑不出来。
+# ── 静态检查：`$var` 后面紧跟中文 ─────────────────────────────────────────
+# 单字节语言环境（CI 容器常见 LANG=C，macOS 自带的 bash 3.2 也是）会把 UTF-8 的头字节算进变量名，
+# `$name……` 变成 `$nameâ`，配合 set -u 报 unbound variable。相关提示平时走不到，只能静态检查。
 _BAD_VAR = re.compile(r'\$[A-Za-z_][A-Za-z0-9_]*[^\x00-\x7f]')
 _offenders = [
     (n, line.strip())
@@ -43,8 +40,8 @@ if _offenders:
     sys.exit('❌ install.sh 里有 %d 处 `$变量` 紧跟非 ASCII 字符，必须写成 ${变量}：\n%s'
              % (len(_offenders), '\n'.join('   %4d  %s' % o for o in _offenders)))
 
-# 安装器源码里跟整合包版本有关的字样全是 @@MCVER@@ 占位，由 build_dist.sh 现填。
-# 测试也照同一条路径填一遍——测的必须是玩家真正拿到的那份脚本，不是模板。
+# 安装器里与整合包版本有关的字样都是 @@MCVER@@ 占位，由 build_dist.sh 填入。测试同样填一遍，
+# 测玩家拿到的脚本。
 MCVER = sorted((d.name for d in (ROOT / 'versions').iterdir()
                 if d.is_dir() and d.name[0].isdigit()),
                key=lambda s: [int(x) for x in s.split('.')])[-1]
@@ -61,15 +58,13 @@ def default_packs(ver):
 
 
 DEFAULT_PACKS = default_packs(MCVER)
-# 补丁自己的版本号：测试里用什么值不重要（联网检查已被 ATM_SKIP_UPDATE_CHECK 关掉），
-# 重要的是它**必须被填掉**——否则脚本里留着 @@PATCHVER@@，测的就不是出货那份。
+# 补丁版本号取什么值都行（联网检查已被 ATM_SKIP_UPDATE_CHECK 关闭），但必须填掉 @@PATCHVER@@。
 PATCHVER = 'test'
 
 
 def materialize(src, dst):
-    """把安装器模板里的占位符填掉，写到 dst（与 build_dist.sh 同一套替换）。
-    测的必须是玩家真正拿到的那份脚本——以前测试里 @@DEFAULT_PACKS@@ 压根没被替换，
-    安装器把这串占位符当成一个资源包名写进了 options.txt，测试还照样通过。"""
+    """按 build_dist.sh 的替换规则填掉安装器模板的占位符，写到 dst。
+    漏填 @@DEFAULT_PACKS@@ 时，安装器会把它当资源包名写进 options.txt，测试照样通过。"""
     t = src.read_text(encoding='utf-8')
     t = (t.replace('@@MCVER@@', MCVER)
           .replace('@@DEFAULT_PACKS@@', DEFAULT_PACKS)
@@ -83,24 +78,19 @@ def materialize(src, dst):
     return dst
 
 
-# 子串包含判断查不出「中间多插入了一个 ]」这种语法损坏，也查不出「条目还在，
-# 但没排到最后一位」（等于没启用）这种情况。
+# 子串包含查不出数组中间多出 ] 的语法损坏，也查不出条目没排在最后一位（等于没启用）。
 def resource_packs(text):
-    """从 options.txt 原文解析 resourcePacks 数组，返回条目列表（不分单双引号）。
-    解析不出时返回 None——不该在语法已经损坏的情况下还拼出一个「看起来还行」的
-    列表来。`[^\\]]*` 严格不吃 "]"：如果数组中间被错误地插入了多余的 "]"
-    （CRLF 那个 bug 的典型症状），这里会在第一个 "]" 处就停手，随后要求紧跟着
-    的是行尾（`\\r?$`）——多出来的内容会让整条正则匹配失败，从而如实报告"解析
-    不出"，而不是悄悄只解析出前半段。"""
+    """从 options.txt 原文解析 resourcePacks 数组，返回条目列表（单双引号都认），解析失败返回 None。
+
+    `[^\\]]*` 不匹配 "]"，并要求数组后紧跟行尾（`\\r?$`）。数组中间多出 "]"（CRLF 问题的
+    典型症状）时整条正则匹配失败，不会只解析出前半段。"""
     m = re.search(r'^resourcePacks:\[([^\]]*)\]\r?$', text, re.M)
     if m is None:
         return None
     return re.findall(r'["\']([^"\']*)["\']', m.group(1))
 
 
-# 安装器现在 fail-closed：待装文件少于 50 个就中止，不许「装了 0 个还报成功」。
-# 这批只测 options.txt 的用例本来只放一个占位文件，会被那道闸拦下——
-# 它们要测的不是文件复制，所以补足数量即可，**不能为了让测试过而把闸调松**。
+# 安装器在待装文件少于 50 个时中止。这批用例只测 options.txt，补足占位文件数量即可。
 def fill_payload(reld, n=60):
     d = reld / 'config' / 'hanhua_test_payload'
     d.mkdir(parents=True, exist_ok=True)
@@ -108,8 +98,7 @@ def fill_payload(reld, n=60):
         (d / f'{i}.json').write_text('{}\n', encoding='utf-8')
 
 
-# 资源包**产物**带整合包版本号。这里直接从安装器脚本里读它认的那个名字，
-# 免得两边各写一份、日后再对不上（曾因批量改名把这里误改成版本中立名而挂掉 CI）。
+# 资源包名带整合包版本号，直接从安装器脚本里读，避免两边各写一份对不上。
 ENTRY = re.search(r"PACK_ENTRY='([^']+)'",
                    (ROOT / 'installer' / 'install.sh').read_text(encoding='utf-8')
                    ).group(1).replace('@@MCVER@@', MCVER)
@@ -130,9 +119,8 @@ pre = inst / 'vaultpatcher' / 'modules' / sample
 pre.parent.mkdir(parents=True)
 pre.write_text('OLD-CONTENT', encoding='utf-8')
 
-# 预置 r14 发过、本版起停发的那两个模块：安装器必须主动删掉它们。
-# 它们是 dynamic 模块，而 dynamic 表是全局的、每次替换调用都要线性扫一遍的开销——
-# 只覆盖不删除的话，装了新版照旧掉帧（这就是 r14 掉帧修不干净的那条路）。
+# 预置 r14 发过、之后停发的两个 dynamic 模块，安装器必须删掉它们：dynamic 表每次替换都要
+# 线性扫描，只覆盖不删除的话，装了新版照样掉帧。
 STALE = ('config_ui_generated.json', 'catnip_config_ui.json')
 for _s in STALE:
     (inst / 'vaultpatcher' / 'modules' / _s).write_text('STALE', encoding='utf-8')
@@ -180,23 +168,20 @@ assert (inst / 'config' / 'vaultpatcher_asm' / 'config.json').exists(), 'config 
 assert pre.read_text(encoding='utf-8') != 'OLD-CONTENT', '旧文件未被新版覆盖'
 for _s in STALE:
     assert not (inst / 'vaultpatcher' / 'modules' / _s).exists(), \
-        f'{_s} 没被清理——装过 r14 的人会继续掉帧'
+        f'{_s} 没被清理，装过 r14 的玩家会继续掉帧'
 
-# ---- 回归：重复安装不许出现「清理了 N 个旧版本残留的任务书语言文件」----
-# 2026-08-08 用户实机报的：每次装都弹「🧹 清理了 37 个」。
-# 成因是 payload 自己发的 4 字节空壳 `_X.snbt` 与 `zz_hanhua_X.snbt` 字节相同，
-# clean_legacy_quest_lang 的 cmp 必然相等 → 删掉上次装的、复制那步再抄回来，
-# 计数恒等于空壳个数，还跟着弹一句「本包已不会再覆盖整合包的文件」——
-# 而 gen_quest_lang_patches.py 之后我们**就是**按上游原名覆盖的，那句话早已不成立。
-# 判据放在「第二次安装」上：第一次装完盘上就有空壳了，churn 必然在第二次暴露。
+# ---- 回归：重复安装不许提示「清理了 N 个旧版本残留的任务书语言文件」----
+# payload 里 4 字节的空文件 `_X.snbt` 与 `zz_hanhua_X.snbt` 字节相同，clean_legacy_quest_lang
+# 会把上次装的删掉再复制回来，每次安装都提示清理了 N 个。第一次安装后盘上才有这些文件，
+# 所以在第二次安装时检查。
 _again = run('apply')
 assert '旧版本残留的任务书语言文件' not in _again, \
-    '重复安装仍在「清理」payload 自己会覆盖的文件——空壳被删了又抄回来：\n' + _again
+    '重复安装仍在清理 payload 自己会覆盖的文件，空文件被删掉又复制回来：\n' + _again
 assert (inst / 'config' / 'ftbquests' / 'quests' / 'lang' / 'zh_cn').is_dir(), \
     '第二次安装后任务书语言目录不见了'
 print('✅ 重复安装不再自我清理任务书空壳 OK')
 
-# 备份目录名是秒级时间戳，两次 apply 落在同一秒会并成一个 —— 不拿个数当断言，
+# 备份目录名是秒级时间戳，两次 apply 落在同一秒会并成一个，不拿个数当断言，
 # 只取最早那个（它一定持有第一次安装前的 OLD-CONTENT）。
 bks = sorted(p for p in (rel / 'backups').iterdir() if p.is_dir())[:1]
 assert bks, '一个备份都没有'
@@ -226,11 +211,9 @@ if pin_jars:
     run('restore', bk2.name)
     assert not (inst / 'mods' / jar).exists(), '恢复备份未删除拼音 mod'
 
-    # ---- 已装过拼音搜索：不再问、也不再装 ----
-    # 不只是省一次按键。同一个 mod id 出现两个 jar，NeoForge 报
-    # 「Mod ID is duplicated」直接拒绝启动——装过的人按下 y 就进不去游戏。
-    # 预置的这个故意换了大小写与版本号：识别必须按 mod id（文件名首段），
-    # 不能靠文件名全等。
+    # ---- 已装过拼音搜索：不再问，也不再装 ----
+    # 同一个 mod id 有两个 jar 时，NeoForge 报「Mod ID is duplicated」并拒绝启动。
+    # 预置的 jar 换了大小写与版本号：必须按 mod id（文件名首段）识别。
     planted = inst / 'mods' / 'JECharacters-1.21.1-neoforge-4.5.20.jar'
     planted.write_text('OLD-JEC', encoding='utf-8')
 
@@ -243,9 +226,8 @@ if pin_jars:
         f'已装拼音 mod 时不该再装一个：mods/ 里现在有 {jec_jars()}'
     assert planted.read_text(encoding='utf-8') == 'OLD-JEC', '不该覆盖玩家已装的那个'
 
-    # 菜单路径：装过就不该再弹那句问话。
-    # 只喂一个「1」；若脚本仍在问，第二次读会拿到 EOF 并打印「跳过可选mods」，
-    # 以此把「没问」和「问了但没答」区分开。
+    # 菜单路径：只输入「1」。如果脚本仍然提问，第二次读取会得到 EOF 并打印「跳过可选mods」，
+    # 由此区分「没问」与「问了没答」。
     if IS_WIN:
         _cmd = ['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass',
                 '-File', str(rel / 'install.ps1')]
@@ -263,9 +245,9 @@ if pin_jars:
 else:
     print('（仓库无可选mods jar，跳过拼音分支）')
 
-# ---- 回归：手动输入带引号/空格的实例路径（复制粘贴/拖拽常见形态）----
-# 造一个路径含空格的实例；释放文件夹放在「非实例」的松散目录里 → check_target 触发输入循环
-# 路径同时含空格与中文：Windows 上两者都常见（PCL2 默认就往中文目录装）
+# ---- 回归：手动输入带引号或空格的实例路径（复制粘贴、拖拽时常见）----
+# 释放文件夹放在非实例目录里，触发 check_target 的输入循环。
+# 路径同时含空格与中文（PCL2 默认装在中文目录）。
 spaced = tmp / '我的 Game Dir With Spaces 绿油油'
 (spaced / 'mods').mkdir(parents=True)
 for i in range(25):
@@ -281,7 +263,7 @@ for s in ('install.sh', 'install.ps1'):
 
 
 def run_prompt(script_dir, mode, answer):
-    """跑安装脚本，在‘输入实例路径’提示处喂 answer；返回 (returncode, 合并输出)。"""
+    """跑安装脚本，在‘输入实例路径’提示处喂 answer。返回 (returncode, 合并输出)。"""
     if IS_WIN:
         cmd = ['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass',
                '-File', str(script_dir / 'install.ps1'), mode]
@@ -305,7 +287,7 @@ def run_prompt(script_dir, mode, answer):
     return p.returncode, out
 
 
-# Unix 常见是单引号粘贴，Windows 拖拽是双引号——各测本平台形态（两种都在脚本里处理）
+# Unix 常见是单引号粘贴，Windows 拖拽是双引号，各测本平台形态（两种都在脚本里处理）
 q = '"' if IS_WIN else "'"
 quoted = q + str(spaced) + q
 rc, out = run_prompt(loose, 'backup', quoted)
@@ -316,10 +298,9 @@ assert lbks and (lbks[-1] / 'options.txt').read_text(encoding='utf-8') == SPACED
     '未正确定位到带空格的实例目录'
 print('✅ 引号/空格路径输入清洗 OK')
 
-# ---- 回归：就地解压（压缩包内容直接覆盖到实例根目录，随后又跑安装器）----
-# 此时脚本所在目录 == 实例目录，源与目标是同一批文件。
-# 旧版会走进「把文件复制到自己头上」→ Windows 抛
-# "Cannot overwrite the item ... with itself"，Unix 则 cp 同源同目标失败。
+# ---- 回归：就地解压（压缩包内容直接覆盖到实例根目录，随后又运行安装器）----
+# 脚本目录就是实例目录，源与目标相同，复制会失败：Windows 报
+# "Cannot overwrite the item ... with itself"，Unix 的 cp 同样失败。
 inplace = tmp / 'inplace-instance'
 (inplace / 'mods').mkdir(parents=True)
 INPLACE_OPTS = 'version:4189\nresourcePacks:[]\nlang:zh_cn\n'
@@ -346,16 +327,14 @@ assert 'with itself' not in out, f'仍在把文件复制到自己头上：\n{out
 assert ENTRY in (inplace / 'options.txt').read_text(encoding='utf-8'), \
     f'就地解压模式未启用资源包：\n{out}'
 assert (inplace / 'config' / 'vaultpatcher_asm' / 'config.json').exists(), '就地解压模式误删了文件'
-# 就地解压这条路以前零覆盖：把 clean_legacy_config_ui 的调用从这条分支删掉，CI 照样全绿。
-# 变异测试暴露之后补上——r14 残留必须在两条路径上都被清掉。
+# 就地解压这条路径同样要调用 clean_legacy_config_ui，清掉 r14 残留。
 for _s in STALE:
     assert not (inplace / 'vaultpatcher' / 'modules' / _s).exists(), \
-        f'就地解压模式没清掉 {_s}——那条路的清理没生效'
+        f'就地解压模式没清掉 {_s}'
 print('✅ 就地解压（源即目标）不再自我复制 OK')
 
 # ---- 回归：刚装好、一次都没启动过的实例（没有 options.txt）----
-# Minecraft 是退出时才写 options.txt。旧版把它当实例判定的必要条件，
-# 于是无论用户怎么输路径都被判定为「不是实例」，卡在输入循环里出不来。
+# Minecraft 退出时才写 options.txt，实例判定依赖它的话，会一直卡在输入路径的循环里。
 fresh = tmp / '全新 实例 never-launched'
 (fresh / 'mods').mkdir(parents=True)
 for i in range(25):
@@ -384,10 +363,9 @@ newopt = fresh / 'options.txt'
 assert newopt.exists(), f'全新实例没建出 options.txt：\n{out}'
 txt = newopt.read_text(encoding='utf-8')
 assert 'lang:zh_cn' in txt, f'新建的 options.txt 没写入中文语言：\n{txt}'
-# ⚠️ 这里**必须逐项比对**，不能只做子串包含。issue #9 P1-2 就是这么漏掉的：
-# install.ps1 的 $DefaultPacks 是单引号字符串，里面的 "" 原样保留成两个双引号，
-# 写出来的是 resourcePacks:[""vanilla"",...]——数组根本解析不了，游戏回落默认
-# 列表 = 汉化没启用。而「ENTRY in txt」照样成立，测试一路绿。
+# 逐项比对，子串包含查不出这种错误（issue #9 P1-2）：install.ps1 的 $DefaultPacks 是单引号
+# 字符串，"" 会原样写成 resourcePacks:[""vanilla"",...]，数组无法解析，游戏回落默认列表，
+# 汉化没有启用。
 want = [n.strip() for n in (ROOT / 'versions' / MCVER / 'default_resource_packs.txt')
         .read_text(encoding='utf-8').splitlines()
         if n.strip() and not n.startswith('#')] + [ENTRY]
@@ -395,12 +373,11 @@ got = resource_packs(txt)
 assert got is not None, f'新建的 resourcePacks 行解析不出来（语法坏了）：\n{txt!r}'
 assert got == want, ('新建的 resourcePacks 数组与预期不符\n  实际 %r\n  预期 %r\n  原文 %r'
                      % (got, want, txt))
-print('✅ 全新实例（无 options.txt，路径含中文+空格）OK —— 数组逐项比对')
+print('✅ 全新实例（无 options.txt，路径含中文和空格）通过，数组逐项比对')
 
-# ---- 回归：玩过的实例但 options.txt 不见了 → 绝不新建 ----
-# 玩家报过：装完汉化后键位、视频、声音设置全没了。已有 options.txt 的路径是安全的
-# （只改 resourcePacks 一行，实测其余 598 行逐字节不变），问题出在「文件不存在就新建
-# 一份两行的」——游戏启动会把其余项按默认值补齐，等于把设置清空。
+# ---- 回归：玩过的实例但 options.txt 不见了，不许新建 ----
+# 新建一份只有两行的 options.txt，游戏启动时会把其余项按默认值补齐，键位、视频、声音设置
+# 全部清空。已有 options.txt 时只改 resourcePacks 一行，其余 598 行逐字节不变。
 played = tmp / 'played-instance'
 (played / 'mods').mkdir(parents=True)
 for i in range(25):
@@ -419,28 +396,18 @@ assert not (played / 'options.txt').exists(), \
 assert '不新建' in out, f'应提示不新建 options.txt：\n{out}'
 print('✅ 玩过的实例缺 options.txt 时拒绝新建 OK')
 
-# ---- 回归：多名玩家反馈「装完汉化包没启用，得自己进游戏拖到最后一位」----
+# ---- 回归：装完汉化包没有启用，需要手动拖到最后一位 ----
 #
-# 根因：bash 版 patch_options 用 grep 取 resourcePacks 整行后直接 "${body%]}" 去掉
-# 结尾的 "]"。但 Minecraft 在 **Windows** 上运行时，Java 的 println 按系统行尾写
-# options.txt，也就是 CRLF；这样的行被 grep 取出来结尾其实是 "]\r" 而不是 "]"，
-# "${body%]}" 匹配不上、什么都不剥，最终拼出
+# bash 版 patch_options 用 grep 取 resourcePacks 整行，再用 "${body%]}" 去掉结尾的 "]"。
+# Minecraft 在 Windows 上按 CRLF 写 options.txt，行尾是 "]\r"，"${body%]}" 不生效，会拼出
 #   resourcePacks:[...]\r,"file/ATM10汉化包-7.2.zip"]
-# 这种中间多出一个 "]"、还嵌着散落 \r 的坏行——数组语法已经损坏，游戏读出来的
-# 资源包列表是错的，汉化包实际没启用。这种 CRLF 文件不是假设：实例目录如果被
-# 同步/搬去 Windows 上启动过一次，再拿回 Mac/Linux 装这个包，options.txt 就是
-# CRLF 的。（在下方 `resource_packs()` 未修复前对这类输入跑一遍就能复现：拿到的
-# 是 None——说明整行已经不是合法的 resourcePacks 语法了。）
+# 这种中间多一个 "]"、夹着 \r 的坏行，汉化包实际没有启用。实例在 Windows 上启动过一次、
+# 再拿到 Mac/Linux 安装，options.txt 就是 CRLF。
 #
-# 顺带把「重复安装不产生重复项」也在这里测了：旧代码摘除已有条目时只认双引号 +
-# 带 file/ 前缀这一种写法，实测单引号、或不带 file/ 前缀的残留条目都摘不掉，
-# 会越装越多份重复项（功能上不算「没启用」，因为最后一份仍在末尾，但明显是
-# bug，任务要求「重复安装不产生重复项」）。
-#
-# 用 resource_packs() 直接解析数组，而不是像前面测试那样只做子串包含判断——
+# 同时测重复安装不产生重复项：摘除已有条目时要认单引号和不带 file/ 前缀的写法，
+# 否则每装一次多一份。用 resource_packs() 解析数组后逐项断言。
 def resline_case(name, opts_text):
-    """造一个「实例 + 释放的安装器文件夹」，options.txt 按给定内容原样写入字节
-    （不能用文本模式写，否则 Python 会把 \\r\\n 悄悄换行转写掉，测不出 CRLF 场景）。"""
+    """造一个实例与释放好的安装器文件夹，options.txt 按字节写入（文本模式会转换 \\r\\n）。"""
     instd = tmp / name / 'instance'
     (instd / 'mods').mkdir(parents=True)
     for i in range(25):
@@ -456,8 +423,7 @@ def resline_case(name, opts_text):
 
 
 def run_apply_only(reld):
-    """跑 apply，返回 (returncode, 合并输出)——不经过 run()，因为这批用例的
-    释放文件夹没有完整出货树，只放了个占位 config/，够 patch_options 测试用。"""
+    """运行 apply，返回 (returncode, 合并输出)。不用 run()：这批用例的释放文件夹只有占位 config/。"""
     if IS_WIN:
         cmd = ['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass',
                '-File', str(reld / 'install.ps1'), 'apply']
@@ -471,7 +437,7 @@ def run_apply_only(reld):
 BARE = PACK + '.zip'   # 不带 file/ 前缀、带 .zip 后缀的裸文件名写法
 
 CASES = [
-    # 实测过的默认包顺序，十几项——起始状态就是「首次启动过一次后」的真实形状
+    # 实测的默认资源包顺序，即首次启动后的状态
     ('内置包十几个-LF-无本包',
      'version:4189\nresourcePacks:[%s]\nlang:zh_cn\n' % DEFAULT_PACKS),
     ('内置包十几个-CRLF-无本包',      # ← CRLF：反馈的核心复现场景
@@ -505,8 +471,7 @@ for label, opts_before in CASES:
         f'[{label}] 汉化包不在列表最后一位（不在最后等于没启用）：{packs}'
 print(f'✅ resourcePacks 各种写法 + CRLF + 重复安装 回归 OK（{len(CASES)} 个用例）')
 
-# 幂等专项：本包已经在最后一位时，不该触发任何重写（也顺带验证 CRLF 原样保留，
-# 不会被「已经对了」这条早退路径悄悄改动行尾风格）
+# 幂等：本包已在最后一位时不重写，CRLF 行尾也保持原样。
 idempo_instd, idempo_reld = resline_case(
     '本包已在最后-CRLF-幂等',
     'version:4189\r\nresourcePacks:["vanilla","mod_resources","%s"]\r\nlang:zh_cn\r\n' % ENTRY)
@@ -518,13 +483,10 @@ assert idempo_packs is not None and idempo_packs == ['vanilla', 'mod_resources',
     f'幂等跳过后数组不应变化：{idempo_packs}'
 print('✅ 汉化包已在最后一位时正确识别为跳过、CRLF 原样保留 OK')
 
-# ---- 一键更新：挑 asset 这一步（离线，用夹具 JSON）----------------------
-# Release 里同时挂着 7.0/7.1/7.2 × 客户端/服务端六个包。挑错版本就是把 7.0 用户
-# 升级到 7.2 包；缺 sha256 摘要还照装，等于把一段随后要被执行的脚本无校验落盘。
-# 这两条以前只有 install.ps1 有实现，且一行测试都没有（issue #9 指出的空白）。
-# 夹具照抄 GitHub 的真实形状：asset 里字段顺序是 name → uploader{…} → digest →
-# browser_download_url，uploader 是**嵌套对象**——按 "},{" 切块的解析在这里会散架，
-# 所以必须拿这个形状测，不能拿一个扁平的假 JSON 糊过去。
+# ---- 一键更新：挑选 asset（离线，用夹具 JSON）--------------------------
+# Release 里有 7.0/7.1/7.2 × 客户端/服务端六个包，挑错会把 7.0 用户升级到 7.2 的包。
+# 缺 sha256 摘要时不许安装。夹具照抄 GitHub 的真实字段顺序：name → uploader{…} → digest →
+# browser_download_url，uploader 是嵌套对象，按 "},{" 切块的解析会出错。
 def _asset(name, digest=True):
     sha = ('%064x' % (abs(hash(name)) % (1 << 256)))[:64]
     d = '"digest": "sha256:%s", ' % sha if digest else ''
@@ -542,10 +504,10 @@ FAKE_RELEASE = ('{\n  "tag_name": "vr99",\n  "assets": [\n    ' + ',\n    '.join
 
 
 def pick_asset(mcver, release_json):
-    """把 install.sh 里的 pick_client_asset 抠出来，按指定 ATM 版本跑一遍。"""
+    """取出 install.sh 里的 pick_client_asset，按指定 ATM 版本运行。"""
     src = (ROOT / 'installer' / 'install.sh').read_text(encoding='utf-8').replace('@@MCVER@@', mcver)
     m = re.search(r'^pick_client_asset\(\) \{.*?^\}', src, re.S | re.M)
-    assert m, 'install.sh 里找不到 pick_client_asset —— 改名了就要同步改这个测试'
+    assert m, 'install.sh 里找不到 pick_client_asset，改名后要同步改这个测试'
     f = tmp / ('picker-%s.sh' % mcver)
     f.write_text(m.group(0) + '\n', encoding='utf-8')
     r = subprocess.run(['bash', '-c',
@@ -569,12 +531,10 @@ if not IS_WIN:                       # install.sh 只跑在 macOS / Linux
     assert rc != 0 or not got, f'该版没有对应包时不该挑到别版：rc={rc} got={got}'
     print('✅ 一键更新挑包：按 ATM 版本精确匹配 + 缺摘要拒绝 OK')
 
-# ---- 一键更新：端到端（离线，本地 HTTP 服务喂一个假 Release）------------
-# 上一段只测了「挑哪个 asset」。这里把剩下的整条链跑一遍：
-#   下载 → 校验 sha256 → 解包 → 用 ATM_TARGET 调起新版安装器 apply
+# ---- 一键更新：端到端（离线，localhost 上的 HTTP 服务提供假 Release）------------
+# 测完整流程：下载 → 校验 sha256 → 解包 → 用 ATM_TARGET 调起新版安装器 apply
 #   → 把新版目录里的备份归并回原入口 → 把原入口的 payload 与脚本换成新版
-# 不加任何测试专用开关：脚本本来就要经 materialize() 填占位符才是玩家拿到的那份，
-# 这里顺手把 api.github.com 改写到本地服务——production 代码一个字都不用为测试让路。
+# materialize() 填占位符时把 api.github.com 改写成 localhost，安装器本身不加测试开关。
 if not IS_WIN:                       # install.sh 只跑在 macOS / Linux
     import hashlib
     import http.server
@@ -614,7 +574,7 @@ if not IS_WIN:                       # install.sh 只跑在 macOS / Linux
         (instd / 'options.txt').write_text(OPTS_BEFORE, encoding='utf-8')
 
         def payload(d, mark):
-            """一份最小 payload：够 do_apply 干活，又不用搬整棵出货树。"""
+            """最小 payload，够 do_apply 运行。"""
             (d / 'config' / 'vaultpatcher_asm').mkdir(parents=True)
             (d / 'config' / 'vaultpatcher_asm' / 'config.json').write_text(
                 '{"class_patch": false}\n', encoding='utf-8')
@@ -664,8 +624,7 @@ if not IS_WIN:                       # install.sh 只跑在 macOS / Linux
         SERVED[f'/dl/{tag}/{zname}'] = ('application/zip', blob)
         return instd, srcd
 
-    # CI 给整个 job 设了 ATM_SKIP_UPDATE_CHECK=1（别让端到端测试去打真的 GitHub）。
-    # 这几条用例要走的正是联网那条路，只不过指向本地服务，所以得把它摘掉。
+    # CI 为整个 job 设了 ATM_SKIP_UPDATE_CHECK=1。这几条用例要走联网路径（指向 localhost），所以去掉它。
     UPD_ENV = {k: v for k, v in os.environ.items() if k != 'ATM_SKIP_UPDATE_CHECK'}
 
     # ① 正常路径
@@ -704,14 +663,11 @@ if not IS_WIN:                       # install.sh 只跑在 macOS / Linux
     assert not (instd3 / 'vaultpatcher').exists(), f'关了更新检查却还是动了实例：\n{out3}'
     assert not list(instd3.glob('.atm10-hanhua-update-*')), f'关了更新检查却还是下载了：\n{out3}'
 
-    # ④ 回归：菜单里得真的**列出** [u]，否则一键更新等于不存在
+    # ④ 回归：菜单里必须列出 [u]
     #
-    # 上面三条都是直接 `install.sh update`，绕过了菜单，所以谁都没发现：
-    # check_update 里写的是 latest="$(latest_tag)"，命令替换开子 shell，
-    # fetch_latest_release 在子 shell 里给 LATEST_TAG 的赋值回不到父进程 →
-    # 菜单那行 `has_update && say " [u] …"` 永远为假。警告文案照常打印
-    # （它用的是子 shell 的 stdout），所以从提示上看不出任何异常。
-    # 玩家反馈：提示「你装的不是最新版本」，菜单里却只有 [1][2][3][q]。
+    # check_update 里 latest="$(latest_tag)" 在子 shell 里运行，fetch_latest_release 对 LATEST_TAG
+    # 的赋值回不到父进程，菜单的 `has_update && say " [u] …"` 永远为假，提示语却照常打印。
+    # 上面三条直接运行 `install.sh update`，绕过了菜单，测不出这个问题。
     instd4, srcd4 = make_case('menu')
     r = subprocess.run(['bash', str(srcd4 / 'install.sh')], input='q\n',
                        capture_output=True, text=True, encoding='utf-8',
@@ -720,22 +676,18 @@ if not IS_WIN:                       # install.sh 只跑在 macOS / Linux
     assert r.returncode == 0, f'菜单退出码 {r.returncode}：\n{out4}'
     assert '你装的不是最新版本' in out4, f'版本检查没提示新版本：\n{out4}'
     assert '[u] 一键下载并更新到 vr99' in out4, \
-        f'有新版本，菜单里却没有 [u] 那一行——一键更新对玩家不存在：\n{out4}'
+        f'有新版本，菜单里却没有 [u]：\n{out4}'
     assert not (instd4 / 'vaultpatcher').exists(), f'只看菜单却动了实例：\n{out4}'
 
     httpd.shutdown()
     print('✅ 一键更新端到端：下载→校验→解包→子安装器→归并备份→换源目录 OK'
           '（含摘要不符拒绝、ATM_SKIP_UPDATE_CHECK 关闭、菜单列出 [u]）')
 
-# ── 覆盖安装：真的覆盖到了吗 ────────────────────────────────────────────
+# ── 覆盖安装：文件真的被覆盖了吗 ───────────────────────────────────────
 #
-# 2026-08-01 玩家反馈：Windows 上一路绿勾，却「已备份 0 个将被覆盖的文件」——
-# 备份 0 个就等于一个原文件都没被盖住，也就是**什么都没装**，而安装器照样打印
-# 「✅ 汉化已应用」。此前的用例只预置了 1 个 vaultpatcher 模块当「旧文件」，
-# 任务书语言那条路（削掉整合包 31 个文件的那次事故所在）一条断言都没有。
-#
-# 反馈者的路径里有 `[0.9.1正式版]` 这种方括号——PowerShell 的通配符字符。
-# 所以这批夹具的路径把常见的「坏字符」全带上：方括号、空格、中文、& 、'、# 、$。
+# 事故：Windows 上全部显示成功，却「已备份 0 个将被覆盖的文件」，也就是一个文件都没装上，
+# 安装器照样打印「✅ 汉化已应用」。路径里有 `[0.9.1正式版]`，方括号是 PowerShell 的通配符。
+# 所以夹具路径带上常见的特殊字符：方括号、空格、中文、&、'、#、$。
 
 def build_case(root, opts=OPTS_BEFORE):
     """在 root 下造一个「已经玩过一阵」的实例 + 释放好的汉化文件夹。"""
@@ -775,8 +727,7 @@ HOSTILE = tmp / "带 [0.9.1正式版] 和 [3月23日更新] 的 & 目录'"
 HOSTILE.mkdir()
 inst2, rel2 = build_case(HOSTILE)
 
-# 预置「整合包自带的任务书语言文件」——用本包会整份替换的那些原名文件，内容打标记。
-# 新方案是**整份换掉**上游同名文件，所以断言不是「原样保留」，而是「装完 = 包里那份」。
+# 预置本包会整份替换的整合包任务书语言文件，内容打上标记，断言装完后与包里那份相同。
 QL = 'config/ftbquests/quests/lang/zh_cn/chapters'
 shipped_ql = sorted(p.name for p in (rel2 / QL).glob('*.snbt'))
 assert len(shipped_ql) >= 30, f'包里任务书语言文件只有 {len(shipped_ql)} 个，夹具不成立'
@@ -797,7 +748,7 @@ bad = [f for f, h in before.items()
        if not (inst2 / f).is_file() or sha(inst2 / f) != h]
 assert not bad, f'{len(bad)} 个文件没装上或内容不符，例如 {bad[:3]}\n{out}'
 
-# ② 预置的 8 个文件确实被**覆盖**了（这正是「备份 0 个」那次没发生的事）
+# ② 预置的 8 个文件确实被覆盖
 still_old = [n for n in preset
              if (inst2 / QL / n).read_text(encoding='utf-8') == UPSTREAM_MARK]
 assert not still_old, f'这些文件没被覆盖，等于没装：{still_old}\n{out}'
@@ -815,10 +766,10 @@ r = subprocess.run((['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '
 assert r.returncode == 0, f'restore 失败：{r.stdout}{r.stderr}'
 for n in preset:
     assert (inst2 / QL / n).read_text(encoding='utf-8') == UPSTREAM_MARK, f'{n} 没还原回原内容'
-print(f'✅ 覆盖安装：{len(before)} 个文件逐字节核对通过；'
+print(f'✅ 覆盖安装：{len(before)} 个文件逐字节核对通过。'
       f'{len(preset)} 个原有任务书语言文件确实被覆盖并可还原（路径含方括号/空格/中文）')
 
-# ④ 反例：待装文件被削到 50 以下，安装器必须报错退出，且**一个字节都不许动实例**
+# ④ 反例：待装文件被削到 50 以下，安装器必须报错退出，且一个字节都不许动实例
 HOSTILE2 = tmp / 'counterexample'
 HOSTILE2.mkdir()
 inst3, rel3 = build_case(HOSTILE2)
@@ -832,7 +783,7 @@ assert (inst3 / 'vaultpatcher' / 'canary.json').read_text(encoding='utf-8') == '
     '中止前动了实例里的文件'
 assert not (rel3 / 'backups').exists() or not any((rel3 / 'backups').iterdir()), \
     '中止了却还是建了备份'
-print('✅ 反例：待装文件不足时安装器报错退出，未改动实例（证明这道闸不是摆设）')
+print('✅ 反例：待装文件不足时安装器报错退出，未改动实例')
 
 # ⑤ 长路径：备份路径比载荷自己的路径多出 `\backups\<时间戳>` 这一截。Windows 的
 #    MAX_PATH=260 算的是完整路径，于是会出现「载荷装得进去、它的备份写不出来」，
@@ -845,7 +796,7 @@ DEEP_REL = max(payload_of(rel), key=len)
 WANT = 236 - len(DEEP_REL)          # 源 248、备份 272，两边离边界都有余量
 pad = WANT - len(str(tmp)) - 10
 assert pad >= 1, (f'临时目录 {len(str(tmp))} 字符、最深相对路径 {len(DEEP_REL)} 字符，'
-                  f'垫不出「源 <260、备份 >260」的窗口——这条用例必须真的跨过 260 才有意义')
+                  f'构造不出「源 <260、备份 >260」的路径长度，这条用例必须跨过 260')
 DEEP = tmp / ('d' * pad)
 DEEP.mkdir()
 inst5, rel5 = build_case(DEEP)

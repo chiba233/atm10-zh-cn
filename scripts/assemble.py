@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """把 src/ 里的真源摊成一棵出货树（build/common/）。
 
-仓库里不存在 `resourcepacks/`、`kubejs/`、`config/` 这些目录——它们是**产物**，
+仓库里不存在 `resourcepacks/`、`kubejs/`、`config/` 这些目录，它们是产物，
 每次构建现摊。这样就不可能出现「仓库里躺着一份手改过、和生成器输出对不上的文件」。
 
 摊完之后再跑生成器（横幅、奖杯名、按钮…），它们直接往这棵树里写。

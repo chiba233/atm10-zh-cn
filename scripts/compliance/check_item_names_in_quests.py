@@ -3,71 +3,37 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""任务书里提到某件物品时，用的必须是玩家在 JEI 里搜得到的那个名字。
+"""任务书里提到某件物品时，必须用玩家在 JEI 里搜得到的名字。
 
-## 为什么要这道闸
+例如任务书写「XP 果冻豆」「XP 固化机」「空灵魂宝石」「挡光玻璃」，物品名是「经验果冻宝宝」
+「经验固化器」「灵魂宝石（空）」「遮光玻璃」。check_bee_names_in_quests.py 只查 productivebees，
+这里查 NAMESPACES 里的模组。
 
-蜜蜂那道闸（check_bee_names_in_quests.py）证明了这个判据是机械的，但它只管
-productivebees 一个命名空间。2026-08-03 的反馈说明同一个毛病在别的模组里照样有：
-
-    任务书写「XP 果冻豆」「XP 固化机」  物品名是「经验果冻宝宝」「经验固化器」
-    任务书写「空灵魂宝石」              物品名是「灵魂宝石（空）」
-    任务书写「挡光玻璃」                物品名是「遮光玻璃」
-
-前两组是反馈报上来的，第三组是这道闸自己扫出来的——**人眼看不全，必须机械化。**
-
-2026-08-07 又发现 Industrial Foregoing 的无限工具任务把七档原样留成英文，而工具
-tooltip 已经是「差 / 普通 / 罕见 / 稀有 / 史诗 / 传说 / 神器」。档位不是 item/block
-名字，直接把整个命名空间塞进物品名扫描还会让 Plastic、Speed 等常用词满地误报。
-所以这类术语按「目标任务键 → jar 语言键」精确绑定：参照值仍从最终生效的语言表取，
-任务键或任一参照键消失都当红，不能让检查静默空转。
+Industrial Foregoing 的无限工具档位（差 / 普通 / 罕见 / 稀有 / 史诗 / 传说 / 神器）不是物品名，
+整个命名空间放进物品名扫描会让 Plastic、Speed 等常用词误报。这类术语按「目标任务键 → jar 语言键」
+精确绑定，参照值从最终生效的语言表取，任务键或参照键消失都失败。
 
 ## 判定
 
-对每个任务条目：英文原文里出现某件物品的英文名 → 我们的中文里必须出现它的中文名。
+英文原文出现某件物品的英文名，中文里就必须出现它的中文名。英文名取模组 jar 的 `en_us.json`，
+中文名取出货树里实际生效的那份（`resourcepacks/ATM10汉化包/assets/<ns>/lang/zh_cn.json` 优先，
+没有才用 jar 自带的）。
 
-英文名取自模组 jar 的 `en_us.json`，中文名取**出货树里实际生效的那一份**：
-我们的资源包盖过模组自带（`resourcepacks/ATM10汉化包/assets/<ns>/lang/zh_cn.json`
-优先，没有才回退 jar 自带）。判据必须跟玩家看到的一致，所以不能只读 jar。
+- 最长匹配优先：命中 `Soul Gem` 时，同一处也命中了包含它的更长名字（`Empty Soul Gem`），这次不算。
+- 命中处前面紧跟大写词的不算独立提及，例如 `Wither Skeleton Skull` 里的 `Skeleton Skull`（长名是
+  原版物品，不在表里）、`Glass Divination Rod` 里的 `Divination Rod`。`the cheapest Divination Rod`
+  前一个词是小写，照常判断。一段文字里所有命中都被挡掉，才算没有提及。
+- 区分大小写：正文里 `call down a falling star` 不是 Relics 的遗物 `Falling Star`。上游把物品名
+  写成小写时会漏判，漏判好过误报。
+- 一个英文名对应多件东西时（`Rotten Egg` 在 mob_grinding_utils 和 iceandfire 里各有一件），命中
+  任意一个中文名就算通过。候选中文名和「更长的名字」都取全包所有模组的并集，`NAMESPACES` 只决定
+  哪些模组的名字要强制检查。
 
-**最长匹配优先**：`Soul Gem` 会落在 `Empty Soul Gem` 里，不排掉就会误报。
-某条英文名命中时，若同一段文字里还命中了包含它的更长的名字，这条不算。
+按 jar 内容找 jar：`occultism*.jar` 在 ATM10 里匹配到两个文件，其中一个没有 `assets/`，按文件名
+排序取最后一个会拿到空的那个。这里扫描所有 jar，取真正有这个命名空间 lang 的那个，一个都没有就失败。
 
-但只比对本表里的名字是不够的——第一版就这么误报了两条：
-
-    Wither Skeleton Skull   套着 occultism 的 Skeleton Skull（长名是原版的，不在表里）
-    Glass Divination Rod    套着 occultism 的 Divination Rod（长名是同模组另一个键，
-                            但那个键的中文里本来就含短名的中文，判不出来）
-
-还有一条：**匹配大小写敏感**。Relics 有件遗物叫 `Falling Star`，而任务正文里
-`call down a falling star` 是普通名词——不区分大小写就会把它当成提到了那件遗物。
-上游偶尔会把物品名写成小写，那样这条就漏判，但漏判好过误报。
-
-所以再加一道守卫：**命中处前面紧跟一个大写词的，不算独立提及**。
-`the cheapest Divination Rod` 里 `cheapest` 是小写，照样判；`&8Wither Skeleton Skull`
-和 `the Glass Divination Rod` 里前一个词是大写，跳过。一段文字里所有命中位置
-都被这条挡掉，才算这条名字没被提及——宁可漏报，不许拿判不了的事去红。
-
-**一名多物，而且跨模组**：同一个英文名可能对应多件东西。静态判不出正文说的是哪一件，
-所以命中任意一个中文名就算过——宁可漏报，不许拿判不了的事去红。
-
-这一条必须**跨整包**算，只在单个命名空间里合并是不够的：`Rotten Egg` 在
-mob_grinding_utils 和 iceandfire 里各有一件（腐烂鸡蛋 / 烂鸡蛋），而鸡蛇那条任务
-说的是冰与火那件。只按 MGU 判，闸会理直气壮地要求把它改成另一个模组的物品名。
-所以候选中文名和「更长的名字」都取**全包所有模组**的并集，`NAMESPACES` 只决定
-「哪些模组的名字要被强制检查」。
-
-## 为什么按 jar 内容找 jar，而不是取排序最后一个
-
-`occultism*.jar` 在 ATM10 里匹配到两个文件，其中一个根本没有 `assets/` ——
-按文件名排序取最后一个会拿到空的那个，于是「0 对名字」静默通过。
-这里改成**扫所有 jar、谁真有这个命名空间的 lang 就用谁**，并且一个都没找到就红。
-
-## fail-closed
-
-拿不到 jar、读不到英文表、找不到中文表、上游英文任务书目录不在、某个模组一对名字都
-配不上、绑定的任务键或语言键消失、两棵树一个键都对不上——全部当红。这道闸最没用的
-失败形态就是「没扫到所以通过」。
+拿不到 jar、读不到英文表、找不到中文表、上游英文任务书目录不在、某个模组一对名字都配不上、
+绑定的任务键或语言键消失、两棵树一个键都对不上，都按失败处理。
 
 用法:
     python3 scripts/compliance/check_item_names_in_quests.py <mods 目录> <上游树> <出货树>
@@ -78,8 +44,8 @@ import sys
 import zipfile
 from pathlib import Path
 
-# 纳入这道闸的命名空间。加一个模组进来之前先本地跑一遍：报出来的必须条条是真错，
-# 否则说明该模组的名字表不适合当判据（比如物品名是常用词），不许为了「多扫点」硬加。
+# 纳入检查的命名空间。加模组前先运行一遍，报出的必须全是真错误，否则说明该模组的名字表
+# 不适合当判据（例如物品名是常用词）。
 NAMESPACES = ('mob_grinding_utils', 'occultism', 'relics')
 
 # 不能全局扫的界面术语：限定到具体任务键，再从 jar 英文和最终生效中文里动态取值。
@@ -178,10 +144,10 @@ def collect(mods, tree):
                         enforced.add(e)
     missing = [ns for ns in NAMESPACES if ns not in seen_ns]
     if missing:
-        die('%s 里没有任何 jar 含这些命名空间的 en_us.json：%s —— 这道闸对它们等于没跑'
+        die('%s 里没有任何 jar 含这些命名空间的 en_us.json：%s，无法检查'
             % (mods, '、'.join(missing)))
     if not enforced:
-        die('要检查的命名空间（%s）一对「英文名→中文名」都没配上 —— 判不了'
+        die('要检查的命名空间（%s）一对「英文名→中文名」都没配上，无法判断'
             % '、'.join(NAMESPACES))
 
     bindings = {}
@@ -190,7 +156,7 @@ def collect(mods, tree):
         for key in spec['keys']:
             got = binding_values[qkey][key]
             if not got:
-                die('%s 里找不到 %s 的英文语言键 %s —— 术语参照已经失效'
+                die('%s 里找不到 %s 的英文语言键 %s，术语参照已经失效'
                     % (mods, spec['label'], key))
             if len(got) != 1:
                 die('%s 的语言键 %s 在 jar 中有互相冲突的值：%s'
@@ -218,14 +184,12 @@ def quest_text(root):
     return out
 
 
-# 颜色码和转义换行会把词边界吃掉：`&8Wither` 里 `8` 和 `W` 都是 \w，
-# `\bWither` 根本匹配不上 —— 于是长名匹配不到、短名 `Skeleton Skull` 漏出来当误报。
-# 匹配前先把它们换成空格。（换完偏移会变，所以下面一律在规范化后的文本上算。）
-#
-# **非法**颜色码也要剥。ATM 的任务书里真有 `&zRainbow Plating` 这种 —— `&z` 不是
-# 合法格式符，只按合法表剥的话 `z` 会紧贴 `Rainbow`，整条静默漏判。
+# 颜色码和转义换行会破坏词边界：`&8Wither` 里 `8` 和 `W` 都是 \w，`\bWither` 匹配不上，长名
+# 匹配不到，短名 `Skeleton Skull` 就会误报。匹配前先换成空格（偏移会变，下面一律在规范化后的
+# 文本上算）。非法颜色码也要去掉：ATM 的任务书里有 `&zRainbow Plating`，只按合法表处理的话
+# `z` 会贴着 `Rainbow`，导致漏判。
 NOISE = re.compile(r'[&§](?:#[0-9A-Fa-f]{6}|[0-9A-Za-z])|\\+n')
-# 命中处前面紧跟的大写词 —— 说明正文说的是一件更长名字的东西，不是本条。
+# 命中处前面紧跟的大写词，说明正文说的是一件更长名字的东西，不是本条。
 LEADING_CAP = re.compile(r'[A-Z][a-zA-Z]*\s+$')
 
 
@@ -249,14 +213,13 @@ def ordered_terms(text, terms):
 
 
 def found_names(text, by_first):
-    """正文里**独立**提到的所有名字。
+    """正文里独立提到的所有名字。
 
-    全包两万条名字 × 八千段任务文本，逐条跑正则是分钟级的。改成按首词建索引：
-    只在正文里每个单词的位置上，试那些以这个词开头的名字。
+    全包两万条名字乘八千段任务文本，逐条跑正则要几分钟，所以按首词建索引：只在每个单词的位置上，
+    试以这个词开头的名字。
 
-    最长匹配必须**按出现位置**算，不能按整段算。`The cheapest Divination Rod, the
-    Glass Divination Rod.` 里两个名字都出现了；按整段排，短名会被长名整条吃掉，
-    这条真错就静默漏判了。所以只有**被某个更长匹配的区间盖住的那一次出现**不算。
+    最长匹配按出现位置算：`The cheapest Divination Rod, the Glass Divination Rod.` 里两个名字都出现了，
+    只有被更长匹配的区间覆盖的那次出现不算。按整段算的话，短名会被长名吃掉而漏判。
     """
     spans = []
     for m in WORD.finditer(text):
@@ -302,14 +265,14 @@ def binding_mismatches(bindings, up, ours):
     bad = []
     for qkey, (label, pairs) in bindings.items():
         if qkey not in up:
-            die('上游英文任务书里没有绑定键 %s（%s）——任务可能改版，需重新核对'
+            die('上游英文任务书里没有绑定键 %s（%s），任务可能改版，需重新核对'
                 % (qkey, label))
         if qkey not in ours:
-            die('出货中文任务书里没有绑定键 %s（%s）——这道闸无从检查'
+            die('出货中文任务书里没有绑定键 %s（%s），无法检查'
                 % (qkey, label))
         en_terms = [e for e, _ in pairs]
         if not ordered_terms(norm(up[qkey]), en_terms):
-            die('上游任务 %s 已不再按预期列出 %s：%s —— 需重新核对绑定'
+            die('上游任务 %s 已不再按预期列出 %s：%s，需重新核对绑定'
                 % (qkey, label, ' / '.join(en_terms)))
         zh_terms = [c for _, c in pairs]
         if not ordered_terms(norm(ours[qkey]), zh_terms):
@@ -323,17 +286,17 @@ def main(argv):
     mods, uproot, tree = argv[1], Path(argv[2]), Path(argv[3])
 
     if not (uproot / EN_QUESTS).is_dir():
-        die('上游树里没有 %s —— 英文原文取不到，无从判断译名对不对（树: %s）'
+        die('上游树里没有 %s，取不到英文原文（树: %s）'
             % (EN_QUESTS, uproot))
     up = quest_text(uproot / EN_QUESTS)
     ours = quest_text(tree / ZH_QUESTS)
     if not up:
         die('%s 里一条任务文本都没读到' % (uproot / EN_QUESTS))
     if not ours:
-        die('%s 里一条任务文本都没读到 —— 出货树没摊好' % (tree / ZH_QUESTS))
+        die('%s 里一条任务文本都没读到，出货树没有组装好' % (tree / ZH_QUESTS))
     common = [k for k in up if k in ours]
     if not common:
-        die('英文与中文一个键都对不上 —— 两棵树不是同一版，判了也没意义')
+        die('英文与中文一个键都对不上，两棵树不是同一版')
 
     names, enforced, bindings = collect(mods, tree)
     bad = mismatches(names, enforced, up, ours, common)

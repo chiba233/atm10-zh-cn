@@ -3,8 +3,7 @@
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
 # ATM10 @@MCVER@@ 汉化补丁「绿油油版」安装器 (macOS / Linux)
-# 版本号一律用 @@MCVER@@ 占位，由 scripts/build_dist.sh 按目标整合包版本填。
-# 写死一个版本号的话，7.0 / 7.1 的包里会印着「ATM10 7.2」——三个包里两个是错的。
+# 版本号用 @@MCVER@@ 占位，由 scripts/build_dist.sh 按目标整合包版本填入。
 # 用法：把整个汉化文件夹放进 ATM10 实例根目录后运行：
 #   bash install.sh                    # 交互菜单
 #   bash install.sh apply              # 应用汉化（自动先备份，不含可选mods）
@@ -21,26 +20,22 @@ PACK_ENTRY='file/ATM10汉化包-@@MCVER@@.zip'
 PINYIN_DIR="可选mods-拼音搜索"
 TS=""
 BK=""
-# 就地解压：用户把压缩包内容直接解到实例根目录，源与目标同一层，
-# 再复制一次就是自己覆盖自己。这种情况文件本来就已到位。
+# 就地解压：压缩包内容直接解到了实例根目录，源与目标相同，文件已经到位。
 IN_PLACE=0
 
 say() { printf '%s\n' "$*"; }
 
 # ── 版本检查 ────────────────────────────────────────────────────────────
-# 补丁自己的版本号，由 build_dist.sh 现填（写死的话每次发版都得记得改，必然忘）。
+# 补丁版本号，由 build_dist.sh 填入。
 PATCH_VER="@@PATCHVER@@"
 REPO="chiba233/atm10-zh-cn"
 
-# 取仓库最新**正式版**的 tag。GitHub 的 releases/latest 天然跳过预发布，
-# 正合用：测试版不该被当成「最新版」去催人升级。
-# 任何一步不成（没网、没 curl/wget、被限流、返回不是 JSON）都返回空，
-# **绝不因此拦住安装**——用户是来装汉化的，不是来做联网检测的。
+# 取最新正式版的 tag（releases/latest 跳过预发布，测试版不算最新版）。
+# 没网、没有 curl/wget、被限流或返回的不是 JSON 时返回空，不影响安装。
 RELEASE_JSON=""
 LATEST_TAG=""
 
-# 整份 Release JSON 只取一次：版本检查要 tag_name，一键更新还要 assets 里的
-# 下载地址与 sha256，两处共用同一份，免得同一个请求发两遍。
+# Release JSON 只请求一次：版本检查用 tag_name，一键更新用 assets 里的下载地址与 sha256。
 fetch_latest_release() {
   [ "${ATM_SKIP_UPDATE_CHECK:-0}" = "1" ] && return 0
   [ -n "$RELEASE_JSON" ] && return 0
@@ -56,10 +51,8 @@ fetch_latest_release() {
   return 0
 }
 
-# ⚠️ 这个函数只能拿它的**输出**，不能靠它给 LATEST_TAG / RELEASE_JSON 赋值：
-# 调用方一写成 `x="$(latest_tag)"`，命令替换就开了子 shell，里面的赋值回不到父进程。
-# check_update 曾经这么用，结果菜单里的 [u] 一键更新从 vr12 起就没显示过。
-# 需要那两个全局变量的地方，直接调 fetch_latest_release。
+# 只能取它的输出：写成 `x="$(latest_tag)"` 会在子 shell 里运行，对 LATEST_TAG / RELEASE_JSON
+# 的赋值回不到父进程。需要这两个变量时直接调 fetch_latest_release。
 latest_tag() {
   fetch_latest_release
   [ -n "$LATEST_TAG" ] && printf '%s' "$LATEST_TAG"
@@ -74,13 +67,12 @@ check_update() {
   is_beta=0
   case "$PATCH_VER" in *[Bb][Ee][Tt][Aa]*|*[Rr][Cc][0-9]*|dev|DEV) is_beta=1 ;; esac
 
-  # 直接调，不要写成 latest="$(latest_tag)"：命令替换开子 shell，
-  # LATEST_TAG 赋不到父进程，随后菜单里的 has_update 就永远为假。
+  # 直接调用：写成 latest="$(latest_tag)" 的话 LATEST_TAG 回不到父进程，菜单里的 has_update 永远为假。
   fetch_latest_release
   latest="$LATEST_TAG"
   if [ "$is_beta" = "1" ]; then
     say ""
-    say "⚠️ 你装的是**测试版**：$PATCH_VER"
+    say "⚠️ 你装的是测试版：$PATCH_VER"
     say "   测试版可能有没发现的问题。遇到异常请提交 issue："
     say "   https://github.com/${REPO}/issues"
     [ -n "$latest" ] && say "   在问题解决前，建议先切回正式版 ${latest}：" \
@@ -102,14 +94,11 @@ check_update() {
   fi
 }
 
-# 判定一个目录是不是游戏实例根目录。
-# 不能只看 options.txt —— **刚装好、一次都没启动过的整合包没有 options.txt**
-# （它是 Minecraft 首次退出时才写的）。也不能只看 mods/ —— 汉化包自己的文件夹里
-# 也有个 mods/（装着 vaultpatcher.jar）。用 jar 数量区分：ATM10 有 400+ 个，汉化包只有 1 个。
+# 判断目录是不是游戏实例根目录。刚装好没启动过的整合包没有 options.txt（Minecraft 首次退出时
+# 才写），汉化包文件夹里也有 mods/（装着 vaultpatcher.jar），所以按 jar 数量区分：ATM10 有 400+ 个。
 # ── 一键更新 ────────────────────────────────────────────────────────────
-# 与 install.ps1 的 Invoke-OneClickUpdate 是同一套流程，逐步对齐：
+# 与 install.ps1 的 Invoke-OneClickUpdate 流程相同：
 # 选 asset → 校验 sha256 → 解包 → 由新版安装器 apply → 归并备份 → 更新源目录。
-# 以前这套只有 Windows 有，两个安装器行为分叉；这里把 shell 这侧补齐。
 
 has_update() {
   [ -n "$LATEST_TAG" ] || return 1
@@ -126,14 +115,12 @@ sha256_of() {
   fi
 }
 
-# Release 里同时挂着 7.0/7.1/7.2 三个 ATM 版本 × 客户端/服务端共六个包。
-# 必须按**本包的 ATM 版本**精确挑客户端 zip——取第一个 asset 会把 7.0 用户升到 7.2。
-# 输出三行：文件名 / 下载地址 / sha256；挑不到或没有摘要就返回 1。
+# Release 里有 7.0/7.1/7.2 × 客户端/服务端共六个包，按本包的 ATM 版本精确挑客户端 zip。
+# 输出三行：文件名 / 下载地址 / sha256。挑不到或没有摘要就返回 1。
 pick_client_asset() {
   flat="$(printf '%s' "$RELEASE_JSON" | tr '\n' ' ')"
-  # 从我们要的那个 name 开始截到行尾。GitHub 的 asset 对象里字段顺序是
-  # name → …uploader{}… → digest → browser_download_url，所以截断之后
-  # **第一个** digest / browser_download_url 就是这个 asset 自己的。
+  # 从目标 name 截到行尾。asset 的字段顺序是 name → …uploader{}… → digest → browser_download_url，
+  # 截断后第一个 digest / browser_download_url 就是这个 asset 的。
   name="$(printf '%s' "$flat" \
     | grep -o '"atm10-zh_cn-client-[^"]*-atm@@MCVER@@\.zip"' | head -1 | tr -d '"')"
   [ -n "$name" ] || return 1
@@ -148,8 +135,7 @@ pick_client_asset() {
   printf '%s\n%s\n%s\n' "$name" "$url" "$sha"
 }
 
-# 新版安装器把备份写在它自己的目录里，而用户日后仍然从原目录运行 restore。
-# 更新成功后必须把备份归并回原入口，否则回滚功能等于没了。
+# 新版安装器把备份写在自己的目录里，而 restore 仍从原目录运行，所以更新后把备份归并回原入口。
 merge_update_backups() {
   from="$1/backups"
   [ -d "$from" ] || return 0
@@ -167,9 +153,8 @@ merge_update_backups() {
   done
 }
 
-# 用户今后还会运行最初解压出来的这个 install.sh。只更新游戏实例而不更新源目录，
-# 下次跑旧脚本会再提示升级，甚至把旧 payload 覆盖回去。
-# 就地解压时源目录就是实例，新版安装器刚刚已经覆盖过 payload，绝不能删。
+# 玩家以后还会运行原来解压出的 install.sh。只更新实例的话，旧脚本会再提示升级，
+# 甚至覆盖回旧 payload。就地解压时源目录就是实例，新版安装器已经覆盖过 payload，不能删。
 update_source_package() {
   newdir="$1"
   if [ "$IN_PLACE" != "1" ]; then
@@ -178,15 +163,15 @@ update_source_package() {
       [ -d "$newdir/$d" ] && cp -R "$newdir/$d" "$SCRIPT_DIR/$d"
     done
   fi
-  # bash 是**边读边执行**的：直接覆盖正在跑的这个文件会让它读到一半错位。
-  # 所以先写到临时文件再原子替换（mv 换的是目录项，当前进程的 fd 仍指向老 inode）。
+  # bash 边读边执行，直接覆盖正在运行的文件会读错位置。
+  # 先写临时文件再 mv 替换，当前进程的 fd 仍指向旧 inode。
   for f in install.sh install.ps1 双击安装-Windows.bat install-windows.bat; do
     [ -f "$newdir/$f" ] || continue
     cp "$newdir/$f" "$SCRIPT_DIR/.$f.new"
     mv "$SCRIPT_DIR/.$f.new" "$SCRIPT_DIR/$f"
   done
   chmod +x "$SCRIPT_DIR/install.sh" 2>/dev/null || true
-  say "✅ 已将原安装包更新为新版；以后继续运行原来的 install.sh 即可。"
+  say "✅ 已将原安装包更新为新版。以后继续运行原来的 install.sh 即可。"
 }
 
 do_update() {
@@ -206,7 +191,7 @@ do_update() {
       return 0; }
   done
   if ! command -v shasum >/dev/null 2>&1 && ! command -v sha256sum >/dev/null 2>&1; then
-    # 没法校验就**不装**：这包解压出来是要直接执行的，比大小/凭运气都不算数
+    # 无法校验就不装：解压出的脚本会被直接执行
     say "❌ 系统里没有 shasum / sha256sum，无法校验下载文件，拒绝自动更新。"
     say "   请手动到 Releases 下载新版：https://github.com/${REPO}/releases/latest"
     return 0
@@ -227,8 +212,8 @@ do_update() {
   started=0; installed=0; merged=0; newdir=""
   mkdir -p "$stage"
 
-  # ⚠️ 变量后面紧跟中文时必须写 ${var}：在单字节 Latin 语言环境下（CI 容器常见 LANG=C），
-  # bash 会把 UTF-8 的头字节当成标识符的一部分，`$name……` 变成 `$nameâ` → unbound variable。
+  # 变量后面紧跟中文时必须写 ${var}：单字节语言环境（CI 容器常见 LANG=C）下，bash 会把 UTF-8 的
+  # 头字节算进变量名，`$name……` 变成 `$nameâ`，报 unbound variable。
   say "正在下载 ${name}……"
   ok=1
   if command -v curl >/dev/null 2>&1; then
@@ -238,7 +223,7 @@ do_update() {
   fi
   if [ "$ok" != "1" ] || [ ! -s "$zipf" ]; then
     say "❌ 一键更新失败：下载失败。"
-    say "   新版安装器尚未启动；已下载的临时文件（如有）保留在：$stage"
+    say "   新版安装器尚未启动。已下载的临时文件（如有）保留在：$stage"
     return 0
   fi
 
@@ -247,18 +232,18 @@ do_update() {
     say "❌ 一键更新失败：下载文件的 SHA-256 与 GitHub Release 摘要不一致。"
     say "   期望 $want"
     say "   实际 ${got:-（算不出来）}"
-    say "   新版安装器尚未启动；文件保留在：$stage"
+    say "   新版安装器尚未启动。文件保留在：$stage"
     return 0
   fi
 
   unzip -q -o "$zipf" -d "$stage" || {
     say "❌ 一键更新失败：解包失败。"
-    say "   新版安装器尚未启动；文件保留在：$stage"
+    say "   新版安装器尚未启动。文件保留在：$stage"
     return 0; }
   newdir="$(find "$stage" -type d -name 'atm10-zh_cn-client' 2>/dev/null | head -1 || true)"
   if [ -z "$newdir" ] || [ ! -f "$newdir/install.sh" ]; then
     say "❌ 一键更新失败：下载包中没有预期的客户端安装器。"
-    say "   新版安装器尚未启动；文件保留在：$stage"
+    say "   新版安装器尚未启动。文件保留在：$stage"
     return 0
   fi
 
@@ -277,7 +262,7 @@ do_update() {
   update_source_package "$newdir"
   say "✅ 已更新到 ${LATEST_TAG}。新版安装器保留在：$stage"
   say "   本次备份已归入原安装包：$SCRIPT_DIR/backups"
-  say "   请退出并重新启动游戏后生效；确认无误前不要删除该目录。"
+  say "   请退出并重新启动游戏后生效。确认无误前不要删除该目录。"
 }
 
 is_instance() {
@@ -291,15 +276,15 @@ set_in_place() {
   if [ "$(cd "$SCRIPT_DIR" && pwd -P)" = "$(cd "$TARGET" && pwd -P)" ]; then
     IN_PLACE=1
     say "ℹ️ 检测到汉化文件已经在实例根目录里（压缩包内容被直接解压到了这一层）。"
-    say "   文件本来就已到位，无需复制；本次只做 options.txt 的资源包启用。"
-    say "   ⚠️ 这种装法没有备份可回退——原文件在你解压覆盖的那一刻就没了。"
+    say "   文件已经到位，无需复制。本次只在 options.txt 里启用资源包。"
+    say "   ⚠️ 这种装法没有备份可回退：原文件在你解压覆盖时就没了。"
     say "   想要可回退的安装，请解压到别处、把整个文件夹放进实例根目录再运行安装器。"
   fi
 }
 
 check_target() {
-  # 一键更新时，新版安装器是从 <实例>/.atm10-hanhua-update-*/ 里被调起来的，
-  # 它的上一级目录不是实例。用这个环境变量把目标传进去（对应 ps1 的 -TargetPath）。
+  # 一键更新时新版安装器在 <实例>/.atm10-hanhua-update-*/ 里运行，上一级不是实例，
+  # 用这个环境变量传入目标（对应 ps1 的 -TargetPath）。
   if [ -n "${ATM_TARGET:-}" ] && is_instance "${ATM_TARGET}"; then
     TARGET="${ATM_TARGET%/}"
     set_in_place
@@ -321,7 +306,7 @@ check_target() {
       printf '请输入 ATM10 实例根目录完整路径（q 退出）: '
       read -r inp || exit 1
       [ "$inp" = "q" ] && exit 1
-      # 清洗输入：复制/粘贴/拖拽常带成对引号或反斜杠转义空格
+      # 去掉复制、粘贴、拖拽常带的成对引号，以及转义空格的反斜杠
       case "$inp" in
         \"*\") inp="${inp#\"}"; inp="${inp%\"}" ;;
         \'*\') inp="${inp#\'}"; inp="${inp%\'}" ;;
@@ -353,12 +338,10 @@ do_backup() {
     say "⚠️ 就地解压模式下没有可备份的原文件（已被解压覆盖），跳过备份。"
     return
   fi
-  # 备份是**覆盖**式写入：同一秒里装第二次会撞上同一个目录，于是第二次备份的是
-  # 已经汉化过的文件，把第一次那份原文盖掉，玩家的回退数据就没了。
-  # 撞上就往后加序号，绝不复用已存在的目录。
+  # 同一秒内安装两次会落到同一个备份目录，第二次会用已汉化的文件覆盖第一次的原文备份。
+  # 目录已存在就加序号。
   TS="$(date +%Y%m%d-%H%M%S)"
-  # 序号补零：do_restore 默认取 `ls -1 | tail -1`（字典序最后）当「最近一次」，
-  # 不补零的话 -10 会排在 -2 前面，默认就挑错了。
+  # 序号补零：do_restore 默认按字典序取最后一个，不补零的话 -10 会排在 -2 前面。
   if [ -e "$SCRIPT_DIR/backups/$TS" ]; then
     i=2
     while [ -e "$SCRIPT_DIR/backups/$(printf '%s-%02d' "$TS" "$i")" ]; do i=$((i + 1)); done
@@ -383,35 +366,25 @@ do_backup() {
 ##
 # 清理本补丁旧版本（v7.2-release8 之前）遗留的文件。
 #
-# 那之前本包的任务书 delta 用的是 `<章节名>.snbt`，与整合包自带的同名文件**撞名**，
-# 安装时直接覆盖 —— 整合包那一章上百条翻译当场没了，任务书变英文。
-# （已经启动过的实例看不出来：整合包那批早合并完并改名成 .snbt_merged 了。）
-#
-# 现在统一加 zz_hanhua_ 前缀，不会再撞名。这里把旧名字的残留删掉，
-# 且只在**内容与本包同名新文件逐字节相同**时才删 —— 这样能确定它是本包的旧产物，
-# 绝不会误删整合包自己的文件。
+# 那些版本的任务书 delta 叫 `<章节名>.snbt`，与整合包自带的同名文件冲突，安装时会覆盖整章翻译
+# （启动过的实例看不出来：整合包的文件已合并并改名成 .snbt_merged）。现在统一加 zz_hanhua_ 前缀。
+# 旧名字的残留只在内容与本包同名新文件逐字节相同时才删，确保删的是本包的旧文件。
 # r14 之前的版本往实例里装过 CC: Tweaked 的中文 help 文档
-# （kubejs/data/computercraft/lua/rom/help/，97 个 .txt）。
-# 那是个方向性错误：CC 的终端用自带的 term_font.png——256 个字形、没有汉字，
-# 中文进去整屏乱码。新版已经不再生成这些文件，但安装器只覆盖不删除，
-# 旧文件会一直留在玩家盘上，于是"装了新版还是乱码"。这里主动清掉。
+# （kubejs/data/computercraft/lua/rom/help/，97 个 .txt）。CC 终端用自带的 term_font.png，
+# 256 个字形没有汉字，中文是乱码。安装器只覆盖不删除，所以这里主动清理。
 clean_legacy_cc_help() {
-  # 只认这一个目录：旧版本就是往 lua/rom/help/ 里放译好的 .txt，别的地方一律不碰。
-  # 旧代码是 `find "$TARGET/kubejs/data/computercraft" -name '*.txt' -delete`——
-  # 整棵树、不看内容、不进备份。玩家自己放在那底下的 .txt（CC 程序的数据文件、
-  # 别的补丁的东西）会**永久消失**，restore 也拿不回来，因为 do_backup 只枚举
-  # 当前 payload，而这些文件早就不在 payload 里了。（issue #9 P1-1）
+  # 只处理 lua/rom/help/，旧版本的译文都在这里。别处的 .txt 可能是玩家的 CC 程序数据或别的补丁，
+  # 不在 payload 里，do_backup 不会备份，删了无法恢复（issue #9 P1-1）。
   CCD="$TARGET/kubejs/data/computercraft/lua/rom/help"
   [ -d "$CCD" ] || return 0
-  # `|| true`：set -euo pipefail 下 find 一旦非零退出（例如有不可读子目录），
-  # 这个赋值就会让安装器**静默退出**，什么都不打印。
+  # `|| true`：set -euo pipefail 下 find 非零退出（例如有不可读的子目录）会让安装器无提示退出。
   LIST=$(find "$CCD" -name '*.txt' -type f 2>/dev/null || true)
   [ -n "$LIST" ] || return 0
   hit=0
   while IFS= read -r f; do
     [ -f "$f" ] || continue
-    # 判据：文件里有非 ASCII 字节。我们发的是中译本，CC 自带的 help 全是英文；
-    # 纯 ASCII 的一律不动。万一还是判错，下面已经先备份了，restore 能拿回来。
+    # 有非 ASCII 字节的才是本包的中译本，CC 自带的 help 都是英文。
+    # 下面已先备份，判错也能 restore。
     LC_ALL=C tr -d '\000-\177' < "$f" 2>/dev/null | LC_ALL=C grep -q . || continue
     rel="${f#"$TARGET"/}"
     if [ -n "${BK:-}" ] && [ -d "$BK" ]; then
@@ -424,26 +397,23 @@ clean_legacy_cc_help() {
 $LIST
 EOF
   [ "$hit" -gt 0 ] || return 0
-  # 自底向上删空目录；非空的一律留着
+  # 自底向上删空目录。非空的一律留着
   find "$CCD" -depth -type d -empty -exec rmdir {} + 2>/dev/null || true
   say "🧹 清理了旧版本装进去的 CC: Tweaked 中文 help 文档（$hit 个文件，已备份）。"
   say "   CC 的终端只有 256 个自带字形、没有汉字，中文在那里必然是乱码，"
-  say "   所以这部分改回英文——这是终端本身的限制，不是漏翻。"
+  say "   所以这部分改回英文。这是终端本身的限制，不是漏翻。"
 }
 
-# r14 发过「模组配置界面汉化」那两个 VaultPatcher 模块（合计 2232 条），本版起不再发。
-# 它们是 dynamic 模块，而 VaultPatcher 的 dynamic 表是**全局的、每次替换调用都要线性扫一遍**
-# 的全局开销——留在盘上就等于全场景掉帧照旧，装了新版也修不掉。安装器只覆盖不删除，
-# 所以必须在这里主动清掉。
+# r14 发过「模组配置界面汉化」的两个 VaultPatcher dynamic 模块（共 2232 条），之后停发。
+# dynamic 表每次替换都要线性扫描，留在盘上会全场景掉帧。安装器只覆盖不删除，所以这里主动清理。
 clean_legacy_config_ui() {
   VPM="$TARGET/vaultpatcher/modules"
   [ -d "$VPM" ] || return 0
   hit=0
   for f in config_ui_generated.json catnip_config_ui.json; do
     if [ -f "$VPM/$f" ]; then
-      # 这两个文件不在 payload 里，do_backup 不会备份它们——删掉就永久没了，
-      # restore 也拿不回来。所以这里自己塞进本次备份目录（就地解压模式没有备份，
-      # 那条路本来就无从回退，见 do_apply 的提示）。
+      # 这两个文件不在 payload 里，do_backup 不会备份，这里自己放进本次备份目录。
+      # 就地解压模式没有备份，无法回退（见 do_apply 的提示）。
       if [ -n "${BK:-}" ] && [ -d "$BK" ]; then
         mkdir -p "$BK/vaultpatcher/modules"
         cp -p "$VPM/$f" "$BK/vaultpatcher/modules/$f" 2>/dev/null || true
@@ -454,21 +424,17 @@ clean_legacy_config_ui() {
   done
   if [ "$hit" -gt 0 ]; then
     say "🧹 清理了 $hit 个 r14 装进去的配置界面汉化模块。"
-    say "   那套替换表是全局开销（全局的，表越大越慢），留着会掉帧；"
+    say "   那套替换表是全局开销，表越大越慢，留着会掉帧。"
     say "   代价是 Create 及其附属的配置界面回到英文（只有它们用这套界面）。"
   fi
 }
 
 # 旧命名（r13 及更早的 `<章节>.snbt` / `_<章节>.snbt`）留在玩家盘上的任务书语言文件。
 #
-# **payload 里有同名文件的一律不碰。** gen_quest_lang_patches.py 现在会为每个
-# `zz_hanhua_X.snbt` 一并发出 `X.snbt`（上游全文 + 我们的覆盖）和 `_X.snbt`（空壳），
-# 复制那一步就把它们盖掉了——覆盖比删除彻底，也不会误伤。
-#
-# 不加这个判断会怎样：payload 自己发的 4 字节空壳 `_X.snbt` 与 `zz_hanhua_X.snbt`
-# 内容一模一样，`cmp -s` 必然相等 → 每次安装都「删掉上次装的、再抄回来」，
-# 计数恒等于空壳个数（实测 37），还跟着弹一句早已不成立的警告。
-# 2026-08-08 用户实机报的就是这个：数字和提示永远不变。
+# payload 里有同名文件的不处理：gen_quest_lang_patches.py 会为每个 `zz_hanhua_X.snbt` 同时发
+# `X.snbt`（上游全文加本包覆盖）和 `_X.snbt`（空文件），复制时会覆盖它们。不跳过的话，
+# 4 字节的 `_X.snbt` 与 `zz_hanhua_X.snbt` 内容相同，每次安装都会删掉再复制回来，
+# 还会提示清理了 37 个。
 clean_legacy_quest_lang() {
   QD="$TARGET/config/ftbquests/quests/lang/zh_cn/chapters"
   SD="$SCRIPT_DIR/config/ftbquests/quests/lang/zh_cn/chapters"
@@ -478,7 +444,7 @@ clean_legacy_quest_lang() {
     [ -f "$new" ] || continue
     base="$(basename "$new")"; base="${base#zz_hanhua_}"
     for old in "$QD/$base" "$QD/_$base"; do
-      # payload 会写同名文件 → 交给复制那一步，这里不删也不计数
+      # payload 会写同名文件，交给复制那一步，不删也不计数
       [ -f "$SD/$(basename "$old")" ] && continue
       if [ -f "$old" ] && cmp -s "$old" "$new"; then
         rm -f "$old"
@@ -491,49 +457,39 @@ clean_legacy_quest_lang() {
   fi
 }
 
-# ATM10 @@MCVER@@ 默认启用的资源包，顺序照抄游戏自己写出来的 options.txt。
-# 为什么要写死这一串：全新实例没有 options.txt，如果只写我们一个包，
-# 游戏首次启动会把这 15 个内置包**全部插到我们后面**（实测汉化包落到第 3 位，
-# 被 mod_resources 和五百多个模组包压在底下，汉化基本不生效）。
-# 资源包是**后面的覆盖前面的**，我们必须排在最后一个。
+# ATM10 @@MCVER@@ 默认启用的资源包，顺序照抄游戏写出的 options.txt。资源包后面的覆盖前面的，
+# 全新实例只写本包一个的话，游戏首次启动会把内置包插到它后面（实测落到第 3 位，汉化基本不生效）。
 DEFAULT_PACKS='@@DEFAULT_PACKS@@'
 DEFAULT_PACKS_UNUSED='"modularbees:dynamic_assets","vanilla","mod_resources","add_xycraft_overrides_stone","add_xycraft_overrides_metal","add_xycraft_overrides_glass","moonlight:merged_pack","mod/towntalk:respack","mod/dyenamicsandfriends:compat_packs/productivemetalworks/","mod/dyenamicsandfriends:compat_packs/connectedglass/","mod/dyenamicsandfriends:compat_packs/luminax/","mod/dyenamicsandfriends:compat_packs/cookingforblockheads/","mod/dyenamicsandfriends:compat_packs/botanypots/","mod/dyenamicsandfriends:compat_packs/chromacarvings/","modern_industrialization/generated"'
 
 patch_options() {
   OPT="$TARGET/options.txt"
-  # 全新实例还没启动过，options.txt 尚不存在（Minecraft 退出时才写）。
-  # 建一份含默认包列表 + 汉化包（放最后）的：Minecraft 启动时会把其余选项
-  # 按默认值补齐再回写，部分 options.txt 是合法的。
-  # （不要指望 config/defaultoptions —— ATM10 并没有装 DefaultOptions 模组，
-  #   那个目录是历史遗留；本包 R12 起已不再往里写东西。）
+  # 全新实例还没有 options.txt（Minecraft 退出时才写），建一份含默认包列表、汉化包放最后的，
+  # Minecraft 启动时会按默认值补齐其余选项。ATM10 没装 DefaultOptions，不用 config/defaultoptions。
   if [ ! -f "$OPT" ]; then
-    # ⚠️ 只有**从没启动过**的实例才允许新建 options.txt。
-    # 一个玩过的实例必然有 logs/ 或 saves/；这时 options.txt 却不见了，只有两种可能：
-    #   a) 选错了目录（启动器没做版本隔离时，设置其实在 .minecraft/options.txt）；
-    #   b) 别的什么东西把它挪走了。
-    # 这两种情况下写一份只有两行的 options.txt，游戏启动会把其余项全部按**默认值**补齐
-    # ——玩家的键位 / 视频 / 音量设置当场全没。有玩家报过这个（R12 修复）。
-    # 宁可不写、让玩家自己启用资源包，也绝不能把人家的设置冲掉。
+    # 只有从没启动过的实例才新建 options.txt。玩过的实例一定有 logs/ 或 saves/，这时 options.txt
+    # 不见了，可能是选错了目录（启动器没做版本隔离时，设置在 .minecraft/options.txt）。新建只有
+    # 两行的 options.txt 会让键位、视频、音量设置全部变回默认，所以不写，让玩家自己启用资源包。
     if [ -d "$TARGET/logs" ] || [ -d "$TARGET/saves" ] || [ -f "$TARGET/usercache.json" ]; then
       say "⚠️ 这个实例明显启动过（有 logs/ 或 saves/），却找不到 options.txt。"
-      say "   为避免把你的键位 / 视频 / 音量设置冲掉，本次**不新建** options.txt。"
+      say "   为避免把你的键位 / 视频 / 音量设置冲掉，本次不新建 options.txt。"
       say "   请确认目标目录是否正确：$TARGET"
       say "   （启动器没开「版本隔离」时，设置在 .minecraft/options.txt，那一层才是实例根目录）"
-      say "   确认无误后进游戏 → 选项 → 资源包，手动把「汉化包」拖到已启用一侧的**最后一位**。"
+      say "   确认无误后进游戏，打开「选项」里的「资源包」，手动把「汉化包」拖到已启用一侧的最后一位。"
       return
     fi
     if [ -n "$DEFAULT_PACKS" ]; then
       printf 'lang:zh_cn\nresourcePacks:[%s,"%s"]\n' "$DEFAULT_PACKS" "$PACK_ENTRY" > "$OPT"
       say "ℹ️ 这个实例还没启动过（没有 options.txt），已新建一份并写入中文语言与汉化资源包。"
-      say "   💡 若首次进游戏后发现翻译没生效，退出游戏再跑一次本安装器即可——"
-      say "      那说明你的整合包比预期多了几个内置资源包，重跑会把汉化包重新挪到最后一位。"
+      say "   💡 如果首次进游戏后翻译没生效，退出游戏再运行一次本安装器即可。"
+      say "      你的整合包比预期多了几个内置资源包，重跑会把汉化包重新挪到最后一位。"
     else
-      # 这一版的内置资源包顺序没实测过。**绝不伪造**——只写我们一个包的话，
-      # 游戏首次启动会把内置包全插到它后面，汉化包等于没启用（实测会掉到第 10/546 位）。
+      # 这一版的内置资源包顺序没实测过，不伪造。只写本包一个的话，首次启动后它会落到内置包后面
+      # （实测第 10/546 位），等于没启用。
       printf 'lang:zh_cn\n' > "$OPT"
       say "ℹ️ 这个实例还没启动过（没有 options.txt），已写入中文语言。"
-      say "   ⚠️ 资源包顺序需要两步：**先启动一次游戏**让 Minecraft 生成完整的资源包列表，"
-      say "      退出游戏后**再运行一次本安装器**，它会把汉化包挪到列表最后一位（必须在最后才生效）。"
+      say "   ⚠️ 资源包顺序需要两步：先启动一次游戏，让 Minecraft 生成完整的资源包列表，"
+      say "      退出游戏后再运行一次本安装器，它会把汉化包挪到列表最后一位（必须在最后才生效）。"
     fi
     return
   fi
@@ -542,23 +498,17 @@ patch_options() {
     say "⚠️ options.txt 中没有 resourcePacks 行，请进游戏手动启用资源包"
     return
   fi
-  # Minecraft 在 Windows 上用 CRLF 写 options.txt（Java println 按系统行尾）。
-  # 这种文件被本脚本（Unix 侧）处理时，grep 取出的整行末尾会带一个 \r。
-  # 旧版没剥它，导致 "${body%]}" 因为末尾其实是 "]\r" 而不是 "]" 匹配不上、
-  # 不做任何裁剪，结果拼出 resourcePacks:[...]\r,"file/xxx.zip"] 这种带多余
-  # 括号和散落 \r 的坏行——资源包实际没启用，这正是玩家反馈的那个 bug。
-  # 这里记下原来是否有 \r，剥掉再处理，写回时按原样把 \r 补回这一行。
+  # Minecraft 在 Windows 上按 CRLF 写 options.txt，grep 取出的行末尾带 \r，"${body%]}" 会因为
+  # 行尾是 "]\r" 而不生效，拼出 resourcePacks:[...]\r,"file/xxx.zip"] 这种坏行。
+  # 先剥掉 \r，写回时再补上。
   crlf=0
   case "$cur_raw" in
     *$'\r') crlf=1; cur="${cur_raw%$'\r'}" ;;
     *) cur="$cur_raw" ;;
   esac
   body="${cur#resourcePacks:[}"; body="${body%]}"
-  # 先把已有的汉化包条目摘掉，再追加到**末尾**。
-  # 不能只判断「已存在就跳过」——旧版本装出来的实例里它可能排在很前面，
-  # 那样等于没启用（后面的包会把它整个盖掉），必须重新挪到最后。
-  # 摘除时同时兼容双引号/单引号、带/不带 file/ 前缀四种写法——重复安装、
-  # 或旧工具用了不同写法留下的残留条目，都得认得出来，否则会越装越多份重复项。
+  # 先摘掉已有的汉化包条目，再追加到末尾：旧版本装出的实例里它可能排在前面，会被后面的包覆盖。
+  # 摘除时认双引号、单引号、带或不带 file/ 前缀四种写法，否则重复安装会越积越多。
   PACK_BASENAME="${PACK_ENTRY#file/}"
   body="$(printf '%s' "$body" | sed \
     "s|\"$PACK_ENTRY\"||g; s|'$PACK_ENTRY'||g; s|\"$PACK_BASENAME\"||g; s|'$PACK_BASENAME'||g; s|,,*|,|g; s|^,||; s|,\$||")"
@@ -587,16 +537,13 @@ do_apply() {
     say "✅ 汉化文件已在位，options.txt 已处理完毕。"
     return
   fi
-  # ⚠️ fail-closed：数不出足够的待装文件就**一个字节都不动**地退出。
-  # 2026-08-01 玩家反馈过一次「备份 0 个 + 一路绿勾 + 实际什么都没装」——
-  # 那种情况下安装器照样打印「✅ 汉化已应用」，玩家没有任何办法知道装失败了。
-  # 正常包有数百个文件；少于 50 只可能是解压不完整、脚本不在汉化文件夹里，
-  # 或路径把文件枚举搞没了。宁可当场报错，也不许假装成功。
+  # 待装文件少于 50 个就报错退出，不改动任何文件。正常包有数百个文件，少于 50 说明解压不完整、
+  # 脚本不在汉化文件夹里，或路径导致文件枚举失败。出现过「备份 0 个、提示汉化已应用、实际没装」。
   n_payload=$(payload_files | grep -c . || true)
   if [ "${n_payload:-0}" -lt 50 ]; then
     say "❌ 只找到 ${n_payload:-0} 个待安装文件，正常应有数百个。"
-    say "   常见原因：压缩包没解压完整；或 install.sh 不在解压出来的汉化文件夹里。"
-    say "   已中止，**没有改动实例里的任何文件**。"
+    say "   常见原因：压缩包没解压完整，或 install.sh 不在解压出来的汉化文件夹里。"
+    say "   已中止，没有改动实例里的任何文件。"
     exit 1
   fi
   do_backup
@@ -610,7 +557,7 @@ do_apply() {
     cp -p "$f" "$TARGET/$f"
     n_copied=$((n_copied + 1))
   done < <(payload_files)
-  # 再核一遍是否真的落地：cp 静默失败、目标只读、路径被通配符吃掉都在这里露馆。
+  # 再核对一遍文件是否落地：cp 静默失败、目标只读、路径被通配符解析，都会在这里暴露。
   n_missing=0
   while IFS= read -r f; do
     [ -f "$TARGET/$f" ] || n_missing=$((n_missing + 1))
@@ -624,12 +571,9 @@ do_apply() {
   say "✅ 汉化已应用（$n_copied 个文件）。备份在 backups/$TS/，如需回退运行: bash install.sh restore $TS"
 }
 
-# 实例里是否已经有拼音搜索 mod。mod id 取自我们随包 jar 的文件名首段
-# （jecharacters-1.21.1-neoforge-4.5.26.jar → jecharacters），不写死，
-# 换 jar 时不用改这里。
-#
-# 这不只是省一次按键：同一个 mod id 出现两个 jar，NeoForge 会以
-# 「Mod ID is duplicated」拒绝启动。装过的人按下 y 就进不去游戏了。
+# 实例里是否已有拼音搜索 mod。mod id 取随包 jar 文件名的首段
+# （jecharacters-1.21.1-neoforge-4.5.26.jar → jecharacters），换 jar 不用改这里。
+# 同一个 mod id 有两个 jar 时，NeoForge 报「Mod ID is duplicated」并拒绝启动。
 PINYIN_FOUND=""
 pinyin_installed() {
   PINYIN_FOUND=""
@@ -658,7 +602,7 @@ do_pinyin() {
     return
   fi
   if pinyin_installed; then
-    say "（已装有拼音搜索 mod：${PINYIN_FOUND}，跳过——同一个 mod 装两个 jar 会让游戏起不来）"
+    say "（已装有拼音搜索 mod：${PINYIN_FOUND}，跳过。同一个 mod 装两个 jar 会让游戏起不来）"
     return
   fi
   found=0
@@ -741,7 +685,7 @@ case "${1:-}" in
     case "$c" in
       1)
         do_apply
-        # 已经装过就别问了：每次更新汉化都要按一次 N 属实多余。
+        # 已经装过就不再问
         if pinyin_installed; then
           say "（已装有拼音搜索 mod：${PINYIN_FOUND}，无需重复安装）"
         else

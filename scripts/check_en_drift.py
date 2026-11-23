@@ -3,18 +3,18 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""两个整合包版本之间的**英文底本漂移**：上游改了哪些文案。
+"""两个整合包版本之间的英文底本漂移：上游改了哪些文案。
 
 ## 为什么要它
 
-公共内容是照着某一个版本的英文写的。上游升版时改了正文，我们的中文还停在旧描述——
-玩家读到的是一段通顺但**描述错误行为**的中文，比漏翻危险得多，因为看不出来。
+公共内容是照着某一个版本的英文写的。上游升版时改了正文，我们的中文还停在旧描述，
+玩家读到的是一段通顺但描述错误行为的中文，比漏翻危险得多，因为看不出来。
 `versions/README.md` 记的 7.1→7.2 那五条就是这么找出来的。
 
-**列出不等于要改译文**：半数是拼写修正（Ingrediant→Ingredient 之类），中文不用动。
+列出不等于要改译文：半数是拼写修正（Ingrediant→Ingredient 之类），中文不用动。
 只有行为 / 数值真的变了，才写进 `versions/<版本>/quest_overrides.snbt` 分叉。
 
-这个脚本**只报告，不设闸**：它退出码永远是 0。要不要跟、怎么跟，是人的判断。
+这个脚本只报告，不设闸：它退出码永远是 0。要不要跟、怎么跟，是人的判断。
 （一个只会打印的东西不该有能力拦住构建。）
 
 用法:
@@ -29,7 +29,7 @@ PREVIEW = 90
 
 
 def load(ver, name, required=True):
-    """required=False 时文件不在就返回 None——给那些**故意不入库**的底本用。
+    """required=False 时文件不在就返回 None，给那些故意不入库的底本用。
 
     `lang_baseline_local.json` 被 .gitignore 排除（十几万条键，且随时可从 jar 重建），
     所以在 CI 上通常只有「刚生成的那一版」有、上一版没有。任务书底本是入库的，
@@ -72,8 +72,8 @@ def main(old, new):
     qa, qb = load(old, 'quest_baseline'), load(new, 'quest_baseline')
     _, _, qchanged = report('任务书（我们已有覆盖的那批键）', qa, qb)
 
-    # 资源包 lang 有十几万条，逐条打印没法看；只报「我们译过的命名空间里改了多少」。
-    # 这份底本不入库（.gitignore 排除），所以经常只有一边有——那就跳过并说清楚，
+    # 资源包 lang 有十几万条，逐条打印没法看。只报「我们译过的命名空间里改了多少」。
+    # 这份底本不入库（.gitignore 排除），所以经常只有一边有，那就跳过并说清楚，
     # 不要因为一份可再生的本地产物缺席就把整份报告废掉。
     ra, rb = load(old, 'lang_baseline_local', False), load(new, 'lang_baseline_local', False)
     if ra is None or rb is None:

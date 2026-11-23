@@ -3,14 +3,14 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""让 blockui 的按钮文字居中——改字节码，因为 XML 层根本做不到。
+"""让 blockui 的按钮文字居中，改字节码，因为 XML 层根本做不到。
 
 ## 为什么必须动字节码
 
-blockui 1.0.211 **完全无视 XML 里的 `textalign`**。这不是推断，是受控实测：
+blockui 1.0.211 完全无视 XML 里的 `textalign`。这不是推断，是受控实测：
 单独做一个资源包排在最后一位，只改 `windowbuildtool.xml` 的 switch 按钮，
 同时把 `label` 换成「探针已加载」、加上 `textalign="BOTTOM_RIGHT"`、不加任何偏移量。
-实机结果是按钮**显示了「探针已加载」**（证明包确实生效）而文字**照旧贴在左边**
+实机结果是按钮显示了「探针已加载」（证明包确实生效）而文字照旧贴在左边
 （证明 textalign 无效）。上游自己写了这个属性的地方同样贴左，两次独立证据。
 
 根因在字节里：
@@ -20,7 +20,7 @@ blockui 1.0.211 **完全无视 XML 里的 `textalign`**。这不是推断，是�
                    x += (textWidth - renderedTextWidth) / 2
 
 中文比英文宽，靠左的后果比英文严重得多：一排按钮的字全挤在左上角，长一点的直接
-压到边框和图标上。而按钮的文字大多是**运行时才填**的（玩家名、开/关、建筑名、
+压到边框和图标上。而按钮的文字大多是运行时才填的（玩家名、开/关、建筑名、
 田地半径），构建期算不出宽度，`textoffset` 那条路只能覆盖标签固定的那一批。
 
 ## 实测数据（把 blockui 自己的字段 println 出来看的）
@@ -36,8 +36,8 @@ blockui 1.0.211 **完全无视 XML 里的 `textalign`**。这不是推断，是�
 
 ## 改哪里：只改 Button，不改 AbstractTextElement
 
-把 `DEFAULT_TEXT_ALIGNMENT` 直接翻成 `MIDDLE` 会连「农夫：xxx」这类**段落文字**
-一起居中——那是另一种不可用。所以只在 `Button`（所有按钮的基类）的构造器末尾追加
+把 `DEFAULT_TEXT_ALIGNMENT` 直接翻成 `MIDDLE` 会连「农夫：xxx」这类段落文字
+一起居中，那是另一种不可用。所以只在 `Button`（所有按钮的基类）的构造器末尾追加
 一句「把自己的对齐设成居中」：
 
     aload_0
@@ -46,24 +46,24 @@ blockui 1.0.211 **完全无视 XML 里的 `textalign`**。这不是推断，是�
 
 ## 为什么这是最安全的注入姿势
 
-追加在构造器**最后一条 `return` 之前**：
+追加在构造器最后一条 `return` 之前：
 
 - 不新增局部变量，`locals` 不变
 - 需要的操作数栈深度是 2，而原方法 `stack=3`，够用
-- 原方法的两个跳转目标在偏移 22 / 26，**都在注入点之前**，所以
+- 原方法的两个跳转目标在偏移 22 / 26，都在注入点之前，所以
   StackMapTable 里的帧偏移一个都不用改（这是不敢碰字节码的人最怕的部分）
-- 常量池只**追加**不修改，既有索引全部保持不变
+- 常量池只追加不修改，既有索引全部保持不变
 
 ## 怎么随包发：不需要新 mod
 
-VaultPatcher 自带 `ClassPatcher.init(Utils.getVpPath()/"patch")`——它会遍历
+VaultPatcher 自带 `ClassPatcher.init(Utils.getVpPath()/"patch")`，它会遍历
 `<实例>/vaultpatcher/patch/` 下的 `.class` 直接替换同名类。而 `vaultpatcher/`
 本来就是本包发的目录，所以：放一个改好的 `Button.class` 进去 + 把主配置的
 `class_patch` 打开，就完事了。不用发新 mod、不用写 mixin、不用给 CI 加 JDK。
 
 ## 版本对不上就报错，绝不照旧注入
 
-blockui 的 jar 按 sha256 钉死；升级后类结构可能变，届时构建**直接失败**，
+blockui 的 jar 按 sha256 钉死。升级后类结构可能变，届时构建直接失败，
 由人重新核对偏移量，而不是往一个陌生的方法尾巴上盲插三条指令。
 
 用法:
@@ -83,7 +83,7 @@ from paths import COMMON                                       # noqa: E402
 JAR_SHA256 = '5dfffc80c057b4d36123bd5f5cad9f32f86896a9dd993ea4a3ecad315cabd77e'  # blockui-1.0.211
 TARGET = 'com/ldtteam/blockui/controls/Button.class'
 CTOR_DESC = '(Lcom/ldtteam/blockui/PaneParams;)V'
-# ButtonImage(PaneParams) 调的是 **7 参** 的 Button 构造器，不是 1 参那个——
+# ButtonImage(PaneParams) 调的是 7 参 的 Button 构造器，不是 1 参那个，
 # 只打 1 参会完全没有效果（实测：注入的 println 一次都没打出来）。所以 4 个构造器全打。
 DROP_ATTRS = {'LocalVariableTable', 'LocalVariableTypeTable', 'LineNumberTable'}
 # 注入会让方法变长，而 LocalVariableTable 里还写着旧长度，JVM 校验直接
@@ -99,7 +99,7 @@ WIDE = (5, 6)              # long / double 占两个槽
 
 
 def parse_pool(b, off):
-    """返回 (entries, end_off)；entries[i] = (tag, payload_bytes)，i 为池索引。"""
+    """返回 (entries, end_off)。entries[i] = (tag, payload_bytes)，i 为池索引。"""
     count = struct.unpack_from('>H', b, off)[0]
     off += 2
     entries = {}
@@ -142,7 +142,7 @@ def find_class(entries, name):
 
 
 def patch(data):
-    """给 Button 的**每一个**构造器末尾追加 setTextAlignment(MIDDLE)，并剥掉调试属性。"""
+    """给 Button 的每一个构造器末尾追加 setTextAlignment(MIDDLE)，并剥掉调试属性。"""
     entries, pool_end, count = parse_pool(data, 8)
     add, nxt = [], count
 

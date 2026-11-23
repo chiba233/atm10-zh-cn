@@ -3,7 +3,7 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""把**真实存在的**蓝图类别路径放进替换表里跑一遍，改动一个字就红。
+"""把真实存在的蓝图类别路径放进替换表里跑一遍，改动一个字就红。
 
 ## 为什么需要它
 
@@ -21,13 +21,13 @@
             cache.get(split[0]).get(split[1])                 ← 拿去查 Map
 
 `depth` 是 `craftsmanship/luxury` 这样的类别路径。VaultPatcher 的 dynamic 模块
-钩的是 `LiteralContents.<init>`，按**栈里出现过的类名**过滤——`updateLevels` 就在
+钩的是 `LiteralContents.<init>`，按栈里出现过的类名过滤，`updateLevels` 就在
 栈上，所以内部类里造的这个 literal 照样被替换。我们那 167 条 `/luxury → /豪华`
 子串替换于是把 458 条真实路径改坏了 277 条，`cache.get` 落空返回 null，
 下一个 `.get` 直接 NPE。
 
-和 blockui 的对齐标志串是同一个病：**一个字符串既当界面文字又当数据**。
-`vp-no-path-prefix-keys` 拦的是「以 / 开头的键」这个形状；这个脚本拦的是后果——
+和 blockui 的对齐标志串是同一个病：一个字符串既当界面文字又当数据。
+`vp-no-path-prefix-keys` 拦的是「以 / 开头的键」这个形状。这个脚本拦的是后果，
 不管键长什么样，只要它能改动任何一条真实路径，就红。
 
 ## 怎么判定
@@ -41,7 +41,7 @@
     路径:蓝图名:$back           craftsmanship/luxury:chefshut:$back
 
 然后按 VaultPatcher 的语义套一遍 minecolonies_styles 的替换表
-（`@` 开头 = 子串替换，其余 = 全串匹配）。**期望结果是一个字都不变。**
+（`@` 开头 = 子串替换，其余 = 全串匹配）。期望结果是一个字都不变。
 
 用法:
     python3 scripts/compliance/check_minecolonies_paths.py <mods 目录>
@@ -121,7 +121,7 @@ def main():
         return 1
     depths, cases = collect_paths(mods)
     if not depths:
-        # 0 命中就静默通过的闸等于没有闸——2026-07-28 的对抗审计一次抓到三个。
+        # 0 命中就静默通过的闸等于没有闸，2026-07-28 的对抗审计一次抓到三个。
         print('❌ 在 %s 里一条蓝图路径都没找到。要么 jar 没备齐，要么结构包换了布局；'
               '这时候「通过」是假的。' % mods)
         return 1

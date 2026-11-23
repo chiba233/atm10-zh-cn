@@ -3,18 +3,18 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""工具链核对 —— 决定这次构建的产物**能不能拿字节去比**。
+"""工具链核对，决定这次构建的产物能不能拿字节去比。
 
 以前的说法是「PNG 跨平台字节不同，所以只能比像素不能比 sha256」。那是描述症状。
 病因是工具链没进依赖图：Pillow 的 wheel 里打包着 freetype / zlib / libpng，
 换一台机器就换一套栅格化，字节自然不一样。
 
-治法：把工具链本身钉住（`src/toolchain.lock.json`），并且**明确区分两种构建**：
+治法：把工具链本身钉住（`src/toolchain.lock.json`），并且明确区分两种构建：
 
-- **标准环境**（锁里那个镜像 + 那个 Pillow + 那几份字体）：产物字节可复现，
+- 标准环境（锁里那个镜像 + 那个 Pillow + 那几份字体）：产物字节可复现，
   verify_dist 拿 sha256 硬比。
-- **别的环境**：照样能构建、能自己玩，但这里会明说「这不是标准环境」，
-  产物哈希不作数。**不许假装能比**——假装能比才是最坏的那种。
+- 别的环境：照样能构建、能自己玩，但这里会明说「这不是标准环境」，
+  产物哈希不作数。不许假装能比，假装能比才是最坏的那种。
 
 用法:
     python3 scripts/toolchain.py            # 打印实况与差异
@@ -60,7 +60,7 @@ def probe():
 
 
 def font_diff(lock):
-    """字体逐个核哈希。缺文件不算差异——没跑 fetch_fonts.sh 而已。"""
+    """字体逐个核哈希。缺文件不算差异，没跑 fetch_fonts.sh 而已。"""
     bad, missing = [], []
     for rel, want in lock.get('fonts', {}).items():
         if rel.startswith('_'):

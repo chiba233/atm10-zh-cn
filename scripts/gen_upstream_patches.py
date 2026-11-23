@@ -3,30 +3,23 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""把 src/upstream/ 里的映射套用到**目标版本的官方文件**上。
+"""把 src/upstream/ 里的映射套到目标版本的官方文件上。
 
-仓库里没有任何一份上游文件的副本（见 extract_upstream_patch.py 里的原因），
-构建时现取官方文件、套上我们的改动。
+仓库里没有上游文件的副本（原因见 extract_upstream_patch.py），构建时取官方文件，套上本包的改动。
 
-**找不到原文就退出，绝不静默跳过。** 这条是整套结构的支点：
-上游哪天把某行改了，构建当场红给你看，而不是发出去一个「旧上游 + 我们的改动」
-——那种包会把上游的修复整个覆盖掉，还没人发现。
+找不到原文就退出：上游改了某一行时构建失败，否则发出去的是「旧上游 + 本包改动」，会覆盖上游的修复。
 
-唯一的例外走 `versions/<版本>/unpatchable.json`：上游在**某一个版本**里把这段原文
-删了或重写了，而别的版本还在。这种情况不能靠删映射解决（删了老版本就一起没了），
-只能按版本登记。登记是**逐条**的，而且两头都 fail-closed：
+唯一的例外是 `versions/<版本>/unpatchable.json`：上游在某个版本里删除或重写了这段原文，而别的版本
+还在，删映射会连老版本一起删，所以按版本逐条登记。登记两个方向都检查：
 
-- 登记了、但那段原文其实还在 → 红（登记过期了，上游又把它加回来了）
-- 没登记、又找不到原文 → 红（原来的行为，一个字没松）
-- 登记的文件不在 src/upstream 里、序号越界、没写 why → 红
+- 登记了但原文其实还在，失败（登记过期，上游又加回来了）
+- 没登记又找不到原文，失败
+- 登记的文件不在 src/upstream 里、序号越界、没写 why，失败
 
-也就是说这个口子只能让「已经查清楚、写明了理由」的那几条过，越不过任何别的东西。
-
-登记只解决「这一版不改」。上游只在某一版把那段**改成了另一副样子**、我们仍然想译的
-（8.0 给公告清单每行补了分号），就在 `versions/<版本>/upstream/` 下按同样的格式
-再放一份该版专属映射：先套通用的（可带登记跳过），再在同一份文本上套该版的。
-它同样 fail-closed——找不到原文退出；改的文件在 `src/upstream/` 下没有对应映射也退出
-（那种映射永远轮不到执行，而写的人以为它生效了）。
+登记只表示「这一版不改」。上游只在某一版把那段改成了别的样子，而本包仍要翻译时（例如 8.0 给公告
+清单每行加了分号），在 `versions/<版本>/upstream/` 下按同样格式放一份该版专属映射：先套通用映射
+（登记过的跳过），再在同一份文本上套该版的。找不到原文同样退出。改动的文件在 `src/upstream/`
+下没有对应映射也退出，那种映射永远不会执行。
 
 用法:
     python3 scripts/gen_upstream_patches.py <整合包根目录> <输出目录> <整合包版本>
@@ -47,18 +40,15 @@ def apply_one(text, edits, rel, skip=frozenset()):
         n, m = len(lines), len(find)
         at = [i for i in range(n - m + 1) if lines[i:i + m] == find]
         if k in skip:
-            # 登记成「该版不适用」的，**照样先查一遍**。查得到就说明登记过期了
-            # （上游把这段又加回来了，或者当初登记错了），这时候必须红——
-            # 登记过就无条件放过的话，这里就成了一个静默跳过的口子，
-            # 而静默跳过正是这个脚本存在的理由要挡的东西。
+            # 登记为该版不适用的也先查一遍，查得到说明登记过期了（上游又加回来了，或者登记错了），
+            # 必须失败，否则登记过的条目会被静默跳过。
             if at:
                 sys.exit('❌ %s 第 %d 处改动登记成了「该版不适用」，但在官方文件里找得到（%d 处）。\n'
                          '   登记已经过期：去掉 versions/<版本>/unpatchable.json 里的这一条，'
                          '让它照常生效。' % (rel, k, len(at)))
             continue
-        # all=true：这一段在文件里出现几次就换几次。任务书的 hover 就是这样——
-        # 同一件物品在一章里被提到好几遍，英文一模一样，中文当然也该一模一样，
-        # 为了「唯一」去凑上下文只会让映射变脆（上游动一行就全崩）。
+        # all=true：这一段在文件里出现几次就换几次。例如任务书的 hover，同一件物品在一章里被提到
+        # 好几次，英文相同，中文也应相同。为了唯一去拼上下文，会让映射在上游改一行时全部失效。
         if e.get('all'):
             if not at:
                 sys.exit('❌ %s 第 %d 处改动在官方文件里找不到\n   原文首行: %r'
@@ -80,10 +70,10 @@ def apply_one(text, edits, rel, skip=frozenset()):
 
 
 def load_unpatchable(version, sizes):
-    """读该版的「不适用条目」登记表，返回 {映射的 src 路径: {序号…}}。
+    """读该版的不适用条目登记，返回 {映射的 src 路径: {序号…}}。
 
-    sizes = {src 路径: 该映射有几处改动}，用来验序号确实存在——登记一个不存在的
-    序号，跟登记错文件一样是「以为登记了、其实没登记上」，必须当场红。
+    sizes = {src 路径: 该映射有几处改动}，用来检查序号确实存在。登记了不存在的序号，
+    与登记错文件一样等于没登记上，必须失败。
     """
     p = ROOT / 'versions' / version / 'unpatchable.json'
     if not p.is_file():
@@ -96,7 +86,7 @@ def load_unpatchable(version, sizes):
                      % (p.relative_to(ROOT), rel))
         if not str(ent.get('why') or '').strip():
             sys.exit('❌ %s 里 %s 没写 why。登记一条不适用，必须写清楚上游在这一版'
-                     '把它改成了什么样——否则下一版没人知道该不该撤掉登记。'
+                     '把它改成了什么样，下一版才能判断该不该撤掉登记。'
                      % (p.relative_to(ROOT), rel))
         n, which = sizes[rel], ent.get('which')
         if which == 'all':
@@ -120,9 +110,8 @@ def main(pack_root, out_dir, version):
         sys.exit('❌ %s 下一个映射都没有' % SRC)
     docs = [json.loads(mp.read_text(encoding='utf-8')) for mp in maps]
     skips = load_unpatchable(version, {d['src']: len(d['edits']) for d in docs})
-    # 该版专属的映射：上游只在这一版把某段改成了另一副样子（8.0 给公告清单每行
-    # 补了分号），通用映射不可能同时命中两版，就在这里按版本单给一份。
-    # 格式与 src/upstream/ 完全一样，规矩也一样——找不到原文照样退出。
+    # 该版专属的映射：上游只在这一版把某段改成了别的样子（例如 8.0 给公告清单每行加了分号），
+    # 通用映射不能同时匹配两版，所以按版本另给一份。格式与规则同 src/upstream/，找不到原文同样退出。
     vdir = ROOT / 'versions' / version / 'upstream'
     vmaps = sorted(vdir.rglob('*.json')) if vdir.is_dir() else []
     vdocs = {}
@@ -143,8 +132,7 @@ def main(pack_root, out_dir, version):
         skip = skips.get(rel, frozenset())
         text = apply_one(official.read_text(encoding='utf-8'), doc['edits'], rel, skip)
         if rel in vdocs:
-            # 接着在同一份文本上套该版专属的那几处，不是另写一遍文件——
-            # 覆盖写会把上面通用映射改好的部分整个丢掉。
+            # 在同一份文本上接着套该版专属的改动，不另写文件：覆盖写会丢掉上面通用映射的改动。
             vp, vd = vdocs.pop(rel)
             text = apply_one(text, vd['edits'], rel)
             vtotal += len(vd['edits'])
@@ -154,8 +142,7 @@ def main(pack_root, out_dir, version):
         total += len(doc['edits']) - len(skip)
         skipped += len(skip)
     if vdocs:
-        # 该版映射改的文件在 src/upstream 里没有对应映射：那它就永远轮不到执行，
-        # 而当事人以为它生效了。宁可红。
+        # 该版映射改的文件在 src/upstream 里没有对应映射，它永远不会执行，必须失败。
         sys.exit('❌ 这些该版映射改的文件，src/upstream 下没有任何映射，永远不会被套用：\n   %s'
                  % '\n   '.join('%s（%s）' % (r, v[0]) for r, v in sorted(vdocs.items())))
     print('上游文件汉化：%d 个文件、%d 处改动 → %s' % (len(maps), total, out_dir))
@@ -163,14 +150,13 @@ def main(pack_root, out_dir, version):
         print('  另按 versions/%s/upstream/ 套用该版专属改动 %d 处（%d 个文件）'
               % (version, vtotal, len(vmaps)))
     if skipped:
-        # 出货侧少了几处一定要说出来。不说的话，「这一版比别版少 37 条」就成了
-        # 只有翻日志才看得见的事，跟静默跳过没区别。
+        # 出货时少套用的条数要打印出来，否则「这一版比别的版本少 37 条」只有翻日志才看得到。
         print('  按 versions/%s/unpatchable.json 不出货 %d 处（上游在这一版删了或重写了原文）：%s'
               % (version, skipped, '、'.join(sorted(skips))))
 
 
 if __name__ == '__main__':
-    # 版本是必填的：少传一个参数就当没有登记表，等于把 unpatchable.json 悄悄作废。
+    # 版本必填：少传一个参数就读不到登记表，unpatchable.json 等于失效。
     if len(sys.argv) != 4:
         sys.exit(__doc__)
     main(sys.argv[1], sys.argv[2], sys.argv[3])

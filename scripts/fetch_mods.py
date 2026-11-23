@@ -3,20 +3,11 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""按 `src/mods.lock.json` 把随包分发的第三方 jar 取下来，逐个核 sha256。
+"""按 `src/mods.lock.json` 下载随包分发的第三方 jar，逐个核对 sha256，对不上就退出。
 
-仓库里不放二进制。锁文件写死了「哪个项目、哪个版本、什么地址、什么哈希」，
-构建时现取——**哈希对不上就退出**，不会把一个来路不明的 jar 打进包里。
-
-下载缓存在 `build/modcache/<sha256>.jar`，重复构建不重复下。
-
-**全部**随包 jar 都走这条路，包括只在 CurseForge 上有的 JEI 拼音搜索
-（jecharacters）。之前那一个是入库的，理由写的是「CurseForge 接口挡机器人」——
-搜索接口确实挡，但 `/api/v1/mods/<id>/files` 与 `/files/<id>/download` 是通的，
-按 fileID 就能钉死地址。同一个项目里两套标准没有道理。
-
-许可证正文也一并取：MIT 的唯一实质义务就是再分发时附上版权声明与许可全文，
-jar 里没带，那就由我们放到它旁边。
+缓存在 `build/modcache/<sha256>.jar`。只在 CurseForge 上发布的 jar（如 jecharacters）
+按 fileID 经 `/api/v1/mods/<id>/files` 与 `/files/<id>/download` 下载，搜索接口会拦截脚本。
+许可证正文一起下载，放在 jar 旁边，MIT 要求再分发时附上。
 
 用法:
     python3 scripts/fetch_mods.py <输出目录>       # 一般是 build/common
@@ -56,28 +47,24 @@ def main(out_dir):
             data = get(info['url'])
             got = sha256(data)
             if got != want:
-                sys.exit('❌ %s 哈希对不上——**不要用这个文件**\n'
+                sys.exit('❌ %s 哈希对不上，不要使用这个文件\n'
                          '   期望 %s\n   实得 %s\n   地址 %s\n'
-                         '   要么上游把同一个地址的内容换了，要么下载被人动了手脚。'
+                         '   上游换了同一地址的内容，或下载被篡改。'
                          % (rel, want, got, info['url']))
             cached.write_bytes(data)
         else:
-            # 缓存也要复核：磁盘上的东西同样可能被改
+            # 缓存也要复核，磁盘上的文件同样可能被改
             if sha256(cached.read_bytes()) != want:
                 cached.unlink()
                 sys.exit('❌ 缓存 %s 哈希对不上，已删除，请重跑' % cached)
         t = out / rel
         t.parent.mkdir(parents=True, exist_ok=True)
         t.write_bytes(cached.read_bytes())
-        # MIT / Apache 这类许可要求再分发时附许可全文，jar 里没带就由我们放
+        # MIT / Apache 这类许可要求再分发时附许可全文，jar 里没有就放在旁边
         if info.get('license_file'):
-            # 仓库里已经有这份许可证正文（GPL-3.0 就是本项目代码用的那份），
-            # 没有理由再去网上取——出货构建跑在锁定容器里，少一个网络依赖少一个
-            # 挂点。gnu.org 在容器里就取不到，Build 一直红在这儿。
-            #
-            # 但「本项目也用同一个许可证」不等于这份文件可以带本项目的版权声明：
-            # 它是随**别人的** jar 一起分发的，掺进「Copyright (C) …」就成了替
-            # 别人的作品声明作者。所以正文必须逐字节等于许可证原文，拿哈希钉死。
+            # 仓库里已有这份许可证正文（如 GPL-3.0）就直接用：容器里取不到 gnu.org。
+            # 正文必须逐字节等于许可证原文，用哈希固定：它随别人的 jar 分发，
+            # 不能带本项目的版权声明。
             src = ROOT / info['license_file']
             data = src.read_bytes()
             want_lic = info.get('license_file_sha256')

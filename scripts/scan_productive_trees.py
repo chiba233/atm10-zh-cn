@@ -6,17 +6,17 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """扫出某版整合包的资源树育种结构，写成该版基线。
 
-任务书里「甲 + 乙」那种育种公式，名字必须与 JEI 物品名逐字一致，手写必漂——
+任务书里「甲 + 乙」那种育种公式，名字必须与 JEI 物品名逐字一致，手写必漂，
 改了树名不会有人记得回来改公式。所以公式不手写，从数据推。
 
-但**推的那一步不该每次构建都做**：它要读整合包章节 + Productive Trees 的 jar，
-而这两样对一个已发布的整合包版本来说是**不会变的**。仓库对这类东西的一贯做法是
-「新版本入库时扫一次，算成基线，人过目后提交」——`versions/db/<版本>/` 下的
+但推的那一步不该每次构建都做：它要读整合包章节 + Productive Trees 的 jar，
+而这两样对一个已发布的整合包版本来说是不会变的。仓库对这类东西的一贯做法是
+「新版本入库时扫一次，算成基线，人过目后提交」，`versions/db/<版本>/` 下的
 jars.json / keybinds.json / lang_baseline_local.json 都是这么来的。这里照办：
 
     versions/db/<版本>/productive_trees.json
 
-**基线里只有结构，没有一个中文**：哪个任务对应哪棵树、它的父本是哪几棵。
+基线里只有结构，没有一个中文：哪个任务对应哪棵树、它的父本是哪几棵。
 译名是我们自己的东西，放 src/，改译名不必重扫。这样构建期只做「词根 → 中文」，
 不下 jar、不联网。
 
@@ -58,7 +58,7 @@ def parse_quest_tasks(text):
 
     FTB Quests 的 SNBT 不是 JSON，``tasks: [{`` 还经常挤在同一行，正则读不了。
     这里按字符维护容器路径：只在 ``quests`` 的直接子对象里认任务，只在该任务的
-    ``tasks`` 里认物品——奖励里也会出现树苗，认进来会把「产出」和「奖励」搞混。
+    ``tasks`` 里认物品，奖励里也会出现树苗，认进来会把「产出」和「奖励」搞混。
     """
     out, stack = {}, []
     pending = current = None
@@ -209,12 +209,12 @@ def sapling_key(item_id):
 
 
 def scan(chapter_text, quest_lang_text, jar):
-    """产出该版基线：任务 → 育种结构。**一个中文都不含。**"""
+    """产出该版基线：任务 → 育种结构。一个中文都不含。"""
     tasks = parse_quest_tasks(chapter_text)
     lang = scalar_lang(quest_lang_text)
     recipes, mutations, english = mod_data(jar)
 
-    # 一个任务只认一个树苗产出；多个就说明这不是「种出某棵树」的节点。
+    # 一个任务只认一个树苗产出。多个就说明这不是「种出某棵树」的节点。
     by_quest, by_target = {}, {}
     for quest, items in tasks.items():
         targets = tuple(dict.fromkeys(

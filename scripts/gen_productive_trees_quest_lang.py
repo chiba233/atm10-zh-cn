@@ -4,35 +4,25 @@
 # Copyright (C) 2026 0xyk3r
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""把资源树育种结构套上中文，生成任务书副标题。
+"""给资源树育种结构填入中文，生成任务书副标题。
 
-任务书副标题写的是「甲 + 乙」这种育种公式，名字必须与 JEI 物品名逐字一致，
-否则玩家照着搜是空的。手写必漂——改了树名不会有人记得回来改公式。
+任务书副标题是「甲 + 乙」形式的育种公式，名字必须与 JEI 物品名逐字一致，否则玩家搜不到。
+改了树名，公式也要跟着变，所以由脚本生成。
 
-**读结构不读 jar。** 结构由 ``scripts/scan_productive_trees.py`` 在版本入库时
-扫一次，落成 ``versions/db/<版本>/productive_trees.json``（跟 jars.json /
-keybinds.json 一样是该版基线）。已发布的整合包版本，章节与配方都不会再变，
-没有理由每次构建都去下 jar 重扫一遍。所以这个脚本：
+只读结构，不读 jar。结构由 ``scripts/scan_productive_trees.py`` 在版本入库时扫描一次，存成
+``versions/db/<版本>/productive_trees.json``（与 jars.json、keybinds.json 一样是该版基线）。
+已发布版本的章节与配方不会再变，所以这个脚本：
 
-* 不读整合包、不读 jar、不联网；
-* 只做「词根 → 中文」，输入是基线 + ``src/`` 里的树名 lang；
-* 改译名重跑即可，不必重扫。
+* 不读整合包、不读 jar、不联网。
+* 只做「词根 → 中文」，输入是基线与 ``src/`` 里的树名 lang。
+* 改译名后重新运行即可，不用重新扫描。
 
-## 产物不进 src/
+产物由 ``generate_all.sh`` 写进出货树，不入 src/：路径登记在 ``assemble.py`` 的 FORBIDDEN_IN_SRC 里，
+提交进 src/ 会失败。
 
-构建时由 ``generate_all.sh`` 直接写进出货树。仓库里只有手写真源与生成器——
-一份入库的生成物迟早被人手改，然后跟生成器悄悄分叉。这条路径钉在
-``assemble.py`` 的 FORBIDDEN_IN_SRC 里，提交进 src/ 会当场红。
-
-## 不变量：所有在册版本一致
-
-出货的育种公式只有一份（拿最新版基线生成），所以它对其余版本也得成立。
-``--verify-versions`` 让在册各版本各套一遍中文，要求结果逐字一致。
-钉的是这句不含数字的性质，不是某几个计数——计数会随 ATM 大更变，变了之后
-没人知道该填几，最后必然变成「跑一遍看输出多少就填多少」。
-这条检查只读几份 JSON，够便宜，所以放在快闸里。
-
-真分叉时会红并点名哪个版本、哪些键，那时候再按仓库已有的
+出货的育种公式只有一份（按最新版基线生成），所以对其余版本也要成立。``--verify-versions``
+给每个在册版本各生成一遍，要求结果逐字一致。这里只检查一致性，不检查数量：数量随 ATM 更新变化。
+这项检查只读几份 JSON，放在 ci.yml 里。不一致时会列出版本与键，那时再按
 ``versions/<版本>/quest_overrides.snbt`` 拆成该版专属覆盖。
 
     python3 scripts/gen_productive_trees_quest_lang.py --version 7.3 --out <出货树里的 snbt>
@@ -51,9 +41,8 @@ ZH_LANG = SRC / 'pack' / 'assets' / 'productivetrees' / 'lang' / 'zh_cn.json'
 DELTA_ROOT = SRC / 'config' / 'ftbquests' / 'quests' / 'lang' / 'zh_cn'
 SCALAR = re.compile(r'^[\t ]+([A-Za-z0-9_.]+):\s*(.+)$')
 
-# 原版树的名字不归本生成器管，写死成任务书里现有的中文。
-# 不跟着 Productive Trees 的口径走：这几个是 minecraft: 命名空间的东西，
-# 顺手改掉等于借育种公式偷改原版译名。
+# 原版树的名字不由本生成器决定，写成任务书里现有的中文。它们属于 minecraft: 命名空间，
+# 不能借育种公式改原版译名。
 VANILLA_PARENTS = {
     'minecraft:acacia_leaves': '相思木',
     'minecraft:birch_leaves': '白桦',
@@ -74,7 +63,7 @@ class DataError(Exception):
 # ── 词根 → 中文 ─────────────────────────────────────────────────────────────
 
 def sapling_name(item_id, zh, bare):
-    """取树苗中文名。``bare`` 时去掉「树苗」二字——公式里写的是树名不是树苗。"""
+    """取树苗中文名。``bare`` 时去掉「树苗」两个字，公式里写的是树名。"""
     if not item_id.startswith('productivetrees:') or not item_id.endswith('_sapling'):
         raise DataError('不是 Productive Trees 树苗：%s' % item_id)
     key = 'block.productivetrees.%s' % item_id.split(':', 1)[1]
@@ -104,7 +93,7 @@ def baseline_path(version):
 def load_baseline(version):
     p = baseline_path(version)
     if not p.is_file():
-        raise DataError('缺 %s——该版还没扫过育种结构，先跑\n'
+        raise DataError('缺 %s，该版还没扫描过育种结构，先运行\n'
                         '   python3 scripts/scan_productive_trees.py %s <该版整合包目录>'
                         % (p, version))
     d = json.loads(p.read_text(encoding='utf-8'))
@@ -163,12 +152,10 @@ def delta_scalars(path):
 
 
 def ownership_issues(values, delta_root=DELTA_ROOT):
-    """生成器管的键，不许同时还被 src/ 里某个手写 delta 攥着。
+    """生成器负责的键，不许同时出现在 src/ 里的手写 delta 中。
 
-    出过「以为改好了其实改的是另一份」这类事故：两处都定义同一个键，最后靠
-    合并顺序决定谁赢。这里不猜谁该赢，直接要求人先移交。
-
-    生成物落在出货树、不在 delta_root 下，所以不用排除自己。
+    两处定义同一个键，最后由合并顺序决定哪份生效。这里不判断哪份对，要求先把键移交出去。
+    生成物在出货树、不在 delta_root 下，不用排除自己。
     """
     owners = {}
     for path in sorted(Path(delta_root).rglob('zz_hanhua_*.snbt')):
@@ -182,7 +169,7 @@ def ownership_issues(values, delta_root=DELTA_ROOT):
 
 
 def existing_values(path):
-    """读回上一轮的生成物。形状不对就拒绝覆盖——那说明有人手改过它。"""
+    """读回上一轮的生成物。格式不对就拒绝覆盖，说明有人手改过它。"""
     lines = Path(path).read_text(encoding='utf-8').splitlines()
     if len(lines) < 2 or lines[0] != '{' or lines[-1] != '}':
         raise DataError('%s 不是预期的纯生成 SNBT' % path)
@@ -234,13 +221,13 @@ def verify_versions(versions, zh):
 
 def parse_args(argv):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    p.add_argument('--version', help='用哪个版本的基线生成；默认最新的在册版本')
+    p.add_argument('--version', help='用哪个版本的基线生成，默认最新的在册版本')
     p.add_argument('--out', type=Path,
-                   help='写到出货树里的这个路径；不给就只打到 stdout')
+                   help='写到出货树里的这个路径，不给就只输出到 stdout')
     p.add_argument('--verify-versions', action='store_true',
-                   help='闸：在册各版本各套一遍中文，结果必须逐字一致')
+                   help='检查：在册各版本各生成一遍中文，结果必须逐字一致')
     p.add_argument('--only', nargs='+', metavar='版本',
-                   help='配合 --verify-versions，只查这几个版本；默认全部')
+                   help='配合 --verify-versions，只查这几个版本，默认全部')
     p.add_argument('--lang', type=Path, default=ZH_LANG, help='本包的树名中文 lang')
     return p.parse_args(argv)
 
@@ -262,8 +249,8 @@ def main(argv=None):
             values = render_values(load_baseline(version), zh)
             note, target = '取 %s 的基线' % version, args.out
 
-        # 生成物不进 src/，但它管的键仍不许同时被 src/ 里的手写 delta 攥着——
-        # 两处都定义同一个键就又回到了「靠合并顺序决定谁赢」。
+        # 生成物不进 src/，但它负责的键不许同时出现在 src/ 里的手写 delta 中，
+        # 否则又由合并顺序决定哪份生效。
         issues = ownership_issues(values)
         if issues:
             raise DataError('任务键所有权没就绪：\n   ' + '\n   '.join(issues))
@@ -284,7 +271,7 @@ def main(argv=None):
             sys.stdout.write(text)
 
         subtitles = sum(1 for k in values if k.endswith('.quest_subtitle'))
-        print('✅ 资源树育种公式：%d 条副标题 + %d 条标题；%s'
+        print('✅ 资源树育种公式：%d 条副标题 + %d 条标题，%s'
               % (subtitles, len(values) - subtitles, note), file=sys.stderr)
         return 0
     except DataError as e:

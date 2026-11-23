@@ -3,30 +3,19 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""给**每一条译文**记下它翻译时对着的英文底本。
+"""给每一条译文记下它翻译时对应的英文底本。
 
-## 为什么必须有
+英文底本会变：模组作者改 en_us（措辞、单位、数值、参数顺序），ATM 改任务书正文。英文改了而中文
+没跟上时，键和译文都还在，游戏不报错，玩家看到的是一句与实际行为不符的中文，比漏翻危险。
+所以把每条译文对应的英文快照下来，版本升级时逐条 diff，英文变了的列为需复核。
 
-本包一共翻了十几万条文本，但直到现在只有 VaultPatcher 那一千多条有硬校验。
-其余的全靠「当初翻的时候是对的」。问题是底本会变：
+覆盖范围：
 
-- 模组作者改一句 en_us（措辞、单位、数值、参数顺序）
-- ATM 制作组改一段任务书正文
+- 资源包 lang：本包 `assets/<ns>/lang/zh_cn.json` 里的每个键，取该版本模组 jar 里
+  `assets/<ns>/lang/en_us.json` 的对应英文
+- 任务书：本包 delta 覆盖的每个键，取整合包 `quests/lang/en_us.snbt` 的对应英文
 
-英文一改，我们的中文就**悄悄变成错的**——键还在、译文还在、游戏不报错、
-玩家看到的是一句和实际行为对不上的中文。这比漏翻危险得多。
-
-所以：把每条译文当时对应的英文原文快照下来，版本升级时逐条 diff。
-底本变了而译文没跟着变的，一律列进「需复核」。
-
-## 覆盖哪些
-
-- **资源包 lang**：本包 `assets/<ns>/lang/zh_cn.json` 里的每个键，
-  取该版本模组 jar 里 `assets/<ns>/lang/en_us.json` 的对应英文
-- **任务书**：本包 delta 覆盖的每个键，取整合包 `quests/lang/en_us.snbt` 的对应英文
-
-VaultPatcher 不在这里——它的底本是字节码里的字符串，由
-`build_version_db.py` 逐条核验，机制不同。
+VaultPatcher 的底本是字节码里的字符串，由 `build_version_db.py` 逐条核对，不在这里。
 
 用法:
     python3 scripts/build_en_baseline.py 7.2 <该版本mods目录> <该版本overrides目录>
@@ -65,15 +54,13 @@ def lang_in(z, out):
 def mod_en(mods_dir):
     """该版本全部模组的 en_us：{命名空间: {键: 英文}}
 
-    **必须下钻 `META-INF/jarjar/`**。库模组多半是 jar-in-jar 塞在别人肚子里发的，
-    `mods/` 下没有它们自己的文件，但游戏照样加载、照样注册翻译键。只扫顶层 jar
-    会把这些命名空间判成「整合包里没有」——曾经据此裁掉过 6 个真实存在的命名空间
-    共 104 条译文（additionalentityattributes / cumulus_menus / nitrogen_internals /
-    nuggets / olympus / spectrelib，分别住在 allthearcanistgear、aether、ars_nouveau、
-    tempad、comforts 里）。底本是一堆判断的依据，它瞎一块，下游就跟着错一片。
+    必须扫描 `META-INF/jarjar/`：库模组多半以 jar-in-jar 形式放在别的 jar 里，`mods/` 下没有它们
+    自己的文件，但游戏会加载并注册翻译键。只扫顶层 jar 会把这些命名空间判成整合包里没有，
+    曾因此误删 6 个命名空间共 104 条译文（additionalentityattributes / cumulus_menus /
+    nitrogen_internals / nuggets / olympus / spectrelib，分别在 allthearcanistgear、aether、
+    ars_nouveau、tempad、comforts 里）。
 
-    顶层先扫、JiJ 后补：同名命名空间以顶层那份为准（顶层 jar 一定被加载，
-    嵌套的那份可能因版本去重被换掉）。
+    先扫顶层再扫 jar-in-jar：同名命名空间以顶层为准（顶层 jar 一定被加载，嵌套的可能因版本去重被替换）。
     """
     out, jij = {}, {}
     for j in sorted(Path(mods_dir).glob('*.jar')):
@@ -102,9 +89,8 @@ _SNBT_STR = re.compile(r'"((?:[^"\\]|\\.)*)"')
 def _unescape(s):
     """把字面量还原成文本。
 
-    SNBT 允许 JSON 不认的转义——本包里有 4 处 `\\&`（转义颜色码的 & ，让它按普通
-    字符显示）。这种解不了的原样留着：这些值只用来互相比对与查漂移，保持原形不丢字，
-    比为了「解析成功」去猜它是什么意思安全。
+    SNBT 允许 JSON 不认的转义，本包里有 4 处 `\\&`（转义颜色码的 &，让它显示为普通字符）。
+    解不了的原样保留：这些值只用来比对与查漂移，保持原样不丢字。
     """
     try:
         return json.loads('"%s"' % s)
@@ -113,17 +99,14 @@ def _unescape(s):
 
 
 def snbt_pairs(text, where=''):
-    """snbt 取值。数组常常跨多行（quest_desc 一段一行），必须按方括号配平续读，
-    不能只用单行正则——早先那版对整合包的英文文件一条都没取到。
+    """snbt 取值。数组常跨多行（quest_desc 一段一行），要按方括号配平继续读。
 
-    **SNBT 的数组元素之间没有逗号**，所以跨行的值 `json.loads` 必然失败。早先那版
-    在失败处 `except: pass`，于是每一条多行 quest_desc 都被静默丢掉：整合包 8922 个
-    任务书键里有 716 个对它是隐形的，本包自己的 delta 也有 225 个。后果不是少几行日志——
-    `quest_baseline.json` 靠它建，`check_en_drift.py` 又靠那份基线，于是「上游把多行正文
-    改了」这类漂移**一次都报不出来**。ATM 在 8.1 里把「12 个耀光下界书架」改成 13 个，
-    就是这么漏过去的（见 CHANGELOG R25）。
+    SNBT 数组元素之间没有逗号，跨行的值用 `json.loads` 一定失败。失败时跳过的话，多行
+    quest_desc 都会丢失：整合包 8922 个任务书键里有 716 个读不到，本包 delta 有 225 个。
+    `quest_baseline.json` 和 `check_en_drift.py` 都依赖这里，多行正文的漂移就报不出来，
+    例如 ATM 在 8.1 里把「12 个耀光下界书架」改成 13 个（见 CHANGELOG R25）。
 
-    解析不出来一律抛错，不许再吞：一个取值器安静地少给几百个键，比它报错难查得多。
+    解析失败一律抛错。
     """
     out = {}
     lines = text.split('\n')
@@ -143,9 +126,8 @@ def snbt_pairs(text, where=''):
             elif v.lstrip().startswith('"'):
                 mm = _SNBT_STR.match(v.lstrip())
                 if mm is None:
-                    # 以引号开头却读不出来 = 取值器跟不上写法了，必须红。
-                    # 不以引号开头的（false、数字、{…}）是章节文件里的结构字段，
-                    # 不是译文，跳过；本函数只负责取字符串。
+                    # 以引号开头却读不出来，说明取值器跟不上写法，必须失败。
+                    # 不以引号开头的（false、数字、{…}）是章节文件的结构字段，不是译文，跳过。
                     raise SystemExit(
                         '❌ %s 里的 %s 以引号开头却取不出值，取值器该改了：%r'
                         % (where or 'snbt', k, v[:120]))
@@ -155,8 +137,8 @@ def snbt_pairs(text, where=''):
 
 
 def quest_en(ov_dir):
-    """整合包的英文任务书。全新包里英文是**拆开的** `lang/en_us/**.snbt`，
-    没有合并后的 en_us.snbt（那是 ftbquestslangsplitter 进游戏后才生成的）。"""
+    """整合包的英文任务书。全新的包里英文是拆开的 `lang/en_us/**.snbt`，
+    合并后的 en_us.snbt 要进游戏后由 ftbquestslangsplitter 生成。"""
     src = {}
     d = Path(ov_dir) / 'config/ftbquests/quests/lang'
     one = d / 'en_us.snbt'
@@ -217,12 +199,11 @@ def main(ver, mods_dir, ov_dir):
 
     out = ROOT / 'versions' / 'db' / ver
     out.mkdir(parents=True, exist_ok=True)
-    # 分两份存，因为两者的性价比完全不同：
+    # 分两份存：
     #
-    # - **任务书**（932 条）是 ATM 制作组自己写的正文，正是最需要盯住的那部分，
-    #   而且量小，原文直接入库，任何人 clone 下来就能查漂移。
-    # - **模组 lang**（13.8 万条）光键名就 7MB，三个版本进 git 会把仓库撑大一倍，
-    #   而且它随时能从整合包重新生成。所以不入库，本地留一份指纹 + 全文即可。
+    # - 任务书（932 条）是 ATM 写的正文，最需要盯住，量也小，原文入库，clone 下来就能查漂移。
+    # - 模组 lang（13.8 万条）键名就有 7MB，三个版本入库会让仓库大一倍，而且随时能从整合包
+    #   重新生成，所以不入库，只保留一份指纹与全文。
     (out / 'quest_baseline.json').write_text(
         json.dumps(base['quest'], ensure_ascii=False, indent=0, sort_keys=True) + '\n',
         encoding='utf-8')
@@ -243,15 +224,14 @@ def main(ver, mods_dir, ov_dir):
 
 
 def check_quest(ver, ov_dir, write):
-    """任务书底本必须与「拿现在的取值器、对着该版钉的官方文件」算出来的一致。
+    """任务书基线必须与「用当前取值器，对着该版官方文件」算出的结果一致。
 
-    这道闸是为一次真实事故加的：取值器读不了多行数组，八千多个键里七百多个被静默
-    丢掉，于是入库的基线少了一大截，`check_en_drift.py` 对多行正文的漂移一次都没报过
-    （ATM 把「12 个耀光下界书架」改成 13 个就这么漏了整整一版）。基线本身错了的时候，
-    靠它的那道漂移检测不会喊，只会安静地少看——所以必须有人拿现值来对一遍。
+    取值器读不了多行数组时，八千多个键里七百多个被丢掉，入库的基线不完整，`check_en_drift.py`
+    报不出多行正文的漂移（ATM 把「12 个耀光下界书架」改成 13 个就这样漏了一版）。基线错了，
+    依赖它的漂移检测不会报错，只能用当前取值器重算一遍来核对。
 
-    `write=True` 时把重算的结果写回去（给 CI 那一步产 artifact 用），照旧红着等人提交：
-    基线只由 CI 生成、由人过目，不许拿开发机的下载入库。
+    `write=True` 时写回重算结果（供 CI 产出 artifact），仍然失败，等人提交：基线只由 CI 生成，
+    由人核对，不用开发机下载的文件入库。
     """
     now = quest_baseline(ov_dir)
     f = ROOT / 'versions' / 'db' / ver / 'quest_baseline.json'

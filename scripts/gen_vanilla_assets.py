@@ -3,11 +3,11 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""产出资源包里**必须跟着原版走**的那几个文件：字体覆盖 + pack.mcmeta。
+"""产出资源包里必须跟着原版走的那几个文件：字体覆盖 + pack.mcmeta。
 
-中文标点（，。：；！？「」……）在原版字体里是等宽全角，挤在一起很难看，
+中文标点（。：。！？「」……）在原版字体里是等宽全角，挤在一起很难看，
 本包用 `include/cjk-punctuations` 换成紧凑的一套。做法是在原版的 provider 列表
-**最前面**插一条引用——后面的 provider 覆盖前面的，所以必须插在最前。
+最前面插一条引用，后面的 provider 覆盖前面的，所以必须插在最前。
 
 问题在于：这么做需要把原版的 provider 列表整份写下来。写死在仓库里的话，
 Mojang 哪天在 `default.json` 里加一个 provider，我们这份就把它整个吞掉，
@@ -48,7 +48,7 @@ def _client_font(inst, name):
 
 
 # pack.mcmeta 的模板。`@@MCVER@@` 由 build_dist.sh 按整合包版本填，
-# pack_format 由原版客户端现取——两个版本号，各有各的来源，都不许手写死。
+# pack_format 由原版客户端现取，两个版本号，各有各的来源，都不许手写死。
 PACK_MCMETA = {
     'pack': {
         'pack_format': None,

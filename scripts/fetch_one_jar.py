@@ -3,26 +3,26 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""按版本画像取**单个** jar，而不是为了一个 jar 去下整包。
+"""按版本画像取单个 jar，而不是为了一个 jar 去下整包。
 
 有些闸只需要某一个 mod 的数据文件（配方 / trees.json / lang），却要求
 「该版本用的那一份」。以前这类闸只能挂在 build.yml 里 $NEWEST 那份完整包上，
-于是只覆盖最新版——不是因为别的版本查不了，而是因为懒得单独取 jar。
+于是只覆盖最新版，不是因为别的版本查不了，而是因为懒得单独取 jar。
 
 `versions/db/<版本>/jars.json` 里每个 jar 都钉了 projectID / fileID / sha256，
 够直接把那一个文件取回来并核到字节。fileID 在 CurseForge 是不可变的（重传会
 得到新 ID），所以「fileID + sha256 都对上」＝拿到的就是该版本官方用的那一份。
 
-**核不上就红，绝不退而求其次**：这类脚本一旦在取不到时静默返回，靠它的闸就
+核不上就红，绝不退而求其次：这类脚本一旦在取不到时静默返回，靠它的闸就
 变成了「有网就查、没网就过」，比没有闸更糟。
 
 同一个 fileID 在多个版本间常是同一份字节（7.1/7.2/7.3 的 Productive Trees 都是
 fileID 8190022），但它们各去各的 build/packsrc/<版本>/mods，「目标位置已有」
-判断不到，于是同一份字节会被下三遍。所以缓存**按内容寻址**放在
+判断不到，于是同一份字节会被下三遍。所以缓存按内容寻址放在
 build/jarcache/<sha256>.jar，跨版本、跨多次运行都命中。
 
 缓存条目自带校验：文件名就是它应有的 sha256，读出来对不上就当没有这个缓存、
-重新下载覆盖——损坏的缓存不许被信任，也不许因为「有个文件在那儿」就跳过下载。
+重新下载覆盖，损坏的缓存不许被信任，也不许因为「有个文件在那儿」就跳过下载。
 
     python3 scripts/fetch_one_jar.py 7.0 productivetrees build/packsrc/7.0/mods
 """
@@ -46,7 +46,7 @@ def die(msg):
 def pick(ver, prefix):
     """从该版本的 jar 基线里挑出唯一一个匹配项。
 
-    **要求恰好一个**：前缀写宽了会同时命中 productivetrees 与
+    要求恰好一个：前缀写宽了会同时命中 productivetrees 与
     productivebees 这类邻居，取第一个等于让闸去查一个不相干的 mod。
     """
     db = ROOT / 'versions' / 'db' / ver / 'jars.json'
@@ -68,7 +68,7 @@ def pick(ver, prefix):
 
 
 def cached(sha):
-    """内容寻址缓存里取字节。**每次都重算哈希**——缓存条目自证，不认文件名。"""
+    """内容寻址缓存里取字节。每次都重算哈希，缓存条目自证，不认文件名。"""
     p = CACHE / (sha + '.jar')
     if not p.is_file():
         return None

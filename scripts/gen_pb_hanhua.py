@@ -2,29 +2,27 @@
 # atm10-zh-cn — All the Mods 10 简体中文汉化补丁「绿油油版」
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""资源蜜蜂汉化生成器 —— 单一真源，产出双端脚本。
+"""资源蜜蜂汉化生成器：从唯一来源生成客户端与服务端脚本。
 
-真源：src/pack/assets/productivebees/lang/zh_cn.json 的
-entity.productivebees.* 键。禁止在别处手写第二份蜂名表。
+来源：src/pack/assets/productivebees/lang/zh_cn.json 的 entity.productivebees.* 键，不在别处另写蜂名表。
 
-产出（全部落在出货树 build/common/ 里，不入 git）：
-  kubejs/client_scripts/pb_hanhua_tooltip.js       显示层（tooltip/名牌）
-  kubejs/server_scripts/pb_hanhua_cage_migrate.js  数据迁移（按 ID 查权威译名）
+产出（都在出货树 build/common/ 里，不入 git）：
+  kubejs/client_scripts/pb_hanhua_tooltip.js       显示层（tooltip、名牌）
+  kubejs/server_scripts/pb_hanhua_cage_migrate.js  数据迁移（按 ID 查译名）
   build/snapshots/pb_upstream_en_us.json           上游 en_us 快照（离线重跑用）
 
-架构原则（重构 + 对抗测试后固化）：
-  - 数据层不注入中文：服务端数据保持上游英文/ID，否则与 JEI/配方分裂
-  - 玩家自定义名（命名牌/铁砧）神圣：改写（服务端迁移）与翻译（客户端名牌）
-    都必须过 PB_SYS 安全闸——只收"系统会生成的完整名字"；
-    裸 TitleCase 单词（Amber/Diamond 等）绝不入闸，系统从不以该形态生成名字
-  - 所有 JS 查表/闸门用 hasOwnProperty，防 Object.prototype 键穿透
-    （玩家命名 'constructor'/'toString' 曾可穿透 `in` 闸门）
-  - 上游 en_us 重名（两只蜂同叫 'Amber Bee'）→ 歧义英文名不入显示映射表
-    （宁显示英文也不张冠李戴；数据迁移按 ID 不受影响）
-  - 显示层"类型行"只做整段精确匹配，禁止贪婪替换
+规则：
+  - 服务端数据保持上游英文和 ID，注入中文会与 JEI、配方对不上。
+  - 玩家自定义名（命名牌、铁砧）不许改：服务端迁移与客户端名牌翻译都只处理 PB_SYS 里
+    系统会生成的完整名字。系统从不生成裸 TitleCase 单词（Amber、Diamond 等），所以不收。
+  - JS 查表一律用 hasOwnProperty，防止 Object.prototype 上的键穿透
+    （玩家命名为 'constructor'、'toString' 时能穿透 `in`）。
+  - 上游 en_us 里重名的英文（两只蜂都叫 'Amber Bee'）不进显示映射表，显示英文也不能张冠李戴。
+    数据迁移按 ID，不受影响。
+  - 显示层的类型行只做整段精确匹配。
 
 用法: python3 scripts/gen_pb_hanhua.py [PB jar 路径 | en_us 快照.json]
-      不给参数就按 ATM_PACK_ROOT/mods/productivebees-*.jar 认
+      不给参数就用 ATM_PACK_ROOT/mods/productivebees-*.jar
 """
 import json
 import os
@@ -37,7 +35,7 @@ PACK_LANG = PACK / 'assets/productivebees/lang/zh_cn.json'
 SHINY_LANG = PACK / 'assets/shiny/lang/zh_cn.json'
 SNAPSHOT = snapshot('pb_upstream_en_us.json')
 
-# 历史上用过、后被否掉的中文译名 → 归一到权威译名（均为 fbi 蜂旧译）
+# 用过后被否掉的中文译名，统一换成现行译名（都是 fbi 蜂的旧译）
 LEGACY_ZH = ['联调蜂', '神蜂特工队', 'fbi蜜蜂']
 LEGACY_ZH_TARGET_ID = 'fbi'
 
@@ -118,34 +116,31 @@ def main() -> None:
         bid2zh['productivebees:' + base + '_bee'] = zh
     bid2zh['minecraft:bee'] = pack.get('entity.minecraft.bee', '蜜蜂')
 
-    # 例外：shiny 给原版蜜蜂做的闪光变体。它不是资源蜜蜂——蜂笼 NBT 里
-    # isProductiveBee: 0b、entity: "shiny:shiny_bee"——但会被抓进资源蜜蜂的蜂笼。
+    # 例外：shiny 给原版蜜蜂做的闪光变体不是资源蜜蜂（蜂笼 NBT 里 isProductiveBee: 0b、
+    # entity: "shiny:shiny_bee"），但会被抓进资源蜜蜂的蜂笼。
     #
-    # **必须落在这张表（服务端）而不是 en2zh（客户端 tooltip）**：蜂笼名是写在
-    # custom_data.name 里的数据，权威在服务端；服务端包只发 server_scripts，
-    # 客户端那条替换在服务器上根本不存在，靠它等于服务器永远不汉化。而且客户端
-    # 兜底还会掩盖服务端没生效——屏幕上照样是中文，坏了也看不出来。
+    # 必须放在这张表（服务端），不能放在 en2zh（客户端 tooltip）：蜂笼名写在 custom_data.name
+    # 里，以服务端为准。服务端包只有 server_scripts，客户端替换在服务器上不存在，而且客户端替换
+    # 会让屏幕上照样显示中文，服务端没生效也看不出来。
     #
-    # 只点名这一只：该 mod 的 en_us 共 132 个实体键，*_bee 仅此一条，其余全是
-    # 原版生物的闪光变体；它的 class 里 0 个文件提到 productivebees。
-    # 译名从资源包取，不在这里手写第二份。
+    # 只处理这一只：该 mod 的 en_us 有 132 个实体键，*_bee 只有这一条，其余都是原版生物的闪光
+    # 变体，它的 class 里没有文件提到 productivebees。译名从资源包取。
     shiny_zh = json.loads(SHINY_LANG.read_text(encoding='utf-8')).get('entity.shiny.shiny_bee')
     if not shiny_zh:
-        sys.exit('❌ %s 里没有 entity.shiny.shiny_bee——闪光蜜蜂的蜂笼名会退回英文'
+        sys.exit('❌ %s 里没有 entity.shiny.shiny_bee，闪光蜜蜂的蜂笼名会显示英文'
                  % SHINY_LANG.relative_to(ROOT))
     bid2zh['shiny:shiny_bee'] = shiny_zh
 
-    # 同一只蜂在**基因样本 / 蜂蜜零食**里还有一处露头：那一行是
-    # productivebees.information.attribute.type（Type: %s），%s 填的是基因的 value。
-    # value 是**功能数据**——它决定这份基因属于哪种蜂，育种与基因索引机靠它工作——
-    # 按红线「数据迁移只动纯显示字段」绝不能改写，所以这一处只能在客户端换显示。
-    # 与蜂笼那条不冲突：蜂笼改的是 custom_data.name（纯显示），两个字段各管各的。
+    # 同一只蜂在基因样本、蜂蜜零食里还会出现在 productivebees.information.attribute.type
+    # （Type: %s）这一行，%s 是基因的 value。value 决定这份基因属于哪种蜂，育种与基因索引机
+    # 依赖它，数据迁移只能改纯显示字段，所以这一处只在客户端替换显示。蜂笼改的是
+    # custom_data.name（纯显示），两者不冲突。
     #
-    # 走**点名整串替换**而不是放宽形态3 的正则：形态3 的字符类不含 ':' 与 '_'，
-    # 放宽它会让 467 条既有条目一起进入新的匹配面，为一只蜂承担全局风险。
+    # 按名字整串替换，不放宽形态 3 的正则：形态 3 的字符类不含 ':' 与 '_'，放宽会让已有的
+    # 467 条一起进入新的匹配范围，为一只蜂承担全局风险。
     extra_id2zh = {'shiny:shiny_bee': shiny_zh}
 
-    # 安全闸集合：只收"系统会生成的完整名字"。裸 TitleCase 单词绝不入闸。
+    # 安全集合只收系统会生成的完整名字，不收裸 TitleCase 单词。
     sys_names = set()
     for base, zh in id2zh.items():
         sys_names.add(zh)
@@ -156,7 +151,7 @@ def main() -> None:
     sys_names.update(LEGACY_ZH)
     sys_names.add('Bee')
     sys_names.add('蜜蜂')
-    # 蜂笼里写死的英文名，不进闸的话迁移会被安全闸挡下
+    # 蜂笼里写死的英文名，不收进安全集合的话，迁移会被拦下
     sys_names.add('Shiny Bee')
     sys_names.add(shiny_zh)
 
@@ -182,7 +177,7 @@ function pbTranslate(s) {
     })
     // 形态2: 英文名整词（歧义名已在生成期剔除）
     ns = ns.replace(PB_EN_RE, function (mm) { return pbOwn(PB_EN2ZH, mm) ? PB_EN2ZH[mm] : mm })
-    // 形态3: 类型行 "类型: Kamikaz (100%)" —— 整段精确匹配
+    // 形态3: 类型行 "类型: Kamikaz (100%)"，整段精确匹配
     ns = ns.replace(/(类型|Type)([:：]\\s*)([A-Za-z][A-Za-z' .-]*?)(\\s*\\(\\d+%\\))/g,
         function (mm, a, b, c, d) {
             return a + b + (pbOwn(PB_TYPE2ZH, c) ? PB_TYPE2ZH[c] : c) + d
@@ -205,7 +200,7 @@ function pbTranslate(s) {
 
     client = ('// ATM10 汉化补丁 · 资源蜜蜂显示层 (蜂笼/基因样本/蜜蜂小食 tooltip + 实体名牌)\n'
               '// Copyright (C) 2026 星野夢華 (Hoshino Yumeka) · SPDX-License-Identifier: GPL-3.0-or-later\n'
-              '// !! 本文件由 scripts/gen_pb_hanhua.py 生成，勿手改；译名真源是资源包 zh_cn !!\n'
+              '// !! 本文件由 scripts/gen_pb_hanhua.py 生成，勿手改。译名来源是资源包 zh_cn !!\n'
               'const PB_ID2ZH = ' + j(id2zh) + ';\n'
               'const PB_EN2ZH = ' + j(en2zh) + ';\n'
               'const PB_TYPE2ZH = ' + j(type2zh) + ';\n'
@@ -254,9 +249,9 @@ console.info('[pb_hanhua] 显示层已注册 (ID:' + Object.keys(PB_ID2ZH).lengt
 
     server = ('// ATM10 汉化补丁 · 资源蜜蜂数据迁移 (服务端)\n'
               '// Copyright (C) 2026 星野夢華 (Hoshino Yumeka) · SPDX-License-Identifier: GPL-3.0-or-later\n'
-              '// !! 本文件由 scripts/gen_pb_hanhua.py 生成，勿手改；译名真源是资源包 zh_cn !!\n'
+              '// !! 本文件由 scripts/gen_pb_hanhua.py 生成，勿手改。译名来源是资源包 zh_cn !!\n'
               '// 只动纯显示字段（蜂笼 custom_data.name / 实体 CustomName），按 NBT 的\n'
-              '// entity/type ID 查权威译名。玩家自定义名由 PB_SYS 安全闸保护。\n'
+              '// entity/type ID 查译名。玩家自定义名由 PB_SYS 安全集合保护。\n'
               'const PB_BID2ZH = ' + j(bid2zh) + ';\n'
               'const PB_SYS = ' + j(sys_obj) + ';\n'
               '''
@@ -352,7 +347,7 @@ console.info('[pb_hanhua] 数据迁移已注册 (ID表:' + Object.keys(PB_BID2ZH
     (COMMON / 'kubejs/server_scripts').mkdir(parents=True, exist_ok=True)
     (COMMON / 'kubejs/client_scripts/pb_hanhua_tooltip.js').write_text(client, encoding='utf-8')
     (COMMON / 'kubejs/server_scripts/pb_hanhua_cage_migrate.js').write_text(server, encoding='utf-8')
-    print(f'已生成: ID {len(id2zh)} | EN {len(en2zh)} | TYPE {len(type2zh)} | 迁移 {len(bid2zh)} | 闸门 {len(sys_names)}')
+    print(f'已生成: ID {len(id2zh)} | EN {len(en2zh)} | TYPE {len(type2zh)} | 迁移 {len(bid2zh)} | 安全集合 {len(sys_names)}')
     if ambiguous:
         print(f'歧义英文名（已从显示映射剔除，共 {len(ambiguous)} 个）:')
         for env, zhs in ambiguous:

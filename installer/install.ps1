@@ -2,7 +2,7 @@
 # Copyright (C) 2026 星野夢華 (Hoshino Yumeka)
 # SPDX-License-Identifier: GPL-3.0-or-later
 # ATM10 @@MCVER@@ 汉化补丁「绿油油版」安装器 (Windows)
-# 版本号一律用 @@MCVER@@ 占位，由 scripts/build_dist.sh 按目标整合包版本填。
+# 版本号用 @@MCVER@@ 占位，由 scripts/build_dist.sh 按目标整合包版本填入。
 # 用法：把整个汉化文件夹放进 ATM10 实例根目录后，双击「双击安装-Windows.bat」，
 # 或在 PowerShell 中运行：
 #   .\install.ps1                    # 交互菜单
@@ -26,26 +26,24 @@ $PackEntry = 'file/ATM10汉化包-@@MCVER@@.zip'
 $PinyinDir = '可选mods-拼音搜索'
 $script:TS = ''
 $script:BK = ''
-# 就地解压：用户把压缩包内容直接解到了实例根目录，此时「源」和「目标」是同一个目录，
-# 再复制一次就是 Copy-Item 自己覆盖自己 → IOException。这种情况文件本来就已到位。
+# 就地解压：压缩包内容直接解到了实例根目录，源与目标相同，Copy-Item 会报 IOException。
+# 这时文件已经到位。
 $script:InPlace = $false
 $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
-# ── 长路径 ──────────────────────────────────────────────────────────────
-# 备份层比游戏自己的路径多出 `\汉化文件夹\backups\<时间戳>\` 四十来个字符，于是实例
-# 目录稍深一点就会出现「原文件读得到、它的备份写不进去」。超过 MAX_PATH 时 Win32 返回
-# ERROR_PATH_NOT_FOUND，而 .NET 4.6.2 起不再在托管层判长度，抛出来的是
-# DirectoryNotFoundException（「Could not find a part of the path」），看着像目录没建成。
-# `\\?\` 前缀能绕开，但它不做任何规范化、只认绝对路径，PowerShell 5.1 的 FileSystem
-# 提供程序也不收这种路径。所以这里只在**今天必然抛异常的长度上**才切到 .NET API：
-# 短路径照旧走 Copy-Item，行为一个字不变；非 Windows 整套短路（那里没有 MAX_PATH）。
+# ── 长路径 ─────────────────────────────────────────────────────────
+# 备份路径比游戏自己的路径多出 `\汉化文件夹\backups\<时间戳>\` 约 40 个字符，实例目录稍深就会
+# 出现原文件能读、备份写不进去。超过 MAX_PATH 时抛 DirectoryNotFoundException
+# （「Could not find a part of the path」），看起来像目录没建成。`\\?\` 前缀只认绝对路径，
+# PowerShell 5.1 的 FileSystem 提供程序也不接受，所以只在超长时改用 .NET API，短路径仍走
+# Copy-Item。非 Windows 没有 MAX_PATH，整段跳过。
 $script:OnWindows = ($PSVersionTable.PSVersion.Major -lt 6) -or $IsWindows
 # 文件路径上限 259 个字符，目录还要给 8.3 短名留 12 个，所以是 247。
 function Test-LongFilePath([string]$p) { return ($script:OnWindows -and $p -and $p.Length -gt 259) }
 function Test-LongDirPath([string]$p)  { return ($script:OnWindows -and $p -and $p.Length -gt 247) }
 
 function To-ExtendedPath([string]$p) {
-    # 任何一步出意外都原样退回：宁可维持今天的行为，也不能让这个帮手把正常环境弄挂。
+    # 任何一步出错都退回原来的做法，不能让这个辅助函数影响正常环境。
     if (-not $script:OnWindows -or -not $p) { return $p }
     if ($p.StartsWith('\\?\')) { return $p }
     try { $full = [System.IO.Path]::GetFullPath($p) } catch { return $p }
@@ -71,9 +69,8 @@ function Copy-OneFile([string]$from, [string]$to, [switch]$Force) {
 }
 
 function Get-FilesUnder([string]$root) {
-    # 返回相对 $root 的路径。先照旧走 Get-ChildItem —— 正常情况下行为与过去完全一致，
-    # 包括它默认跳过隐藏文件这一条；只有它整条炸掉（5.1 碰上超长路径就是如此）才退到
-    # 扩展路径枚举。**先整体装进变量再返回**：半截失败不会把已枚举的那部分漏出去变成重复项。
+    # 返回相对 $root 的路径。先用 Get-ChildItem（默认跳过隐藏文件），它在 5.1 下遇到超长路径
+    # 整体失败时，才改用扩展路径枚举。结果先整体存进变量再返回，中途失败不会产生重复项。
     $rel = $null
     try {
         $rel = @(Get-ChildItem -LiteralPath $root -Recurse -File |
@@ -87,25 +84,22 @@ function Get-FilesUnder([string]$root) {
     return $rel
 }
 
-# 判定一个目录是不是游戏实例根目录。
-# 不能只看 options.txt —— **刚装好、一次都没启动过的整合包没有 options.txt**
-# （它是 Minecraft 首次退出时才写的）。也不能只看 mods\ —— 汉化包自己的文件夹里
-# 也有个 mods\（装着 vaultpatcher.jar）。用 jar 数量区分：ATM10 有 400+ 个，汉化包只有 1 个。
-# ── 版本检查 ────────────────────────────────────────────────────────────
-# 补丁自己的版本号，由 build_dist.sh 现填。
+# 判断目录是不是游戏实例根目录。刚装好没启动过的整合包没有 options.txt（Minecraft 首次退出时
+# 才写），汉化包文件夹里也有 mods\（装着 vaultpatcher.jar），所以按 jar 数量区分：ATM10 有 400+ 个。
+# ── 版本检查 ────────────────────────────────────────────────────────
+# 补丁版本号，由 build_dist.sh 填入。
 $script:PatchVer = '@@PATCHVER@@'
 $script:PackMcVer = '@@MCVER@@'
 $script:Repo     = 'chiba233/atm10-zh-cn'
 $script:LatestRelease = $null
 
-# 取仓库最新**正式版**的 tag。releases/latest 天然跳过预发布，正合用：
-# 测试版不该被当成「最新版」去催人升级。
-# 任何一步不成（没网、被限流、TLS 不通）都返回 $null，**绝不因此拦住安装**。
+# 取最新正式版的 tag（releases/latest 跳过预发布，测试版不算最新版）。
+# 没网、被限流、TLS 不通时返回 $null，不影响安装。
 function Get-LatestRelease {
     if ($env:ATM_SKIP_UPDATE_CHECK -eq '1') { return $null }
     try {
         $old = $ProgressPreference; $ProgressPreference = 'SilentlyContinue'
-        # 老一点的 Windows PowerShell 默认还在用 TLS 1.0，GitHub 早就不收了
+        # 较旧的 Windows PowerShell 默认用 TLS 1.0，GitHub 不接受
         try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 } catch {}
         $r = Invoke-RestMethod -Uri "https://api.github.com/repos/$($script:Repo)/releases/latest" `
                                -Headers @{ 'Accept' = 'application/vnd.github+json'
@@ -125,7 +119,7 @@ function Check-Update {
     $latest = if ($script:LatestRelease) { $script:LatestRelease.tag_name } else { $null }
     if ($isBeta) {
         Write-Host ''
-        Write-Host "⚠️ 你装的是**测试版**：$($script:PatchVer)"
+        Write-Host "⚠️ 你装的是测试版：$($script:PatchVer)"
         Write-Host '   测试版可能有没发现的问题。遇到异常请提交 issue：'
         Write-Host "   https://github.com/$($script:Repo)/issues"
         if ($latest) {
@@ -162,8 +156,8 @@ function Invoke-OneClickUpdate {
         return
     }
 
-    # Release 同时带三个 ATM10 版本和客户端/服务端包；必须按当前包的 ATM 版本
-    # 精确选择客户端 zip，不能只取 assets[0]，否则会把 7.0 用户升级到 7.2 包。
+    # Release 里有三个 ATM10 版本的客户端与服务端包，按当前包的 ATM 版本精确挑客户端 zip。
+    # 只取 assets[0] 会把 7.0 用户升级到 7.2 的包。
     $suffix = '-atm' + [regex]::Escape($script:PackMcVer) + '\.zip$'
     $asset = @($release.assets | Where-Object {
         $_.name -match '^atm10-zh_cn-client-.+' -and $_.name -match $suffix
@@ -210,7 +204,7 @@ function Invoke-OneClickUpdate {
         Update-SourcePackage $next.Directory.FullName
         Write-Host "✅ 已更新到 $latest。新版安装器保留在：$stage"
         Write-Host "   本次备份已归入原安装包：$(Join-Path $ScriptDir 'backups')"
-        Write-Host '   请退出并重新启动游戏后生效；确认无误前不要删除该目录。'
+        Write-Host '   请退出并重新启动游戏后生效。确认无误前不要删除该目录。'
     } catch {
         Write-Host "❌ 一键更新失败：$($_.Exception.Message)"
         if ($newInstallComplete) {
@@ -226,14 +220,14 @@ function Invoke-OneClickUpdate {
             Write-Host '   新版安装器已经启动，实例可能只完成了部分更新。'
             Write-Host "   请先用新版安装器的 restore 功能恢复本次备份：$newBackups"
         } else {
-            Write-Host "   新版安装器尚未启动；已下载的临时文件（如有）保留在：$stage"
+            Write-Host "   新版安装器尚未启动。已下载的临时文件（如有）保留在：$stage"
         }
     }
 }
 
 function Merge-UpdateBackups([string]$newDir) {
-    # 新版安装器把备份写在下载目录；原入口的 restore 只读取 ScriptDir/backups。
-    # 成功更新后必须将备份归并到原入口，否则用户无法通过日常双击的安装器回滚。
+    # 新版安装器把备份写在下载目录，而原入口的 restore 只读 ScriptDir/backups，
+    # 所以更新后把备份归并回原入口。
     $from = Join-Path $newDir 'backups'
     if (-not (Test-Path -LiteralPath $from)) { return }
     $to = Join-Path $ScriptDir 'backups'
@@ -250,10 +244,9 @@ function Merge-UpdateBackups([string]$newDir) {
 }
 
 function Update-SourcePackage([string]$newDir) {
-    # 用户今后仍会双击最初解压出来的 bat。只把游戏实例更新而不更新这个源目录，
-    # 下次运行旧安装器会再次提示升级，甚至把旧 payload 覆盖回去。
-    # 正常安装时源目录与实例分开，可以安全地以新版 payload 整体替换；就地解压时
-    # 源目录就是实例，刚才的新版安装器已完成 payload 覆盖，绝不能删除实例目录。
+    # 玩家以后还会双击原来解压出的 bat。只更新实例的话，旧安装器会再提示升级，甚至覆盖回旧
+    # payload。正常安装时源目录与实例分开，可以整体替换成新版 payload。就地解压时源目录就是
+    # 实例，新版安装器已经覆盖过 payload，不能删除实例目录。
     if (-not $script:InPlace) {
         foreach ($d in @($PackDirs + $PinyinDir)) {
             $old = Join-Path $ScriptDir $d
@@ -267,15 +260,15 @@ function Update-SourcePackage([string]$newDir) {
         }
     }
 
-    # 当前 PowerShell 已把脚本读入内存，替换自身不会中断本次更新；bat 也只会在
-    # 下次双击时读取。因此两个 Windows 入口都能安全换成新版。
+    # PowerShell 已把脚本读入内存，替换自身不会中断本次更新，bat 也只在下次双击时读取，
+    # 所以两个入口都能直接换成新版。
     foreach ($f in @('install.ps1', '双击安装-Windows.bat', 'install-windows.bat')) {
         $new = Join-Path $newDir $f
         if (Test-Path -LiteralPath $new) {
             Copy-Item -LiteralPath $new -Destination (Join-Path $ScriptDir $f) -Force
         }
     }
-    Write-Host '✅ 已将原安装包更新为新版；以后继续双击原来的安装 bat 即可。'
+    Write-Host '✅ 已将原安装包更新为新版。以后继续双击原来的安装 bat 即可。'
 }
 
 function Test-Instance([string]$d) {
@@ -291,8 +284,8 @@ function Set-InPlace {
     if ($a -eq $b) {
         $script:InPlace = $true
         Write-Host 'ℹ️ 检测到汉化文件已经在实例根目录里（压缩包内容被直接解压到了这一层）。'
-        Write-Host '   文件本来就已到位，无需复制；本次只做 options.txt 的资源包启用。'
-        Write-Host '   ⚠️ 这种装法没有备份可回退——原文件在你解压覆盖的那一刻就没了。'
+        Write-Host '   文件已经到位，无需复制。本次只在 options.txt 里启用资源包。'
+        Write-Host '   ⚠️ 这种装法没有备份可回退：原文件在你解压覆盖时就没了。'
         Write-Host '   想要可回退的安装，请解压到别处、把整个文件夹放进实例根目录再运行安装器。'
     }
 }
@@ -313,7 +306,7 @@ function Check-Target {
         $inp = Read-Host '请输入 ATM10 实例根目录完整路径（q 退出）'
         $inp = $inp.Trim()
         if ($inp -eq 'q' -or [string]::IsNullOrWhiteSpace($inp)) { exit 1 }
-        # 去掉整体包裹的成对引号（Windows 拖拽/粘贴带空格路径常加双引号）
+        # 去掉整体包裹的成对引号（Windows 拖拽或粘贴带空格的路径时常加双引号）
         if (($inp.StartsWith('"') -and $inp.EndsWith('"')) -or ($inp.StartsWith("'") -and $inp.EndsWith("'"))) {
             $inp = $inp.Substring(1, $inp.Length - 2)
         }
@@ -330,10 +323,8 @@ function Check-Target {
 
 function Get-PayloadFiles {
     foreach ($d in $PackDirs) {
-        # ⚠️ 必须用**绝对**路径。Windows PowerShell 5.1 里，当前目录含 [ ] 时，
-        # 相对路径即使配 -LiteralPath 也会在 provider 层被当通配符解析，
-        # 结果是一个文件都枚举不到 → 安装器什么都不装。玩家路径里出现
-        # 「[0.9.1正式版]」这种目录名并不罕见（整合包分享站的常见命名）。
+        # 必须用绝对路径：Windows PowerShell 5.1 里当前目录含 [ ] 时，相对路径即使配 -LiteralPath
+        # 也会被当通配符解析，一个文件都枚举不到。玩家路径里有「[0.9.1正式版]」这种目录名很常见。
         $abs = Join-Path $ScriptDir $d
         if (Test-Path -LiteralPath $abs) {
             Get-FilesUnder $abs | Where-Object { [System.IO.Path]::GetFileName($_) -ne '.DS_Store' } | ForEach-Object {
@@ -348,10 +339,10 @@ function Do-Backup {
         Write-Host '⚠️ 就地解压模式下没有可备份的原文件（已被解压覆盖），跳过备份。'
         return
     }
-    # 备份是**覆盖**式写入：同一秒里装第二次会撞上同一个目录，于是第二次备份的是
-    # 已经汉化过的文件，把第一次那份原文盖掉，玩家的回退数据就没了。撞上就往后加序号。
+    # 同一秒内安装两次会落到同一个备份目录，第二次会用已汉化的文件覆盖第一次的原文备份。
+    # 目录已存在就加序号。
     $script:TS = Get-Date -Format 'yyyyMMdd-HHmmss'
-    # 序号补零：恢复界面按名字排序取最后一个当「最近一次」，不补零 -10 会排在 -2 前面。
+    # 序号补零：恢复界面按名字排序取最后一个，不补零的话 -10 会排在 -2 前面。
     if (Test-Path -LiteralPath (Join-Path $ScriptDir "backups/$script:TS")) {
         $i = 2
         while (Test-Path -LiteralPath (Join-Path $ScriptDir ('backups/{0}-{1:d2}' -f $script:TS, $i))) { $i++ }
@@ -381,33 +372,27 @@ function Do-Backup {
     Write-Host "✅ 已备份 $n 个将被覆盖的文件到 backups/$script:TS/"
 }
 
-# ATM10 @@MCVER@@ 默认启用的资源包，顺序照抄游戏自己写出来的 options.txt。
-# 为什么要写死这一串：全新实例没有 options.txt，如果只写我们一个包，
-# 游戏首次启动会把这 15 个内置包**全部插到我们后面**（实测汉化包落到第 3 位，
-# 被 mod_resources 和五百多个模组包压在底下，汉化基本不生效）。
-# 资源包是**后面的覆盖前面的**，我们必须排在最后一个。
-# 这一串由 build_dist.sh 按目标版本现填（versions/<版本>/default_resource_packs.txt），
-# 与 install.sh 用的是同一个占位符。以前这里写死的是 7.2 的列表，7.0/7.1 的 Windows 包
-# 也拿它——而且用的是单引号字符串，里面的 "" 会**原样保留两个双引号**，写出来的
-# resourcePacks 数组根本解析不了，游戏直接回落默认列表 = 汉化没启用。（issue #9 P1-2）
+# ATM10 @@MCVER@@ 默认启用的资源包，顺序照抄游戏写出的 options.txt。资源包后面的覆盖前面的，
+# 全新实例只写本包一个的话，游戏首次启动会把内置包插到它后面（实测落到第 3 位，汉化基本不生效）。
+# 这一串由 build_dist.sh 按目标版本填入（versions/<版本>/default_resource_packs.txt），
+# 与 install.sh 用同一个占位符。
 $DefaultPacks = '@@DEFAULT_PACKS@@'
 
 function Patch-Options {
     $opt = Join-Path $script:Target 'options.txt'
     if (!(Test-Path -LiteralPath $opt)) {
-        # ⚠️ 只有**从没启动过**的实例才允许新建 options.txt。玩过的实例必然有 logs/ 或
-        # saves/；这时 options.txt 却不见了，多半是选错了目录（启动器没做版本隔离时，
-        # 设置在 .minecraft\options.txt）。写一份只有两行的进去，游戏会把其余项按默认值
-        # 补齐——玩家的键位 / 视频 / 音量当场全没。有玩家报过这个（R12 修复）。
+        # 只有从没启动过的实例才新建 options.txt。玩过的实例一定有 logs/ 或 saves/，这时
+        # options.txt 不见了，多半是选错了目录（启动器没做版本隔离时，设置在 .minecraft\options.txt）。
+        # 新建只有两行的 options.txt 会让键位、视频、音量设置全部变回默认。
         $played = (Test-Path -LiteralPath (Join-Path $script:Target 'logs')) -or
                   (Test-Path -LiteralPath (Join-Path $script:Target 'saves')) -or
                   (Test-Path -LiteralPath (Join-Path $script:Target 'usercache.json'))
         if ($played) {
             Write-Host '⚠️ 这个实例明显启动过（有 logs/ 或 saves/），却找不到 options.txt。'
-            Write-Host '   为避免把你的键位 / 视频 / 音量设置冲掉，本次**不新建** options.txt。'
+            Write-Host '   为避免把你的键位 / 视频 / 音量设置冲掉，本次不新建 options.txt。'
             Write-Host "   请确认目标目录是否正确：$($script:Target)"
             Write-Host '   （启动器没开「版本隔离」时，设置在 .minecraft\options.txt，那一层才是实例根目录）'
-            Write-Host '   确认无误后进游戏 → 选项 → 资源包，手动把「汉化包」拖到已启用一侧的最后一位。'
+            Write-Host '   确认无误后进游戏，打开「选项」里的「资源包」，手动把「汉化包」拖到已启用一侧的最后一位。'
             return
         }
         if ($DefaultPacks) {
@@ -415,11 +400,11 @@ function Patch-Options {
             [System.IO.File]::WriteAllText($opt, "lang:zh_cn`n$line`n", $Utf8NoBom)
             Write-Host 'ℹ️ 这个实例还没启动过（没有 options.txt），已新建一份并写入中文语言与汉化资源包。'
             Write-Host '   首次启动游戏时 Minecraft 会自动补齐其余设置。'
-            Write-Host '   💡 若首次进游戏后发现翻译没生效，退出游戏再跑一次本安装器即可——'
-            Write-Host '      那说明你的整合包比预期多了几个内置资源包，重跑会把汉化包重新挪到最后一位。'
+            Write-Host '   💡 如果首次进游戏后翻译没生效，退出游戏再运行一次本安装器即可。'
+            Write-Host '      你的整合包比预期多了几个内置资源包，重跑会把汉化包重新挪到最后一位。'
         } else {
-            # 这一版的内置资源包顺序没实测过。**绝不伪造**——只写我们一个包的话，
-            # 游戏首次启动会把内置包全插到它后面，汉化包等于没启用。
+            # 这一版的内置资源包顺序没实测过，不伪造。只写本包一个的话，首次启动后它会落到
+            # 内置包后面，等于没启用。
             [System.IO.File]::WriteAllText($opt, "lang:zh_cn`n", $Utf8NoBom)
             Write-Host 'ℹ️ 这个实例还没启动过（没有 options.txt），已写入中文语言。'
             Write-Host '   ⚠️ 资源包顺序需要两步：先启动一次游戏让 Minecraft 生成完整的资源包列表，'
@@ -437,15 +422,11 @@ function Patch-Options {
         return
     }
     $cur = $lines[$idx]
-    # [System.IO.File]::ReadAllLines 会把 \r\n / \n / \r 三种行尾统一拆掉，
-    # 这里 $cur 不会带残留 \r（不像 bash 版 grep 那样得自己剥）——PS 侧这块本来就安全。
+    # [System.IO.File]::ReadAllLines 会去掉 \r\n / \n / \r 三种行尾，$cur 不带 \r（bash 版要自己剥）。
     $body = $cur.Substring('resourcePacks:['.Length)
     $body = $body.Substring(0, $body.Length - 1)
-    # 先把已有的汉化包条目摘掉，再追加到**末尾**。
-    # 不能只判断「已存在就跳过」——旧版本装出来的实例里它可能排在很前面，
-    # 那样等于没启用（后面的包会把它整个盖掉），必须重新挪到最后。
-    # 摘除时同时兼容双引号/单引号、带/不带 file/ 前缀四种写法——重复安装、
-    # 或旧工具用了不同写法留下的残留条目，都得认得出来，否则会越装越多份重复项。
+    # 先摘掉已有的汉化包条目，再追加到末尾：旧版本装出的实例里它可能排在前面，会被后面的包覆盖。
+    # 摘除时认双引号、单引号、带或不带 file/ 前缀四种写法，否则重复安装会越积越多。
     $packBasename = $PackEntry.Substring($PackEntry.IndexOf('/') + 1)
     $body = $body -replace [regex]::Escape('"' + $PackEntry + '"'), ''
     $body = $body -replace [regex]::Escape("'" + $PackEntry + "'"), ''
@@ -466,30 +447,23 @@ function Patch-Options {
 ##
 # 清理本补丁旧版本（v7.2-release8 之前）遗留的文件。
 #
-# 那之前本包的任务书 delta 用的是 `<章节名>.snbt`，与整合包自带的同名文件**撞名**，
-# 安装时直接覆盖 —— 整合包那一章上百条翻译当场没了，任务书变英文。
-# （已经启动过的实例看不出来：整合包那批早合并完并改名成 .snbt_merged 了。）
-#
-# 现在统一加 zz_hanhua_ 前缀，不会再撞名。这里把旧名字的残留删掉，
-# 且只在**内容与本包同名新文件逐字节相同**时才删 —— 这样能确定它是本包的旧产物，
-# 绝不会误删整合包自己的文件。
+# 那些版本的任务书 delta 叫 `<章节名>.snbt`，与整合包自带的同名文件冲突，安装时会覆盖整章翻译
+# （启动过的实例看不出来：整合包的文件已合并并改名成 .snbt_merged）。现在统一加 zz_hanhua_ 前缀。
+# 旧名字的残留只在内容与本包同名新文件逐字节相同时才删，确保删的是本包的旧文件。
 # r14 之前的版本往实例里装过 CC: Tweaked 的中文 help 文档
-# （kubejs\data\computercraft\lua\rom\help\，97 个 .txt）。CC 的终端用自带的
-# term_font.png——256 个字形、没有汉字，中文进去整屏乱码。新版不再生成，
-# 但安装器只覆盖不删除，旧文件会一直留着，于是「装了新版还是乱码」。这里主动清掉。
+# （kubejs\data\computercraft\lua\rom\help\，97 个 .txt）。CC 终端用自带的 term_font.png，
+# 256 个字形没有汉字，中文是乱码。安装器只覆盖不删除，所以这里主动清理。
 function Clear-LegacyCCHelp {
-    # 只认这一个目录：旧版本就是往 lua\rom\help\ 里放译好的 .txt，别的地方一律不碰。
-    # 旧代码递归删整个 computercraft 目录下的 *.txt，不看内容也不进备份——玩家自己
-    # 放在那底下的 .txt 会**永久消失**，restore 也拿不回来（Do-Backup 只枚举当前
-    # payload，而这些文件早就不在 payload 里）。（issue #9 P1-1）
+    # 只处理 lua\rom\help\，旧版本的译文都在这里。别处的 .txt 可能是玩家自己放的，
+    # 不在 payload 里，Do-Backup 不会备份，删了无法恢复（issue #9 P1-1）。
     $ccd = Join-Path $script:Target 'kubejs\data\computercraft\lua\rom\help'
     if (-not (Test-Path -LiteralPath $ccd)) { return }
     $all = @(Get-ChildItem -LiteralPath $ccd -Recurse -Filter *.txt -File -ErrorAction SilentlyContinue)
     if ($all.Count -eq 0) { return }
     $txt = @()
     foreach ($f in $all) {
-        # 判据：文件里有非 ASCII 字节。我们发的是中译本，CC 自带的 help 全是英文；
-        # 纯 ASCII 的一律不动。万一还是判错，下面会先备份，restore 拿得回来。
+        # 有非 ASCII 字节的才是本包的中译本，CC 自带的 help 都是英文。
+        # 下面会先备份，判错也能 restore。
         $bytes = $null
         try { $bytes = [System.IO.File]::ReadAllBytes($f.FullName) } catch { }
         if ($null -eq $bytes) { continue }
@@ -501,13 +475,13 @@ function Clear-LegacyCCHelp {
             $rel = $f.FullName.Substring($script:Target.Length).TrimStart('\', '/')
             $dst = Join-Path $script:BK $rel
             # 不用 New-Item：Windows PowerShell 5.1 的 New-Item 没有 -LiteralPath，
-            # 而 -Path 会把 [ ] 当通配符（实例目录叫 [1.21.1]ATM10 很常见）。
+            # -Path 会把 [ ] 当通配符（实例目录叫 [1.21.1]ATM10 很常见）。
             [void][System.IO.Directory]::CreateDirectory([System.IO.Path]::GetDirectoryName($dst))
             Copy-Item -LiteralPath $f.FullName -Destination $dst -ErrorAction SilentlyContinue
         }
         Remove-Item -LiteralPath $f.FullName -Force -ErrorAction SilentlyContinue
     }
-    # 自底向上删空目录；非空的一律留着
+    # 自底向上删空目录。非空的一律留着
     foreach ($d in @(Get-ChildItem -LiteralPath $ccd -Recurse -Directory -ErrorAction SilentlyContinue |
                      Sort-Object { $_.FullName.Length } -Descending)) {
         if (-not @(Get-ChildItem -LiteralPath $d.FullName -Force -ErrorAction SilentlyContinue)) {
@@ -519,13 +493,11 @@ function Clear-LegacyCCHelp {
     }
     Write-Host "🧹 清理了旧版本装进去的 CC: Tweaked 中文 help 文档（$($txt.Count) 个文件，已备份）。"
     Write-Host '   CC 的终端只有 256 个自带字形、没有汉字，中文在那里必然是乱码，'
-    Write-Host '   所以这部分改回英文——这是终端本身的限制，不是漏翻。'
+    Write-Host '   所以这部分改回英文。这是终端本身的限制，不是漏翻。'
 }
 
-# r14 发过「模组配置界面汉化」那两个 VaultPatcher 模块（合计 2232 条），本版起不再发。
-# 它们是 dynamic 模块，而 VaultPatcher 的 dynamic 表是**全局的、每次替换调用都要线性扫一遍**
-# 的全局开销——留在盘上就等于全场景掉帧照旧，装了新版也修不掉。安装器只覆盖不删除，
-# 所以必须在这里主动清掉。
+# r14 发过「模组配置界面汉化」的两个 VaultPatcher dynamic 模块（共 2232 条），之后停发。
+# dynamic 表每次替换都要线性扫描，留在盘上会全场景掉帧。安装器只覆盖不删除，所以这里主动清理。
 function Clear-LegacyConfigUI {
     $vpm = Join-Path $script:Target 'vaultpatcher\modules'
     if (-not (Test-Path -LiteralPath $vpm)) { return }
@@ -533,13 +505,13 @@ function Clear-LegacyConfigUI {
     foreach ($f in @('config_ui_generated.json', 'catnip_config_ui.json')) {
         $old = Join-Path $vpm $f
         if (Test-Path -LiteralPath $old -PathType Leaf) {
-            # 这两个文件不在 payload 里，Do-Backup 不会备份它们——删掉就永久没了。
-            # 这里自己塞进本次备份目录（就地解压模式没有备份，那条路本来就无从回退）。
+            # 这两个文件不在 payload 里，Do-Backup 不会备份，这里自己放进本次备份目录。
+            # 就地解压模式没有备份，无法回退。
             if ($script:BK -and (Test-Path -LiteralPath $script:BK)) {
                 $to = Join-Path $script:BK 'vaultpatcher\modules'
                 # 不用 New-Item：Windows PowerShell 5.1 的 New-Item 没有 -LiteralPath
-                # （实测 CI 红：NamedParameterNotFound），而 -Path 会把 [ ] 当通配符——
-                # 实例目录叫 [1.21.1]ATM10 这种在 PCL/HMCL 下很常见。
+                # （会报 NamedParameterNotFound），-Path 会把 [ ] 当通配符，
+                # 实例目录叫 [1.21.1]ATM10 在 PCL/HMCL 下很常见。
                 [void][System.IO.Directory]::CreateDirectory($to)
                 Copy-Item -LiteralPath $old -Destination (Join-Path $to $f) -ErrorAction SilentlyContinue
             }
@@ -549,7 +521,7 @@ function Clear-LegacyConfigUI {
     }
     if ($hit -gt 0) {
         Write-Host "🧹 清理了 $hit 个 r14 装进去的配置界面汉化模块。"
-        Write-Host '   那套替换表是全局开销（全局的，表越大越慢），留着会掉帧；'
+        Write-Host '   那套替换表是全局开销，表越大越慢，留着会掉帧。'
         Write-Host '   代价是 Create 及其附属的配置界面回到英文（只有它们用这套界面）。'
     }
 }
@@ -563,9 +535,8 @@ function Clear-LegacyQuestLang {
         $base = $new.Name -replace '^zz_hanhua_', ''
         foreach ($n in @($base, "_$base")) {
             $old = Join-Path $qd $n
-            # payload 会写同名文件 → 交给复制那一步，这里不删也不计数。
-            # 不加这一句，payload 自己发的空壳 `_X.snbt` 与 `zz_hanhua_X.snbt` 字节相同，
-            # 每次安装都会「删掉上次装的、再抄回来」，计数恒等于空壳个数。
+            # payload 会写同名文件，交给复制那一步，不删也不计数。否则 4 字节的 `_X.snbt` 与
+            # `zz_hanhua_X.snbt` 内容相同，每次安装都会删掉再复制回来。
             if (Test-Path -LiteralPath (Join-Path $sd $n)) { continue }
             if (!(Test-Path -LiteralPath $old)) { continue }
             $a = [System.IO.File]::ReadAllBytes($old)
@@ -591,16 +562,13 @@ function Do-Apply {
         Write-Host '✅ 汉化文件已在位，options.txt 已处理完毕。'
         return
     }
-    # ⚠️ fail-closed：数不出足够的待装文件就**一个字节都不动**地退出。
-    # 2026-08-01 玩家反馈过一次「备份 0 个 + 一路绿勾 + 实际什么都没装」——
-    # 那种情况下安装器照样打印「✅ 汉化已应用」，玩家没有任何办法知道装失败了。
-    # 正常包有数百个文件；少于 50 只可能是解压不完整、脚本不在汉化文件夹里，
-    # 或路径把文件枚举搞没了。宁可当场报错，也不许假装成功。
+    # 待装文件少于 50 个就报错退出，不改动任何文件。正常包有数百个文件，少于 50 说明解压不完整、
+    # 脚本不在汉化文件夹里，或路径导致文件枚举失败。出现过「备份 0 个、提示汉化已应用、实际没装」。
     $payload = @(Get-PayloadFiles)
     if ($payload.Count -lt 50) {
         Write-Host "❌ 只找到 $($payload.Count) 个待安装文件，正常应有数百个。"
-        Write-Host '   常见原因：压缩包没解压完整；或 install.ps1 不在解压出来的汉化文件夹里。'
-        Write-Host '   已中止，**没有改动实例里的任何文件**。'
+        Write-Host '   常见原因：压缩包没解压完整，或 install.ps1 不在解压出来的汉化文件夹里。'
+        Write-Host '   已中止，没有改动实例里的任何文件。'
         exit 1
     }
     Do-Backup
@@ -615,7 +583,7 @@ function Do-Apply {
         Copy-OneFile (Join-Path $ScriptDir $f) $dst -Force
         $copied++
     }
-    # 再核一遍是否真的落地：复制静默失败、目标只读、路径被通配符吃掉都在这里露馅。
+    # 再核对一遍文件是否落地：复制静默失败、目标只读、路径被通配符解析，都会在这里暴露。
     $missing = @($payload | Where-Object { -not (Test-Path -LiteralPath (Join-Path $script:Target $_)) })
     if ($missing.Count -gt 0) {
         Write-Host "❌ 有 $($missing.Count) 个文件没能写进实例（共 $($payload.Count) 个），例如 $($missing[0])。"
@@ -626,12 +594,9 @@ function Do-Apply {
     Write-Host "✅ 汉化已应用（$copied 个文件）。备份在 backups/$script:TS/，如需回退运行: .\install.ps1 restore $script:TS"
 }
 
-# 实例里是否已经有拼音搜索 mod。mod id 取自我们随包 jar 的文件名首段
-# （jecharacters-1.21.1-neoforge-4.5.26.jar → jecharacters），不写死，
-# 换 jar 时不用改这里。返回已装到的那个 jar 的相对路径，没有则返回 $null。
-#
-# 这不只是省一次按键：同一个 mod id 出现两个 jar，NeoForge 会以
-# 「Mod ID is duplicated」拒绝启动。装过的人按下 y 就进不去游戏了。
+# 实例里是否已有拼音搜索 mod，返回已装 jar 的相对路径，没有则返回 $null。mod id 取随包 jar
+# 文件名的首段（jecharacters-1.21.1-neoforge-4.5.26.jar → jecharacters），换 jar 不用改这里。
+# 同一个 mod id 有两个 jar 时，NeoForge 报「Mod ID is duplicated」并拒绝启动。
 function Get-InstalledPinyin {
     $pinAbs = Join-Path $ScriptDir $PinyinDir
     if (!(Test-Path -LiteralPath $pinAbs)) { return $null }
@@ -659,7 +624,7 @@ function Do-Pinyin {
     }
     $already = Get-InstalledPinyin
     if ($already) {
-        Write-Host "（已装有拼音搜索 mod：${already}，跳过——同一个 mod 装两个 jar 会让游戏起不来）"
+        Write-Host "（已装有拼音搜索 mod：${already}，跳过。同一个 mod 装两个 jar 会让游戏起不来）"
         return
     }
     $jars = Get-ChildItem -LiteralPath $pinAbs -Filter '*.jar' -File
@@ -744,7 +709,7 @@ switch ($Action) {
         switch ($c) {
             '1' {
                 Do-Apply
-                # 已经装过就别问了：每次更新汉化都要按一次 N 属实多余。
+                # 已经装过就不再问
                 $already = Get-InstalledPinyin
                 if ($already) {
                     Write-Host "（已装有拼音搜索 mod：${already}，无需重复安装）"

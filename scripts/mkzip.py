@@ -6,8 +6,8 @@
 """打 zip，并保证中文文件名带 UTF-8 标志位。
 
 macOS / 多数 Linux 自带的 Info-ZIP `zip` 没编进 UNICODE_SUPPORT：文件名按 UTF-8 字节
-写进去，却**不置 general purpose bit 11**。Windows 自带的「提取全部」看不到这个标志，
-就按系统 ANSI 代码页（简中是 GBK）去解，`双击安装-Windows.bat` 到用户手里变成乱码——
+写进去，却不置 general purpose bit 11。Windows 自带的「提取全部」看不到这个标志，
+就按系统 ANSI 代码页（简中是 GBK）去解，`双击安装-Windows.bat` 到用户手里变成乱码，
 而那正是他要双击的文件。
 
 Python 的 zipfile 遇到非 ASCII 文件名会自动置 bit 11，用它打包即可。

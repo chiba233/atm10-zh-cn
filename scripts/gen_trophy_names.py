@@ -4,13 +4,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Jonn's Trophies（modid: trophymanager）奖杯名汉化生成器。
 
-## 为什么需要它
-
-trophymanager 2.5.0 反编译结论（`TrophyItem.getName` / `TrophyBlock.createTrophy`
-/ `TrophyManager$ModEventHandler`）：
+trophymanager 2.5.0 反编译（`TrophyItem.getName` / `TrophyBlock.createTrophy` /
+`TrophyManager$ModEventHandler`）：
 
   createTrophy(entity, nbt):
-      name = entity.getDisplayName().getString()      # 在**服务端**求值并烘焙
+      name = entity.getDisplayName().getString()      # 在服务端求值并写入
       TrophyData.Name = name + " Trophy"              # 常量拼接 "\\u0001 Trophy"
 
   ModEventHandler(BuildCreativeModeTabContentsEvent, OP_BLOCKS):
@@ -18,30 +16,22 @@ trophymanager 2.5.0 反编译结论（`TrophyItem.getName` / `TrophyBlock.create
       TrophyData.Name = name + " Trophy"
 
   TrophyItem.getName(stack):
-      return Component.translatable(TrophyData.Name)  # ← 整串当**翻译键**用
+      return Component.translatable(TrophyData.Name)  # ← 整串当翻译键用
 
-关键点：`Name` 是一个烘焙进物品 NBT 的**死字符串**，但它最终走的是
-`Component.translatable()`。翻译键找不到时原样显示 —— 所以只要资源包提供一条
-key 恰好等于那串烘焙文本的翻译，就能翻出来。资源包**能**汉化奖杯名。
+`Name` 是写进物品 NBT 的固定字符串，最终走 `Component.translatable()`，找不到翻译时原样显示。
+所以资源包提供一条键恰好等于这串文本的翻译，就能显示中文。
 
-（早期版本的 CHANGELOG 写过"资源包无法翻译"，那是错的；实测打怪掉落的奖杯
-同样显示英文，本生成器就是为修这个而写。）
+`Name` 的形态取决于写入时由谁求值 `getDisplayName()`，有四种：
 
-## 烘焙出的字符串有四种形态，全都要覆盖
-
-`Name` 到底长什么样，取决于烘焙那一刻是谁在求值 `getDisplayName()`：
-
-  1. `"Polar bear Trophy"`     创造栏预生成（idToName：冒号后首字母大写 + `_`→空格）
+  1. `"Polar bear Trophy"`     创造栏预生成（idToName：冒号后首字母大写，`_` 换空格）
   2. `"Polar Bear Trophy"`     专用服务端打怪掉落，服务端 Language 命中 en_us
-  3. `"entity.cataclysm.xxx Trophy"`  同上但服务端 Language 没这个键 → 原样返回键名
-  4. `"北极熊 Trophy"`          单人/局域网：集成服务端用的是客户端 Language(zh_cn)
+  3. `"entity.cataclysm.xxx Trophy"`  同上，但服务端 Language 没有这个键，原样返回键名
+  4. `"北极熊 Trophy"`          单人或局域网：集成服务端用客户端的 Language（zh_cn）
 
-四种都生成，多余的键不匹配任何东西，无害。
+四种都生成，多余的键不匹配任何东西。
 
-## 单一真源
-
-`scripts/trophy_entity_names.json`（id → {en, zh}）由本脚本从整合包 jar + 资源包
-扫描生成；生成 lang 时**只读快照**，保证 CI 离线可复现。
+`scripts/trophy_entity_names.json`（id → {en, zh}）由本脚本扫描整合包 jar 与资源包生成。
+生成 lang 时只读这份快照，CI 可以离线复现。
 
 用法:
     python3 scripts/gen_trophy_names.py --scan "<实例目录>"   # 刷新快照并生成
@@ -67,27 +57,24 @@ OUT = (PACK / 'assets'
 
 # entity.<ns>.<path>：命名空间与注册名里都不可能有点
 KEY_RE = re.compile(r'^entity\.([a-z0-9_-]+)\.([a-z0-9_/-]+)$')
-# entity.<ns>.<a>.<b>…：村民职业 / 热带鱼变种这类**子键**。它们不是注册名，
-# 但确实会被拿来当实体显示名（实测服务器上真有 "Nitwit Trophy"），
-# 所以只拿它们的中英文名字成键，不参与 idToName 推导。
+# entity.<ns>.<a>.<b>…：村民职业、热带鱼变种这类子键不是注册名，但会被当成实体显示名
+# （服务器上有 "Nitwit Trophy"），所以只用它们的中英文名字成键，不参与 idToName 推导。
 SUBKEY_RE = re.compile(r'^entity\.([a-z0-9_-]+)\.([a-z0-9_/.-]+)$')
 
-# 不是"生物"，做成奖杯没有意义/名字会串味的实体
+# 不是生物、做成奖杯没有意义或名字会混淆的实体
 SKIP_IDS = {
     'minecraft:player',            # 玩家奖杯走 createPlayerTrophy，名字是玩家名
 }
 
-# `entity.` 前缀并不代表就是实体名：MineColonies 用 `entity.<职业>.<消息>` 存工人台词、
-# The Bumblezone 用 `entity.the_bumblezone.bee_queen.<事件>` 存蜂后对白。
-# 这些混进来会造出「复活节快乐!奖杯」这种垃圾键。实体名一定是**短名词**，
-# 不会有句子标点、也不会很长 —— 用这个把台词滤掉。
+# `entity.` 前缀不一定是实体名：MineColonies 用 `entity.<职业>.<消息>` 存工人台词，The Bumblezone
+# 用 `entity.the_bumblezone.bee_queen.<事件>` 存蜂后对白，混进来会生成「复活节快乐!奖杯」这种键。
+# 实体名是短名词，不含句子标点，也不会很长，按这一点过滤台词。
 SENTENCEY = re.compile(r'[！!？?。，,；;：:…]')
 MAX_NAME_LEN = 16
 
-# TrophyData.Name 只剩这串英文，原实体 ID 已经丢失；同名实体不可能再按命名空间
-# 区分。这里不是选某一个实体的译名，而是给**烘焙后的公共键**定一个能覆盖所有
-# 候选的通名。各模组自己的实体名保持不动，带 translation key / 中文烘焙名的
-# 另外几种形态仍会生成各自的精确译名。
+# TrophyData.Name 只有这串英文，原实体 ID 已经丢失，同名实体无法按命名空间区分。这里给写入后的
+# 公共键定一个覆盖所有候选的通名。各模组自己的实体名不变，带 translation key 或中文写入名的
+# 另外几种形态仍各自生成精确译名。
 BAKED_NAME_OVERRIDES = {
     'Abyss Blast Trophy': '深渊冲击波奖杯',
     'Amber Bee Trophy': '琥珀蜜蜂奖杯',
@@ -168,9 +155,9 @@ def scan(instance):
     take(vanilla.client_en(inst), jar_en)
     take(vanilla.client_zh(inst), jar_zh)
 
-    # 本包与 KubeJS 分开收：资源包会保留未安装模组的备用译文，不能直接证明实体存在；
-    # KubeJS 则确实能定义 jar 里没有的实体键。资源包按文件所在 assets 命名空间
-    # 记来源，不能只看键内命名空间：村民职业常写成 entity.minecraft.villager.<modid>.*。
+    # 本包资源包与 KubeJS 分开收集：资源包保留了未安装模组的备用译文，不能证明实体存在，
+    # KubeJS 则能定义 jar 里没有的实体键。资源包按文件所在 assets 命名空间记来源，不能只看键内
+    # 命名空间：村民职业常写成 entity.minecraft.villager.<modid>.*。
     for p in PACK.rglob('lang/zh_cn.json'):
         rel = p.relative_to(PACK).parts
         source = rel[1] if len(rel) > 1 and rel[0] == 'assets' else None
@@ -178,9 +165,8 @@ def scan(instance):
     for p in (COMMON / 'kubejs' / 'assets').rglob('lang/zh_cn.json'):
         take(json.loads(p.read_text(encoding='utf-8')), kube_zh)
 
-    # 组合式实体名模板：`entity.<ns>.name` = "Shiny %s" 这种，实体的显示名是
-    # 模板 + 一个参数拼出来的，参数常常是**没翻译的注册名**（实测 Shiny 的奖杯
-    # 烘焙出来就是 "Shiny zombie_horse Trophy"）。模板本身不是实体，要单独记。
+    # 组合式实体名模板：`entity.<ns>.name` = "Shiny %s" 这类，显示名由模板加参数拼成，参数常常是
+    # 没翻译的注册名（Shiny 的奖杯写入的是 "Shiny zombie_horse Trophy"）。模板本身不是实体，单独记录。
     tmpl = {}
     for key, en in jar_en.items():
         m = re.match(r'^entity\.([a-z0-9_-]+)\.name$', key)
@@ -190,9 +176,8 @@ def scan(instance):
                 'zh': pack_zh.get(key) or kube_zh.get(key) or jar_zh.get(key),
             }
 
-    # 键的全集：已安装模组可以由本包补实体键，但未安装模组的备用译文不能混入。
-    # 只看 jar 语言键会漏掉 shiny 这类由本包补齐大量实体名的已安装模组，所以用
-    # jar 内实际出现过的 assets 命名空间作为存在性边界。
+    # 键的全集：已安装模组可以由本包补实体键，未安装模组的备用译文不能混入。只看 jar 语言键会漏掉
+    # shiny 这类由本包补齐大量实体名的模组，所以用 jar 内实际出现的 assets 命名空间作为边界。
     snap = {}
     installed = set(jar_en) | set(jar_zh) | set(kube_zh)
     for key, sources in pack_sources.items():
@@ -214,7 +199,7 @@ def scan(instance):
             continue                      # 没中文 / 中文就是英文 → 没得翻
         if SENTENCEY.search(zh) or len(zh) > MAX_NAME_LEN:
             continue                      # 是台词/对白，不是实体名
-        # 英文侧同理。逗号要放行 —— "Echo of Tyros, First Flamebearer" 是正经 Boss 名
+        # 英文侧同理。逗号要保留，"Echo of Tyros, First Flamebearer" 是 Boss 名
         if en and (re.search(r'[!?…]', en) or len(en) > 44):
             continue
         rec = {'key': key, 'en': en or '', 'zh': zh}
@@ -233,8 +218,8 @@ def scan(instance):
 # 生成 lang
 # --------------------------------------------------------------------------
 def build(snap):
-    # 同一条烘焙文本可能被多个实体撞上（不同模组同名怪）；值不一致就整条丢弃，
-    # 宁可显示英文也不张冠李戴（与资源蜂"歧义英文名不入表"同一条红线）。
+    # 同一条写入文本可能对应多个实体（不同模组的同名怪），译文不一致就整条丢弃，显示英文，
+    # 不张冠李戴（与资源蜜蜂「歧义英文名不入表」相同）。
     cand = {}
     for eid, rec in snap.items():
         zh, en, key = rec['zh'], rec['en'], rec['key']
@@ -243,7 +228,7 @@ def build(snap):
             continue
         ns, path = eid.split(':', 1)
         if rec.get('sub'):
-            # 子键不是注册名，idToName 推不出有意义的东西（曾产出 "0 Trophy"）
+            # 子键不是注册名，idToName 推不出有意义的结果（会产出 "0 Trophy"）
             for form in (en, key, zh):
                 if form:
                     cand.setdefault(form + ' Trophy', {}).setdefault(val, set()).add(eid)
@@ -251,8 +236,8 @@ def build(snap):
         forms = [id_to_name(eid), en, key, zh]
         t = rec.get('tmpl')
         if t:
-            # 参数可能是注册名、去掉命名空间前缀的注册名、也可能是基础实体的
-            # 英文/中文显示名 —— 全部覆盖，多余的键不匹配任何东西，无害。
+            # 参数可能是注册名、去掉命名空间前缀的注册名，或基础实体的英文、中文显示名，
+            # 全部覆盖，多余的键不匹配任何东西。
             bare = path[len(ns) + 1:] if path.startswith(ns + '_') else path
             args = {path, bare, bare.replace('_', ' ')}
             base = snap.get('minecraft:' + bare)
@@ -288,11 +273,10 @@ def build(snap):
 
 
 def refresh_zh(snap):
-    """拿当前资源包里的译文，覆盖快照里缓存的那份。
+    """用当前资源包里的译文覆盖快照里缓存的译文。
 
-    快照缓存的是**扫 jar 很慢**的那部分（有哪些实体、英文名叫什么）。译文不能跟着
-    缓存住：缓存住的话，改了资源包却没删快照，产物纹丝不动——2026-07-27 实测被坑过
-    （tempad 的「时空门」统一成「时门」后，本机重跑六次产物都没变）。
+    快照只缓存扫描 jar 的慢操作结果（有哪些实体、英文名是什么）。译文也缓存的话，改了资源包而
+    没删快照，产物不会变（例如 tempad 的「时空门」改成「时门」后重跑，产物不变）。
     """
     pack_zh = {}
     for base in (PACK, COMMON / 'kubejs' / 'assets'):
@@ -327,15 +311,14 @@ if __name__ == '__main__':
         data = scan(sys.argv[2])
     else:
         if not SNAPSHOT.exists():
-            # 快照不在就现扫：ATM_PACK_ROOT 指向的整合包实例就是权威来源
+            # 快照不存在就扫描：ATM_PACK_ROOT 指向的整合包实例是数据来源
             root = os.environ.get('ATM_PACK_ROOT')
             if not root or not (Path(root) / 'mods').is_dir():
-                sys.exit('缺少快照 %s；设好 ATM_PACK_ROOT 或跑 --scan <实例目录>' % SNAPSHOT)
+                sys.exit('缺少快照 %s。设置 ATM_PACK_ROOT，或运行 --scan <实例目录>' % SNAPSHOT)
             data = scan(root)
         else:
             data = json.loads(SNAPSHOT.read_text(encoding='utf-8'))
-            # 快照缓存的是**扫 jar 很慢**的那部分（哪些实体、英文名叫什么）。
-            # 译文不能跟着缓存：缓存住的话，改了资源包却不删快照，产物纹丝不动
-            # ——2026-07-27 实测就这么被坑过（tempad 的「时空门」改成「时门」不生效）。
+            # 快照只缓存扫描 jar 的结果（有哪些实体、英文名是什么），译文不缓存，
+            # 否则改了资源包而没删快照，产物不会变。
             refresh_zh(data)
     build(data)

@@ -6,14 +6,14 @@
 """dynamic 模块里的 `@` 子串对子不许互为子串。
 
 VaultPatcher 的 `MatchUtils.matchPairs`：value 以 `@` 开头的对子走
-`String.replace` 子串替换，而它**遍历的是一个 HashSet，顺序不确定**。
+`String.replace` 子串替换，而它遍历的是一个 HashSet，顺序不确定。
 于是只要两条 `@` 键互为子串，结果就取决于遍历顺序：
 
     "Blueprint"                 -> "@蓝图"
     "Blueprint related settings"-> "@蓝图相关设置"
 
-短的先跑，长的那条就再也匹配不上，屏幕上留下「蓝图 related settings」——
-半中半英，而且**每次启动都可能不一样**。
+短的先跑，长的那条就再也匹配不上，屏幕上留下「蓝图 related settings」，
+半中半英，而且每次启动都可能不一样。
 
 两种正当解法：
 
