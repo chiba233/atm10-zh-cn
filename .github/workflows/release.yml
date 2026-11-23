@@ -3,13 +3,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 name: Release
 
-# 构建分发包并发布 GitHub Release。
-# 仓库里没有任何一棵出货目录树：assemble.py 从 src/ 现摊、生成器现产、
-# gen_upstream_patches.py 对着**各版本官方文件**现打补丁，再由 build_dist.sh 压包。
+# 构建分发包并发布 GitHub Release：assemble.py 组装出货树，运行生成器，
+# gen_upstream_patches.py 对各版本官方文件打补丁，build_dist.sh 打包。
 #
 # 触发方式：
-#   1. push tag v* —— 自动按 tag 名解析版本号、自动发布 release；
-#   2. workflow_dispatch —— Actions 页面手动触发，可选发布。
+#   1. push tag v*：按 tag 名解析版本号，自动发布 release。
+#   2. workflow_dispatch：在 Actions 页面手动触发，可选是否发布。
 on:
   workflow_dispatch:
     inputs:
@@ -33,7 +32,7 @@ jobs:
   release:
     name: Build distribution zip
     runs-on: ubuntu-latest
-    # 与 build.yml 同一套钉死的工具链——发布产物必须能和 CI 产物逐字节对上。
+    # 与 build.yml 用同一套固定的工具链，发布产物要能与 CI 产物逐字节比对。
     container:
       image: python@sha256:d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b
     # 容器里 GitHub Actions 默认用 sh，而脚本里到处是 set -o pipefail（bash 才有）
@@ -42,14 +41,12 @@ jobs:
         shell: bash
     env:
       ATM_TOOLCHAIN_DIGEST: sha256:d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b
-      # 这条流水线是带 jar 跑完整生成的，所以「前提是生成物却没生成」一律算失败，
-      # 不许打一行 ℹ️ 就放过去——发版比日常构建更不该有 fail-open。
+      # 这条流水线带 jar 完整生成，以生成物为前提的检查缺前提时一律失败。
       GATE_STRICT: '1'
     steps:
       - uses: actions/checkout@v7
 
-      # 校验挪进 build_dist.sh 了：check.py 查的是**出货树**，而出货树是构建时才有的，
-      # 而且每个整合包版本各查一遍（上游文件按版本不同）。
+      # 校验在 build_dist.sh 里：check.py 查的是构建时才有的出货树，且每个整合包版本各查一遍。
 
       # 三条路径：
       #   tag push (vr13 / v7.2-release11) ──> publish=true
@@ -64,17 +61,16 @@ jobs:
         run: |
           set -euo pipefail
 
-          # ⚠️ 必须同时确认 event 就是 tag push。只看 GITHUB_REF_TYPE 的话，
+          # 必须同时确认 event 是 tag push。只看 GITHUB_REF_TYPE 的话，
           #    `gh workflow run release.yml --ref vr16-beta3 -f publish_release=false`
-          #    也满足「ref 是 tag」，于是 publish_release=false 被无视、照发不误，
-          #    还会覆盖已有 Release 的资产。（issue #9 P1-3）
+          #    也满足「ref 是 tag」，会忽略 publish_release=false 照常发布，
+          #    还会覆盖已有 Release 的资产（issue #9 P1-3）。
           if [[ "$GITHUB_EVENT_NAME" == "push" && "$GITHUB_REF_TYPE" == "tag" ]]; then
             tag="$GITHUB_REF_NAME"
-            # 补丁版本号已与整合包版本解耦（产物名是 -<补丁版本>-atm<整合包版本>.zip），
-            # 所以 tag 认两种：
+            # 补丁版本号与整合包版本无关（产物名是 -<补丁版本>-atm<整合包版本>.zip），认两种 tag：
             #   新：vR12 / vr12 / v12 / v12.1 / vR12-beta2
-            #   旧：v7.2-release11 / v7.2-beta6（历史 tag，继续认，别把老流程弄挂）
-            # r 大小写都认：CHANGELOG 的段名写作 `## R12`，人自然会跟着写大写。
+            #   旧：v7.2-release11 / v7.2-beta6
+            # r 大小写都认：CHANGELOG 的段名写作 `## R12`。
             if [[ ! "$tag" =~ ^[vV][rR]?[0-9]+(\.[0-9]+)*(-(release|beta|rc)[0-9]+)?$ ]]; then
               echo "❌ Tag '$tag' 不是认得的形态。写 vR12 / vR12-beta1，旧式 v7.2-release11 也行。" >&2
               exit 1
@@ -102,8 +98,8 @@ jobs:
             echo "A version is required when publishing a release." >&2
             exit 1
           fi
-          # 与上面 tag 那条**同一个形态**（少个前导 v），别两边各写一套然后对不上：
-          # 新 R12 / r12 / 12 / 12.1 / R12-beta2；旧 7.2-release11 / 7.2-beta6
+          # 与上面 tag 的格式相同（少一个前导 v）：
+          # 新 R12 / r12 / 12 / 12.1 / R12-beta2。旧 7.2-release11 / 7.2-beta6
           if [[ ! "$version" =~ ^[rR]?[0-9]+(\.[0-9]+)*(-(release|beta|rc)[0-9]+)?$ ]]; then
             echo "❌ 版本号 '$version' 不是认得的形态。写 R12 / R12-beta1，旧式 7.2-release11 也行。" >&2
             exit 1
@@ -114,66 +110,59 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "beta=$beta" >> "$GITHUB_OUTPUT"
 
-      # **不要用 actions/setup-python**：这个 job 跑在锁定容器里（bookworm，glibc 2.36），
-      # 而 runner 下下来的那份 Python 要 GLIBC 2.38，一跑就
-      # 「libm.so.6: version GLIBC_2.38 not found」。容器自带的 python 就是钉好的那个。
-      - name: 装依赖（哈希锁定）
+      # 不用 actions/setup-python：这个 job 运行在固定的容器里（bookworm，glibc 2.36），
+      # runner 下载的 Python 需要 GLIBC 2.38，会报「libm.so.6: version GLIBC_2.38 not found」。
+      # 容器自带的 python 就是固定版本。
+      - name: 安装依赖
         run: |
           python -m pip install --quiet --require-hashes -r requirements.lock
           apt-get update -qq && apt-get install -y -qq --no-install-recommends \
             curl unzip zip git ca-certificates default-jdk-headless >/dev/null
-          # javac：同 build.yml，给 patch_vaultpatcher.py 编 VaultPatcher 的性能补丁。
+          # javac：同 build.yml，供 patch_vaultpatcher.py 编译 VaultPatcher 的性能补丁。
 
       - name: 核对工具链
         run: python3 scripts/toolchain.py --strict
 
-      - name: 取字体（全部 OFL）
+      - name: 下载字体
         run: ./scripts/fetch_fonts.sh
 
 
-      # ATM10 的某个已发布版本，overrides 内容是不会变的，所以缓存键就用仓库里记的
-      # 那三个指纹——只有我们**有意**改了目标版本时才会失效。
-      # 这一步是为了把 CurseForge（全链唯一不可控的外部依赖）从最高频的那道闸上挪开：
-      # 命中缓存就完全不联网；未命中才下，且下完必须与 versions/<版本>/overrides.sha256
-      # 对得上，否则构建当场红。
+      # 已发布版本的 overrides 不会变，缓存键用仓库里记录的指纹，只有改了目标版本才失效。
+      # 命中缓存就不访问 CurseForge。未命中才下载，下载后必须与 versions/<版本>/overrides.sha256
+      # 一致，否则构建失败。
       - uses: actions/cache@v6
         with:
           path: build/packsrc
           key: packsrc-${{ hashFiles('versions/*/overrides.sha256') }}
 
-      - name: 下整合包（overrides + 全部 mod jar）
+      - name: 下载整合包与全部模组 jar
         run: |
           set -euo pipefail
-          # 生成器要读 mod jar 里的 en_us 与注册表，取最新那版一次即可
-          # （资源包 lang 按命名空间索引，跨版本通用）。
+          # 生成器要读 mod jar 里的 en_us 与注册表，取最新版即可（资源包 lang 各版本通用）。
           NEWEST=$(ls -d versions/[0-9]* | xargs -n1 basename | sort -V | tail -1)
           python3 scripts/fetch_pack.py "$NEWEST" pack
           echo "ATM_PACK_ROOT=$PWD/pack" >> "$GITHUB_ENV"
-          # 每个目标版本再取一份 overrides（只要官方文件，不下 jar）——
-          # 打上游补丁必须对着**该版**的官方文件，否则等于把旧上游发给新版本用户。
+          # 每个目标版本再下载一份 overrides（不下 jar）：上游补丁必须对着该版的官方文件打。
           for v in $(ls -d versions/[0-9]* | xargs -n1 basename); do
             [ -d "build/packsrc/$v/kubejs" ] || python3 scripts/fetch_pack.py "$v" "build/packsrc/$v" --no-jars
           done
-          # 下来的字节必须与 versions/db/<版本>/jars.json 逐字节一致。
-          # 以前只写进临时的 mods.provenance.json，没人跟仓库里的基线比对过——
-          # 限速/404/拿错文件都只会让生成器少产内容，不会有人发现。（issue #9 P1-5）
+          # 下载的 jar 必须与 versions/db/<版本>/jars.json 逐字节一致，否则限速、404、下错文件
+          # 只会让生成器少产内容而不报错（issue #9 P1-5）。
           python3 scripts/build_version_db.py --verify "$NEWEST" pack/mods
 
       - name: 生成全部汉化产物
         run: ./scripts/generate_all.sh
 
-      # 下面两道闸要读 mod jar，Build 里有、Release 里以前没有——等于「打 tag 就能
-      # 绕过已知的崩溃闸」。两条都是拿实机崩溃换来的：市政厅 XML（2026-07-28）、
-      # 建筑棒蓝图路径当 Map 键（issue #3）。（issue #9 P1-4）
-      - name: 界面 XML 映射三条硬规矩
+      # 下面两项检查要读 mod jar，与 build.yml 相同，发版时同样运行：市政厅界面 XML、
+      # 建筑棒蓝图路径用作 Map 键（issue #3）。（issue #9 P1-4）
+      - name: 检查界面 XML 映射
         run: python3 scripts/compliance/check_gui_maps.py "$ATM_PACK_ROOT/mods"
 
-      - name: 蓝图类别路径不许被替换表改动
+      - name: 检查蓝图类别路径
         run: python3 scripts/compliance/check_minecolonies_paths.py "$ATM_PACK_ROOT/mods"
 
       - name: 打包全部整合包版本
-        # 不给第二个参数 = 出 versions/whitelist.txt 里的全部版本。
-        # 通配只在仓库声明过的版本里展开，ATM 发新版不会自动混进来。
+        # 不给第二个参数，就打包 versions/whitelist.txt 里的全部版本。
         run: ./scripts/build_dist.sh "${{ steps.release.outputs.version }}"
 
       - name: Upload artifact
@@ -183,11 +172,8 @@ jobs:
           path: dist/*.zip
           if-no-files-found: error
 
-      # 只准备材料：核对包齐不齐、取出 CHANGELOG 段落。
-      # **不在这里调 gh**——这个 job 跑在锁定容器里（产物字节要可复现），
-      # 容器里没有 gh CLI。真正的发布交给下面那个 action。
-      # **每次都跑**，不看发不发布：包齐不齐、CHANGELOG 有没有对应段落，
-      # 应该在不发版的那次构建里就暴露，而不是等推了 tag 才炸。
+      # 只准备材料：核对包是否齐全、取出 CHANGELOG 段落。容器里没有 gh CLI，发布交给
+      # 下面的 action。不发布时也运行，包不齐或 CHANGELOG 缺段落在推 tag 之前就能发现。
       - name: 备好发版材料
         id: publish
         env:
@@ -195,10 +181,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          # 取 CHANGELOG 里对应的段落。标题**按整串精确比对**，不走正则——
-          # 历史上段名带过 `.` 和 `*`（`## 7.*`），当正则用会顺手匹配上 `## 7.2`，
-          # 发出去的说明就是别的版本的。
-          # 大小写不敏感：tag 写 `vr12`，CHANGELOG 里的段名是 `## R12`。
+          # 取 CHANGELOG 里对应的段落。标题按整串比对，不用正则：段名里出现过 `.` 和 `*`
+          # （`## 7.*`），当正则会匹配上 `## 7.2`。大小写不敏感：tag 写 `vr12`，段名是 `## R12`。
           extract() {
             awk -v ver="## $1" '
               tolower($0) == tolower(ver) { found=1; next }
@@ -207,9 +191,8 @@ jobs:
               END { sub(/^\n+/, "", buf); sub(/\n+$/, "", buf); print buf }
             ' CHANGELOG.md
           }
-          # 顺序：精确补丁版本 → 文件里第一个 ## 段（当前在写的那一段）。
-          # **不要**再回落到「去掉通道后缀的基版本」：`## 7.2` 现在是冻结的历史段
-          # （431 行），推 v7.2-release12 这种旧式 tag 会把那一整段当成新版说明发出去。
+          # 顺序：精确补丁版本，然后是文件里第一个 ## 段（当前在写的那一段）。不回落到去掉通道
+          # 后缀的基版本：`## 7.2` 是冻结的历史段（431 行），推 v7.2-release12 会把整段当新版说明。
           FROM="## $RELEASE_VERSION"
           NOTES=$(extract "$RELEASE_VERSION")
           if [ -z "$NOTES" ]; then
@@ -218,41 +201,36 @@ jobs:
             NOTES=$(extract "$FIRST")
           fi
           if [ -z "$NOTES" ]; then
-            echo "❌ CHANGELOG.md 里一个 ## 段都取不到，发版说明会是空的——先写 CHANGELOG" >&2
+            echo "❌ CHANGELOG.md 里一个 ## 段都取不到，发版说明会是空的，先写 CHANGELOG" >&2
             exit 1
           fi
           echo "发版说明取自 CHANGELOG 的 $FROM"
 
-          # 发版说明最前面固定顶两行警告。这两件事是支持成本最高的来源：
-          # 一是把 server 包当客户端下，二是装完没把资源包挪到「已选」最顶部——
-          # 后者会让大部分汉化不生效，看上去就像我们没翻。两者都发生在**下载那一刻**，
-          # 游戏内提示救不了：服务端包里根本没有 kubejs/client_scripts。
-          # 例子里的整合包版本按白名单现取，不写死，出新版时不必记得改这里。
+          # 发版说明最前面固定两条提示：不要把 server 包当客户端下载，装完要把资源包挪到「已选」
+          # 最顶部，否则大部分汉化不生效。这两件事都发生在下载时，服务端包里也没有
+          # kubejs/client_scripts，游戏内提示管不到。例子里的整合包版本按白名单取，出新版不用改。
           EX_MC=$(python3 scripts/release_versions.py | tr ' ' '\n' | tail -1)
           {
             echo 'notes<<RELEASE_NOTES_EOF'
             printf '%s\n' \
-              '> ## ⚠️ 下载前先看这两行' \
+              '> ## 下载前先看这两条' \
               '>' \
-              '> **① 认文件名：带 `client` 的是玩家装的，带 `server` 的只有开服的人才需要。**' \
-              "> 例如 \`atm10-zh_cn-client-${RELEASE_VERSION}-atm${EX_MC}.zip\` 就是客户端的包。" \
-              "> 后面的 \`atm${EX_MC}\` 是**整合包版本**，按你自己那个整合包的版本挑。" \
-              '>' \
-              '> **② 装完进游戏检查：选项 → 资源包，汉化包必须在「已选」那一侧的最顶部**，' \
-              '> 否则大部分汉化都不会生效。' \
+              '> 1. 带 `client` 的包给玩家装，带 `server` 的包只有开服才需要。' \
+              ">    例如 \`atm10-zh_cn-client-${RELEASE_VERSION}-atm${EX_MC}.zip\` 是客户端的包。" \
+              ">    末尾的 \`atm${EX_MC}\` 是整合包版本，按你的整合包版本挑。" \
+              '> 2. 装完进游戏，打开「选项」里的「资源包」。' \
+              '>    汉化包必须在「已选」一侧的最顶部，否则大部分汉化不生效。' \
               ''
             echo "$NOTES"
             echo 'RELEASE_NOTES_EOF'
           } >> "$GITHUB_OUTPUT"
 
-          # 一次发版挂上全部整合包版本的包：
+          # 一次发版包含全部整合包版本的包：
           #   atm10-zh_cn-{client,server}-<补丁版本>-atm<整合包版本>.zip
-          # build_dist.sh 直接产出 ASCII 名（连解压出来的文件夹名也是 ASCII）——
-          # 中文文件夹名在 Windows 各解压软件下编码不一致，用户拿到手就是乱码。
-          # 白名单里每个整合包版本都必须有客户端 + 服务端两个包，缺一个就别发。
-          # 按清单逐个点名，不是 `ls` 出多少算多少——少打了一个版本必须当场发现。
-          # （不用 mapfile：那是 bash 4+ 的内建，本机 bash 3.2 跑不了，
-          #   本地就验不了这段门控。）
+          # build_dist.sh 产出 ASCII 文件名（解压后的文件夹名也是），中文文件夹名在 Windows
+          # 的不同解压软件里编码不一致，会变成乱码。白名单里每个版本都必须有客户端与服务端
+          # 两个包，按清单逐个检查，缺一个就不发布。
+          # 不用 mapfile：它是 bash 4+ 的内建，macOS 自带的 bash 3.2 没有。
           ZIPS=()
           for v in $(python3 scripts/release_versions.py); do
             for side in client server; do
@@ -272,11 +250,9 @@ jobs:
 
       - name: Publish GitHub release
         if: steps.release.outputs.publish == 'true'
-        # 钉完整 commit SHA：这一步握着 contents:write，用可移动的 @v3 意味着
-        # 标签被挪动或上游被入侵时，写权限直接易主。（issue #9 P1-6）
-        # 对应 softprops/action-gh-release 的 v3.0.2（2026-08-06 解析）。
-        # 从 v2.6.2 换上来只为跟上 node24——两版 action.yml 逐行 diff **只差
-        # `using: node20` → `node24` 这一行**，输入项一字未改，是纯换运行时。
+        # 固定完整 commit SHA：这一步有 contents:write，用可移动的 @v3 的话，标签被挪动或上游
+        # 被入侵时写权限就转移了（issue #9 P1-6）。对应 softprops/action-gh-release v3.0.2，
+        # 与 v2.6.2 的 action.yml 只差 `using: node20` → `node24`，输入项相同。
         uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
           tag_name: v${{ steps.release.outputs.version }}
@@ -286,20 +262,15 @@ jobs:
           files: ${{ steps.publish.outputs.files }}
           fail_on_unmatched_files: true
 
-      # 发版这一步的可核对数字摊在 run 摘要页上：挂了哪几个包、多大、sha256，
-      # 以及发版说明取自 CHANGELOG 的哪一段。
+      # 在 run 摘要页列出发布的包、大小、sha256，以及发版说明取自 CHANGELOG 的哪一段。
+      # 发版不可撤回，说明取错段落要能一眼看到（`## 7.*` 当正则时会匹配上 `## 7.2`）。
       #
-      # 这里比 build.yml 那份更要紧：发版是**不可回退**的动作，tag 一推、包一挂，
-      # 就已经在别人的下载列表里了。「说明取自哪一段」尤其要能一眼看到——
-      # 历史上出过拿旧段落当新版说明发出去（`## 7.*` 当正则匹配上 `## 7.2`）。
-      #
-      # 整块兜底：算不出数只是没得看，绝不能把已经发出去的版本判红。
+      # 整块容错：算不出数不影响已经发布的版本。
       - name: 作业摘要
         if: always()
-        # **一律走 env，不把 ${{ }} 内联进 run 的脚本体**：发版说明取自 CHANGELOG，
-        # 那是仓库内容，内联等于把它交给 shell 解析（反引号、$(...) 都会执行）。
-        # 走环境变量则永远是数据。同理也就不必用 heredoc——终止符缩进错了不闭合，
-        # 而且正文里真出现一行 EOF 标记就会截断。
+        # 一律走 env，不把 ${{ }} 内联进 run：发版说明来自 CHANGELOG，内联会被 shell 解析
+        # （反引号、$(...) 都会执行），走环境变量始终是数据。所以也不用 heredoc：终止符缩进
+        # 错了不闭合，正文里出现一行 EOF 标记会截断。
         env:
           VERSION: ${{ steps.release.outputs.version }}
           PUBLISH: ${{ steps.release.outputs.publish }}

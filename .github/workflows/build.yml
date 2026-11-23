@@ -1,16 +1,13 @@
 name: Build
 
-# 一次构建产出 versions/ 下声明过的**全部**整合包版本的包。
+# 一次构建产出 versions/ 下声明过的全部整合包版本的包。
 #
-# 仓库里**没有任何一棵出货目录树**：kubejs/ config/ resourcepacks/ mods/ 全是产物。
-# CI 每次都重新下整合包、下字体、从 src/ 摊树、重跑生成器、对着各版本官方文件打补丁，
-# 所以「仓库里躺着一份和脚本输出对不上的文件」这种情况在结构上就不可能发生。
+# kubejs/ config/ resourcepacks/ mods/ 都是产物：CI 每次重新下载整合包和字体，从 src/ 组装
+# 出货树，运行生成器，对各版本官方文件打补丁。
 #
-# 字体全部是 OFL 的（缝合像素字体 + 思源黑体 / 思源宋体），不再依赖 macOS 自带字体。
-# Linux 与 macOS 的产物**像素级基本一致**：2026-07-27 拿 CI 产物与本机产物逐张比，
-# 200 张横幅里 197 张像素完全相同，3 张（ATM / ATM之星 / ATM之星自动化）因两边
-# freetype 版本不同、字形栅格化有细微差别——目视等价，位置字号都对。
-# PNG 字节则普遍不同（zlib 版本差异），所以**别拿 sha1 当回归判据**，要比就比像素。
+# 字体都是 OFL（缝合像素字体、思源黑体、思源宋体）。CI 与 macOS 的产物逐张比对，200 张横幅里
+# 197 张像素相同，3 张（ATM / ATM之星 / ATM之星自动化）因 freetype 版本不同有细微差别，目视等价。
+# PNG 字节因 zlib 版本不同普遍不一样，回归比对要比像素，不比 sha1。
 
 on:
   workflow_dispatch:
@@ -26,20 +23,16 @@ on:
   push:
     branches: [main]
     paths-ignore: ['**.md', 'docs/**']
-  # PR 也跑完整构建。ci.yml 是 --no-jars 的快闸，查不到「摊树 / 生成器 / 对着官方
-  # 文件打补丁」这一整段——而那正是最容易被一次改动搞坏、又只有下了 jar 才看得见的
-  # 部分。只在 PR 上跑快闸，等于把最慢也最有价值的那道闸推迟到合进 main 之后才发现。
-  # 本工作流不引用任何 secrets，只上传 artifact，所以从 fork 提的 PR 一样能跑完。
+  # PR 也跑完整构建：ci.yml 用 --no-jars，查不到组装、生成器和对官方文件打补丁这一段。
+  # 本工作流不引用 secrets，只上传 artifact，fork 提的 PR 也能跑完。
   pull_request:
     paths-ignore: ['**.md', 'docs/**']
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 产物 PNG 的字节由 Pillow 自带的 freetype / zlib 决定，所以**工具链本身也得进
-    # 依赖图**。镜像按 digest 钉（tag 会被重新指向，digest 不会），Pillow 按
-    # requirements.lock 的哈希装。两样都钉住，产物的 sha256 才谈得上有意义。
-    # 版本写在 src/toolchain.lock.json，这里跟着它走。
+    # 产物 PNG 的字节由 Pillow 自带的 freetype / zlib 决定，所以镜像按 digest 固定，Pillow 按
+    # requirements.lock 的哈希安装，产物的 sha256 才能比对。版本记在 src/toolchain.lock.json。
     container:
       image: python@sha256:d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b
     # 容器里 GitHub Actions 默认用 sh，而脚本里到处是 set -o pipefail（bash 才有）
@@ -48,65 +41,55 @@ jobs:
         shell: bash
     env:
       ATM_TOOLCHAIN_DIGEST: sha256:d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b
-      # 这条流水线是**带 jar 跑完整生成**的，所以 check.py / check_gui_maps.py 里
-      # 那几条「前提是生成物」的检查在这里本该全部有前提。缺了就是生成环节出问题，
-      # 不许再打一行 ℹ️ 然后放过——那样「闸没跑成」和「查过了没问题」退出码一样。
-      # ci.yml 反过来：它用 --no-jars，那些前提真的不存在，所以那边**不设**这个变量。
+      # 这条流水线带 jar 完整生成，check.py / check_gui_maps.py 里以生成物为前提的检查必须有前提，
+      # 缺了就失败。ci.yml 用 --no-jars，不设这个变量。
       GATE_STRICT: '1'
     steps:
-      # git 必须在 checkout **之前**装好。这个容器镜像里没有 git，而
-      # actions/checkout 检测不到 git 就退化成「用 REST API 下 tarball」——
-      # 那条路**压根不建 .git 目录**，fetch-depth 也一并被忽略。
-      # 后果是 protect.py 的 `git ls-files` 失败，「新增必须登记」和
-      # 「清单不许变短」两条一起静默关掉，本工作流里只有最弱的
-      # 「清单里的文件必须在」真跑过。日志原话：
+      # git 必须在 checkout 之前装好：镜像里没有 git 时，actions/checkout 会用 REST API 下载
+      # tarball，不建 .git，fetch-depth 也被忽略，protect.py 的「新增必须登记」和「清单不许变短」
+      # 都不会运行。日志里会出现：
       #   The repository will be downloaded using the GitHub REST API
-      - name: 先装 git（否则 checkout 会退化成 tarball，没有 .git）
+      - name: 安装 git
         run: |
           apt-get update -qq && apt-get install -y -qq --no-install-recommends \
             git ca-certificates >/dev/null
           git --version
 
-      # 要完整历史：下面那道保护清单闸得跟 HEAD~1 比「清单有没有变短」，
-      # checkout 的默认 depth 是 1，HEAD~1 根本不在克隆里。
+      # 要完整历史：保护清单检查要和 HEAD~1 比较，checkout 默认 depth 是 1。
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: 装依赖（哈希锁定）
+      - name: 安装依赖
         run: |
           python -m pip install --quiet --require-hashes -r requirements.lock
           apt-get update -qq && apt-get install -y -qq --no-install-recommends \
             curl unzip zip ca-certificates default-jdk-headless >/dev/null
-          # javac 是给 scripts/patch_vaultpatcher.py 用的：随包分发的 VaultPatcher
-          # 要现打两处性能补丁再编回去（见该脚本 docstring）。缺 javac 那一步会**直接失败**，
-          # 不会静默跳过——跳过等于发一个每帧多花几毫秒的 jar，而没人会发现。
+          # javac 供 scripts/patch_vaultpatcher.py 使用：随包分发的 VaultPatcher 要打两处性能补丁
+          # 再编译（见该脚本 docstring）。缺 javac 时那一步失败，不会跳过。
 
       - name: 核对工具链
         run: python3 scripts/toolchain.py --strict
 
-      # 出货前再验一遍保护清单。快闸（ci.yml）已经查过，这里是第二道：
-      # 发出去的包不许少汉化，而「少汉化」最常见的成因就是有人（我）把源删了。
-      - name: 保护清单（汉化只许加不许删）
+      # 出货前再检查一遍保护清单（ci.yml 已经检查过）。
+      - name: 检查保护清单
         env:
-          # 与 ci.yml 取同一个基准。不写的话会回落到 HEAD~1——push 到 main 时那是对的，
-          # 但 PR 上 checkout 拿到的是 refs/pull/N/merge，HEAD~1 恰好等于 base 只是碰巧，
-          # 依赖这个形状太脆。显式给出 base.sha，取不到时 protect.py 会红（它不静默跳过）。
+          # 与 ci.yml 用同一个基准。PR 上 checkout 拿到的是 refs/pull/N/merge，HEAD~1 恰好等于
+          # base 只是巧合，所以显式给出 base.sha。取不到时 protect.py 会失败。
           PROTECT_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-          # 流水线里 git 用不了 = 两条闸静默关掉，这在这里必须当失败，
-          # 不许像本地那样降级放过——见 protect.py 里 PROTECT_REQUIRE_GIT 的注释。
+          # 流水线里 git 不可用必须失败，见 protect.py 里 PROTECT_REQUIRE_GIT 的注释。
           PROTECT_REQUIRE_GIT: '1'
         run: python3 scripts/compliance/protect.py --check
 
-      - name: 取字体（全部 OFL）
+      - name: 下载字体
         run: ./scripts/fetch_fonts.sh
 
       - name: 解析要构建哪些整合包版本
         id: t
         run: |
           IN='${{ github.event.inputs.targets }}'
-          # 通配符只在**仓库声明过的版本**里展开，绝不去 CurseForge 现查——
-          # 否则 ATM 一发新版，CI 就会自动构建一个从没验证过的包挂上去。
+          # 通配符只展开仓库里声明过的版本，不查 CurseForge：否则 ATM 一发新版，
+          # CI 就会构建一个没验证过的包。
           if [ -z "$IN" ] || [ "$IN" = "7.*" ]; then
             IN=$(ls -d versions/[0-9]* | xargs -n1 basename | tr '\n' ' ')
           fi
@@ -114,30 +97,25 @@ jobs:
           echo "将构建: $IN"
 
 
-      # ATM10 的某个已发布版本，overrides 内容是不会变的，所以缓存键就用仓库里记的
-      # 那三个指纹——只有我们**有意**改了目标版本时才会失效。
-      # 这一步是为了把 CurseForge（全链唯一不可控的外部依赖）从最高频的那道闸上挪开：
-      # 命中缓存就完全不联网；未命中才下，且下完必须与 versions/<版本>/overrides.sha256
-      # 对得上，否则构建当场红。
+      # 已发布版本的 overrides 不会变，缓存键用仓库里记录的指纹，只有改了目标版本才失效。
+      # 命中缓存就不访问 CurseForge。未命中才下载，下载后必须与 versions/<版本>/overrides.sha256
+      # 一致，否则构建失败。
       - uses: actions/cache@v6
         with:
           path: build/packsrc
           key: packsrc-${{ hashFiles('versions/*/overrides.sha256') }}
 
-      - name: 下整合包（overrides + 全部 mod jar）
+      - name: 下载整合包与全部模组 jar
         run: |
           set -euo pipefail
-          # 生成器要读 mod jar 里的 en_us 与注册表，取最新那版一次即可
-          # （资源包 lang 按命名空间索引，跨版本通用）。
+          # 生成器要读 mod jar 里的 en_us 与注册表，取最新版即可（资源包 lang 各版本通用）。
           NEWEST=$(ls -d versions/[0-9]* | xargs -n1 basename | sort -V | tail -1)
           echo "以 ATM10 $NEWEST 为生成基准"
           echo "NEWEST=$NEWEST" >> "$GITHUB_ENV"
-          # 新版本首次入库：指纹由**这里**算并写出来，不许拿开发机下载的数当基线
-          # （本机可能限速、断流、少下几个 jar，而这些都看不出来）。
+          # 新版本首次入库时，指纹由 CI 计算，不用开发机下载的文件（可能限速、中断、少几个 jar）。
           RECORD=''
           [ -f "versions/$NEWEST/overrides.sha256" ] || RECORD='--record'
-          # 这个标志位要在**生成基线之前**定下来：生成之后文件就存在了，
-          # 再用 hashFiles 判断会把后面该跑的步骤全跳过。
+          # 这个标志要在生成基线之前确定：生成后文件已存在，再用 hashFiles 判断会跳过后面的步骤。
           if [ -f "versions/db/$NEWEST/jars.json" ]; then
             echo "NEW_VERSION=0" >> "$GITHUB_ENV"
           else
@@ -145,37 +123,33 @@ jobs:
           fi
           python3 scripts/fetch_pack.py "$NEWEST" pack $RECORD
           echo "ATM_PACK_ROOT=$PWD/pack" >> "$GITHUB_ENV"
-          # 每个要构建的版本再取一份 overrides（只要官方文件，不下 jar）——
-          # 打上游补丁必须对着**该版**的官方文件，否则等于把旧上游发给新版本用户。
+          # 每个目标版本再下载一份 overrides（不下 jar）：上游补丁必须对着该版的官方文件打。
           for v in ${{ steps.t.outputs.list }}; do
             [ -d "build/packsrc/$v/kubejs" ] || python3 scripts/fetch_pack.py "$v" "build/packsrc/$v" --no-jars
           done
-          # 下来的字节必须与 versions/db/<版本>/jars.json 逐字节一致。以前只写进临时的
-          # mods.provenance.json，从没跟仓库里的基线比对过——限速 / 404 / 拿错文件都只会
-          # 让生成器少产内容，不会有人发现。（issue #9 P1-5）
+          # 下载的 jar 必须与 versions/db/<版本>/jars.json 逐字节一致，否则限速、404、下错文件
+          # 只会让生成器少产内容而不报错（issue #9 P1-5）。
           if [ -f "versions/db/$NEWEST/jars.json" ]; then
             python3 scripts/build_version_db.py --verify "$NEWEST" pack/mods
           else
-            echo "versions/db/$NEWEST/jars.json 不存在——新版本首次入库，核对留到基线生成之后"
+            echo "versions/db/$NEWEST/jars.json 不存在：新版本首次入库，基线生成之后再核对"
           fi
 
-      # 整合包发了新版本时，基线由 CI 生成、由人过目后提交——机器只负责算，不负责拍板。
-      # 故意**不**自动信任并继续构建：没入库的基线等于没有基线，此时产出的包
-      # 没有任何东西能证明它对着的是干净的官方文件。
-      - name: 新版本首次入库：生成基线（不自动信任，红着等人提交）
+      # 整合包发新版时，基线由 CI 生成，由人核对后提交。基线没入库时不继续构建：
+      # 没有基线，就无法证明产出的包对应的是干净的官方文件。
+      - name: 生成新版本的基线
         if: env.NEW_VERSION == '1'
         run: |
           set -euo pipefail
-          echo "versions/db/$NEWEST/ 还不存在——这是 ATM10 $NEWEST 第一次进本仓库。"
+          echo "versions/db/$NEWEST/ 还不存在，ATM10 $NEWEST 是第一次入库。"
           python3 scripts/build_version_db.py "$NEWEST" pack/mods
           python3 scripts/build_en_baseline.py "$NEWEST" pack/mods pack
-          # 按键分类的注册名同样是**入库数据**，check.py 的按键闸靠它。漏掉它的话，
-          # 新版本一入库那道闸就没了前提——而这一步是它唯一的产出机会：
-          # 基线一旦提交，NEW_VERSION 就变 0，本步骤再也不会跑。
+          # 按键注册名也是入库数据，check.py 的按键检查依赖它。基线提交后 NEW_VERSION 变成 0，
+          # 本步骤不再运行，所以只能在这里生成。
           python3 scripts/scan_keybinds.py pack/mods "versions/db/$NEWEST/keybinds.json"
           PREV=$(ls -d versions/[0-9]* | xargs -n1 basename | sort -V | tail -2 | head -1)
           echo "───── 与上一版 $PREV 的英文底本漂移 ─────"
-          # 不加 || true：这个脚本自己永远返回 0，真报错就是它坏了，那要红。
+          # 不加 || true：这个脚本总是返回 0，报错说明脚本本身坏了，要失败。
           python3 scripts/check_en_drift.py "$PREV" "$NEWEST"
 
       - uses: actions/upload-artifact@v7
@@ -187,7 +161,7 @@ jobs:
             versions/db/${{ env.NEWEST }}/
           retention-days: 30
 
-      - name: 基线没入库就到此为止
+      - name: 基线未入库时停止构建
         if: env.NEW_VERSION == '1'
         run: |
           echo "❌ ATM10 $NEWEST 的基线刚由本次 CI 生成，尚未提交进仓库。"
@@ -197,17 +171,14 @@ jobs:
           echo "   提交后重跑本流水线，才会真正出包。"
           exit 1
 
-      # 资源树育种结构（哪个任务对应哪棵树、父本是谁）是**该版基线**，
-      # 跟 jars.json / keybinds.json 一样：版本入库时扫一次，人过目后提交，
-      # 任务书底本必须与「拿现在的取值器、对着该版钉的官方文件」算出来的一致。
-      # 这道闸是为一次真实事故加的：取值器读不了多行数组，八千多个键里七百多个被静默
-      # 丢掉，入库的基线因此少了一大截，而 check_en_drift.py 只会安静地少看，不会喊
-      # ——ATM 把「12 个耀光下界书架」改成 13 个就这么漏了整整一版。
-      # 基线本身错了的时候，只有拿现值重算一遍才发现得了。
+      # 资源树育种结构（哪个任务对应哪棵树、父本是谁）是该版基线，版本入库时扫描一次，
+      # 核对后提交。任务书基线必须与「用当前的取值器，对着该版官方文件」算出的结果一致：
+      # 取值器读不了多行数组时，八千多个键里七百多个被丢掉，check_en_drift.py 不会报错，
+      # ATM 把「12 个耀光下界书架」改成 13 个就这样漏了一版。基线本身错了，只能重算才发现。
       #
-      # 只要 overrides（上面每个版本都取过了），不用 jar：模组 lang 那半本来就不入库。
-      # 与其余基线一样**不自动信任**：重算、上传 artifact、红着等人提交。
-      - name: 任务书底本与现在的取值器是否一致（不自动信任，红着等人提交）
+      # 只需要 overrides（上面每个版本都下载过），不用 jar。与其余基线一样：重算、上传
+      # artifact、失败，等人提交。
+      - name: 检查任务书基线
         id: qbase
         env:
           BASELINE_WRITE: '1'
@@ -229,19 +200,16 @@ jobs:
           path: versions/db/*/quest_baseline.json
           retention-days: 30
 
-      - name: 任务书底本没入库就到此为止
+      - name: 任务书基线未入库时停止构建
         if: env.QBASE_STALE == '1'
         run: |
-          echo "❌ 这几版的任务书底本与现在算出来的对不上：$STALE_VERS"
+          echo "❌ 这几版的任务书基线与重算结果不一致：$STALE_VERS"
           echo "   下载 artifact「quest-baseline」，人工核对后提交 versions/db/*/quest_baseline.json。"
-          echo "   基线错了不会有人喊——check_en_drift.py 只会安静地少看几百个键。"
           exit 1
 
-      # 之后每次构建只读它。已发布版本的章节与配方不会再变，没有理由每次都下 jar 重扫。
-      #
-      # 只在缺基线时才扫，也只为缺的那些版本取 jar（按画像单取一个，核 sha256）。
-      # 和上面「新版本首次入库」一样**不自动信任**：扫完上传 artifact 并红着等人提交。
-      - name: 缺育种结构基线的版本：扫一遍（不自动信任，红着等人提交）
+      # 已发布版本的章节与配方不会再变，之后的构建只读基线。只在缺基线时扫描，也只为缺的
+      # 版本下载 jar（按画像单取一个，核对 sha256）。扫描后上传 artifact 并失败，等人提交。
+      - name: 补扫缺失的育种结构基线
         id: trees
         run: |
           set -euo pipefail
@@ -266,7 +234,7 @@ jobs:
           path: versions/db/*/productive_trees.json
           retention-days: 30
 
-      - name: 育种结构基线没入库就到此为止
+      - name: 育种结构基线未入库时停止构建
         if: env.TREES_MISSING == '1'
         run: |
           echo "❌ 有整合包版本还没有育种结构基线，已由本次 CI 扫出但尚未提交。"
@@ -274,15 +242,13 @@ jobs:
           echo "   versions/db/<版本>/productive_trees.json，再重跑本流水线。"
           exit 1
 
-      # VaultPatcher 的模块要一版一份地核：target_class 在这一版实际在哪个 jar、
-      # 每条 key 在不在它的常量池里。所以**加一个带 target_class 的模块，五个版本的库
-      # 同时过期**，而 gen_vaultpatcher 的闸一次只报一版（构建到哪版报哪版）。
+      # VaultPatcher 模块要逐版核对：target_class 在这一版的哪个 jar、每条 key 在不在常量池里。
+      # 加一个带 target_class 的模块，五个版本的库同时过期，而 gen_vaultpatcher 一次只报一版。
       #
-      # 这里一次性把缺的都补上，规矩与上面两块基线完全一致：只在缺的时候跑、只为缺的
-      # 那些版本取 jar、**不自动信任**——补完上传 artifact 并红着等人提交。
-      # 用 --only-missing：老版本的 jars.json 是冻结的字节基线，不因为加了个模块就重写，
-      # 改为拿它核对这次下回来的这批 jar（少下 / 下坏 / 拿错版本当场红）。
-      - name: VaultPatcher 库缺模块记录的版本：补一遍（不自动信任，红着等人提交）
+      # 这里一次补齐：只在缺的时候运行，只为缺的版本下载 jar，补完上传 artifact 并失败，等人提交。
+      # 用 --only-missing：老版本的 jars.json 是固定的字节基线，不重写，而是用它核对这次
+      # 下载的 jar（少下、下坏、下错版本都会失败）。
+      - name: 补全 VaultPatcher 库缺失的模块记录
         run: |
           set -euo pipefail
           stale=$(python3 scripts/stale_version_dbs.py)
@@ -293,11 +259,11 @@ jobs:
           for v in $stale; do
             echo "───── ATM10 $v 补库 ─────"
             if [ "$v" = "$NEWEST" ]; then
-              # 最新版的整包上面已经下过、也已逐字节核过，直接用，不重下
+              # 最新版的整包上面已下载并逐字节核对过，直接用
               python3 scripts/build_version_db.py "$v" pack/mods --only-missing
             else
-              # 故意不下到 build/packsrc/：那个目录进 actions/cache，
-              # 四个版本的 jar 一共 2.8 GiB，塞进缓存会把缓存额度吃光。
+              # 不下载到 build/packsrc/：那个目录进 actions/cache，
+              # 四个版本的 jar 共 2.8 GiB，会占满缓存额度。
               python3 scripts/fetch_pack.py "$v" "build/dbfix/$v"
               python3 scripts/build_version_db.py "$v" "build/dbfix/$v/mods" --only-missing
             fi
@@ -311,38 +277,29 @@ jobs:
           path: versions/db/*/vaultpatcher.json
           retention-days: 30
 
-      - name: VaultPatcher 库没入库就到此为止
+      - name: VaultPatcher 库未入库时停止构建
         if: env.VPDB_STALE == '1'
         run: |
-          echo "❌ 有整合包版本的 VaultPatcher 库还缺模块记录。本次 CI 已对着该版真实的"
-          echo "   jar 把它们补出来了，但尚未提交进仓库。"
+          echo "❌ 有整合包版本的 VaultPatcher 库缺模块记录，本次 CI 已按该版的 jar 补出，尚未提交。"
           echo "   下载 artifact「vaultpatcher-db」，核对后提交"
           echo "   versions/db/<版本>/vaultpatcher.json，再重跑本流水线。"
-          echo "   要核的是新模块那几条：target_class 记成 declared 还是 not_found。"
-          echo "   记成 not_found 的版本，打包时该模块的 mods 字段会留空——"
-          echo "   那是「这一版没有这个 mod」的正常结果，不是漏。"
+          echo "   核对新模块的 target_class 记成 declared 还是 not_found。"
+          echo "   not_found 表示这一版没有这个 mod，打包时该模块的 mods 字段留空。"
           exit 1
 
       - name: 生成全部汉化产物
         run: ./scripts/generate_all.sh
 
-      # 同上：这个脚本专为 2026-07-28 市政厅崩溃写的（重复映射 / 重复属性 /
-      # 套用后非法 XML），却从没被调用过。它要读 mod jar，所以放在这一步之后。
-      #
-      # 曾经带一段 `|| ... build/packsrc/7.2/mods` 的兜底。那是全仓唯一写死整合包
-      # 版本号的地方，而且从来没能生效过：packsrc 是 --no-jars 取的，那个 mods
-      # 目录压根不存在，GATE_STRICT 下第二段必然也退 1。
-      # 更要命的是它后来变得**危险**：本流水线开始往 build/packsrc/<版本>/mods
-      # 放单个 jar 之后，那个目录会存在且只有一个不相干的 jar，而本脚本对着
-      # 「一个界面 XML 都没有」的输入是打勾退 0 的——于是主检查红了整步照样绿。
-      # $ATM_PACK_ROOT 就是最新版的完整包，兜底既无必要也无正确形态，去掉。
-      - name: 界面 XML 映射三条硬规矩
+      # check_gui_maps.py 检查重复映射、重复属性、套用后的非法 XML。它要读 mod jar，所以放在
+      # 生成之后。$ATM_PACK_ROOT 是最新版的完整包。不能退回 build/packsrc/<版本>/mods：那里只有
+      # 单个 jar，没有界面 XML，脚本会直接通过。
+      - name: 检查界面 XML 映射
         run: python3 scripts/compliance/check_gui_maps.py "$ATM_PACK_ROOT/mods"
 
-      # issue #3：建筑棒的类别路径既当面包屑显示、又当 Map 键，我们把它译了 → NPE 闪退。
-      # 结构闸 vp-no-path-prefix-keys 拦「以 / 开头的键」这个形状；这一条拦后果——
-      # 拿真 jar 里的全部蓝图路径回放替换表，改动一个字符就红。要读 jar，所以放这里。
-      - name: 蓝图类别路径不许被替换表改动
+      # issue #3：建筑棒的类别路径同时用作面包屑和 Map 键，译了会 NPE 闪退。规则
+      # vp-no-path-prefix-keys 拦「以 / 开头的键」，这一步用真 jar 里的全部蓝图路径回放替换表，
+      # 改动一个字符就失败。要读 jar，所以放在这里。
+      - name: 检查蓝图类别路径
         run: python3 scripts/compliance/check_minecolonies_paths.py "$ATM_PACK_ROOT/mods"
 
       - name: 打包全部版本
@@ -354,12 +311,8 @@ jobs:
           path: dist/*.zip
           retention-days: 30
 
-      # 把产物的可核对数字摊在 run 摘要页上：文件、大小、sha256，以及**键数**。
-      # 键数是这里唯一真正要紧的东西——「这版比上版少了两百个键」是发版前必须发现
-      # 的事，而以前只能等发完拿两个 zip 手工 diff。摘要页会一直留着，两次 run
-      # 并排看就是差值。
-      #
-      # 整块兜底：算不出数只是没得看，绝不能把已经打好的包判红。
+      # 在 run 摘要页列出产物的文件、大小、sha256 与键数，两次 run 并排看就能发现某版少了键。
+      # 整块容错：算不出数不影响已经打好的包。
       - name: 作业摘要
         if: always()
         run: |
