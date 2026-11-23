@@ -203,7 +203,7 @@ skill 在 `.agents/skills/<名字>/SKILL.md`，`.claude/skills` 指向同一个�
 
 | 任务 | 先读 |
 |---|---|
-| 写或改 commit 消息、PR 与 issue 文本、文档、代码注释 | [`simple-chinese`](.agents/skills/simple-chinese/SKILL.md) |
+| 写或改 commit 消息、PR 与 issue 文本、文档、代码注释 | [`simple-chinese`](.agents/skills/simple-chinese/SKILL.md)、[`enforce-rules-for-ai-tone`](.agents/skills/enforce-rules-for-ai-tone/SKILL.md) |
 | 开、创建或准备 PR | [`create-pr`](.agents/skills/create-pr/SKILL.md) |
 | 往 CHANGELOG 加条目、开新版本节、写致谢 | [`write-changelog`](.agents/skills/write-changelog/SKILL.md) |
 | ATM10 发了新版，让汉化包支持它 | [`add-pack-version`](.agents/skills/add-pack-version/SKILL.md) |
